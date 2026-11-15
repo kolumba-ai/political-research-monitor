@@ -362,6 +362,7 @@ def test_pull_reads_system_c_claim_records():
     posts = _evidence_claim_posts({"dataPointId": "clm-a-x"}, payload)
     assert [p[0] for p in posts] == [f"post:o1:{PID}", f"post:o2:{PID}"]
     assert posts[0][1]["source"]["url"] == "https://t/1" and posts[0][1]["claims"][0]["claim_es"] == "t1"
+    assert posts[0][1]["claims"][0]["speaker"] == "politician" and posts[1][1]["claims"][0]["speaker"] is None
     assert posts[1][1]["claims"][0]["about_politician"] is False
 
 

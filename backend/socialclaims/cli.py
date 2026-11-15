@@ -141,6 +141,7 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("pull-pastdev", help="export the country's claim data points from past.dev (read-only, free)")
     p.add_argument("--country", default="MX")
     p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
+    p.add_argument("--workers", type=int, default=4, help="parallel past.dev reads")
     p = sub.add_parser("thumbnails", help="backfill thumbnail URLs from raw payloads and download them (no Oriane API call)")
     p.add_argument("--format", action="append", dest="formats", help="only these post formats (repeatable), e.g. video")
     p.add_argument("--no-download", action="store_true", help="only backfill thumbnail_url")
@@ -162,11 +163,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "pull-pastdev":
         from .pastdev import PastDevClient, pull
         client = PastDevClient(
-            s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s,
+            s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s, max_retries=8,  # parallel reads get 429s
             rate_limiter_database_url=s.rate_limiter_database_url,
             requests_per_second=s.pastdev_requests_per_second,
         )
-        _out(pull(client, _graph(s), args.country, args.out or s.claims_export_dir))
+        _out(pull(client, _graph(s), args.country, args.out or s.claims_export_dir, args.workers))
         return 0
 
     conn = connect(s.database_url)

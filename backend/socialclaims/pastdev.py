@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -27,6 +28,9 @@ PAYLOAD_MARKER = "\nJSON:\n"
 HEADLINE = re.compile(r"^(?P<platform>\w+) post by @(?P<handle>\S+) on (?P<date>\d{4}-\d{2}-\d{2}) mentioning (?P<name>.+?)\.")
 EXPORT_FORMAT = "pastdev-claims/1"
 EVIDENCE_CLAIM_FORMATS = ("evidencegraph-claim/1", "evidencegraph-claim/2")  # System C claim records (evidencegraph/project.py)
+# Data point id prefixes of System C documents and evidence links: not claims, so their content is never fetched.
+EVIDENCE_ONLY_PREFIXES = ("doc-", "lnk-")
+EVIDENCE_SPEAKER = {"speaker": "politician", "quoted": "politician_quoted"}  # relation_to_politician -> speaker
 
 
 class PastDevError(RuntimeError):
@@ -199,12 +203,13 @@ def _evidence_claim_posts(src: dict, payload: dict) -> list[tuple[str, dict]]:
                    "published_at": cs[0].get("stated_at")},
         "claims": [{"claim_index": i, "claim_id": c.get("claim_id"), "claim_es": c.get("text"), "claim_en": c.get("text_en"),
                     "claim_type": c.get("type"), "evidence_span": c.get("quote"),
-                    "about_politician": c.get("relation_to_politician") in ("speaker", "subject")}
+                    "speaker": EVIDENCE_SPEAKER.get(c.get("relation_to_politician")),
+                    "about_politician": c.get("relation_to_politician") in ("speaker", "quoted", "subject")}
                    for i, c in enumerate(cs)],
     }) for oid, cs in by_post.items()]
 
 
-def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
+def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int = 1) -> dict:
     """Read all current claim data points and write `<out_dir>/<CC>/{posts,claims}.jsonl` + `manifest.json`."""
     country = country.upper()
     resolve = PoliticianResolver(graph, country)
@@ -222,11 +227,17 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
     skipped = {"not_current": 0, "no_payload": 0, "other_country": 0, "unresolved_politician": 0,
                "evidence_records": 0}
     partial = 0
+    wanted = []
     for src in client.sources():
         if not src.get("current"):
             skipped["not_current"] += 1
-            continue
-        content = client.full_text(src, readers)
+        elif str(src.get("dataPointId") or "").startswith(EVIDENCE_ONLY_PREFIXES):
+            skipped["evidence_records"] += 1
+        else:
+            wanted.append(src)
+    with ThreadPoolExecutor(max(1, workers)) as pool:
+        contents = list(pool.map(lambda src: client.full_text(src, readers), wanted))
+    for src, content in zip(wanted, contents):
         payload = parse_payload(content)
         if not payload:
             texts = summary_claims(content)

@@ -4,7 +4,7 @@ export const CLAIM_TYPE_COLORS: Record<string, string> = {
   factual: "#0d9488", policy_position: "#7c3aed", commitment: "#d97706", opinion: "#0ea5e9", forecast: "#db2777",
 };
 export const SPEAKER_COLORS: Record<string, string> = {
-  politician: "#4f46e5", uploader: "#0ea5e9", quoted: "#a855f7", other: "#0ea5e9", unknown: "#94a3b8",
+  politician: "#4f46e5", politician_quoted: "#818cf8", uploader: "#0ea5e9", quoted: "#a855f7", other: "#0ea5e9", unknown: "#94a3b8",
 };
 export const PLATFORM_META: Record<string, { name: string; color: string; short: string }> = {
   tiktok: { name: "TikTok", color: "#111827", short: "TT" },
@@ -12,7 +12,8 @@ export const PLATFORM_META: Record<string, { name: string; color: string; short:
   youtube: { name: "YouTube", color: "#dc2626", short: "YT" },
 };
 export const SPEAKER_NAMES: Record<string, string> = {
-  politician: "Politician speaking", uploader: "Account owner", quoted: "Quoted third party",
+  politician: "Politician speaking", politician_quoted: "Politician, as quoted", uploader: "Account owner",
+  quoted: "Quoted third party",
   other: "Another identified speaker", unknown: "Speaker not identified",
 };
 

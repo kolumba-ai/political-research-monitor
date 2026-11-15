@@ -117,6 +117,8 @@ def create_app() -> FastAPI:
     app.include_router(build_router(_store, _state))
     from .claims_api import build_router as build_claims_router
     app.include_router(build_claims_router(lambda: s.claims_export_dir, lambda pid: _store().get_node(pid)))
+    from .pipeline_api import build_router as build_pipeline_router
+    app.include_router(build_pipeline_router(lambda: s.pipeline_database_url, lambda: s.claims_export_dir))
 
     @app.get("/api/search")
     def search(q: str, limit: int = 25):

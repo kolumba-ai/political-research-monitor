@@ -123,3 +123,56 @@ export const claimsApi = {
     return get<PoliticianClaims>(`/api/claims/${encodeURIComponent(iso2)}/politicians/${encodeURIComponent(id)}?${qs}`, s);
   },
 };
+
+// Read-only view of the claims pipeline (Systems B and C's Postgres): capture -> claims -> evidence -> past.dev.
+export interface StageInfo { key: string; label: string; meaning: string }
+export interface PipelinePolitician {
+  politician_id: string; name: string | null; posts_captured: number; posts_extracted: number;
+  claims: number; records: number; stages: Record<string, number>;
+}
+export interface PipelineSummary {
+  country: string; available: boolean; reason?: string; generated_at: string; stage_info: StageInfo[];
+  funnel: { key: string; label: string; count: number }[]; stages: Record<string, number>;
+  last: Record<"capture" | "extraction" | "search" | "judgement" | "sent" | "confirmed", string | null>;
+  spend: { exa_usd: number; exa_requests: number; oriane_credits: number; pastdev_bytes: number };
+  reconciliation: {
+    neon_sent_claims: number; explorer_available: boolean; explorer_source?: string | null; explorer_pulled_at?: string | null;
+    explorer_claims?: number; in_both?: number; sent_not_in_explorer?: number; in_explorer_not_in_log?: number;
+    explorer_evidence_records?: number | null;
+  };
+  hourly: { hour: string; extracted: number; judged: number; sent: number; confirmed: number }[];
+  skip_reasons: { reason: string; records: number }[];
+  evidence: { stance: string; quote_verified: boolean; links: number; claims: number }[];
+  fetch: { status: string; urls: number }[];
+  fetch_errors: { status: string; error: string; urls: number }[];
+  sent: { kind: string; status: string; records: number; bytes: number; last_sent: string | null; last_confirmed: string | null; errors: number }[];
+  capture_runs: { status: string; runs: number; last: string | null }[];
+  extraction: { status: string; extractions: number; last: string | null }[];
+  politicians: PipelinePolitician[];
+}
+export interface PipelineRecord {
+  politician_id: string; proposition_id: string; canonical_text: string; stage: string; skip_reason: string | null;
+  claims: number; posts: number; types: string[]; first_stated_at: string | null; checkworthiness: number | null;
+  priority: number | null; reach: number | null; judged: number; usable: number; supports: number; contradicts: number;
+  context: number; datapoint_id: string | null; sent_at: string | null; completed_at: string | null;
+}
+export interface PipelineRecords { available: boolean; reason?: string; total: number; offset: number; limit: number; records: PipelineRecord[] }
+export interface PipelineTrace {
+  available: boolean; reason?: string; stage_info: StageInfo[];
+  proposition: { proposition_id: string; canonical_text: string; first_stated_at: string | null };
+  records: { politician_id: string; stage: string; skip_reason: string | null; datapoint_id: string | null; sent_status: string | null; sent_at: string | null; completed_at: string | null; send_error: string | null; in_explorer: boolean | null }[];
+  claims: { claim_id: string; politician_id: string; oriane_id: string; quote: string | null; text: string | null; text_en: string | null; type: string | null; relation_to_politician: string | null; modality: string | null; grounding: string | null; grounding_issues: unknown; checkworthiness: number | null; stated_at: string | null; extractor_version: string | null; extracted_at: string | null; platform: string | null; url: string | null; profile_handle: string | null }[];
+  queue: { status: string; skip_reason: string | null; max_checkworthiness: number | null; reach: number | null; priority: number | null; claim_count: number | null; queued_at: string | null; mapped_at: string | null; updated_at: string | null } | null;
+  searches: { request_id: string; purpose: string | null; query: string | null; domains: string[] | null; result_count: number | null; cost_usd: number | null; latency_ms: number | null; requested_at: string | null; urls: { rank: number; url: string; title: string | null; fetch_status: string | null; attempts: number | null; last_error: string | null }[] }[];
+  evidence: { link_id: string; query_row: string | null; stance: string; confidence: number | null; quote_verified: boolean; summary: string | null; quote: string | null; rationale: string | null; model: string | null; assessed_at: string | null; url: string; publisher_domain: string | null; title: string | null; source_class: string | null; authority_tier: number | null; published_at: string | null; usable: boolean; not_sent_because: string | null }[];
+  sent: { datapoint_id: string; kind: string; politician_id: string | null; audience: string | null; status: string; content_bytes: number | null; sent_at: string | null; completed_at: string | null; error: string | null }[];
+}
+export interface PipelineFilters { politician_id?: string; stage?: string; q?: string; limit?: number; offset?: number }
+
+const qs = (f: object) => new URLSearchParams(Object.entries(f).filter(([, v]) => v !== undefined && v !== "").map(([k, v]) => [k, String(v)]));
+export const pipelineApi = {
+  summary: (iso2: string, s?: AbortSignal) => get<PipelineSummary>(`/api/pipeline/${encodeURIComponent(iso2)}/summary`, s),
+  records: (iso2: string, f: PipelineFilters = {}, s?: AbortSignal) => get<PipelineRecords>(`/api/pipeline/${encodeURIComponent(iso2)}/records?${qs(f)}`, s),
+  trace: (iso2: string, propositionId: string, politicianId: string, s?: AbortSignal) =>
+    get<PipelineTrace>(`/api/pipeline/${encodeURIComponent(iso2)}/trace/${encodeURIComponent(propositionId)}?${qs({ politician_id: politicianId })}`, s),
+};
