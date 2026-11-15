@@ -10,6 +10,8 @@ from dataclasses import dataclass
 import httpx
 import structlog
 
+from polgraph.exa_gateway import PgRateLimiter, retry_after_seconds
+
 from .config import ORIANE_CREDITS_PER_ROW
 
 log = structlog.get_logger(__name__)
@@ -60,13 +62,18 @@ class OrianeClient:
     RETRY_STATUSES = {429, 500, 502, 503, 504}
 
     def __init__(self, api_key: str | None, base_url: str = "https://connect.oriane.xyz", timeout: float = 60.0,
-                 max_retries: int = 4, transport: httpx.BaseTransport | None = None, sleep=time.sleep):
+                 max_retries: int = 4, transport: httpx.BaseTransport | None = None, sleep=time.sleep,
+                 rate_limiter_database_url: str | None = None, requests_per_second: float = 1.0, limiter=None):
         if not api_key:
             raise RuntimeError("ORIANE_API_KEY is not set")
         self._http = httpx.Client(base_url=base_url, timeout=timeout, transport=transport,
                                   headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"})
         self.max_retries = max_retries
         self._sleep = sleep
+        self.limiter = limiter if limiter is not None else (
+            PgRateLimiter(rate_limiter_database_url, f"oriane:{api_key}", requests_per_second)
+            if rate_limiter_database_url else None
+        )
 
     def close(self) -> None:
         self._http.close()
@@ -75,6 +82,8 @@ class OrianeClient:
         attempt = 0
         while True:
             try:
+                if self.limiter is not None:
+                    self.limiter.wait()
                 r = self._http.post(path, params=params, json=body)
             except httpx.TransportError as exc:
                 if attempt >= self.max_retries:
@@ -95,7 +104,8 @@ class OrianeClient:
             log.warning("oriane.error", path=path, status=r.status_code, request_id=rid)
             if r.status_code in self.RETRY_STATUSES and attempt < self.max_retries:
                 attempt += 1
-                self._sleep(min(2 ** attempt, 30))
+                delay = retry_after_seconds(r.headers) if r.status_code in (429, 503) else None
+                self._sleep(min(2 ** attempt, 30) if delay is None else delay)
                 continue
             cls = {402: CreditsExhausted, 400: InvalidQuery, 416: OffsetPastEnd}.get(r.status_code, OrianeError)
             raise cls(r.status_code, message, rid, data)

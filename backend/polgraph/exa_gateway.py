@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import math
 import re
 import sqlite3
 import threading
@@ -45,6 +46,22 @@ class ExaUnavailable(RuntimeError):
 def _status_from_error(exc: Exception) -> int | None:
     m = re.search(r"status(?: code)? (\d{3})", str(exc))
     return int(m.group(1)) if m else None
+
+
+def retry_after_seconds(headers) -> float | None:
+    try:
+        delay = float(headers.get("Retry-After"))
+    except (AttributeError, TypeError, ValueError):
+        return None
+    if not math.isfinite(delay):
+        return None
+    return min(120.0, max(0.0, delay))
+
+
+def _retry_after_from_error(exc: Exception) -> float | None:
+    response = getattr(exc, "response", None)
+    headers = getattr(response, "headers", None) if response is not None else None
+    return retry_after_seconds(headers or getattr(exc, "headers", None))
 
 
 def _retryable(exc: Exception) -> bool:
@@ -288,7 +305,10 @@ class ExaGateway:
                 if attempt > self.settings.exa_max_retries or not _retryable(exc):
                     log.error("exa.call_failed", what=what, attempt=attempt, error=str(exc)[:300])
                     raise
-                delay = min(60.0, 1.5 * 2 ** (attempt - 1))
+                delay = (_retry_after_from_error(exc)
+                         if _status_from_error(exc) in (429, 503) else None)
+                if delay is None:
+                    delay = min(60.0, 1.5 * 2 ** (attempt - 1))
                 log.warning("exa.retry", what=what, attempt=attempt, delay_s=delay,
                             status=_status_from_error(exc), error=str(exc)[:160])
                 self._sleep(delay)

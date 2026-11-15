@@ -3,8 +3,9 @@ NEO4J_HOME := $(CURDIR)/.local/neo4j-community-5.26.0
 NODE_BIN ?= $(CURDIR)/.local/node-v24.22.2-linux-x64/bin
 RUN := cd backend && "$(PY)" -m polgraph
 EXPLORER = cd frontend-3d && PATH="$(NODE_BIN):$$PATH" npm
+MODAL := $(CURDIR)/.venv/bin/modal
 
-.PHONY: portraits sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
+.PHONY: portraits sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run modal-deploy modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -103,3 +104,18 @@ ev-test:
 
 ev-dry-run:
 	$(EV) intake --dry-run person:MX:claudia-sheinbaum-pardo person:MX:clara-marina-brugada-molina
+
+modal-deploy:
+	"$(MODAL)" deploy backend/modal_app.py
+
+modal-systema:
+	"$(MODAL)" run backend/modal_app.py::systema_entrypoint --args "$(ARGS)"
+
+modal-systemb:
+	"$(MODAL)" run backend/modal_app.py::systemb_entrypoint --args "$(ARGS)"
+
+modal-systemc:
+	"$(MODAL)" run backend/modal_app.py::systemc_entrypoint --args "$(ARGS)"
+
+modal-extract:
+	"$(MODAL)" run backend/modal_app.py::extract --shards "$(SHARDS)" --args "$(ARGS)"
