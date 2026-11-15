@@ -272,6 +272,35 @@ def test_date_origin_precedence(conn, ev_settings):
     assert _date_metadata(_PageParser(), "https://news.example/story", None)[2:] == ("none", "none")
 
 
+def test_exa_date_fallback_uses_latest_dated_discovery_row(conn, ev_settings):
+    url = "https://undated-discovery.example/article"
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(
+            200,
+            text="<html><body>An article with no publication metadata.</body></html>",
+            headers={"content-type": "text/html"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    conn.execute(
+        "INSERT INTO ev_discovered_url(url_hash,request_id,url,exa_published_date,discovered_at) "
+        "VALUES (%s,'exa-test',%s,'2024-08-15T00:00:00Z',now()-interval '1 day')",
+        (fetcher._url_hash(url), url),
+    )
+
+    result = fetcher.fetch(url)
+
+    assert result["fetch_status"] == "fetched"
+    assert result["date_origin"] == "exa"
+    published_at = conn.execute("SELECT published_at FROM ev_document WHERE document_id=%s",
+                                (source_id(url),)).fetchone()["published_at"]
+    assert published_at.strftime("%Y-%m-%d") == "2024-08-15"
+    client.close()
+
+
 def test_pdf_text_page_markers_are_snapshotted_for_open_gov(conn, ev_settings):
     load_registry(conn)
     pdf_buffer = BytesIO()

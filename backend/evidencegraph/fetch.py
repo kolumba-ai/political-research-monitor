@@ -370,6 +370,7 @@ class Fetcher:
         if exa_published_date is None:
             discovered = self.conn.execute(
                 "SELECT exa_published_date FROM ev_discovered_url WHERE url_hash=%s "
+                "AND exa_published_date IS NOT NULL "
                 "ORDER BY discovered_at DESC LIMIT 1", (key,)
             ).fetchone()
             exa_published_date = discovered["exa_published_date"] if discovered else None
