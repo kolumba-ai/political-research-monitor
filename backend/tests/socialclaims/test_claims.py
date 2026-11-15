@@ -243,6 +243,24 @@ def test_compound_number_components_are_consumed():
     assert _numbers("6 mil 500 millones") == {"6500"}
 
 
+def test_digit_only_numbers_keep_mixed_format_compounds():
+    text = "dos mil 500 pesos"
+    assert _numbers(text) == {"2500"}
+    assert _numbers(text, include_words=False) == {"2500"}
+    assert _numbers("una planta", include_words=False) == set()
+
+
+def test_mixed_format_compound_paraphrase_matches_quote(conn, graph, sc_settings):
+    quote = "Dos mil 500 pesos fueron destinados"
+    proposition = {**PROP, "values": [{"value": "2500", "unit": "pesos"}]}
+    out, rows = extract_claims(conn, graph, sc_settings, quote,
+                               lambda r: [claim(quote, [r], text="dos mil 500 pesos",
+                                                proposition=proposition)])
+
+    assert out["grounding"] == {"exact": 1}
+    assert "paraphrase_number_not_in_quote" not in rows[0]["grounding_issues"]
+
+
 @pytest.mark.parametrize(("quote", "text"), [
     ("No, Sheinbaum sale a defender el video", "Sheinbaum sale a defender el video"),
     ("cuidan a Andy y no a los mexicanos", "cuidan a Andy y no a los mexicanos"),

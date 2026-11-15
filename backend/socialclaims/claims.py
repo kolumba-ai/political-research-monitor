@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from difflib import SequenceMatcher
 from pathlib import Path
-from typing import Protocol
+from typing import Iterator, Protocol
 
 import httpx
 from psycopg.types.json import Jsonb
@@ -193,7 +193,7 @@ def _number(raw: str, decimal_percent: bool = False) -> str:
     return re.sub(r"\.0+$", "", number)
 
 
-def _numbers(text: str, include_words: bool = True, decimal_percent: bool = False) -> set[str]:
+def _number_values(text: str, decimal_percent: bool = False) -> Iterator[tuple[str, bool]]:
     raw = text or ""
     tokens = list(re.finditer(r"\d[\d,.]*|[^\W\d_]+", raw, flags=re.UNICODE))
 
@@ -221,20 +221,26 @@ def _numbers(text: str, include_words: bool = True, decimal_percent: bool = Fals
             if leading is not None:
                 trailing = integer(tokens[i + 2]) if i + 2 < len(tokens) else None
                 total = leading * 1000 + (trailing or 0)
-                numbers.add(str(total))
+                consumed = tokens[i:i + (3 if trailing is not None else 2)]
+                has_digit = any(re.match(r"\d", word(token)) for token in consumed)
+                yield str(total), has_digit
                 i += 3 if trailing is not None else 2
                 continue
-        if token in NUMBER_WORDS and include_words:
+        if token in NUMBER_WORDS:
             if token in {"cien", "ciento"} and i > 0 and word(tokens[i - 1]) == "por":
                 i += 1
                 continue
-            numbers.add(str(NUMBER_WORDS[token]))
+            yield str(NUMBER_WORDS[token]), False
         elif re.match(r"\d", token):
             is_percent = decimal_percent or bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[tokens[i].end():],
                                                           flags=re.IGNORECASE))
-            numbers.add(_number(token, decimal_percent=is_percent))
+            yield _number(token, decimal_percent=is_percent), True
         i += 1
-    return numbers
+
+
+def _numbers(text: str, include_words: bool = True, decimal_percent: bool = False) -> set[str]:
+    return {value for value, has_digit in _number_values(text, decimal_percent)
+            if include_words or has_digit}
 
 
 def _value_numbers(value: dict) -> list[str]:
