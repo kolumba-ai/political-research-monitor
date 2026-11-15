@@ -327,6 +327,62 @@ def test_empty_text_documents_have_no_simhash_or_duplicate_cluster(conn, ev_sett
     client.close()
 
 
+def test_refetch_refreshes_document_registry_metadata(conn, ev_settings):
+    load_registry(conn)
+    state = {"blocked": False}
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        if state["blocked"]:
+            return httpx.Response(403)
+        return httpx.Response(
+            200,
+            text="<html><body>Official statistics from the registry test.</body></html>",
+            headers={"content-type": "text/html"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    url = "https://www.inegi.org.mx/metadata"
+    assert fetcher.fetch(url)["fetch_status"] == "fetched"
+
+    conn.execute(
+        "UPDATE ev_source_registry SET source_class='news',authority_tier=4,licence_class='copyright',"
+        "can_store_full_text=false WHERE domain='inegi.org.mx'"
+    )
+    assert fetcher.fetch(url)["fetch_status"] == "fetched"
+    document = conn.execute(
+        "SELECT publisher_domain,source_class,authority_tier,licence_class,can_store_full_text "
+        "FROM ev_document WHERE document_id=%s", (source_id(url),)
+    ).fetchone()
+    assert document == {
+        "publisher_domain": "www.inegi.org.mx",
+        "source_class": "news",
+        "authority_tier": 4,
+        "licence_class": "copyright",
+        "can_store_full_text": False,
+    }
+
+    conn.execute(
+        "UPDATE ev_source_registry SET source_class='fact_check',authority_tier=5,licence_class='open_access',"
+        "can_store_full_text=true WHERE domain='inegi.org.mx'"
+    )
+    state["blocked"] = True
+    assert fetcher.fetch(url)["fetch_status"] == "blocked"
+    stubbed_document = conn.execute(
+        "SELECT publisher_domain,source_class,authority_tier,licence_class,can_store_full_text "
+        "FROM ev_document WHERE document_id=%s", (source_id(url),)
+    ).fetchone()
+    assert stubbed_document == {
+        "publisher_domain": "www.inegi.org.mx",
+        "source_class": "fact_check",
+        "authority_tier": 5,
+        "licence_class": "open_access",
+        "can_store_full_text": True,
+    }
+    client.close()
+
+
 def test_pdf_text_page_markers_are_snapshotted_for_open_gov(conn, ev_settings):
     load_registry(conn)
     pdf_buffer = BytesIO()

@@ -304,7 +304,10 @@ class Fetcher:
             "authority_tier,licence_class,can_store_full_text,title,authors,language,outbound_links,date_origin,"
             "date_confidence,fetch_status,published_at,modified_at,first_seen_at) "
             "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) "
-            "ON CONFLICT (document_id) DO UPDATE SET resolved_url=EXCLUDED.resolved_url,title=EXCLUDED.title,"
+            "ON CONFLICT (document_id) DO UPDATE SET resolved_url=EXCLUDED.resolved_url,"
+            "publisher_domain=EXCLUDED.publisher_domain,source_class=EXCLUDED.source_class,"
+            "authority_tier=EXCLUDED.authority_tier,licence_class=EXCLUDED.licence_class,"
+            "can_store_full_text=EXCLUDED.can_store_full_text,title=EXCLUDED.title,"
             "authors=EXCLUDED.authors,language=EXCLUDED.language,outbound_links=EXCLUDED.outbound_links,"
             "date_origin=EXCLUDED.date_origin,date_confidence=EXCLUDED.date_confidence,"
             "fetch_status=EXCLUDED.fetch_status,published_at=EXCLUDED.published_at,modified_at=EXCLUDED.modified_at",
@@ -318,7 +321,10 @@ class Fetcher:
             "INSERT INTO ev_document(document_id,canonical_url,resolved_url,publisher_domain,source_class,"
             "authority_tier,licence_class,can_store_full_text,date_origin,date_confidence,fetch_status,first_seen_at) "
             "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,'none','none',%s,now()) "
-            "ON CONFLICT (document_id) DO UPDATE SET fetch_status=EXCLUDED.fetch_status",
+            "ON CONFLICT (document_id) DO UPDATE SET publisher_domain=EXCLUDED.publisher_domain,"
+            "source_class=EXCLUDED.source_class,authority_tier=EXCLUDED.authority_tier,"
+            "licence_class=EXCLUDED.licence_class,can_store_full_text=EXCLUDED.can_store_full_text,"
+            "fetch_status=EXCLUDED.fetch_status",
             (document_id, canonical_url(url), canonical_url(url), host,
              registry_row["source_class"] if registry_row else None,
              registry_row["authority_tier"] if registry_row else authority_tier(url), licence,
