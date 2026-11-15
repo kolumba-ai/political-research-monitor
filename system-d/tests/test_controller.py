@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 from dataclasses import replace
 
 import pytest
@@ -7,6 +8,21 @@ from system_d.controller import parse_claim_selection, run_simulation
 from system_d.llm import Usage
 from system_d.models import Respondent
 from system_d.stopping import Response
+
+
+class FakeConnection:
+    def __init__(self):
+        self.transaction_exits = []
+
+    @contextmanager
+    def transaction(self):
+        try:
+            yield
+        except BaseException as exc:
+            self.transaction_exits.append(type(exc))
+            raise
+        else:
+            self.transaction_exits.append(None)
 
 
 class FakeStore:
@@ -24,6 +40,7 @@ class FakeStore:
         self.responses = {claim_id: [] for claim_id in claim_ids}
         self.states = {}
         self.batch_numbers = {claim_id: [] for claim_id in claim_ids}
+        self.conn = FakeConnection()
 
     def get_testable_aggregated_claims(self, claim_ids=None, limit=None):
         selected = self.claims
@@ -278,6 +295,39 @@ def test_failed_capped_rewrite_does_not_persist_terminal_state():
         )
 
     assert store.states[("claim-1", "run-1")]["status"] == "polling"
+
+
+def test_capped_upsert_failure_exits_rewrite_transaction_with_exception():
+    store = FakeStore(strata=(("stratum-a", 1.0),))
+    settings = replace(Settings(), seed_batch=1, max_calls=1, min_per_stratum=0, max_usd=1)
+    original_upsert = store.upsert_sampling_state
+
+    def fail_capped_upsert(claim_id, sim_run, stats, status):
+        if status == "capped":
+            raise RuntimeError("sampling state write failed")
+        original_upsert(claim_id, sim_run, stats, status)
+
+    store.upsert_sampling_state = fail_capped_upsert
+
+    def poll_batch(tasks):
+        store.record_response(tasks[0])
+        return [{"ok": True, "usage_usd": 0.001, "completed": True}]
+
+    with pytest.raises(RuntimeError, match="sampling state write failed"):
+        run_simulation(
+            store,
+            "run-1",
+            None,
+            settings,
+            poll_batch,
+            prepare_fn=empty_usage,
+            log=lambda _: None,
+            sample_fn=make_sampler(store),
+            rewrite_fn=lambda *args: None,
+            llm=FakeLLM(),
+        )
+
+    assert store.conn.transaction_exits == [RuntimeError]
 
 
 def test_failed_poll_tasks_are_not_counted_as_attempts():

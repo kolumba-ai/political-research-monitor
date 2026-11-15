@@ -210,8 +210,11 @@ def run_simulation(
             social_sentiment = store.get_social_sentiment(claim_id)
             decision = decide(responses, strata, social_sentiment, settings.stopping_config())
             if decision.status == "capped":
-                queue_rewrite(claim_id)
-            store.upsert_sampling_state(claim_id, sim_run, decision.stats, decision.status)
+                with store.conn.transaction():
+                    queue_rewrite(claim_id)
+                    store.upsert_sampling_state(claim_id, sim_run, decision.stats, decision.status)
+            else:
+                store.upsert_sampling_state(claim_id, sim_run, decision.stats, decision.status)
             latest_decisions[claim_id] = decision
             states[claim_id] = None
             if decision.status in TERMINAL_STATUSES:

@@ -15,6 +15,7 @@ from system_d.agents.polling import poll_task
 from system_d.agents.question_designer import ensure_question_set
 from system_d.agents.social_scorer import score_unscored
 from system_d.config import Settings
+from system_d.controller import run_simulation
 from system_d.db import Store, get_pool
 from system_d.llm import Usage
 from system_d.migrate import apply_migration
@@ -293,5 +294,78 @@ def test_store_agent_round_trip_uses_local_postgres_and_pgvector(local_test_data
             )
             store.upsert_sampling_state(aggregate_id, sim_run, stats, "polling")
             assert store.get_sampling_state(aggregate_id, sim_run)["n_completed"] == 1
+    finally:
+        pool.close()
+
+
+def test_failed_capped_state_write_rolls_back_question_rewrite(local_test_database_url, monkeypatch):
+    with psycopg.connect(local_test_database_url) as conn:
+        apply_migration(conn)
+    settings = replace(
+        Settings(),
+        database_url=local_test_database_url,
+        seed_batch=1,
+        max_calls=1,
+        min_per_stratum=0,
+    )
+    pool = get_pool(settings)
+    try:
+        with pool.connection() as conn:
+            store = Store(conn)
+            seed_data(store)
+            llm = DatabaseFakeLLM()
+            score_unscored(store, llm)
+            aggregate_pending(store, llm, DatabaseFakeEmbedder(), settings)
+            aggregate_id = str(store.get_testable_aggregated_claims()[0]["id"])
+            question_set = ensure_question_set(store, llm, aggregate_id)
+            stratum_id = str(store.list_strata()[0]["id"])
+            respondent = store.add_respondent(stratum_id, {"name": "Atomic rewrite test"})
+            sim_run = f"atomic-rewrite-{uuid.uuid4()}"
+            result = PollResult(
+                believes_claim=True,
+                sentiment=0.5,
+                completed=True,
+                transcript=[
+                    TranscriptMessage(role="agent", text="Pregunta"),
+                    TranscriptMessage(role="respondent", text="Sí"),
+                ],
+            )
+            store.insert_poll_response(
+                aggregate_id,
+                respondent.id,
+                str(question_set["id"]),
+                sim_run,
+                1,
+                result,
+            )
+            count_before = conn.execute(
+                "SELECT count(*) AS count FROM question_sets WHERE aggregated_claim_id = %s",
+                (aggregate_id,),
+            ).fetchone()["count"]
+
+            def fail_upsert(claim_id, run_id, stats, status):
+                if status == "capped":
+                    raise RuntimeError("sampling state write failed")
+
+            monkeypatch.setattr(store, "upsert_sampling_state", fail_upsert)
+            with pytest.raises(RuntimeError, match="sampling state write failed"):
+                run_simulation(
+                    store,
+                    sim_run,
+                    [aggregate_id],
+                    settings,
+                    poll_batch_fn=lambda tasks: pytest.fail("capped claim should not dispatch polls"),
+                    prepare_fn=lambda: Usage("mixed", 0, 0),
+                    log=lambda _: None,
+                    sample_fn=lambda *args: [],
+                    llm=llm,
+                )
+
+            count_after = conn.execute(
+                "SELECT count(*) AS count FROM question_sets WHERE aggregated_claim_id = %s",
+                (aggregate_id,),
+            ).fetchone()["count"]
+            assert count_after == count_before
+            assert store.get_sampling_state(aggregate_id, sim_run) is None
     finally:
         pool.close()
