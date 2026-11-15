@@ -29,7 +29,7 @@ from .systema import GraphReader, read_person
 TAXONOMY_DIR = Path(__file__).parent / "taxonomy"
 MAX_SEGMENT_CHARS = 12_000
 FUZZY_MIN = 0.9
-CHECKS_VERSION = "checks-2"
+CHECKS_VERSION = "checks-3"
 NEGATIONS = {"no", "nunca", "jamas", "ni", "tampoco", "ningun", "ninguna", "ninguno", "nada", "nadie", "sin"}
 CLAIM_TYPES = ["factual", "statistic", "policy_position", "commitment", "forecast", "accusation", "opinion"]
 INFO_ISSUES = {"predicate_negation_normalized", "segment_id_corrected"}
