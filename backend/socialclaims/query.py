@@ -62,19 +62,18 @@ def build_query(snapshot: PersonSnapshot, terms: QueryTerms, platforms: list[str
     """The stored query JSON. Date window and `id.excludes` are per-run and added by `request_body`, so the
     `query_id` stays stable for a person until the identity snapshot or the added terms change."""
     variants = name_variants(snapshot.name, snapshot.aliases, terms.extra_variants, terms.excluded_variants)
-    handles = _handles(terms)
+    by_platform = {p: _dedupe(h.lstrip("@").lower() for h in hs)
+                   for p, hs in sorted(terms.handles.items()) if hs and p in platforms}
     branches: list[dict] = []
-    if handles or terms.profile_ids:
-        own: dict = {}
-        if terms.profile_ids:
-            own["profileId"] = {"includes": sorted(set(terms.profile_ids))}
-        if handles:
-            own["profileHandle"] = {"exactMatch": {"values": handles}}
-        branches.append({"name": "own", "operator": "or", "filters": own})
-        branches.append({"name": "coauthored", "operator": "or",
-                         "filters": {"coAuthorHandles": {"exactMatch": {"values": handles}}}} if handles else None)
-        branches.append({"name": "tagged", "operator": "or",
-                         "filters": {"mentionHandles": {"exactMatch": {"values": handles}}}} if handles else None)
+    # Handles are only unique per platform, so handle branches are split per platform ("tagged:tiktok") and
+    # nesting stays within Oriane's two-level limit. Oriane profile ids are globally unique.
+    if terms.profile_ids:
+        branches.append({"name": "own", "operator": "or",
+                         "filters": {"profileId": {"includes": sorted(set(terms.profile_ids))}}})
+    for name, fld in (("own", "profileHandle"), ("coauthored", "coAuthorHandles"), ("tagged", "mentionHandles")):
+        for p, hs in by_platform.items():
+            branches.append({"name": f"{name}:{p}", "operator": "and",
+                             "filters": {"platform": {"includes": [p]}, fld: {"exactMatch": {"values": hs}}}})
     for name, fld in (("spoken", "transcript"), ("written", "caption"), ("onscreen", "onScreenText")):
         if variants:
             branches.append({"name": name, "operator": "or",

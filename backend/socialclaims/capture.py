@@ -231,7 +231,7 @@ class Capturer:
                 self.conn.execute("INSERT INTO review(item_type, item_id, reason, payload) VALUES ('post', %s, "
                                   "'missing_published_at', %s) ON CONFLICT DO NOTHING", (oid, Jsonb({"run_id": run_id})))
                 continue
-            matched = sorted({m for m in (r.get("matchedQueries") or []) if m in BRANCHES})
+            matched = sorted({m.split(":")[0] for m in (r.get("matchedQueries") or []) if m.split(":")[0] in BRANCHES})
             for m in matched:
                 branch_counts[m] += 1
             raw_id = "raw:" + hashlib.sha256(f"{run_id}|{oid}".encode()).hexdigest()[:20]
