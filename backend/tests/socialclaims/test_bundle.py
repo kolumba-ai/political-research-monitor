@@ -62,3 +62,13 @@ def test_exported_bundles_feed_system_b(graph, conn, tmp_path):
                           (ref["bundle_sha256"],)).fetchone()
     assert r["status"] == "created" and stored["country_id"] == "country:MX"
     assert stored["bundle"]["politician"] == PID
+
+
+def test_bundle_that_loses_its_path_creates_a_non_trackable_version(conn, tmp_path):
+    from socialclaims.systema import KnowledgeBaseGraph
+    nodes, edges = kb_graph()
+    good = KnowledgeBaseGraph(write_kb(tmp_path / "a", nodes, edges))
+    assert identity.sync_ref(conn, good, PID, ["tiktok"])["tracking_status"] == "trackable"
+    broken = KnowledgeBaseGraph(write_kb(tmp_path / "b", nodes, [e for e in edges if e["type"] != "HAS_GOVERNMENT_LEVEL"]))
+    r = identity.sync_ref(conn, broken, PID, ["tiktok"])
+    assert (r["status"], r["tracking_status"]) == ("new_version", "invalid_input")

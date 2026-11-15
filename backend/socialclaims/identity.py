@@ -116,7 +116,8 @@ def sync_ref(conn, graph: GraphReader, politician_id: str, platforms: list[str])
     q = build_query(snap, terms, platforms)
     qid = query_id(q)
     sha = snap.snapshot_sha256()
-    if prev and prev["snapshot_sha256"] == sha and prev["query_id"] == qid:
+    if (prev and prev["snapshot_sha256"] == sha and prev["query_id"] == qid
+            and prev["tracking_status"] == snap.tracking_status):
         return {"politician_id": pid, "status": "unchanged", "version": prev["version"],
                 "tracking_status": prev["tracking_status"], "query_id": qid}
 
