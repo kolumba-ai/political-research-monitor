@@ -5,7 +5,8 @@ Records (each `<plain text>\\n\\nJSON:\\n<compact payload>`):
 
 - claim `clm-<proposition hash>-<person slug>`, timed at `stated_at`, in the politician's audience;
 - document `doc-<source hash>-v<n>`, timed at `published_at` (retrieval time when unknown), project-visible;
-- evidence link `lnk-<link hash>-<person slug>`, timed at `assessed_at`, in the politician's audience.
+- evidence link `lnk-<link hash>-<person slug>`, timed like its claim (the politician's first `stated_at`), in the
+  politician's audience, so date-filtered recall returns a claim together with its evidence.
 
 Only links with a verified quote and a stance other than `irrelevant` are written, and only their documents; a claim
 without any such link is not written at all.
@@ -80,7 +81,7 @@ def claim_items(prop: dict, claims: list[dict]) -> list[dict]:
     for pid in sorted({c["politician_id"] for c in claims}):
         own = [c for c in claims if c["politician_id"] == pid]
         name = own[0]["politician_name"] or person_slug(pid)
-        stated = min(c["stated_at"] for c in own)
+        stated = first_stated(own)[pid]
         lines = [f"CLAIM by or about {name} ({_iso(stated)[:10]}): {prop['canonical_text']}"]
         lines += [f"- \"{c['quote']}\" ({c['platform'] or 'post'} {c['url'] or c['oriane_id']}, {_iso(c['stated_at'])[:10]})"
                   for c in own[:5]]
@@ -121,7 +122,15 @@ def document_item(doc: dict, link: dict) -> dict:
             "metadata": {"kind": "document", "document_id": doc["document_id"]}}
 
 
-def link_items(prop: dict, link: dict, doc: dict, names: dict[str, str]) -> list[dict]:
+def first_stated(claims: list[dict]) -> dict[str, object]:
+    stated: dict[str, object] = {}
+    for c in claims:
+        pid = c["politician_id"]
+        stated[pid] = min(stated[pid], c["stated_at"]) if pid in stated else c["stated_at"]
+    return stated
+
+
+def link_items(prop: dict, link: dict, doc: dict, names: dict[str, str], stated: dict[str, object]) -> list[dict]:
     publisher = doc["publisher"] or doc["publisher_domain"]
     q = allowed_quote(link["quote"], doc["licence_class"])
     items = []
@@ -139,7 +148,8 @@ def link_items(prop: dict, link: dict, doc: dict, names: dict[str, str]) -> list
                    "mapper_version": link["mapper_version"], "politician": {"name": name, "system_a_person_id": pid}}
         items.append({"id": f"lnk-{short_hash(link['link_id'], 16)}-{person_slug(pid)}",
                       "label": f"evidence {link['stance']} {prop['proposition_id']} about {name}"[:200],
-                      "content": _content(text, payload), "timestamp": _iso(link["assessed_at"]),
+                      "content": _content(text, payload),
+                      "timestamp": _iso(stated.get(pid) or prop.get("stated_at") or link["assessed_at"]),
                       "metadata": {"kind": "evidence_link", "proposition_id": prop["proposition_id"],
                                    "document_id": doc["document_id"], "politician_id": pid}})
     return items
@@ -165,12 +175,13 @@ ORDER BY l.assessed_at, l.link_id
 
 def build_items(conn, prop: dict, claims: list[dict], mapper_version: str) -> list[dict]:
     names = {c["politician_id"]: c["politician_name"] for c in claims if c["politician_name"]}
+    stated = first_stated(claims)
     docs: dict[str, dict] = {}
     links: list[dict] = []
     for row in conn.execute(LINKS_SQL, (prop["proposition_id"], mapper_version)).fetchall():
         item = document_item(row, row)
         docs.setdefault(item["id"], item)
-        links += link_items(prop, row, row, names)
+        links += link_items(prop, row, row, names, stated)
     if not links:
         return []
     return claim_items(prop, claims) + list(docs.values()) + links

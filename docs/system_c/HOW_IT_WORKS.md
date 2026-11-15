@@ -115,8 +115,15 @@ past.dev in bulk. Each record is plain text followed by `JSON:` and a compact pa
 | --- | --- | --- | --- | --- |
 | Claim | `clm-<proposition hash>-<person slug>` | first `stated_at` | `pol-<slug>` | `CLAIM by or about {name} ({date}): {canonical text}` plus up to 5 quotes with post links |
 | Document | `doc-<source hash>-v<n>` | `published_at` (retrieval time if unknown, flagged) | none: visible project-wide | `DOCUMENT by {publisher} ({class}, tier {t}) published {date}: {title}. {url}` plus the summary |
-| Evidence link | `lnk-<link hash>-<person slug>` | `assessed_at` | `pol-<slug>` | `EVIDENCE: {publisher} ({date}) SUPPORTS/CONTRADICTS/CONTEXT the claim …` plus reason, quote and source |
+| Evidence link | `lnk-<link hash>-<person slug>` | same as its claim: the politician's first `stated_at` | `pol-<slug>` | `EVIDENCE: {publisher} ({date}) SUPPORTS/CONTRADICTS/CONTEXT the claim …` plus reason, quote and source |
 
+- **Link dates:** a link carries its claim's date, not the date it was judged, so a date-filtered recall
+  (`occurredFrom`/`occurredTo`) returns a claim together with its evidence. The judging time stays in the
+  payload as `assessed_at`. For a claim shared by several politicians, each politician's link takes that
+  politician's own date.
+- **Resending after a format change:** `evidencegraph reproject --dry-run` rebuilds every record already written
+  and counts the ones whose content changed; `--confirm-spend` resends only those (past.dev credits, no Exa or
+  LLM calls).
 - **What gets sent:** only links with a verified quote and a stance other than `irrelevant`, plus their documents.
   A claim mentioning several politicians gets one claim record and one link record per politician.
 - **Quotes:** they follow the storage policy. Open licences keep the full quote; `copyright` allows at most 300
@@ -163,6 +170,8 @@ Run from `backend/` (or prefix `make`, see the targets in parentheses):
 ../.venv/bin/python -m evidencegraph enrich --dry-run --limit 10         # free: next propositions and cost ceiling
 ../.venv/bin/python -m evidencegraph enrich --workers 8 --confirm-spend  # (make ev-enrich ARGS=...) billed, whole queue
 ../.venv/bin/python -m evidencegraph fetch https://www.inegi.org.mx/     # fetch one URL (no Exa)
+../.venv/bin/python -m evidencegraph reproject --dry-run                 # free: past.dev records whose content changed
+../.venv/bin/python -m evidencegraph reproject --confirm-spend           # resend only those (past.dev credits only)
 ```
 
 On Modal: `make modal-systemc ARGS="enrich --limit 10 --confirm-spend"`. The Modal secret `prm-secrets` supplies

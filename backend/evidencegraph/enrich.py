@@ -394,3 +394,44 @@ def dry_run(conn, settings, politician_ids: list[str] | None, limit: int | None)
             **estimate(settings, len(props)),
             "top": [{"proposition_id": p["proposition_id"], "claim": p["canonical_text"],
                      "politicians": p["politician_ids"], "priority": round(p["priority"], 2)} for p in props[:20]]}
+
+
+def reproject(conn, client, settings, country: str = "MX", *, dry_run: bool = False, poll_timeout_s: float = 0.0,
+              sleep=time.sleep) -> dict:
+    """Rebuild the past.dev records of every proposition already written and resend the ones whose content changed
+    (e.g. after a change to how records are built). No Exa or LLM calls; unchanged items are not resent."""
+    past_project = f"claims-{country.lower()}"
+    props = conn.execute(PROP_SQL + "WHERE q.status <> 'mapping' AND q.proposition_id IN (SELECT DISTINCT "
+                         "proposition_id FROM ev_memory_record WHERE past_project = %s AND kind = 'claim' "
+                         "AND deleted_at IS NULL) ORDER BY q.proposition_id", (past_project,)).fetchall()
+    out = {"propositions": len(props), "changed_propositions": 0, "items_changed": 0, "credits_estimate": 0,
+           "credits_sent": 0, "errors": [], "dry_run": dry_run}
+    cache: dict = {}
+    for prop in props:
+        claims = conn.execute(CLAIMS_SQL, (prop["proposition_id"],)).fetchall()
+        items = projection.build_items(conn, prop, claims, settings.mapper_version)
+        sent = {r["datapoint_id"]: r for r in conn.execute(
+            "SELECT datapoint_id, content_sha256, status, audience FROM ev_memory_record WHERE datapoint_id = ANY(%s)",
+            ([it["id"] for it in items],))}
+        for it in items:  # project() hashes items with their audience set
+            if it["metadata"].get("politician_id") and sent.get(it["id"]) and sent[it["id"]]["audience"]:
+                it["audience"] = sent[it["id"]]["audience"]
+        changed = [it for it in items if not (sent.get(it["id"]) and sent[it["id"]]["status"] != "failed"
+                                              and sent[it["id"]]["content_sha256"] == projection.item_sha256(it))]
+        if not changed:
+            continue
+        out["changed_propositions"] += 1
+        out["items_changed"] += len(changed)
+        out["credits_estimate"] += sum(projection.credits_for(it["content"]) for it in changed)
+        if dry_run:
+            continue
+        pushed = projection.project(conn, client, prop, claims, country=country,
+                                    mapper_version=settings.mapper_version, poll_timeout_s=poll_timeout_s,
+                                    sleep=sleep, audience_cache=cache)
+        out["credits_sent"] += pushed.get("credits_sent", 0)
+        out["errors"] += [f"{prop['proposition_id']}: {e}" for e in pushed["errors"]]
+        if len(out["errors"]) >= MAX_CONSECUTIVE_FAILURES:
+            out["stopped"] = "too many past.dev errors"
+            break
+    out["usd_estimate"] = round(out["credits_estimate"] * settings.pastdev_usd_per_credit, 4)
+    return out
