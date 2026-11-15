@@ -20,7 +20,9 @@ claims AS (
     JOIN proposition p ON p.proposition_id = d.proposition_id
     WHERE d.grounding = 'exact'
       AND d.modality IN ('asserted', 'quoted')
-      AND (%(politicians)s::text[] IS NULL OR d.politician_id = ANY(%(politicians)s::text[]))
+      AND (%(politicians)s::text[] IS NULL OR d.proposition_id IN (
+          SELECT proposition_id FROM distilled_claim WHERE politician_id = ANY(%(politicians)s::text[])
+      ))
 ),
 views AS (
     SELECT DISTINCT ON (oriane_id) oriane_id, COALESCE(views, 0) AS views

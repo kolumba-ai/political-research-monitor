@@ -130,6 +130,23 @@ def test_intake_uses_only_latest_raw_capture_for_same_extractor(conn):
                         "WHERE proposition_id='prop-old-capture'").fetchone()["n"] == 0
 
 
+def test_scoped_intake_includes_all_politicians_for_touched_propositions(conn):
+    _base_run(conn)
+    _claim(conn, "shared-a", "prop-shared", cw=0.3, pid=PID)
+    _claim(conn, "shared-b", "prop-shared", cw=0.8, pid=OTHER_PID)
+
+    result = run_intake(conn, [PID], min_cw=0.5, mapper_version="m0")
+    row = conn.execute("SELECT status,politician_ids,max_checkworthiness FROM ev_proposition_queue "
+                       "WHERE proposition_id='prop-shared'").fetchone()
+
+    assert result["status"]["queued"] == 1
+    assert row == {
+        "status": "queued",
+        "politician_ids": sorted([PID, OTHER_PID]),
+        "max_checkworthiness": 0.8,
+    }
+
+
 def test_intake_mapped_rows_and_stale_queue(conn):
     _base_run(conn)
     now = datetime.now(timezone.utc)
