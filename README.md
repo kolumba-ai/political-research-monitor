@@ -14,6 +14,89 @@ The new [Political World Explorer](frontend-3d/README.md) runs at
 Cytoscape/ELK government graph, all connected to the existing API. The original graph remains at `/`.
 Country image discovery and the Discover/Refresh UI are pending; portraits use neutral placeholders.
 
+## Scientific basis: why we start with politicians, social media and the media
+
+This project collects **evidence**, not verdicts. The final judgement on what the public believes, and how
+far that belief follows the evidence, is made with **polls and other survey methods**. The systems in this
+repository build the measured side of that comparison.
+
+### The starting point: the least-trusted sources of public claims
+
+The CEVIPOF *Baromètre de la confiance politique*, wave 17 (Sciences Po / OpinionWay, February 2026)[^cevipof],
+asked French registered voters how much they trust 22 organisations (question Q25; n = 3,166, online
+quota sample, fieldwork 12–28 January 2026, margin of error at most 0.7–1.7 points). The three organisations
+that put claims about politics into public circulation come **last**:
+
+| Organisation (France, January 2026) | Trust ("very" + "somewhat") | Change vs. Feb 2025 |
+| --- | --- | --- |
+| Artisans (highest) | 84% | +2 |
+| Science | 82% | +2 |
+| … | … | … |
+| The media | 29% | −2 |
+| Social networks (Facebook, X, etc.) | 15% | −3 |
+| Political parties | 15% | −1 |
+
+Source: CEVIPOF barometer, wave 17, p. 40. On the same page, 49% say they have *no trust at all* in social
+networks and 42% none at all in political parties.
+
+The pattern holds in Mexico, where our first pilots run, but not identically. INEGI's ENCOAP 2025 (published
+16 April 2026)[^encoap] finds **political parties** to be the least-trusted social and political actor it
+measures: 33.7% have high or moderately high trust, compared with 75.9% for the armed forces. **The media
+do better in Mexico** (51.9% in ENCOAP). Trust in *news* specifically is low, though: 36% in the Reuters
+Institute Digital News Report 2025[^dnr]. We therefore do not assume that the media are equally distrusted
+everywhere; we measure it country by country.
+
+### Collective claims
+
+We call the set of statements made **by and about a politician** across these three channels the
+**collective claims** about that politician:
+
+1. **Politicians and parties:** what officeholders say about their own record, plans and opponents
+   (System A identifies who holds which office; System B extracts their statements).
+2. **Social media:** what is posted about them, by them or by others, on TikTok, Instagram, YouTube, X and
+   Facebook (System B, via Oriane).
+3. **The media:** the news coverage that repeats, amplifies or disputes those claims (System C).
+
+These are the channels the public trusts least, and so the ones where the gap between what is claimed and
+what is supported by evidence is most worth measuring. Social media also matters because false statements
+there have been shown to spread farther and faster than true ones[^vosoughi].
+
+### From claims to evidence to polls
+
+| Step | Question | Where |
+| --- | --- | --- |
+| 1. Who | Who holds which office, with sources? | System A (knowledge graph) |
+| 2. What is claimed | Which checkable claims are made about each politician, when, and by whom? | System B (social claims) |
+| 3. What the evidence says | Which documents (news, official statistics, government, academic, think-tank and fact-check sources) support, contradict or fail to address each claim, as known at each point in time? | System C (evidence graph) |
+| 4. What the public believes | Do people believe the claims? Does belief follow the evidence, the source, or the volume of coverage? | **Polls and other survey methods (to be designed)** |
+
+Step 4 follows an established line of research. Agenda-setting studies compare how much the media cover
+each issue with what people tell pollsters is most important, and find strong correlations[^agenda].
+We extend that comparison from *issues* to *claims*: alongside how much each claim is repeated, we record
+whether it is supported or contradicted by evidence, so polls can test whether public belief follows the
+evidence or the repetition.
+
+### What this does not claim
+
+* The barometer measures **trust in institutions**, not whether their claims are true. Low trust is our
+  reason to study these channels, not evidence that their claims are false.
+* France and Mexico differ (notably on the media), and we have not yet sourced comparable data for every
+  country in the graph. Each country needs its own trust baseline before results are compared.
+* The pipeline produces evidence and timestamps. It does not decide what is true for the public; that is
+  what the polls are for.
+
+[^cevipof]: CEVIPOF – Sciences Po and OpinionWay, *En quoi les Français ont-ils confiance aujourd'hui ? Le
+    baromètre de la confiance politique*, vague 17, February 2026, p. 40.
+    <https://www.sciencespo.fr/cevipof/sites/sciencespo.fr.cevipof/files/Barometre_confiance_CEVIPOFVague17_fev2026_vd1.pdf>
+[^encoap]: INEGI, *Encuesta Nacional de Confianza en la Administración Pública (ENCOAP) 2025*, press release,
+    16 April 2026. <https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/encoap/ENCOAP2025_RR.pdf>
+[^dnr]: Reuters Institute for the Study of Journalism, *Digital News Report 2025*, Mexico country page.
+    <https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2025/mexico>
+[^vosoughi]: Vosoughi, S., Roy, D. and Aral, S. (2018). The spread of true and false news online.
+    *Science*, 359(6380), 1146–1151. <https://doi.org/10.1126/science.aap9559>
+[^agenda]: McCombs, M. E. and Shaw, D. L. (1972). The agenda-setting function of mass media. *Public Opinion
+    Quarterly*, 36(2), 176–187. <https://doi.org/10.1086/267990>
+
 > **Building or extending a country?** Follow [AGENTS.md](AGENTS.md) first: derive the structure from the
 > country's constitution, get it reviewed, and only then fetch politicians.
 
