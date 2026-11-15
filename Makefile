@@ -5,7 +5,7 @@ RUN := cd backend && "$(PY)" -m polgraph
 EXPLORER = cd frontend-3d && PATH="$(NODE_BIN):$$PATH" npm
 MODAL := $(CURDIR)/.venv/bin/modal
 
-.PHONY: portraits sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run modal-deploy modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
+.PHONY: portraits sc-pull sc-push sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run modal-deploy modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -89,6 +89,10 @@ sc-dry-run:
 # Export past.dev claim data points to var/socialclaims/claims/MX (read-only; used by /api/claims and the explorer).
 sc-pull:
 	$(SC) pull-pastdev --country MX
+
+# Send current claims from Postgres to past.dev (billed). Free estimate first: make sc-push ARGS=--dry-run
+sc-push:
+	$(SC) push-pastdev --country MX $(ARGS)
 
 sc-test:
 	cd backend && "$(PY)" -m pytest -q tests/socialclaims
