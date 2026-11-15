@@ -64,5 +64,11 @@ cd backend && ../.venv/bin/python -m socialclaims capture "Claudia Sheinbaum" --
 make sc-test
 ```
 
+After a name-variant fix or an `add-term exclude_variant`, re-check stored name-only matches (no API call; dry run without `--apply`). Posts whose saved text holds none of the current variants move to relevance `low`; nothing is deleted:
+
+```bash
+cd backend && ../.venv/bin/python -m socialclaims rematch person:MX:maria-lourdes-paz-reyes --apply
+```
+
 Coverage caveat for every output: only Oriane-indexed content, roughly the last 3 months, up to a week of
 indexing lag, creators with 5,000+ followers. "No match" is not evidence that nothing was said.
