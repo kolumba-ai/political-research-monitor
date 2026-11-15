@@ -2,7 +2,7 @@
 -- Params: %(politicians)s text[] or NULL (all), %(min_cw)s real (0.5), %(mapper_version)s text.
 -- Only claims from each (post, politician)'s latest successful extraction count, so older extractor runs never double count.
 WITH latest AS (
-    SELECT DISTINCT ON (oriane_id, politician_id) oriane_id, politician_id, extractor_version
+    SELECT DISTINCT ON (oriane_id, politician_id) oriane_id, politician_id, raw_id, extractor_version
     FROM claim_extraction
     WHERE status = 'ok'
     ORDER BY oriane_id, politician_id, extracted_at DESC
@@ -16,7 +16,7 @@ claims AS (
            (d.type IN ('policy_position', 'forecast', 'opinion')) AS not_verifiable
     FROM distilled_claim d
     JOIN latest l ON l.oriane_id = d.oriane_id AND l.politician_id = d.politician_id
-                 AND l.extractor_version = d.extractor_version
+                 AND l.raw_id = d.raw_id AND l.extractor_version = d.extractor_version
     JOIN proposition p ON p.proposition_id = d.proposition_id
     WHERE d.grounding = 'exact'
       AND d.modality IN ('asserted', 'quoted')

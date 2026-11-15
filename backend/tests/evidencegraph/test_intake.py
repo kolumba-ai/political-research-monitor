@@ -21,10 +21,11 @@ def _base_run(conn):
 
 
 def _claim(conn, name, proposition_id, claim_type="statistic", cw=0.8, *, pid=PID, version="v1",
-           grounding="exact", modality="asserted", period_end=None, views=10, extracted_at=None):
+           grounding="exact", modality="asserted", period_end=None, views=10, extracted_at=None,
+           oriane_id=None, raw_id=None):
     extracted_at = extracted_at or datetime.now(timezone.utc)
-    oriane_id = f"post-{name}"
-    raw_id = f"raw-{name}-{version}"
+    oriane_id = oriane_id or f"post-{name}"
+    raw_id = raw_id or f"raw-{name}-{version}"
     conn.execute(
         "INSERT INTO raw_data(raw_id,run_id,oriane_id,platform,projection,payload_sha256,pipeline_mode,"
         "published_at,captured_at) VALUES (%s,%s,%s,'tiktok','full','hash','research_only',%s,%s)",
@@ -108,6 +109,25 @@ def test_intake_eligibility_priority_latest_claims_and_idempotence(conn):
     assert run_intake(conn, [PID], mapper_version="m0")["status"] == result["status"]
     assert conn.execute("SELECT count(*) AS n FROM ev_proposition_queue WHERE proposition_id='prop-other'").fetchone()["n"] == 0
     assert run_intake(conn, [OTHER_PID], mapper_version="m0")["status"]["queued"] == 1
+
+
+def test_intake_uses_only_latest_raw_capture_for_same_extractor(conn):
+    _base_run(conn)
+    now = datetime.now(timezone.utc)
+    _claim(conn, "old-capture", "prop-old-capture", version="checks-1", cw=0.99,
+           oriane_id="same-post", raw_id="raw-old", extracted_at=now - timedelta(hours=1))
+    _claim(conn, "new-capture", "prop-new-capture", version="checks-1", cw=0.8,
+           oriane_id="same-post", raw_id="raw-new", extracted_at=now)
+
+    result = run_intake(conn, [PID], mapper_version="m0")
+
+    assert result["upserted"] == 1
+    assert conn.execute("SELECT status,max_checkworthiness FROM ev_proposition_queue "
+                        "WHERE proposition_id='prop-new-capture'").fetchone() == {
+                            "status": "queued", "max_checkworthiness": 0.8,
+                        }
+    assert conn.execute("SELECT count(*) AS n FROM ev_proposition_queue "
+                        "WHERE proposition_id='prop-old-capture'").fetchone()["n"] == 0
 
 
 def test_intake_mapped_rows_and_stale_queue(conn):
