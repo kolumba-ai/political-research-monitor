@@ -13,7 +13,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Protocol
 
-from polgraph.bundle import BUNDLE_FORMAT, JsonlGraph, build_bundle, bundle_filename, bundle_sha256
+from polgraph.bundle import BUNDLE_FORMAT, JsonlGraph, build_bundle, bundle_sha256
 from polgraph.ids import normalize_text
 
 TRACKABLE_STATUSES = {"verified", "official_single"}
@@ -44,11 +44,9 @@ class BundleDir:
                 self._index[entry["politician"]] = (idx.parent / entry["file"], node)
 
     def bundle(self, politician_id: str) -> dict | None:
+        """Only politicians listed in an `index.json`; a leftover file from an older export is ignored."""
         hit = self._index.get(politician_id)
-        if not hit:
-            path = next(iter(self.path.glob(f"*/{bundle_filename(politician_id)}")), None)
-            return json.loads(path.read_text()) if path else None
-        return json.loads(hit[0].read_text())
+        return json.loads(hit[0].read_text()) if hit else None
 
     def get_node(self, node_id: str) -> dict | None:
         hit = self._index.get(node_id)

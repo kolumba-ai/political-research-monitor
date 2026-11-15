@@ -74,3 +74,15 @@ def test_bundle_that_loses_its_path_creates_a_non_trackable_version(conn, tmp_pa
     broken = KnowledgeBaseGraph(write_kb(tmp_path / "b", nodes, [e for e in edges if e["type"] != "HAS_GOVERNMENT_LEVEL"]))
     r = identity.sync_ref(conn, broken, PID, ["tiktok"])
     assert (r["status"], r["tracking_status"]) == ("new_version", "invalid_input")
+
+
+def test_politician_dropped_from_export_is_missing(graph, tmp_path):
+    out = tmp_path / "bundles"
+    export_bundles(graph, out, ["MX"])
+    nodes, edges = kb_graph()
+    from socialclaims.systema import KnowledgeBaseGraph
+    smaller = KnowledgeBaseGraph(write_kb(tmp_path / "kb2", [n for n in nodes if n["id"] != PID],
+                                          [e for e in edges if PID not in (e["src"], e["dst"])]))
+    export_bundles(smaller, out, ["MX"])
+    assert not (out / "MX" / "person__MX__claudia-sheinbaum-pardo.json").exists()
+    assert read_person(BundleDir(out), PID) is None

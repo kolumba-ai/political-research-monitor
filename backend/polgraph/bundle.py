@@ -150,6 +150,8 @@ def export_bundles(g, out: Path, countries: list[str]) -> dict:
     for iso2 in (c.upper() for c in countries):
         cdir = out / iso2
         cdir.mkdir(parents=True, exist_ok=True)
+        for stale in cdir.glob("person__*.json"):
+            stale.unlink()
         index = []
         for p in g.nodes_by_label("Person"):
             if (p.get("country") or "").upper() != iso2:
