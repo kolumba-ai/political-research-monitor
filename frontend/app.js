@@ -14,7 +14,7 @@ const enc = encodeURIComponent;
 function nodeLabel(n) {
   let t = n.name || n.id;
   if (n._seat) t = `${n._seat} · ${t}`;
-  if (n.label === "Country" && n.regime_class) t += ` · ${n.regime_class}`;
+  if (n.label === "Country") t += ` · ${n.regime_group || "Unclassified"}`;
   if (n.label === "PoliticalOffice" && n.is_elected === true) t += " • elected";
   if (n.child_count) t += `  [${n.child_count}]`;
   return t.length > 60 ? t.slice(0, 58) + "…" : t;
@@ -198,15 +198,36 @@ const HIDDEN = new Set(["id", "label", "name", "democracy_gate", "contact_gate",
   "regime_class", "regime_basis", "regime_sources_agree", "eligible", "dimensions", "laws", "search",
   "aliases", "keywords", "checked_urls", "agent_citations", "review", "gate", "status_reasons", "relevant_policy"]);
 
+// Index publishers and the compilation pages the world classification reads (see backend/polgraph/world.py).
+const INDEX_INFO = {
+  eiu: { name: "EIU Democracy Index", publisher: "Economist Intelligence Unit",
+         url: "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+         compilation: "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index" },
+  freedom_house: { name: "Freedom in the World", publisher: "Freedom House",
+                   url: "https://freedomhouse.org/report/freedom-world",
+                   compilation: "https://en.wikipedia.org/wiki/Freedom_in_the_World" },
+  vdem: { name: "Regimes of the World", publisher: "V-Dem Institute", url: "https://www.v-dem.net/" },
+};
+const ext = (href, text) => html`<a href=${href} target="_blank" rel="noreferrer">${text}</a>`;
+
 function Regime({ n }) {
   const src = n.regime_by_source || {};
+  const keys = Object.keys(src);
+  const primary = ["eiu", "freedom_house", "vdem"].find((k) => k in src);
+  const p = primary && src[primary], info = primary && INDEX_INFO[primary];
   return html`<div>
     <h3>Regime classification</h3>
     <div class="gate"><b>${n.regime_group || "Unclassified"}</b>${n.regime_class && n.regime_class !== n.regime_group ? html` — ${n.regime_class}` : ""}
-      <div class="snip">Basis: ${n.regime_basis || "—"}${n.regime_sources_agree === false ? " · indices disagree (all shown below)" : ""}</div>
-      ${Object.keys(src).length > 0 && html`<table><thead><tr><th>Index</th><th>Class</th><th>Group</th><th>Year</th><th>Evidence</th></tr></thead>
-        <tbody>${Object.entries(src).map(([k, v]) => html`<tr key=${k}><td>${k}</td><td>${v.class}</td><td>${v.group}</td>
-          <td>${v.year || "—"}</td><td>${v.evidence_url ? html`<a href=${v.evidence_url} target="_blank" rel="noreferrer">${v.verification === "verified" ? "publisher" : "compilation"}</a>` : "—"}</td></tr>`)}</tbody></table>`}
+      ${p ? html`<div class="snip" style=${{ marginTop: "4px" }}>
+          <b>Source:</b>${" "}${ext(info.url, `${info.publisher}, ${info.name}`)}${` ${p.year || ""} · read from `}${ext(p.evidence_url, p.verification === "verified" ? "the publisher's country page" : "the published index table")}
+          ${n.regime_sources_agree === false ? html`<br />Indices disagree; all ratings are listed below.` : ""}</div>`
+        : html`<div class="snip" style=${{ marginTop: "4px" }}>No index rates this country or territory. Checked:${" "}${ext(INDEX_INFO.eiu.compilation, "EIU Democracy Index table")}${" and "}${ext(INDEX_INFO.freedom_house.compilation, "Freedom House status table")}.</div>`}
+      ${keys.length > 0 && html`<table style=${{ marginTop: "6px" }}><thead><tr><th>Index</th><th>Rating</th><th>Group</th><th>Year</th><th>Source</th></tr></thead>
+        <tbody>${keys.map((k) => { const v = src[k], ii = INDEX_INFO[k] || { name: k, url: v.evidence_url };
+          return html`<tr key=${k}><td>${ext(ii.url, ii.publisher || ii.name)}</td><td>${v.class}</td><td>${v.group}</td>
+          <td>${v.year || "—"}</td><td>${v.evidence_url ? ext(v.evidence_url, v.verification === "verified" ? "publisher page" : "index table") : "—"}</td></tr>`; })}</tbody></table>`}
+      <div class="snip" style=${{ marginTop: "6px" }}>Groups: Democratic = Full/Flawed democracy, Free, Liberal/Electoral democracy ·
+        Partly democratic = Hybrid regime, Partly free, Electoral autocracy · Authoritarian = Authoritarian, Not free, Closed autocracy.</div>
     </div></div>`;
 }
 
