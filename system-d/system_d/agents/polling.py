@@ -14,7 +14,7 @@ from ..channels.base import Channel
 from ..channels.simulator import SimulatorChannel
 from ..config import Settings
 from ..db import Store, configure_connection
-from ..llm import LLM, Usage, UsageMeter, make_llm
+from ..llm import LLM, LLMError, MeteredLLM, Usage, UsageMeter, make_llm
 from ..models import PollResult, PollScore, QuestionScript, Respondent, TranscriptMessage
 from ..prompts import POLL_SCORER_SYSTEM, POLL_SCORER_USER
 
@@ -109,8 +109,9 @@ def poll_task(
     llm: LLM | None = None,
 ) -> dict[str, Any]:
     conn = None
+    usage_meter = UsageMeter()
     try:
-        client = llm or make_llm(settings)
+        client = MeteredLLM(llm or make_llm(settings), usage_meter)
         if store is not None:
             return _poll_task_with_store(task, settings, store, client)
         if not settings.database_url:
@@ -118,6 +119,15 @@ def poll_task(
         conn = psycopg.connect(settings.database_url, row_factory=dict_row, autocommit=True)
         configure_connection(conn)
         return _poll_task_with_store(task, settings, Store(conn), client)
+    except LLMError as exc:
+        usage = usage_meter.usage
+        return {
+            "ok": False,
+            "error": str(exc),
+            "usage_usd": usage.cost_usd(settings),
+            "input_tokens": usage.input_tokens,
+            "output_tokens": usage.output_tokens,
+        }
     finally:
         if conn is not None:
             conn.close()

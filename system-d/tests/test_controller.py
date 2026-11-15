@@ -299,6 +299,58 @@ def test_failed_poll_tasks_are_not_counted_as_attempts():
     assert store.responses["claim-1"] == []
 
 
+def test_failed_task_spend_triggers_the_next_round_spend_cap():
+    store = FakeStore()
+    settings = replace(Settings(), seed_batch=2, max_calls=100, min_per_stratum=0, max_usd=0.5)
+    batches = []
+    logs = []
+
+    def poll_batch(tasks):
+        batches.append(tasks)
+        results = []
+        for index, task in enumerate(tasks):
+            if index == 0:
+                results.append(
+                    {
+                        "ok": False,
+                        "error": "scorer failed",
+                        "usage_usd": 1.0,
+                        "input_tokens": 100,
+                        "output_tokens": 50,
+                    }
+                )
+            else:
+                store.record_response(task)
+                results.append(
+                    {
+                        "ok": True,
+                        "usage_usd": 0.001,
+                        "completed": True,
+                        "input_tokens": 1,
+                        "output_tokens": 1,
+                    }
+                )
+        return results
+
+    summaries = run_simulation(
+        store,
+        "run-1",
+        None,
+        settings,
+        poll_batch,
+        prepare_fn=empty_usage,
+        log=logs.append,
+        sample_fn=make_sampler(store),
+        llm=FakeLLM(),
+    )
+
+    assert len(batches) == 1
+    assert summaries[0].poll_spend_usd == pytest.approx(1.001)
+    assert summaries[0].input_tokens == 101
+    assert summaries[0].output_tokens == 51
+    assert any("SPEND CAP" in message for message in logs)
+
+
 def test_persona_generation_cost_alone_stops_poll_dispatch():
     store = FakeStore()
     settings = replace(Settings(), seed_batch=10, min_per_stratum=2, max_usd=1.0)

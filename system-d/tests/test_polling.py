@@ -5,7 +5,7 @@ import system_d.agents.polling as polling_module
 from system_d.agents.polling import _is_refusal, poll_task, run_poll
 from system_d.channels.simulator import SimulatorChannel
 from system_d.config import Settings
-from system_d.llm import Usage
+from system_d.llm import LLMError, Usage
 from system_d.models import PollScore, QuestionScript, Respondent
 
 SCRIPT = QuestionScript(
@@ -155,6 +155,11 @@ class WorkerLLM(ScoringLLM):
         return "Creo que sí, y me parece positiva.", Usage("claude-sonnet-5-5", 3, 2)
 
 
+class FailingScorerLLM(WorkerLLM):
+    def complete_json(self, **kwargs):
+        raise LLMError("scorer failed", usage=Usage("gpt-6.1-sol", 7, 5))
+
+
 class PollTaskStore:
     def __init__(self):
         self.inserted = None
@@ -209,6 +214,35 @@ def test_poll_task_persists_response_and_returns_usage(monkeypatch):
     assert "aggregated_claim_id" not in llm.chat_systems[0]
     assert "aggregated_claim_id" not in store.respondent.persona
     assert conversation_keys == ["run-1|claim-id"]
+
+
+def test_poll_task_reports_chat_and_failed_scorer_usage():
+    store = PollTaskStore()
+    llm = FailingScorerLLM()
+    settings = Settings()
+
+    result = poll_task(
+        {
+            "aggregated_claim_id": "claim-id",
+            "question_set_id": "question-id",
+            "respondent_id": "respondent-id",
+            "sim_run": "run-1",
+            "batch_no": 2,
+        },
+        settings,
+        store=store,
+        llm=llm,
+    )
+
+    expected_usage = Usage("claude-sonnet-5-5", 9, 6) + Usage("gpt-6.1-sol", 7, 5)
+    assert result == {
+        "ok": False,
+        "error": "scorer failed",
+        "usage_usd": expected_usage.cost_usd(settings),
+        "input_tokens": 16,
+        "output_tokens": 11,
+    }
+    assert store.inserted is None
 
 
 @pytest.mark.parametrize("fail_poll", [False, True])

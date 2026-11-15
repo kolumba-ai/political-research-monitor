@@ -123,7 +123,12 @@ class MeteredLLM:
         return result, usage
 
     def chat(self, system: str, messages: list[dict[str, str]], max_tokens: int) -> tuple[str, Usage]:
-        result, usage = self.llm.chat(system=system, messages=messages, max_tokens=max_tokens)
+        try:
+            result, usage = self.llm.chat(system=system, messages=messages, max_tokens=max_tokens)
+        except LLMError as exc:
+            if exc.usage is not None:
+                self.meter.add(exc.usage)
+            raise
         self.meter.add(usage)
         return result, usage
 

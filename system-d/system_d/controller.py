@@ -266,17 +266,22 @@ def run_simulation(
             if isinstance(result, BaseException):
                 _write_log(log, f"poll task failed for claim {claim_id}: {type(result).__name__}")
                 continue
-            if not isinstance(result, dict) or not result.get("ok"):
-                error = result.get("error") if isinstance(result, dict) else "invalid task result"
+            if not isinstance(result, dict):
+                error = "invalid task result"
+                error_type = type(error).__name__ if isinstance(error, BaseException) else "reported error"
+                _write_log(log, f"poll task failed for claim {claim_id}: {error_type}")
+                continue
+            task_cost = float(result.get("usage_usd", 0.0))
+            poll_spend += task_cost
+            poll_input_tokens += int(result.get("input_tokens", 0))
+            poll_output_tokens += int(result.get("output_tokens", 0))
+            if not result.get("ok"):
+                error = result.get("error")
                 error_type = type(error).__name__ if isinstance(error, BaseException) else "reported error"
                 _write_log(log, f"poll task failed for claim {claim_id}: {error_type}")
                 continue
             successful += 1
-            task_cost = float(result.get("usage_usd", 0.0))
             known_costs.append(task_cost)
-            poll_spend += task_cost
-            poll_input_tokens = poll_input_tokens + int(result.get("input_tokens", 0))
-            poll_output_tokens = poll_output_tokens + int(result.get("output_tokens", 0))
         if successful == 0:
             _write_log(log, "No poll tasks succeeded; failed tasks were not counted as attempts.")
             break
