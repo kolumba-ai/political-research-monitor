@@ -33,6 +33,9 @@ def _dedupe(values) -> list[str]:
     return out
 
 
+NAME_PARTICLES = {"de", "del", "la", "las", "los", "y"}
+
+
 def name_variants(name: str, aliases: list[str] = (), extra: list[str] = (), excluded: list[str] = ()) -> list[str]:
     """Full name, accent-free form, and Spanish short forms (drop the maternal surname; given name + paternal).
     A bare surname is never generated automatically; add it as an explicit extra term only when distinctive."""
@@ -41,8 +44,14 @@ def name_variants(name: str, aliases: list[str] = (), extra: list[str] = (), exc
         toks = full.split()
         forms = [full]
         if len(toks) >= 3:
-            # Spanish names: given name(s) + paternal + maternal surname. Each given name + paternal surname.
-            forms += [" ".join(toks[:-1]), *(f"{g} {toks[-2]}" for g in toks[:-2])]
+            # Spanish names: given name(s) + paternal + maternal surname. Particles ("de la Garza") belong to the
+            # paternal surname and are never a given name ("María de Lourdes" yields "María", "Lourdes").
+            i = len(toks) - 2
+            while i > 1 and toks[i - 1].lower() in NAME_PARTICLES:
+                i -= 1
+            paternal = " ".join(toks[i:-1])
+            forms += [" ".join(toks[:-1]),
+                      *(f"{g} {paternal}" for g in toks[:i] if g.lower() not in NAME_PARTICLES)]
         for f in forms:
             out += [f, strip_accents(f)]
     out += list(extra)
