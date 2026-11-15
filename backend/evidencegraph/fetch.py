@@ -380,6 +380,12 @@ class Fetcher:
         try:
             for redirects in range(6):
                 current_registry = lookup(self.conn, current)
+                if current_registry and current_registry["list"] == "block":
+                    error = "redirect to blocked domain"
+                    self._record_status(key, url, "blocked", error)
+                    self._document_stub(original_id, url, registry_row, "blocked")
+                    return {"url": url, "document_id": original_id, "fetch_status": "blocked",
+                            "error": error, "snapshot_path": None}
                 allowed, robots_delay = self._robots_allowed(current)
                 if not allowed:
                     self._record_status(key, url, "robots_disallowed", None)
@@ -452,6 +458,13 @@ class Fetcher:
                 if parser.canonical:
                     canonical_candidate = urljoin(current, parser.canonical)
                     if registrable_domain(canonical_candidate) == registrable_domain(current):
+                        canonical_registry = lookup(self.conn, canonical_candidate)
+                        if canonical_registry and canonical_registry["list"] == "block":
+                            error = "canonical target is block-listed"
+                            self._record_status(key, url, "blocked", error)
+                            self._document_stub(original_id, url, registry_row, "blocked")
+                            return {"url": url, "document_id": original_id, "fetch_status": "blocked",
+                                    "error": error, "http_status": response_status, "snapshot_path": None}
                         resolved_url = canonical_candidate
                     else:
                         log.warning("fetch.canonical_ignored", url=current, canonical=canonical_candidate)

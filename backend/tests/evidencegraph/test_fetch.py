@@ -119,6 +119,61 @@ def test_cross_domain_canonical_is_ignored_and_keeps_fetched_registry(conn, ev_s
     client.close()
 
 
+def test_redirect_to_blocked_domain_is_not_requested(conn, ev_settings):
+    load_registry(conn)
+    requested = []
+
+    def handler(request):
+        requested.append(str(request.url))
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(302, headers={"location": "https://www.tiktok.com/video/blocked"})
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    url = "https://www.inegi.org.mx/redirect"
+    blocked_url = "https://www.tiktok.com/video/blocked"
+    result = fetcher.fetch(url)
+
+    assert result["fetch_status"] == "blocked"
+    assert result["error"] == "redirect to blocked domain"
+    assert blocked_url not in requested
+    assert conn.execute("SELECT last_error FROM ev_fetch_queue WHERE url_hash=%s",
+                        (fetcher._url_hash(url),)).fetchone()["last_error"] == "redirect to blocked domain"
+    assert conn.execute("SELECT count(*) AS n FROM ev_document WHERE document_id=%s",
+                        (source_id(blocked_url),)).fetchone()["n"] == 0
+    client.close()
+
+
+def test_canonical_to_blocked_path_is_rejected(conn, ev_settings):
+    load_registry(conn)
+    conn.execute(
+        "INSERT INTO ev_source_registry(domain,source_class,publisher,authority_tier,licence_class,"
+        "can_store_full_text,added_by,added_at) VALUES "
+        "('news.example','news','Example News',2,'copyright',false,'test',now()),"
+        "('news.example/blocked',NULL,'Blocked path',3,'unknown',false,'test',now())"
+    )
+    conn.execute("UPDATE ev_source_registry SET list='block' WHERE domain='news.example/blocked'")
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(
+            200,
+            text='<html><head><link rel="canonical" href="/blocked"></head>'
+                 '<body>News article from an allowed path.</body></html>',
+            headers={"content-type": "text/html"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    result = fetcher.fetch("https://news.example/article")
+
+    assert result["fetch_status"] == "blocked"
+    assert result["error"] == "canonical target is block-listed"
+    assert conn.execute("SELECT count(*) AS n FROM ev_document WHERE document_id=%s",
+                        (source_id("https://news.example/blocked"),)).fetchone()["n"] == 0
+    client.close()
+
+
 def test_copyright_pages_are_not_snapshotted_and_duplicates_cluster(conn, ev_settings):
     load_registry(conn)
 
