@@ -1,0 +1,412 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "src": "body:MX:national:presidency-and-federal-executive-administration",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:national",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:MX:national:presidency-and-federal-executive-administration",
+   "src": "level:MX:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:0a7acf73b1ad",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "src": "office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:07:40+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:35+00:00",
+   "claim": "office exists: President of Mexico",
+   "dst": "source:23d4ee9e868c2a18",
+   "first_seen": "2026-11-14T23:07:35+00:00",
+   "src": "office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:35+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "end": "2030-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:07:40+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:claudia-sheinbaum-pardo",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:0a7acf73b1ad",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:07:40+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:07:40+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Sigamos Haciendo Historia",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "src": "person:MX:claudia-sheinbaum-pardo",
+   "term_id": "term:0a7acf73b1ad",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:07:40+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:40+00:00",
+   "claim": "Claudia Sheinbaum Pardo holds office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "dst": "source:08fc99faa8c480db",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "snippet": "…Biografía - Presidenta de México Biografía - Presidenta de México ## Claudia Sheinbaum Pardo Se formó como física en las aulas de la Facultad de Ciencias de la UNAM y cursó estudios de maestría en Ingeniería Energética; fue la primera mujer…",
+   "src": "term:0a7acf73b1ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:40+00:00",
+   "claim": "Claudia Sheinbaum Pardo holds office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "dst": "source:23d4ee9e868c2a18",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "snippet": "…so de la Unión, LXVI Legislatura Versión estenográfica de la sesión de Congreso General del martes 1 de octubre de 2024, en la que la ciudadana Claudia Sheinbaum Pardo, presidenta electa de los Estados Unidos Mexicanos, prestará protesta constitucional Diputada Ivonne Aracelly Ortega Pacheco, PMC Senador Rafael Alejand…",
+   "src": "term:0a7acf73b1ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:40+00:00",
+   "claim": "Claudia Sheinbaum Pardo holds office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "dst": "source:48c09e29f7debca8",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "snippet": "…ente del Distrito Federal | | | 5 de diciembre de 2000-15 de mayo de 2006 | | | Jefe de Gobierno | Andrés Manuel López Obrador (2000-2005) Alejandro Encinas Rodríguez (2005-2006) | | Predecesor | Alejandro Encinas Rodríguez | | Sucesor | Eduardo Vega López | | Información personal | | | Nombre de nacimiento | Claudia S…",
+   "src": "term:0a7acf73b1ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:40+00:00",
+   "claim": "Claudia Sheinbaum Pardo holds office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "dst": "source:9823901546c0d86a",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "snippet": "…the Environment of the Federal District | | | In office 5 December 2000 – 15 May 2006 | | | Head of Government | Andrés Manuel López Obrador Alejandro Encinas Rodríguez | | Preceded by | Alejandro Encinas Rodríguez | | Succeeded by | Eduardo Vega López | | Personal details | | | Born | Claudia Sheinbaum Pardo 24 June…",
+   "src": "term:0a7acf73b1ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:40+00:00",
+   "claim": "Claudia Sheinbaum Pardo holds office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "dst": "source:ac9b63b2ab5e9ab1",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "snippet": "…Presidency of Claudia Sheinbaum Presidency of Claudia Sheinbaum | | | | --- | --- | | Presidency of Claudia Sheinbaum 1 October 2024 – present | | | President | Claudia Shein…",
+   "src": "term:0a7acf73b1ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:40+00:00",
+   "claim": "Claudia Sheinbaum Pardo holds office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "dst": "source:beea88d2a0d8049d",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "snippet": "…Claudia Sheinbaum Pardo - Ocean Panel Claudia Sheinbaum Pardo - Ocean Panel # Claudia Sheinbaum Pardo Claudia Sheinbaum Pardo is the 66th President of Mexico and is the first wom…",
+   "src": "term:0a7acf73b1ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:40+00:00",
+   "claim": "Claudia Sheinbaum Pardo holds office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "dst": "source:edce81a7d1b9ef4f",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "snippet": "…einbaum Actividades en Palacio ### Galerías Eventos ### 13.11.26 Becas para el Bienestar. San Martín Texmelucan, Puebla Conferencia de Prensa ### 13.11.26 Conferencia de prensa matutina de la presidenta Claudia Sheinbaum Pardo Conferencia de Prensa ### 12.11.26 Conferencia de prensa matutina de la presidenta Claudia Sh…",
+   "src": "term:0a7acf73b1ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:claudia-sheinbaum-pardo",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "src": "term:0a7acf73b1ad",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:07:40+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "description": "The President is both head of state and head of government; executive departments are presidentially headed.",
+   "first_seen": "2026-11-14T23:07:34+00:00",
+   "id": "body:MX:national:presidency-and-federal-executive-administration",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:07:34+00:00",
+   "name": "Presidency and federal executive administration",
+   "name_local": "Poder Ejecutivo Federal",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:07:34+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795",
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:34+00:00",
+   "id": "level:MX:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:07:34+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:07:35+00:00",
+   "id": "office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "presidenta"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:07:35+00:00",
+   "name": "President of Mexico",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Direct nationwide popular election, single six-year term, no reelection.",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Presidenta o Presidente de los Estados Unidos Mexicanos",
+   "updated_at": "2026-11-14T23:07:35+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "person:MX:claudia-sheinbaum-pardo",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:07:40+00:00",
+   "name": "Claudia Sheinbaum Pardo",
+   "updated_at": "2026-11-15T02:15:36+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "presidenta.gob.mx",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "source:08fc99faa8c480db",
+   "label": "Source",
+   "name": "Biografía - Presidenta de México",
+   "retrieved_at": "2026-11-14T23:07:40+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "url": "https://www.presidenta.gob.mx/biografia"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:07:35+00:00",
+   "id": "source:23d4ee9e868c2a18",
+   "label": "Source",
+   "name": "Dirección General de Crónica y Gaceta Parlamentaria",
+   "retrieved_at": "2026-11-14T23:07:40+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "url": "https://cronica.diputados.gob.mx/Ve01oct2024.html"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "source:48c09e29f7debca8",
+   "label": "Source",
+   "name": "Claudia Sheinbaum",
+   "published_date": "2026-11-12T22:44:14.000Z",
+   "retrieved_at": "2026-11-14T23:07:40+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "url": "https://es.wikipedia.org/wiki/Claudia_Sheinbaum"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "source:9823901546c0d86a",
+   "label": "Source",
+   "name": "Claudia Sheinbaum",
+   "published_date": "2026-11-03T13:30:36.000Z",
+   "retrieved_at": "2026-11-14T23:07:40+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "url": "https://en.wikipedia.org/wiki/Claudia_Sheinbaum"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "source:ac9b63b2ab5e9ab1",
+   "label": "Source",
+   "name": "Presidency of Claudia Sheinbaum",
+   "published_date": "2026-10-27T14:33:47.000Z",
+   "retrieved_at": "2026-11-14T23:07:40+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "url": "https://en.wikipedia.org/wiki/Presidency_of_Claudia_Sheinbaum"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "oceanpanel.org",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "source:beea88d2a0d8049d",
+   "label": "Source",
+   "name": "Claudia Sheinbaum Pardo - Ocean Panel",
+   "published_date": "2024-07-05T08:52:32.000Z",
+   "retrieved_at": "2026-11-14T23:07:40+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "url": "https://oceanpanel.org/member/mexico/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "presidenta.gob.mx",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "source:edce81a7d1b9ef4f",
+   "label": "Source",
+   "name": "- Presidenta de México",
+   "retrieved_at": "2026-11-14T23:07:40+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:40+00:00",
+   "url": "https://www.presidenta.gob.mx/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2030-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "term:0a7acf73b1ad",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:07:40+00:00",
+   "name": "Claudia Sheinbaum Pardo — term from 2024-10-01",
+   "office": "office:MX:national:presidency-and-federal-executive-administration:president-of-mexico",
+   "person": "person:MX:claudia-sheinbaum-pardo",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:07:40+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:national:presidency-and-federal-executive-administration:president-of-mexico": [
+   "country:MX",
+   "level:MX:national",
+   "body:MX:national:presidency-and-federal-executive-administration",
+   "office:MX:national:presidency-and-federal-executive-administration:president-of-mexico"
+  ]
+ },
+ "politician": "person:MX:claudia-sheinbaum-pardo",
+ "sha256": "9ad7bb5a9e7153b8baa4c166a623d7f4f564873d3651ab6b7059149284870d51",
+ "unreached_offices": []
+}

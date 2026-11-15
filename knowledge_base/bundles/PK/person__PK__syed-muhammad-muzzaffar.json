@@ -1,0 +1,490 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "src": "body:PK:municipal:karachi-division:nazimabad:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division:nazimabad",
+   "src": "level:PK:municipal:karachi-division",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:karachi-division:nazimabad:government",
+   "src": "level:PK:municipal:karachi-division:nazimabad",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:c6ad074e3d18",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "src": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T00:01:58+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:55+00:00",
+   "claim": "office exists: Town Chairman of Nazimabad",
+   "dst": "source:15ce6186d08736ee",
+   "first_seen": "2026-11-15T00:01:55+00:00",
+   "src": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:55+00:00",
+   "claim": "office exists: Town Chairman of Nazimabad",
+   "dst": "source:206755dea27e855a",
+   "first_seen": "2026-11-15T00:01:55+00:00",
+   "src": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:55+00:00",
+   "claim": "office exists: Town Chairman of Nazimabad",
+   "dst": "source:554fe2fa834b6792",
+   "first_seen": "2026-11-15T00:01:55+00:00",
+   "src": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:55+00:00",
+   "claim": "office exists: Town Chairman of Nazimabad",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:55+00:00",
+   "src": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "dst": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T00:01:58+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:syed-muhammad-muzzaffar",
+   "start": "2023-06-19",
+   "status": "current",
+   "term_id": "term:c6ad074e3d18",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T00:01:58+00:00"
+  },
+  {
+   "as_of": "2026-11-15T00:01:58+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ji",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "src": "person:PK:syed-muhammad-muzzaffar",
+   "term_id": "term:c6ad074e3d18",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T00:01:58+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:58+00:00",
+   "claim": "Syed Muhammad Muzzaffar holds office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "dst": "source:0a5e567fa1e4860d",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "snippet": "…Municipal Office Nazimabad Town, Shahrah-e-Ibne Sina, Adjacent Gujar Nala, Nazimabad No 2, District Central, Karachi (2026) Town Municipal Corporation Nazimabad ٹاؤن میونسپل کارپوریشن ناظم آباد Town Chairman: Syed Muhammad Muzaffar Vice Chairman: Noman Muhammad Siddiqui ##### 14/08/2026 ناظم آباد ٹاؤن آفس میں 14 اگست…",
+   "src": "term:c6ad074e3d18",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:58+00:00",
+   "claim": "Syed Muhammad Muzzaffar holds office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "dst": "source:554fe2fa834b6792",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "snippet": "…oved town. Thank you for your continued trust and partnership. Let us stride forward with confidence, seizing new opportunities and shaping a future of prosperity. Syed Muhammad Muzzaffar Chairman ##### TMC Nazimabad (021) 99260342 Sharah-e-Ibn-e-Sina Road Nazimabad#2 Near Gujjar Nala TMC office Nazimabad Karachi tmcna…",
+   "src": "term:c6ad074e3d18",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:58+00:00",
+   "claim": "Syed Muhammad Muzzaffar holds office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "dst": "source:8dda2b87cbb76118",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "snippet": "…چیئرمین ناظم آباد ٹاون سید محمد مظفر نے پودا لگا کر شجرکاری مہم کا افتتاح کیا - Karachi Alerts چیئرمین ناظم آباد ٹاون سید محمد مظفر نے پودا لگا کر شجرکاری مہم کا افتتاح کیا - Karachi Alerts # چیئرمین ناظم آباد ٹاون سید محمد مظفر نے پودا لگا…",
+   "src": "term:c6ad074e3d18",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:58+00:00",
+   "claim": "Syed Muhammad Muzzaffar holds office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "dst": "source:8f64e796bef70a29",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "snippet": "…اساتذہ اور محکمہ تعلیم کے تمام ملازمین کیٹائم اسکیل میں کسی قسم کی غفلت برداشت نہیں کی جائے گی۔ سید محمد مظفر - Karachi Alerts اساتذہ اور محکمہ تعلیم کے تمام ملازمین کیٹائم اسکیل میں کسی قسم کی غفلت برداشت نہیں کی جائے گی۔ سید محمد مظفر - K…",
+   "src": "term:c6ad074e3d18",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:58+00:00",
+   "claim": "Syed Muhammad Muzzaffar holds office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "dst": "source:a6272c9f8d7a473e",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "snippet": "…چیئرمین ناظم آباد ٹاون سید محمد مظفرکی میونسپل کمشنر مدیحہ ناریجو سے ملاقات - Karachi Alerts چیئرمین ناظم آباد ٹاون سید محمد مظفرکی میونسپل کمشنر مدیحہ ناریجو سے ملاقات - Karachi Alerts # چیئرمین ناظم آباد ٹاون سید محمد مظفرکی میونسپل کمشن…",
+   "src": "term:c6ad074e3d18",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:58+00:00",
+   "claim": "Syed Muhammad Muzzaffar holds office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "dst": "source:b1677f57b93ab0ab",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "snippet": "…ountry | Pakistan | | Province | Sindh | | City District | Karachi Central | | Union Councils | 7 Paposh Nagar Abbasi Shaheed Hadi Market Nazimabad Rizvia Society Firdous Colony Gulbahar | | Government [1] | | | • Type | Town Municipal Corporation | | • Chairman | Syed Muhammad Muzaffar [2] (JI) | | • Vice Chairman | N…",
+   "src": "term:c6ad074e3d18",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:syed-muhammad-muzzaffar",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "src": "term:c6ad074e3d18",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T00:01:58+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-15T00:01:55+00:00",
+   "id": "body:PK:municipal:karachi-division:nazimabad:government",
+   "label": "GovernmentBody",
+   "name": "Town Municipal Council of Nazimabad",
+   "name_local": "ٹاؤن میونسپل کونسل",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T00:01:55+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "level:PK:municipal:karachi-division",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:05+00:00",
+   "name": "Karachi Division — Town municipal corporation (town)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "ٹاؤن میونسپل کارپوریشن",
+   "tier": "special_local",
+   "updated_at": "2026-11-15T00:01:05+00:00",
+   "why_distinct": "Three-tier urban local government: Karachi Metropolitan Corporation/City Council, 25 town municipal corporations and their town councils, and union committees. Unlike an ordinary standalone municipality, the metropolitan body overlays town-level councils; town chairmen are selected by the town councils rather than directly by residents. The names below are the 2023 returned town heads; a town-by-town 2026 incumbency confirmation is unavailable for some, so later replacements cannot be ruled out. Four-year terms run from oath, but an exact end date is not confirmed for each head."
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:55+00:00",
+   "id": "level:PK:municipal:karachi-division:nazimabad",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:55+00:00",
+   "name": "Nazimabad",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-15T00:01:55+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T00:01:55+00:00",
+   "id": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "is_elected": true,
+   "keywords": [
+    "town",
+    "town chairman"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-15T00:01:55+00:00",
+   "name": "Town Chairman of Nazimabad",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "ٹاؤن چیئرمین",
+   "updated_at": "2026-11-15T00:01:55+00:00"
+  },
+  {
+   "acronym": "JI",
+   "aliases": [
+    "JI",
+    "Jamaat-e-Islami",
+    "Jamaat-e-Islami Pakistan"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:26+00:00",
+   "id": "party:PK:ji",
+   "label": "PoliticalParty",
+   "name": "Jamaat-e-Islami",
+   "updated_at": "2026-11-15T00:54:29+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "id": "person:PK:syed-muhammad-muzzaffar",
+   "label": "Person",
+   "last_verified": "2026-11-15T00:01:58+00:00",
+   "name": "Syed Muhammad Muzzaffar",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "govserv.org",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "id": "source:0a5e567fa1e4860d",
+   "label": "Source",
+   "name": "TMC Nazimabad, Town Municipal Office Nazimabad Town, Shahrah-e-Ibne Sina, Adjacent Gujar Nala, Nazimabad No 2, District Central, Karachi (2026)",
+   "published_date": "2026-08-14T00:00:00.000Z",
+   "retrieved_at": "2026-11-15T00:01:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "url": "https://www.govserv.org/PK/Karachi/103411286156765/TMC-Nazimabad"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "sindhlaws.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:15ce6186d08736ee",
+   "label": "Source",
+   "name": "Preamble",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "lgdsindh.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:206755dea27e855a",
+   "label": "Source",
+   "name": "GOVERNMENT",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gos.pk",
+   "first_seen": "2026-11-15T00:01:55+00:00",
+   "id": "source:554fe2fa834b6792",
+   "label": "Source",
+   "name": "chairman-message",
+   "retrieved_at": "2026-11-15T00:01:58+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "url": "https://tmcnazimabad.gos.pk/page/message"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "aaj.tv",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:55eaf0edad507ff0",
+   "label": "Source",
+   "name": "Who controls Karachi 25 towns - Must Read - Aaj English TV",
+   "published_date": "2023-06-15T14:02:27.000Z",
+   "retrieved_at": "2026-11-15T00:02:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:03+00:00",
+   "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "karachialerts.com",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "id": "source:8dda2b87cbb76118",
+   "label": "Source",
+   "name": "چیئرمین ناظم آباد ٹاون سید محمد مظفر نے پودا لگا کر شجرکاری مہم کا افتتاح کیا - Karachi Alerts",
+   "published_date": "2024-07-29T15:07:49.000Z",
+   "retrieved_at": "2026-11-15T00:01:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "url": "https://karachialerts.com/chairman-nazimabad-town-syed-muhammad-muzaffar-inaugurated-the-plantation-campaign-by-planting-saplings/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "karachialerts.com",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "id": "source:8f64e796bef70a29",
+   "label": "Source",
+   "name": "اساتذہ اور محکمہ تعلیم کے تمام ملازمین کیٹائم اسکیل میں کسی قسم کی غفلت برداشت نہیں کی جائے گی۔ سید محمد مظفر - Karachi Alerts",
+   "published_date": "2025-10-15T14:30:39.000Z",
+   "retrieved_at": "2026-11-15T00:01:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "url": "https://karachialerts.com/chairman-nazimabad-town-syed-muhammad-muzaffar-holds-meeting-regarding-giving-time-scale-to-education-department/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "karachialerts.com",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "id": "source:a6272c9f8d7a473e",
+   "label": "Source",
+   "name": "چیئرمین ناظم آباد ٹاون سید محمد مظفرکی میونسپل کمشنر مدیحہ ناریجو سے ملاقات - Karachi Alerts",
+   "published_date": "2023-08-02T17:49:52.000Z",
+   "retrieved_at": "2026-11-15T00:01:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "url": "https://karachialerts.com/chairman-nazimabad-town-syed-muhammad-muzaffar-meeting-with-municipal-commissioner-madiha-narejo/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "id": "source:b1677f57b93ab0ab",
+   "label": "Source",
+   "name": "Nazimabad Town",
+   "published_date": "2026-09-27T00:45:19.000Z",
+   "retrieved_at": "2026-11-15T00:01:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:58+00:00",
+   "url": "https://en.wikipedia.org/wiki/Nazimabad_Town"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:58+00:00",
+   "id": "term:c6ad074e3d18",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T00:01:58+00:00",
+   "name": "Syed Muhammad Muzzaffar — term from 2023-06-19",
+   "office": "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad",
+   "person": "person:PK:syed-muhammad-muzzaffar",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2023-06-19",
+   "updated_at": "2026-11-15T00:01:58+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:karachi-division",
+   "level:PK:municipal:karachi-division:nazimabad",
+   "body:PK:municipal:karachi-division:nazimabad:government",
+   "office:PK:municipal:karachi-division:nazimabad:government:town-chairman-of-nazimabad"
+  ]
+ },
+ "politician": "person:PK:syed-muhammad-muzzaffar",
+ "sha256": "95304389c761aa60193c6401309120057b34a896d72297152fe08f8ba8d9b416",
+ "unreached_offices": []
+}

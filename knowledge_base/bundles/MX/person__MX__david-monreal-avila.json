@@ -1,0 +1,448 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "src": "body:MX:state:MX-ZAC:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-ZAC",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-ZAC:executive",
+   "src": "level:MX:state:MX-ZAC",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:a89bb68d4fcc",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "src": "office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:13:38+00:00"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "end": "2027-09-11",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:13:38+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:david-monreal-avila",
+   "start": "2021-09-12",
+   "status": "current",
+   "term_id": "term:a89bb68d4fcc",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:13:38+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:13:38+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Morena–PVEM–PT–PANAL (Juntos Haremos Historia en Zacatecas)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "src": "person:MX:david-monreal-avila",
+   "term_id": "term:a89bb68d4fcc",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:13:38+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:38+00:00",
+   "claim": "David Monreal Ávila holds office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "dst": "source:23c7eddb62a577c6",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "snippet": "…Governor of Zacatecas Governor of Zacatecas | Governor of Zacatecas | | | --- | --- | | | | | Incumbent David Monreal Ávila since September 12, 2021 | | | Term length | Six years (Just for this time, the term will be of five years), non-renewable. |…",
+   "src": "term:a89bb68d4fcc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:38+00:00",
+   "claim": "David Monreal Ávila holds office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "dst": "source:80f553c7c29d6133",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "snippet": "…La LXIV Legislatura tomó protesta al nuevo gobernador de Zacatecas David Monreal Ávila La LXIV Legislatura tomó protesta al nuevo gobernador de Zacatecas David Monreal Ávila La LXIV Legislatura tomó protesta al nuevo gobernador de Zacatecas…",
+   "src": "term:a89bb68d4fcc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:38+00:00",
+   "claim": "David Monreal Ávila holds office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "dst": "source:9f3d08612ee6fd03",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "snippet": "…Quién es David Monreal Ávila, gobernador de Zacatecas Quién es David Monreal Ávila, gobernador de Zacatecas # Quién es David Monreal Ávila, gobernador de Zacatecas por Ernesto Palacio…",
+   "src": "term:a89bb68d4fcc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:38+00:00",
+   "claim": "David Monreal Ávila holds office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "dst": "source:ab30ea9a1dd4bfae",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "snippet": "…onreal | | | --- | --- | | Monreal in 2015 | | | Governor of Zacatecas | | | Incumbent | | | Assumed office 12 September 2021 | | | Preceded by | Alejandro Tello Cristerna | | Personal details | | | Born | David Monreal Ávila 27 March 1966 (age 60) Fresnillo, Zacatecas, Mexico | | Party | MORENA | | Relatives | Ricardo…",
+   "src": "term:a89bb68d4fcc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:38+00:00",
+   "claim": "David Monreal Ávila holds office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "dst": "source:ad1605c428358e8b",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "snippet": "…David Monreal Ávila David Monreal Ávila | David Monreal Ávila | | | --- | --- | | | | | Gobernador de Zacatecas Actualmente en el cargo | | | Desde el 12 de septiembre de 202…",
+   "src": "term:a89bb68d4fcc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:38+00:00",
+   "claim": "David Monreal Ávila holds office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "dst": "source:b8e045f5308ecedf",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "snippet": "…onreal | | | --- | --- | | Monreal in 2015 | | | Governor of Zacatecas | | | Incumbent | | | Assumed office 12 September 2021 | | | Preceded by | Alejandro Tello Cristerna | | Personal details | | | Born | David Monreal Ávila 27 March 1966 (age 60) Fresnillo, Zacatecas, Mexico | | Party | MORENA | | Relatives | Ricardo…",
+   "src": "term:a89bb68d4fcc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:38+00:00",
+   "claim": "David Monreal Ávila holds office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "dst": "source:d45049fc1a5299be",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "snippet": "…Hoy inicia la Transformación de Zacatecas con una nueva gobernanza: David Monreal Ávila – Gobierno del Estado de Zacatecas Hoy inicia la Transformación de Zacatecas con una nueva gobernanza: David Monreal Ávila – Gobierno del Estado de Zacat…",
+   "src": "term:a89bb68d4fcc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:38+00:00",
+   "claim": "David Monreal Ávila holds office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "dst": "source:e5156218630e8272",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "snippet": "…catecas Atención Ciudadana (4924915000) Extensión 10250 # Gobernador Teléfono: 492 923 9574 Correo: david.monreal@zacatecas.gob.mx ADMINISTRACIÓN 2021-2027 ### David Monreal Ávila ###### Gobernador Constitucional del Estado de Zacatecas Soy David Monreal Ávila, nací en Fresnillo, Zacatecas, el 27 de marzo de 1966, y te…",
+   "src": "term:a89bb68d4fcc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:david-monreal-avila",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "src": "term:a89bb68d4fcc",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:13:38+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "body:MX:state:MX-ZAC:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:13:20+00:00",
+   "name": "Executive of Zacatecas",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:13:20+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "level:MX:state:MX-ZAC",
+   "iso_3166_2": "MX-ZAC",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:13:20+00:00",
+   "name": "Zacatecas",
+   "pipeline_mode": "research_only",
+   "researched_name": "Zacatecas",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:13:20+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:13:29+00:00",
+   "id": "office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:13:29+00:00",
+   "name": "Governor of Zacatecas",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "unsupported",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:13:29+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "person:MX:david-monreal-avila",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:13:38+00:00",
+   "name": "David Monreal Ávila",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "source:23c7eddb62a577c6",
+   "label": "Source",
+   "name": "Governor of Zacatecas",
+   "published_date": "2026-11-01T07:06:43.000Z",
+   "retrieved_at": "2026-11-14T23:13:38+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_Zacatecas"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresozac.gob.mx",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "source:80f553c7c29d6133",
+   "label": "Source",
+   "name": "La LXIV Legislatura tomó protesta al nuevo gobernador de Zacatecas David Monreal Ávila",
+   "retrieved_at": "2026-11-14T23:13:38+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "url": "https://www.congresozac.gob.mx/p/19743"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "culturacolectiva.com",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "source:9f3d08612ee6fd03",
+   "label": "Source",
+   "name": "Quién es David Monreal Ávila, gobernador de Zacatecas",
+   "published_date": "2026-08-03T18:33:55.000Z",
+   "retrieved_at": "2026-11-14T23:13:38+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "url": "https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-david-monreal/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "source:ab30ea9a1dd4bfae",
+   "label": "Source",
+   "name": "David Monreal",
+   "published_date": "2026-08-26T21:46:36.000Z",
+   "retrieved_at": "2026-11-14T23:13:38+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "url": "https://en.wikipedia.org/wiki/David_Monreal"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "source:ad1605c428358e8b",
+   "label": "Source",
+   "name": "David Monreal Ávila",
+   "published_date": "2026-10-26T06:37:25.000Z",
+   "retrieved_at": "2026-11-14T23:13:38+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "url": "https://es.wikipedia.org/wiki/David_Monreal_%C3%81vila"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "source:b8e045f5308ecedf",
+   "label": "Source",
+   "name": "David Monreal",
+   "retrieved_at": "2026-11-14T23:13:38+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "url": "https://en.wikipedia.org/wiki/David_Monreal_%C3%81vila"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "zacatecas.gob.mx",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "source:d45049fc1a5299be",
+   "label": "Source",
+   "name": "Hoy inicia la Transformación de Zacatecas con una nueva gobernanza: David Monreal Ávila – Gobierno del Estado de Zacatecas",
+   "published_date": "2021-09-13T00:54:08.000Z",
+   "retrieved_at": "2026-11-14T23:13:38+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "url": "https://www.zacatecas.gob.mx/hoy-inicia-la-transformacion-de-zacatecas-con-una-nueva-gobernanza-david-monreal-avila"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "zacatecas.gob.mx",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "source:e5156218630e8272",
+   "label": "Source",
+   "name": "Gobernador – Gobierno del Estado de Zacatecas",
+   "published_date": "2022-08-25T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:13:38+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:13:38+00:00",
+   "url": "https://www.zacatecas.gob.mx/gobierno/gobernador"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-11",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "term:a89bb68d4fcc",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:13:38+00:00",
+   "name": "David Monreal Ávila — term from 2021-09-12",
+   "office": "office:MX:state:MX-ZAC:executive:governor-of-zacatecas",
+   "person": "person:MX:david-monreal-avila",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-09-12",
+   "updated_at": "2026-11-14T23:13:38+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-ZAC:executive:governor-of-zacatecas": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-ZAC",
+   "body:MX:state:MX-ZAC:executive",
+   "office:MX:state:MX-ZAC:executive:governor-of-zacatecas"
+  ]
+ },
+ "politician": "person:MX:david-monreal-avila",
+ "sha256": "11b7c521b6ea497c07111a6d4809c3d714ce145c5d2df5bd4ec17456c432eee9",
+ "unreached_offices": []
+}

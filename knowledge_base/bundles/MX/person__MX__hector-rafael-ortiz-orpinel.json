@@ -1,0 +1,354 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "src": "body:MX:municipal:MX-CHH:juarez:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-CHH:juarez",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-CHH:juarez:council",
+   "src": "level:MX:municipal:MX-CHH:juarez",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:9cf89c3ff6f1",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "src": "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:18:07+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:06+00:00",
+   "claim": "office exists: Municipal President of Juárez",
+   "dst": "source:021a7062e78e629c",
+   "first_seen": "2026-11-14T23:18:06+00:00",
+   "src": "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:06+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:06+00:00",
+   "claim": "office exists: Municipal President of Juárez",
+   "dst": "source:213355236e435a99",
+   "first_seen": "2026-11-14T23:18:06+00:00",
+   "src": "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:06+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:13+00:00",
+   "claim": "municipality and its selection system (INAFED register)",
+   "dst": "source:73327df7bbd85a9f",
+   "first_seen": "2026-11-15T01:58:28+00:00",
+   "src": "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:13+00:00",
+   "via": "official_directory"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "dst": "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "end": "2027-09-09",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "is_acting": true,
+   "last_verified": "2026-11-14T23:18:07+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:hector-rafael-ortiz-orpinel",
+   "start": "2026-06-17",
+   "status": "current",
+   "term_id": "term:9cf89c3ff6f1",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:18:07+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:07+00:00",
+   "claim": "Héctor Rafael Ortiz Orpinel holds office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "dst": "source:021a7062e78e629c",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "snippet": "…dientes se entregarán en tiempo y forma: alcalde Lunes 14 de Septiembre del 2026 Durante la conferencia de prensa semanal, el Presidente Municipal, Héctor Rafael Ortiz Orpinel, informó que aunque el próximo ejercicio fiscal es del 1 de enero al 31 de diciembre, en el año 2027 y el cierre de la actual administración ser…",
+   "src": "term:9cf89c3ff6f1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:07+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:07+00:00",
+   "claim": "Héctor Rafael Ortiz Orpinel holds office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "dst": "source:213355236e435a99",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "snippet": "…a 100 espacios públicos intervenidos, luego de completar su décima jornada de trabajo en 10 colonias de la ciudad, aseguró el Presidente Municipal, Héctor Rafael Ortiz Orpinel. Durante las actividades realizadas en la colonia Los Alcaldes, el presidente reconoció el trabajo impulsado inicialmente por el alcalde con lic…",
+   "src": "term:9cf89c3ff6f1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:07+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:07+00:00",
+   "claim": "Héctor Rafael Ortiz Orpinel holds office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "dst": "source:48fc6faabe1de817",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "snippet": "…Toma protesta Héctor Ortiz Orpinel como alcalde de Ciudad Juárez Toma protesta Héctor Ortiz Orpinel como alcalde de Ciudad Juárez Juárez Miércoles 17 Jun 2026, 19:10 # Toma protesta Hécto…",
+   "src": "term:9cf89c3ff6f1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:07+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:hector-rafael-ortiz-orpinel",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "src": "term:9cf89c3ff6f1",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:18:07+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:18:05+00:00",
+   "id": "body:MX:municipal:MX-CHH:juarez:council",
+   "label": "GovernmentBody",
+   "name": "Municipal council of Juárez",
+   "name_local": "Ayuntamiento de Juárez",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T02:15:13+00:00",
+   "website": "http://www.juarez.gob.mx/"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:05+00:00",
+   "id": "level:MX:municipal:MX-CHH:juarez",
+   "inegi_code": "8037",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:18:05+00:00",
+   "name": "Juárez, Chihuahua",
+   "parent_division": "Chihuahua",
+   "parent_iso_3166_2": "MX-CHH",
+   "pipeline_mode": "research_only",
+   "population": 1512450,
+   "selection_system": "party-based popular election",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-15T02:15:13+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:18:06+00:00",
+   "id": "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "municipal president",
+    "presidente municipal"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:18:06+00:00",
+   "name": "Municipal President of Juárez",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by popular vote with the council slate (planilla)",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "title_local": "Presidente(a) Municipal de Juárez",
+   "updated_at": "2026-11-15T02:15:13+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "id": "person:MX:hector-rafael-ortiz-orpinel",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:18:07+00:00",
+   "name": "Héctor Rafael Ortiz Orpinel",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "juarez.gob.mx",
+   "first_seen": "2026-11-14T23:18:06+00:00",
+   "id": "source:021a7062e78e629c",
+   "label": "Source",
+   "name": "Página Oficial del H. Ayuntamiento de Juárez",
+   "retrieved_at": "2026-11-14T23:18:07+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:07+00:00",
+   "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "juarez.gob.mx",
+   "first_seen": "2026-11-14T23:18:06+00:00",
+   "id": "source:213355236e435a99",
+   "label": "Source",
+   "name": "Página Oficial del H. Ayuntamiento de Juárez",
+   "retrieved_at": "2026-11-14T23:18:07+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:07+00:00",
+   "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "diario.mx",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "id": "source:48fc6faabe1de817",
+   "label": "Source",
+   "name": "Toma protesta Héctor Ortiz Orpinel como alcalde de Ciudad Juárez",
+   "published_date": "2026-06-17T19:10:00.000Z",
+   "retrieved_at": "2026-11-14T23:18:07+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:07+00:00",
+   "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "datos.gob.mx",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "id": "source:73327df7bbd85a9f",
+   "label": "Source",
+   "name": "INAFED — Presidentas y Presidentes municipales",
+   "retrieved_at": "2026-11-15T02:15:32+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:32+00:00",
+   "url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "end": "2027-09-09",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "id": "term:9cf89c3ff6f1",
+   "is_acting": true,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:18:07+00:00",
+   "name": "Héctor Rafael Ortiz Orpinel — term from 2026-06-17",
+   "office": "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez",
+   "person": "person:MX:hector-rafael-ortiz-orpinel",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2026-06-17",
+   "updated_at": "2026-11-14T23:18:07+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-CHH:juarez",
+   "body:MX:municipal:MX-CHH:juarez:council",
+   "office:MX:municipal:MX-CHH:juarez:council:municipal-president-of-juarez"
+  ]
+ },
+ "politician": "person:MX:hector-rafael-ortiz-orpinel",
+ "sha256": "f8058b3de7f4597b77f9978ada7aa43f8742f5ba5c4979e556a22f860fd4555d",
+ "unreached_offices": []
+}

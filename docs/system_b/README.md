@@ -14,7 +14,8 @@ Oriane is the only social source; System B never creates politician identities.
    PoliticalOffice -HAS_TERM-> Term -TERM_HELD_BY-> Person`, plus the leaves `Person -MEMBER_OF_PARTY->
    PoliticalParty` and `Office/Term -SUPPORTED_BY-> Source`. Its `sha256` covers only that content.
    - Sources (`SYSTEM_A_SOURCE`): `bundles` reads files System A exported (`make export-bundles`, i.e.
-     `python -m polgraph export-bundles --country MX PK`, → `knowledge_base/bundles/<ISO2>/`); `knowledge_base`
+     `python -m polgraph export-bundles --country MX PK`, → `knowledge_base/bundles/<ISO2>/`, committed with
+     each export); `knowledge_base`
      (default) and `graph` build the same bundle on the fly from the export or the live store.
    - Validation (`systema.validate_bundle`) recomputes the paths from the bundle itself: wrong country, a hash
      mismatch, or a current office with no Country → office path makes the person `invalid_input` (never

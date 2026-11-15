@@ -1,0 +1,411 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "src": "body:MX:state:MX-GUA:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-GUA",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-GUA:executive",
+   "src": "level:MX:state:MX-GUA",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:aa7ea0720bdd",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "src": "office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:15:35+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:31+00:00",
+   "claim": "office exists: Governor of Guanajuato",
+   "dst": "source:4d0d98fb9989e1ea",
+   "first_seen": "2026-11-14T23:15:31+00:00",
+   "src": "office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:31+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "end": "2030-09-25",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:15:35+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:libia-dennise-garcia-munoz-ledo",
+   "start": "2024-09-26",
+   "status": "current",
+   "term_id": "term:aa7ea0720bdd",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:15:35+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:15:35+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Fuerza y Corazón por Guanajuato (PAN–PRI–PRD)",
+   "dst": "party:MX:pan",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "src": "person:MX:libia-dennise-garcia-munoz-ledo",
+   "term_id": "term:aa7ea0720bdd",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:15:35+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:35+00:00",
+   "claim": "Libia Dennise García Muñoz Ledo holds office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "dst": "source:24bb3e8fbed35fd2",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "snippet": "…l Gobierno de la gente; Libia encabeza un momento histórico para Guanajuato Guanajuato, Gto. 26 de septiembre de 2024.- La Gobernadora del Estado, Libia Dennise García Muñoz Ledo asistió a la Toma de Protesta Ciudadana en medio de un ambiente festivo y arropada por la gente guanajuatense que refrendó su apoyo al proyec…",
+   "src": "term:aa7ea0720bdd",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:35+00:00",
+   "claim": "Libia Dennise García Muñoz Ledo holds office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "dst": "source:4d0d98fb9989e1ea",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "snippet": "…Declaran a Libia Dennise García Muñoz Ledo gobernadora electa - Congreso del Estado de Guanajuato Declaran a Libia Dennise García Muñoz Ledo gobernadora electa - Congreso del Estado de Guanajuato me…",
+   "src": "term:aa7ea0720bdd",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:35+00:00",
+   "claim": "Libia Dennise García Muñoz Ledo holds office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "dst": "source:7cbdcb1fbdb89221",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "snippet": "…Libia Dennise García Muñoz Ledo | Wilson Center Libia Dennise García Muñoz Ledo | Wilson Center # Libia Dennise García Muñoz Ledo Posted date/time: January 25, 2024 - By - Alexandra Helfg…",
+   "src": "term:aa7ea0720bdd",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:35+00:00",
+   "claim": "Libia Dennise García Muñoz Ledo holds office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "dst": "source:7ee619399fab8e4a",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "snippet": "…cía | | | --- | --- | | | | | Governor of Guanajuato | | | Incumbent | | | Assumed office 26 September 2024 | | | Preceded by | Diego Sinhué Rodríguez Vallejo | | Personal details | | | Born | Libia Denisse García Muñoz Ledo 15 June 1983 (age 43) León, Guanajuato, Mexico | | Party | National Action Party | | Education…",
+   "src": "term:aa7ea0720bdd",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:35+00:00",
+   "claim": "Libia Dennise García Muñoz Ledo holds office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "dst": "source:b1ff3ecf985fce7a",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "snippet": "…Libia García Muñoz Ledo Libia García Muñoz Ledo | Libia García Muñoz-Ledo | | | --- | --- | | García Muñoz Ledo en 2023. | | | Gobernadora de Guanajuato Actualmente en el cargo |…",
+   "src": "term:aa7ea0720bdd",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:35+00:00",
+   "claim": "Libia Dennise García Muñoz Ledo holds office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "dst": "source:f419580bd4088903",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "snippet": "…libia dennise garcía muñoz ledo # Libia Dennise García Muñoz Ledo Madre de familia, esposa, escritora y fan de la fiera. Gobernadora Electa de Guanajuato Guanajuato, Mexico (MX) 136 conne…",
+   "src": "term:aa7ea0720bdd",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:libia-dennise-garcia-munoz-ledo",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "src": "term:aa7ea0720bdd",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:15:35+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:15:30+00:00",
+   "id": "body:MX:state:MX-GUA:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:15:30+00:00",
+   "name": "Executive of Guanajuato",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:15:30+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:15:29+00:00",
+   "id": "level:MX:state:MX-GUA",
+   "iso_3166_2": "MX-GUA",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:15:29+00:00",
+   "name": "Guanajuato",
+   "pipeline_mode": "research_only",
+   "researched_name": "Guanajuato",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:15:29+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:15:31+00:00",
+   "id": "office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:15:31+00:00",
+   "name": "Governor of Guanajuato",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:15:31+00:00"
+  },
+  {
+   "acronym": "PAN",
+   "aliases": [
+    "PAN",
+    "Partido Acción Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "party:MX:pan",
+   "label": "PoliticalParty",
+   "name": "Partido Acción Nacional",
+   "updated_at": "2026-11-14T23:21:02+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "person:MX:libia-dennise-garcia-munoz-ledo",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:15:35+00:00",
+   "name": "Libia Dennise García Muñoz Ledo",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "guanajuato.gob.mx",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "source:24bb3e8fbed35fd2",
+   "label": "Source",
+   "name": "Inicia el Gobierno de la gente; Libia encabeza un momento histórico para Guanajuato – Boletines Dependencias",
+   "published_date": "2024-09-26T22:39:13.000Z",
+   "retrieved_at": "2026-11-14T23:15:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "url": "https://boletines.guanajuato.gob.mx/2024/09/26/inicia-el-gobierno-de-la-gente-libia-encabeza-un-momento-historico-para-guanajuato/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresogto.gob.mx",
+   "first_seen": "2026-11-14T23:15:31+00:00",
+   "id": "source:4d0d98fb9989e1ea",
+   "label": "Source",
+   "name": "Declaran a Libia Dennise García Muñoz Ledo gobernadora electa - Congreso del Estado de Guanajuato",
+   "retrieved_at": "2026-11-14T23:15:35+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "url": "https://www.congresogto.gob.mx/comunicados/declaran-a-libia-dennise-garcia-munoz-ledo-gobernadora-electa"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "wilsoncenter.org",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "source:7cbdcb1fbdb89221",
+   "label": "Source",
+   "name": "Libia Dennise García Muñoz Ledo | Wilson Center",
+   "published_date": "2024-01-26T03:51:22.000Z",
+   "retrieved_at": "2026-11-14T23:15:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "url": "https://mexicoelections.wilsoncenter.org/article/libia-dennise-garcia-munoz-ledo"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "source:7ee619399fab8e4a",
+   "label": "Source",
+   "name": "Libia Denisse García",
+   "published_date": "2026-10-03T06:49:37.000Z",
+   "retrieved_at": "2026-11-14T23:15:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "url": "https://en.wikipedia.org/wiki/Libia_Denisse_Garc%C3%ADa"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "source:b1ff3ecf985fce7a",
+   "label": "Source",
+   "name": "Libia García Muñoz Ledo",
+   "published_date": "2026-07-30T21:05:59.000Z",
+   "retrieved_at": "2026-11-14T23:15:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "url": "https://es.wikipedia.org/wiki/Libia_Garc%C3%ADa_Mu%C3%B1oz_Ledo"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "linkedin.com",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "source:f419580bd4088903",
+   "label": "Source",
+   "name": "libia dennise garcía muñoz ledo",
+   "published_date": "2026-10-31T03:40:02.000Z",
+   "retrieved_at": "2026-11-14T23:15:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:35+00:00",
+   "url": "https://linkedin.com/in/libiadennise-garcia-munoz-ledo-gto"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2030-09-25",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "term:aa7ea0720bdd",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:15:35+00:00",
+   "name": "Libia Dennise García Muñoz Ledo — term from 2024-09-26",
+   "office": "office:MX:state:MX-GUA:executive:governor-of-guanajuato",
+   "person": "person:MX:libia-dennise-garcia-munoz-ledo",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-09-26",
+   "updated_at": "2026-11-14T23:15:35+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-GUA:executive:governor-of-guanajuato": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-GUA",
+   "body:MX:state:MX-GUA:executive",
+   "office:MX:state:MX-GUA:executive:governor-of-guanajuato"
+  ]
+ },
+ "politician": "person:MX:libia-dennise-garcia-munoz-ledo",
+ "sha256": "f5ccda3698f388c9fd33ebd632cf9b1592ff69f48dca970e8b10cd404b16d97a",
+ "unreached_offices": []
+}

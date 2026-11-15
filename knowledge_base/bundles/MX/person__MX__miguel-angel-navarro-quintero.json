@@ -1,0 +1,457 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "src": "body:MX:state:MX-NAY:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-NAY",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-NAY:executive",
+   "src": "level:MX:state:MX-NAY",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:38645a136ac4",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "src": "office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:13:46+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:42+00:00",
+   "claim": "office exists: Governor of Nayarit",
+   "dst": "source:a9d241387b6dae9b",
+   "first_seen": "2026-11-14T23:13:42+00:00",
+   "src": "office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:42+00:00",
+   "claim": "office exists: Governor of Nayarit",
+   "dst": "source:affca10c4bcb3526",
+   "first_seen": "2026-11-14T23:13:42+00:00",
+   "src": "office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "end": "2027-09-18",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:13:46+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:miguel-angel-navarro-quintero",
+   "start": "2021-09-19",
+   "status": "current",
+   "term_id": "term:38645a136ac4",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:13:46+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:13:46+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Morena–PT–PVEM–PANAL (Juntos Haremos Historia en Nayarit)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "src": "person:MX:miguel-angel-navarro-quintero",
+   "term_id": "term:38645a136ac4",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:13:46+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:46+00:00",
+   "claim": "Miguel Ángel Navarro Quintero holds office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "dst": "source:2b051e35565d0fbd",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "snippet": "…A un año del cierre, Navarro Quintero rinde quinto informe de gobierno | Meganoticias A un año del cierre, Navarro Quintero rinde quinto informe de gobierno | Meganoticias # A un año del c…",
+   "src": "term:38645a136ac4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:46+00:00",
+   "claim": "Miguel Ángel Navarro Quintero holds office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "dst": "source:4f3570127c2999ae",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "snippet": "…Miguel Ángel Navarro Quintero Miguel Ángel Navarro Quintero | Miguel Ángel Navarro Quintero | | | --- | --- | | Navarro Quintero en 2019. | | | Gobernador de Nayarit Actualmente en…",
+   "src": "term:38645a136ac4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:46+00:00",
+   "claim": "Miguel Ángel Navarro Quintero holds office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "dst": "source:6dcca42b36962ceb",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "snippet": "…Governor of Nayarit Governor of Nayarit | Governor of Nayarit | | | --- | --- | | | | | Incumbent Miguel Ángel Navarro Quintero since September 19, 2021 | | | Term length | Six years, non-renewable. | | Inaugural holder | José María Ferreira | | Forma…",
+   "src": "term:38645a136ac4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:46+00:00",
+   "claim": "Miguel Ángel Navarro Quintero holds office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "dst": "source:72843470739e8c01",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "snippet": "…Miguel Ángel Navarro Quintero Miguel Ángel Navarro Quintero [[Institutional Revolutionary Party|PRI]] (1975-2005)\"},\"spouse\":{\"wt\":\"\"},\"children\":{\"wt\":\"\"},\"relatives\":{\"wt\":\"\"},\"fa…",
+   "src": "term:38645a136ac4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:46+00:00",
+   "claim": "Miguel Ángel Navarro Quintero holds office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "dst": "source:affca10c4bcb3526",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "snippet": "…INFORMACIÓN CURRICULAR CAMPO DE EXPERIENCIA ## INFORMACIÓN CURRICULAR CAMPO DE EXPERIENCIA Nombre Dr. Miguel Ángel Navarro Quintero | Cargo | Gobernador Constitucional del Estado de Nayarit | | --- | --- | | Fecha de Inicio del Cargo | 19 de septiembre de 2021 | | Dependencia o…",
+   "src": "term:38645a136ac4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:46+00:00",
+   "claim": "Miguel Ángel Navarro Quintero holds office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "dst": "source:c1d566d9626b1c91",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "snippet": "…Navarro Quintero hace balance de cinco años de gobierno – El Financiero Navarro Quintero hace balance de cinco años de gobierno – El Financiero # Navarro Quintero hace…",
+   "src": "term:38645a136ac4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:46+00:00",
+   "claim": "Miguel Ángel Navarro Quintero holds office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "dst": "source:d6b339f097475e45",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "snippet": "…tal Electoral de Nayarit Instituto Estatal Electoral de Nayarit Comunicado 92 • 2021-06-14 # Entrega el IEEN constancia de mayoría y validez a Miguel Ángel Navarro Quintero, Gobernador Constitucional Electo de Nayarit ## Entrega el IEEN constancia de mayoría y validez a Miguel Ángel Navarro Quintero, Gobernador Constit…",
+   "src": "term:38645a136ac4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:miguel-angel-navarro-quintero",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "src": "term:38645a136ac4",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:13:46+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "body:MX:state:MX-NAY:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:13:38+00:00",
+   "name": "Executive of Nayarit",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:13:38+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:13:38+00:00",
+   "id": "level:MX:state:MX-NAY",
+   "iso_3166_2": "MX-NAY",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:13:38+00:00",
+   "name": "Nayarit",
+   "pipeline_mode": "research_only",
+   "researched_name": "Nayarit",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:13:38+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:13:42+00:00",
+   "id": "office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:13:42+00:00",
+   "name": "Governor of Nayarit",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:13:42+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "person:MX:miguel-angel-navarro-quintero",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:58:24+00:00",
+   "name": "Miguel Ángel Navarro Quintero",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "meganoticias.mx",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "source:2b051e35565d0fbd",
+   "label": "Source",
+   "name": "A un año del cierre, Navarro Quintero rinde quinto informe de gobierno | Meganoticias",
+   "published_date": "2026-09-20T22:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:13:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "url": "https://www.meganoticias.mx/tepic/noticia/a-un-a%C3%B1o-del-cierre-navarro-quintero-rinde-quinto-informe-de-gobierno/771331"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "source:4f3570127c2999ae",
+   "label": "Source",
+   "name": "Miguel Ángel Navarro Quintero",
+   "published_date": "2026-09-15T16:29:41.000Z",
+   "retrieved_at": "2026-11-14T23:13:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "url": "https://es.wikipedia.org/wiki/Miguel_%C3%81ngel_Navarro_Quintero"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "source:6dcca42b36962ceb",
+   "label": "Source",
+   "name": "Governor of Nayarit",
+   "published_date": "2026-09-07T05:12:52.000Z",
+   "retrieved_at": "2026-11-14T23:13:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_Nayarit"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "source:72843470739e8c01",
+   "label": "Source",
+   "name": "Miguel Ángel Navarro Quintero",
+   "published_date": "2026-04-18T14:30:35.000Z",
+   "retrieved_at": "2026-11-14T23:13:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "url": "https://en.wikipedia.org/wiki/Miguel_%C3%81ngel_Navarro_Quintero"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "nayarit.gob.mx",
+   "first_seen": "2026-11-14T23:13:42+00:00",
+   "id": "source:a9d241387b6dae9b",
+   "label": "Source",
+   "name": "CONSTITUCION POLITICA DEL ESTADO LIBRE Y SOBERANO DE NAYARIT",
+   "retrieved_at": "2026-11-14T23:13:46+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "url": "https://educacion.nayarit.gob.mx/archivos/NORMATIVIDAD/2026/e/c/constitucion_politica_del_estado_libre_y_soberano_de_nayarit.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "nayarit.gob.mx",
+   "first_seen": "2026-11-14T23:13:42+00:00",
+   "id": "source:affca10c4bcb3526",
+   "label": "Source",
+   "name": "INFORMACIÓN CURRICULAR CAMPO DE EXPERIENCIA",
+   "retrieved_at": "2026-11-14T23:13:46+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "url": "https://transparencia.nayarit.gob.mx/admin2/resources/uploads/despachoejecutivo/pdfs/Ficha%20curr%C3%ADcular%20del%20Gobernador%20Dr.%20Miguel%20%C3%81ngel%20Navarro%20Quintero.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "elfinanciero.com.mx",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "source:c1d566d9626b1c91",
+   "label": "Source",
+   "name": "Navarro Quintero hace balance de cinco años de gobierno – El Financiero",
+   "published_date": "2026-09-21T18:55:20.000Z",
+   "retrieved_at": "2026-11-14T23:13:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "url": "https://www.elfinanciero.com.mx/estados/2026/09/21/navarro-quintero-hace-balance-de-cinco-anos-de-gobierno/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "ieenayarit.org",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "source:d6b339f097475e45",
+   "label": "Source",
+   "name": "Instituto Estatal Electoral de Nayarit",
+   "published_date": "2021-06-14T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:13:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:46+00:00",
+   "url": "https://www.ieenayarit.org/comunicado/94"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-18",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "term:38645a136ac4",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:13:46+00:00",
+   "name": "Miguel Ángel Navarro Quintero — term from 2021-09-19",
+   "office": "office:MX:state:MX-NAY:executive:governor-of-nayarit",
+   "person": "person:MX:miguel-angel-navarro-quintero",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-09-19",
+   "updated_at": "2026-11-14T23:13:46+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-NAY:executive:governor-of-nayarit": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-NAY",
+   "body:MX:state:MX-NAY:executive",
+   "office:MX:state:MX-NAY:executive:governor-of-nayarit"
+  ]
+ },
+ "politician": "person:MX:miguel-angel-navarro-quintero",
+ "sha256": "3a24a9e29e9aa2737ebb838c4131b49668187d99149a6bc8e54948dbd1368b8a",
+ "unreached_offices": []
+}

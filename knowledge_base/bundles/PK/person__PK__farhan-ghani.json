@@ -1,0 +1,465 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "src": "body:PK:municipal:karachi-division:chanesar:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division:chanesar",
+   "src": "level:PK:municipal:karachi-division",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:karachi-division:chanesar:government",
+   "src": "level:PK:municipal:karachi-division:chanesar",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:10ace2aa684f",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "src": "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T00:01:43+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:41+00:00",
+   "claim": "office exists: Town Chairman of Chanesar",
+   "dst": "source:15ce6186d08736ee",
+   "first_seen": "2026-11-15T00:01:41+00:00",
+   "src": "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:41+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:41+00:00",
+   "claim": "office exists: Town Chairman of Chanesar",
+   "dst": "source:206755dea27e855a",
+   "first_seen": "2026-11-15T00:01:41+00:00",
+   "src": "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:41+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:41+00:00",
+   "claim": "office exists: Town Chairman of Chanesar",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:41+00:00",
+   "src": "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:41+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "dst": "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T00:01:43+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:farhan-ghani",
+   "status": "current",
+   "term_id": "term:10ace2aa684f",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T00:01:43+00:00"
+  },
+  {
+   "as_of": "2026-11-15T00:01:43+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ppp",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "src": "person:PK:farhan-ghani",
+   "term_id": "term:10ace2aa684f",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T00:01:43+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:43+00:00",
+   "claim": "Farhan Ghani holds office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "dst": "source:0c57ca50d8a51eb1",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "snippet": "…Karachi ATC sends Farhan Ghani, 2 others on 4-day physical remand in employee assault case - Pakistan - DAWN.COM Karachi ATC sends Farhan Ghani, 2 others on 4-day physical remand in emp…",
+   "src": "term:10ace2aa684f",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:43+00:00",
+   "claim": "Farhan Ghani holds office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "dst": "source:2aed7839da969136",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "snippet": "…Congratulations to Chairman Farhan Ghani & Deputy Chairman Nadeem Khayali for appointing Chanesar Town, Mirza Pervaiz. Congratulations to Chairman Farhan Ghani & Deputy Chairman Nadeem Khayali fo…",
+   "src": "term:10ace2aa684f",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:43+00:00",
+   "claim": "Farhan Ghani holds office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "snippet": "…el Colony | Chairman | Zafar Ahmed | JI | | | | Vice Chairman | Yaqoob Khan | | | East | TMC Sohrab Goth | Chairman | Lala Abdul Rahim | PPPP | | | | Vice Chairman | Muhammad Imran | | | | TMC Safoora | Chairman | Kaleem Ullah Khaskheli | PPPP | | | | Vice Chairman | Abdul Haq Baloch | | | | TMC Gulshan | Chairman | Fa…",
+   "src": "term:10ace2aa684f",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:43+00:00",
+   "claim": "Farhan Ghani holds office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "dst": "source:5ed7f318e4d993f6",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "snippet": "…ATC drops terrorism charges against Saeed Ghani's brother ATC drops terrorism charges against Saeed Ghani's brother # ATC drops terrorism charges against Saeed Ghani's brother The court observed that th…",
+   "src": "term:10ace2aa684f",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:43+00:00",
+   "claim": "Farhan Ghani holds office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "dst": "source:bcdf8e1af07e9be0",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "snippet": "…dabad Police Station to Chandni Chowk in Chanesar Town, District East. KMC City Council Parliamentary Leader Karamullah Waqasi, City Council members, Chanesar Town Chairman Farhan Ghani, District President Iqbal Shah, City Council minority member Vivek Sharma, elected representatives and other relevant personalities we…",
+   "src": "term:10ace2aa684f",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:43+00:00",
+   "claim": "Farhan Ghani holds office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "dst": "source:e4d650c3410b25b0",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "snippet": "…Farhan Ghani assault case 'just quarrel', no weapons used: police Farhan Ghani assault case 'just quarrel', no weapons used: police # Farhan Ghani assault case 'just q…",
+   "src": "term:10ace2aa684f",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:farhan-ghani",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "src": "term:10ace2aa684f",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T00:01:43+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-15T00:01:41+00:00",
+   "id": "body:PK:municipal:karachi-division:chanesar:government",
+   "label": "GovernmentBody",
+   "name": "Town Municipal Council of Chanesar",
+   "name_local": "ٹاؤن میونسپل کونسل",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T00:01:41+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "level:PK:municipal:karachi-division",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:05+00:00",
+   "name": "Karachi Division — Town municipal corporation (town)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "ٹاؤن میونسپل کارپوریشن",
+   "tier": "special_local",
+   "updated_at": "2026-11-15T00:01:05+00:00",
+   "why_distinct": "Three-tier urban local government: Karachi Metropolitan Corporation/City Council, 25 town municipal corporations and their town councils, and union committees. Unlike an ordinary standalone municipality, the metropolitan body overlays town-level councils; town chairmen are selected by the town councils rather than directly by residents. The names below are the 2023 returned town heads; a town-by-town 2026 incumbency confirmation is unavailable for some, so later replacements cannot be ruled out. Four-year terms run from oath, but an exact end date is not confirmed for each head."
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:41+00:00",
+   "id": "level:PK:municipal:karachi-division:chanesar",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:41+00:00",
+   "name": "Chanesar",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-15T00:01:41+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T00:01:41+00:00",
+   "id": "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "is_elected": true,
+   "keywords": [
+    "town",
+    "town chairman"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-15T00:01:41+00:00",
+   "name": "Town Chairman of Chanesar",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "ٹاؤن چیئرمین",
+   "updated_at": "2026-11-15T00:01:41+00:00"
+  },
+  {
+   "acronym": "PPP",
+   "aliases": [
+    "PPP",
+    "Pakistan Peoples Party"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "party:PK:ppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party",
+   "updated_at": "2026-11-15T01:04:12+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "id": "person:PK:farhan-ghani",
+   "label": "Person",
+   "last_verified": "2026-11-15T00:01:43+00:00",
+   "name": "Farhan Ghani",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "id": "source:0c57ca50d8a51eb1",
+   "label": "Source",
+   "name": "Karachi ATC sends Farhan Ghani, 2 others on 4-day physical remand in employee assault case - Pakistan - DAWN.COM",
+   "published_date": "2025-08-25T12:16:31.000Z",
+   "retrieved_at": "2026-11-15T00:01:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "url": "https://www.dawn.com/news/1937118"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "sindhlaws.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:15ce6186d08736ee",
+   "label": "Source",
+   "name": "Preamble",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "lgdsindh.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:206755dea27e855a",
+   "label": "Source",
+   "name": "GOVERNMENT",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "theazb.com",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "id": "source:2aed7839da969136",
+   "label": "Source",
+   "name": "Congratulations to Chairman Farhan Ghani & Deputy Chairman Nadeem Khayali for appointing Chanesar Town, Mirza Pervaiz.",
+   "published_date": "2023-06-07T10:19:28.000Z",
+   "retrieved_at": "2026-11-15T00:01:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "url": "https://theazb.com/congratulations-to-farhan-ghani-appointed-chairman-chanesar-town-mirza-pervaiz/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "aaj.tv",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:55eaf0edad507ff0",
+   "label": "Source",
+   "name": "Who controls Karachi 25 towns - Must Read - Aaj English TV",
+   "published_date": "2023-06-15T14:02:27.000Z",
+   "retrieved_at": "2026-11-15T00:02:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:03+00:00",
+   "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "tribune.com.pk",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "id": "source:5ed7f318e4d993f6",
+   "label": "Source",
+   "name": "ATC drops terrorism charges against  Saeed Ghani's brother",
+   "published_date": "2025-10-01T04:07:13.000Z",
+   "retrieved_at": "2026-11-15T00:01:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "url": "https://tribune.com.pk/story/2569909/atc-drops-terrorism-charges-against-saeed-ghanis-brother"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "nation.com.pk",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "id": "source:bcdf8e1af07e9be0",
+   "label": "Source",
+   "name": "Foundation stone laid for development projects in district East’s Chanesar Town: Wahab",
+   "published_date": "2026-11-12T20:18:00.000Z",
+   "retrieved_at": "2026-11-15T00:01:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "url": "https://www.nation.com.pk/13-Nov-2026/foundation-stone-laid-development-projects-district-east-s-chanesar-town-wahab"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "thenews.com.pk",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "id": "source:e4d650c3410b25b0",
+   "label": "Source",
+   "name": "Farhan Ghani assault case 'just quarrel', no weapons used: police",
+   "published_date": "2025-08-30T11:03:00.000Z",
+   "retrieved_at": "2026-11-15T00:01:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:43+00:00",
+   "url": "https://www.thenews.com.pk/latest/1340150-saeed-ghanis-brother-discharged-in-assault-case"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:43+00:00",
+   "id": "term:10ace2aa684f",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T00:01:43+00:00",
+   "name": "Farhan Ghani — term from ?",
+   "office": "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar",
+   "person": "person:PK:farhan-ghani",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "updated_at": "2026-11-15T00:01:43+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:karachi-division",
+   "level:PK:municipal:karachi-division:chanesar",
+   "body:PK:municipal:karachi-division:chanesar:government",
+   "office:PK:municipal:karachi-division:chanesar:government:town-chairman-of-chanesar"
+  ]
+ },
+ "politician": "person:PK:farhan-ghani",
+ "sha256": "de9acecf8f67621189456c60eabb1b3bca513f7d04fec25cf1fc683229b564ff",
+ "unreached_offices": []
+}

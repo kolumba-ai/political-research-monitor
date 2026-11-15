@@ -1,0 +1,428 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "src": "body:PK:national:federal-constitutional-court",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:national",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:PK:national:federal-constitutional-court",
+   "src": "level:PK:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:36f00bb9f3f4",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "src": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:51:02+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:02+00:00",
+   "claim": "office exists: Judge of the Federal Constitutional Court",
+   "dst": "source:0ba40f285291f860",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "src": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:00+00:00",
+   "claim": "office exists: Chief Justice of the Federal Constitutional Court",
+   "dst": "source:1db84969eeef2ee3",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "src": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:00+00:00",
+   "claim": "office exists: Chief Justice of the Federal Constitutional Court",
+   "dst": "source:33eab6cceaef82ed",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "src": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:02+00:00",
+   "claim": "office exists: Judge of the Federal Constitutional Court",
+   "dst": "source:3afaf0924d5c3ab5",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "src": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:02+00:00",
+   "claim": "office exists: Judge of the Federal Constitutional Court",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "src": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "end": "2028-11-13",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:51:02+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:amin-ud-din-khan",
+   "start": "2025-11-14",
+   "status": "current",
+   "term_id": "term:36f00bb9f3f4",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:51:02+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:02+00:00",
+   "claim": "Amin-ud-Din Khan holds office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "dst": "source:06d9528f8641f8a9",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "snippet": "…Justice Amin-Ud-Din Khan appointed Pakistan’s first Constitutional Court chief justice Justice Amin-Ud-Din Khan appointed Pakistan’s first Constitutional Court chief justice # Just…",
+   "src": "term:36f00bb9f3f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:02+00:00",
+   "claim": "Amin-ud-Din Khan holds office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "dst": "source:33eab6cceaef82ed",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "snippet": "…Federal Constitutional Court of Pakistan FCCP call +92 51 111 322 322 mail enotices@fccp.gov.pk ## Honorable Chief Justice ### Mr. Chief Justice Amin-ud-Din Khan Chief Justice, Federal Constitutional Court of Pakistan Justice Amin-ud-Din Khan was born on 1st December 1960 at Multan. He belongs to a very nob…",
+   "src": "term:36f00bb9f3f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:02+00:00",
+   "claim": "Amin-ud-Din Khan holds office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "dst": "source:7340031214239264",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "snippet": "…Justice Amin-Ud-Din Khan takes oath as chief justice of Pakistan’s first Constitutional Court Justice Amin-Ud-Din Khan takes oath as chief justice of Pakistan’s first Constitutiona…",
+   "src": "term:36f00bb9f3f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:02+00:00",
+   "claim": "Amin-ud-Din Khan holds office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "dst": "source:9cacc2debf6a7d46",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "snippet": "…Aminuddin Khan Aminuddin Khan | Aminuddin Khan | | | --- | --- | | امین الدین خان | | | Chief Justice of the Federal Constitutional Court of Pakistan | | | Incumbent | |…",
+   "src": "term:36f00bb9f3f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:02+00:00",
+   "claim": "Amin-ud-Din Khan holds office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "dst": "source:f91d46f09f719001",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "snippet": "…Mr. Justice Amin-Ud-Din Khan – Supreme Court of Pakistan Mr. Justice Amin-Ud-Din Khan – Supreme Court of Pakistan # Mr. Justice Amin-Ud-Din Khan Mr. Justice Amin-Ud-Din Khan October 1…",
+   "src": "term:36f00bb9f3f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:amin-ud-din-khan",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "src": "term:36f00bb9f3f4",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:51:02+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "judicial",
+   "description": "Created by the Twenty-Seventh Amendment (2025); hears major constitutional matters formerly heard by the Supreme Court. Constitutional size is one chief justice plus judges set by Parliament or, pending legislation, the President. Thirteen authorized positions, seven reported filled on the cutoff. The inaugural chief and initial judges were exceptionally appointed by the President on prime-ministerial advice; later appointments follow the Judicial Commission procedure, not popular judicial elections.",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "body:PK:national:federal-constitutional-court",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:51:00+00:00",
+   "name": "Federal Constitutional Court",
+   "name_local": "وفاقی آئینی عدالت",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:51:00+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064",
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:42+00:00",
+   "id": "level:PK:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:50:42+00:00"
+  },
+  {
+   "aliases": [
+    "Judge of the Federal Constitutional Court"
+   ],
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "is_elected": false,
+   "keywords": [
+    "judg",
+    "judge"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:51:02+00:00",
+   "name": "Chief Justice of the Federal Constitutional Court",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 12,
+   "selection_details": "Up to 12 other authorized positions (six filled as of the cutoff); nominated by the Judicial Commission and appointed by the President; serve until age 68 unless earlier departure.",
+   "selection_method": "appointment",
+   "single_seat": false,
+   "structure_evidence": "verified",
+   "term_length_years": 3.0,
+   "title_local": "وفاقی آئینی عدالت کے جج",
+   "updated_at": "2026-11-14T23:51:02+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "person:PK:amin-ud-din-khan",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:51:02+00:00",
+   "name": "Amin-ud-Din Khan",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "arabnews.pk",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "source:06d9528f8641f8a9",
+   "label": "Source",
+   "name": "Justice Amin-Ud-Din Khan appointed Pakistan’s first Constitutional Court chief justice",
+   "published_date": "2025-11-13T18:47:51.000Z",
+   "retrieved_at": "2026-11-14T23:51:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "url": "https://www.arabnews.pk/pakistan/justice-amin-ud-din-khan-appointed-pakistans-first-constitutional-court-chief-justice-2622522"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "source:0ba40f285291f860",
+   "label": "Source",
+   "name": "Situationer: ‘Time flies’ after judicial hierarchy rewritten - Newspaper - DAWN.COM",
+   "retrieved_at": "2026-11-14T23:51:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "url": "https://www.dawn.com/news/2044385/situationer-time-flies-after-judicial-hierarchy-rewritten"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "source:1db84969eeef2ee3",
+   "label": "Source",
+   "name": "18De Gvde",
+   "retrieved_at": "2026-11-14T23:51:00+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "url": "https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "fccp.gov.pk",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "source:33eab6cceaef82ed",
+   "label": "Source",
+   "name": "Federal Constitutional Court \n                        of Pakistan",
+   "retrieved_at": "2026-11-14T23:51:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "url": "https://www.fccp.gov.pk/chief-justice"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "fccp.gov.pk",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "source:3afaf0924d5c3ab5",
+   "label": "Source",
+   "name": "Federal Constitutional Court \n                        of Pakistan",
+   "retrieved_at": "2026-11-14T23:51:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "url": "https://www.fccp.gov.pk/judges"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "arabnews.pk",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "source:7340031214239264",
+   "label": "Source",
+   "name": "Justice Amin-Ud-Din Khan takes oath as chief justice of Pakistan’s first Constitutional Court",
+   "published_date": "2025-11-14T07:05:45.000Z",
+   "retrieved_at": "2026-11-14T23:51:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "url": "https://www.arabnews.pk/pakistan/justice-amin-ud-din-khan-takes-oath-as-chief-justice-of-pakistans-first-constitutional-court-2622572"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "source:9cacc2debf6a7d46",
+   "label": "Source",
+   "name": "Aminuddin Khan",
+   "published_date": "2026-11-01T21:26:03.000Z",
+   "retrieved_at": "2026-11-14T23:51:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "url": "https://en.wikipedia.org/wiki/Aminuddin_Khan"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "supremecourt.gov.pk",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "source:f91d46f09f719001",
+   "label": "Source",
+   "name": "Mr. Justice Amin-Ud-Din Khan – Supreme Court of Pakistan",
+   "retrieved_at": "2026-11-14T23:51:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:02+00:00",
+   "url": "https://www.supremecourt.gov.pk/judges/mr-justice-amin-ud-din-khan/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2028-11-13",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "term:36f00bb9f3f4",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:51:02+00:00",
+   "name": "Amin-ud-Din Khan — term from 2025-11-14",
+   "office": "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court",
+   "person": "person:PK:amin-ud-din-khan",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2025-11-14",
+   "updated_at": "2026-11-14T23:51:02+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court": [
+   "country:PK",
+   "level:PK:national",
+   "body:PK:national:federal-constitutional-court",
+   "office:PK:national:federal-constitutional-court:chief-justice-of-the-federal-constitutional-court"
+  ]
+ },
+ "politician": "person:PK:amin-ud-din-khan",
+ "sha256": "e6fd60daef16fd800b7a3c6b1d42a230ed87397db26618496887ca4b9c74965a",
+ "unreached_offices": []
+}

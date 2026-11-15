@@ -1,0 +1,377 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "src": "body:MX:state:MX-HID:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-HID",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-HID:executive",
+   "src": "level:MX:state:MX-HID",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:296c54c0f723",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "src": "office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:15:50+00:00"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "end": "2028-09-04",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:15:50+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:julio-ramon-menchaca-salazar",
+   "start": "2022-09-05",
+   "status": "current",
+   "term_id": "term:296c54c0f723",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:15:50+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:15:50+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Hacemos Historia en Hidalgo (MORENA–PT–Nueva Alianza Hidalgo)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "src": "person:MX:julio-ramon-menchaca-salazar",
+   "term_id": "term:296c54c0f723",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:15:50+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:50+00:00",
+   "claim": "Julio Ramón Menchaca Salazar holds office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "dst": "source:0e99064095da2942",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "snippet": "…tín Pérez (provisional governor) - (1914): Agustín Sanguines (interim governor) - (1914): Froilán Jiménez (interim governor) - (1914): Nicolás Flores Rubio (provisional governor) - (1914): Filiberto Rubio (Deputy governor) - (1914): Manuel Medina Veytia (provisional governor) - (1914): Almaquio Tovar (provisional gover…",
+   "src": "term:296c54c0f723",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:50+00:00",
+   "claim": "Julio Ramón Menchaca Salazar holds office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "dst": "source:142fcb04d5c87939",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "snippet": "…-output .infobox-table>tbody{display:table-row-group}body.skin--responsive .mw-parser-output .infobox-table th,body.skin--responsive .mw-parser-output .infobox-table td{padding-left:inherit;padding-right:inherit}} | Julio Menchaca | | | --- | --- | | | | | Governor of Hidalgo | | | Incumbent | | | Assumed office 5 Sept…",
+   "src": "term:296c54c0f723",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:50+00:00",
+   "claim": "Julio Ramón Menchaca Salazar holds office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "dst": "source:1692ca0969b4fa41",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "snippet": "…Julio Menchaca Salazar Julio Menchaca Salazar | Julio Menchaca Salazar | | | --- | --- | | | | | Gobernador de Hidalgo Actualmente en el cargo | | | Desde el 5 de septiembre d…",
+   "src": "term:296c54c0f723",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:50+00:00",
+   "claim": "Julio Ramón Menchaca Salazar holds office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "dst": "source:23555f764bd8e261",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "snippet": "…Gobierno Gobierno Lic. Julio Ramón Menchaca Salazar GOBERNADOR DEL ESTADO DE HIDALGO Nació el 27 de diciembre de 1959 en la ciudad de Pachuca de Soto, Hgo., es Licenciado en Derecho egresado de la Univer…",
+   "src": "term:296c54c0f723",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:50+00:00",
+   "claim": "Julio Ramón Menchaca Salazar holds office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "dst": "source:a429a0a5b4d049e5",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "snippet": "…julio ramón menchaca salazar # Julio Ramón Menchaca Salazar Gobernador Constitucional del Estado de Hidalgo. Orgulloso hidalguense, esposo de Edda, papá de Carolina y Julio. Convenc…",
+   "src": "term:296c54c0f723",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:julio-ramon-menchaca-salazar",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "src": "term:296c54c0f723",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:15:50+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "body:MX:state:MX-HID:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:15:45+00:00",
+   "name": "Executive of Hidalgo",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:15:45+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "level:MX:state:MX-HID",
+   "iso_3166_2": "MX-HID",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:15:45+00:00",
+   "name": "Hidalgo",
+   "pipeline_mode": "research_only",
+   "researched_name": "Hidalgo",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:15:45+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:15:46+00:00",
+   "id": "office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:15:46+00:00",
+   "name": "Governor of Hidalgo",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "unsupported",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:15:46+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "id": "person:MX:julio-ramon-menchaca-salazar",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:15:50+00:00",
+   "name": "Julio Ramón Menchaca Salazar",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "id": "source:0e99064095da2942",
+   "label": "Source",
+   "name": "List of governors of Hidalgo",
+   "published_date": "2026-09-07T18:38:15.000Z",
+   "retrieved_at": "2026-11-14T23:15:50+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "url": "https://en.wikipedia.org/wiki/List_of_governors_of_Hidalgo"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "id": "source:142fcb04d5c87939",
+   "label": "Source",
+   "name": "Julio Menchaca",
+   "published_date": "2026-03-21T05:44:45.000Z",
+   "retrieved_at": "2026-11-14T23:15:50+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "url": "https://en.wikipedia.org/wiki/Julio_Menchaca"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "id": "source:1692ca0969b4fa41",
+   "label": "Source",
+   "name": "Julio Menchaca Salazar",
+   "published_date": "2026-11-04T03:55:49.000Z",
+   "retrieved_at": "2026-11-14T23:15:50+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "url": "https://es.wikipedia.org/wiki/Julio_Menchaca_Salazar"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "hidalgo.gob.mx",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "id": "source:23555f764bd8e261",
+   "label": "Source",
+   "name": "Gobierno",
+   "retrieved_at": "2026-11-14T23:15:50+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "url": "https://gobierno.hidalgo.gob.mx/gobernador"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "linkedin.com",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "id": "source:a429a0a5b4d049e5",
+   "label": "Source",
+   "name": "julio ramón menchaca salazar",
+   "published_date": "2026-11-08T12:05:12.000Z",
+   "retrieved_at": "2026-11-14T23:15:50+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:50+00:00",
+   "url": "https://linkedin.com/in/julio-menchaca-salazar"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2028-09-04",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:50+00:00",
+   "id": "term:296c54c0f723",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:15:50+00:00",
+   "name": "Julio Ramón Menchaca Salazar — term from 2022-09-05",
+   "office": "office:MX:state:MX-HID:executive:governor-of-hidalgo",
+   "person": "person:MX:julio-ramon-menchaca-salazar",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2022-09-05",
+   "updated_at": "2026-11-14T23:15:50+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-HID:executive:governor-of-hidalgo": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-HID",
+   "body:MX:state:MX-HID:executive",
+   "office:MX:state:MX-HID:executive:governor-of-hidalgo"
+  ]
+ },
+ "politician": "person:MX:julio-ramon-menchaca-salazar",
+ "sha256": "b67988d496e738aa97c5ad4a5e6681fd7a3ba0ce5dcabb1e898354d42a793654",
+ "unreached_offices": []
+}

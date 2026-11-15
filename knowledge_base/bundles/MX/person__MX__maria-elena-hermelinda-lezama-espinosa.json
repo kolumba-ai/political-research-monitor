@@ -1,0 +1,457 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "src": "body:MX:state:MX-ROO:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-ROO",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-ROO:executive",
+   "src": "level:MX:state:MX-ROO",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:fad4b72c6238",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "src": "office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:15:06+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:02+00:00",
+   "claim": "office exists: Governor of Quintana Roo",
+   "dst": "source:990a6b2d3a158c4e",
+   "first_seen": "2026-11-14T23:15:02+00:00",
+   "src": "office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:02+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:02+00:00",
+   "claim": "office exists: Governor of Quintana Roo",
+   "dst": "source:fa028d48cc77117a",
+   "first_seen": "2026-11-14T23:15:02+00:00",
+   "src": "office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:02+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "end": "2027-09-24",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:15:06+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:maria-elena-hermelinda-lezama-espinosa",
+   "start": "2022-09-25",
+   "status": "current",
+   "term_id": "term:fad4b72c6238",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:15:06+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:15:06+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Hacemos Historia en Quintana Roo",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "src": "person:MX:maria-elena-hermelinda-lezama-espinosa",
+   "term_id": "term:fad4b72c6238",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:15:06+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:06+00:00",
+   "claim": "María Elena Hermelinda Lezama Espinosa holds office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "dst": "source:11221120a2d8ea94",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "snippet": "…Presidenta municipal de Benito Juárez | | | 1 de octubre de 2018-7 de marzo de 2022 | | | Predecesor | Remberto Estrada Barba | | Sucesora | Ana Peralta de la Peña | | Información personal | | | Nombre de nacimiento | María Elena Hermelinda Lezama Espinosa | | Apodo | Mara | | Nacimiento | 29 de septiembre de 1968 (58…",
+   "src": "term:fad4b72c6238",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:06+00:00",
+   "claim": "María Elena Hermelinda Lezama Espinosa holds office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "dst": "source:339565cbefc96b2e",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "snippet": "…enta municipal de Cancún y por su aparición en programas radiofónicos ¿Quién es Mara Lezama, gobernadora de Quintana Roo? Foto: Especial. Por: La Razón Online 25/09/2022 13:16:43 María Elena Hermelinda Lezama Espinoza, mejor conocida como Mara Lezama, se convirtió este 25 de septiembre en la primera gobernadora de Quin…",
+   "src": "term:fad4b72c6238",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:06+00:00",
+   "claim": "María Elena Hermelinda Lezama Espinosa holds office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "dst": "source:3c1aa0051dfd30db",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "snippet": "…ral con el Mérito del Sector Rural Quintanarroense ## Servicios ## Sitios de Interés #### Rendición de Cuentas ## Conócenos Mara Lezama, Gobernadora María Elena Hermelinda Lezama Espinosa (Ciudad de México, 29 de septiembre de 1968), conocida como Mara Lezama, es una comunicóloga, periodista, y política mexicana, milit…",
+   "src": "term:fad4b72c6238",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:06+00:00",
+   "claim": "María Elena Hermelinda Lezama Espinosa holds office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "dst": "source:5cf3e3625a9702ec",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "snippet": "…Lezama (middle) in 2025 | | | 9th Governor of Quintana Roo | | | Incumbent | | | Assumed office 25 September 2022 | | | Preceded by | Carlos Joaquín González | | Personal details | | | Born | María Elena Hermelinda Lezama Espinosa 29 September 1968 (age 57) Mexico City | | Party | National Regeneration Movement (2015–p…",
+   "src": "term:fad4b72c6238",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:06+00:00",
+   "claim": "María Elena Hermelinda Lezama Espinosa holds office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "dst": "source:990a6b2d3a158c4e",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "snippet": "…adano | | MORENA PAN | Morena Partido Acción Nacional | | PRD PRI | Partido de la Revolución Democrática Partido Revolucionario Institucional | | PT PVEM | Partido del Trabajo Partido Verde Ecologísta de México | Partidos Políticos Coaliciones Candidatura Independiente “Va por Quintana Roo” “JUNTOS HACEMOS HISTORIA EN…",
+   "src": "term:fad4b72c6238",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:06+00:00",
+   "claim": "María Elena Hermelinda Lezama Espinosa holds office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "dst": "source:ad04388b403fa836",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "snippet": "…Sesión Solemne con motivo de la Toma de Protesta de la Licenciada María Elena Hermelinda Lezama Espinosa, como Gobernadora del Estado de Quintana Roo. Sesión Solemne con motivo de la Toma de Protesta de la Licenciada María Elena Hermelinda Lezama Espinosa,…",
+   "src": "term:fad4b72c6238",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:06+00:00",
+   "claim": "María Elena Hermelinda Lezama Espinosa holds office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "dst": "source:ddb55c62633929b7",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "snippet": "…ra electa de Quintana Roo en agosto pasado. (Cuartoscuro/Elizabeth Ruiz) Por Renan Quintal / Corresponsal septiembre 25, 2022 | 7:00 hrs Cancún, Quintana Roo.- María Elena Hermelinda Lezama Espinosa, mejor conocida como Mara Lezama, asumirá la gubernatura de Quintana Roo este domingo 25 de septiembre. La nueva gobernad…",
+   "src": "term:fad4b72c6238",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:maria-elena-hermelinda-lezama-espinosa",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "src": "term:fad4b72c6238",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "body:MX:state:MX-ROO:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:14:59+00:00",
+   "name": "Executive of Quintana Roo",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:14:59+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "level:MX:state:MX-ROO",
+   "iso_3166_2": "MX-ROO",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:14:59+00:00",
+   "name": "Quintana Roo",
+   "pipeline_mode": "research_only",
+   "researched_name": "Quintana Roo",
+   "special_status_note": "The current governor serves a transitional five-year term (2022–2027) rather than the usual six years, to align election calendars.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:14:59+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:15:02+00:00",
+   "id": "office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:15:02+00:00",
+   "name": "Governor of Quintana Roo",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 5.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:15:02+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "person:MX:maria-elena-hermelinda-lezama-espinosa",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:15:06+00:00",
+   "name": "María Elena Hermelinda Lezama Espinosa",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "source:11221120a2d8ea94",
+   "label": "Source",
+   "name": "Mara Lezama",
+   "published_date": "2026-11-04T03:51:20.000Z",
+   "retrieved_at": "2026-11-14T23:15:06+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "url": "https://es.wikipedia.org/wiki/Mara_Lezama"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "razon.com.mx",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "source:339565cbefc96b2e",
+   "label": "Source",
+   "name": "¿Quién es Mara Lezama, la nueva gobernadora de Quintana Roo? - La Razón de México",
+   "published_date": "2022-09-25T13:16:43.000Z",
+   "retrieved_at": "2026-11-14T23:15:06+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "url": "https://www.razon.com.mx/estados/2022/09/25/quien-es-mara-lezama-la-nueva-gobernadora-de-quintana-roo/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "qroo.gob.mx",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "source:3c1aa0051dfd30db",
+   "label": "Source",
+   "name": "Inicio - Gobierno del Estado de Quintana Roo",
+   "retrieved_at": "2026-11-14T23:15:06+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "url": "https://qroo.gob.mx/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "source:5cf3e3625a9702ec",
+   "label": "Source",
+   "name": "Mara Lezama",
+   "published_date": "2026-08-26T21:42:16.000Z",
+   "retrieved_at": "2026-11-14T23:15:06+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "url": "https://en.wikipedia.org/wiki/Mara_Lezama"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "ieqroo.org.mx",
+   "first_seen": "2026-11-14T23:15:02+00:00",
+   "id": "source:990a6b2d3a158c4e",
+   "label": "Source",
+   "name": "Estadística Electoral y de Participación Ciudadana",
+   "retrieved_at": "2026-11-14T23:15:06+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "url": "https://www.ieqroo.org.mx/descargas/2022/estadistica-electoral-2022.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresoqroo.gob.mx",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "source:ad04388b403fa836",
+   "label": "Source",
+   "name": "Sesión Solemne con motivo de la Toma de Protesta de la Licenciada María Elena Hermelinda Lezama Espinosa, como Gobernadora del Estado de Quintana Roo.",
+   "retrieved_at": "2026-11-14T23:15:06+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "url": "https://www.congresoqroo.gob.mx/ordenesdia/892"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "elfinanciero.com.mx",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "source:ddb55c62633929b7",
+   "label": "Source",
+   "name": "Mara Lezama asume como gobernadora en Quintana Roo: Este es su gabinete y así recibe el estado – El Financiero",
+   "published_date": "2022-09-25T12:00:02.000Z",
+   "retrieved_at": "2026-11-14T23:15:06+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "url": "https://www.elfinanciero.com.mx/estados/2022/09/25/mara-lezama-asume-como-gobernadora-en-quintana-roo-este-es-su-gabinete-y-asi-recibe-el-estado/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresoqroo.gob.mx",
+   "first_seen": "2026-11-14T23:15:02+00:00",
+   "id": "source:fa028d48cc77117a",
+   "label": "Source",
+   "name": "SESIÓN DE INSTALACIÓN DE LA XVIII LEGISLATURA DEL ESTADO.",
+   "retrieved_at": "2026-11-14T23:15:06+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "url": "https://documentos.congresoqroo.gob.mx/diariodedebates/DD-XVIII-2024-9-3-1097-sesion-no-01.pdf"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-24",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "term:fad4b72c6238",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:15:06+00:00",
+   "name": "María Elena Hermelinda Lezama Espinosa — term from 2022-09-25",
+   "office": "office:MX:state:MX-ROO:executive:governor-of-quintana-roo",
+   "person": "person:MX:maria-elena-hermelinda-lezama-espinosa",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2022-09-25",
+   "updated_at": "2026-11-14T23:15:06+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-ROO:executive:governor-of-quintana-roo": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-ROO",
+   "body:MX:state:MX-ROO:executive",
+   "office:MX:state:MX-ROO:executive:governor-of-quintana-roo"
+  ]
+ },
+ "politician": "person:MX:maria-elena-hermelinda-lezama-espinosa",
+ "sha256": "48064cec0601b5c0d9c0d7f0b4e22b364b61f60f4c29fe8c18c8b3d0855c3581",
+ "unreached_offices": []
+}

@@ -1,0 +1,458 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:national:senate:senator-general-seat",
+   "src": "body:PK:national:senate",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:national",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:PK:national:senate",
+   "src": "level:PK:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:a4721e122d08",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:50:58+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:57+00:00",
+   "claim": "office exists: Chairman of the Senate",
+   "dst": "source:33840cc7424b3a7d",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:57+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:59+00:00",
+   "claim": "office exists: Deputy Chairman of the Senate",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:59+00:00",
+   "claim": "office exists: Deputy Chairman of the Senate",
+   "dst": "source:a7181840e02a7a93",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:59+00:00",
+   "claim": "office exists: Deputy Chairman of the Senate",
+   "dst": "source:f43fb07da7fc2a60",
+   "first_seen": "2026-11-14T23:50:59+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": false,
+   "dst": "office:PK:national:senate:senator-general-seat",
+   "end": "2027-04-08",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:50:58+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:syed-yousaf-raza-gilani",
+   "start": "2024-04-09",
+   "status": "former",
+   "superseded_at": "2026-11-14T23:51:00+00:00",
+   "superseded_by": "person:PK:syedaal-khan",
+   "term_id": "term:a4721e122d08",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:51:00+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:50:58+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:pppp",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "src": "person:PK:syed-yousaf-raza-gilani",
+   "term_id": "term:a4721e122d08",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:50:58+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:58+00:00",
+   "claim": "Syed Yousaf Raza Gilani holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:24d12e1e06aaf781",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "snippet": "…d in the data dictionary : Asia-Pacific Group Speaker Official title The Speaker may for example be known as the Presiding Officer, President, Chairman/Chairperson, etc. View field in the data dictionary : Chairman of the Senate Speaker : Syed Yousuf Raza Gillani (Male) Date of birth: 19 Jun 1952 Term Start (and end) o…",
+   "src": "term:a4721e122d08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:58+00:00",
+   "claim": "Syed Yousaf Raza Gilani holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:33840cc7424b3a7d",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "snippet": "…Senate of Pakistan Senate of Pakistan # Syed Yousaf Raza Gilani | Name: | Syed Yousaf Raza Gilani | | | --- | --- | --- | | Tenure: | March 2021 to March 2027 | | | Province: | Federal Capital | | | Party: | Pakista…",
+   "src": "term:a4721e122d08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:58+00:00",
+   "claim": "Syed Yousaf Raza Gilani holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:4802a2b48d6de6de",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "snippet": "…hen signed the roll of members one by one. The session was then briefly adjourned before the election of the chairman and the deputy chairman. In the meantime, PPP’s Saleem Mandviwalla told Dawn.com that Yousaf Raza Gilani and Saidal Nasir were elected unopposed as Senate chairman and as the deputy chairman, respective…",
+   "src": "term:a4721e122d08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:58+00:00",
+   "claim": "Syed Yousaf Raza Gilani holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:f3ee349b8e97d3e0",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "snippet": "…Syed Yusuf Raza Gilani of PPP takes oath as Chairman Senate Syed Yusuf Raza Gilani of PPP takes oath as Chairman Senate Syed Yusuf Raza Gilani of PPP takes oath as Chairman Sen…",
+   "src": "term:a4721e122d08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:58+00:00",
+   "claim": "Syed Yousaf Raza Gilani holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:ff157fedd8f52241",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "snippet": "…liamentary Services President PIPS Board of Governors – Pakistan Institute for Parliamentary Services #### President PIPS Board of Governors HONOURABLE SYED YOUSAF RAZA GILANI, CHAIRMAN SENATE OF PAKISTAN Honourable Syed Yousaf Raza Gilani was sworn in as the 9th Chairman of the Senate of Pakistan on April 9, 2024 and…",
+   "src": "term:a4721e122d08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:58+00:00",
+   "claim": "Syed Yousaf Raza Gilani holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:ffd30b841ad2b437",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "snippet": "…yusuf raza gilani # Yusuf Raza Gilani ## About Yousaf Raza Gilani (born 9 June 1952) is a Pakistani politician who served as the 16th Prime Minister of Pakistan from 2008…",
+   "src": "term:a4721e122d08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:syed-yousaf-raza-gilani",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "src": "term:a4721e122d08",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:50:58+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "description": "Permanent upper house; 96 seats, with half the senators retiring every three years. Chairman and deputy chairman are already counted among the senators.",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "body:PK:national:senate",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:50:56+00:00",
+   "name": "Senate",
+   "name_local": "سینیٹ",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:50:56+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064",
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:42+00:00",
+   "id": "level:PK:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:50:42+00:00"
+  },
+  {
+   "aliases": [
+    "Chairman of the Senate",
+    "Deputy Chairman of the Senate",
+    "Senator, non-Muslim seat",
+    "Senator, reserved seat for women",
+    "Senator, technocrat or ulema seat"
+   ],
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "office:PK:national:senate:senator-general-seat",
+   "is_elected": true,
+   "keywords": [
+    "deputy",
+    "deputy chairman"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:50:59+00:00",
+   "name": "Senator, general seat",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_details": "Elected by senators from among themselves.",
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 3.0,
+   "title_local": "ڈپٹی چیئرمین سینیٹ",
+   "updated_at": "2026-11-14T23:50:59+00:00"
+  },
+  {
+   "acronym": "PPPP",
+   "aliases": [
+    "PPPP",
+    "Pakistan Peoples Party Parliamentarian",
+    "Pakistan Peoples Party Parliamentarians"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:45+00:00",
+   "id": "party:PK:pppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party Parliamentarians",
+   "updated_at": "2026-11-15T01:53:07+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "id": "person:PK:syed-yousaf-raza-gilani",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:50:58+00:00",
+   "name": "Syed Yousaf Raza Gilani",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "ipu.org",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "id": "source:24d12e1e06aaf781",
+   "label": "Source",
+   "name": "Pakistan | Senate | IPU Parline: global data on national parliaments",
+   "retrieved_at": "2026-11-14T23:50:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "url": "https://data.ipu.org/parliament/PK/PK-UC01/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senate.gov.pk",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "id": "source:33840cc7424b3a7d",
+   "label": "Source",
+   "name": "Senate of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:58+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "url": "https://senate.gov.pk/en/profile.php?uid=1014"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "id": "source:4802a2b48d6de6de",
+   "label": "Source",
+   "name": "Yousaf Raza Gillani clinches Senate chairmanship as PML-N’s Syedal Khan Nasir secures deputy role - DAWN.COM",
+   "published_date": "2024-04-09T04:33:25.000Z",
+   "retrieved_at": "2026-11-14T23:50:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "url": "https://www.dawn.com/news/1826671"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senate.gov.pk",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "id": "source:a7181840e02a7a93",
+   "label": "Source",
+   "name": "Senate of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:59+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:59+00:00",
+   "url": "https://senate.gov.pk/en/essence.php?id=24"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "radio.gov.pk",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "id": "source:f3ee349b8e97d3e0",
+   "label": "Source",
+   "name": "Syed Yusuf Raza Gilani of PPP takes oath as Chairman Senate",
+   "published_date": "2024-04-09T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:50:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "url": "https://www.radio.gov.pk/09-04-2024/syed-yusuf-raza-gilani-of-ppp-takes-oath-as-chairman-senate"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senate.gov.pk",
+   "first_seen": "2026-11-14T23:50:59+00:00",
+   "id": "source:f43fb07da7fc2a60",
+   "label": "Source",
+   "name": "Senate of Pakistan",
+   "retrieved_at": "2026-11-14T23:51:00+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "url": "https://www.senate.gov.pk/en/profile.php?uid=1020"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pips.gov.pk",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "id": "source:ff157fedd8f52241",
+   "label": "Source",
+   "name": "President PIPS Board of Governors – Pakistan Institute for Parliamentary Services",
+   "retrieved_at": "2026-11-14T23:50:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "url": "https://www.pips.gov.pk/message/president-pips-board-of-governors/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "exa.ai",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "id": "source:ffd30b841ad2b437",
+   "label": "Source",
+   "name": "yusuf raza gilani",
+   "retrieved_at": "2026-11-14T23:50:58+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "url": "https://exa.ai/library/person/8cyysns4hgf"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-04-08",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:50:58+00:00",
+   "id": "term:a4721e122d08",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:50:58+00:00",
+   "name": "Syed Yousaf Raza Gilani — term from 2024-04-09",
+   "office": "office:PK:national:senate:senator-general-seat",
+   "person": "person:PK:syed-yousaf-raza-gilani",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2024-04-09",
+   "updated_at": "2026-11-14T23:50:58+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:national:senate:senator-general-seat": [
+   "country:PK",
+   "level:PK:national",
+   "body:PK:national:senate",
+   "office:PK:national:senate:senator-general-seat"
+  ]
+ },
+ "politician": "person:PK:syed-yousaf-raza-gilani",
+ "sha256": "2c08d50506b36db2c6506e991e5433c31e8d584b35b2a8c794aa81cfe3bb5cef",
+ "unreached_offices": []
+}

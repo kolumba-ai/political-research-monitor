@@ -1,0 +1,349 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "src": "body:MX:state:MX-SIN:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-SIN",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-SIN:executive",
+   "src": "level:MX:state:MX-SIN",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:2d50ffcd8c27",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "src": "office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:15:11+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:11+00:00",
+   "claim": "office exists: Governor of Sinaloa",
+   "dst": "source:3fabf161de5770b7",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "src": "office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:11+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:11+00:00",
+   "claim": "office exists: Governor of Sinaloa",
+   "dst": "source:854d0c87f370489e",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "src": "office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:11+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:11+00:00",
+   "claim": "office exists: Governor of Sinaloa",
+   "dst": "source:d2808aa59f1d806c",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "src": "office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:11+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "dst": "office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "end": "2027-10-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "is_acting": true,
+   "last_verified": "2026-11-14T23:15:11+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:graciela-dominguez-nava",
+   "start": "2026-08-25",
+   "status": "current",
+   "term_id": "term:2d50ffcd8c27",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:15:11+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:15:11+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "src": "person:MX:graciela-dominguez-nava",
+   "term_id": "term:2d50ffcd8c27",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:15:11+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:11+00:00",
+   "claim": "Graciela Domínguez Nava holds office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "dst": "source:3fabf161de5770b7",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "snippet": "…Nombra Congreso de Sinaloa a Graciela Domínguez Nava como Gobernadora Interina - H. Congreso del Estado de Sinaloa Nombra Congreso de Sinaloa a Graciela Domínguez Nava como Gobernadora Interina - H. Congreso…",
+   "src": "term:2d50ffcd8c27",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:11+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:11+00:00",
+   "claim": "Graciela Domínguez Nava holds office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "dst": "source:d2808aa59f1d806c",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "snippet": "…Congreso del Estado designa a Graciela Domínguez Nava como gobernadora interina de Sinaloa - Gobierno del Estado de Sinaloa Congreso del Estado designa a Graciela Domínguez Nava como gobernadora interina de Si…",
+   "src": "term:2d50ffcd8c27",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:11+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:graciela-dominguez-nava",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "src": "term:2d50ffcd8c27",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:15:11+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "body:MX:state:MX-SIN:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:15:08+00:00",
+   "name": "Executive of Sinaloa",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:15:08+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "level:MX:state:MX-SIN",
+   "iso_3166_2": "MX-SIN",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:15:08+00:00",
+   "name": "Sinaloa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Sinaloa",
+   "special_status_note": "Graciela Domínguez Nava was appointed interim governor by the state congress on 2026-08-25 following Rubén Rocha Moya’s indefinite leave; she is expected to complete the term ending 2027-10-31.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:15:08+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "id": "office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:15:11+00:00",
+   "name": "Governor of Sinaloa",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:15:11+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "id": "person:MX:graciela-dominguez-nava",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:15:11+00:00",
+   "name": "Graciela Domínguez Nava",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresosinaloa.gob.mx",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "id": "source:3fabf161de5770b7",
+   "label": "Source",
+   "name": "Nombra Congreso de Sinaloa a Graciela Domínguez Nava como Gobernadora Interina - H. Congreso del Estado de Sinaloa",
+   "published_date": "2026-08-25T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:15:11+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:11+00:00",
+   "url": "https://www.congresosinaloa.gob.mx/comunicados/nombra-congreso-de-sinaloa-a-graciela-dominguez-nava-como-gobernadora-interina"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresosinaloa.gob.mx",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "id": "source:854d0c87f370489e",
+   "label": "Source",
+   "name": "En Sesión Solemne se instala la LXV Legislatura del H. Congreso del Estado de Sinaloa - H. Congreso del Estado de Sinaloa",
+   "retrieved_at": "2026-11-14T23:15:11+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:11+00:00",
+   "url": "https://www.congresosinaloa.gob.mx/comunicados/en-sesion-solemne-se-instala-la-lxv-legislatura-del-h-congreso-del-estado-de-sinaloa"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "sinaloa.gob.mx",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "id": "source:d2808aa59f1d806c",
+   "label": "Source",
+   "name": "Congreso del Estado designa a Graciela Domínguez Nava como gobernadora interina de Sinaloa - Gobierno del Estado de Sinaloa",
+   "published_date": "2026-08-25T18:59:10.000Z",
+   "retrieved_at": "2026-11-14T23:15:11+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:11+00:00",
+   "url": "https://sinaloa.gob.mx/congreso-del-estado-designa-a-graciela-dominguez-nava-como-gobernadora-interina-de-sinaloa"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "end": "2027-10-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:11+00:00",
+   "id": "term:2d50ffcd8c27",
+   "is_acting": true,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:15:11+00:00",
+   "name": "Graciela Domínguez Nava — term from 2026-08-25",
+   "office": "office:MX:state:MX-SIN:executive:governor-of-sinaloa",
+   "person": "person:MX:graciela-dominguez-nava",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2026-08-25",
+   "updated_at": "2026-11-14T23:15:11+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-SIN:executive:governor-of-sinaloa": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-SIN",
+   "body:MX:state:MX-SIN:executive",
+   "office:MX:state:MX-SIN:executive:governor-of-sinaloa"
+  ]
+ },
+ "politician": "person:MX:graciela-dominguez-nava",
+ "sha256": "0bbf9587e9b0324f9139e963c877b940e4f049f6547a0b2aabc4e8855b590c2d",
+ "unreached_offices": []
+}

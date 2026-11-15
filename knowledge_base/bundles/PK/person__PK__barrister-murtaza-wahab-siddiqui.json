@@ -1,0 +1,355 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "src": "body:PK:municipal:PK-SD:karachi:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:PK-SD:karachi",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:PK-SD:karachi:council",
+   "src": "level:PK:municipal:PK-SD:karachi",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:4ff8daf7579e",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "src": "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:56:56+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:56:53+00:00",
+   "claim": "office exists: Mayor of Karachi",
+   "dst": "source:1ecc49fdffc60cf7",
+   "first_seen": "2026-11-14T23:56:53+00:00",
+   "src": "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:56:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:56:53+00:00",
+   "claim": "office exists: Mayor of Karachi",
+   "dst": "source:a39ad332ed661c9a",
+   "first_seen": "2026-11-14T23:56:53+00:00",
+   "src": "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:56:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "dst": "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:56:56+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:barrister-murtaza-wahab-siddiqui",
+   "start": "2023-06-19",
+   "status": "current",
+   "term_id": "term:4ff8daf7579e",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:56:56+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:56:56+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ppp",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "src": "person:PK:barrister-murtaza-wahab-siddiqui",
+   "term_id": "term:4ff8daf7579e",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:56:56+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:56:56+00:00",
+   "claim": "Barrister Murtaza Wahab Siddiqui holds office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "dst": "source:4f474a3e66957646",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "snippet": "…Barrister Murtaza Wahab elected Mayor of Karachi Barrister Murtaza Wahab elected Mayor of Karachi # Barrister Murtaza Wahab elected Mayor of Karachi KARACHI, Ju…",
+   "src": "term:4ff8daf7579e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:56:56+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:56:56+00:00",
+   "claim": "Barrister Murtaza Wahab Siddiqui holds office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "dst": "source:a39ad332ed661c9a",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "snippet": "…Mayor Profile - Karachi Metropolitan Corportation Mayor Profile - Karachi Metropolitan Corportation ## Mayor Profile ### Mayor Karachi Barrister Murtaza Wahab Siddiqui - The Mayor of Karachi Murtaza Wahab Siddiqui is the current Mayor of Karachi. H e also served as the Administrator of Karachi from August 2…",
+   "src": "term:4ff8daf7579e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:56:56+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:56:56+00:00",
+   "claim": "Barrister Murtaza Wahab Siddiqui holds office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "dst": "source:b5e7239067dc24fe",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "snippet": "…December 2022 | | | Member of the Senate of Pakistan | | | In office August 2017 – 11 March 2018 | | | Personal details | | | Born | 25 December 1983 (age 42) Karachi, Sindh, Pakistan | | Party | PPP (2015-present) | | Relations | Fauzia Wahab (mother) [1] | Barrister Murtaza Wahab Siddiqui is a Pakistani politician w…",
+   "src": "term:4ff8daf7579e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:56:56+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:barrister-murtaza-wahab-siddiqui",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "src": "term:4ff8daf7579e",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:56:56+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:56:45+00:00",
+   "id": "body:PK:municipal:PK-SD:karachi:council",
+   "label": "GovernmentBody",
+   "name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality) of Karachi",
+   "name_local": "بلدیاتی کونسل de Karachi",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:56:45+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-14T23:56:45+00:00",
+   "id": "level:PK:municipal:PK-SD:karachi",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:56:45+00:00",
+   "name": "Karachi, Sindh",
+   "parent_division": "Sindh",
+   "parent_iso_3166_2": "PK-SD",
+   "pipeline_mode": "research_only",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-14T23:56:45+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:56:53+00:00",
+   "id": "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "is_elected": true,
+   "keywords": [
+    "mayor"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:56:53+00:00",
+   "name": "Mayor of Karachi",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "میئر",
+   "updated_at": "2026-11-14T23:56:53+00:00"
+  },
+  {
+   "acronym": "PPP",
+   "aliases": [
+    "PPP",
+    "Pakistan Peoples Party"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "party:PK:ppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party",
+   "updated_at": "2026-11-15T01:04:12+00:00"
+  },
+  {
+   "aliases": [
+    "Barrister Murtaza Wahab Siddiqui"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "id": "person:PK:barrister-murtaza-wahab-siddiqui",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:56:56+00:00",
+   "name": "Murtaza Wahab Siddiqui",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "thenews.pk",
+   "first_seen": "2026-11-14T23:56:53+00:00",
+   "id": "source:1ecc49fdffc60cf7",
+   "label": "Source",
+   "name": "KMC info being made available online: Wahab",
+   "retrieved_at": "2026-11-14T23:56:53+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:56:53+00:00",
+   "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "app.com.pk",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "id": "source:4f474a3e66957646",
+   "label": "Source",
+   "name": "Barrister Murtaza Wahab elected Mayor of Karachi",
+   "published_date": "2023-06-15T09:48:19.000Z",
+   "retrieved_at": "2026-11-14T23:56:56+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:56:56+00:00",
+   "url": "https://www.app.com.pk/domestic/barrister-murtaza-wahab-elected-mayor-of-karachi/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gos.pk",
+   "first_seen": "2026-11-14T23:56:53+00:00",
+   "id": "source:a39ad332ed661c9a",
+   "label": "Source",
+   "name": "Mayor Profile - Karachi Metropolitan Corportation",
+   "retrieved_at": "2026-11-14T23:56:56+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:56:56+00:00",
+   "url": "https://kmc.gos.pk/mayor-profile"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "id": "source:b5e7239067dc24fe",
+   "label": "Source",
+   "name": "Murtaza Wahab",
+   "published_date": "2026-10-06T00:01:45.000Z",
+   "retrieved_at": "2026-11-14T23:56:56+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:56:56+00:00",
+   "url": "https://en.wikipedia.org/wiki/Murtaza_Wahab"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:56:56+00:00",
+   "id": "term:4ff8daf7579e",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:56:56+00:00",
+   "name": "Barrister Murtaza Wahab Siddiqui — term from 2023-06-19",
+   "office": "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi",
+   "person": "person:PK:barrister-murtaza-wahab-siddiqui",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2023-06-19",
+   "updated_at": "2026-11-14T23:56:56+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:PK-SD:karachi",
+   "body:PK:municipal:PK-SD:karachi:council",
+   "office:PK:municipal:PK-SD:karachi:council:mayor-of-karachi"
+  ]
+ },
+ "politician": "person:PK:barrister-murtaza-wahab-siddiqui",
+ "sha256": "6602c00a9ef3badc670699e87ca4dec939b0343c13069f7ab09a1daae43440a1",
+ "unreached_offices": []
+}

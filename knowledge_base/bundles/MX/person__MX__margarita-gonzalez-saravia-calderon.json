@@ -1,0 +1,434 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "src": "body:MX:state:MX-MOR:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-MOR",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-MOR:executive",
+   "src": "level:MX:state:MX-MOR",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:ac33b4a3e8b1",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "src": "office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:12:59+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:54+00:00",
+   "claim": "office exists: Governor of Morelos",
+   "dst": "source:af10e80c373c7a4b",
+   "first_seen": "2026-11-14T23:12:54+00:00",
+   "src": "office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:54+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "end": "2030-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:12:59+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:margarita-gonzalez-saravia-calderon",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:ac33b4a3e8b1",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:12:59+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:12:59+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Morena–PT–PVEM (Sigamos Haciendo Historia en Morelos)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "src": "person:MX:margarita-gonzalez-saravia-calderon",
+   "term_id": "term:ac33b4a3e8b1",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:12:59+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:59+00:00",
+   "claim": "Margarita González Saravia Calderón holds office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "dst": "source:47152174b4925ec2",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "snippet": "…margarita gonzález saravia # Margarita González Saravia ## About Margarita González Saravia Calderón (born June 13, 1956) is a Mexican politician and businesswoman, and a member of the Morena party. From October 2020 to July 2023 she was general d…",
+   "src": "term:ac33b4a3e8b1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:59+00:00",
+   "claim": "Margarita González Saravia Calderón holds office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "dst": "source:6c1500f285129b24",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "snippet": "…de Turismo y Cultura de Morelos | | | 1 de octubre de 2018-1 de octubre de 2020 | | | Gobernador | Cuauhtémoc Blanco Bravo | | Predecesor | Jaime Álvarez Cisneros | | Sucesora | Julieta Goldzweig Cornejo | | Información personal | | | Nombre completo | Margarita González Saravia Calderón | | Nacimiento | 13 de junio d…",
+   "src": "term:ac33b4a3e8b1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:59+00:00",
+   "claim": "Margarita González Saravia Calderón holds office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "dst": "source:8cf8d270f83e945d",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "snippet": "…Quién es Margarita González Saravia, la primera gobernadora de Morelos- Grupo Milenio Quién es Margarita González Saravia, la primera gobernadora de Morelos- Grupo Milen…",
+   "src": "term:ac33b4a3e8b1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:59+00:00",
+   "claim": "Margarita González Saravia Calderón holds office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "dst": "source:98994bb7780af36c",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "snippet": "…Governor of Morelos Governor of Morelos | Governor of Morelos | | | --- | --- | | | | | Incumbent Margarita González Saravia since October 1, 2024 | | | Term length | Six years, non-renewable. | | Inaugural holder | Pedro Baranda…",
+   "src": "term:ac33b4a3e8b1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:59+00:00",
+   "claim": "Margarita González Saravia Calderón holds office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "dst": "source:af10e80c373c7a4b",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "snippet": "…Gobernadora Gobernadora # Margarita González Saravia ## Gobernadora Constitucional del Estado de Morelos Margarita González Saravia inició su compromiso social a los 15 años, trabajand…",
+   "src": "term:ac33b4a3e8b1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:59+00:00",
+   "claim": "Margarita González Saravia Calderón holds office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "dst": "source:f9f43ffe232b3dad",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "snippet": "…ález Saravia; seguridad y unión, son sus prioridades* Vamos a trabajar por fortalecer la seguridad, la unión y el bienestar del pueblo”, aseguró la Gobernadora Margarita González Saravia Calderón, posteriormente tomó protesta a los integrantes de su Gabinete Legal a quienes exhortó a trabajar para los morelenses. Despu…",
+   "src": "term:ac33b4a3e8b1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:59+00:00",
+   "claim": "Margarita González Saravia Calderón holds office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "dst": "source:fd225baad206d47f",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "snippet": "…arita González Saravia | | | --- | --- | | | | | Governor of Morelos | | | Incumbent | | | Assumed office 1 October 2024 | | | Preceded by | Cuauhtémoc Blanco | | Personal details | | | Born | Margarita González Saravia Calderón 13 June 1956 (age 70) Mexico City, Mexico | | Party | Morena | | Spouse | Maye Villa | | Ed…",
+   "src": "term:ac33b4a3e8b1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:margarita-gonzalez-saravia-calderon",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "src": "term:ac33b4a3e8b1",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:12:59+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "body:MX:state:MX-MOR:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:12:52+00:00",
+   "name": "Executive of Morelos",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:12:52+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "level:MX:state:MX-MOR",
+   "iso_3166_2": "MX-MOR",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:12:52+00:00",
+   "name": "Morelos",
+   "pipeline_mode": "research_only",
+   "researched_name": "Morelos",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:12:52+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:12:54+00:00",
+   "id": "office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:12:54+00:00",
+   "name": "Governor of Morelos",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:12:54+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "person:MX:margarita-gonzalez-saravia-calderon",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:12:59+00:00",
+   "name": "Margarita González Saravia Calderón",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "exa.ai",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "source:47152174b4925ec2",
+   "label": "Source",
+   "name": "margarita gonzález saravia",
+   "retrieved_at": "2026-11-14T23:12:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "url": "https://exa.ai/library/person/dg83zvk9hjs"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "source:6c1500f285129b24",
+   "label": "Source",
+   "name": "Margarita González Saravia",
+   "published_date": "2026-09-22T22:58:25.000Z",
+   "retrieved_at": "2026-11-14T23:12:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "url": "https://es.wikipedia.org/wiki/Margarita_Gonz%C3%A1lez_Saravia"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "milenio.com",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "source:8cf8d270f83e945d",
+   "label": "Source",
+   "name": "Quién es Margarita González Saravia, la primera gobernadora de Morelos- Grupo Milenio",
+   "published_date": "2024-10-02T02:40:00.000Z",
+   "retrieved_at": "2026-11-14T23:12:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "url": "https://www.milenio.com/politica/elecciones/quien-es-margarita-gonzalez-directora-general-de-la-loteria-nacional"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "source:98994bb7780af36c",
+   "label": "Source",
+   "name": "Governor of Morelos",
+   "published_date": "2026-09-07T05:12:32.000Z",
+   "retrieved_at": "2026-11-14T23:12:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_Morelos"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "morelos.gob.mx",
+   "first_seen": "2026-11-14T23:12:54+00:00",
+   "id": "source:af10e80c373c7a4b",
+   "label": "Source",
+   "name": "Gobernadora",
+   "retrieved_at": "2026-11-14T23:12:59+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "url": "https://www.morelos.gob.mx/gobiernos-vistas/gobernadora"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "diariodemorelos.com",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "source:f9f43ffe232b3dad",
+   "label": "Source",
+   "name": "Inicia gobierno de Margarita González Saravia; seguridad y unión, son sus prioridades",
+   "retrieved_at": "2026-11-14T23:12:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "url": "https://www.diariodemorelos.com/noticias/inicia-gobierno-de-margarita-gonz-lez-saravia-seguridad-y-uni-n-son-sus-prioridades"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "source:fd225baad206d47f",
+   "label": "Source",
+   "name": "Margarita González Saravia",
+   "published_date": "2026-10-03T08:13:59.000Z",
+   "retrieved_at": "2026-11-14T23:12:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:59+00:00",
+   "url": "https://en.wikipedia.org/wiki/Margarita_Gonz%C3%A1lez_Saravia"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2030-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "term:ac33b4a3e8b1",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:12:59+00:00",
+   "name": "Margarita González Saravia Calderón — term from 2024-10-01",
+   "office": "office:MX:state:MX-MOR:executive:governor-of-morelos",
+   "person": "person:MX:margarita-gonzalez-saravia-calderon",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:12:59+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-MOR:executive:governor-of-morelos": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-MOR",
+   "body:MX:state:MX-MOR:executive",
+   "office:MX:state:MX-MOR:executive:governor-of-morelos"
+  ]
+ },
+ "politician": "person:MX:margarita-gonzalez-saravia-calderon",
+ "sha256": "10489543aca536f89fd8d5338bd946e3b29c9c303c8e5a619102536e72384b76",
+ "unreached_offices": []
+}

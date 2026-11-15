@@ -1,0 +1,378 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "src": "body:PK:municipal:karachi-division:sohrab-goth:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division:sohrab-goth",
+   "src": "level:PK:municipal:karachi-division",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:karachi-division:sohrab-goth:government",
+   "src": "level:PK:municipal:karachi-division:sohrab-goth",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:2ffd44367460",
+   "first_seen": "2026-11-15T00:01:31+00:00",
+   "src": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T00:01:31+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:30+00:00",
+   "claim": "office exists: Town Chairman of Sohrab Goth",
+   "dst": "source:15ce6186d08736ee",
+   "first_seen": "2026-11-15T00:01:30+00:00",
+   "src": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:30+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:30+00:00",
+   "claim": "office exists: Town Chairman of Sohrab Goth",
+   "dst": "source:206755dea27e855a",
+   "first_seen": "2026-11-15T00:01:30+00:00",
+   "src": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:30+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:30+00:00",
+   "claim": "office exists: Town Chairman of Sohrab Goth",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:30+00:00",
+   "src": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:30+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:30+00:00",
+   "claim": "office exists: Town Chairman of Sohrab Goth",
+   "dst": "source:7feeb20e4d2dae9b",
+   "first_seen": "2026-11-15T00:01:30+00:00",
+   "src": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:30+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.75,
+   "current": true,
+   "dst": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:31+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T00:01:31+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:lala-abdul-raheem",
+   "status": "current",
+   "term_id": "term:2ffd44367460",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T00:01:31+00:00"
+  },
+  {
+   "as_of": "2026-11-15T00:01:31+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ppp",
+   "first_seen": "2026-11-15T00:01:31+00:00",
+   "src": "person:PK:lala-abdul-raheem",
+   "term_id": "term:2ffd44367460",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T00:01:31+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:31+00:00",
+   "claim": "Lala Abdul Raheem holds office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:31+00:00",
+   "snippet": "…okio | | | Korangi | TMC Korangi | Chairman | Muhammad Naeem | PPPP | | | | Vice Chairman | Muhammad Zareen | | | | TMC Landhi | Chairman | Abdul Jameel Khan | JI | | | | Vice Chairman | Muhammad Irfan | | | | TMC Shah Faisal | Chairman | Gohar Ali | PTI | | | | Vice Chairman | Tariq Mehmood | | | | TMC Model Colony |…",
+   "src": "term:2ffd44367460",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:31+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:31+00:00",
+   "claim": "Lala Abdul Raheem holds office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "dst": "source:7feeb20e4d2dae9b",
+   "first_seen": "2026-11-15T00:01:31+00:00",
+   "snippet": "…ur beloved town. Thank you for your continued trust and partnership. Let us stride forward with confidence, seizing new opportunities and shaping a future of prosperit Lala Abdul Raheem Chairman ##### TMC Sohrab Goth X4RJ+CM3, Gulzar Khan Rd, Al Habib Society Sector 8 B Gulzar E Hijri Scheme 33, Karachi, Karachi City,…",
+   "src": "term:2ffd44367460",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:31+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:lala-abdul-raheem",
+   "first_seen": "2026-11-15T00:01:31+00:00",
+   "src": "term:2ffd44367460",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T00:01:31+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-15T00:01:30+00:00",
+   "id": "body:PK:municipal:karachi-division:sohrab-goth:government",
+   "label": "GovernmentBody",
+   "name": "Town Municipal Council of Sohrab Goth",
+   "name_local": "ٹاؤن میونسپل کونسل",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T00:01:30+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "level:PK:municipal:karachi-division",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:05+00:00",
+   "name": "Karachi Division — Town municipal corporation (town)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "ٹاؤن میونسپل کارپوریشن",
+   "tier": "special_local",
+   "updated_at": "2026-11-15T00:01:05+00:00",
+   "why_distinct": "Three-tier urban local government: Karachi Metropolitan Corporation/City Council, 25 town municipal corporations and their town councils, and union committees. Unlike an ordinary standalone municipality, the metropolitan body overlays town-level councils; town chairmen are selected by the town councils rather than directly by residents. The names below are the 2023 returned town heads; a town-by-town 2026 incumbency confirmation is unavailable for some, so later replacements cannot be ruled out. Four-year terms run from oath, but an exact end date is not confirmed for each head."
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:30+00:00",
+   "id": "level:PK:municipal:karachi-division:sohrab-goth",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:30+00:00",
+   "name": "Sohrab Goth",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-15T00:01:30+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T00:01:30+00:00",
+   "id": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "is_elected": true,
+   "keywords": [
+    "town",
+    "town chairman"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-15T00:01:30+00:00",
+   "name": "Town Chairman of Sohrab Goth",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "ٹاؤن چیئرمین",
+   "updated_at": "2026-11-15T00:01:30+00:00"
+  },
+  {
+   "acronym": "PPP",
+   "aliases": [
+    "PPP",
+    "Pakistan Peoples Party"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "party:PK:ppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party",
+   "updated_at": "2026-11-15T01:04:12+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:31+00:00",
+   "id": "person:PK:lala-abdul-raheem",
+   "label": "Person",
+   "last_verified": "2026-11-15T00:01:31+00:00",
+   "name": "Lala Abdul Raheem",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "sindhlaws.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:15ce6186d08736ee",
+   "label": "Source",
+   "name": "Preamble",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "lgdsindh.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:206755dea27e855a",
+   "label": "Source",
+   "name": "GOVERNMENT",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "aaj.tv",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:55eaf0edad507ff0",
+   "label": "Source",
+   "name": "Who controls Karachi 25 towns - Must Read - Aaj English TV",
+   "published_date": "2023-06-15T14:02:27.000Z",
+   "retrieved_at": "2026-11-15T00:02:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:03+00:00",
+   "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gos.pk",
+   "first_seen": "2026-11-15T00:01:30+00:00",
+   "id": "source:7feeb20e4d2dae9b",
+   "label": "Source",
+   "name": "chairman-message",
+   "retrieved_at": "2026-11-15T00:01:31+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:01:31+00:00",
+   "url": "https://tmcsohrabgoth.gos.pk/page/message"
+  },
+  {
+   "confidence": 0.75,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:31+00:00",
+   "id": "term:2ffd44367460",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T00:01:31+00:00",
+   "name": "Lala Abdul Raheem — term from ?",
+   "office": "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth",
+   "person": "person:PK:lala-abdul-raheem",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "updated_at": "2026-11-15T00:01:31+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:karachi-division",
+   "level:PK:municipal:karachi-division:sohrab-goth",
+   "body:PK:municipal:karachi-division:sohrab-goth:government",
+   "office:PK:municipal:karachi-division:sohrab-goth:government:town-chairman-of-sohrab-goth"
+  ]
+ },
+ "politician": "person:PK:lala-abdul-raheem",
+ "sha256": "21c5d7a87bdd6a757721299ec8fee6b71ad65ebe03909bc5db376d5218b9bd00",
+ "unreached_offices": []
+}

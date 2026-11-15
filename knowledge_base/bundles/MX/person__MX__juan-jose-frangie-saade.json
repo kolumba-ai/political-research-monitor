@@ -1,0 +1,470 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "src": "body:MX:municipal:MX-JAL:zapopan:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-JAL:zapopan",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-JAL:zapopan:council",
+   "src": "level:MX:municipal:MX-JAL:zapopan",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:9d421a19ff4c",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "src": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:18:13+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:10+00:00",
+   "claim": "office exists: Municipal President of Zapopan",
+   "dst": "source:1fd1788b648fbdfb",
+   "first_seen": "2026-11-14T23:18:10+00:00",
+   "src": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:10+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:10+00:00",
+   "claim": "office exists: Municipal President of Zapopan",
+   "dst": "source:29e2c2e26aea3908",
+   "first_seen": "2026-11-14T23:18:10+00:00",
+   "src": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:10+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:17+00:00",
+   "claim": "municipality and its selection system (INAFED register)",
+   "dst": "source:73327df7bbd85a9f",
+   "first_seen": "2026-11-15T01:58:32+00:00",
+   "src": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:17+00:00",
+   "via": "official_directory"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:10+00:00",
+   "claim": "office exists: Municipal President of Zapopan",
+   "dst": "source:9164596d45456b54",
+   "first_seen": "2026-11-14T23:18:10+00:00",
+   "src": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:10+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:18:13+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:juan-jose-frangie-saade",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:9d421a19ff4c",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:18:13+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:18:13+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:mc",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "src": "person:MX:juan-jose-frangie-saade",
+   "term_id": "term:9d421a19ff4c",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:18:13+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:13+00:00",
+   "claim": "Juan José Frangie Saade holds office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "dst": "source:0709b46630213943",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "snippet": "…24-2027 Juan José Frangie es el alcalde reelecto de Zapopan para el periodo 2024-2027. (Redes Sociales) Por Martha Torres diciembre 10, 2025 a las 13:44 GMT-6 Juan José Frangie Saade es un empresario y político jalisciense con amplia trayectoria en el sector privado, el ámbito deportivo y la administración pública. Mil…",
+   "src": "term:9d421a19ff4c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:13+00:00",
+   "claim": "Juan José Frangie Saade holds office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "dst": "source:1fd1788b648fbdfb",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "snippet": "…e Zapopan Pleno del Ayuntamiento 2024-2027 - Gobierno Municipal de Zapopan # Pleno del Ayuntamiento ## Regidores del Ayuntamiento de Zapopan 2024- 2027 | Juan José Frangie Saade | | --- | | Presidente Municipal de Zapopan | | juan.frangie@zapopan.gob.mx | | Tel. 33-3818-2200 Ext. 2616, 1522 | | Curriculum | | Partido M…",
+   "src": "term:9d421a19ff4c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:13+00:00",
+   "claim": "Juan José Frangie Saade holds office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "dst": "source:43667668a2a7cb39",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "snippet": "…Haremy Reyes/Quadratín Jalisco GUADALAJARA, Jal., 2 de octubre de 2026.- A casi un año de concluir su administración, el presidente municipal de Zapopan, Juan José Frangie Saade, hace un balance de los proyectos que considera más importantes, pero también reconoce lo que quedará pendiente. Entre las obras que más sati…",
+   "src": "term:9d421a19ff4c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:13+00:00",
+   "claim": "Juan José Frangie Saade holds office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "dst": "source:4c5a51d14c1dcacb",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "snippet": "…l de 2021. | | | Presidente municipal de Zapopan Actualmente en el cargo | | | Desde el 1 de octubre de 2021 | | | Predecesor | Pablo Lemus Navarro | | Información personal | | | Nombre completo | Juan José Frangie Saade | | Nacimiento | 9 de julio de 1959 (67 años) Guadalajara, México | | Nacionalidad | Mexicana | | F…",
+   "src": "term:9d421a19ff4c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:13+00:00",
+   "claim": "Juan José Frangie Saade holds office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "dst": "source:66a640f6c784c154",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "snippet": "…/08/2024 - Hace 2 años Por unanimidad, el Pleno del Ayuntamiento aprobó en sesión ordinaria la reincorporación al cargo de Presidente Municipal de Zapopan, a Juan José Frangie Saade, a partir del próximo 21 de agosto. La secretario del Ayuntamiento de Zapopan, Graciela de Obaldía Escalante, confirmó que Frangie Saade s…",
+   "src": "term:9d421a19ff4c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:13+00:00",
+   "claim": "Juan José Frangie Saade holds office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "dst": "source:9164596d45456b54",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "snippet": "…Presidente municipal | Gobierno Municipal de Zapopan Presidente municipal | Gobierno Municipal de Zapopan ## Juan José Frangie Saade Presidente Municipal juan.frangie@zapopan.gob.mx 3338182200 Extensión: 1522, 1203 Curriculum Corresponde al Presidente Municipal la aplicación de l…",
+   "src": "term:9d421a19ff4c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:juan-jose-frangie-saade",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "src": "term:9d421a19ff4c",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:18:13+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "id": "body:MX:municipal:MX-JAL:zapopan:council",
+   "label": "GovernmentBody",
+   "name": "Municipal council of Zapopan",
+   "name_local": "Ayuntamiento de Zapopan",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T02:15:17+00:00",
+   "website": "http://www.zapopan.gob.mx"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:07+00:00",
+   "id": "level:MX:municipal:MX-JAL:zapopan",
+   "inegi_code": "14120",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:18:07+00:00",
+   "name": "Zapopan, Jalisco",
+   "parent_division": "Jalisco",
+   "parent_iso_3166_2": "MX-JAL",
+   "pipeline_mode": "research_only",
+   "population": 1476491,
+   "selection_system": "party-based popular election",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-15T02:15:17+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:18:10+00:00",
+   "id": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "municipal president",
+    "presidente municipal"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:18:10+00:00",
+   "name": "Municipal President of Zapopan",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by popular vote with the council slate (planilla)",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Presidente(a) Municipal de Zapopan",
+   "updated_at": "2026-11-15T02:15:17+00:00"
+  },
+  {
+   "acronym": "MC",
+   "aliases": [
+    "MC",
+    "Movimiento Ciudadano"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "party:MX:mc",
+   "label": "PoliticalParty",
+   "name": "Movimiento Ciudadano",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "id": "person:MX:juan-jose-frangie-saade",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:18:13+00:00",
+   "name": "Juan José Frangie Saade",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "sdpnoticias.com",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "id": "source:0709b46630213943",
+   "label": "Source",
+   "name": "¿Quién es Juan José Frangie? Presidente municipal de Zapopan",
+   "published_date": "2025-12-10T19:44:03.000Z",
+   "retrieved_at": "2026-11-14T23:18:13+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "url": "https://www.sdpnoticias.com/estados/jalisco/quien-es-juan-jose-frangie-presidente-municipal-de-zapopan/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "zapopan.gob.mx",
+   "first_seen": "2026-11-14T23:18:10+00:00",
+   "id": "source:1fd1788b648fbdfb",
+   "label": "Source",
+   "name": "Pleno del Ayuntamiento 2024-2027 - Gobierno Municipal de Zapopan",
+   "retrieved_at": "2026-11-14T23:18:13+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:17:54+00:00",
+   "id": "source:29e2c2e26aea3908",
+   "label": "Source",
+   "name": "Reforma 281: Constitución Política de los Estados Unidos Mexicanos. DOF 23-04-2026",
+   "retrieved_at": "2026-11-14T23:18:21+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "quadratin.com.mx",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "id": "source:43667668a2a7cb39",
+   "label": "Source",
+   "name": "Juan José Frangie: 11 años trabajando por y para Zapopan",
+   "retrieved_at": "2026-11-14T23:18:13+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "url": "https://jalisco.quadratin.com.mx/sucesos/juan-jose-frangie-11-anos-trabajando-por-y-para-zapopan/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "id": "source:4c5a51d14c1dcacb",
+   "label": "Source",
+   "name": "Juan José Frangie",
+   "published_date": "2026-07-17T03:57:15.000Z",
+   "retrieved_at": "2026-11-14T23:18:13+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "url": "https://es.wikipedia.org/wiki/Juan_Jos%C3%A9_Frangie"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "notigram.com",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "id": "source:66a640f6c784c154",
+   "label": "Source",
+   "name": "Juan José Frangie retomará actividades al frente de Zapopan el 21 de agosto | Notigram",
+   "published_date": "2024-08-13T17:08:46.000Z",
+   "retrieved_at": "2026-11-14T23:18:13+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "url": "https://notigram.com/jalisco-estado/local/juan-jose-frangie-retomara-actividades-al-frente-de-zapopan-el-21-de-agosto-20240813-1296660"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "datos.gob.mx",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "id": "source:73327df7bbd85a9f",
+   "label": "Source",
+   "name": "INAFED — Presidentas y Presidentes municipales",
+   "retrieved_at": "2026-11-15T02:15:32+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:32+00:00",
+   "url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "zapopan.gob.mx",
+   "first_seen": "2026-11-14T23:18:10+00:00",
+   "id": "source:9164596d45456b54",
+   "label": "Source",
+   "name": "Presidente municipal | Gobierno Municipal de Zapopan",
+   "retrieved_at": "2026-11-14T23:18:13+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:13+00:00",
+   "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "id": "term:9d421a19ff4c",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:18:13+00:00",
+   "name": "Juan José Frangie Saade — term from 2024-10-01",
+   "office": "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan",
+   "person": "person:MX:juan-jose-frangie-saade",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:18:13+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-JAL:zapopan",
+   "body:MX:municipal:MX-JAL:zapopan:council",
+   "office:MX:municipal:MX-JAL:zapopan:council:municipal-president-of-zapopan"
+  ]
+ },
+ "politician": "person:MX:juan-jose-frangie-saade",
+ "sha256": "379f549d90218559da63d7e0bcc5b74e092809704735600a9f15f33fd0221a7b",
+ "unreached_offices": []
+}

@@ -1,0 +1,380 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "src": "body:PK:state:PK-KP:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-KP",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-KP:legislature",
+   "src": "level:PK:state:PK-KP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:64f60650ab0a",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:27:52+00:00"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:27:52+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "women_reserved",
+   "src": "person:PK:naheeda-noor",
+   "start": "2025-07-20",
+   "status": "current",
+   "term_id": "term:64f60650ab0a",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:27:52+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:27:52+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:juif",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "src": "person:PK:naheeda-noor",
+   "term_id": "term:64f60650ab0a",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:27:52+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:52+00:00",
+   "claim": "Naheeda Noor holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:1fb9770d2a9770c6",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "snippet": "…arty (ANP) and Pakistan Tehreek-e-Insaf Parliamentarians (PTI-P) each secured a win in one seat. The JUI-F nominees for the Khyber Pakhtunkhwa Assembly are: Nilofer Begum, Aimen Jaleel Jan, Rabia Shaheen, Naheeda Noor, Balqees, Arifa Bibi, Sitara Afrin and Madina Gul Afridi, The Express Tribune reported. The PML-N nomi…",
+   "src": "term:64f60650ab0a",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:52+00:00",
+   "claim": "Naheeda Noor holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:69bec0f3bf5deb2d",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "snippet": "…Naheeda Noor WR-11-25 – PAKP Naheeda Noor WR-11-25 – PAKP ## KHYBER PAKHTUNKHWA ### WR-11 Jamiat Ulema Islam (F) ##### Email ##### DoB 1980-05-31 Ms. Naheeda Noor has b…",
+   "src": "term:64f60650ab0a",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:52+00:00",
+   "claim": "Naheeda Noor holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:84578f3ef490da23",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "snippet": "…I ###### Pakhtoon Yar Khan PK-100 Bannu-II ###### Adnan Khan PK-101 Bannu-III ###### Akram Khan Durrani PK-102 Bannu-IV ###### Muhammad Iqbal Khan PK-103 North Waziristan-I ###### Nek Muhammad Khan PK-104 North Waziristan-II ###### Johar Muhammad PK-105 Lakki Marwat-I ###### Hisham Inam Ullah Khan PK-106 Lakki Marwat-I…",
+   "src": "term:64f60650ab0a",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:52+00:00",
+   "claim": "Naheeda Noor holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:c8b5c272b6040809",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "snippet": "…political parties, their representatives and contesting candidates. Until the ECP issues a new decision, the bench ordered that the oath should not be administered to JUI-F MPAs-elect Naheeda Noor and Arifa Bibi, who were elected on the disputed seats. The bench issued a short order on a petition filed by the PML-N th…",
+   "src": "term:64f60650ab0a",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:52+00:00",
+   "claim": "Naheeda Noor holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:f96d093c60fd309f",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "snippet": "…d Public Relations Department (2024) – PAKP ##### Chair Shafi Ullah Jan ##### Ex Officio Member Fazal Elahi ##### Member Zahid Ullah Khan ##### Member Akram Khan Durrani Muhammad Idrees Naheeda Noor Shahida Suresh Kumar Neelofer Begum Mandate ## News and Events Chairman Standing Committee No. 15 on Information & Public…",
+   "src": "term:64f60650ab0a",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:naheeda-noor",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "src": "term:64f60650ab0a",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:27:52+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "PK",
+   "constituency_range": "PK-1 to PK-115",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "general_seats": 115,
+   "id": "body:PK:state:PK-KP:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2024-02-08",
+   "last_verified": "2026-11-15T01:30:53+00:00",
+   "members_verified": 144,
+   "name": "Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa)",
+   "name_local": "خیبر پختونخوا صوبائی اسمبلی",
+   "official_members_url": "https://www.pakp.gov.pk/members-listing/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 4,
+   "reserved_other": 0,
+   "reserved_women": 26,
+   "structure_agent_run": "agent_run_ceead2044f7b42aa9d194671e59f2fe3",
+   "total_seats": 145,
+   "updated_at": "2026-11-15T01:30:53+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "level:PK:state:PK-KP",
+   "iso_3166_2": "PK-KP",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Khyber Pakhtunkhwa",
+   "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T01:04:44+00:00",
+   "id": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "is_elected": true,
+   "label": "PoliticalOffice",
+   "name": "Member of the Provincial Assembly of Khyber Pakhtunkhwa (reserved seat for women)",
+   "seat_type": "women_reserved",
+   "seats": 26,
+   "selection_method": "indirect_election",
+   "single_seat": false,
+   "updated_at": "2026-11-15T01:04:44+00:00"
+  },
+  {
+   "acronym": "JUI-F",
+   "aliases": [
+    "JUI-F",
+    "Jamiat Ulema Islam (F)",
+    "Jamiat Ulema-e-Islam (F)",
+    "Jamiat-e-Ulema Islam (F)"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:50:08+00:00",
+   "id": "party:PK:juif",
+   "label": "PoliticalParty",
+   "name": "Jamiat-e-Ulema Islam (F)",
+   "updated_at": "2026-11-15T01:30:34+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "id": "person:PK:naheeda-noor",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:27:52+00:00",
+   "name": "Naheeda Noor",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "hindustantimes.com",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "id": "source:1fb9770d2a9770c6",
+   "label": "Source",
+   "name": "Pak EC announces reserved winners in National, Khyber ...",
+   "published_date": "2025-07-03T08:27:51.000Z",
+   "retrieved_at": "2026-11-15T01:27:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:27:52+00:00",
+   "url": "https://www.hindustantimes.com/world-news/pak-ec-announces-reserved-winners-in-national-khyber-pakhtunkhwa-assemblies-101751529639897.html"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "id": "source:69bec0f3bf5deb2d",
+   "label": "Source",
+   "name": "Naheeda Noor WR-11-25 – PAKP",
+   "retrieved_at": "2026-11-15T01:27:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:27:52+00:00",
+   "url": "https://www.pakp.gov.pk/members/naheeda-noor-wr-11-25/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:11:03+00:00",
+   "id": "source:84578f3ef490da23",
+   "label": "Source",
+   "name": "Members – PAKP",
+   "retrieved_at": "2026-11-15T01:28:39+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:28:39+00:00",
+   "url": "https://www.pakp.gov.pk/members/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "id": "source:c8b5c272b6040809",
+   "label": "Source",
+   "name": "Peshawar High Court halts oath of two women MPAs-elect - Pakistan - DAWN.COM",
+   "published_date": "2025-07-09T00:56:08.000Z",
+   "retrieved_at": "2026-11-15T01:28:01+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:28:01+00:00",
+   "url": "https://www.dawn.com/news/1922947"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:27:43+00:00",
+   "id": "source:f96d093c60fd309f",
+   "label": "Source",
+   "name": "No. 15 on Information and Public Relations Department (2024) – PAKP",
+   "retrieved_at": "2026-11-15T01:27:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:27:52+00:00",
+   "url": "https://www.pakp.gov.pk/committee/no-15-on-information-and-public-relations-department-2024/"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.99,
+   "current": true,
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:27:52+00:00",
+   "id": "term:64f60650ab0a",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:27:52+00:00",
+   "name": "Naheeda Noor — term from 2025-07-20",
+   "office": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "person": "person:PK:naheeda-noor",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "women_reserved",
+   "start": "2025-07-20",
+   "updated_at": "2026-11-15T01:27:52+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-KP",
+   "body:PK:state:PK-KP:legislature",
+   "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women"
+  ]
+ },
+ "politician": "person:PK:naheeda-noor",
+ "sha256": "8a42109f0c272c503614487f770607c55e5516e633585cc7e823265337ea7273",
+ "unreached_offices": []
+}

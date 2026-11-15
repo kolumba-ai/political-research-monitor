@@ -1,0 +1,393 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "src": "body:PK:state:PK-KP:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-KP",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-KP:legislature",
+   "src": "level:PK:state:PK-KP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:dcbd81e1cdae",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:16:40+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of Khyber Pakhtunkhwa",
+   "dst": "source:74f729f4e69365d3",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of Khyber Pakhtunkhwa",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.9,
+   "constituency_code": "PK-75",
+   "constituency_name": "Peshawar-IV",
+   "current": true,
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:16:40+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "src": "person:PK:arbab-muhammad-waseem-khan",
+   "start": "2024-02-28",
+   "status": "current",
+   "term_id": "term:dcbd81e1cdae",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:16:40+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:16:40+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:anp",
+   "first_seen": "2026-11-15T01:16:40+00:00",
+   "src": "person:PK:arbab-muhammad-waseem-khan",
+   "term_id": "term:dcbd81e1cdae",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:16:40+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:16:24+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ptip",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "src": "person:PK:arbab-muhammad-waseem-khan",
+   "term_id": "term:dcbd81e1cdae",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:16:24+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:16:40+00:00",
+   "claim": "Arbab Muhammad Usman Khan holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:5e5e0fc099825915",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "snippet": "…al Lower Fateh Ul Mulk Ali Nasir Muhammad Saif Ul Mulk Nasir lndependent 3 PK-3 Swall Sharafat Ali Anwar Ali Mian lndependent 4 PK-4 Swat-ll AliShah Muhammad Ayub Khan lndependent 5 PK-5 Swat-lll Akhtar Khan Ahmad Khan lndependent PK-6 SwatlV Fazal Hakim Khan Yousafzai Abdul Manan lndependent 7 PK-7 SwalV Amjad Ali Muz…",
+   "src": "term:dcbd81e1cdae",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:16:40+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T01:16:40+00:00",
+   "claim": "Arbab Muhammad Usman Khan holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:d5f490d260ffda4e",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "snippet": "…TURNED CANDIDATE 1. PK-01 Chitral Upper Suriya Bibi 2. PK-02 Chitral Lower Fateh Ul Mulk Ali Nasir 3. PK-03 Swat-I Sharafat Ali 4. PK-04 Swat-II Ali Shah 5. PK-05 Swat-III Akhtar Khan 6. PK-6 Swat-IV Fazal Hakim Khan Yousafzai 7. PK-07 Swat-V Amjad Ali 8. PK-08 Swat-VI Hamid Ur Rehman 9. PK-09 Swat-VII Sultan Room 10.…",
+   "src": "term:dcbd81e1cdae",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:16:40+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:arbab-muhammad-waseem-khan",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "src": "term:dcbd81e1cdae",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:16:40+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "PK",
+   "constituency_range": "PK-1 to PK-115",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "general_seats": 115,
+   "id": "body:PK:state:PK-KP:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2024-02-08",
+   "last_verified": "2026-11-15T01:30:53+00:00",
+   "members_verified": 144,
+   "name": "Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa)",
+   "name_local": "خیبر پختونخوا صوبائی اسمبلی",
+   "official_members_url": "https://www.pakp.gov.pk/members-listing/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 4,
+   "reserved_other": 0,
+   "reserved_women": 26,
+   "structure_agent_run": "agent_run_ceead2044f7b42aa9d194671e59f2fe3",
+   "total_seats": 145,
+   "updated_at": "2026-11-15T01:30:53+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "level:PK:state:PK-KP",
+   "iso_3166_2": "PK-KP",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Khyber Pakhtunkhwa",
+   "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "aliases": [
+    "Member of the Provincial Assembly of Khyber Pakhtunkhwa"
+   ],
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "is_elected": true,
+   "keywords": [
+    "member",
+    "provincial",
+    "diputad",
+    "deputy",
+    "legislat",
+    "congres"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:54:49+00:00",
+   "name": "Member of the Provincial Assembly of Khyber Pakhtunkhwa (general seat)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seat_type": "general",
+   "seats": 115,
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "official_single",
+   "updated_at": "2026-11-15T01:04:44+00:00"
+  },
+  {
+   "acronym": "ANP",
+   "aliases": [
+    "ANP",
+    "Awami National Party"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:50:29+00:00",
+   "id": "party:PK:anp",
+   "label": "PoliticalParty",
+   "name": "Awami National Party",
+   "updated_at": "2026-11-15T01:30:13+00:00"
+  },
+  {
+   "acronym": "PTI-P",
+   "aliases": [
+    "PTI-P",
+    "PTIP",
+    "Pakistan Tehreek-e-Insaaf Parliamentarians (PTIP)",
+    "Pakistan Tehreek-e-Insaf Parliamentarians"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "id": "party:PK:ptip",
+   "label": "PoliticalParty",
+   "name": "Pakistan Tehreek-e-Insaf Parliamentarians",
+   "updated_at": "2026-11-15T01:29:53+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "id": "person:PK:arbab-muhammad-waseem-khan",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:16:40+00:00",
+   "name": "Arbab Muhammad Usman Khan",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "ecp.gov.pk",
+   "first_seen": "2026-11-15T01:07:05+00:00",
+   "id": "source:5e5e0fc099825915",
+   "label": "Source",
+   "name": "PROVINCIAL ASSEMBLY OF KHYBER PAKHTUNKHWA",
+   "retrieved_at": "2026-11-15T01:30:23+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:30:23+00:00",
+   "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:54:39+00:00",
+   "id": "source:74f729f4e69365d3",
+   "label": "Source",
+   "name": "Bulletin Secretaries Conference Final for Printing copy",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:09:47+00:00",
+   "id": "source:d5f490d260ffda4e",
+   "label": "Source",
+   "name": "pakp.gov.pk",
+   "retrieved_at": "2026-11-15T01:23:32+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:23:32+00:00",
+   "url": "https://www.pakp.gov.pk/wp-content/uploads/2024/02/28-Feb-2024-SoP.pdf"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.9,
+   "constituency_code": "PK-75",
+   "constituency_name": "Peshawar-IV",
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:16:24+00:00",
+   "id": "term:dcbd81e1cdae",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:16:40+00:00",
+   "name": "Arbab Muhammad Usman Khan — term from 2024-02-28",
+   "office": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "person": "person:PK:arbab-muhammad-waseem-khan",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "start": "2024-02-28",
+   "updated_at": "2026-11-15T01:16:40+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-KP",
+   "body:PK:state:PK-KP:legislature",
+   "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa"
+  ]
+ },
+ "politician": "person:PK:arbab-muhammad-waseem-khan",
+ "sha256": "39963eb268868aebb9d6606d1b77f5022bd8ad16a9304cd12dad5fe4b3fe671c",
+ "unreached_offices": []
+}

@@ -1,0 +1,231 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:national:senate-of-the-republic:senator-proportional-representation-list",
+   "src": "body:MX:national:senate-of-the-republic",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:national",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:MX:national:senate-of-the-republic",
+   "src": "level:MX:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:53c08354c3ae",
+   "first_seen": "2026-11-15T01:58:24+00:00",
+   "src": "office:MX:national:senate-of-the-republic:senator-proportional-representation-list",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "confidence": 0.7,
+   "constituency_code": "NATIONAL-LIST",
+   "constituency_name": "National list",
+   "current": true,
+   "dst": "office:MX:national:senate-of-the-republic:senator-proportional-representation-list",
+   "end": "2030-08-31",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:58:24+00:00",
+   "last_verified": "2026-11-15T02:15:11+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261115T021503Z",
+   "seat_type": "proportional_list",
+   "src": "person:MX:luis-alfonso-silva-romo",
+   "start": "2024-09-01",
+   "status": "current",
+   "term_id": "term:53c08354c3ae",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:11+00:00",
+   "claim": "Luis Alfonso Silva Romo holds office:MX:national:senate-of-the-republic:senator-proportional-representation-list",
+   "dst": "source:3b6285e2a72f0f34",
+   "first_seen": "2026-11-15T01:58:24+00:00",
+   "src": "term:53c08354c3ae",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:11+00:00",
+   "via": "official_directory"
+  },
+  {
+   "dst": "person:MX:luis-alfonso-silva-romo",
+   "first_seen": "2026-11-15T01:58:24+00:00",
+   "src": "term:53c08354c3ae",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "description": "Upper chamber of the Congress of the Union.",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "body:MX:national:senate-of-the-republic",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:07:46+00:00",
+   "name": "Senate of the Republic",
+   "name_local": "Senado de la República",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:07:46+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795",
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:34+00:00",
+   "id": "level:MX:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:07:34+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T01:58:22+00:00",
+   "id": "office:MX:national:senate-of-the-republic:senator-proportional-representation-list",
+   "is_elected": true,
+   "label": "PoliticalOffice",
+   "name": "Senator (proportional representation list)",
+   "seat_type": "proportional_list",
+   "seats": 32,
+   "selection_details": "Elected by popular vote for national party lists",
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "term_length_years": 6,
+   "title_local": "Senador(a) de representación proporcional",
+   "updated_at": "2026-11-15T02:15:10+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-15T01:58:24+00:00",
+   "id": "person:MX:luis-alfonso-silva-romo",
+   "label": "Person",
+   "last_verified": "2026-11-15T02:15:11+00:00",
+   "name": "Luis Alfonso Silva Romo",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senado.gob.mx",
+   "first_seen": "2026-11-15T01:58:22+00:00",
+   "id": "source:3b6285e2a72f0f34",
+   "label": "Source",
+   "name": "Por principio de elección",
+   "retrieved_at": "2026-11-15T02:15:11+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:11+00:00",
+   "url": "https://www.senado.gob.mx/66/senadores/por_principio_de_eleccion"
+  },
+  {
+   "confidence": 0.7,
+   "constituency_code": "NATIONAL-LIST",
+   "constituency_name": "National list",
+   "current": true,
+   "end": "2030-08-31",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:58:24+00:00",
+   "id": "term:53c08354c3ae",
+   "label": "Term",
+   "last_verified": "2026-11-15T02:15:11+00:00",
+   "name": "Luis Alfonso Silva Romo — term from 2024-09-01",
+   "office": "office:MX:national:senate-of-the-republic:senator-proportional-representation-list",
+   "person": "person:MX:luis-alfonso-silva-romo",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261115T021503Z",
+   "seat_type": "proportional_list",
+   "start": "2024-09-01",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:national:senate-of-the-republic:senator-proportional-representation-list": [
+   "country:MX",
+   "level:MX:national",
+   "body:MX:national:senate-of-the-republic",
+   "office:MX:national:senate-of-the-republic:senator-proportional-representation-list"
+  ]
+ },
+ "politician": "person:MX:luis-alfonso-silva-romo",
+ "sha256": "ce0ba251b24617795f291ce676e765a29badaaaada551b61894eef97cb2e9628",
+ "unreached_offices": []
+}

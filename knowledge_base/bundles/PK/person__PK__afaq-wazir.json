@@ -1,0 +1,264 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar",
+   "src": "body:PK:municipal:PK-KP:peshawar:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:PK-KP:peshawar",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:PK-KP:peshawar:council",
+   "src": "level:PK:municipal:PK-KP:peshawar",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:51d74ebb3588",
+   "first_seen": "2026-11-14T23:57:28+00:00",
+   "src": "office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:57:28+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:57:26+00:00",
+   "claim": "office exists: Administrator of the Capital Metropolitan Government of Peshawar",
+   "dst": "source:e7a20d99fc8eaf04",
+   "first_seen": "2026-11-14T23:57:26+00:00",
+   "src": "office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:57:26+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.55,
+   "current": true,
+   "dst": "office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar",
+   "evidence_status": "single_source",
+   "first_seen": "2026-11-14T23:57:28+00:00",
+   "is_acting": true,
+   "last_verified": "2026-11-14T23:57:28+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:afaq-wazir",
+   "start": "2026-10-13",
+   "status": "current",
+   "term_id": "term:51d74ebb3588",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:57:28+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:57:28+00:00",
+   "claim": "Dr Afaq Wazir holds office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar",
+   "dst": "source:e7a20d99fc8eaf04",
+   "first_seen": "2026-11-14T23:57:28+00:00",
+   "snippet": "…nti-encroachment operation. The operation was conducted on the special directives of Deputy Commissioner Peshawar and Administrator Capital Metropolitan Government Afaq Wazir under the supervision of Director General Metropolitan Salim Khan, Assistant Commissioner Basharat and Enforcement Officer Qaiser Bacha. The team…",
+   "src": "term:51d74ebb3588",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:57:28+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:afaq-wazir",
+   "first_seen": "2026-11-14T23:57:28+00:00",
+   "src": "term:51d74ebb3588",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:57:28+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:57:20+00:00",
+   "id": "body:PK:municipal:PK-KP:peshawar:council",
+   "label": "GovernmentBody",
+   "name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality) of Peshawar",
+   "name_local": "بلدیاتی کونسل de Peshawar",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:57:20+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-14T23:57:20+00:00",
+   "id": "level:PK:municipal:PK-KP:peshawar",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:57:20+00:00",
+   "name": "Peshawar, Khyber Pakhtunkhwa",
+   "parent_division": "Khyber Pakhtunkhwa",
+   "parent_iso_3166_2": "PK-KP",
+   "pipeline_mode": "research_only",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-14T23:57:20+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:57:26+00:00",
+   "id": "office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar",
+   "is_elected": false,
+   "keywords": [
+    "administrator",
+    "administrator of the capital metropolitan government"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:57:26+00:00",
+   "name": "Administrator of the Capital Metropolitan Government of Peshawar",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "appointment",
+   "single_seat": true,
+   "structure_evidence": "single_source",
+   "title_local": "ایڈمنسٹریٹر",
+   "updated_at": "2026-11-14T23:57:26+00:00"
+  },
+  {
+   "aliases": [
+    "Dr Afaq Wazir"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:57:28+00:00",
+   "id": "person:PK:afaq-wazir",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:57:28+00:00",
+   "name": "Afaq Wazir",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dailybalochistantimes.com",
+   "first_seen": "2026-11-14T23:57:26+00:00",
+   "id": "source:e7a20d99fc8eaf04",
+   "label": "Source",
+   "name": "Illegal structures demolished in anti-encroachment operation – Daily Balochistan Times",
+   "published_date": "2026-10-31T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:57:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:57:28+00:00",
+   "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation"
+  },
+  {
+   "confidence": 0.55,
+   "current": true,
+   "evidence_status": "single_source",
+   "first_seen": "2026-11-14T23:57:28+00:00",
+   "id": "term:51d74ebb3588",
+   "is_acting": true,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:57:28+00:00",
+   "name": "Dr Afaq Wazir — term from 2026-10-13",
+   "office": "office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar",
+   "person": "person:PK:afaq-wazir",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2026-10-13",
+   "updated_at": "2026-11-14T23:57:28+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:PK-KP:peshawar",
+   "body:PK:municipal:PK-KP:peshawar:council",
+   "office:PK:municipal:PK-KP:peshawar:council:administrator-of-the-capital-metropolitan-government-of-peshawar"
+  ]
+ },
+ "politician": "person:PK:afaq-wazir",
+ "sha256": "c527350b2a5beeaf5067ad61d62af0bef1a20ef60b8014a23f9b82e7346941f7",
+ "unreached_offices": []
+}

@@ -1,0 +1,391 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "src": "body:PK:state:PK-PB:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-PB",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-PB:legislature",
+   "src": "level:PK:state:PK-PB",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:59039e9e40bd",
+   "first_seen": "2026-11-15T01:41:42+00:00",
+   "src": "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:41:42+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:00+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of the Punjab",
+   "dst": "source:38afb3223b57a944",
+   "first_seen": "2026-11-14T23:54:00+00:00",
+   "src": "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:00+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:00+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of the Punjab",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:54:00+00:00",
+   "src": "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:00+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:00+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of the Punjab",
+   "dst": "source:de2ad0e1a15593b5",
+   "first_seen": "2026-11-14T23:54:00+00:00",
+   "src": "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:00+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.7,
+   "constituency_code": "PP-153",
+   "constituency_name": "Lahore-IX",
+   "current": true,
+   "dst": "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:41:42+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:41:42+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "src": "person:PK:khawaja-sulman-rafiq",
+   "start": "2024",
+   "status": "current",
+   "term_id": "term:59039e9e40bd",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:41:42+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:41:42+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:pmln",
+   "first_seen": "2026-11-15T01:41:42+00:00",
+   "src": "person:PK:khawaja-sulman-rafiq",
+   "term_id": "term:59039e9e40bd",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:41:42+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:41:42+00:00",
+   "claim": "Khawaja Sulman Rafiq holds office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "dst": "source:25855ea8248ec3ce",
+   "first_seen": "2026-11-15T01:41:42+00:00",
+   "snippet": "…| Khanewal Sunni Ittehad Council 58 Years Khalid Javed Asghar Ghural | Abuzarkhalid51@gmail.com PP-29 (Gujrat-III) | Gujrat Pakistan Muslim League 56 Years Khalid Mahmood Jajja | khalid.jajja@gmail.com PP-247 (Bahawalpur-III) | Bahawalpur Pakistan Muslim League (Nawaz) 55 Years Khalid Mahmood Ranjha PP-42 (Mandi Bahaud…",
+   "src": "term:59039e9e40bd",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:41:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T01:41:42+00:00",
+   "claim": "Khawaja Sulman Rafiq holds office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "dst": "source:40df61d6518f718e",
+   "first_seen": "2026-11-15T01:41:42+00:00",
+   "snippet": "…ail.com PP-210 (Khanewal-VI) | Khanewal Sunni Ittehad Council 58 Years Khalid Javed Asghar Ghural | Abuzarkhalid51@gmail.com PP-29 (Gujrat-III) | Gujrat Pakistan Muslim League 56 Years Khalid Mahmood Jajja | khalid.jajja@gmail.com PP-247 (Bahawalpur-III) | Bahawalpur Pakistan Muslim League (Nawaz) 55 Years Khalid Mahmo…",
+   "src": "term:59039e9e40bd",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:41:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:khawaja-sulman-rafiq",
+   "first_seen": "2026-11-15T01:41:42+00:00",
+   "src": "term:59039e9e40bd",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:41:42+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "PP",
+   "constituency_range": "PP-1 to PP-297",
+   "first_seen": "2026-11-14T23:54:00+00:00",
+   "general_seats": 297,
+   "id": "body:PK:state:PK-PB:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2024-02-08",
+   "last_verified": "2026-11-15T01:51:06+00:00",
+   "members_verified": 369,
+   "name": "Provincial Assembly of the Punjab (Punjab)",
+   "name_local": "صوبائی اسمبلی پنجاب",
+   "official_members_url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 8,
+   "reserved_other": 0,
+   "reserved_women": 66,
+   "structure_agent_run": "agent_run_b3c666e4a5224c4985c5e846b6c48c98",
+   "total_seats": 371,
+   "updated_at": "2026-11-15T01:51:06+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:53:57+00:00",
+   "id": "level:PK:state:PK-PB",
+   "iso_3166_2": "PK-PB",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:53:57+00:00",
+   "name": "Punjab",
+   "pipeline_mode": "research_only",
+   "researched_name": "Punjab",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:53:57+00:00"
+  },
+  {
+   "aliases": [
+    "Member of the Provincial Assembly of the Punjab"
+   ],
+   "first_seen": "2026-11-14T23:54:00+00:00",
+   "id": "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "is_elected": true,
+   "keywords": [
+    "member",
+    "provincial",
+    "diputad",
+    "deputy",
+    "legislat",
+    "congres"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:54:00+00:00",
+   "name": "Member of the Provincial Assembly of the Punjab (general seat)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seat_type": "general",
+   "seats": 297,
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "verified",
+   "updated_at": "2026-11-15T01:31:42+00:00"
+  },
+  {
+   "acronym": "PML-N",
+   "aliases": [
+    "PML-N",
+    "Pakistan Muslim League (N)",
+    "Pakistan Muslim League (Nawaz)",
+    "Pakistan Muslim League-Nawaz"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "party:PK:pmln",
+   "label": "PoliticalParty",
+   "name": "Pakistan Muslim League (N)",
+   "updated_at": "2026-11-15T01:51:06+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:41:42+00:00",
+   "id": "person:PK:khawaja-sulman-rafiq",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:41:42+00:00",
+   "name": "Khawaja Sulman Rafiq",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pap.gov.pk",
+   "first_seen": "2026-11-15T01:36:38+00:00",
+   "id": "source:25855ea8248ec3ce",
+   "label": "Source",
+   "name": "Members' Directory",
+   "retrieved_at": "2026-11-15T01:41:45+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:41:45+00:00",
+   "url": "https://www.pap.gov.pk/members/listing?limit=all"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "punjab.gov.pk",
+   "first_seen": "2026-11-14T23:53:58+00:00",
+   "id": "source:38afb3223b57a944",
+   "label": "Source",
+   "name": "Welcome to Office of the Chief Minister of Punjab, Government of the Punjab | Office of the Chief Minister of Punjab, Government of the Punjab",
+   "retrieved_at": "2026-11-14T23:54:00+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:00+00:00",
+   "url": "https://cm.punjab.gov.pk/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pap.gov.pk",
+   "first_seen": "2026-11-15T01:31:42+00:00",
+   "id": "source:40df61d6518f718e",
+   "label": "Source",
+   "name": "Members' Directory",
+   "retrieved_at": "2026-11-15T01:51:06+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:06+00:00",
+   "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pap.gov.pk",
+   "first_seen": "2026-11-14T23:53:58+00:00",
+   "id": "source:de2ad0e1a15593b5",
+   "label": "Source",
+   "name": "pap.gov.pk",
+   "retrieved_at": "2026-11-15T01:31:42+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:31:42+00:00",
+   "url": "https://www.pap.gov.pk/public/faqs"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.7,
+   "constituency_code": "PP-153",
+   "constituency_name": "Lahore-IX",
+   "current": true,
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:41:42+00:00",
+   "id": "term:59039e9e40bd",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:41:42+00:00",
+   "name": "Khawaja Sulman Rafiq — term from 2024",
+   "office": "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab",
+   "person": "person:PK:khawaja-sulman-rafiq",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "start": "2024",
+   "updated_at": "2026-11-15T01:41:42+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-PB",
+   "body:PK:state:PK-PB:legislature",
+   "office:PK:state:PK-PB:legislature:member-of-the-provincial-assembly-of-the-punjab"
+  ]
+ },
+ "politician": "person:PK:khawaja-sulman-rafiq",
+ "sha256": "e16465469620572fbe64320d4db2413c50e269ab6ff458b857e08dcff5ece88f",
+ "unreached_offices": []
+}

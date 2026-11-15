@@ -1,0 +1,410 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-COL:executive:governor-of-colima",
+   "src": "body:MX:state:MX-COL:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-COL",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-COL:executive",
+   "src": "level:MX:state:MX-COL",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:c2149629dfc1",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "src": "office:MX:state:MX-COL:executive:governor-of-colima",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:15:08+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:06+00:00",
+   "claim": "office exists: Governor of Colima",
+   "dst": "source:b81fa0c0df2ec173",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "src": "office:MX:state:MX-COL:executive:governor-of-colima",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:06+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-COL:executive:governor-of-colima",
+   "end": "2027-10-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:15:08+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:indira-vizcaino-silva",
+   "start": "2021-11-01",
+   "status": "current",
+   "term_id": "term:c2149629dfc1",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:15:08+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:15:08+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Haremos Historia por Colima (MORENA-Nueva Alianza Colima)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "src": "person:MX:indira-vizcaino-silva",
+   "term_id": "term:c2149629dfc1",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:15:08+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:08+00:00",
+   "claim": "Indira Vizcaíno Silva holds office:MX:state:MX-COL:executive:governor-of-colima",
+   "dst": "source:2382d2d159031d3a",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "snippet": "…olima, otorgo mi consentimiento para publicar el presente: Curriculum Vitae Fecha de actualizacion 01 de abril de 2025 Nombre del Servidor Publico: INDIRA VIZCAINO SILVA GOBERNADORA CONSTITUCIONAL DEL ESTADO DE COLIMA Preparacion Académica: e 2022 — Maestra en Derechos Humanos — Universidad de Colima. e 2010 - Licencia…",
+   "src": "term:c2149629dfc1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:08+00:00",
+   "claim": "Indira Vizcaíno Silva holds office:MX:state:MX-COL:executive:governor-of-colima",
+   "dst": "source:4fdfa717dc0cc737",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "snippet": "…14 October 2015 | | | Preceded by | José de Jesús Plascencia Herrera | | Succeeded by | Rafael Mendoza Godínez | | Federal deputy at the Congress of the Union | | | In office 1 September 2009 – 31 August 2012 | | | Personal details | | | Born | Indira Vizcaíno Silva 14 January 1987 (age 39) Tijuana, Mexico | | Party |…",
+   "src": "term:c2149629dfc1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:08+00:00",
+   "claim": "Indira Vizcaíno Silva holds office:MX:state:MX-COL:executive:governor-of-colima",
+   "dst": "source:b81fa0c0df2ec173",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "snippet": "…s en el Estado de Colima Dirección de Sistemas del IEEC ##### Procesos Electorales Locales #### Histórico de Elecciones por Distritos Locales ##### Colima ###### Gobernadora Indira Vizcaíno Silva (2021 - 2027) Histórico de Gubernaturas ( Ver detalles ) Total de Municipios: 10 ( Ver detalles ) Periodo de Gobierno: 2024…",
+   "src": "term:c2149629dfc1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:08+00:00",
+   "claim": "Indira Vizcaíno Silva holds office:MX:state:MX-COL:executive:governor-of-colima",
+   "dst": "source:c13ebec66c96f006",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "snippet": "…Indira Vizcaíno Silva - Wikipedia, la enciclopedia libre Indira Vizcaíno Silva | Indira Vizcaíno Silva Crobio Croto | | | --- | --- | | Vizcaíno en 2021 | | | Gobernadora de Co…",
+   "src": "term:c2149629dfc1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:08+00:00",
+   "claim": "Indira Vizcaíno Silva holds office:MX:state:MX-COL:executive:governor-of-colima",
+   "dst": "source:c7cdcb92a434d58e",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "snippet": "…Quién es Indira Vizcaíno Silva, gobernadora de Colima Quién es Indira Vizcaíno Silva, gobernadora de Colima # Quién es Indira Vizcaíno Silva, gobernadora de Colima por Ernesto Palacios…",
+   "src": "term:c2149629dfc1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:08+00:00",
+   "claim": "Indira Vizcaíno Silva holds office:MX:state:MX-COL:executive:governor-of-colima",
+   "dst": "source:f810b5da17c976a0",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "snippet": "…Gobierno del Estado de Colima Gobierno del Estado de Colima # Detalle de Funcionario Mtra. Indira VizcaÃ­no Silva Gobernadora Constitucional del Estado de Colima gobernadora@gobiernocolima.gob.mx 3123163737 Lunes a Viernes de 8:30 a 16:30 hrs. Oficina de la Guberna…",
+   "src": "term:c2149629dfc1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:indira-vizcaino-silva",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "src": "term:c2149629dfc1",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:15:08+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "body:MX:state:MX-COL:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:15:06+00:00",
+   "name": "Executive of Colima",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:15:06+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "level:MX:state:MX-COL",
+   "iso_3166_2": "MX-COL",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:15:06+00:00",
+   "name": "Colima",
+   "pipeline_mode": "research_only",
+   "researched_name": "Colima",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:15:06+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "office:MX:state:MX-COL:executive:governor-of-colima",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:15:06+00:00",
+   "name": "Governor of Colima",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "single_source",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:15:06+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "person:MX:indira-vizcaino-silva",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:15:08+00:00",
+   "name": "Indira Vizcaíno Silva",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "col.gob.mx",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "source:2382d2d159031d3a",
+   "label": "Source",
+   "name": "COLIMA",
+   "retrieved_at": "2026-11-14T23:15:08+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "url": "https://admiweb.col.gob.mx/archivos_prensa/banco_img/file_68c0b6f542bcc_CV_INDIRA_VIZCAINO_SILVA.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "source:4fdfa717dc0cc737",
+   "label": "Source",
+   "name": "Indira Vizcaíno",
+   "published_date": "2026-10-03T18:45:59.000Z",
+   "retrieved_at": "2026-11-14T23:15:08+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "url": "https://en.wikipedia.org/wiki/Indira_Vizca%C3%ADno"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "ieecolima.org.mx",
+   "first_seen": "2026-11-14T23:15:06+00:00",
+   "id": "source:b81fa0c0df2ec173",
+   "label": "Source",
+   "name": "Candidatos Ganadores | Instituto Electoral del Estado de Colima",
+   "retrieved_at": "2026-11-14T23:15:08+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "url": "https://ieecolima.org.mx/candidatosganadores.htm"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "source:c13ebec66c96f006",
+   "label": "Source",
+   "name": "Indira Vizcaíno Silva - Wikipedia, la enciclopedia libre",
+   "published_date": "2026-10-26T17:14:08.000Z",
+   "retrieved_at": "2026-11-14T23:15:08+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "url": "https://es.wikipedia.org/wiki/Indira_Vizca%C3%ADno_Silva"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "culturacolectiva.com",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "source:c7cdcb92a434d58e",
+   "label": "Source",
+   "name": "Quién es Indira Vizcaíno Silva, gobernadora de Colima",
+   "published_date": "2026-08-03T13:24:15.000Z",
+   "retrieved_at": "2026-11-14T23:15:08+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "url": "https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-indira-vizcaino/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "col.gob.mx",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "source:f810b5da17c976a0",
+   "label": "Source",
+   "name": "Gobierno del Estado de Colima",
+   "retrieved_at": "2026-11-14T23:15:08+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:08+00:00",
+   "url": "https://directoriointegral.col.gob.mx/v3/index.php/portal/detalle_funcionario/512"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-10-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:08+00:00",
+   "id": "term:c2149629dfc1",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:15:08+00:00",
+   "name": "Indira Vizcaíno Silva — term from 2021-11-01",
+   "office": "office:MX:state:MX-COL:executive:governor-of-colima",
+   "person": "person:MX:indira-vizcaino-silva",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-11-01",
+   "updated_at": "2026-11-14T23:15:08+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-COL:executive:governor-of-colima": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-COL",
+   "body:MX:state:MX-COL:executive",
+   "office:MX:state:MX-COL:executive:governor-of-colima"
+  ]
+ },
+ "politician": "person:MX:indira-vizcaino-silva",
+ "sha256": "dc8150c82991f2bbfe5109115419a3f85de1d93ab106ef096a8d31937b46eb54",
+ "unreached_offices": []
+}

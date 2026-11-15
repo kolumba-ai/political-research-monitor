@@ -1,0 +1,574 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:national:chamber-of-deputies:deputy",
+   "src": "body:MX:national:chamber-of-deputies",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "src": "body:MX:national:chamber-of-deputies",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:national",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:MX:national:chamber-of-deputies",
+   "src": "level:MX:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:a0c5b4982362",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "src": "office:MX:national:chamber-of-deputies:deputy",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T02:15:08+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:42+00:00",
+   "claim": "office exists: Deputy",
+   "dst": "source:ad112f44cc259b10",
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "src": "office:MX:national:chamber-of-deputies:deputy",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:42+00:00",
+   "claim": "office exists: Deputy",
+   "dst": "source:f1187c9a1636e23b",
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "src": "office:MX:national:chamber-of-deputies:deputy",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "term:044f9d925610",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "src": "office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:07:46+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:43+00:00",
+   "claim": "office exists: President of the Chamber of Deputies",
+   "dst": "source:77ad8c0b73429a40",
+   "first_seen": "2026-11-14T23:07:43+00:00",
+   "src": "office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:43+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.7,
+   "constituency_code": "MX-OAX-DF08",
+   "constituency_name": "Oaxaca, federal district 8",
+   "current": true,
+   "dst": "office:MX:national:chamber-of-deputies:deputy",
+   "end": "2027-08-31",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "home_entity": "Oaxaca",
+   "last_verified": "2026-11-15T02:15:08+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261115T021503Z",
+   "roster_name": "Bolaños-Cacho Cué Raúl",
+   "seat_type": "general",
+   "src": "person:MX:raul-bolanos-cacho-cue",
+   "start": "2024-09-01",
+   "status": "current",
+   "term_id": "term:a0c5b4982362",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T02:15:08+00:00"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "end": "2027-08-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:07:46+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:raul-bolanos-cacho-cue",
+   "start": "2026-09-01",
+   "status": "current",
+   "term_id": "term:044f9d925610",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:07:46+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:07:46+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:pvem",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "src": "person:MX:raul-bolanos-cacho-cue",
+   "term_id": "term:044f9d925610",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:07:46+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:46+00:00",
+   "claim": "Raúl Bolaños-Cacho Cué holds office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "dst": "source:15942c3a8c75df86",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "snippet": "…Raúl Bolaños Cacho Cué Raúl Bolaños Cacho Cué | Raúl Bolaños Cacho Cué | | | --- | --- | | | | | Presidente de la Cámara de Diputados Actualmente en el cargo | | | Desde el 1 de s…",
+   "src": "term:044f9d925610",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:46+00:00",
+   "claim": "Raúl Bolaños-Cacho Cué holds office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "dst": "source:620e8773b30fc1a8",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "snippet": "…p Legislador SIL - Sistema de Información Legislativa-PopUp Legislador # Búsqueda de Intervenciones en el pleno Fecha Inicial: Fecha Final: | Diputado Raúl Bolaños Cacho Cué | | | --- | --- | | Número de la legislatura: | LXVI Legislatura | | --- | --- | | Periodo de la legislatura: | Del 29/08/2024 al 31/08/2027 | | P…",
+   "src": "term:044f9d925610",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:46+00:00",
+   "claim": "Raúl Bolaños-Cacho Cué holds office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "dst": "source:77ad8c0b73429a40",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "snippet": "…AVISO De la Presidencia de la Cámara de Diputados A las Diputadas y Diputados Federales se les informa que: De conformidad con los Resolutivos Segundo y Tercero del Acuerdo relativo al Calendario de Sesiones aprobado por el Pleno, la sesión ordinaria convocada para el miércoles 4 de noviembre de 2026, se suspende, y s…",
+   "src": "term:044f9d925610",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:46+00:00",
+   "claim": "Raúl Bolaños-Cacho Cué holds office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "dst": "source:aeaa0a0c6788e57c",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "snippet": "…¿Quién es Raúl Bolaños Cacho Cué, nuevo presidente de la Cámara de Diputados? - La Razón de México ¿Quién es Raúl Bolaños Cacho Cué, nuevo presidente de la Cámara de Diputados? - La Razón…",
+   "src": "term:044f9d925610",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:46+00:00",
+   "claim": "Raúl Bolaños-Cacho Cué holds office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "dst": "source:bba1fd712e279be4",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "snippet": "…Raúl Bolaños Cacho Cué Raúl Bolaños Cacho Cué | Raúl Bolaños Cacho Cué | | | --- | --- | | Bolaños Cacho in 2019 | | | President of the Chamber of Deputies of Mexico | | | Incumbe…",
+   "src": "term:044f9d925610",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:46+00:00",
+   "claim": "Raúl Bolaños-Cacho Cué holds office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "dst": "source:c58d11166a7260f5",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "snippet": "…ast holders | Speaker Record # President of the Chamber of Deputies (President of the Mesa Directiva), Cámara de Diputados (Chamber of Deputies) Current holder Raúl Bolaños-Cacho Cué 4, 1, 5, 2 In office since 1 September 2026. Checked 28 October 2026. ## How the office holder is chosen The President of the Chamber hea…",
+   "src": "term:044f9d925610",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:46+00:00",
+   "claim": "Raúl Bolaños-Cacho Cué holds office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "dst": "source:d35a59dfa6a4676b",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "snippet": "…ibbean (GRULAC) Speaker Official title The Speaker may for example be known as the Presiding Officer, President, Chairman/Chairperson, etc. View field in the data dictionary : Speaker of the Chamber of Deputies Speaker : Raúl Bolaños-Cacho Cué (Male) Date of birth: 02 Jun 1988 Term Start (and end) of the term of the Sp…",
+   "src": "term:044f9d925610",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:raul-bolanos-cacho-cue",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "src": "term:044f9d925610",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:08+00:00",
+   "claim": "Raúl Bolaños-Cacho Cué holds office:MX:national:chamber-of-deputies:deputy",
+   "dst": "source:15d70b03bcbdd052",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "src": "term:a0c5b4982362",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:08+00:00",
+   "via": "official_directory"
+  },
+  {
+   "dst": "person:MX:raul-bolanos-cacho-cue",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "src": "term:a0c5b4982362",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T02:15:08+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "description": "Lower chamber of the bicameral Congress of the Union.",
+   "first_seen": "2026-11-14T23:07:41+00:00",
+   "id": "body:MX:national:chamber-of-deputies",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:07:41+00:00",
+   "name": "Chamber of Deputies",
+   "name_local": "Cámara de Diputados",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:07:41+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795",
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:34+00:00",
+   "id": "level:MX:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:07:34+00:00"
+  },
+  {
+   "aliases": [
+    "Federal Deputy (single-member district)"
+   ],
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "id": "office:MX:national:chamber-of-deputies:deputy",
+   "is_elected": true,
+   "keywords": [
+    "deputy",
+    "diputad",
+    "diputada"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:07:42+00:00",
+   "name": "Federal Deputy (single-member district)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seat_type": "general",
+   "seats": 300,
+   "selection_details": "Plurality vote in one of 300 federal districts",
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "verified",
+   "term_length_years": 3,
+   "title_local": "Diputada o Diputado",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:07:43+00:00",
+   "id": "office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "presidenta"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:07:43+00:00",
+   "name": "President of the Chamber of Deputies",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by deputies to preside over the chamber for a legislative year.",
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 1.0,
+   "title_local": "Presidenta o Presidente de la Mesa Directiva de la Cámara de Diputados",
+   "updated_at": "2026-11-14T23:07:43+00:00"
+  },
+  {
+   "acronym": "PVEM",
+   "aliases": [
+    "PVEM",
+    "Partido Verde Ecologista de México"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "party:MX:pvem",
+   "label": "PoliticalParty",
+   "name": "Partido Verde Ecologista de México",
+   "updated_at": "2026-11-14T23:21:28+00:00"
+  },
+  {
+   "aliases": [
+    "Bolaños-Cacho Cué Raúl"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "person:MX:raul-bolanos-cacho-cue",
+   "label": "Person",
+   "last_verified": "2026-11-15T02:15:08+00:00",
+   "name": "Raúl Bolaños-Cacho Cué",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "source:15942c3a8c75df86",
+   "label": "Source",
+   "name": "Raúl Bolaños Cacho Cué",
+   "published_date": "2026-11-07T00:14:09.000Z",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://es.wikipedia.org/wiki/Ra%C3%BAl_Bola%C3%B1os_Cacho_Cu%C3%A9"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-15T01:58:13+00:00",
+   "id": "source:15d70b03bcbdd052",
+   "label": "Source",
+   "name": "Listado de Diputados LXVI",
+   "retrieved_at": "2026-11-15T02:15:10+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:10+00:00",
+   "url": "https://sitl.diputados.gob.mx/LXVI_leg/listado_diputados_gpnp.php"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "gobernacion.gob.mx",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "source:620e8773b30fc1a8",
+   "label": "Source",
+   "name": "SIL - Sistema de Información Legislativa-PopUp Legislador",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "http://sil.gobernacion.gob.mx/Librerias/pp_PerfilLegislador.php?Referencia=9228489"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:07:43+00:00",
+   "id": "source:77ad8c0b73429a40",
+   "label": "Source",
+   "name": "Gaceta Parlamentaria, año XXIX, número 7160, miércoles 4 de noviembre de 2026",
+   "published_date": "2026-11-04T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "gobernacion.gob.mx",
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "id": "source:ad112f44cc259b10",
+   "label": "Source",
+   "name": "SIL :: Sistema de Información Legislativa",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "razon.com.mx",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "source:aeaa0a0c6788e57c",
+   "label": "Source",
+   "name": "¿Quién es Raúl Bolaños Cacho Cué, nuevo presidente de la Cámara de Diputados? - La Razón de México",
+   "published_date": "2026-09-01T18:56:05.000Z",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://www.razon.com.mx/mexico/2026/09/01/quien-es-raul-bolanos-cacho-cue-nuevo-presidente-de-la-camara-de-diputados/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "source:bba1fd712e279be4",
+   "label": "Source",
+   "name": "Raúl Bolaños Cacho Cué",
+   "published_date": "2026-09-10T16:38:08.000Z",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://en.wikipedia.org/wiki/Ra%C3%BAl_Bola%C3%B1os_Cacho_Cu%C3%A9"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "speakerrecord.org",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "source:c58d11166a7260f5",
+   "label": "Source",
+   "name": "President of the Chamber of Deputies (President of the Mesa Directiva), Mexico: current and past holders | Speaker Record",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://speakerrecord.org/chambers/mexico-camara-de-diputados/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "ipu.org",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "source:d35a59dfa6a4676b",
+   "label": "Source",
+   "name": "Mexico | IPU Parline: global data on national parliaments",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://data.ipu.org/parliament/MX/MX-LC01/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:05:34+00:00",
+   "id": "source:f1187c9a1636e23b",
+   "label": "Source",
+   "name": "Constitución Política de los Estados Unidos Mexicanos",
+   "retrieved_at": "2026-11-14T23:08:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:08:03+00:00",
+   "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-08-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "term:044f9d925610",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:07:46+00:00",
+   "name": "Raúl Bolaños-Cacho Cué — term from 2026-09-01",
+   "office": "office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies",
+   "person": "person:MX:raul-bolanos-cacho-cue",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2026-09-01",
+   "updated_at": "2026-11-14T23:07:46+00:00"
+  },
+  {
+   "confidence": 0.7,
+   "constituency_code": "MX-OAX-DF08",
+   "constituency_name": "Oaxaca, federal district 8",
+   "current": true,
+   "end": "2027-08-31",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "home_entity": "Oaxaca",
+   "id": "term:a0c5b4982362",
+   "label": "Term",
+   "last_verified": "2026-11-15T02:15:08+00:00",
+   "name": "Raúl Bolaños-Cacho Cué — term from 2024-09-01",
+   "office": "office:MX:national:chamber-of-deputies:deputy",
+   "person": "person:MX:raul-bolanos-cacho-cue",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261115T021503Z",
+   "roster_name": "Bolaños-Cacho Cué Raúl",
+   "seat_type": "general",
+   "start": "2024-09-01",
+   "updated_at": "2026-11-15T02:15:08+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:national:chamber-of-deputies:deputy": [
+   "country:MX",
+   "level:MX:national",
+   "body:MX:national:chamber-of-deputies",
+   "office:MX:national:chamber-of-deputies:deputy"
+  ],
+  "office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies": [
+   "country:MX",
+   "level:MX:national",
+   "body:MX:national:chamber-of-deputies",
+   "office:MX:national:chamber-of-deputies:president-of-the-chamber-of-deputies"
+  ]
+ },
+ "politician": "person:MX:raul-bolanos-cacho-cue",
+ "sha256": "0f9e9f6a58091f02612df73322f4bc9554acfac00015adb5b93c9847221778a5",
+ "unreached_offices": []
+}

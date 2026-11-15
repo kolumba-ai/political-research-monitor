@@ -1,0 +1,534 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "src": "body:PK:state:PK-JK:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-JK",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-JK:legislature",
+   "src": "level:PK:state:PK-JK",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:c1eebaa8f670",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "src": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:00:48+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:24+00:00",
+   "claim": "office exists: Member of the Azad Jammu and Kashmir Legislative Assembly",
+   "dst": "source:09145b880a101633",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "src": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:24+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:24+00:00",
+   "claim": "office exists: Member of the Azad Jammu and Kashmir Legislative Assembly",
+   "dst": "source:8c044633ab7b8e97",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "src": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:24+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:24+00:00",
+   "claim": "office exists: Member of the Azad Jammu and Kashmir Legislative Assembly",
+   "dst": "source:97791548997c5e02",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "src": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:24+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:24+00:00",
+   "claim": "office exists: Member of the Azad Jammu and Kashmir Legislative Assembly",
+   "dst": "source:a2d98329f137df70",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "src": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:24+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.95,
+   "constituency_code": "LA-1",
+   "constituency_name": "Mirpur-I",
+   "current": true,
+   "dst": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:00:48+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "src": "person:PK:azhar-sadiq",
+   "start": "2026-08-24",
+   "status": "current",
+   "term_id": "term:c1eebaa8f670",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:00:48+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:00:48+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:pmln",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "src": "person:PK:azhar-sadiq",
+   "term_id": "term:c1eebaa8f670",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:00:48+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:00:48+00:00",
+   "claim": "Azhar Sadiq holds office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "dst": "source:191909f17d4da759",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "snippet": "…| --- | | Constituency for the Azad Kashmir Legislative Assembly | | | | | | District | Mirpur District | | Electorate | 93,480 | | Current constituency | | | Party | Pakistan Muslim League (N) | | Member | Chaudhry Azhar Sadiq | LA-1 Mirpur-I is a constituency of the Azad Kashmir Legislative Assembly which is currentl…",
+   "src": "term:c1eebaa8f670",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:00:48+00:00",
+   "claim": "Azhar Sadiq holds office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "dst": "source:1ef6f3773464f0af",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "snippet": "…slative Assembly # List of Members AJK Legislative Assembly | List of Members AJK Legislative Assembly 2026 | | | | | | --- | --- | --- | --- | --- | | Sr.# | Constituency | Name | Contact No. | Party | | 1 | LA-I Mirpur-1 | Azhar Sadiq | 0300-8551667 | PMLN | | 2 | LA-2 Mirpur-2 | Chaudhry Qasim Majeed | 0300-5404416…",
+   "src": "term:c1eebaa8f670",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T01:00:48+00:00",
+   "claim": "Azhar Sadiq holds office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "dst": "source:54f6efbb776a9e83",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "snippet": "…August 2026, receiving 30 votes against 14 votes received by PPP candidate Sardar Mukhtar Ahmed Abbasi. [3] ## Members | Constituency | | Member | Party | Notes | | --- | --- | --- | --- | --- | | District | Name | | | | | Mirpur | LA-1 | Chaudhry Azhar Sadiq | PML(N) | | | | LA-2 | Chaudhry Qasim Majeed | PPP | | | |…",
+   "src": "term:c1eebaa8f670",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:00:48+00:00",
+   "claim": "Azhar Sadiq holds office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "dst": "source:5a089445acf84454",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "snippet": "…Chaudhry Azhar Sadiq Chaudhry Azhar Sadiq | Chaudhry Azhar Sadiq | | | --- | --- | | چوہدری اظہر صادق | | | Member of the Azad Kashmir Legislative Assembly | | | Incumbent | |…",
+   "src": "term:c1eebaa8f670",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:00:48+00:00",
+   "claim": "Azhar Sadiq holds office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "dst": "source:9a66213d18ee96e7",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "snippet": "…ction Result 2026: Candidates and Votes LA-1 Mirpur Election Result 2026: Candidates and Votes # LA-1 Mirpur AJK Legislative Assembly · 2026 election Chaudhary Azhar Sadiq (PML-N) won with 15,427 votes, beating Muhammad Afsar Shahid (PPP) by 5,595. ## About this result Chaudhary Azhar Sadiq of Pakistan Muslim League (N…",
+   "src": "term:c1eebaa8f670",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:00:48+00:00",
+   "claim": "Azhar Sadiq holds office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "dst": "source:a95e32c5c53e75fd",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "snippet": "…on Commission spokesperson Raja Mohsin Habib, the notifications have been issued for the returned candidates from Mirpur, Bhimber and Kotli districts. The notified winners include Azhar Sadiq (PML-N) from LA-1 Mirpur-1, Chaudhry Qasim Majeed (PPP) from LA-2 Mirpur-2, Chaudhry Yasar Sultan (PPP) from LA-3 Mirpur-3 and R…",
+   "src": "term:c1eebaa8f670",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:00:48+00:00",
+   "claim": "Azhar Sadiq holds office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "dst": "source:eaf73f9bf157269e",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "snippet": "…Nakyal, Sehnsa, Charhoi and Khuiratta, according to unofficial results. Meanwhile, the PPP secured the key city of Mirpur, as well as the district’s Chakswari, along with two seats in Kotli. In LA-1 (Mirpur-I), PML-N’s Azhar Sadiq was successful with 15,427 votes, while his opponent Muhammad Afzal Shahid trailed with 9…",
+   "src": "term:c1eebaa8f670",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:azhar-sadiq",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "src": "term:c1eebaa8f670",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:00:48+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "LA",
+   "constituency_range": "LA-1 to LA-45",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "general_seats": 45,
+   "id": "body:PK:state:PK-JK:legislature",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-15T01:04:20+00:00",
+   "members_verified": 44,
+   "name": "Azad Jammu and Kashmir Legislative Assembly (Azad Jammu and Kashmir)",
+   "name_local": "آزاد جموں و کشمیر قانون ساز اسمبلی",
+   "official_members_url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 0,
+   "reserved_other": 3,
+   "reserved_women": 5,
+   "structure_agent_run": "agent_run_3ea6561546024994accbb9708f5eee61",
+   "total_seats": 53,
+   "updated_at": "2026-11-15T01:04:20+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "self-governing territory",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "level:PK:state:PK-JK",
+   "iso_3166_2": "PK-JK",
+   "iso_type": "Pakistan administered area",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:18+00:00",
+   "name": "Azad Jammu and Kashmir",
+   "pipeline_mode": "research_only",
+   "researched_name": "Azad Jammu and Kashmir",
+   "special_status_note": "Self-governing territory under its 1974 Interim Constitution, not a Pakistani province. Its executive is called Prime Minister; 12 of the 45 general assembly seats represent refugees resident in Pakistan. Seven constituency elections had been postponed at the August 2026 prime-ministerial vote.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:18+00:00"
+  },
+  {
+   "aliases": [
+    "Member of the Azad Jammu and Kashmir Legislative Assembly"
+   ],
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "id": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "is_elected": true,
+   "keywords": [
+    "member",
+    "azad",
+    "diputad",
+    "deputy",
+    "legislat",
+    "congres"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:54:24+00:00",
+   "name": "Member of the Azad Jammu and Kashmir Legislative Assembly (general seat)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seat_type": "general",
+   "seats": 45,
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "verified",
+   "updated_at": "2026-11-15T00:59:14+00:00"
+  },
+  {
+   "acronym": "PML-N",
+   "aliases": [
+    "PML-N",
+    "Pakistan Muslim League (N)",
+    "Pakistan Muslim League (Nawaz)",
+    "Pakistan Muslim League-Nawaz"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "party:PK:pmln",
+   "label": "PoliticalParty",
+   "name": "Pakistan Muslim League (N)",
+   "updated_at": "2026-11-15T01:51:06+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "id": "person:PK:azhar-sadiq",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:00:48+00:00",
+   "name": "Azhar Sadiq",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gok.pk",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "id": "source:09145b880a101633",
+   "label": "Source",
+   "name": "AJ&K INTERIM CONSTITUTION, 1974",
+   "retrieved_at": "2026-11-14T23:54:24+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:24+00:00",
+   "url": "https://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "id": "source:191909f17d4da759",
+   "label": "Source",
+   "name": "LA-1 Mirpur-I",
+   "published_date": "2026-08-22T20:08:27.000Z",
+   "retrieved_at": "2026-11-15T01:00:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "url": "https://en.wikipedia.org/wiki/LA-1_Mirpur-I"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gok.pk",
+   "first_seen": "2026-11-15T00:59:14+00:00",
+   "id": "source:1ef6f3773464f0af",
+   "label": "Source",
+   "name": "List of Members AJK Legislative Assembly - AJK Legislative Assembly",
+   "retrieved_at": "2026-11-15T01:02:21+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:02:21+00:00",
+   "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "id": "source:54f6efbb776a9e83",
+   "label": "Source",
+   "name": "List of members of the 12th Legislative Assembly of Azad Kashmir",
+   "published_date": "2026-11-06T19:25:11.000Z",
+   "retrieved_at": "2026-11-15T01:00:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "url": "https://en.wikipedia.org/wiki/List_of_members_of_the_12th_Legislative_Assembly_of_Azad_Kashmir"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "id": "source:5a089445acf84454",
+   "label": "Source",
+   "name": "Chaudhry Azhar Sadiq",
+   "published_date": "2026-11-11T20:38:04.000Z",
+   "retrieved_at": "2026-11-15T01:00:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "url": "https://en.wikipedia.org/wiki/Chaudhry_Azhar_Sadiq"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "id": "source:8c044633ab7b8e97",
+   "label": "Source",
+   "name": "PML-N's Syed Iftikhar Ali Gillani sworn in as new AJK prime minister - Pakistan - DAWN.COM",
+   "published_date": "2026-08-28T10:37:59.000Z",
+   "retrieved_at": "2026-11-14T23:54:24+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:24+00:00",
+   "url": "https://www.dawn.com/news/2025757"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "radio.gov.pk",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "id": "source:97791548997c5e02",
+   "label": "Source",
+   "name": "Iftikhar Gilani elected Prime Minister of AJK",
+   "published_date": "2026-08-28T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:54:24+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:24+00:00",
+   "url": "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "pakistanelections.pk",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "id": "source:9a66213d18ee96e7",
+   "label": "Source",
+   "name": "LA-1 Mirpur Election Result 2026: Candidates and Votes",
+   "retrieved_at": "2026-11-15T01:00:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:00:48+00:00",
+   "url": "https://pakistanelections.pk/ajk/2026/1-mirpur/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gok.pk",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "id": "source:a2d98329f137df70",
+   "label": "Source",
+   "name": "gok.pk",
+   "retrieved_at": "2026-11-15T00:59:14+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:59:14+00:00",
+   "url": "https://ajkassembly.gok.pk/brief-history/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "arynews.tv",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "id": "source:a95e32c5c53e75fd",
+   "label": "Source",
+   "name": "AJK Elections: ECP issues notification for winners from 13 Mirpur Division constituencies",
+   "retrieved_at": "2026-11-15T01:01:20+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:01:20+00:00",
+   "url": "https://arynews.tv/ajk-elections-2026-mirpur-division-winners-list"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "id": "source:eaf73f9bf157269e",
+   "label": "Source",
+   "name": "AJK elections: PML-N grabs 9 out of 13 seats across Mirpur division, unofficial results show - Pakistan - DAWN.COM",
+   "published_date": "2026-07-28T06:33:54.000Z",
+   "retrieved_at": "2026-11-15T01:01:01+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:01:01+00:00",
+   "url": "https://www.dawn.com/news/2018960"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.95,
+   "constituency_code": "LA-1",
+   "constituency_name": "Mirpur-I",
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:00:48+00:00",
+   "id": "term:c1eebaa8f670",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:00:48+00:00",
+   "name": "Azhar Sadiq — term from 2026-08-24",
+   "office": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly",
+   "person": "person:PK:azhar-sadiq",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "start": "2026-08-24",
+   "updated_at": "2026-11-15T01:00:48+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-JK",
+   "body:PK:state:PK-JK:legislature",
+   "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly"
+  ]
+ },
+ "politician": "person:PK:azhar-sadiq",
+ "sha256": "ad68989981cbaed1c0abf05cc2ff13e4eec05a68853c58fcf8f63647ebde5d56",
+ "unreached_offices": []
+}

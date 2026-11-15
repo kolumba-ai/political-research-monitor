@@ -1,0 +1,434 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "src": "body:MX:state:MX-MEX:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-MEX",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-MEX:executive",
+   "src": "level:MX:state:MX-MEX",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:76a8e8b7f6ad",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "src": "office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:12:02+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:00+00:00",
+   "claim": "office exists: Governor of México",
+   "dst": "source:644740cfb244d58d",
+   "first_seen": "2026-11-14T23:12:00+00:00",
+   "src": "office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:00+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "end": "2029-09-15",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:12:02+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:delfina-gomez-alvarez",
+   "start": "2023-09-16",
+   "status": "current",
+   "term_id": "term:76a8e8b7f6ad",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:12:02+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:12:02+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Hacemos Historia en el Estado de México (MORENA, PT, PVEM)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "src": "person:MX:delfina-gomez-alvarez",
+   "term_id": "term:76a8e8b7f6ad",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:12:02+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:02+00:00",
+   "claim": "Delfina Gómez Álvarez holds office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "dst": "source:22bcab78a486bdc5",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "snippet": "…Delfina Gómez Álvarez Delfina Gómez Álvarez Delfina Gómez Álvarez (born 15 November 1962) is a Mexican politician affiliated with the National Regeneration Movement(MORENA) w…",
+   "src": "term:76a8e8b7f6ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:02+00:00",
+   "claim": "Delfina Gómez Álvarez holds office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "dst": "source:36eabf9f1ac6a2f5",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "snippet": "…Quién es Delfina Gómez Álvarez, gobernadora del Edomex Quién es Delfina Gómez Álvarez, gobernadora del Edomex # Quién es Delfina Gómez Álvarez, gobernadora del Estado de México por Er…",
+   "src": "term:76a8e8b7f6ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:02+00:00",
+   "claim": "Delfina Gómez Álvarez holds office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "dst": "source:644740cfb244d58d",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "snippet": "…ectorio de Personas Servidoras Públicas Consulta el Directorio de Personas Servidoras Públicas. ##### Reemplacamiento ## Atención Ciudadana Emergencias 911 (//911) Denuncia Anónima (//089) CATGEM Línea sin Violencia (//8001084053) ## GOBIERNO ## Delfina Gómez Álvarez Gobernadora del Estado de México 2023-2029 ## Sitios…",
+   "src": "term:76a8e8b7f6ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:02+00:00",
+   "claim": "Delfina Gómez Álvarez holds office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "dst": "source:77f366fdcb84dabe",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "snippet": "…delfina gómez álvarez # Delfina Gómez Álvarez ## About Delfina Gómez Álvarez (born 15 November 1962) is a Mexican politician affiliated with the National Regeneration Movemen…",
+   "src": "term:76a8e8b7f6ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:02+00:00",
+   "claim": "Delfina Gómez Álvarez holds office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "dst": "source:be64a82574ff1594",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "snippet": "…. De acuerdo con el artículo 69 de la Constitución del Estado de México su administración iniciará el 16 de septiembre del año en curso. ### ¿Quién es Delfina Gómez, primera gobernadora del Edomex? Delfina Gómez Álvarez es la abanderada de la candidatura en común “ Juntos Haremos Historia en el Estado de México”, confo…",
+   "src": "term:76a8e8b7f6ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:02+00:00",
+   "claim": "Delfina Gómez Álvarez holds office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "dst": "source:ccc749535967ecdd",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "snippet": "…Governor of the State of Mexico Governor of the State of Mexico | Governor of the State of Mexico | | | --- | --- | | | | | Incumbent Delfina Gómez Álvarez since September 16, 2023 | | | Term length | Six years, non-renewable. | The governor of the State of Mexico (Spanish: Gober…",
+   "src": "term:76a8e8b7f6ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:02+00:00",
+   "claim": "Delfina Gómez Álvarez holds office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "dst": "source:e365cb5b99574b79",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "snippet": "…del Estado de México Gobernador del Estado de México | Gobernadora Constitucional del Estado Libre y Soberano de México | | | --- | --- | | Escudo del Estado de México | | | | | | Delfina Gómez Álvarez | | | Desde el 16 de septiembre de 2023 | | | Ámbito | Estado de México | | Titular de | Gobierno del Estado de México…",
+   "src": "term:76a8e8b7f6ad",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:delfina-gomez-alvarez",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "src": "term:76a8e8b7f6ad",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:12:02+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "body:MX:state:MX-MEX:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:11:59+00:00",
+   "name": "Executive of México",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:11:59+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "level:MX:state:MX-MEX",
+   "iso_3166_2": "MX-MEX",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:11:59+00:00",
+   "name": "México",
+   "pipeline_mode": "research_only",
+   "researched_name": "México",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:11:59+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:12:00+00:00",
+   "id": "office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:12:00+00:00",
+   "name": "Governor of México",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:12:00+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "person:MX:delfina-gomez-alvarez",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:12:02+00:00",
+   "name": "Delfina Gómez Álvarez",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "source:22bcab78a486bdc5",
+   "label": "Source",
+   "name": "Delfina Gómez Álvarez",
+   "retrieved_at": "2026-11-14T23:12:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "url": "https://en.wikipedia.org/wiki/Delfina_G%C3%B3mez_%C3%81lvarez"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "culturacolectiva.com",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "source:36eabf9f1ac6a2f5",
+   "label": "Source",
+   "name": "Quién es Delfina Gómez Álvarez, gobernadora del Edomex",
+   "published_date": "2026-07-31T18:30:33.000Z",
+   "retrieved_at": "2026-11-14T23:12:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "url": "https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-delfina-gomez/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "edomex.gob.mx",
+   "first_seen": "2026-11-14T23:12:00+00:00",
+   "id": "source:644740cfb244d58d",
+   "label": "Source",
+   "name": "¡Bienvenidos! | Portal Ciudadano del Gobierno del Estado de México",
+   "retrieved_at": "2026-11-14T23:12:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "url": "http://edomex.gob.mx/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "exa.ai",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "source:77f366fdcb84dabe",
+   "label": "Source",
+   "name": "delfina gómez álvarez",
+   "retrieved_at": "2026-11-14T23:12:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "url": "https://exa.ai/library/person/nc2btflz28c"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "as.com",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "source:be64a82574ff1594",
+   "label": "Source",
+   "name": "¿Quién es Delfina Gómez, primera gobernadora del Edomex para el periodo 2023-2029? - AS México",
+   "published_date": "2023-09-14T23:52:11.000Z",
+   "retrieved_at": "2026-11-14T23:12:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "url": "https://mexico.as.com/actualidad/quien-es-delfina-gomez-primera-gobernadora-del-edomex-para-el-periodo-2023-2029-n/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "source:ccc749535967ecdd",
+   "label": "Source",
+   "name": "Governor of the State of Mexico",
+   "published_date": "2026-09-07T05:22:11.000Z",
+   "retrieved_at": "2026-11-14T23:12:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_the_State_of_Mexico"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "source:e365cb5b99574b79",
+   "label": "Source",
+   "name": "Gobernador del Estado de México",
+   "published_date": "2026-10-29T20:23:38.000Z",
+   "retrieved_at": "2026-11-14T23:12:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:02+00:00",
+   "url": "https://es.wikipedia.org/wiki/Gobernador_del_Estado_de_M%C3%A9xico"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2029-09-15",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "term:76a8e8b7f6ad",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:12:02+00:00",
+   "name": "Delfina Gómez Álvarez — term from 2023-09-16",
+   "office": "office:MX:state:MX-MEX:executive:governor-of-mexico",
+   "person": "person:MX:delfina-gomez-alvarez",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2023-09-16",
+   "updated_at": "2026-11-14T23:12:02+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-MEX:executive:governor-of-mexico": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-MEX",
+   "body:MX:state:MX-MEX:executive",
+   "office:MX:state:MX-MEX:executive:governor-of-mexico"
+  ]
+ },
+ "politician": "person:MX:delfina-gomez-alvarez",
+ "sha256": "760762ab96547993ef01e54d33995979d8017b5c4e0190acc6a0335a370deb9a",
+ "unreached_offices": []
+}

@@ -1,0 +1,285 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly-other-reserved-seat",
+   "src": "body:PK:state:PK-JK:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-JK",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-JK:legislature",
+   "src": "level:PK:state:PK-JK",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:54180d7ea486",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "src": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly-other-reserved-seat",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:04:15+00:00"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.55,
+   "current": true,
+   "dst": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly-other-reserved-seat",
+   "end": "2031",
+   "evidence_status": "single_source",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:04:15+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "other_reserved",
+   "src": "person:PK:muhammad-mazhir-saeed",
+   "start": "2026-08-24",
+   "status": "current",
+   "term_id": "term:54180d7ea486",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:04:15+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:04:15+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Pakistan Muslim League (N)",
+   "dst": "party:PK:ajkjui",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "src": "person:PK:muhammad-mazhir-saeed",
+   "term_id": "term:54180d7ea486",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:04:15+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:04:15+00:00",
+   "claim": "Muhammad Mazhir Saeed holds office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly-other-reserved-seat",
+   "dst": "source:3353ad0c452b6298",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "snippet": "…| Muhammad Akbar Chaudhry | PTI | | LA-39 Jammu and Others-VI | Raja Muhammad Siddique | PML-N | | LA-40 Kashmir Valley-I | Amir Abdul Ghaffar Lone | PPP | | LA-41 Kashmir Valley-II | Ghulam Mohhi ud Din Dewan | PTI | | LA-42 Kashmir Valley-III | Muhammad Asim Shrif | PTI | | LA-43 Kashmir Valley-IV | Javed Butt | PTI…",
+   "src": "term:54180d7ea486",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:04:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:muhammad-mazhir-saeed",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "src": "term:54180d7ea486",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:04:15+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "LA",
+   "constituency_range": "LA-1 to LA-45",
+   "first_seen": "2026-11-14T23:54:24+00:00",
+   "general_seats": 45,
+   "id": "body:PK:state:PK-JK:legislature",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-15T01:04:20+00:00",
+   "members_verified": 44,
+   "name": "Azad Jammu and Kashmir Legislative Assembly (Azad Jammu and Kashmir)",
+   "name_local": "آزاد جموں و کشمیر قانون ساز اسمبلی",
+   "official_members_url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 0,
+   "reserved_other": 3,
+   "reserved_women": 5,
+   "structure_agent_run": "agent_run_3ea6561546024994accbb9708f5eee61",
+   "total_seats": 53,
+   "updated_at": "2026-11-15T01:04:20+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "self-governing territory",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "level:PK:state:PK-JK",
+   "iso_3166_2": "PK-JK",
+   "iso_type": "Pakistan administered area",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:18+00:00",
+   "name": "Azad Jammu and Kashmir",
+   "pipeline_mode": "research_only",
+   "researched_name": "Azad Jammu and Kashmir",
+   "special_status_note": "Self-governing territory under its 1974 Interim Constitution, not a Pakistani province. Its executive is called Prime Minister; 12 of the 45 general assembly seats represent refugees resident in Pakistan. Seven constituency elections had been postponed at the August 2026 prime-ministerial vote.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:18+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T00:59:14+00:00",
+   "id": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly-other-reserved-seat",
+   "is_elected": true,
+   "label": "PoliticalOffice",
+   "name": "Member of the Azad Jammu and Kashmir Legislative Assembly (other reserved seat)",
+   "seat_type": "other_reserved",
+   "seats": 3,
+   "selection_method": "indirect_election",
+   "single_seat": false,
+   "updated_at": "2026-11-15T00:59:14+00:00"
+  },
+  {
+   "acronym": "AJKJUI",
+   "aliases": [
+    "AJKJUI",
+    "All Jammu Kashmir Jamiat Ulema-i-Islam"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "id": "party:PK:ajkjui",
+   "label": "PoliticalParty",
+   "name": "All Jammu Kashmir Jamiat Ulema-i-Islam",
+   "updated_at": "2026-11-15T01:04:15+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "id": "person:PK:muhammad-mazhir-saeed",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:04:15+00:00",
+   "name": "Muhammad Mazhir Saeed",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "id": "source:3353ad0c452b6298",
+   "label": "Source",
+   "name": "List of members of the 10th Legislative Assembly of Azad Kashmir",
+   "published_date": "2026-11-06T19:26:54.000Z",
+   "retrieved_at": "2026-11-15T01:04:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:04:15+00:00",
+   "url": "https://en.wikipedia.org/wiki/List_of_members_of_the_10th_Legislative_Assembly_of_Azad_Kashmir"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.55,
+   "current": true,
+   "end": "2031",
+   "evidence_status": "single_source",
+   "first_seen": "2026-11-15T01:04:15+00:00",
+   "id": "term:54180d7ea486",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:04:15+00:00",
+   "name": "Muhammad Mazhir Saeed — term from 2026-08-24",
+   "office": "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly-other-reserved-seat",
+   "person": "person:PK:muhammad-mazhir-saeed",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "other_reserved",
+   "start": "2026-08-24",
+   "updated_at": "2026-11-15T01:04:15+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly-other-reserved-seat": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-JK",
+   "body:PK:state:PK-JK:legislature",
+   "office:PK:state:PK-JK:legislature:member-of-the-azad-jammu-and-kashmir-legislative-assembly-other-reserved-seat"
+  ]
+ },
+ "politician": "person:PK:muhammad-mazhir-saeed",
+ "sha256": "dded751c1de45e01aac136339b08477db657265737f7d0b45adc29fecc95f7a9",
+ "unreached_offices": []
+}

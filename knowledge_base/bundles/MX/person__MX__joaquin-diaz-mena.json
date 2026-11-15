@@ -1,0 +1,433 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "src": "body:MX:state:MX-YUC:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-YUC",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-YUC:executive",
+   "src": "level:MX:state:MX-YUC",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:1553106c6e7c",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "src": "office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:12:52+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:46+00:00",
+   "claim": "office exists: Governor of Yucatán",
+   "dst": "source:eb418360cc45b98d",
+   "first_seen": "2026-11-14T23:12:46+00:00",
+   "src": "office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:46+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "end": "2030-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:12:52+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:joaquin-diaz-mena",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:1553106c6e7c",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:12:52+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:12:52+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Morena–PT–PVEM (Juntos Hacemos Historia en Yucatán)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "src": "person:MX:joaquin-diaz-mena",
+   "term_id": "term:1553106c6e7c",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:12:52+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:52+00:00",
+   "claim": "Joaquín Díaz Mena holds office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "dst": "source:367832bd077ca26a",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "snippet": "…tégicos a cargo de las dependencias y entidades de la Administración Pública del estado e informar periódicamente de sus avances al Gobernador. Titular MTRO. JOAQUÍN JESÚS DÍAZ MENA GOBERNADOR Palacio de Gobierno Calle 61 x 60 y 62, Centro, C.P. 97000, Mérida, Yucatán (999) 930 3100 Ext. 10054 Despacho del Gobernador D…",
+   "src": "term:1553106c6e7c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:52+00:00",
+   "claim": "Joaquín Díaz Mena holds office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "dst": "source:54373d45ded8d837",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "snippet": "…Joaquín Díaz Mena Joaquín Díaz Mena | Joaquín Díaz Mena | | | --- | --- | | | | | Governor of Yucatán | | | Incumbent | | | Assumed office 1 October 2024 | | | Preceded by |…",
+   "src": "term:1553106c6e7c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:52+00:00",
+   "claim": "Joaquín Díaz Mena holds office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "dst": "source:7b1146930dea955e",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "snippet": "…Joaquín Díaz Mena Joaquín Díaz Mena | Joaquín Jesús Díaz Mena | | | --- | --- | | Joaquín Díaz Mena. | | | Gobernador de Yucatán Actualmente en el cargo | | | Desde el 1 de…",
+   "src": "term:1553106c6e7c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:52+00:00",
+   "claim": "Joaquín Díaz Mena holds office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "dst": "source:bcf68d2a9212dce8",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "snippet": "…Joaquín Díaz Mena | Wilson Center Joaquín Díaz Mena | Wilson Center # Joaquín Díaz Mena Image Credit Joaquín Díaz Mena is the Morena candidate for the governorship of Yucatá…",
+   "src": "term:1553106c6e7c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:52+00:00",
+   "claim": "Joaquín Díaz Mena holds office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "dst": "source:c11d21226f208407",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "snippet": "…Seguridad en Yucatán: Díaz Mena plantea presencia en territorio y escuchar a la gente; Gobernación destaca al estado como ejemplo de coordinación Seguridad en Yucatán: Díaz Mena plantea…",
+   "src": "term:1553106c6e7c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:52+00:00",
+   "claim": "Joaquín Díaz Mena holds office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "dst": "source:d11e876482748305",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "snippet": "…Rinde Joaquín Díaz Mena Compromiso Constitucional como Gobernador del Estado de Yucatán Rinde Joaquín Díaz Mena Compromiso Constitucional como Gobernador del Estado de Yucatán Rin…",
+   "src": "term:1553106c6e7c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:52+00:00",
+   "claim": "Joaquín Díaz Mena holds office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "dst": "source:eb418360cc45b98d",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "snippet": "…CONGRESO DEL ESTADO DE YUCATÁN | JOAQUÍN DÍAZ MENA RINDE COMPROMISO CONSTITUCIONAL COMO GOBERNADOR DEL ESTADO LIBRE Y SOBERANO DE YUCATÁN # DIFUSIÓN ## Joaquín Díaz Mena rinde compromiso constitucional co…",
+   "src": "term:1553106c6e7c",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:joaquin-diaz-mena",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "src": "term:1553106c6e7c",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:12:52+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "body:MX:state:MX-YUC:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:12:44+00:00",
+   "name": "Executive of Yucatán",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:12:44+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "level:MX:state:MX-YUC",
+   "iso_3166_2": "MX-YUC",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:12:44+00:00",
+   "name": "Yucatán",
+   "pipeline_mode": "research_only",
+   "researched_name": "Yucatán",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:12:44+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:12:46+00:00",
+   "id": "office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:12:46+00:00",
+   "name": "Governor of Yucatán",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:12:46+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "person:MX:joaquin-diaz-mena",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:12:52+00:00",
+   "name": "Joaquín Díaz Mena",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "yucatan.gob.mx",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "source:367832bd077ca26a",
+   "label": "Source",
+   "name": "Despacho del Gobernador",
+   "retrieved_at": "2026-11-14T23:12:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "url": "https://www.yucatan.gob.mx/gobierno/ver_dependencia.php?id=1"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "source:54373d45ded8d837",
+   "label": "Source",
+   "name": "Joaquín Díaz Mena",
+   "published_date": "2026-07-18T16:28:37.000Z",
+   "retrieved_at": "2026-11-14T23:12:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_D%C3%ADaz_Mena"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "source:7b1146930dea955e",
+   "label": "Source",
+   "name": "Joaquín Díaz Mena",
+   "published_date": "2026-08-03T05:19:48.000Z",
+   "retrieved_at": "2026-11-14T23:12:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "url": "https://es.wikipedia.org/wiki/Joaqu%C3%ADn_D%C3%ADaz_Mena"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "wilsoncenter.org",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "source:bcf68d2a9212dce8",
+   "label": "Source",
+   "name": "Joaquín Díaz Mena | Wilson Center",
+   "retrieved_at": "2026-11-14T23:12:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "url": "https://mexicoelections.wilsoncenter.org/joaquin-diaz-mena"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "yucatan.gob.mx",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "source:c11d21226f208407",
+   "label": "Source",
+   "name": "Seguridad en Yucatán: Díaz Mena plantea presencia en territorio y escuchar a la gente; Gobernación destaca al estado como ejemplo de coordinación",
+   "published_date": "2026-11-10T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:12:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "url": "https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=12099"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "yucatan.gob.mx",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "source:d11e876482748305",
+   "label": "Source",
+   "name": "Rinde Joaquín Díaz Mena Compromiso Constitucional como Gobernador del Estado de Yucatán",
+   "published_date": "2024-10-01T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:12:52+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "url": "https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=8076"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresoyucatan.gob.mx",
+   "first_seen": "2026-11-14T23:12:46+00:00",
+   "id": "source:eb418360cc45b98d",
+   "label": "Source",
+   "name": "CONGRESO DEL ESTADO DE YUCATÁN   | JOAQUÍN DÍAZ MENA RINDE COMPROMISO CONSTITUCIONAL COMO GOBERNADOR DEL ESTADO LIBRE Y SOBERANO DE YUCATÁN",
+   "retrieved_at": "2026-11-14T23:12:52+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:12:52+00:00",
+   "url": "https://www.congresoyucatan.gob.mx/difusion/2233"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2030-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:12:52+00:00",
+   "id": "term:1553106c6e7c",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:12:52+00:00",
+   "name": "Joaquín Díaz Mena — term from 2024-10-01",
+   "office": "office:MX:state:MX-YUC:executive:governor-of-yucatan",
+   "person": "person:MX:joaquin-diaz-mena",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:12:52+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-YUC:executive:governor-of-yucatan": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-YUC",
+   "body:MX:state:MX-YUC:executive",
+   "office:MX:state:MX-YUC:executive:governor-of-yucatan"
+  ]
+ },
+ "politician": "person:MX:joaquin-diaz-mena",
+ "sha256": "3d1a4fc4b5cebe1423780fc7f88c02a4b22577ab657583c2d5db8be6a49b5f04",
+ "unreached_offices": []
+}

@@ -1,0 +1,534 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "src": "body:PK:national:national-assembly",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:national",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:PK:national:national-assembly",
+   "src": "level:PK:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:ac3d4593a905",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "src": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:50:56+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:49+00:00",
+   "claim": "office exists: Speaker of the National Assembly",
+   "dst": "source:1259d6062558659f",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "src": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:53+00:00",
+   "claim": "office exists: Deputy Speaker of the National Assembly",
+   "dst": "source:4d6eb419282c5997",
+   "first_seen": "2026-11-14T23:50:53+00:00",
+   "src": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:53+00:00",
+   "claim": "office exists: Deputy Speaker of the National Assembly",
+   "dst": "source:7abeed11800a42bb",
+   "first_seen": "2026-11-14T23:50:53+00:00",
+   "src": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:53+00:00",
+   "claim": "office exists: Deputy Speaker of the National Assembly",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "src": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:49+00:00",
+   "claim": "office exists: Member of National Assembly, reserved seat for non-Muslims",
+   "dst": "source:ac3dc00f1581408a",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "src": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:49+00:00",
+   "claim": "office exists: Speaker of the National Assembly",
+   "dst": "source:fba16e079eb16cea",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "src": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:50:56+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:syed-ghulam-mustafa-shah",
+   "start": "2024-03-01",
+   "status": "current",
+   "term_id": "term:ac3d4593a905",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:50:56+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:50:56+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:pppp",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "src": "person:PK:syed-ghulam-mustafa-shah",
+   "term_id": "term:ac3d4593a905",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:50:56+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:56+00:00",
+   "claim": "Syed Ghulam Mustafa Shah holds office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "dst": "source:1afa49ec6e6b61a8",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "src": "term:ac3d4593a905",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:56+00:00",
+   "claim": "Syed Ghulam Mustafa Shah holds office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "dst": "source:1aff6e6c12ff4cb0",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "snippet": "…elected NA deputy speaker - DAWN.COM ## PPP’s Syed Ghulam Mustafa elected NA deputy speaker Published March 1, 2024 Join our Whatsapp channel PPP’s Syed Ghulam Mustafa Shah has been elected as the deputy speaker of the National Assembly with 197 votes. Shah’s opponent Junaid Akbar, from the PTI, secured 92 votes. After…",
+   "src": "term:ac3d4593a905",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:56+00:00",
+   "claim": "Syed Ghulam Mustafa Shah holds office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "dst": "source:4a28eadede94e2d4",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "snippet": "…Syed Ghulam Mustafa Shah (politician) Syed Ghulam Mustafa Shah (politician) | Syed Ghulam Mustafa Shah | | | --- | --- | | سید غلام مصطفیٰ شاہ | | | 21st Deputy Speaker of the Nati…",
+   "src": "term:ac3d4593a905",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:56+00:00",
+   "claim": "Syed Ghulam Mustafa Shah holds office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "dst": "source:4d6eb419282c5997",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "snippet": "…National Assembly of Pakistan National Assembly of Pakistan # Personal Profile | Name | Syed Ghulam Mustafa Shah, Deputy Speaker National Assembly | | | --- | --- | --- | | Father's Name | Syed Shabbir Ahmed Shah | | | Permanent Address | Syed Mohallah, 12 Mehra…",
+   "src": "term:ac3d4593a905",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:56+00:00",
+   "claim": "Syed Ghulam Mustafa Shah holds office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "dst": "source:7abeed11800a42bb",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "snippet": "…nt House , Islamabad | 02:00 PM: 9th meeting of the SC on National Heritage and Culture Division at Committee Room No.7 (4th Floor), Parliament House, Islamabad ## Syed Ghulam Mustafa Shah Deputy Speaker National Assembly of Pakistan Honorable Syed Ghulam Mustafa Shah elected as the Deputy Speaker of the National Assem…",
+   "src": "term:ac3d4593a905",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:56+00:00",
+   "claim": "Syed Ghulam Mustafa Shah holds office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "dst": "source:82b93fdb1aad42ca",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "snippet": "…Honorable Deputy Speaker Syed Ghulam Mustafa Shah Graces Closing Ceremony of 10th National Parliamentary Development Course – Pakistan Institute for Parliamentary Services Honorable Deputy Speaker Syed Ghu…",
+   "src": "term:ac3d4593a905",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:56+00:00",
+   "claim": "Syed Ghulam Mustafa Shah holds office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "dst": "source:cc408949a9d7395e",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "snippet": "…Syed Ghulam Mustafa Shah elected as Deputy Speaker of the National Assembly while securing 197 votes - Sabah News Syed Ghulam Mustafa Shah elected as Deputy Speaker of the National…",
+   "src": "term:ac3d4593a905",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:56+00:00",
+   "claim": "Syed Ghulam Mustafa Shah holds office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "dst": "source:e7c0c72b9482b7fd",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "snippet": "…National Assembly of Pakistan Deputy Speaker of the National Assembly of Pakistan | Deputy Speaker of the National Assembly of Pakistan | | | --- | --- | | | | | Incumbent Ghulam Mustafa Shah since 1 March 2024 | | | National Assembly of Pakistan | | | Member of | National Assembly of Pakistan | | Seat | Islamabad | |…",
+   "src": "term:ac3d4593a905",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:syed-ghulam-mustafa-shah",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "src": "term:ac3d4593a905",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:50:56+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "description": "Lower house; 336 membership seats. Speaker and deputy occupy seats already counted among members; the Assembly normally lasts five years unless dissolved.",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "id": "body:PK:national:national-assembly",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:50:49+00:00",
+   "name": "National Assembly",
+   "name_local": "قومی اسمبلی",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:50:49+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064",
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:42+00:00",
+   "id": "level:PK:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:50:42+00:00"
+  },
+  {
+   "aliases": [
+    "Deputy Speaker of the National Assembly",
+    "Member of National Assembly, reserved seat for non-Muslims",
+    "Member of National Assembly, reserved seat for women",
+    "Speaker of the National Assembly"
+   ],
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "id": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "is_elected": true,
+   "keywords": [
+    "deputy",
+    "deputy speaker"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:50:53+00:00",
+   "name": "Member of National Assembly, general seat",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_details": "Elected by the Assembly from its members.",
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 5.0,
+   "title_local": "ڈپٹی اسپیکر قومی اسمبلی",
+   "updated_at": "2026-11-14T23:50:53+00:00"
+  },
+  {
+   "acronym": "PPPP",
+   "aliases": [
+    "PPPP",
+    "Pakistan Peoples Party Parliamentarian",
+    "Pakistan Peoples Party Parliamentarians"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:45+00:00",
+   "id": "party:PK:pppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party Parliamentarians",
+   "updated_at": "2026-11-15T01:53:07+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "person:PK:syed-ghulam-mustafa-shah",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:50:56+00:00",
+   "name": "Syed Ghulam Mustafa Shah",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "id": "source:1259d6062558659f",
+   "label": "Source",
+   "name": "National Assembly of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:52+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:52+00:00",
+   "url": "https://www.na.gov.pk/en/profile.php?uid=1735"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "app.com.pk",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "source:1afa49ec6e6b61a8",
+   "label": "Source",
+   "name": "Ghulam Mustafa takes oath",
+   "published_date": "2024-03-01T13:14:14.000Z",
+   "retrieved_at": "2026-11-14T23:50:56+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "url": "https://www.app.com.pk/national/ghulam-mustafa-takes-oath/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "source:1aff6e6c12ff4cb0",
+   "label": "Source",
+   "name": "PPP’s Syed Ghulam Mustafa elected NA deputy speaker - DAWN.COM",
+   "published_date": "2024-03-01T13:03:08.000Z",
+   "retrieved_at": "2026-11-14T23:50:56+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "url": "https://www.dawn.com/news/1818327"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "source:4a28eadede94e2d4",
+   "label": "Source",
+   "name": "Syed Ghulam Mustafa Shah (politician)",
+   "published_date": "2026-08-12T18:07:39.000Z",
+   "retrieved_at": "2026-11-14T23:50:56+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "url": "https://en.wikipedia.org/wiki/Syed_Ghulam_Mustafa_Shah_(politician)"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:50:53+00:00",
+   "id": "source:4d6eb419282c5997",
+   "label": "Source",
+   "name": "National Assembly of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:56+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "url": "https://na.gov.pk/en/profile.php?uid=1823"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:50:53+00:00",
+   "id": "source:7abeed11800a42bb",
+   "label": "Source",
+   "name": "National Assembly of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:56+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "url": "https://www.na.gov.pk/en/content.php?id=219"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pips.gov.pk",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "source:82b93fdb1aad42ca",
+   "label": "Source",
+   "name": "Honorable Deputy Speaker Syed Ghulam Mustafa Shah Graces Closing Ceremony of 10th National Parliamentary Development Course – Pakistan Institute for Parliamentary Services",
+   "published_date": "2024-12-24T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:50:56+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "url": "https://www.pips.gov.pk/capacity_building/honorable-deputy-speaker-syed-ghulam-mustafa-shah-graces-closing-ceremony-of-10th-national-parliamentary-development-course/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "id": "source:ac3dc00f1581408a",
+   "label": "Source",
+   "name": "National Assembly of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:49+00:00",
+   "url": "https://na.gov.pk/en/content.php?id=246"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "sabahnews.net",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "source:cc408949a9d7395e",
+   "label": "Source",
+   "name": "Syed Ghulam Mustafa Shah elected as Deputy Speaker of the National Assembly while securing 197 votes - Sabah News",
+   "published_date": "2024-03-01T17:31:08.000Z",
+   "retrieved_at": "2026-11-14T23:50:56+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "url": "https://sabahnews.net/english/news/syed-ghulam-mustafa-shah-elected-as-deputy-speaker-of-the-national-assembly-while-securing-197-votes/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "source:e7c0c72b9482b7fd",
+   "label": "Source",
+   "name": "Deputy Speaker of the National Assembly of Pakistan",
+   "published_date": "2026-09-07T04:40:50.000Z",
+   "retrieved_at": "2026-11-14T23:50:56+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:56+00:00",
+   "url": "https://en.wikipedia.org/wiki/Deputy_Speaker_of_the_National_Assembly_of_Pakistan"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "id": "source:fba16e079eb16cea",
+   "label": "Source",
+   "name": "National Assembly of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:52+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:52+00:00",
+   "url": "https://na.gov.pk/en/content.php?id=220"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "term:ac3d4593a905",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:50:56+00:00",
+   "name": "Syed Ghulam Mustafa Shah — term from 2024-03-01",
+   "office": "office:PK:national:national-assembly:member-of-national-assembly-general-seat",
+   "person": "person:PK:syed-ghulam-mustafa-shah",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2024-03-01",
+   "updated_at": "2026-11-14T23:50:56+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:national:national-assembly:member-of-national-assembly-general-seat": [
+   "country:PK",
+   "level:PK:national",
+   "body:PK:national:national-assembly",
+   "office:PK:national:national-assembly:member-of-national-assembly-general-seat"
+  ]
+ },
+ "politician": "person:PK:syed-ghulam-mustafa-shah",
+ "sha256": "971d27c99bea75c802eb1b1a823b558bee1829125b962c1a6e9c62221944afae",
+ "unreached_offices": []
+}

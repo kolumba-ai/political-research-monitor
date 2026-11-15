@@ -1,0 +1,438 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "src": "body:PK:municipal:karachi-division:lyari:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division:lyari",
+   "src": "level:PK:municipal:karachi-division",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:karachi-division:lyari:government",
+   "src": "level:PK:municipal:karachi-division:lyari",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:495fdcf90f37",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "src": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T00:01:47+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:44+00:00",
+   "claim": "office exists: Town Chairman of Lyari",
+   "dst": "source:15ce6186d08736ee",
+   "first_seen": "2026-11-15T00:01:44+00:00",
+   "src": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:44+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:44+00:00",
+   "claim": "office exists: Town Chairman of Lyari",
+   "dst": "source:206755dea27e855a",
+   "first_seen": "2026-11-15T00:01:44+00:00",
+   "src": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:44+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:44+00:00",
+   "claim": "office exists: Town Chairman of Lyari",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:44+00:00",
+   "src": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:44+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:44+00:00",
+   "claim": "office exists: Town Chairman of Lyari",
+   "dst": "source:d636101fbf37826c",
+   "first_seen": "2026-11-15T00:01:44+00:00",
+   "src": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:44+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "dst": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T00:01:47+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:nasir-karim-baloch",
+   "status": "current",
+   "term_id": "term:495fdcf90f37",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T00:01:47+00:00"
+  },
+  {
+   "as_of": "2026-11-15T00:01:47+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ppp",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "src": "person:PK:nasir-karim-baloch",
+   "term_id": "term:495fdcf90f37",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T00:01:47+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:47+00:00",
+   "claim": "Nasir Karim Baloch holds office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "dst": "source:2005305a7edc622c",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "snippet": "…sion participated. On the final day, Lyari Town Chairman Nasir Karim was the special guest along with members of Town Committee, Karachi Boxing Association President Rasool Bakhs Baloch, General Secretary Abdul Razzaq, Sindh Boxing Association President Asghar Baloch and former international boxers Sher Muhammad, Muham…",
+   "src": "term:495fdcf90f37",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:47+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:47+00:00",
+   "claim": "Nasir Karim Baloch holds office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "dst": "source:550bf23a88edfed5",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "snippet": "…he 2023 Pakistani census, the population of Lyari Subdivision is 949,878. | Lyari Town, لیاری ٹاؤن | - | | --- | --- | | Constituent Town of Karachi | - | | Official seal of Lyari Town, Seal | - | | Lyari Town Map, Lyari Town Map | - | | Town Chairman | Nasir Karim Baloch | | District | District Karachi South | | Divis…",
+   "src": "term:495fdcf90f37",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:47+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:47+00:00",
+   "claim": "Nasir Karim Baloch holds office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "dst": "source:778a1b02bf798466",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "snippet": "…and social work, Mr. Noman Wadera, Chairman of All Pakistan Memon Youth and President of the Global Memon Organization Youth Wing Pakistan Chapter, met with Mr. Nasir Karim Baloch, Chairman of Layni Town, Karachi. The meeting took place at the Layni Town office in Karachi and saw discussions on various initiatives to b…",
+   "src": "term:495fdcf90f37",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:47+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:47+00:00",
+   "claim": "Nasir Karim Baloch holds office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "dst": "source:d636101fbf37826c",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "snippet": "…beloved town. Thank you for your continued trust and partnership. Let us stride forward with confidence, seizing new opportunities and shaping a future of prosperity. Nasir Karim Baloch Chairman ##### TMC Lyari Old KMC Zonal Office) Shahrah-e-Abdul Rahim Baloch (Chakiwara Road) Lyari Town, Karachi. tmc@gmail.com #####…",
+   "src": "term:495fdcf90f37",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:47+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:nasir-karim-baloch",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "src": "term:495fdcf90f37",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T00:01:47+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-15T00:01:44+00:00",
+   "id": "body:PK:municipal:karachi-division:lyari:government",
+   "label": "GovernmentBody",
+   "name": "Town Municipal Council of Lyari",
+   "name_local": "ٹاؤن میونسپل کونسل",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T00:01:44+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "level:PK:municipal:karachi-division",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:05+00:00",
+   "name": "Karachi Division — Town municipal corporation (town)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "ٹاؤن میونسپل کارپوریشن",
+   "tier": "special_local",
+   "updated_at": "2026-11-15T00:01:05+00:00",
+   "why_distinct": "Three-tier urban local government: Karachi Metropolitan Corporation/City Council, 25 town municipal corporations and their town councils, and union committees. Unlike an ordinary standalone municipality, the metropolitan body overlays town-level councils; town chairmen are selected by the town councils rather than directly by residents. The names below are the 2023 returned town heads; a town-by-town 2026 incumbency confirmation is unavailable for some, so later replacements cannot be ruled out. Four-year terms run from oath, but an exact end date is not confirmed for each head."
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:44+00:00",
+   "id": "level:PK:municipal:karachi-division:lyari",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:44+00:00",
+   "name": "Lyari",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-15T00:01:44+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T00:01:44+00:00",
+   "id": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "is_elected": true,
+   "keywords": [
+    "town",
+    "town chairman"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-15T00:01:44+00:00",
+   "name": "Town Chairman of Lyari",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "ٹاؤن چیئرمین",
+   "updated_at": "2026-11-15T00:01:44+00:00"
+  },
+  {
+   "acronym": "PPP",
+   "aliases": [
+    "PPP",
+    "Pakistan Peoples Party"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "party:PK:ppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party",
+   "updated_at": "2026-11-15T01:04:12+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "id": "person:PK:nasir-karim-baloch",
+   "label": "Person",
+   "last_verified": "2026-11-15T00:01:47+00:00",
+   "name": "Nasir Karim Baloch",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "sindhlaws.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:15ce6186d08736ee",
+   "label": "Source",
+   "name": "Preamble",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "theazb.com",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "id": "source:2005305a7edc622c",
+   "label": "Source",
+   "name": "Lyari Town Chairman Nasir Karim distributed the prizes among the winning players. – More Than Just News",
+   "published_date": "2023-11-16T15:57:26.000Z",
+   "retrieved_at": "2026-11-15T00:01:47+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:47+00:00",
+   "url": "https://theazb.com/lyari-town-chairman-nasir-karim-distributed-the-prizes-among-the-winning-players/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "lgdsindh.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:206755dea27e855a",
+   "label": "Source",
+   "name": "GOVERNMENT",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "id": "source:550bf23a88edfed5",
+   "label": "Source",
+   "name": "Lyari Town",
+   "retrieved_at": "2026-11-15T00:01:47+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:47+00:00",
+   "url": "https://en.wikipedia.org/wiki/Gabol_Park"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "aaj.tv",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:55eaf0edad507ff0",
+   "label": "Source",
+   "name": "Who controls Karachi 25 towns - Must Read - Aaj English TV",
+   "published_date": "2023-06-15T14:02:27.000Z",
+   "retrieved_at": "2026-11-15T00:02:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:03+00:00",
+   "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "biztoday.news",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "id": "source:778a1b02bf798466",
+   "label": "Source",
+   "name": "Global Memon Organization Youth Wing Pakistan Chapter President Meets Lyari Town Chairman to Foster Community Welfare - Biz Today",
+   "published_date": "2023-10-09T17:38:41.000Z",
+   "retrieved_at": "2026-11-15T00:01:47+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:47+00:00",
+   "url": "https://www.biztoday.news/2023/10/09/global-memon-organization-youth-wing-pakistan-chapter-president-meets-lyari-town-chairman-to-foster-community-welfare/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gos.pk",
+   "first_seen": "2026-11-15T00:01:44+00:00",
+   "id": "source:d636101fbf37826c",
+   "label": "Source",
+   "name": "chairman-message",
+   "retrieved_at": "2026-11-15T00:01:47+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:01:47+00:00",
+   "url": "https://tmclyari.gos.pk/page/message"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:47+00:00",
+   "id": "term:495fdcf90f37",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T00:01:47+00:00",
+   "name": "Nasir Karim Baloch — term from ?",
+   "office": "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari",
+   "person": "person:PK:nasir-karim-baloch",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "updated_at": "2026-11-15T00:01:47+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:karachi-division",
+   "level:PK:municipal:karachi-division:lyari",
+   "body:PK:municipal:karachi-division:lyari:government",
+   "office:PK:municipal:karachi-division:lyari:government:town-chairman-of-lyari"
+  ]
+ },
+ "politician": "person:PK:nasir-karim-baloch",
+ "sha256": "eab53e723ee696e0f9ea96d5c07388f1af0464e7d25b7a7b4dbc21312372a8ff",
+ "unreached_offices": []
+}

@@ -1,0 +1,424 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "src": "body:MX:state:MX-GRO:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-GRO",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-GRO:executive",
+   "src": "level:MX:state:MX-GRO",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:d3e95794680e",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "src": "office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:15:26+00:00"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "end": "2027-10-14",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:15:26+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:evelyn-cecia-salgado-pineda",
+   "start": "2021-10-15",
+   "status": "current",
+   "term_id": "term:d3e95794680e",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:15:26+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:15:26+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Hacemos Historia (MORENA–PT–PVEM)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "src": "person:MX:evelyn-cecia-salgado-pineda",
+   "term_id": "term:d3e95794680e",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:15:26+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:26+00:00",
+   "claim": "Evelyn Cecia Salgado Pineda holds office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "dst": "source:43f2404452c8addf",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "snippet": "…ménez Esquivel | PAN | | Baja California | Marina del Pilar Ávila Olmeda | Morena | | Baja California Sur | Víctor Manuel Castro Cosío | Morena | | Campeche | Layda Sansores San Román | Morena | | Chihuahua | María Eugenia Campos Galván | PAN | | Colima | Indira Vizcaíno Silva | Morena | | Guerrero | Evelyn Salgado Pin…",
+   "src": "term:d3e95794680e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:26+00:00",
+   "claim": "Evelyn Cecia Salgado Pineda holds office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "dst": "source:72fa4d825be95f20",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "snippet": "…uerrero Esta es la biografía de la \"Torita\", la nueva gobernadora de Guerrero # #Perfil | Evelyn Salgado, la gobernadora de Guerrero a la sombra de su padre Evelyn Salgado Pineda se convierte en la primera gobernadora de Guerrero, un cargo al que aspiraba llegar su padre, Félix Salgado Macedonio. jue 14 octubre 2021 04…",
+   "src": "term:d3e95794680e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:26+00:00",
+   "claim": "Evelyn Cecia Salgado Pineda holds office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "dst": "source:8640f3792fc5a31a",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "snippet": "…Mtra. Evelyn Cecia Salgado Pineda – Secretaría de Cultura Guerrero Mtra. Evelyn Cecia Salgado Pineda – Secretaría de Cultura Guerrero #### Entre lo patriótico y lo religioso Palacio de l…",
+   "src": "term:d3e95794680e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:26+00:00",
+   "claim": "Evelyn Cecia Salgado Pineda holds office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "dst": "source:9a549567b979559c",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "snippet": "…Evelyn Salgado Pineda Evelyn Salgado | Evelyn Salgado | | | --- | --- | | Evelyn Salgado in 2024 | | | Governor of Guerrero | | | Incumbent | | | Assumed office 15 October 202…",
+   "src": "term:d3e95794680e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:26+00:00",
+   "claim": "Evelyn Cecia Salgado Pineda holds office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "dst": "source:d367963d3b4ed4fa",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "snippet": "…Directorio de Gobierno | Gobierno del Estado de Guerrero Directorio de Gobierno | Gobierno del Estado de Guerrero > # Directorio de Gobierno ## Mtra. Evelyn Cecia Salgado Pineda Gobernadora Constitucional del Estado de Guerrero Gabinete - Sector Central ### Dra. Anacleta López Vega Secretaría General de Gobierno 747 4…",
+   "src": "term:d3e95794680e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:26+00:00",
+   "claim": "Evelyn Cecia Salgado Pineda holds office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "dst": "source:e1113d8eec5f682b",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "snippet": "…ra Electa que realizó el Consejo General del Instituto Electoral y de Participación Ciudadana del Estado de Guerrero, a favor de la Ciudadana Evelyn Cecia Salgado Pineda, para el periodo comprendido del 15 de octubre de 2021 al 14 de octubre de 2027 | Gobierno del Estado de Guerrero Decreto Número 02, por medio se del…",
+   "src": "term:d3e95794680e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:26+00:00",
+   "claim": "Evelyn Cecia Salgado Pineda holds office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "dst": "source:f362b908e575a573",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "snippet": "…Evelyn Salgado Pineda Evelyn Salgado Pineda | Evelyn Salgado Pineda | | | --- | --- | | Salgado Pineda en 2021. | | | Gobernadora de Guerrero Actualmente en el cargo | | | Des…",
+   "src": "term:d3e95794680e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:evelyn-cecia-salgado-pineda",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "src": "term:d3e95794680e",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:15:26+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "id": "body:MX:state:MX-GRO:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:15:19+00:00",
+   "name": "Executive of Guerrero",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:15:19+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "id": "level:MX:state:MX-GRO",
+   "iso_3166_2": "MX-GRO",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:15:19+00:00",
+   "name": "Guerrero",
+   "pipeline_mode": "research_only",
+   "researched_name": "Guerrero",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:15:19+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:15:23+00:00",
+   "id": "office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:15:23+00:00",
+   "name": "Governor of Guerrero",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "unsupported",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:15:23+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "id": "person:MX:evelyn-cecia-salgado-pineda",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:15:26+00:00",
+   "name": "Evelyn Cecia Salgado Pineda",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "unotv.com",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "id": "source:43f2404452c8addf",
+   "label": "Source",
+   "name": "Elecciones en México 2027: ¿Qué estados cambiarán de gobernador en 2027 y qué partidos gobiernan actualmente? - UnoTV",
+   "published_date": "2026-09-10T16:10:14.000Z",
+   "retrieved_at": "2026-11-14T23:15:26+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "expansion.mx",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "id": "source:72fa4d825be95f20",
+   "label": "Source",
+   "name": "Esta es la biografía de la \"Torita\", la nueva gobernadora de Guerrero",
+   "published_date": "2021-10-14T22:34:50.000Z",
+   "retrieved_at": "2026-11-14T23:15:26+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "url": "https://politica.expansion.mx/estados/2021/10/14/evelyn-salgado-pineda-biografia"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "seculturaguerrero.gob.mx",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "id": "source:8640f3792fc5a31a",
+   "label": "Source",
+   "name": "Mtra. Evelyn Cecia Salgado Pineda – Secretaría de Cultura Guerrero",
+   "retrieved_at": "2026-11-14T23:15:26+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "url": "https://www.seculturaguerrero.gob.mx/benqu_team/mtra-evelyn-cecia-salgado-pineda/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "id": "source:9a549567b979559c",
+   "label": "Source",
+   "name": "Evelyn Salgado Pineda",
+   "published_date": "2026-08-16T08:48:55.000Z",
+   "retrieved_at": "2026-11-14T23:15:26+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "url": "https://en.wikipedia.org/wiki/Evelyn_Salgado_Pineda"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "guerrero.gob.mx",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "id": "source:d367963d3b4ed4fa",
+   "label": "Source",
+   "name": "Directorio de Gobierno | Gobierno del Estado de Guerrero",
+   "retrieved_at": "2026-11-14T23:15:26+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "url": "https://www.guerrero.gob.mx/directorio-de-gobierno/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "guerrero.gob.mx",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "id": "source:e1113d8eec5f682b",
+   "label": "Source",
+   "name": "Decreto Número 02, por medio se del cual la Sexagésima Tercera Legislatura al Honorable Congreso del Estado Libre y Soberano de Guerrero, expide el Bando Solemne para dar a conocer la Declaratoria de Gobernadora Electa que realizó el Consejo General del Instituto Electoral y de Participación Ciudadana del Estado de Guerrero, a favor de la Ciudadana Evelyn Cecia Salgado Pineda, para el periodo comprendido del 15 de octubre de 2021 al 14 de octubre de 2027 | Gobierno del Estado de Guerrero",
+   "retrieved_at": "2026-11-14T23:15:26+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "url": "https://www.guerrero.gob.mx/leyes_y_reglamentos/decreto-numero-02-por-medio-se-del-cual-la-sexagesima-tercera-legislatura-al-honorable-congreso-del-estado-libre-y-soberano-de-guerrero-expide-el-bando-solemne-para-dar-a-conocer-la-declaratoria-de/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "id": "source:f362b908e575a573",
+   "label": "Source",
+   "name": "Evelyn Salgado Pineda",
+   "published_date": "2026-08-06T21:29:54.000Z",
+   "retrieved_at": "2026-11-14T23:15:26+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "url": "https://es.wikipedia.org/wiki/Evelyn_Salgado_Pineda"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-10-14",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:26+00:00",
+   "id": "term:d3e95794680e",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:15:26+00:00",
+   "name": "Evelyn Cecia Salgado Pineda — term from 2021-10-15",
+   "office": "office:MX:state:MX-GRO:executive:governor-of-guerrero",
+   "person": "person:MX:evelyn-cecia-salgado-pineda",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-10-15",
+   "updated_at": "2026-11-14T23:15:26+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-GRO:executive:governor-of-guerrero": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-GRO",
+   "body:MX:state:MX-GRO:executive",
+   "office:MX:state:MX-GRO:executive:governor-of-guerrero"
+  ]
+ },
+ "politician": "person:MX:evelyn-cecia-salgado-pineda",
+ "sha256": "ac28fc000b43ad7cdf1e562dfee112fff5b010efef1cc6c484a33d8ef025cf2c",
+ "unreached_offices": []
+}

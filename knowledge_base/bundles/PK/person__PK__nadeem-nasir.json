@@ -1,0 +1,282 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi",
+   "src": "body:PK:municipal:PK-PB:rawalpindi:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:PK-PB:rawalpindi",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:PK-PB:rawalpindi:council",
+   "src": "level:PK:municipal:PK-PB:rawalpindi",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:c7e14941c0c2",
+   "first_seen": "2026-11-14T23:57:10+00:00",
+   "src": "office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:57:10+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:57:08+00:00",
+   "claim": "office exists: Administrator of Rawalpindi",
+   "dst": "source:accab6b8ea1695b8",
+   "first_seen": "2026-11-14T23:57:08+00:00",
+   "src": "office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:57:08+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.75,
+   "current": true,
+   "dst": "office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:57:10+00:00",
+   "is_acting": true,
+   "last_verified": "2026-11-14T23:57:10+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:nadeem-nasir",
+   "status": "current",
+   "term_id": "term:c7e14941c0c2",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:57:10+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:57:10+00:00",
+   "claim": "Nadeem Nasir holds office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi",
+   "dst": "source:accab6b8ea1695b8",
+   "first_seen": "2026-11-14T23:57:10+00:00",
+   "snippet": "…ivisional headquarters and additional deputy commissioners (services) appointed administrators of municipal committees at the district level. Rawalpindi Deputy Commissioner Nadeem Nasir has assumed charge as the new administrator of the Rawalpindi Municipal Corporation. Previously, divisional commissioners served as ad…",
+   "src": "term:c7e14941c0c2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:57:10+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:57:10+00:00",
+   "claim": "Nadeem Nasir holds office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi",
+   "dst": "source:d8845e5204931ed0",
+   "first_seen": "2026-11-14T23:57:10+00:00",
+   "snippet": "…ional headquarters and additional deputy commissioners (services) appointed administrators of municipal committees at the district level. Rawalpindi Deputy Commissioner Nadeem Nasir has assumed charge as the new administrator of the Rawalpindi Municipal Corporation. Previously, divisional commissioners served as admini…",
+   "src": "term:c7e14941c0c2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:57:10+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:nadeem-nasir",
+   "first_seen": "2026-11-14T23:57:10+00:00",
+   "src": "term:c7e14941c0c2",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:57:10+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:57:08+00:00",
+   "id": "body:PK:municipal:PK-PB:rawalpindi:council",
+   "label": "GovernmentBody",
+   "name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality) of Rawalpindi",
+   "name_local": "بلدیاتی کونسل de Rawalpindi",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:57:08+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-14T23:57:08+00:00",
+   "id": "level:PK:municipal:PK-PB:rawalpindi",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:57:08+00:00",
+   "name": "Rawalpindi, Punjab",
+   "parent_division": "Punjab",
+   "parent_iso_3166_2": "PK-PB",
+   "pipeline_mode": "research_only",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-14T23:57:08+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:57:08+00:00",
+   "id": "office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi",
+   "is_elected": false,
+   "keywords": [
+    "administrator"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:57:08+00:00",
+   "name": "Administrator of Rawalpindi",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "appointment",
+   "single_seat": true,
+   "structure_evidence": "single_source",
+   "title_local": "ایڈمنسٹریٹر",
+   "updated_at": "2026-11-14T23:57:08+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:57:10+00:00",
+   "id": "person:PK:nadeem-nasir",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:57:10+00:00",
+   "name": "Nadeem Nasir",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "tribune.com.pk",
+   "first_seen": "2026-11-14T23:56:45+00:00",
+   "id": "source:accab6b8ea1695b8",
+   "label": "Source",
+   "name": "DCs get greater authority as administrators",
+   "retrieved_at": "2026-11-14T23:57:17+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:57:17+00:00",
+   "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "city24news.tv",
+   "first_seen": "2026-11-14T23:57:10+00:00",
+   "id": "source:d8845e5204931ed0",
+   "label": "Source",
+   "name": "DCs get greater authority as administrators – City24news",
+   "published_date": "2026-10-12T08:13:15.000Z",
+   "retrieved_at": "2026-11-14T23:57:10+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:57:10+00:00",
+   "url": "https://city24news.tv/dcs-get-greater-authority-as-administrators/"
+  },
+  {
+   "confidence": 0.75,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:57:10+00:00",
+   "id": "term:c7e14941c0c2",
+   "is_acting": true,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:57:10+00:00",
+   "name": "Nadeem Nasir — term from ?",
+   "office": "office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi",
+   "person": "person:PK:nadeem-nasir",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "updated_at": "2026-11-14T23:57:10+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:PK-PB:rawalpindi",
+   "body:PK:municipal:PK-PB:rawalpindi:council",
+   "office:PK:municipal:PK-PB:rawalpindi:council:administrator-of-rawalpindi"
+  ]
+ },
+ "politician": "person:PK:nadeem-nasir",
+ "sha256": "e1cd85ee1203d17cbe712485284e02fb2c33ee6642c9b5fa2b9a34ec5d4673b1",
+ "unreached_offices": []
+}

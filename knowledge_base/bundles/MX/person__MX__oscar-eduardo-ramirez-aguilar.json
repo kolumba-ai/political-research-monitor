@@ -1,0 +1,385 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "src": "body:MX:state:MX-CHP:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-CHP",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-CHP:executive",
+   "src": "level:MX:state:MX-CHP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:15e1928bd241",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "src": "office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:14:22+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:18+00:00",
+   "claim": "office exists: Governor of Chiapas",
+   "dst": "source:901cbf8d43e86a46",
+   "first_seen": "2026-11-14T23:14:18+00:00",
+   "src": "office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:18+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "end": "2030-12-07",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:14:22+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:oscar-eduardo-ramirez-aguilar",
+   "start": "2024-12-08",
+   "status": "current",
+   "term_id": "term:15e1928bd241",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:14:22+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:14:22+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Sigamos Haciendo Historia en Chiapas",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "src": "person:MX:oscar-eduardo-ramirez-aguilar",
+   "term_id": "term:15e1928bd241",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:14:22+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:22+00:00",
+   "claim": "Óscar Eduardo Ramírez Aguilar holds office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "dst": "source:3b4f4e8ac27bb495",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "snippet": "…FormatoCv2 CURRÍCULUM VITAE | Nombre | OSCAR EDUARDO | RAMIREZ AGUILAR | | --- | --- | --- | | Organismo | OFICINA DEL GOBERNADOR | | | Puesto | GOBERNADOR | | | Cargo | TITULAR DEL EJECUTIVO | | | Fecha de ingreso |…",
+   "src": "term:15e1928bd241",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:22+00:00",
+   "claim": "Óscar Eduardo Ramírez Aguilar holds office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "dst": "source:5787f3cc392859b9",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "snippet": "…Eduardo Ramírez Aguilar Eduardo Ramírez Aguilar | Eduardo Ramírez Aguilar | | | --- | --- | | Ramírez Aguilar in 2013 | | | Governor of Chiapas | | | Incumbent | | | Assumed of…",
+   "src": "term:15e1928bd241",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:22+00:00",
+   "claim": "Óscar Eduardo Ramírez Aguilar holds office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "dst": "source:70bf1742b7c6f094",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "snippet": "…Portal de Gobierno Portal de Gobierno ## Sede del Poder Ejecutivo, 1er. Piso, Centro C.P. 29000 Tuxtla Gutiérrez, Chiapas. ### https://chiapas.gob.mx # Dr. Oscar Eduardo Ramírez Aguilar ## Gobernador Constitucional del Estado de Chiapas ### Teléfono: 61 8-80-86, 61 8-80-87, 61 8-80-88 Fax: Ext. 21120, 21122 - Jefe de O…",
+   "src": "term:15e1928bd241",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:22+00:00",
+   "claim": "Óscar Eduardo Ramírez Aguilar holds office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "dst": "source:76a00c375a600e87",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "snippet": "…Eduardo Ramírez Aguilar Eduardo Ramírez Aguilar | Eduardo Ramírez Aguilar | | | --- | --- | | Ramírez en 2018 | | | Gobernador de Chiapas Actualmente en el cargo | | | Desde el…",
+   "src": "term:15e1928bd241",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:22+00:00",
+   "claim": "Óscar Eduardo Ramírez Aguilar holds office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "dst": "source:901cbf8d43e86a46",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "snippet": "…diente a la elección de la Gubernatura del Estado en los 24 Distritos Electorales, conforme a lo cual, la coalición “Sigamos haciendo historia”, que postuló a Oscar Eduardo Aguilar Ramírez, obtuvo 1 millón 866 mil 190 votos, lo que representa el 59.62 % de participación ciudadana en la elección para ese cargo. Ante las…",
+   "src": "term:15e1928bd241",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:oscar-eduardo-ramirez-aguilar",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "src": "term:15e1928bd241",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:14:22+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "body:MX:state:MX-CHP:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:14:16+00:00",
+   "name": "Executive of Chiapas",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:14:16+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "level:MX:state:MX-CHP",
+   "iso_3166_2": "MX-CHP",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:14:16+00:00",
+   "name": "Chiapas",
+   "pipeline_mode": "research_only",
+   "researched_name": "Chiapas",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:14:16+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:14:18+00:00",
+   "id": "office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:14:18+00:00",
+   "name": "Governor of Chiapas",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "single_source",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:14:18+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "id": "person:MX:oscar-eduardo-ramirez-aguilar",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:14:22+00:00",
+   "name": "Óscar Eduardo Ramírez Aguilar",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "chiapas.gob.mx",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "id": "source:3b4f4e8ac27bb495",
+   "label": "Source",
+   "name": "FormatoCv2",
+   "retrieved_at": "2026-11-14T23:14:22+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "url": "https://www.sistemas.chiapas.gob.mx/TransparenciaV3/Descargas/DescargarArchivo/?idArchivo=289936&tipoArchivo=1"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "id": "source:5787f3cc392859b9",
+   "label": "Source",
+   "name": "Eduardo Ramírez Aguilar",
+   "published_date": "2026-03-20T01:24:41.000Z",
+   "retrieved_at": "2026-11-14T23:14:22+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "url": "https://en.wikipedia.org/wiki/Eduardo_Ram%C3%ADrez_Aguilar"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "chiapas.gob.mx",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "id": "source:70bf1742b7c6f094",
+   "label": "Source",
+   "name": "Portal de Gobierno",
+   "retrieved_at": "2026-11-14T23:14:22+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "url": "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/gubernatura"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "id": "source:76a00c375a600e87",
+   "label": "Source",
+   "name": "Eduardo Ramírez Aguilar",
+   "published_date": "2026-08-31T04:39:48.000Z",
+   "retrieved_at": "2026-11-14T23:14:22+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "url": "https://es.wikipedia.org/wiki/Eduardo_Ram%C3%ADrez_Aguilar"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iepc-chiapas.org.mx",
+   "first_seen": "2026-11-14T23:14:18+00:00",
+   "id": "source:901cbf8d43e86a46",
+   "label": "Source",
+   "name": "DECLARA IEPC VALIDEZ DE LA ELECCIÓN Y ENTREGA CONSTANCIA A GOBERNADOR ELECTO DE CHIAPAS",
+   "retrieved_at": "2026-11-14T23:14:22+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:22+00:00",
+   "url": "https://www.iepc-chiapas.org.mx/comunicados/3724-declara-iepc-validez-de-la-eleccion-y-entrega-constancia-a-gobernador-electo-de-chiapas"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2030-12-07",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:22+00:00",
+   "id": "term:15e1928bd241",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:14:22+00:00",
+   "name": "Óscar Eduardo Ramírez Aguilar — term from 2024-12-08",
+   "office": "office:MX:state:MX-CHP:executive:governor-of-chiapas",
+   "person": "person:MX:oscar-eduardo-ramirez-aguilar",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-12-08",
+   "updated_at": "2026-11-14T23:14:22+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-CHP:executive:governor-of-chiapas": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-CHP",
+   "body:MX:state:MX-CHP:executive",
+   "office:MX:state:MX-CHP:executive:governor-of-chiapas"
+  ]
+ },
+ "politician": "person:MX:oscar-eduardo-ramirez-aguilar",
+ "sha256": "17983b7f5ac3eca937dd3c49b8b3a67797f36da2e21adb9984e7bbd05b7af92a",
+ "unreached_offices": []
+}

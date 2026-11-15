@@ -1,0 +1,454 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "src": "body:MX:state:MX-QUE:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-QUE",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-QUE:executive",
+   "src": "level:MX:state:MX-QUE",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:b5fd30d4c187",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "src": "office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:14:49+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:45+00:00",
+   "claim": "office exists: Governor of Querétaro",
+   "dst": "source:2da46f388c5e7315",
+   "first_seen": "2026-11-14T23:14:45+00:00",
+   "src": "office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:45+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:45+00:00",
+   "claim": "office exists: Governor of Querétaro",
+   "dst": "source:9f70dc4f0d7b7fcd",
+   "first_seen": "2026-11-14T23:14:45+00:00",
+   "src": "office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:45+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:14:49+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:mauricio-kuri-gonzalez",
+   "start": "2021-10-01",
+   "status": "current",
+   "term_id": "term:b5fd30d4c187",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:14:49+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:14:49+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "PAN-Querétaro Independiente",
+   "dst": "party:MX:pan",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "src": "person:MX:mauricio-kuri-gonzalez",
+   "term_id": "term:b5fd30d4c187",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:14:49+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:49+00:00",
+   "claim": "Mauricio Kuri González holds office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "dst": "source:0a2d6de17826e245",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "snippet": "…ricio Kuri | Mauricio Kuri | | | --- | --- | | Mauricio Kuri en 2015. | | | Gobernador de Querétaro Actualmente en el cargo | | | Desde el 1 de octubre de 2021 | | | Gabinete | Gabinete de Mauricio Kuri González | | Secretario | David Guerrero Trápala | | Predecesor | Francisco Domínguez Servién | | Senador del Congres…",
+   "src": "term:b5fd30d4c187",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:49+00:00",
+   "claim": "Mauricio Kuri González holds office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "dst": "source:223b233bd9f9ba9f",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "snippet": "…Mauricio Kuri Gonzalez – CORIM Mauricio Kuri Gonzalez – CORIM # Mauricio Kuri Gonzalez Governor, Querétaro State Government in Mexico Mauricio Kuri Gonzalez est diplômé en dr…",
+   "src": "term:b5fd30d4c187",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:49+00:00",
+   "claim": "Mauricio Kuri González holds office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "dst": "source:36625f38a116cf18",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "snippet": "…Quién es Mauricio Kuri González, gobernador de Querétaro Quién es Mauricio Kuri González, gobernador de Querétaro # Quién es Mauricio Kuri González, gobernador de Querétaro por Ernest…",
+   "src": "term:b5fd30d4c187",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:49+00:00",
+   "claim": "Mauricio Kuri González holds office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "dst": "source:449ae2b6f0c99177",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "snippet": "…rdization Sector’s Focus Group on metaverse, where she is Vice Chair of both the General Working Group and the Working Group on Security, Data & Personally Identifiable Information (PII) Protection; and Chair of the Task Groups on Implications for people in the metaverse; and Building confidence and security in the met…",
+   "src": "term:b5fd30d4c187",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:49+00:00",
+   "claim": "Mauricio Kuri González holds office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "dst": "source:9f70dc4f0d7b7fcd",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "snippet": "…étaro. De acuerdo al orden del día, y con la presencia del secretario de Gobierno del estado, Carlos Alberto Alcaraz Gutiérrez, en representación del Gobernador Mauricio Kuri González, y la titular del Poder Judicial, Mariela Ponce Villa; el diputado Decano Luis Antonio Zapata Guerrero protestó cumplir y hacer cumplir…",
+   "src": "term:b5fd30d4c187",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:49+00:00",
+   "claim": "Mauricio Kuri González holds office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "dst": "source:bb79c9a371305484",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "snippet": "…Portal del Poder Ejecutivo del Estado de Querétaro - queretaro.gob.mx Portal del Poder Ejecutivo del Estado de Querétaro - queretaro.gob.mx # Lic. Mauricio Kuri González Gobernador del Estado de Querétaro ### CV #### Lic. Mauricio Kuri González Gobernador del Estado de Querétaro Nació en Orizaba, Veracruz, en 196…",
+   "src": "term:b5fd30d4c187",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:49+00:00",
+   "claim": "Mauricio Kuri González holds office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "dst": "source:bfe10ab6e4d55dcb",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "snippet": "…Kuri | | | --- | --- | | Kuri (left) in 2022 | | | Governor of Querétaro | | | Incumbent | | | Assumed office 1 October 2021 | | | Preceded by | Francisco Domínguez Servién | | Personal details | | | Born | Mauricio Kuri González 9 May 1969 (age 57) Orizaba, Veracruz | | Party | National Action Party | | Spouse | Carm…",
+   "src": "term:b5fd30d4c187",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:mauricio-kuri-gonzalez",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "src": "term:b5fd30d4c187",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:14:49+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "body:MX:state:MX-QUE:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:14:44+00:00",
+   "name": "Executive of Querétaro",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:14:44+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "level:MX:state:MX-QUE",
+   "iso_3166_2": "MX-QUE",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:14:44+00:00",
+   "name": "Querétaro",
+   "pipeline_mode": "research_only",
+   "researched_name": "Querétaro",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:14:44+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:14:45+00:00",
+   "id": "office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:14:45+00:00",
+   "name": "Governor of Querétaro",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:14:45+00:00"
+  },
+  {
+   "acronym": "PAN",
+   "aliases": [
+    "PAN",
+    "Partido Acción Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "party:MX:pan",
+   "label": "PoliticalParty",
+   "name": "Partido Acción Nacional",
+   "updated_at": "2026-11-14T23:21:02+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "person:MX:mauricio-kuri-gonzalez",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:14:49+00:00",
+   "name": "Mauricio Kuri González",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "source:0a2d6de17826e245",
+   "label": "Source",
+   "name": "Mauricio Kuri",
+   "published_date": "2026-10-10T12:29:09.000Z",
+   "retrieved_at": "2026-11-14T23:14:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "url": "https://es.wikipedia.org/wiki/Mauricio_Kuri"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "qc.ca",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "source:223b233bd9f9ba9f",
+   "label": "Source",
+   "name": "Mauricio Kuri Gonzalez – CORIM",
+   "retrieved_at": "2026-11-14T23:14:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "url": "https://corim.qc.ca/en/conferenciers/mauricio-kuri-gonzalez-2/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "ieeq.mx",
+   "first_seen": "2026-11-14T23:14:45+00:00",
+   "id": "source:2da46f388c5e7315",
+   "label": "Source",
+   "name": "Resultados",
+   "retrieved_at": "2026-11-14T23:14:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "url": "https://ieeq.mx/elecciones/historico"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "culturacolectiva.com",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "source:36625f38a116cf18",
+   "label": "Source",
+   "name": "Quién es Mauricio Kuri González, gobernador de Querétaro",
+   "published_date": "2026-07-31T18:31:17.000Z",
+   "retrieved_at": "2026-11-14T23:14:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "url": "https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-mauricio-kuri/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "itu.int",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "source:449ae2b6f0c99177",
+   "label": "Source",
+   "name": "Biographies – Metaverse",
+   "retrieved_at": "2026-11-14T23:14:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "url": "https://www.itu.int/metaverse/4th-forum-metaverse/bios/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "legislaturaqueretaro.gob.mx",
+   "first_seen": "2026-11-14T23:14:45+00:00",
+   "id": "source:9f70dc4f0d7b7fcd",
+   "label": "Source",
+   "name": "Se llevó a cabo la Sesión Solemne de Instalación de la LXI Legislatura del Estado de Querétaro – LXI Legislatura Querétaro",
+   "published_date": "2024-09-26T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:14:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "url": "http://legislaturaqueretaro.gob.mx/se-llevo-a-cabo-la-sesion-solemne-de-instalacion-de-la-lxi-legislatura-del-estado-de-queretaro"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "queretaro.gob.mx",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "source:bb79c9a371305484",
+   "label": "Source",
+   "name": "Portal del Poder Ejecutivo del Estado de Querétaro - queretaro.gob.mx",
+   "retrieved_at": "2026-11-14T23:14:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "url": "https://queretaro.gob.mx/directorio-gabinete"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "source:bfe10ab6e4d55dcb",
+   "label": "Source",
+   "name": "Mauricio Kuri",
+   "published_date": "2026-08-26T22:47:52.000Z",
+   "retrieved_at": "2026-11-14T23:14:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:49+00:00",
+   "url": "https://en.wikipedia.org/wiki/Mauricio_Kuri"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "term:b5fd30d4c187",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:14:49+00:00",
+   "name": "Mauricio Kuri González — term from 2021-10-01",
+   "office": "office:MX:state:MX-QUE:executive:governor-of-queretaro",
+   "person": "person:MX:mauricio-kuri-gonzalez",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-10-01",
+   "updated_at": "2026-11-14T23:14:49+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-QUE:executive:governor-of-queretaro": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-QUE",
+   "body:MX:state:MX-QUE:executive",
+   "office:MX:state:MX-QUE:executive:governor-of-queretaro"
+  ]
+ },
+ "politician": "person:MX:mauricio-kuri-gonzalez",
+ "sha256": "a12b69dc948c8d35ca1ba9286897cdd6eddacd3308f96a6cf0e76cbb95690db4",
+ "unreached_offices": []
+}

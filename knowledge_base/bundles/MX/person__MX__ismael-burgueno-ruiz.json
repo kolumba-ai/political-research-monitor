@@ -1,0 +1,389 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "src": "body:MX:municipal:MX-BCN:tijuana:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-BCN:tijuana",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-BCN:tijuana:council",
+   "src": "level:MX:municipal:MX-BCN:tijuana",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:d890f40eb5d4",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "src": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:17:55+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:11+00:00",
+   "claim": "municipality and its selection system (INAFED register)",
+   "dst": "source:73327df7bbd85a9f",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "src": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:11+00:00",
+   "via": "official_directory"
+  },
+  {
+   "checked_at": "2026-11-14T23:17:55+00:00",
+   "claim": "office exists: Municipal President of Tijuana",
+   "dst": "source:b85ae358b42936b4",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "src": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:17:55+00:00",
+   "claim": "office exists: Municipal President of Tijuana",
+   "dst": "source:bf9981d642121dcc",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "src": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:17:55+00:00",
+   "claim": "office exists: Municipal President of Tijuana",
+   "dst": "source:da9e3219bd7376a9",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "src": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "dst": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:17:55+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:ismael-burgueno-ruiz",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:d890f40eb5d4",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:17:55+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:17:55+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Sigamos Haciendo Historia en Baja California",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "src": "person:MX:ismael-burgueno-ruiz",
+   "term_id": "term:d890f40eb5d4",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:17:55+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:17:55+00:00",
+   "claim": "Ismael Burgueño Ruiz holds office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "dst": "source:b85ae358b42936b4",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "snippet": "…V AYUNTAMIENTO 2 0 2 4 — 2 0 2 7TIJUANA PMDPlan Municipal de DesarrolloTijuana 25-27 XXV AYUNTAMIENTO 2 0 2 4 — 2 0 2 7TIJUANA Presidente Municipal Ismael Burgueño Ruiz Síndica Procuradora Teresita de Jesús Balderas Beltrán Regidoras y Regidores Heriberto Lemuel Ramírez Jiménez Pablo Yáñez Placencia Arturo Aguirre Gonz…",
+   "src": "term:d890f40eb5d4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:17:55+00:00",
+   "claim": "Ismael Burgueño Ruiz holds office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "dst": "source:bf9981d642121dcc",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "snippet": "…endo Historia en Baja California\" conformada por los partidos Movimiento Regeneración Nacional (MORENA), Partido Verde Ecologista de México (PVEM) y Fuerza por México (FXM): Presidencia Municipal: Dr. Ismael Burgueño Ruiz Dr. Ismael Burgueño Ruiz Suplente: Abdiel Gutiérrez Coronado Síndico Procurador: Teresita de Jesús…",
+   "src": "term:d890f40eb5d4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:17:55+00:00",
+   "claim": "Ismael Burgueño Ruiz holds office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "dst": "source:da9e3219bd7376a9",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "snippet": "…Presidente Municipal de Tijuana ### PRESIDENCIA MUNICIPAL #### Ismael Burgueño Ruiz ## Presidente Municipal de Tijuana Formación Académica Lic. en Educaciòn Primaria Instituciòn: Escuela Normal Fronteriza.ENFT Estudios: Maestrìa e…",
+   "src": "term:d890f40eb5d4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:ismael-burgueno-ruiz",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "src": "term:d890f40eb5d4",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:17:55+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:17:54+00:00",
+   "id": "body:MX:municipal:MX-BCN:tijuana:council",
+   "label": "GovernmentBody",
+   "name": "Municipal council of Tijuana",
+   "name_local": "Ayuntamiento de Tijuana",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T02:15:11+00:00",
+   "website": "http://www.tijuana.gob.mx"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:17:54+00:00",
+   "id": "level:MX:municipal:MX-BCN:tijuana",
+   "inegi_code": "2004",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:17:54+00:00",
+   "name": "Tijuana, Baja California",
+   "parent_division": "Baja California",
+   "parent_iso_3166_2": "MX-BCN",
+   "pipeline_mode": "research_only",
+   "population": 1922523,
+   "selection_system": "party-based popular election",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "id": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "municipal president",
+    "presidente municipal"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:17:55+00:00",
+   "name": "Municipal President of Tijuana",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by popular vote with the council slate (planilla)",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Presidente(a) Municipal de Tijuana",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "id": "person:MX:ismael-burgueno-ruiz",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:17:55+00:00",
+   "name": "Ismael Burgueño Ruiz",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "datos.gob.mx",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "id": "source:73327df7bbd85a9f",
+   "label": "Source",
+   "name": "INAFED — Presidentas y Presidentes municipales",
+   "retrieved_at": "2026-11-15T02:15:32+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:32+00:00",
+   "url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "tijuana.gob.mx",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "id": "source:b85ae358b42936b4",
+   "label": "Source",
+   "name": "DesarrolloTijuana 25-27",
+   "retrieved_at": "2026-11-14T23:17:55+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "uniradiobaja.com",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "id": "source:bf9981d642121dcc",
+   "label": "Source",
+   "name": "Inician las campañas electorales locales en BC, con siete aspirantes a la Presidencia Municipal de Tijuana - Uniradio Informa Baja California",
+   "published_date": "2024-04-15T17:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:17:55+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "tijuana.gob.mx",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "id": "source:da9e3219bd7376a9",
+   "label": "Source",
+   "name": "Presidente Municipal de Tijuana",
+   "retrieved_at": "2026-11-14T23:17:55+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:17:55+00:00",
+   "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:17:55+00:00",
+   "id": "term:d890f40eb5d4",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:17:55+00:00",
+   "name": "Ismael Burgueño Ruiz — term from 2024-10-01",
+   "office": "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana",
+   "person": "person:MX:ismael-burgueno-ruiz",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:17:55+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-BCN:tijuana",
+   "body:MX:municipal:MX-BCN:tijuana:council",
+   "office:MX:municipal:MX-BCN:tijuana:council:municipal-president-of-tijuana"
+  ]
+ },
+ "politician": "person:MX:ismael-burgueno-ruiz",
+ "sha256": "26d4d7d8ec811f758d2dbe910e5cda2c496318c1b84bb2e889c518bd83d51df2",
+ "unreached_offices": []
+}

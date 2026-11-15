@@ -1,0 +1,463 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "src": "body:MX:state:MX-JAL:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-JAL",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-JAL:executive",
+   "src": "level:MX:state:MX-JAL",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:8518e48c23a2",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "src": "office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:11:35+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:29+00:00",
+   "claim": "office exists: Governor of Jalisco",
+   "dst": "source:2f22d147eaf2085a",
+   "first_seen": "2026-11-14T23:11:29+00:00",
+   "src": "office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:29+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:29+00:00",
+   "claim": "office exists: Governor of Jalisco",
+   "dst": "source:e605def80fa3b763",
+   "first_seen": "2026-11-14T23:11:29+00:00",
+   "src": "office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:29+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "end": "2030-12-05",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:11:35+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:jesus-pablo-lemus-navarro",
+   "start": "2024-12-06",
+   "status": "current",
+   "term_id": "term:8518e48c23a2",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:11:35+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:11:35+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:mc",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "src": "person:MX:jesus-pablo-lemus-navarro",
+   "term_id": "term:8518e48c23a2",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:11:35+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:35+00:00",
+   "claim": "Jesús Pablo Lemus Navarro holds office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "dst": "source:1e6b69b9bb9a66a8",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "snippet": "…Pablo Lemus Navarro Pablo Lemus Navarro | Pablo Lemus Navarro | | | --- | --- | | Lemus Navarro en 2025. | | | Gobernador de Jalisco Actualmente en el cargo | | | Desde el…",
+   "src": "term:8518e48c23a2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:35+00:00",
+   "claim": "Jesús Pablo Lemus Navarro holds office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "dst": "source:2f22d147eaf2085a",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "snippet": "…Inicio | undefined Inicio | undefined Tarifa transporte público Tarjeta única Refrendo y Verificación Increíble 2026 Jesús Pablo Lemus Navarro Gobernador Constitucional del Estado de Jalisco La administración del Gobierno de Jalisco (2024 - 2030) está encabezada por el Gobernador Jesús…",
+   "src": "term:8518e48c23a2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:35+00:00",
+   "claim": "Jesús Pablo Lemus Navarro holds office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "dst": "source:9c131e3adc59f903",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "snippet": "…TOMAN PROTESTA AL GOBERNADOR PABLO LEMUS NAVARRO | Sitio Web del Congreso de Jalisco TOMAN PROTESTA AL GOBERNADOR PABLO LEMUS NAVARRO | Sitio Web del Congreso de Jalisco # TOMAN PROTESTA AL GOBERNADOR…",
+   "src": "term:8518e48c23a2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:35+00:00",
+   "claim": "Jesús Pablo Lemus Navarro holds office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "dst": "source:b1c7f998d64b3392",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "snippet": "…Jesús Pablo Lemus Navarro (Pablo Lemus), Gobernador · Gubernatura de Jalisco · ENFEMEX Jesús Pablo Lemus Navarro (Pablo Lemus), Gobernador · Gubernatura de Jalisco · ENFEMEX # Je…",
+   "src": "term:8518e48c23a2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:35+00:00",
+   "claim": "Jesús Pablo Lemus Navarro holds office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "dst": "source:c1deb69bf834627c",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "snippet": "…Quién es Pablo Lemus Navarro, gobernador de Jalisco Quién es Pablo Lemus Navarro, gobernador de Jalisco # Quién es Pablo Lemus Navarro, gobernador de Jalisco por Ernesto Palacios Na…",
+   "src": "term:8518e48c23a2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:35+00:00",
+   "claim": "Jesús Pablo Lemus Navarro holds office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "dst": "source:e605def80fa3b763",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "snippet": "…sto | Fecha de alta en el cargo | Unidad administrativa de adscripción | Teléfono y extensión de contacto | Correo electrónico | Domicilio para recibir correspondencia | | --- | --- | --- | --- | --- | --- | --- | --- | | Jesús Pablo Lemus Navarro | Gobernador | 34 | 06/12/2024 | Despacho del Gobernador | 3336481600 Ex…",
+   "src": "term:8518e48c23a2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:35+00:00",
+   "claim": "Jesús Pablo Lemus Navarro holds office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "dst": "source:ef102f2d0128c74a",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "snippet": "…Pablo Lemus Navarro Pablo Lemus Navarro Jesús Pablo Lemus Navarro (born 18 July 1969) is a Mexican politician, businessman and communicator. He was president of the Employe…",
+   "src": "term:8518e48c23a2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:35+00:00",
+   "claim": "Jesús Pablo Lemus Navarro holds office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "dst": "source:fbf6af34f08b0ca6",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "snippet": "…pablo lemus # Pablo Lemus ## About Jesús Pablo Lemus Navarro (born 18 July 1969) is a Mexican politician, businessman and communicator. He was president of the Employers' Confederation of the Mexican Republic…",
+   "src": "term:8518e48c23a2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:jesus-pablo-lemus-navarro",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "src": "term:8518e48c23a2",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:11:35+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "id": "body:MX:state:MX-JAL:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:11:18+00:00",
+   "name": "Executive of Jalisco",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:11:18+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "id": "level:MX:state:MX-JAL",
+   "iso_3166_2": "MX-JAL",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:11:18+00:00",
+   "name": "Jalisco",
+   "pipeline_mode": "research_only",
+   "researched_name": "Jalisco",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:11:18+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:11:29+00:00",
+   "id": "office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:11:29+00:00",
+   "name": "Governor of Jalisco",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:11:29+00:00"
+  },
+  {
+   "acronym": "MC",
+   "aliases": [
+    "MC",
+    "Movimiento Ciudadano"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "party:MX:mc",
+   "label": "PoliticalParty",
+   "name": "Movimiento Ciudadano",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "person:MX:jesus-pablo-lemus-navarro",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:11:35+00:00",
+   "name": "Jesús Pablo Lemus Navarro",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "source:1e6b69b9bb9a66a8",
+   "label": "Source",
+   "name": "Pablo Lemus Navarro",
+   "published_date": "2026-11-07T08:12:52.000Z",
+   "retrieved_at": "2026-11-14T23:11:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "url": "https://es.wikipedia.org/wiki/Pablo_Lemus_Navarro"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "jalisco.gob.mx",
+   "first_seen": "2026-11-14T23:11:29+00:00",
+   "id": "source:2f22d147eaf2085a",
+   "label": "Source",
+   "name": "Inicio | undefined",
+   "retrieved_at": "2026-11-14T23:11:35+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "url": "https://jalisco.gob.mx/inicio"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresojal.gob.mx",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "source:9c131e3adc59f903",
+   "label": "Source",
+   "name": "TOMAN PROTESTA AL GOBERNADOR PABLO LEMUS NAVARRO | Sitio Web del Congreso de Jalisco",
+   "published_date": "2024-12-06T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:11:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "url": "https://www.congresojal.gob.mx/boletines/toman-protesta-al-gobernador-pablo-lemus-navarro"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "enfemex.com",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "source:b1c7f998d64b3392",
+   "label": "Source",
+   "name": "Jesús Pablo Lemus Navarro (Pablo Lemus), Gobernador · Gubernatura de Jalisco · ENFEMEX",
+   "retrieved_at": "2026-11-14T23:11:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "url": "https://enfemex.com/quien-gobierna/jalisco/gubernatura/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "culturacolectiva.com",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "source:c1deb69bf834627c",
+   "label": "Source",
+   "name": "Quién es Pablo Lemus Navarro, gobernador de Jalisco",
+   "published_date": "2026-07-31T18:30:34.000Z",
+   "retrieved_at": "2026-11-14T23:11:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "url": "https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-pablo-lemus/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "jalisco.gob.mx",
+   "first_seen": "2026-11-14T23:11:29+00:00",
+   "id": "source:e605def80fa3b763",
+   "label": "Source",
+   "name": "Articulo 8 Fracción I Inciso j | Transparencia Jalisco",
+   "retrieved_at": "2026-11-14T23:11:35+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "url": "https://transparencia.jalisco.gob.mx/informacion/contenido/85/141"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "source:ef102f2d0128c74a",
+   "label": "Source",
+   "name": "Pablo Lemus Navarro",
+   "retrieved_at": "2026-11-14T23:11:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "url": "https://en.wikipedia.org/wiki/Pablo_Lemus_Navarro"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "pablolemus.mx",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "source:fbf6af34f08b0ca6",
+   "label": "Source",
+   "name": "pablo lemus",
+   "retrieved_at": "2026-11-14T23:11:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:35+00:00",
+   "url": "https://pablolemus.mx/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2030-12-05",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "term:8518e48c23a2",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:11:35+00:00",
+   "name": "Jesús Pablo Lemus Navarro — term from 2024-12-06",
+   "office": "office:MX:state:MX-JAL:executive:governor-of-jalisco",
+   "person": "person:MX:jesus-pablo-lemus-navarro",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-12-06",
+   "updated_at": "2026-11-14T23:11:35+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-JAL:executive:governor-of-jalisco": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-JAL",
+   "body:MX:state:MX-JAL:executive",
+   "office:MX:state:MX-JAL:executive:governor-of-jalisco"
+  ]
+ },
+ "politician": "person:MX:jesus-pablo-lemus-navarro",
+ "sha256": "4183b80677993afb8d9df0075aff11eb2cdded489354b45cdf165872adf1b3d9",
+ "unreached_offices": []
+}

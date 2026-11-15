@@ -1,0 +1,355 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "src": "body:PK:state:PK-KP:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-KP",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-KP:legislature",
+   "src": "level:PK:state:PK-KP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:5537e9f75457",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:30:43+00:00"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.9,
+   "current": true,
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:30:43+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "minority_reserved",
+   "src": "person:PK:suresh-kumar",
+   "start": "2025-07-20",
+   "status": "current",
+   "term_id": "term:5537e9f75457",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:30:43+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:30:43+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:pmln",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "src": "person:PK:suresh-kumar",
+   "term_id": "term:5537e9f75457",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:30:43+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:30:43+00:00",
+   "claim": "Suresh Kumar holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "dst": "source:55f052da5f326363",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "snippet": "…Suresh Kumar MR-03-2025 – PAKP Suresh Kumar MR-03-2025 – PAKP ## KHYBER PAKHTUNKHWA ### MR-3 Pakistan Muslim League (N) ##### Email ##### DoB 1975-10-20 ## 12th Assemb…",
+   "src": "term:5537e9f75457",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:30:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:30:43+00:00",
+   "claim": "Suresh Kumar holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "dst": "source:75dce47c505a8465",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "snippet": "…ports & Youth Affairs (1st September, 2025)  Mr. Ajab Gul, Parliamentary Secretary for Elementary & Secondary Education (1st September, 2025) ACTION TO BE TAKEN BY THE CHAMBER OFFICER 4. CALL ATTENTION NOTICES. The following Call Attention Notices were taken up.-  No. 534 of Mr. Suresh Kumar, MPA was taken up and Mr.…",
+   "src": "term:5537e9f75457",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:30:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:30:43+00:00",
+   "claim": "Suresh Kumar holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "dst": "source:bc443d25af3515ab",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "snippet": "…# Drawing attention towards the breach of minority quotas in the universities' admissions. CAN # 534 CAN Motion Date 01 Sep 2025 Status Statement Made On CAN Movers Suresh Kumar, Related Department Higher Education, Archives and Libraries ## Provincial Assembly Khyber Pakhtunkhwa Khyber Road, Cantt, Peshawar Exchange:…",
+   "src": "term:5537e9f75457",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:30:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:30:43+00:00",
+   "claim": "Suresh Kumar holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "dst": "source:e98eff79ebcb95e2",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "snippet": "…Suresh Kumar - Profile, Political Career & Election History - Home - Politics - Political Parties - Suresh Kumar # Suresh Kumar Suresh Kumar is Pakistani politician, a…",
+   "src": "term:5537e9f75457",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:30:43+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:suresh-kumar",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "src": "term:5537e9f75457",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:30:43+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "PK",
+   "constituency_range": "PK-1 to PK-115",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "general_seats": 115,
+   "id": "body:PK:state:PK-KP:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2024-02-08",
+   "last_verified": "2026-11-15T01:30:53+00:00",
+   "members_verified": 144,
+   "name": "Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa)",
+   "name_local": "خیبر پختونخوا صوبائی اسمبلی",
+   "official_members_url": "https://www.pakp.gov.pk/members-listing/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 4,
+   "reserved_other": 0,
+   "reserved_women": 26,
+   "structure_agent_run": "agent_run_ceead2044f7b42aa9d194671e59f2fe3",
+   "total_seats": 145,
+   "updated_at": "2026-11-15T01:30:53+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "level:PK:state:PK-KP",
+   "iso_3166_2": "PK-KP",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Khyber Pakhtunkhwa",
+   "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T01:04:44+00:00",
+   "id": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "is_elected": true,
+   "label": "PoliticalOffice",
+   "name": "Member of the Provincial Assembly of Khyber Pakhtunkhwa (reserved seat for minorities)",
+   "seat_type": "minority_reserved",
+   "seats": 4,
+   "selection_method": "indirect_election",
+   "single_seat": false,
+   "updated_at": "2026-11-15T01:04:44+00:00"
+  },
+  {
+   "acronym": "PML-N",
+   "aliases": [
+    "PML-N",
+    "Pakistan Muslim League (N)",
+    "Pakistan Muslim League (Nawaz)",
+    "Pakistan Muslim League-Nawaz"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "party:PK:pmln",
+   "label": "PoliticalParty",
+   "name": "Pakistan Muslim League (N)",
+   "updated_at": "2026-11-15T01:51:06+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "id": "person:PK:suresh-kumar",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:30:43+00:00",
+   "name": "Suresh Kumar",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "id": "source:55f052da5f326363",
+   "label": "Source",
+   "name": "Suresh Kumar MR-03-2025 – PAKP",
+   "retrieved_at": "2026-11-15T01:30:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:30:43+00:00",
+   "url": "https://www.pakp.gov.pk/members/suresh-kumar-mr-03-2025/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "id": "source:75dce47c505a8465",
+   "label": "Source",
+   "name": "SUMMARY OF PROCEEDINGS OF THE SITTING OF THE ASSEMBLY HELD ON MONDAY, THE 1 st SEPTEMBER, 2025",
+   "retrieved_at": "2026-11-15T01:30:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:30:43+00:00",
+   "url": "https://www.pakp.gov.pk/wp-content/uploads/2025/08/01-Sep-2025-SoP.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "id": "source:bc443d25af3515ab",
+   "label": "Source",
+   "name": "CAN No 534(S09-2024) – PAKP",
+   "retrieved_at": "2026-11-15T01:30:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:30:43+00:00",
+   "url": "https://www.pakp.gov.pk/canotices/can-no-534s09-2024/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "urdupoint.com",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "id": "source:e98eff79ebcb95e2",
+   "label": "Source",
+   "name": "Suresh Kumar - Profile, Political Career & Election History",
+   "retrieved_at": "2026-11-15T01:30:43+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:30:43+00:00",
+   "url": "https://www.urdupoint.com/politics/politician/suresh-kumar-11581.html"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.9,
+   "current": true,
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:30:43+00:00",
+   "id": "term:5537e9f75457",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:30:43+00:00",
+   "name": "Suresh Kumar — term from 2025-07-20",
+   "office": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori",
+   "person": "person:PK:suresh-kumar",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "minority_reserved",
+   "start": "2025-07-20",
+   "updated_at": "2026-11-15T01:30:43+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-KP",
+   "body:PK:state:PK-KP:legislature",
+   "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-minori"
+  ]
+ },
+ "politician": "person:PK:suresh-kumar",
+ "sha256": "c67615d4f8dc3367619264af7d7d72ddf084447c82b61a76f8dbaaf2873b4524",
+ "unreached_offices": []
+}

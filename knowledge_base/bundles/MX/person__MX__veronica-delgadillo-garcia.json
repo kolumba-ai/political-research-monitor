@@ -1,0 +1,448 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "src": "body:MX:municipal:MX-JAL:guadalajara:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-JAL:guadalajara",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-JAL:guadalajara:council",
+   "src": "level:MX:municipal:MX-JAL:guadalajara",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:13e7997d07e5",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "src": "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:14+00:00",
+   "claim": "office exists: Municipal President of Guadalajara",
+   "dst": "source:29e2c2e26aea3908",
+   "first_seen": "2026-11-14T23:18:14+00:00",
+   "src": "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:14+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:14+00:00",
+   "claim": "office exists: Municipal President of Guadalajara",
+   "dst": "source:5ff8947f9ce157f9",
+   "first_seen": "2026-11-14T23:18:14+00:00",
+   "src": "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:14+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:16+00:00",
+   "claim": "municipality and its selection system (INAFED register)",
+   "dst": "source:73327df7bbd85a9f",
+   "first_seen": "2026-11-15T01:58:32+00:00",
+   "src": "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:16+00:00",
+   "via": "official_directory"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:18:15+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:veronica-delgadillo-garcia",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:13e7997d07e5",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:18:15+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:mc",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "src": "person:MX:veronica-delgadillo-garcia",
+   "term_id": "term:13e7997d07e5",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:15+00:00",
+   "claim": "Verónica Delgadillo García holds office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "dst": "source:13c9442c1a4b15d9",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "snippet": "…Organigrama Organigrama # PRESIDENTA MUNICIPAL ## Verónica Delgadillo García Presidencia Primera Presidenta de Guadalajara. Es licenciada en Ciencias de la Comunicación por el Tecnológico de Monterrey (ITESM) y maestra en Ges…",
+   "src": "term:13e7997d07e5",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:15+00:00",
+   "claim": "Verónica Delgadillo García holds office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "dst": "source:1fed64eaae3a7cd2",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "snippet": "…Verónica Delgadillo Verónica Delgadillo Verónica Delgadillo García (born 13 November 1982) is a Mexican politician from the Citizens' Movement party (MC) serving as mayor of Guadalajara, Jalisco, since 2024. Delgadillo G…",
+   "src": "term:13e7997d07e5",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:15+00:00",
+   "claim": "Verónica Delgadillo García holds office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "dst": "source:dadec03d613ba817",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "snippet": "…n: 01 de junio de 2026 Fecha de actualización: 01 de junio de 2026 Unidad Administrativa: Presidencia Municipal Gobierno de Guadalajara ## Presidenta Municipal Verónica Delgadillo García Ubicación: Av. Hidalgo #400 Col. Centro C.P. 44100 Teléfono: 33-3837-4496, 33-3837-4400 Dirección Electrónica: https://guadalajara.go…",
+   "src": "term:13e7997d07e5",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:15+00:00",
+   "claim": "Verónica Delgadillo García holds office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "dst": "source:f9d76560de8fd8ed",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "snippet": "…Verónica Delgadillo García Verónica Delgadillo García | Verónica Delgadillo García | | | --- | --- | | Verónica Delgadillo en 2018. | | | Presidenta municipal de Guadalajara Actual…",
+   "src": "term:13e7997d07e5",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:15+00:00",
+   "claim": "Verónica Delgadillo García holds office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "dst": "source:fc170fef47732562",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "snippet": "…de protesta Verónica Delgadillo como primera Presidenta de Guadalajara Comunicado de prensa 1989 Guadalajara, Jalisco, lunes 30 de septiembre de 2024 ### Verónica Delgadillo García destacó la importancia de las mujeres en los espacios de toma de decisiones, así como de un enfoque sensible en la gobernanza, prometiendo…",
+   "src": "term:13e7997d07e5",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:veronica-delgadillo-garcia",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "src": "term:13e7997d07e5",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "id": "body:MX:municipal:MX-JAL:guadalajara:council",
+   "label": "GovernmentBody",
+   "name": "Municipal council of Guadalajara",
+   "name_local": "Ayuntamiento de Guadalajara",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T02:15:16+00:00",
+   "website": "http://www.guadalajara.gob.mx"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:13+00:00",
+   "id": "level:MX:municipal:MX-JAL:guadalajara",
+   "inegi_code": "14039",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:18:13+00:00",
+   "name": "Guadalajara, Jalisco",
+   "parent_division": "Jalisco",
+   "parent_iso_3166_2": "MX-JAL",
+   "pipeline_mode": "research_only",
+   "population": 1385629,
+   "selection_system": "party-based popular election",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-15T02:15:16+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:18:14+00:00",
+   "id": "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "municipal president",
+    "presidenta municipal"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:18:14+00:00",
+   "name": "Municipal President of Guadalajara",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by popular vote with the council slate (planilla)",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Presidente(a) Municipal de Guadalajara",
+   "updated_at": "2026-11-15T02:15:16+00:00"
+  },
+  {
+   "acronym": "MC",
+   "aliases": [
+    "MC",
+    "Movimiento Ciudadano"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "party:MX:mc",
+   "label": "PoliticalParty",
+   "name": "Movimiento Ciudadano",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "person:MX:veronica-delgadillo-garcia",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:18:15+00:00",
+   "name": "Verónica Delgadillo García",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "guadalajara.gob.mx",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "source:13c9442c1a4b15d9",
+   "label": "Source",
+   "name": "Organigrama",
+   "retrieved_at": "2026-11-14T23:18:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "url": "https://guadalajara.gob.mx/organigrama/veronica-delgadillo-garcia"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "source:1fed64eaae3a7cd2",
+   "label": "Source",
+   "name": "Verónica Delgadillo",
+   "retrieved_at": "2026-11-14T23:18:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "url": "https://en.wikipedia.org/wiki/Ver%C3%B3nica_Delgadillo_Garc%C3%ADa"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:17:54+00:00",
+   "id": "source:29e2c2e26aea3908",
+   "label": "Source",
+   "name": "Reforma 281: Constitución Política de los Estados Unidos Mexicanos. DOF 23-04-2026",
+   "retrieved_at": "2026-11-14T23:18:21+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "guadalajara.gob.mx",
+   "first_seen": "2026-11-14T23:18:14+00:00",
+   "id": "source:5ff8947f9ce157f9",
+   "label": "Source",
+   "name": "Organigrama",
+   "retrieved_at": "2026-11-14T23:18:14+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:14+00:00",
+   "url": "https://guadalajara.gob.mx/organigrama"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "datos.gob.mx",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "id": "source:73327df7bbd85a9f",
+   "label": "Source",
+   "name": "INAFED — Presidentas y Presidentes municipales",
+   "retrieved_at": "2026-11-15T02:15:32+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:32+00:00",
+   "url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "guadalajara.gob.mx",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "source:dadec03d613ba817",
+   "label": "Source",
+   "name": "Transparencia | Gobierno Municipal | ayuntamiento de guadalajara sujeto obligado",
+   "retrieved_at": "2026-11-14T23:18:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "url": "https://transparencia.guadalajara.gob.mx/ayuntamientodeguadalajarasujetoobligado"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "source:f9d76560de8fd8ed",
+   "label": "Source",
+   "name": "Verónica Delgadillo García",
+   "published_date": "2026-11-01T22:24:25.000Z",
+   "retrieved_at": "2026-11-14T23:18:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "url": "https://es.wikipedia.org/wiki/Ver%C3%B3nica_Delgadillo_Garc%C3%ADa"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "veronicadelgadillo.mx",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "source:fc170fef47732562",
+   "label": "Source",
+   "name": "Rinde protesta Verónica Delgadillo como primera Presidenta de Guadalajara | Verónica Delgadillo, primera Presidenta electa de Guadalajara",
+   "published_date": "2024-09-30T20:00:33.000Z",
+   "retrieved_at": "2026-11-14T23:18:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:15+00:00",
+   "url": "https://veronicadelgadillo.mx/prensa/rinde-protesta-veronica-delgadillo-como-primera-presidenta-de-guadalajara/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "term:13e7997d07e5",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:18:15+00:00",
+   "name": "Verónica Delgadillo García — term from 2024-10-01",
+   "office": "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara",
+   "person": "person:MX:veronica-delgadillo-garcia",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-JAL:guadalajara",
+   "body:MX:municipal:MX-JAL:guadalajara:council",
+   "office:MX:municipal:MX-JAL:guadalajara:council:municipal-president-of-guadalajara"
+  ]
+ },
+ "politician": "person:MX:veronica-delgadillo-garcia",
+ "sha256": "df52f6b50cf0dcf960c579e190396cd1abb2a87f8626146a8977dd7c9f22ff6c",
+ "unreached_offices": []
+}
