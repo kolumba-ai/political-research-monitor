@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from socialclaims import accounts
+from socialclaims import accounts, identity
 from socialclaims.capture import Capturer, NotTrackable, purge_expired, sha256_json
 from socialclaims.oriane import credits_for
 from socialclaims.query import count_filter_values, request_body
@@ -275,3 +275,18 @@ def test_replay_reuses_stored_excludes(conn, graph, sc_settings, monkeypatch):
     out = Capturer(conn, graph, rc, sc_settings, clock=lambda: rc.captured_at).capture(
         PID, date_from=w["after"], date_to=w["before"], max_posts=rc.max_posts, exclude_ids=rc.exclude_ids)
     assert out["rows"] == 2 and conn.execute("SELECT count(*) AS n FROM post").fetchone()["n"] == 4
+
+
+def test_capture_branch_subset(conn, graph, sc_settings):
+    accounts.approve(conn, PID, "tiktok", "claudiashein", "reviewer", ["https://www.gob.mx/presidencia"],
+                     oriane_profile_id="prf_x")
+    fake = FakeOriane([make_result(i) for i in range(3)])
+    c = cap(conn, graph, sc_settings, fake)
+    names = [q["name"] for q in c.plan(PID, branches=["own"])["body"]["queries"][0]["queries"]]
+    assert names == ["own", "own:tiktok"]
+    c.capture(PID, branches=["own"])
+    run = conn.execute("SELECT query_json, manifest, query_id FROM run").fetchone()
+    assert [b["name"] for b in run["query_json"]["branches"]] == names and run["manifest"]["branches"] == ["own"]
+    assert run["query_id"] == identity.current_ref(conn, PID)["query_id"]
+    with pytest.raises(NotTrackable):
+        c.plan(PID, branches=["hashtag"])

@@ -86,7 +86,7 @@ class Capturer:
 
     def plan(self, politician_id: str, *, date_from: str | None = None, date_to: str | None = None,
              max_posts: int | None = None, allow_review: bool = False,
-             exclude_ids: list[str] | None = None) -> dict:
+             exclude_ids: list[str] | None = None, branches: list[str] | None = None) -> dict:
         """Sync the identity snapshot and build the exact request, without calling Oriane."""
         sync = sync_ref(self.conn, self.graph, politician_id, self.platforms)
         pid = sync["politician_id"]
@@ -100,10 +100,16 @@ class Capturer:
         d_to = date_to or today.isoformat()
         d_from = date_from or (date.fromisoformat(d_to) - timedelta(days=self.s.default_window_days)).isoformat()
         excl = captured_ids(self.conn, pid) if exclude_ids is None else list(exclude_ids)
-        body, n_excl = request_body(ref["query_json"], d_from, d_to, excl, self.s.oriane_max_filter_values)
+        query = ref["query_json"]
+        if branches:
+            query = {**query, "branches": [b for b in query["branches"] if b["name"].split(":")[0] in branches]}
+            if not query["branches"]:
+                raise NotTrackable(f"{pid} has no query branches among {sorted(branches)}")
+        body, n_excl = request_body(query, d_from, d_to, excl, self.s.oriane_max_filter_values)
         cap = max_posts or self.s.max_posts_per_politician
         per = ORIANE_CREDITS_PER_ROW[self.s.oriane_projection]
-        return {"politician_id": pid, "ref": ref, "body": body, "date_from": d_from, "date_to": d_to,
+        return {"politician_id": pid, "ref": ref, "body": body, "query_json": query,
+                "branches": sorted(branches) if branches else "all", "date_from": d_from, "date_to": d_to,
                 "excluded_ids": n_excl, "already_captured": len(excl), "max_posts": cap,
                 "projection": self.s.oriane_projection, "query_id": ref["query_id"],
                 "worst_case_credits": cap * per,
@@ -135,14 +141,15 @@ class Capturer:
         run_id = f"oriane-{started.strftime('%Y%m%dT%H%M%S%fZ')}-{hashlib.sha256(pid.encode()).hexdigest()[:8]}-{uuid.uuid4().hex[:6]}"
         excluded_fields = self.s.csv(self.s.excluded_fields)
         manifest = {"excluded_fields": excluded_fields, "store_raw_payloads": self.s.store_raw_payloads,
-                    "raw_retention_days": self.s.raw_retention_days, "sort": SORT, "pages": []}
+                    "raw_retention_days": self.s.raw_retention_days, "sort": SORT, "branches": p["branches"],
+                    "pages": []}
         with self.conn.transaction():
             self.conn.execute(
                 "INSERT INTO run(run_id, politician_id, person_updated_at, politician_version, graph_run, pipeline_mode, "
                 "query_id, query_json, date_from, date_to, platforms, projection, max_posts, excluded_ids, manifest, "
                 "started_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                 (run_id, pid, ref["person_updated_at"], ref["version"], ref["graph_run"], ref["pipeline_mode"],
-                 ref["query_id"], Jsonb(ref["query_json"]), p["date_from"], p["date_to"], self.platforms, projection,
+                 ref["query_id"], Jsonb(p["query_json"]), p["date_from"], p["date_to"], self.platforms, projection,
                  p["max_posts"], p["excluded_ids"], Jsonb(manifest), started))
         self._run_id = run_id
 

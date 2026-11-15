@@ -81,6 +81,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--from", dest="date_from")
     p.add_argument("--to", dest="date_to")
     p.add_argument("--max-posts", type=int)
+    p.add_argument("--branches", help="comma-separated subset of query branches, e.g. own,coauthored")
     p.add_argument("--allow-review", action="store_true", help="also capture single_source officeholders")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--confirm-spend", action="store_true")
@@ -153,8 +154,13 @@ def main(argv: list[str] | None = None) -> int:
         if not args.dry_run and not args.confirm_spend:
             print("refusing: Oriane capture is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
             return 2
+        from .query import BRANCHES
+        branches = [b.strip() for b in args.branches.split(",")] if args.branches else None
+        if branches and set(branches) - set(BRANCHES):
+            print(f"unknown branches: {sorted(set(branches) - set(BRANCHES))}", file=sys.stderr)
+            return 2
         kw = dict(date_from=args.date_from, date_to=args.date_to, max_posts=args.max_posts,
-                  allow_review=args.allow_review)
+                  allow_review=args.allow_review, branches=branches)
         results = []
         for i in args.ids:
             pid = _pid(graph, i, args.country)
@@ -174,5 +180,6 @@ def main(argv: list[str] | None = None) -> int:
         cap.usage_purpose = "capture-replay"
         _out(cap.capture(_pid(graph, args.id, args.country), date_from=window["after"], date_to=window["before"],
                          max_posts=rc.max_posts, allow_review=args.allow_review,
-                         exclude_ids=rc.exclude_ids))
+                         exclude_ids=rc.exclude_ids,
+                         branches=sorted({q["name"].split(":")[0] for q in rc.body["queries"][0]["queries"]})))
     return 0

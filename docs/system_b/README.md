@@ -59,6 +59,8 @@ make sc-sync                       # write politician_ref versions
 make sc-dry-run                    # build the pilot requests without calling Oriane
 cd backend && ../.venv/bin/python -m socialclaims query "Clara Brugada"
 cd backend && ../.venv/bin/python -m socialclaims capture "Clara Brugada" --max-posts 100 --confirm-spend
+# only the politician's own-account posts (useful when mentions crowd them out of the newest-first window)
+cd backend && ../.venv/bin/python -m socialclaims capture "Claudia Sheinbaum" --branches own --max-posts 200 --confirm-spend
 make sc-test
 ```
 
