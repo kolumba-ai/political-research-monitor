@@ -48,6 +48,17 @@ The extraction CLI shard syntax is zero-based `I/N` (`0 <= I < N`); the entrypoi
 
 Workers claim queue rows using PostgreSQL `FOR UPDATE SKIP LOCKED`, so concurrent fetch containers do not fetch the same queued URL. Per-host spacing is still enforced by the shared PostgreSQL rate limiter. The optional single-container API can be deployed with the app; it reads System A's SQLite graph from the shared volume. The API serves the graph snapshot available when its container starts; stop and redeploy the app to force it to refresh after graph updates. Idle API containers scale down after 60 seconds.
 
+## Public explorer
+
+`backend/modal_explorer.py` is a separate app (`prm-explorer`) that serves the API and the built 3D explorer at one public HTTPS URL, with `/` redirecting to `/explorer/`. **There is no login: anyone with the URL can read the graph, the claims, the post links and account handles, and the evidence.** For that reason it attaches no secrets and has its own volume, `prm-explorer-data`, which holds only what you publish to it.
+
+```sh
+make modal-explorer-data   # export the current graph to SQLite and upload it with each country under var/socialclaims/claims
+make modal-explorer        # build the explorer bundle and deploy; prints the URL
+```
+
+`modal-explorer-data` reads the graph from whichever backend is configured (Neo4j or SQLite) and does not change it. Run both commands again after a new `pull-pastdev`, a storyline run or a graph update; the running container keeps serving the old files until it is redeployed. The Pipeline page shows "not available" there because the app has no database URL. Idle containers scale down after 5 minutes (`MODAL_EXPLORER_SCALEDOWN_S`), so the first request after a pause takes a few seconds. To take it offline: `modal app stop prm-explorer`.
+
 ## Concurrency defaults
 
 | Worker | Default cap | Shared request limit / reason |

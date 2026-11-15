@@ -5,7 +5,7 @@ RUN := cd backend && "$(PY)" -m polgraph
 EXPLORER = cd frontend-3d && PATH="$(NODE_BIN):$$PATH" npm
 MODAL := $(CURDIR)/.venv/bin/modal
 
-.PHONY: portraits sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run ev-enrich modal-deploy modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
+.PHONY: portraits sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run ev-enrich modal-deploy modal-explorer modal-explorer-data modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -111,6 +111,18 @@ ev-enrich:
 
 modal-deploy:
 	"$(MODAL)" deploy backend/modal_app.py
+
+# Public read-only explorer (docs/modal.md). The URL is open to anyone: it serves whatever modal-explorer-data published.
+modal-explorer: explorer-build
+	"$(MODAL)" deploy backend/modal_explorer.py
+
+# Publish the current graph (as SQLite) and the claims exports to the explorer's volume, then redeploy to load them.
+modal-explorer-data:
+	rm -rf var/explorer-publish && mkdir -p var/explorer-publish
+	$(RUN) export --out ../var/explorer-publish/kb
+	cd backend && GRAPH_BACKEND=sqlite DATA_DIR=../var/explorer-publish "$(PY)" -m polgraph import --from ../var/explorer-publish/kb
+	"$(MODAL)" volume put --force prm-explorer-data var/explorer-publish/graph.sqlite3 /graph.sqlite3
+	for d in var/socialclaims/claims/??; do "$(MODAL)" volume put --force prm-explorer-data "$$d" "/socialclaims/claims/$$(basename $$d)"; done
 
 modal-systema:
 	"$(MODAL)" run backend/modal_app.py::systema_entrypoint --args "$(ARGS)"
