@@ -76,6 +76,20 @@ A run can also stop early. Claims that are still running then stay `polling` and
 
 `SEED_BATCH`, `NEXT_BATCH`, `TARGET_HALF_WIDTH`, `MAX_CALLS`, `MIN_PER_STRATUM` and `MAX_USD` can be overridden through environment variables; their defaults are in `system_d/config.py`.
 
+## Dashboard (M5)
+
+A Streamlit dashboard in `ui/` reads Neon only, over read-only transactions. It shows, per `sim_run`, the claims
+table (status, n, p_believe ± 95% CI, polled sentiment ± CI, social sentiment and the gap), a polled-vs-social
+sentiment chart with CIs, and a drill-down per claim: completes by stratum, transcripts and the scored social
+comments. Every view is labelled as simulated (DESIGN.md §8), and `capped` claims are shown as inconclusive.
+
+```bash
+pip install -e '.[ui]'
+DATABASE_URL=... streamlit run ui/app.py
+```
+
+`DATABASE_URL_FILE` (a path to a file holding the URL) also works, so the URL needn't be in your shell history.
+
 ## Tests
 
 Database integration tests use only a dedicated local PostgreSQL 14 database with pgvector. Create `system_d_test` locally and set `SYSTEM_D_TEST_DATABASE_URL` to its localhost connection URL; never point this variable at Neon or another hosted database.

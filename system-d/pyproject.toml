@@ -24,6 +24,12 @@ dev = [
     "ruff",
 ]
 
+ui = [
+    "streamlit>=1.30",
+    "pandas",
+    "altair",
+]
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["system_d*"]
