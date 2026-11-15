@@ -63,3 +63,26 @@ def test_process_stores_segments_roles_review_and_audio_groups(conn, graph, sc_s
     assert (again["processed"], again["skipped"], again["review"]) == (0, 3, 0)
     n = conn.execute("SELECT count(*) AS n FROM segment WHERE processor_version = %s", (PROCESSOR_VERSION,)).fetchone()
     assert n["n"] == out["segments"]
+
+
+def test_roles_follow_account_changes_and_audio_groups_stay_per_platform(conn, graph, sc_settings):
+    accounts.approve(conn, PID, "tiktok", "claudiasheinbaum", "tester", ["https://www.gob.mx"], "prf_own")
+    own = video(profileId="prf_own", profileHandle="claudiasheinbaum", audioPlatformId="a1", audioType="original",
+                published="2026-11-09T12:00:00Z")
+    ig = {**video(audioPlatformId="a1", audioType="original", platform="instagram"), "id": "cnt_" + "4" * 28}
+    Capturer(conn, graph, FakeOriane([own, ig]).client(), sc_settings, clock=lambda: FIXED_NOW).capture(PID)
+    assert process_politician(conn, graph, sc_settings.raw_storage_dir, PID, now=FIXED_NOW)["roles"]["speaker:probable"] == 1
+    pp = {r["oriane_id"]: r for r in conn.execute("SELECT * FROM post_processing").fetchall()}
+    assert pp[ig["id"]]["canonical_oriane_id"] == ig["id"]
+    accounts.reject(conn, PID, "tiktok", "claudiasheinbaum", "tester", "wrong account")
+    process_politician(conn, graph, sc_settings.raw_storage_dir, PID, now=FIXED_NOW)
+    roles = {(r["role"], r["status"]) for r in conn.execute(
+        "SELECT role, status FROM post_person_role WHERE oriane_id = %s", (own["id"],)).fetchall()}
+    assert ("account_owner", "verified") not in roles and ("speaker", "unknown") in roles
+
+
+def test_simultaneous_onscreen_texts_have_stable_order():
+    media = {"type": "video", "frames": [{"timestampSeconds": "0", "onScreenTextRegions": [
+        {"text": t} for t in ["zeta", "alfa", "media", "beta"]]}]}
+    segs = build_segments(make_result(9, media=[media]))
+    assert [s["text"] for s in segs if s["source"] == "onscreen"] == ["alfa", "beta", "media", "zeta"]
