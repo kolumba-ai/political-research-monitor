@@ -264,19 +264,24 @@ class Capturer:
             self.conn.execute(
                 "INSERT INTO post(oriane_id, platform, platform_id, format, url, profile_id, profile_handle, caption, "
                 "hashtags, languages, location_country_code, audio_platform_id, matched_queries, relevance_score, "
-                "pipeline_mode, latest_raw_id, published_at, first_observed_at, last_captured_at) "
-                "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) "
+                "pipeline_mode, latest_raw_id, published_at, first_observed_at, last_captured_at, thumbnail_url, "
+                "thumbnail_media_id) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) "
                 "ON CONFLICT (oriane_id) DO UPDATE SET "
                 "matched_queries = ARRAY(SELECT DISTINCT unnest(post.matched_queries || EXCLUDED.matched_queries) ORDER BY 1), "
                 "relevance_score = GREATEST(post.relevance_score, EXCLUDED.relevance_score), "
                 "caption = EXCLUDED.caption, hashtags = EXCLUDED.hashtags, languages = EXCLUDED.languages, "
                 "location_country_code = EXCLUDED.location_country_code, profile_handle = EXCLUDED.profile_handle, "
                 "pipeline_mode = EXCLUDED.pipeline_mode, latest_raw_id = EXCLUDED.latest_raw_id, "
-                "last_captured_at = EXCLUDED.last_captured_at",
+                "last_captured_at = EXCLUDED.last_captured_at, "
+                "thumbnail_path = CASE WHEN EXCLUDED.thumbnail_url IS DISTINCT FROM post.thumbnail_url "
+                "AND EXCLUDED.thumbnail_url IS NOT NULL THEN NULL ELSE post.thumbnail_path END, "
+                "thumbnail_url = COALESCE(EXCLUDED.thumbnail_url, post.thumbnail_url), "
+                "thumbnail_media_id = COALESCE(EXCLUDED.thumbnail_media_id, post.thumbnail_media_id)",
                 (oid, r.get("platform"), r.get("platformId"), r.get("format"), _post_url(r), r.get("profileId"),
                  r.get("profileHandle"), r.get("caption"), list(r.get("hashtags") or []), langs,
                  r.get("locationCountryCode"), audio.get("platformId") if isinstance(audio, dict) else None,
-                 matched, rel, ref["pipeline_mode"], raw_id, published, now, now))
+                 matched, rel, ref["pipeline_mode"], raw_id, published, now, now, r.get("thumbnailMediaUrl"),
+                 r.get("thumbnailMediaId")))
             self.conn.execute(
                 "INSERT INTO run_post(run_id, oriane_id, politician_id, matched_queries, relevance_score, relevance, "
                 "relevance_basis, raw_id) VALUES (%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING",
