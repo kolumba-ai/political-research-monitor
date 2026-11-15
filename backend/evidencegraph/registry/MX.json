@@ -34,6 +34,7 @@
     {"key": "brookings.edu", "class": "think_tank_ngo"},
     {"key": "crisisgroup.org", "class": "think_tank_ngo"},
     {"key": "unam.mx", "class": "academic", "notes": "Check each subdomain; some host news or press content."},
+    {"key": "gaceta.unam.mx", "class": "academic", "notes": "University publication; review licence and content type."},
     {"key": "colmex.mx", "class": "academic"},
     {"key": "cide.edu", "class": "academic"},
     {"key": "itam.mx", "class": "academic"},
