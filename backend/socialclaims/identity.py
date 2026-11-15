@@ -109,6 +109,9 @@ def sync_ref(conn, graph: GraphReader, politician_id: str, platforms: list[str])
                          (pid, prev["version"] if prev else None))
         return {"politician_id": pid, "status": "missing_in_system_a", "version": prev["version"] if prev else None}
 
+    conn.execute("INSERT INTO system_a_bundle(sha256, country_id, politician_id, format, bundle) "
+                 "VALUES (%s,%s,%s,%s,%s) ON CONFLICT (sha256) DO NOTHING",
+                 (snap.bundle_sha256, snap.bundle["country"], pid, snap.bundle["format"], Jsonb(snap.bundle)))
     terms = load_terms(conn, pid)
     q = build_query(snap, terms, platforms)
     qid = query_id(q)
@@ -125,10 +128,10 @@ def sync_ref(conn, graph: GraphReader, politician_id: str, platforms: list[str])
         conn.execute(
             "INSERT INTO politician_ref(politician_id, person_updated_at, version, snapshot_sha256, graph_run, "
             "country_code, pipeline_mode, name, aliases, offices, parties, evidence_status, tracking_status, snapshot, "
-            "query_json, query_id) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+            "query_json, query_id, bundle_sha256) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
             (pid, snap.person_updated_at, version, sha, snap.graph_run, snap.country_code, snap.pipeline_mode,
              snap.name, Jsonb(snap.aliases), Jsonb([o.__dict__ for o in snap.offices]), Jsonb(snap.parties),
-             snap.evidence_status, snap.tracking_status, Jsonb(snap.to_dict()), Jsonb(q), qid))
+             snap.evidence_status, snap.tracking_status, Jsonb(snap.to_dict()), Jsonb(q), qid, snap.bundle_sha256))
         if prev and prev["snapshot_sha256"] != sha:
             old_fields = json.loads(json.dumps(prev["snapshot"]))
             diff = _diff({k: old_fields.get(k) for k in ("name", "aliases", "offices", "parties", "pipeline_mode")},

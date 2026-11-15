@@ -53,6 +53,14 @@ def cmd_export(a) -> int:
     return 0
 
 
+def cmd_export_bundles(a) -> int:
+    from pathlib import Path
+    from .bundle import JsonlGraph, export_bundles
+    g = JsonlGraph(Path(a.kb).resolve()) if a.kb else _components()[2]
+    print(json.dumps(export_bundles(g, Path(a.out).resolve(), a.country), indent=2))
+    return 0
+
+
 def cmd_import(a) -> int:
     from pathlib import Path
     from .export import import_kb
@@ -193,6 +201,12 @@ def main(argv: list[str] | None = None) -> int:
     ex = sub.add_parser("export", help="export the complete knowledge base to plain files (for the repo)")
     ex.add_argument("--out", default="../knowledge_base")
     ex.set_defaults(fn=cmd_export)
+    eb = sub.add_parser("export-bundles", help="write one System B input bundle per politician "
+                        "(country + politician + connecting subgraph)")
+    eb.add_argument("--country", nargs="+", required=True)
+    eb.add_argument("--out", default="../knowledge_base/bundles")
+    eb.add_argument("--kb", help="read an exported knowledge_base dir instead of the configured graph store")
+    eb.set_defaults(fn=cmd_export_bundles)
     im = sub.add_parser("import", help="load an exported knowledge base into the configured graph store")
     im.add_argument("--from", dest="src", default="../knowledge_base")
     im.set_defaults(fn=cmd_import)

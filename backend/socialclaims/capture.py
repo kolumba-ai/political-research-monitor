@@ -142,7 +142,7 @@ class Capturer:
         excluded_fields = self.s.csv(self.s.excluded_fields)
         manifest = {"excluded_fields": excluded_fields, "store_raw_payloads": self.s.store_raw_payloads,
                     "raw_retention_days": self.s.raw_retention_days, "sort": SORT, "branches": p["branches"],
-                    "pages": []}
+                    "system_a_bundle_sha256": snap.bundle_sha256, "pages": []}
         with self.conn.transaction():
             self.conn.execute(
                 "INSERT INTO run(run_id, politician_id, person_updated_at, politician_version, graph_run, pipeline_mode, "

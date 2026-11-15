@@ -18,8 +18,9 @@ class SocialSettings(BaseSettings):
 
     # --- System A (read-only) -------------------------------------------------
     # `knowledge_base`: read the exported JSONL snapshot; `graph`: read System A's live store (GRAPH_BACKEND).
-    system_a_source: Literal["knowledge_base", "graph"] = "knowledge_base"
+    system_a_source: Literal["knowledge_base", "bundles", "graph"] = "knowledge_base"
     system_a_kb_dir: Path = REPO_ROOT / "knowledge_base"
+    system_a_bundle_dir: Path = REPO_ROOT / "knowledge_base" / "bundles"
 
     # --- Postgres (System B source of truth) ------------------------------------
     database_url: str = "postgresql://ubuntu:ubuntu@localhost:5432/socialclaims"

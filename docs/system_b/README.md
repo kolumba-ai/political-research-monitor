@@ -8,10 +8,22 @@ Oriane is the only social source; System B never creates politician identities.
 
 ## Flow
 
-1. **System A snapshot** (`systema.py`): reads `knowledge_base/graph/*.jsonl` (default) or System A's live
-   `GraphStore` (`SYSTEM_A_SOURCE=graph`). For each `Person` it collects current/past `HOLDS_OFFICE` + `Term`,
-   office title/keywords, jurisdiction (`GovernmentBody` → `GovernmentLevel`), `MEMBER_OF_PARTY` + coalition,
-   and the country's `pipeline_mode`.
+1. **Input bundle** (System A → B contract, `polgraph/bundle.py`): System B's only input per politician is a
+   bundle holding the **country**, the **politician**, and the subgraph between them:
+   `Country -HAS_GOVERNMENT_LEVEL-> GovernmentLevel [-CONTAINS-> ...] -HAS_BODY-> GovernmentBody -HAS_OFFICE->
+   PoliticalOffice -HAS_TERM-> Term -TERM_HELD_BY-> Person`, plus the leaves `Person -MEMBER_OF_PARTY->
+   PoliticalParty` and `Office/Term -SUPPORTED_BY-> Source`. Its `sha256` covers only that content.
+   - Sources (`SYSTEM_A_SOURCE`): `bundles` reads files System A exported (`make export-bundles`, i.e.
+     `python -m polgraph export-bundles --country MX PK`, → `knowledge_base/bundles/<ISO2>/`); `knowledge_base`
+     (default) and `graph` build the same bundle on the fly from the export or the live store.
+   - Validation (`systema.validate_bundle`) recomputes the paths from the bundle itself: wrong country, a hash
+     mismatch, or a current office with no Country → office path makes the person `invalid_input` (never
+     captured). A missing party leaf is only a warning.
+   - Each bundle is stored once in `system_a_bundle`; `politician_ref.bundle_sha256` and each run's
+     `manifest.system_a_bundle_sha256` point to the exact slice used.
+   From the bundle, System B collects current/past `HOLDS_OFFICE` + `Term`, office title/keywords,
+   jurisdiction (`GovernmentBody` → `GovernmentLevel`), `MEMBER_OF_PARTY` + coalition, and the country's
+   `pipeline_mode`.
    - `trackable`: a current holding with `evidence_status` `verified` or `official_single`.
    - `needs_review`: only `single_source` (sent to `review`; capture needs `--allow-review`).
    - `ineligible`: no current holding. Capture is refused.
