@@ -36,6 +36,8 @@ class Settings(BaseSettings):
     neo4j_user: str = "neo4j"
     neo4j_password: str | None = None
     data_dir: Path = REPO_ROOT / "var"
+    # System B social-claims export read by /api/claims (written by `python -m socialclaims pull-pastdev`).
+    claims_export_dir: Path = REPO_ROOT / "var" / "socialclaims" / "claims"
 
     # --- Incremental refresh: stage freshness windows (days) -----------------
     ttl_democracy_days: int = 180

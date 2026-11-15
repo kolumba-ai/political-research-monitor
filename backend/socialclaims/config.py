@@ -45,6 +45,13 @@ class SocialSettings(BaseSettings):
     default_window_days: int = 90
     platforms: str = "tiktok,instagram"
 
+    # --- past.dev claim memory (one project per country; key in PAST_DEV_API_KEY) ---------
+    past_dev_api_key: str | None = None
+    past_dev_base_url: str = "https://api.past.dev/api/v1"
+    past_dev_timeout_s: float = 30.0
+    # Local export read by the API and the explorer (`pull-pastdev`); git-ignored under var/.
+    claims_export_dir: Path = REPO_ROOT / "var" / "socialclaims" / "claims"
+
     # --- Raw storage / retention (configurable until provider agreements settle) --
     raw_storage_dir: Path = REPO_ROOT / "var" / "socialclaims" / "raw"
     store_raw_payloads: bool = True

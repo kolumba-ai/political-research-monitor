@@ -3,6 +3,7 @@ import cytoscape, { type Core, type ElementDefinition } from "cytoscape";
 import ELK from "elkjs/lib/elk.bundled.js";
 import { ChevronLeft, ChevronRight, Focus, LoaderCircle, Minus, Network, Plus, RotateCcw, UserRound } from "lucide-react";
 import { Badge, Button, ExtLink } from "./ui";
+import { PoliticianSocialClaims } from "./SocialClaims";
 import { fmtDate } from "../lib/presentation";
 import { detailUrl, graphGet, kindName, NODE_COLORS, valueText, visibleChildren,
   type GraphChild, type GraphChildren, type GraphDetail } from "../lib/graph";
@@ -330,6 +331,7 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
         </div>)}
         {!!detail.parties?.length && <p className="mt-3 text-xs"><span className="text-muted">Party: </span>{detail.parties.map((p) => p.party.name).join(", ")}</p>}
         {detail.node.label === "Person" && jurisdiction && <p className="mt-2 text-xs"><span className="text-muted">Jurisdiction: </span>{jurisdiction.name}</p>}
+        {detail.node.label === "Person" && <PoliticianSocialClaims iso2={iso2} politicianId={detail.node.id} />}
         <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-xs">
           {summaryFields.filter((key) => detail.node[key] !== undefined && detail.node[key] !== null && detail.node[key] !== "").map((key) => <div key={key} className="contents"><dt className="text-muted">{valueText(key)}</dt><dd className="min-w-0 break-words">{valueText(detail.node[key])}</dd></div>)}
         </dl>

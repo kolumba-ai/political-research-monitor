@@ -115,6 +115,8 @@ def create_app() -> FastAPI:
 
     from .world_api import build_router
     app.include_router(build_router(_store, _state))
+    from .claims_api import build_router as build_claims_router
+    app.include_router(build_claims_router(lambda: s.claims_export_dir))
 
     @app.get("/api/search")
     def search(q: str, limit: int = 25):

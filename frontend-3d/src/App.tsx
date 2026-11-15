@@ -163,7 +163,8 @@ export default function App() {
         </section>
 
         <section className={cn("min-h-[35svh] border-b border-line lg:min-h-0 lg:border-r lg:border-b-0", exploring && "hidden lg:block")} aria-label="Country information">
-          <CountryPanel iso2={selected} row={row} feature={feature} exploring={exploring} onExplore={() => setExploring(true)} />
+          <CountryPanel iso2={selected} row={row} feature={feature} exploring={exploring} onExplore={() => setExploring(true)}
+            onOpenPerson={(id) => { setExploring(true); setGraphTarget(id); setSelectedNode(id); }} />
         </section>
 
         <section className={cn("flex min-h-[60svh] min-w-0 flex-col lg:min-h-0", exploring && "min-h-0")} aria-label="Government structure">

@@ -134,6 +134,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("ids", nargs="+")
     p.add_argument("--country", default="MX")
     p.add_argument("--from-checks", required=True)
+    p = sub.add_parser("pull-pastdev", help="export the country's claim data points from past.dev (read-only, free)")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -145,6 +148,12 @@ def main(argv: list[str] | None = None) -> int:
         _out([{"politician_id": x.politician_id, "name": x.name, "tracking_status": x.tracking_status,
                "evidence_status": x.evidence_status, "pipeline_mode": x.pipeline_mode,
                "offices": [o.name for o in x.current_offices]} for x in snaps])
+        return 0
+
+    if args.cmd == "pull-pastdev":
+        from .pastdev import PastDevClient, pull
+        client = PastDevClient(s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s)
+        _out(pull(client, _graph(s), args.country, args.out or s.claims_export_dir))
         return 0
 
     conn = connect(s.database_url)

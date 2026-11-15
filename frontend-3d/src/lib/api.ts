@@ -86,3 +86,40 @@ export const api = {
 
 // Retained as a separate view while the 3D explorer is developed.
 export const LEGACY_UI = import.meta.env.DEV ? "http://127.0.0.1:8000" : "";
+
+// System B social claims, exported from past.dev by `python -m socialclaims pull-pastdev`.
+export interface ClaimStats {
+  claims: number; posts: number; by_type: Record<string, number>; by_speaker: Record<string, number>;
+  by_platform: Record<string, number>; by_day: { date: string; claims: number }[];
+  first: string | null; last: string | null;
+}
+
+export interface ClaimsSummary {
+  country: string; available: boolean; source?: string; pulled_at?: string; partial_posts?: number;
+  politicians: (ClaimStats & { politician_id: string | null; name: string | null })[];
+  stats: ClaimStats;
+}
+
+export interface SocialClaim {
+  claim_id: string; data_point_id: string; politician_id: string | null; politician_name: string | null;
+  text: string | null; text_en: string | null; type: string | null; speaker: string | null;
+  about_politician: boolean | null; checkable: boolean | null; source_field: string | null;
+  evidence_span: string | null; platform: string | null; url: string | null; uploader_handle: string | null;
+  uploader_name: string | null; published_at: string | null; format: string | null;
+  engagement: { views?: number; likes?: number; comments?: number; shares?: number; captured_at?: string };
+}
+
+export interface PoliticianClaims {
+  country: string; politician_id: string; available: boolean; pulled_at: string | null;
+  total: number; offset: number; limit: number; stats: ClaimStats; claims: SocialClaim[];
+}
+
+export interface ClaimFilters { type?: string; speaker?: string; platform?: string; q?: string; limit?: number; offset?: number }
+
+export const claimsApi = {
+  summary: (iso2: string, s?: AbortSignal) => get<ClaimsSummary>(`/api/claims/${encodeURIComponent(iso2)}/summary`, s),
+  politician: (iso2: string, id: string, f: ClaimFilters = {}, s?: AbortSignal) => {
+    const qs = new URLSearchParams(Object.entries(f).filter(([, v]) => v !== undefined && v !== "").map(([k, v]) => [k, String(v)]));
+    return get<PoliticianClaims>(`/api/claims/${encodeURIComponent(iso2)}/politicians/${encodeURIComponent(id)}?${qs}`, s);
+  },
+};
