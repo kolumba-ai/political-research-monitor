@@ -1,0 +1,1762 @@
+{
+ "purpose": "divisions:PK",
+ "query": "List ALL 7 first-level administrative divisions of Pakistan (Punjab; Islamabad; Sindh; Azad Jammu and Kashmir; Balochistan; Khyber Pakhtunkhwa; Gilgit-Baltistan). For each give: the executive office title in English and the local language, how that office is filled, its term length, the CURRENT officeholder as of 2026-11-14 (full name, party name and acronym, coalition, term start and end, whether acting/interim) with source URLs, and the division's legislature (English and local name, number of seats, how filled). Explain in special_status_note any division whose governance differs from the others (for example a capital district).",
+ "run_id": "agent_run_f7ec31accdba460791627232c4020875",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:53:57+00:00",
+ "cost_dollars": {
+  "total": 0.589,
+  "agent_compute": 0.448,
+  "search": 0.141,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "divisions": [
+   {
+    "name": "Punjab",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Maryam Nawaz Sharif",
+     "is_acting": false,
+     "party_name": "Pakistan Muslim League (Nawaz)",
+     "term_start": "2024-02-26",
+     "source_urls": [
+      "https://cm.punjab.gov.pk/",
+      "https://cm.punjab.gov.pk/chief-ministers"
+     ],
+     "party_acronym": "PML-N"
+    },
+    "division_type": "province",
+    "legislature_seats": 371,
+    "executive_title_en": "Chief Minister",
+    "legislature_name_en": "Provincial Assembly of the Punjab",
+    "special_status_note": null,
+    "executive_term_years": null,
+    "executive_title_local": "وزیرِ اعلیٰ پنجاب",
+    "legislature_name_local": "صوبائی اسمبلی پنجاب",
+    "executive_selection_method": "indirect_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Islamabad",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Sohail Ashraf",
+     "is_acting": false,
+     "party_name": null,
+     "term_start": "2026-04-06",
+     "source_urls": [
+      "https://www.dawn.com/news/1987737",
+      "https://www.cda.gov.pk/cdaImagesGallery/chairman-capital-development-authority-cda-and-chief-commissioner-islamabad-sohail-ashraf-formally-assumed-charge-of-his-office-on-monday-and-met-with-cda-board-members-and-senior-officers",
+      "https://www.app.com.pk/national/cda-chief-promises-resolution-of-park-enclave-residents-issues/"
+     ],
+     "party_acronym": null
+    },
+    "division_type": "federal capital territory",
+    "legislature_seats": null,
+    "executive_title_en": "Chief Commissioner",
+    "legislature_name_en": null,
+    "special_status_note": "Federally administered capital territory, not a province: the federally appointed Chief Commissioner administers it under the Interior Division. It has no territorial legislature or chief minister; Pakistan’s Parliament legislates for the territory.",
+    "executive_term_years": null,
+    "executive_title_local": "چیف کمشنر اسلام آباد",
+    "legislature_name_local": null,
+    "executive_selection_method": "appointment",
+    "legislature_selection_method": null
+   },
+   {
+    "name": "Sindh",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Syed Murad Ali Shah",
+     "is_acting": false,
+     "party_name": "Pakistan Peoples Party",
+     "term_start": "2024-02-27",
+     "source_urls": [
+      "https://cm.sindh.gov.pk/cm-profile",
+      "https://cm.sindh.gov.pk/history"
+     ],
+     "party_acronym": "PPP"
+    },
+    "division_type": "province",
+    "legislature_seats": 168,
+    "executive_title_en": "Chief Minister",
+    "legislature_name_en": "Provincial Assembly of Sindh",
+    "special_status_note": null,
+    "executive_term_years": null,
+    "executive_title_local": "سنڌ جو وڏو وزير",
+    "legislature_name_local": "سنڌ جي صوبائي اسيمبلي",
+    "executive_selection_method": "indirect_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Azad Jammu and Kashmir",
+    "officeholder": {
+     "term_end": null,
+     "coalition": "PML-N and allied members (allies not individually confirmed)",
+     "full_name": "Barrister Syed Iftikhar Ali Gillani",
+     "is_acting": false,
+     "party_name": "Pakistan Muslim League (Nawaz)",
+     "term_start": "2026-08-28",
+     "source_urls": [
+      "https://www.dawn.com/news/2025757",
+      "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk",
+      "https://www.dawn.com/news/2043911"
+     ],
+     "party_acronym": "PML-N"
+    },
+    "division_type": "self-governing territory",
+    "legislature_seats": 53,
+    "executive_title_en": "Prime Minister",
+    "legislature_name_en": "Azad Jammu and Kashmir Legislative Assembly",
+    "special_status_note": "Self-governing territory under its 1974 Interim Constitution, not a Pakistani province. Its executive is called Prime Minister; 12 of the 45 general assembly seats represent refugees resident in Pakistan. Seven constituency elections had been postponed at the August 2026 prime-ministerial vote.",
+    "executive_term_years": null,
+    "executive_title_local": "وزیرِ اعظم آزاد جموں و کشمیر",
+    "legislature_name_local": "آزاد جموں و کشمیر قانون ساز اسمبلی",
+    "executive_selection_method": "indirect_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Balochistan",
+    "officeholder": {
+     "term_end": null,
+     "coalition": "PPP–PML-N–Balochistan Awami Party (BAP) coalition formed in 2024",
+     "full_name": "Mir Sarfraz Ahmed Bugti",
+     "is_acting": false,
+     "party_name": "Pakistan Peoples Party",
+     "term_start": "2024-03-02",
+     "source_urls": [
+      "https://cm.balochistan.gob.pk/chief-minister",
+      "https://pabalochistan.gov.pk/public/current-members?role=chief-minister",
+      "https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan"
+     ],
+     "party_acronym": "PPP"
+    },
+    "division_type": "province",
+    "legislature_seats": 65,
+    "executive_title_en": "Chief Minister",
+    "legislature_name_en": "Provincial Assembly of Balochistan",
+    "special_status_note": null,
+    "executive_term_years": null,
+    "executive_title_local": "وزیرِ اعلیٰ بلوچستان",
+    "legislature_name_local": "صوبائی اسمبلی بلوچستان",
+    "executive_selection_method": "indirect_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Khyber Pakhtunkhwa",
+    "officeholder": {
+     "term_end": null,
+     "coalition": "PTI-backed independent legislators (not a confirmed formal multi-party coalition)",
+     "full_name": "Muhammad Sohail Khan Afridi",
+     "is_acting": false,
+     "party_name": "Pakistan Tehreek-e-Insaf",
+     "term_start": "2025-10-15",
+     "source_urls": [
+      "https://dgipr.kp.gov.pk/ministers/",
+      "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+      "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers"
+     ],
+     "party_acronym": "PTI"
+    },
+    "division_type": "province",
+    "legislature_seats": 145,
+    "executive_title_en": "Chief Minister",
+    "legislature_name_en": "Provincial Assembly of Khyber Pakhtunkhwa",
+    "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+    "executive_term_years": null,
+    "executive_title_local": "وزیرِ اعلیٰ خیبر پختونخوا",
+    "legislature_name_local": "خیبر پختونخوا صوبائی اسمبلی",
+    "executive_selection_method": "indirect_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Gilgit-Baltistan",
+    "officeholder": {
+     "term_end": null,
+     "coalition": "PPP-led coalition supported by Istehkam-e-Pakistan Party (IPP), with a PPP–PML-N power-sharing arrangement",
+     "full_name": "Amjad Hussain Azar",
+     "is_acting": false,
+     "party_name": "Pakistan Peoples Party",
+     "term_start": "2026-07-06",
+     "source_urls": [
+      "https://www.dawn.com/news/2013368",
+      "https://www.dawn.com/news/2009973",
+      "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in"
+     ],
+     "party_acronym": "PPP"
+    },
+    "division_type": "self-governing federally administered territory",
+    "legislature_seats": 33,
+    "executive_title_en": "Chief Minister",
+    "legislature_name_en": "Gilgit-Baltistan Assembly",
+    "special_status_note": "Federally administered, self-governing territory under the Gilgit-Baltistan Order 2018, not a constitutionally established Pakistani province. Its assembly has 24 directly elected and nine indirectly elected reserved seats.",
+    "executive_term_years": null,
+    "executive_title_local": "وزیرِ اعلیٰ گلگت بلتستان",
+    "legislature_name_local": "گلگت بلتستان اسمبلی",
+    "executive_selection_method": "indirect_election",
+    "legislature_selection_method": "mixed"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.divisions[0].division_type",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].executive_title_en",
+   "citations": [
+    {
+     "url": "https://cm.punjab.gov.pk/",
+     "title": null
+    },
+    {
+     "url": "https://cm.punjab.gov.pk/chief-ministers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].executive_title_local",
+   "citations": [
+    {
+     "url": "https://cm.punjab.gov.pk/",
+     "title": null
+    },
+    {
+     "url": "https://cm.punjab.gov.pk/chief-ministers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].executive_selection_method",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].legislature_name_en",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].legislature_name_local",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].legislature_seats",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].legislature_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://cm.punjab.gov.pk/",
+     "title": null
+    },
+    {
+     "url": "https://cm.punjab.gov.pk/chief-ministers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://cm.punjab.gov.pk/",
+     "title": null
+    },
+    {
+     "url": "https://cm.punjab.gov.pk/chief-ministers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://cm.punjab.gov.pk/",
+     "title": null
+    },
+    {
+     "url": "https://cm.punjab.gov.pk/chief-ministers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://cm.punjab.gov.pk/",
+     "title": null
+    },
+    {
+     "url": "https://cm.punjab.gov.pk/chief-ministers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[0].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://cm.punjab.gov.pk/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[0].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://cm.punjab.gov.pk/",
+     "title": null
+    },
+    {
+     "url": "https://cm.punjab.gov.pk/chief-ministers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[1].division_type",
+   "citations": [
+    {
+     "url": "https://ictadministration.gov.pk/about-icta/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[1].executive_title_en",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1987737",
+     "title": null
+    },
+    {
+     "url": "https://www.cda.gov.pk/cdaImagesGallery/chairman-capital-development-authority-cda-and-chief-commissioner-islamabad-sohail-ashraf-formally-assumed-charge-of-his-office-on-monday-and-met-with-cda-board-members-and-senior-officers",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/cda-chief-promises-resolution-of-park-enclave-residents-issues/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[1].executive_title_local",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1987737",
+     "title": null
+    },
+    {
+     "url": "https://www.cda.gov.pk/cdaImagesGallery/chairman-capital-development-authority-cda-and-chief-commissioner-islamabad-sohail-ashraf-formally-assumed-charge-of-his-office-on-monday-and-met-with-cda-board-members-and-senior-officers",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/cda-chief-promises-resolution-of-park-enclave-residents-issues/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[1].executive_selection_method",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1987737",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[1].special_status_note",
+   "citations": [
+    {
+     "url": "https://ictadministration.gov.pk/about-icta/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[1].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1987737",
+     "title": null
+    },
+    {
+     "url": "https://www.cda.gov.pk/cdaImagesGallery/chairman-capital-development-authority-cda-and-chief-commissioner-islamabad-sohail-ashraf-formally-assumed-charge-of-his-office-on-monday-and-met-with-cda-board-members-and-senior-officers",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/cda-chief-promises-resolution-of-park-enclave-residents-issues/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[1].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1987737",
+     "title": null
+    },
+    {
+     "url": "https://www.cda.gov.pk/cdaImagesGallery/chairman-capital-development-authority-cda-and-chief-commissioner-islamabad-sohail-ashraf-formally-assumed-charge-of-his-office-on-monday-and-met-with-cda-board-members-and-senior-officers",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/cda-chief-promises-resolution-of-park-enclave-residents-issues/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[1].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1987737",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[1].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1987737",
+     "title": null
+    },
+    {
+     "url": "https://www.cda.gov.pk/cdaImagesGallery/chairman-capital-development-authority-cda-and-chief-commissioner-islamabad-sohail-ashraf-formally-assumed-charge-of-his-office-on-monday-and-met-with-cda-board-members-and-senior-officers",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/cda-chief-promises-resolution-of-park-enclave-residents-issues/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].division_type",
+   "citations": [
+    {
+     "url": "https://pas.gov.pk/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].executive_title_en",
+   "citations": [
+    {
+     "url": "https://cm.sindh.gov.pk/cm-profile",
+     "title": null
+    },
+    {
+     "url": "https://cm.sindh.gov.pk/history",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].executive_title_local",
+   "citations": [
+    {
+     "url": "https://cm.sindh.gov.pk/cm-profile",
+     "title": null
+    },
+    {
+     "url": "https://cm.sindh.gov.pk/history",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].executive_selection_method",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].legislature_name_en",
+   "citations": [
+    {
+     "url": "https://pas.gov.pk/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].legislature_name_local",
+   "citations": [
+    {
+     "url": "https://pas.gov.pk/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].legislature_seats",
+   "citations": [
+    {
+     "url": "https://pas.gov.pk/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].legislature_selection_method",
+   "citations": [
+    {
+     "url": "https://pas.gov.pk/faqs",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://cm.sindh.gov.pk/cm-profile",
+     "title": null
+    },
+    {
+     "url": "https://cm.sindh.gov.pk/history",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://cm.sindh.gov.pk/cm-profile",
+     "title": null
+    },
+    {
+     "url": "https://cm.sindh.gov.pk/history",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://cm.sindh.gov.pk/cm-profile",
+     "title": null
+    },
+    {
+     "url": "https://cm.sindh.gov.pk/history",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://cm.sindh.gov.pk/cm-profile",
+     "title": null
+    },
+    {
+     "url": "https://cm.sindh.gov.pk/history",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[2].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://cm.sindh.gov.pk/cm-profile",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[2].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://cm.sindh.gov.pk/cm-profile",
+     "title": null
+    },
+    {
+     "url": "https://cm.sindh.gov.pk/history",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].division_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/brief-history/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].executive_title_en",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    },
+    {
+     "url": "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043911",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].executive_title_local",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    },
+    {
+     "url": "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043911",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].executive_selection_method",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].legislature_name_en",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/brief-history/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].legislature_name_local",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/brief-history/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].legislature_seats",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/brief-history/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].legislature_selection_method",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/brief-history/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].special_status_note",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[3].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    },
+    {
+     "url": "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043911",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    },
+    {
+     "url": "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043911",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    },
+    {
+     "url": "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043911",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].officeholder.coalition",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[3].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    },
+    {
+     "url": "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043911",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[3].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2025757",
+     "title": null
+    },
+    {
+     "url": "https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043911",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].division_type",
+   "citations": [
+    {
+     "url": "https://old.pabalochistan.gov.pk/frequently-asked-questions-faqs/",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].executive_title_en",
+   "citations": [
+    {
+     "url": "https://cm.balochistan.gob.pk/chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/public/current-members?role=chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].executive_title_local",
+   "citations": [
+    {
+     "url": "https://cm.balochistan.gob.pk/chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/public/current-members?role=chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].executive_selection_method",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].legislature_name_en",
+   "citations": [
+    {
+     "url": "https://old.pabalochistan.gov.pk/frequently-asked-questions-faqs/",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].legislature_name_local",
+   "citations": [
+    {
+     "url": "https://old.pabalochistan.gov.pk/frequently-asked-questions-faqs/",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].legislature_seats",
+   "citations": [
+    {
+     "url": "https://old.pabalochistan.gov.pk/frequently-asked-questions-faqs/",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].legislature_selection_method",
+   "citations": [
+    {
+     "url": "https://old.pabalochistan.gov.pk/frequently-asked-questions-faqs/",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://cm.balochistan.gob.pk/chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/public/current-members?role=chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://cm.balochistan.gob.pk/chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/public/current-members?role=chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://cm.balochistan.gob.pk/chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/public/current-members?role=chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].officeholder.coalition",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1818464/sarfraz-bugti-becomes-balochistan-cm-unopposed",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[4].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://cm.balochistan.gob.pk/chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/public/current-members?role=chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://cm.balochistan.gob.pk/chief-minister",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[4].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://cm.balochistan.gob.pk/chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/public/current-members?role=chief-minister",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].division_type",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].executive_title_en",
+   "citations": [
+    {
+     "url": "https://dgipr.kp.gov.pk/ministers/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].executive_title_local",
+   "citations": [
+    {
+     "url": "https://dgipr.kp.gov.pk/ministers/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].executive_selection_method",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].legislature_name_en",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].legislature_name_local",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].legislature_seats",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].legislature_selection_method",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].special_status_note",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2036378/governors-rule-and-emergency-imposed-in-kp-heres-what-it-means",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[5].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://dgipr.kp.gov.pk/ministers/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://dgipr.kp.gov.pk/ministers/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://dgipr.kp.gov.pk/ministers/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].officeholder.coalition",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[5].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://dgipr.kp.gov.pk/ministers/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://dgipr.kp.gov.pk/ministers/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[5].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://dgipr.kp.gov.pk/ministers/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].division_type",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gilgitbaltistan.gov.pk/pages/about",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].executive_title_en",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2013368",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2009973",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].executive_title_local",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2013368",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2009973",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].executive_selection_method",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].legislature_name_en",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gilgitbaltistan.gov.pk/pages/about",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].legislature_name_local",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gilgitbaltistan.gov.pk/pages/about",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].legislature_seats",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gilgitbaltistan.gov.pk/pages/about",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].legislature_selection_method",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gilgitbaltistan.gov.pk/pages/about",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].special_status_note",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gilgitbaltistan.gov.pk/pages/about",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[6].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2013368",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2009973",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2013368",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2009973",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2013368",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2009973",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].officeholder.coalition",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[6].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2013368",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2009973",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2013368",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[6].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2013368",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2009973",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "{\"divisions\":[{\"name\":\"Punjab\",\"division_type\":\"province\",\"executive_title_en\":\"Chief Minister\",\"executive_title_local\":\"وزیرِ اعلیٰ پنجاب\",\"executive_selection_method\":\"indirect_election\",\"executive_term_years\":null,\"officeholder\":{\"full_name\":\"Maryam Nawaz Sharif\",\"party_name\":\"Pakistan Muslim League (Nawaz)\",\"party_acronym\":\"PML-N\",\"coalition\":null,\"term_start\":\"2024-02-26\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://cm.punjab.gov.pk/\",\"https://cm.punjab.gov.pk/chief-ministers\"]},\"legislature_name_en\":\"Provincial Assembly of the Punjab\",\"legislature_name_local\":\"صوبائی اسمبلی پنجاب\",\"legislature_seats\":371,\"legislature_selection_method\":\"mixed\",\"special_status_note\":null},{\"name\":\"Islamabad\",\"division_type\":\"federal capital territory\",\"executive_title_en\":\"Chief Commissioner\",\"executive_title_local\":\"چیف کمشنر اسلام آباد\",\"executive_selection_method\":\"appointment\",\"executive_term_years\":null,\"officeholder\":{\"full_name\":\"Sohail Ashraf\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2026-04-06\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://www.dawn.com/news/1987737\",\"https://www.cda.gov.pk/cdaImagesGallery/chairman-capital-development-authority-cda-and-chief-commissioner-islamabad-sohail-ashraf-formally-assumed-charge-of-his-office-on-monday-and-met-with-cda-board-members-and-senior-officers\",\"https://www.app.com.pk/national/cda-chief-promises-resolution-of-park-enclave-residents-issues/\"]},\"legislature_name_en\":null,\"legislature_name_local\":null,\"legislature_seats\":null,\"legislature_selection_method\":null,\"special_status_note\":\"Federally administered capital territory, not a province: the federally appointed Chief Commissioner administers it under the Interior Division. It has no territorial legislature or chief minister; Pakistan’s Parliament legislates for the territory.\"},{\"name\":\"Sindh\",\"division_type\":\"province\",\"executive_title_en\":\"Chief Minister\",\"executive_title_local\":\"سنڌ جو وڏو وزير\",\"executive_selection_method\":\"indirect_election\",\"executive_term_years\":null,\"officeholder\":{\"full_name\":\"Syed Murad Ali Shah\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":\"2024-02-27\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://cm.sindh.gov.pk/cm-profile\",\"https://cm.sindh.gov.pk/history\"]},\"legislature_name_en\":\"Provincial Assembly of Sindh\",\"legislature_name_local\":\"سنڌ جي صوبائي اسيمبلي\",\"legislature_seats\":168,\"legislature_selection_method\":\"mixed\",\"special_status_note\":null},{\"name\":\"Azad Jammu and Kashmir\",\"division_type\":\"self-governing territory\",\"executive_title_en\":\"Prime Minister\",\"executive_title_local\":\"وزیرِ اعظم آزاد جموں و کشمیر\",\"executive_selection_method\":\"indirect_election\",\"executive_term_years\":null,\"officeholder\":{\"full_name\":\"Barrister Syed Iftikhar Ali Gillani\",\"party_name\":\"Pakistan Muslim League (Nawaz)\",\"party_acronym\":\"PML-N\",\"coalition\":\"PML-N and allied members (allies not individually confirmed)\",\"term_start\":\"2026-08-28\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://www.dawn.com/news/2025757\",\"https://www.radio.gov.pk/28-08-2026/iftikhar-gilani-elected-prime-minister-of-ajk\",\"https://www.dawn.com/news/2043911\"]},\"legislature_name_en\":\"Azad Jammu and Kashmir Legislative Assembly\",\"legislature_name_local\":\"آزاد جموں و کشمیر قانون ساز اسمبلی\",\"legislature_seats\":53,\"legislature_selection_method\":\"mixed\",\"special_status_note\":\"Self-governing territory under its 1974 Interim Constitution, not a Pakistani province. Its executive is called Prime Minister; 12 of the 45 general assembly seats represent refugees resident in Pakistan. Seven constituency elections had been postponed at the August 2026 prime-ministerial vote.\"},{\"name\":\"Balochistan\",\"division_type\":\"province\",\"executive_title_en\":\"Chief Minister\",\"executive_title_local\":\"وزیرِ اعلیٰ بلوچستان\",\"executive_selection_method\":\"indirect_election\",\"executive_term_years\":null,\"officeholder\":{\"full_name\":\"Mir Sarfraz Ahmed Bugti\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":\"PPP–PML-N–Balochistan Awami Party (BAP) coalition formed in 2024\",\"term_start\":\"2024-03-02\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://cm.balochistan.gob.pk/chief-minister\",\"https://pabalochistan.gov.pk/public/current-members?role=chief-minister\",\"https://www.dawn.com/news/2044149/cm-bugti-assures-investors-of-security-in-balochistan\"]},\"legislature_name_en\":\"Provincial Assembly of Balochistan\",\"legislature_name_local\":\"صوبائی اسمبلی بلوچستان\",\"legislature_seats\":65,\"legislature_selection_method\":\"mixed\",\"special_status_note\":null},{\"name\":\"Khyber Pakhtunkhwa\",\"division_type\":\"province\",\"executive_title_en\":\"Chief Minister\",\"executive_title_local\":\"وزیرِ اعلیٰ خیبر پختونخوا\",\"executive_selection_method\":\"indirect_election\",\"executive_term_years\":null,\"officeholder\":{\"full_name\":\"Muhammad Sohail Khan Afridi\",\"party_name\":\"Pakistan Tehreek-e-Insaf\",\"party_acronym\":\"PTI\",\"coalition\":\"PTI-backed independent legislators (not a confirmed formal multi-party coalition)\",\"term_start\":\"2025-10-15\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://dgipr.kp.gov.pk/ministers/\",\"https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/\",\"https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers\"]},\"legislature_name_en\":\"Provincial Assembly of Khyber Pakhtunkhwa\",\"legislature_name_local\":\"خیبر پختونخوا صوبائی اسمبلی\",\"legislature_seats\":145,\"legislature_selection_method\":\"mixed\",\"special_status_note\":\"Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.\"},{\"name\":\"Gilgit-Baltistan\",\"division_type\":\"self-governing federally administered territory\",\"executive_title_en\":\"Chief Minister\",\"executive_title_local\":\"وزیرِ اعلیٰ گلگت بلتستان\",\"executive_selection_method\":\"indirect_election\",\"executive_term_years\":null,\"officeholder\":{\"full_name\":\"Amjad Hussain Azar\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":\"PPP-led coalition supported by Istehkam-e-Pakistan Party (IPP), with a PPP–PML-N power-sharing arrangement\",\"term_start\":\"2026-07-06\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://www.dawn.com/news/2013368\",\"https://www.dawn.com/news/2009973\",\"https://tribune.com.pk/story/2614531/newly-elected-g-b-assembly-members-sworn-in\"]},\"legislature_name_en\":\"Gilgit-Baltistan Assembly\",\"legislature_name_local\":\"گلگت بلتستان اسمبلی\",\"legislature_seats\":33,\"legislature_selection_method\":\"mixed\",\"special_status_note\":\"Federally administered, self-governing territory under the Gilgit-Baltistan Order 2018, not a constitutionally established Pakistani province. Its assembly has 24 directly elected and nine indirectly elected reserved seats.\"}]}"
+}

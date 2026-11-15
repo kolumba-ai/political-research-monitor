@@ -1,0 +1,180 @@
+[
+ {
+  "country": "MX",
+  "stage": "contact",
+  "completed_at": "2026-11-14T23:05:34+00:00",
+  "status": "ok",
+  "summary": {
+   "dimensions": 24,
+   "aggregate_status": "restricted",
+   "laws": 10,
+   "agent_run_id": "agent_run_8fc705da58f8423aa44bf11681151aed"
+  }
+ },
+ {
+  "country": "MX",
+  "stage": "democracy",
+  "completed_at": "2026-11-14T23:03:32+00:00",
+  "status": "ok",
+  "summary": {
+   "assessments": 3,
+   "verified": 2,
+   "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+  }
+ },
+ {
+  "country": "MX",
+  "stage": "divisions",
+  "completed_at": "2026-11-14T23:15:51+00:00",
+  "status": "ok",
+  "summary": {
+   "divisions": 32,
+   "offices": 64,
+   "holders_persisted": 32,
+   "holders_unresolved": 0,
+   "unmatched": 0,
+   "agent_run_id": "agent_run_c22b978ece0a41a2a418e08a9a9c1e0e",
+   "iso_expected": 32,
+   "iso_covered": 32,
+   "iso_missing": []
+  }
+ },
+ {
+  "country": "MX",
+  "stage": "local",
+  "completed_at": "2026-11-14T23:18:24+00:00",
+  "status": "ok",
+  "summary": {
+   "units": 10,
+   "offices": 13,
+   "holders_persisted": 10,
+   "holders_unresolved": 0,
+   "agent_run_id": "agent_run_a323289bb53945e4b640e53192dd881e"
+  }
+ },
+ {
+  "country": "MX",
+  "stage": "national",
+  "completed_at": "2026-11-14T23:08:11+00:00",
+  "status": "ok",
+  "summary": {
+   "bodies": 9,
+   "offices": 20,
+   "holders_persisted": 5,
+   "holders_unresolved": 0,
+   "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795"
+  }
+ },
+ {
+  "country": "MX",
+  "stage": "special",
+  "completed_at": "2026-11-14T23:21:28+00:00",
+  "status": "ok",
+  "summary": {
+   "jurisdictions": 1,
+   "subunits": 16,
+   "offices": 16,
+   "holders_persisted": 16,
+   "holders_unresolved": 0,
+   "agent_run_id": "agent_run_3bbfc3f805764a668600be23a22cb12f"
+  }
+ },
+ {
+  "country": "PK",
+  "stage": "contact",
+  "completed_at": "2026-11-14T23:47:59+00:00",
+  "status": "ok",
+  "summary": {
+   "dimensions": 24,
+   "aggregate_status": "restricted",
+   "laws": 8,
+   "agent_run_id": "agent_run_9bd5c5fce101482b8e8345b261115b75"
+  }
+ },
+ {
+  "country": "PK",
+  "stage": "democracy",
+  "completed_at": "2026-11-14T23:45:52+00:00",
+  "status": "ok",
+  "summary": {
+   "assessments": 3,
+   "verified": 2,
+   "agent_run_id": "agent_run_c564cb2e55f9484bb6df793f0f0b14f5"
+  }
+ },
+ {
+  "country": "PK",
+  "stage": "divisions",
+  "completed_at": "2026-11-14T23:54:50+00:00",
+  "status": "ok",
+  "summary": {
+   "divisions": 7,
+   "offices": 13,
+   "holders_persisted": 7,
+   "holders_unresolved": 0,
+   "unmatched": 0,
+   "agent_run_id": "agent_run_f7ec31accdba460791627232c4020875",
+   "iso_expected": 7,
+   "iso_covered": 7,
+   "iso_missing": []
+  }
+ },
+ {
+  "country": "PK",
+  "stage": "legislators:PK-BA",
+  "completed_at": "2026-11-15T00:54:31+00:00",
+  "status": "ok",
+  "summary": {
+   "assemblies": {
+    "PK-BA": {
+     "seats": 65,
+     "persisted": 64,
+     "unresolved": 0,
+     "slices": 3
+    }
+   },
+   "members_persisted": 64,
+   "members_unresolved": 0
+  }
+ },
+ {
+  "country": "PK",
+  "stage": "local",
+  "completed_at": "2026-11-14T23:57:45+00:00",
+  "status": "ok",
+  "summary": {
+   "units": 10,
+   "offices": 14,
+   "holders_persisted": 8,
+   "holders_unresolved": 2,
+   "agent_run_id": "agent_run_99ef3f6f66074bcf923f619f57f95d3b"
+  }
+ },
+ {
+  "country": "PK",
+  "stage": "national",
+  "completed_at": "2026-11-14T23:51:36+00:00",
+  "status": "ok",
+  "summary": {
+   "bodies": 9,
+   "offices": 25,
+   "holders_persisted": 9,
+   "holders_unresolved": 0,
+   "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064"
+  }
+ },
+ {
+  "country": "PK",
+  "stage": "special",
+  "completed_at": "2026-11-15T00:02:03+00:00",
+  "status": "ok",
+  "summary": {
+   "jurisdictions": 2,
+   "subunits": 28,
+   "offices": 28,
+   "holders_persisted": 24,
+   "holders_unresolved": 0,
+   "agent_run_id": "agent_run_31d179e1cd5640948d87a7786cccc0c3"
+  }
+ }
+]

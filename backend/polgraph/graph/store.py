@@ -52,6 +52,10 @@ class GraphStore(ABC):
     @abstractmethod
     def counts(self) -> dict: ...
 
+    @abstractmethod
+    def all_edges(self) -> list[dict]:
+        """Every relationship as {src, type, dst, **props}."""
+
     def close(self) -> None:  # pragma: no cover - optional
         pass
 
@@ -203,6 +207,11 @@ class SqliteGraphStore(GraphStore):
         res.sort(key=lambda n: (not normalize_text(n.get("name", "")).startswith(q), len(n.get("name", ""))))
         return res[:limit]
 
+    def all_edges(self) -> list[dict]:
+        with self._lock:
+            rows = self._db.execute("SELECT src, type, dst, props FROM edges ORDER BY src, type, dst").fetchall()
+        return [{"src": r[0], "type": r[1], "dst": r[2], **json.loads(r[3])} for r in rows]
+
     def counts(self) -> dict:
         with self._lock:
             n = dict(self._db.execute("SELECT label, COUNT(*) FROM nodes GROUP BY label").fetchall())
@@ -309,6 +318,12 @@ class Neo4jGraphStore(GraphStore):
             recs = s.run(f"MATCH (n:Node) WHERE ({where}) AND n.search CONTAINS $q "
                          f"RETURN n ORDER BY size(n.name) LIMIT $lim", q=q, lim=limit)
             return [self._node(r["n"]) for r in recs]
+
+    def all_edges(self) -> list[dict]:
+        with self.driver.session() as s:
+            recs = s.run("MATCH (a:Node)-[r]->(b:Node) RETURN a.id AS src, type(r) AS t, b.id AS dst, r "
+                         "ORDER BY src, t, dst")
+            return [{"src": x["src"], "type": x["t"], "dst": x["dst"], **self._decode(dict(x["r"]))} for x in recs]
 
     def counts(self) -> dict:
         with self.driver.session() as s:

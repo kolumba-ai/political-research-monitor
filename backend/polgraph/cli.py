@@ -43,6 +43,24 @@ def cmd_classify_world(a) -> int:
     return 0
 
 
+def cmd_export(a) -> int:
+    from pathlib import Path
+    from .export import export_kb
+    s, _, store, _, _ = _components()
+    m = export_kb(store, s.data_dir, Path(a.out).resolve())
+    print(json.dumps({"out": str(Path(a.out).resolve()), **m["counts"], "exa_spend_usd": m["exa_lifetime_spend_usd"]},
+                     indent=2))
+    return 0
+
+
+def cmd_import(a) -> int:
+    from pathlib import Path
+    from .export import import_kb
+    _, _, store, _, _ = _components()
+    print(json.dumps(import_kb(store, Path(a.src).resolve()), indent=2))
+    return 0
+
+
 def cmd_seed(a) -> int:
     _, _, _, _, pipe = _components()
     print(f"seeded {pipe.seed_world()} countries under Earth")
@@ -160,6 +178,13 @@ def main(argv: list[str] | None = None) -> int:
     b.set_defaults(fn=cmd_build)
 
     sub.add_parser("seed", help="seed Earth/continents/countries from ISO 3166 + UN M49").set_defaults(fn=cmd_seed)
+
+    ex = sub.add_parser("export", help="export the complete knowledge base to plain files (for the repo)")
+    ex.add_argument("--out", default="../knowledge_base")
+    ex.set_defaults(fn=cmd_export)
+    im = sub.add_parser("import", help="load an exported knowledge base into the configured graph store")
+    im.add_argument("--from", dest="src", default="../knowledge_base")
+    im.set_defaults(fn=cmd_import)
 
     cw = sub.add_parser("classify-world", help="regime classification (Democratic / Partly democratic / Authoritarian) "
                                                "for every country, from index tables fetched via Exa Contents")

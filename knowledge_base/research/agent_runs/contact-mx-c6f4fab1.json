@@ -1,0 +1,787 @@
+{
+ "purpose": "contact:MX",
+ "query": "Research the law in Mexico on communicating with public officials about political issues. For each meaningful combination below determine whether it is allowed, restricted (allowed with conditions), prohibited, or unknown, citing the statute/article and an official URL:\n- purposes: issue_communication (contacting an elected official about a policy issue), fact_verification_request (asking an official or their office to confirm or deny a factual claim), petition, lobbying, campaign_communication\n- channels: email, postal_mail, web_form, phone, social_media\n- senders: citizen, foreign_national, organization (domestic NGO/company), foreign_organization, automated_system\n- recipients: elected_official, candidate (consider campaign periods), public_servant\nCover the constitutional right of petition, data-protection/privacy law (use of officials' contact data, bulk messaging), election law (campaign/blackout periods, restrictions on foreigners in political affairs), lobbying regulation, and telecommunications/anti-spam rules. Include at least the organization and foreign_organization senders for issue_communication and fact_verification_request to elected officials.",
+ "run_id": "agent_run_8fc705da58f8423aa44bf11681151aed",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:05:34+00:00",
+ "cost_dollars": {
+  "total": 0.3805,
+  "agent_compute": 0.2905,
+  "search": 0.09,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "laws": [
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+    "name": "Political Constitution of the United Mexican States",
+    "category": "constitutional",
+    "relevance": "Petition, expression, citizen political rights and foreign political noninterference"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+    "name": "General Law of Transparency and Access to Public Information",
+    "category": "other",
+    "relevance": "Any person can request existing public information via specified channels and Transparency Unit"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPA.pdf",
+    "name": "Federal Administrative Procedure Law",
+    "category": "other",
+    "relevance": "Written federal administrative filings and enabled electronic submissions"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+    "name": "General Law of Electoral Institutions and Procedures",
+    "category": "election",
+    "relevance": "Campaign timing, propaganda and election-day blackout"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf",
+    "name": "General Law of Political Parties",
+    "category": "election",
+    "relevance": "Bars legal-person and foreign financing/in-kind contributions"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf",
+    "name": "Rules of the Chamber of Deputies",
+    "category": "lobbying",
+    "relevance": "Deputies lobbyist definition, repeated-activity registration and disclosure"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf_mov/Reglamento_del_Senado.pdf",
+    "name": "Rules of the Senate",
+    "category": "lobbying",
+    "relevance": "Senate lobbying reporting and no gifts"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf",
+    "name": "Federal Law on Personal Data Protection Held by Private Parties",
+    "category": "privacy",
+    "relevance": "Personal contact data treatment, public-source exception, notice and opposition"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf",
+    "name": "General Law on Personal Data Protection Held by Obligated Entities",
+    "category": "privacy",
+    "relevance": "Public-sector data controllers and processing principles"
+   },
+   {
+    "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf",
+    "name": "Federal Consumer Protection Law",
+    "category": "communications",
+    "relevance": "Article 18 Bis commercial advertising opt-outs; not a general ban on political emails"
+   }
+  ],
+  "notes": "Compliance research summary, not legal advice (14 November 2026). Rows are representative rule combinations, not all 375 purpose/channel/sender/recipient permutations; “any” applies only within the conditions stated. “Fact verification” via transparency law concerns existing documented information, not a duty to confirm or deny new assertions. Article 8 political petitions are reserved to citizens; this does not make every policy email a formal petition. Article 33 is broad but does not precisely classify every foreign organization’s neutral inquiry. For automated and bulk email/phone/social outreach, the [private-sector data law](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf) arts. 5, 9, 15–16, 28–30 remains relevant; publicly listed data need not always require consent (art. 9(II)), but other privacy duties continue. The [consumer law](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf) art. 18 Bis covers consumer advertising opt-outs, not all issue advocacy or a general email-spam prohibition. A direct message is not necessarily public dissemination under the [electoral blackout rule](https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf) art. 251(4); context determines applicability.",
+  "dimensions": [
+   {
+    "sender": "citizen",
+    "status": "allowed",
+    "channel": "email",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Peaceful expression; a formal political petition needs written, respectful submission.",
+    "legal_basis": "Constitution arts. 6, 7, 8",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Ordinary advocacy is distinct from a constitutionally enforceable political petition; observe personal-data rules and Chamber lobbying rules if influencing legislative decisions.",
+    "legal_basis": "Constitution arts. 8, 9; Chamber of Deputies Rules arts. 263–264",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "foreign_organization",
+    "status": "unknown",
+    "channel": "email",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "A foreign entity’s policy advocacy may count as prohibited political interference; the texts do not establish whether every factual/policy message by a foreign legal entity crosses that line. Do not treat this as permission to intervene.",
+    "legal_basis": "Constitution arts. 8, 33; Political Parties Law arts. 25(1)(i), 54(1)(d)",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "foreign_national",
+    "status": "prohibited",
+    "channel": "any",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Where communication amounts to interference in Mexico’s political affairs; nonpolitical inquiries are not categorically prohibited.",
+    "legal_basis": "Constitution art. 33",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "social_media",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "General expression may be lawful; unsolicited collection/reuse of personally identifying handles or messaging lists must comply with privacy principles; social posts are not automatically formal petitions.",
+    "legal_basis": "Constitution arts. 6, 8; Private-Sector Personal Data Law arts. 5, 9, 15–16",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "automated_system",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "issue_communication",
+    "recipient": "public_servant",
+    "conditions": "Automation does not create a separate blanket prohibition; controller of bulk address lists must satisfy applicable personal-data purpose, notice, public-source exception and opposition rules. Do not infer that public contact listings permit unrestricted bulk messages.",
+    "legal_basis": "Federal Law on Personal Data Protection Held by Private Parties arts. 5, 9(II), 15–16, 28–30",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "fact_verification_request",
+    "recipient": "elected_official",
+    "conditions": "For enforceable access to existing records, direct request to the office’s Transparency Unit; a personal email to an elected official is not necessarily such a request. No general duty to create a new fact-check.",
+    "legal_basis": "General Transparency Law arts. 123–126",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf"
+   },
+   {
+    "sender": "foreign_organization",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "fact_verification_request",
+    "recipient": "elected_official",
+    "conditions": "Any person may request existing public records via the Transparency Unit; distinguish a neutral fact request from intervention in political affairs. No general duty to adjudicate the claim.",
+    "legal_basis": "General Transparency Law arts. 123–126; Constitution art. 33",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "allowed",
+    "channel": "postal_mail",
+    "purpose": "fact_verification_request",
+    "recipient": "public_servant",
+    "conditions": "Submit request for existing documented information to the Transparency Unit; postal mail is expressly recognized.",
+    "legal_basis": "General Transparency Law arts. 123–125",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf"
+   },
+   {
+    "sender": "foreign_national",
+    "status": "allowed",
+    "channel": "web_form",
+    "purpose": "fact_verification_request",
+    "recipient": "public_servant",
+    "conditions": "Use National Transparency Platform for existing information; nationality or proof of interest not required.",
+    "legal_basis": "General Transparency Law arts. 14, 124–126",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "phone",
+    "purpose": "fact_verification_request",
+    "recipient": "public_servant",
+    "conditions": "Verbal request to Transparency Unit is recognized; unit records and assigns a folio. This does not require creation of a new factual analysis.",
+    "legal_basis": "General Transparency Law arts. 124–126",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf"
+   },
+   {
+    "sender": "automated_system",
+    "status": "unknown",
+    "channel": "social_media",
+    "purpose": "fact_verification_request",
+    "recipient": "public_servant",
+    "conditions": "No general statutory designation of a social-media bot message as a formal access request; use approved channels instead.",
+    "legal_basis": "General Transparency Law art. 124",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "restricted",
+    "channel": "postal_mail",
+    "purpose": "petition",
+    "recipient": "elected_official",
+    "conditions": "Written, peaceful and respectful political petition addressed to competent public authority; written response in a brief period.",
+    "legal_basis": "Constitution art. 8",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "petition",
+    "recipient": "public_servant",
+    "conditions": "Written respectful petition; for federal administrative proceedings electronic submission is effective where agency enables it by published general rules with electronic identification.",
+    "legal_basis": "Constitution art. 8; Federal Administrative Procedure Law arts. 15, 69-C",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "restricted",
+    "channel": "web_form",
+    "purpose": "petition",
+    "recipient": "public_servant",
+    "conditions": "Use officially enabled/authenticated procedure; an arbitrary web form does not automatically fulfill formal administrative requirements.",
+    "legal_basis": "Constitution art. 8; Federal Administrative Procedure Law art. 69-C",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "unknown",
+    "channel": "phone",
+    "purpose": "petition",
+    "recipient": "public_servant",
+    "conditions": "A phone call does not satisfy Article 8’s written-petition condition; particular oral access-to-information requests are separately permitted.",
+    "legal_basis": "Constitution art. 8; General Transparency Law art. 124",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "foreign_national",
+    "status": "prohibited",
+    "channel": "any",
+    "purpose": "petition",
+    "recipient": "elected_official",
+    "conditions": "Political petition under Article 8 is reserved to Mexican citizens; nonpolitical access-to-information requests remain available to any person.",
+    "legal_basis": "Constitution arts. 8, 33; General Transparency Law art. 124",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "in_person",
+    "purpose": "lobbying",
+    "recipient": "elected_official",
+    "conditions": "At the Chamber, register individual lobbyist if lobbying more than once per legislature; accreditation limits, disclosures and no gifts. Senate lobbying activities are reported.",
+    "legal_basis": "Chamber of Deputies Rules arts. 263–267; Senate Rules arts. 298–299",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "lobbying",
+    "recipient": "elected_official",
+    "conditions": "Influencing a legislative decision may be lobbying regardless of medium; apply chamber-specific registration and disclosure rules rather than assume emails exempt.",
+    "legal_basis": "Chamber of Deputies Rules arts. 263–267; Senate Rules arts. 298–299",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf"
+   },
+   {
+    "sender": "foreign_organization",
+    "status": "unknown",
+    "channel": "in_person",
+    "purpose": "lobbying",
+    "recipient": "elected_official",
+    "conditions": "Chamber rules address individual lobbyists representing private entities, but do not conclusively settle whether a foreign organization’s specific political advocacy is barred as interference; no blanket foreign exemption.",
+    "legal_basis": "Chamber of Deputies Rules arts. 263–264; Constitution art. 33",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "unknown",
+    "channel": "in_person",
+    "purpose": "lobbying",
+    "recipient": "public_servant",
+    "conditions": "The cited chamber-specific registration rules do not establish a uniform lobbying regime for every public servant outside the chambers.",
+    "legal_basis": "Chamber of Deputies Rules arts. 263–264; Senate Rules arts. 298–299",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "restricted",
+    "channel": "social_media",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "Election-day and preceding three days bar dissemination of public electoral campaign propaganda or proselytism; express vote appeals outside campaign stage may be early campaigning.",
+    "legal_basis": "Electoral Procedures Law arts. 3(1)(a), 251(3)–(4)",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "An ordinary message is not automatically a donation; monetary or in-kind contributions by legal persons to candidates are prohibited, and public electoral propaganda is subject to blackout.",
+    "legal_basis": "Political Parties Law art. 54(1)(f); Electoral Procedures Law art. 251(4)",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf"
+   },
+   {
+    "sender": "foreign_organization",
+    "status": "prohibited",
+    "channel": "any",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "Foreign persons/legal entities may not contribute money or in kind, directly or indirectly, to candidates or parties; foreign political interference also prohibited. This does not itself ban neutral factual inquiries.",
+    "legal_basis": "Political Parties Law art. 54(1)(d); Constitution art. 33",
+    "evidence_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.dimensions[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[2]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[3]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[4]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[5]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[6]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[7]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[8]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[9]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[10]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[11]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[12]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[13]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[14]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[15]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[16]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[17]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf_mov/Reglamento_del_Senado.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[18]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf_mov/Reglamento_del_Senado.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[19]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[20]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf_mov/Reglamento_del_Senado.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[21]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[22]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[23]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[2]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[3]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[4]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[5]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[6]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf_mov/Reglamento_del_Senado.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[7]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[8]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[9]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.notes",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "{\"dimensions\":[{\"purpose\":\"issue_communication\",\"channel\":\"email\",\"sender\":\"citizen\",\"recipient\":\"elected_official\",\"status\":\"allowed\",\"conditions\":\"Peaceful expression; a formal political petition needs written, respectful submission.\",\"legal_basis\":\"Constitution arts. 6, 7, 8\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"issue_communication\",\"channel\":\"email\",\"sender\":\"organization\",\"recipient\":\"elected_official\",\"status\":\"restricted\",\"conditions\":\"Ordinary advocacy is distinct from a constitutionally enforceable political petition; observe personal-data rules and Chamber lobbying rules if influencing legislative decisions.\",\"legal_basis\":\"Constitution arts. 8, 9; Chamber of Deputies Rules arts. 263–264\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"issue_communication\",\"channel\":\"email\",\"sender\":\"foreign_organization\",\"recipient\":\"elected_official\",\"status\":\"unknown\",\"conditions\":\"A foreign entity’s policy advocacy may count as prohibited political interference; the texts do not establish whether every factual/policy message by a foreign legal entity crosses that line. Do not treat this as permission to intervene.\",\"legal_basis\":\"Constitution arts. 8, 33; Political Parties Law arts. 25(1)(i), 54(1)(d)\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"issue_communication\",\"channel\":\"any\",\"sender\":\"foreign_national\",\"recipient\":\"elected_official\",\"status\":\"prohibited\",\"conditions\":\"Where communication amounts to interference in Mexico’s political affairs; nonpolitical inquiries are not categorically prohibited.\",\"legal_basis\":\"Constitution art. 33\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"issue_communication\",\"channel\":\"social_media\",\"sender\":\"organization\",\"recipient\":\"elected_official\",\"status\":\"restricted\",\"conditions\":\"General expression may be lawful; unsolicited collection/reuse of personally identifying handles or messaging lists must comply with privacy principles; social posts are not automatically formal petitions.\",\"legal_basis\":\"Constitution arts. 6, 8; Private-Sector Personal Data Law arts. 5, 9, 15–16\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"issue_communication\",\"channel\":\"email\",\"sender\":\"automated_system\",\"recipient\":\"public_servant\",\"status\":\"restricted\",\"conditions\":\"Automation does not create a separate blanket prohibition; controller of bulk address lists must satisfy applicable personal-data purpose, notice, public-source exception and opposition rules. Do not infer that public contact listings permit unrestricted bulk messages.\",\"legal_basis\":\"Federal Law on Personal Data Protection Held by Private Parties arts. 5, 9(II), 15–16, 28–30\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf\"},{\"purpose\":\"fact_verification_request\",\"channel\":\"email\",\"sender\":\"organization\",\"recipient\":\"elected_official\",\"status\":\"restricted\",\"conditions\":\"For enforceable access to existing records, direct request to the office’s Transparency Unit; a personal email to an elected official is not necessarily such a request. No general duty to create a new fact-check.\",\"legal_basis\":\"General Transparency Law arts. 123–126\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf\"},{\"purpose\":\"fact_verification_request\",\"channel\":\"email\",\"sender\":\"foreign_organization\",\"recipient\":\"elected_official\",\"status\":\"restricted\",\"conditions\":\"Any person may request existing public records via the Transparency Unit; distinguish a neutral fact request from intervention in political affairs. No general duty to adjudicate the claim.\",\"legal_basis\":\"General Transparency Law arts. 123–126; Constitution art. 33\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf\"},{\"purpose\":\"fact_verification_request\",\"channel\":\"postal_mail\",\"sender\":\"citizen\",\"recipient\":\"public_servant\",\"status\":\"allowed\",\"conditions\":\"Submit request for existing documented information to the Transparency Unit; postal mail is expressly recognized.\",\"legal_basis\":\"General Transparency Law arts. 123–125\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf\"},{\"purpose\":\"fact_verification_request\",\"channel\":\"web_form\",\"sender\":\"foreign_national\",\"recipient\":\"public_servant\",\"status\":\"allowed\",\"conditions\":\"Use National Transparency Platform for existing information; nationality or proof of interest not required.\",\"legal_basis\":\"General Transparency Law arts. 14, 124–126\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf\"},{\"purpose\":\"fact_verification_request\",\"channel\":\"phone\",\"sender\":\"organization\",\"recipient\":\"public_servant\",\"status\":\"restricted\",\"conditions\":\"Verbal request to Transparency Unit is recognized; unit records and assigns a folio. This does not require creation of a new factual analysis.\",\"legal_basis\":\"General Transparency Law arts. 124–126\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf\"},{\"purpose\":\"fact_verification_request\",\"channel\":\"social_media\",\"sender\":\"automated_system\",\"recipient\":\"public_servant\",\"status\":\"unknown\",\"conditions\":\"No general statutory designation of a social-media bot message as a formal access request; use approved channels instead.\",\"legal_basis\":\"General Transparency Law art. 124\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf\"},{\"purpose\":\"petition\",\"channel\":\"postal_mail\",\"sender\":\"citizen\",\"recipient\":\"elected_official\",\"status\":\"restricted\",\"conditions\":\"Written, peaceful and respectful political petition addressed to competent public authority; written response in a brief period.\",\"legal_basis\":\"Constitution art. 8\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"petition\",\"channel\":\"email\",\"sender\":\"citizen\",\"recipient\":\"public_servant\",\"status\":\"restricted\",\"conditions\":\"Written respectful petition; for federal administrative proceedings electronic submission is effective where agency enables it by published general rules with electronic identification.\",\"legal_basis\":\"Constitution art. 8; Federal Administrative Procedure Law arts. 15, 69-C\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"petition\",\"channel\":\"web_form\",\"sender\":\"citizen\",\"recipient\":\"public_servant\",\"status\":\"restricted\",\"conditions\":\"Use officially enabled/authenticated procedure; an arbitrary web form does not automatically fulfill formal administrative requirements.\",\"legal_basis\":\"Constitution art. 8; Federal Administrative Procedure Law art. 69-C\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"petition\",\"channel\":\"phone\",\"sender\":\"citizen\",\"recipient\":\"public_servant\",\"status\":\"unknown\",\"conditions\":\"A phone call does not satisfy Article 8’s written-petition condition; particular oral access-to-information requests are separately permitted.\",\"legal_basis\":\"Constitution art. 8; General Transparency Law art. 124\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"petition\",\"channel\":\"any\",\"sender\":\"foreign_national\",\"recipient\":\"elected_official\",\"status\":\"prohibited\",\"conditions\":\"Political petition under Article 8 is reserved to Mexican citizens; nonpolitical access-to-information requests remain available to any person.\",\"legal_basis\":\"Constitution arts. 8, 33; General Transparency Law art. 124\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"purpose\":\"lobbying\",\"channel\":\"in_person\",\"sender\":\"organization\",\"recipient\":\"elected_official\",\"status\":\"restricted\",\"conditions\":\"At the Chamber, register individual lobbyist if lobbying more than once per legislature; accreditation limits, disclosures and no gifts. Senate lobbying activities are reported.\",\"legal_basis\":\"Chamber of Deputies Rules arts. 263–267; Senate Rules arts. 298–299\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf\"},{\"purpose\":\"lobbying\",\"channel\":\"email\",\"sender\":\"organization\",\"recipient\":\"elected_official\",\"status\":\"restricted\",\"conditions\":\"Influencing a legislative decision may be lobbying regardless of medium; apply chamber-specific registration and disclosure rules rather than assume emails exempt.\",\"legal_basis\":\"Chamber of Deputies Rules arts. 263–267; Senate Rules arts. 298–299\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf\"},{\"purpose\":\"lobbying\",\"channel\":\"in_person\",\"sender\":\"foreign_organization\",\"recipient\":\"elected_official\",\"status\":\"unknown\",\"conditions\":\"Chamber rules address individual lobbyists representing private entities, but do not conclusively settle whether a foreign organization’s specific political advocacy is barred as interference; no blanket foreign exemption.\",\"legal_basis\":\"Chamber of Deputies Rules arts. 263–264; Constitution art. 33\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf\"},{\"purpose\":\"lobbying\",\"channel\":\"in_person\",\"sender\":\"citizen\",\"recipient\":\"public_servant\",\"status\":\"unknown\",\"conditions\":\"The cited chamber-specific registration rules do not establish a uniform lobbying regime for every public servant outside the chambers.\",\"legal_basis\":\"Chamber of Deputies Rules arts. 263–264; Senate Rules arts. 298–299\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf\"},{\"purpose\":\"campaign_communication\",\"channel\":\"social_media\",\"sender\":\"citizen\",\"recipient\":\"candidate\",\"status\":\"restricted\",\"conditions\":\"Election-day and preceding three days bar dissemination of public electoral campaign propaganda or proselytism; express vote appeals outside campaign stage may be early campaigning.\",\"legal_basis\":\"Electoral Procedures Law arts. 3(1)(a), 251(3)–(4)\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf\"},{\"purpose\":\"campaign_communication\",\"channel\":\"email\",\"sender\":\"organization\",\"recipient\":\"candidate\",\"status\":\"restricted\",\"conditions\":\"An ordinary message is not automatically a donation; monetary or in-kind contributions by legal persons to candidates are prohibited, and public electoral propaganda is subject to blackout.\",\"legal_basis\":\"Political Parties Law art. 54(1)(f); Electoral Procedures Law art. 251(4)\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf\"},{\"purpose\":\"campaign_communication\",\"channel\":\"any\",\"sender\":\"foreign_organization\",\"recipient\":\"candidate\",\"status\":\"prohibited\",\"conditions\":\"Foreign persons/legal entities may not contribute money or in kind, directly or indirectly, to candidates or parties; foreign political interference also prohibited. This does not itself ban neutral factual inquiries.\",\"legal_basis\":\"Political Parties Law art. 54(1)(d); Constitution art. 33\",\"evidence_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf\"}],\"laws\":[{\"name\":\"Political Constitution of the United Mexican States\",\"category\":\"constitutional\",\"relevance\":\"Petition, expression, citizen political rights and foreign political noninterference\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"},{\"name\":\"General Law of Transparency and Access to Public Information\",\"category\":\"other\",\"relevance\":\"Any person can request existing public information via specified channels and Transparency Unit\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf\"},{\"name\":\"Federal Administrative Procedure Law\",\"category\":\"other\",\"relevance\":\"Written federal administrative filings and enabled electronic submissions\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPA.pdf\"},{\"name\":\"General Law of Electoral Institutions and Procedures\",\"category\":\"election\",\"relevance\":\"Campaign timing, propaganda and election-day blackout\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf\"},{\"name\":\"General Law of Political Parties\",\"category\":\"election\",\"relevance\":\"Bars legal-person and foreign financing/in-kind contributions\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPP.pdf\"},{\"name\":\"Rules of the Chamber of Deputies\",\"category\":\"lobbying\",\"relevance\":\"Deputies lobbyist definition, repeated-activity registration and disclosure\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/Reg_Diputados.pdf\"},{\"name\":\"Rules of the Senate\",\"category\":\"lobbying\",\"relevance\":\"Senate lobbying reporting and no gifts\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf_mov/Reglamento_del_Senado.pdf\"},{\"name\":\"Federal Law on Personal Data Protection Held by Private Parties\",\"category\":\"privacy\",\"relevance\":\"Personal contact data treatment, public-source exception, notice and opposition\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf\"},{\"name\":\"General Law on Personal Data Protection Held by Obligated Entities\",\"category\":\"privacy\",\"relevance\":\"Public-sector data controllers and processing principles\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf\"},{\"name\":\"Federal Consumer Protection Law\",\"category\":\"communications\",\"relevance\":\"Article 18 Bis commercial advertising opt-outs; not a general ban on political emails\",\"url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf\"}],\"notes\":\"Compliance research summary, not legal advice (14 November 2026). Rows are representative rule combinations, not all 375 purpose/channel/sender/recipient permutations; “any” applies only within the conditions stated. “Fact verification” via transparency law concerns existing documented information, not a duty to confirm or deny new assertions. Article 8 political petitions are reserved to citizens; this does not make every policy email a formal petition. Article 33 is broad but does not precisely classify every foreign organization’s neutral inquiry. For automated and bulk email/phone/social outreach, the [private-sector data law](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf) arts. 5, 9, 15–16, 28–30 remains relevant; publicly listed data need not always require consent (art. 9(II)), but other privacy duties continue. The [consumer law](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf) art. 18 Bis covers consumer advertising opt-outs, not all issue advocacy or a general email-spam prohibition. A direct message is not necessarily public dissemination under the [electoral blackout rule](https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf) art. 251(4); context determines applicability.\"}"
+}

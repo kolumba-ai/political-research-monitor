@@ -1,0 +1,1268 @@
+{
+ "purpose": "special:PK",
+ "query": "Identify jurisdictions in Pakistan whose local government differs from the standard first-level division / municipality model — in particular the national capital. For each: explain how its governance differs, name its sub-units (e.g. boroughs) and their councils, and list EVERY sub-unit with the head's title (English and local), how the head is selected, and the current officeholder as of 2026-11-14 (full name, party, term start/end) with source URLs.",
+ "run_id": "agent_run_31d179e1cd5640948d87a7786cccc0c3",
+ "status": "completed",
+ "stop_reason": "budget_reached",
+ "created_at": "2026-11-15T00:01:05+00:00",
+ "cost_dollars": {
+  "total": 1.2267,
+  "agent_compute": 0.9867,
+  "search": 0.24,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "jurisdictions": [
+   {
+    "name": "Islamabad Capital Territory",
+    "subunits": [
+     {
+      "name": "Municipal Town Council-I",
+      "officeholder": null,
+      "head_title_en": "Mayor",
+      "parent_division": "Islamabad Capital Territory",
+      "head_title_local": "میئر",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Municipal Town Council-II",
+      "officeholder": null,
+      "head_title_en": "Mayor",
+      "parent_division": "Islamabad Capital Territory",
+      "head_title_local": "میئر",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Municipal Town Council-III",
+      "officeholder": null,
+      "head_title_en": "Mayor",
+      "parent_division": "Islamabad Capital Territory",
+      "head_title_local": "میئر",
+      "head_selection_method": "indirect_election"
+     }
+    ],
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/69b78d5299cdd_864.pdf",
+     "https://www.dawn.com/news/2044288",
+     "https://tribune.com.pk/story/2631456/capital-to-have-three-municipal-corporations"
+    ],
+    "why_distinct": "Federally administered capital, not a provincial municipality. The 2026 ordinance proposed three town corporations with union councils and indirectly chosen mayors, and 130 union councils were delimited. By 14 November 2026 the ordinance had lapsed; the 2015 one-metropolitan-corporation/125-union-council framework had revived and the High Court suspended the election schedule. The three listed towns are the published 2026 delimitations, NOT confirmed functioning elected councils; none has a confirmed incumbent mayor. The operative boundaries remain before the court.",
+    "subunit_name_en": "Town corporation (2026 delimitation, contested)",
+    "subunit_name_local": "ٹاؤن کارپوریشن",
+    "subunit_council_name_en": "Town Corporation Council",
+    "subunit_council_name_local": "ٹاؤن کارپوریشن کونسل"
+   },
+   {
+    "name": "Karachi Division",
+    "subunits": [
+     {
+      "name": "Malir",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Jaan Muhammad Baloch",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Malir District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Ibrahim Hyderi",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Nazir Ahmed Bhutto",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Malir District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Gadap",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Tariq Aziz Baloch",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://tmcgadap.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Malir District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Korangi",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Muhammad Naeem Sheikh",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://www.tmckorangi.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Korangi District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Landhi",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Abdul Jameel Khan",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://tmclandhi.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Korangi District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Shah Faisal",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Gohar Ali Khattak",
+       "is_acting": false,
+       "party_name": "Pakistan Tehreek-e-Insaf",
+       "term_start": null,
+       "source_urls": [
+        "https://tmcshahfaisal.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PTI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Korangi District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Model Colony",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Zafar Ahmed Khan",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://www.tmcmodelcolony.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Korangi District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Sohrab Goth",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Lala Abdul Raheem",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://tmcsohrabgoth.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "East District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Safoora",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Kaleem Ullah Khaskheli",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "East District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Gulshan",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Dr. Fawad Ahmed",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "East District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Jinnah",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Rizwan Abdul Sami",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "East District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Chanesar",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Farhan Ghani",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "East District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Saddar",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Mansoor Ahmed Shaikh",
+       "is_acting": false,
+       "party_name": "Pakistan Tehreek-e-Insaf",
+       "term_start": null,
+       "source_urls": [
+        "https://tmcsaddar.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://pass.dawn.com/news/2001068"
+       ],
+       "party_acronym": "PTI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "South District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Lyari",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Nasir Karim Baloch",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://tmclyari.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "South District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Orangi",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Muhammad Jamil Zia",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://tmcorangi.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "West District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Mominabad",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Malik Muhammad Arif Awan",
+       "is_acting": false,
+       "party_name": "Pakistan Tehreek-e-Insaf",
+       "term_start": null,
+       "source_urls": [
+        "https://www.tmcmominabad.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PTI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "West District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Manghopir",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Nawaz Ali Brohi",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://tmcmangopir.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "West District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "New Karachi",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Muhammad Yousuf",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://tmcnewkarachi.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Central District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "North Nazimabad",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Atif Ali Khan",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://tmcnorthnazimabad.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Central District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Gulberg",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Nusratullah",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://tmcgulberg.com/",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Central District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Liaquatabad",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Faraz Haseeb",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://tmcliaquatabad.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Central District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Nazimabad",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Syed Muhammad Muzzaffar",
+       "is_acting": false,
+       "party_name": "Jamaat-e-Islami",
+       "term_start": "2023-06-19",
+       "source_urls": [
+        "https://tmcnazimabad.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+        "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/"
+       ],
+       "party_acronym": "JI"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Central District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Mauripur",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Humayun Muhammad Khan",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://tmcmaripur.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Keamari District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Moriro Mirbahar",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Ali Akbar",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://tmcmirbahar.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Keamari District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     },
+     {
+      "name": "Baldia",
+      "officeholder": {
+       "term_end": null,
+       "coalition": null,
+       "full_name": "Abdul Karim Askani",
+       "is_acting": false,
+       "party_name": "Pakistan Peoples Party",
+       "term_start": null,
+       "source_urls": [
+        "https://www.tmcbaldia.gos.pk/page/message",
+        "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+       ],
+       "party_acronym": "PPP"
+      },
+      "head_title_en": "Town Chairman",
+      "parent_division": "Keamari District, Karachi Division, Sindh",
+      "head_title_local": "ٹاؤن چیئرمین",
+      "head_selection_method": "indirect_election"
+     }
+    ],
+    "source_urls": [
+     "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "https://ecp.gov.pk/storage/uploads/fifPGfP5DCDgafHFThejBODZ54f5bHqlCHUSKJbX.pdf"
+    ],
+    "why_distinct": "Three-tier urban local government: Karachi Metropolitan Corporation/City Council, 25 town municipal corporations and their town councils, and union committees. Unlike an ordinary standalone municipality, the metropolitan body overlays town-level councils; town chairmen are selected by the town councils rather than directly by residents. The names below are the 2023 returned town heads; a town-by-town 2026 incumbency confirmation is unavailable for some, so later replacements cannot be ruled out. Four-year terms run from oath, but an exact end date is not confirmed for each head.",
+    "subunit_name_en": "Town municipal corporation (town)",
+    "subunit_name_local": "ٹاؤن میونسپل کارپوریشن",
+    "subunit_council_name_en": "Town Municipal Council",
+    "subunit_council_name_local": "ٹاؤن میونسپل کونسل"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.jurisdictions[1].subunits[0]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[1]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[2]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcgadap.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[3]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://www.tmckorangi.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[4]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmclandhi.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[5]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcshahfaisal.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[6]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://www.tmcmodelcolony.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[7]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcsohrabgoth.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[8]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[9]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[10]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[11]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[12]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcsaddar.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://pass.dawn.com/news/2001068",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[13]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmclyari.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[14]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcorangi.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[15]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://www.tmcmominabad.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[16]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcmangopir.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[17]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcnewkarachi.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[18]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcnorthnazimabad.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[19]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcgulberg.com/",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[20]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcliaquatabad.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[21]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcnazimabad.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[22]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcmaripur.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[23]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://tmcmirbahar.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1].subunits[24]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://www.tmcbaldia.gos.pk/page/message",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/69b78d5299cdd_864.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044288",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[1]",
+   "citations": [
+    {
+     "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/uploads/fifPGfP5DCDgafHFThejBODZ54f5bHqlCHUSKJbX.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/69b78d5299cdd_864.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044288",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2631456/capital-to-have-three-municipal-corporations",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/69b78d5299cdd_864.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044288",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2631456/capital-to-have-three-municipal-corporations",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[2]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/69b78d5299cdd_864.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044288",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2631456/capital-to-have-three-municipal-corporations",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "{\"jurisdictions\":[{\"name\":\"Islamabad Capital Territory\",\"why_distinct\":\"Federally administered capital, not a provincial municipality. The 2026 ordinance proposed three town corporations with union councils and indirectly chosen mayors, and 130 union councils were delimited. By 14 November 2026 the ordinance had lapsed; the 2015 one-metropolitan-corporation/125-union-council framework had revived and the High Court suspended the election schedule. The three listed towns are the published 2026 delimitations, NOT confirmed functioning elected councils; none has a confirmed incumbent mayor. The operative boundaries remain before the court.\",\"subunit_name_en\":\"Town corporation (2026 delimitation, contested)\",\"subunit_name_local\":\"ٹاؤن کارپوریشن\",\"subunit_council_name_en\":\"Town Corporation Council\",\"subunit_council_name_local\":\"ٹاؤن کارپوریشن کونسل\",\"subunits\":[{\"name\":\"Municipal Town Council-I\",\"parent_division\":\"Islamabad Capital Territory\",\"head_title_en\":\"Mayor\",\"head_title_local\":\"میئر\",\"head_selection_method\":\"indirect_election\",\"officeholder\":null},{\"name\":\"Municipal Town Council-II\",\"parent_division\":\"Islamabad Capital Territory\",\"head_title_en\":\"Mayor\",\"head_title_local\":\"میئر\",\"head_selection_method\":\"indirect_election\",\"officeholder\":null},{\"name\":\"Municipal Town Council-III\",\"parent_division\":\"Islamabad Capital Territory\",\"head_title_en\":\"Mayor\",\"head_title_local\":\"میئر\",\"head_selection_method\":\"indirect_election\",\"officeholder\":null}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/69b78d5299cdd_864.pdf\",\"https://www.dawn.com/news/2044288\",\"https://tribune.com.pk/story/2631456/capital-to-have-three-municipal-corporations\"]},{\"name\":\"Karachi Division\",\"why_distinct\":\"Three-tier urban local government: Karachi Metropolitan Corporation/City Council, 25 town municipal corporations and their town councils, and union committees. Unlike an ordinary standalone municipality, the metropolitan body overlays town-level councils; town chairmen are selected by the town councils rather than directly by residents. The names below are the 2023 returned town heads; a town-by-town 2026 incumbency confirmation is unavailable for some, so later replacements cannot be ruled out. Four-year terms run from oath, but an exact end date is not confirmed for each head.\",\"subunit_name_en\":\"Town municipal corporation (town)\",\"subunit_name_local\":\"ٹاؤن میونسپل کارپوریشن\",\"subunit_council_name_en\":\"Town Municipal Council\",\"subunit_council_name_local\":\"ٹاؤن میونسپل کونسل\",\"subunits\":[{\"name\":\"Malir\",\"parent_division\":\"Malir District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Jaan Muhammad Baloch\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Ibrahim Hyderi\",\"parent_division\":\"Malir District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Nazir Ahmed Bhutto\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Gadap\",\"parent_division\":\"Malir District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Tariq Aziz Baloch\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcgadap.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Korangi\",\"parent_division\":\"Korangi District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Muhammad Naeem Sheikh\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://www.tmckorangi.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Landhi\",\"parent_division\":\"Korangi District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Abdul Jameel Khan\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmclandhi.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"Shah Faisal\",\"parent_division\":\"Korangi District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Gohar Ali Khattak\",\"party_name\":\"Pakistan Tehreek-e-Insaf\",\"party_acronym\":\"PTI\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcshahfaisal.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Model Colony\",\"parent_division\":\"Korangi District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Zafar Ahmed Khan\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://www.tmcmodelcolony.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"Sohrab Goth\",\"parent_division\":\"East District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Lala Abdul Raheem\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcsohrabgoth.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Safoora\",\"parent_division\":\"East District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Kaleem Ullah Khaskheli\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Gulshan\",\"parent_division\":\"East District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Dr. Fawad Ahmed\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"Jinnah\",\"parent_division\":\"East District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Rizwan Abdul Sami\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"Chanesar\",\"parent_division\":\"East District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Farhan Ghani\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Saddar\",\"parent_division\":\"South District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Mansoor Ahmed Shaikh\",\"party_name\":\"Pakistan Tehreek-e-Insaf\",\"party_acronym\":\"PTI\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcsaddar.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://pass.dawn.com/news/2001068\"]}},{\"name\":\"Lyari\",\"parent_division\":\"South District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Nasir Karim Baloch\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmclyari.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Orangi\",\"parent_division\":\"West District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Muhammad Jamil Zia\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcorangi.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Mominabad\",\"parent_division\":\"West District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Malik Muhammad Arif Awan\",\"party_name\":\"Pakistan Tehreek-e-Insaf\",\"party_acronym\":\"PTI\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://www.tmcmominabad.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Manghopir\",\"parent_division\":\"West District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Nawaz Ali Brohi\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcmangopir.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"New Karachi\",\"parent_division\":\"Central District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Muhammad Yousuf\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcnewkarachi.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"North Nazimabad\",\"parent_division\":\"Central District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Atif Ali Khan\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcnorthnazimabad.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"Gulberg\",\"parent_division\":\"Central District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Nusratullah\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcgulberg.com/\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"Liaquatabad\",\"parent_division\":\"Central District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Faraz Haseeb\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcliaquatabad.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"Nazimabad\",\"parent_division\":\"Central District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Syed Muhammad Muzzaffar\",\"party_name\":\"Jamaat-e-Islami\",\"party_acronym\":\"JI\",\"coalition\":null,\"term_start\":\"2023-06-19\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcnazimabad.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://sabahnews.net/english/news/chairmen-vice-chairmen-of-9-towns-of-karachi-municipal-corporation-belong-to-ji-take-oath/\"]}},{\"name\":\"Mauripur\",\"parent_division\":\"Keamari District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Humayun Muhammad Khan\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcmaripur.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Moriro Mirbahar\",\"parent_division\":\"Keamari District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Ali Akbar\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://tmcmirbahar.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}},{\"name\":\"Baldia\",\"parent_division\":\"Keamari District, Karachi Division, Sindh\",\"head_title_en\":\"Town Chairman\",\"head_title_local\":\"ٹاؤن چیئرمین\",\"head_selection_method\":\"indirect_election\",\"officeholder\":{\"full_name\":\"Abdul Karim Askani\",\"party_name\":\"Pakistan Peoples Party\",\"party_acronym\":\"PPP\",\"coalition\":null,\"term_start\":null,\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://www.tmcbaldia.gos.pk/page/message\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\"]}}],\"source_urls\":[\"https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf\",\"http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156\",\"https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns\",\"https://ecp.gov.pk/storage/uploads/fifPGfP5DCDgafHFThejBODZ54f5bHqlCHUSKJbX.pdf\"]}]}"
+}

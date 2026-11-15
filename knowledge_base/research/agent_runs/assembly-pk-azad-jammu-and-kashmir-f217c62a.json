@@ -1,0 +1,193 @@
+{
+ "purpose": "assembly:PK:Azad Jammu and Kashmir",
+ "query": "For the Azad Jammu and Kashmir Legislative Assembly (Azad Jammu and Kashmir, Pakistan) give its current composition: total seats, number of general (constituency) seats and how they are filled, the constituency code prefix and the first and last constituency numbers (e.g. PP-1 to PP-297), the number of seats reserved for women, for minorities/non-Muslims and any other reserved category and how reserved seats are filled, the date of the last general election, and the URL of the official page listing current members.",
+ "run_id": "agent_run_3ea6561546024994accbb9708f5eee61",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T00:59:14+00:00",
+ "cost_dollars": {
+  "total": 0.1694,
+  "agent_compute": 0.1484,
+  "search": 0.021,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "source_urls": [
+   "https://ajkassembly.gok.pk/brief-history/",
+   "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+   "http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf"
+  ],
+  "total_seats": 53,
+  "general_seats": 45,
+  "reserved_other": 3,
+  "reserved_women": 5,
+  "constituency_last": 45,
+  "constituency_first": 1,
+  "constituency_prefix": "LA",
+  "reserved_minorities": 0,
+  "official_members_url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+  "last_general_election": "2026-07-27, 2026-08-02 and 2026-08-10",
+  "reserved_selection_method": "indirect_election",
+  "general_seat_selection_method": "direct_election"
+ },
+ "grounding": [
+  {
+   "field": "structured.total_seats",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/brief-history/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.general_seats",
+   "citations": [
+    {
+     "url": "http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.general_seat_selection_method",
+   "citations": [
+    {
+     "url": "http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_prefix",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_first",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_last",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_women",
+   "citations": [
+    {
+     "url": "http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_minorities",
+   "citations": [
+    {
+     "url": "http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_other",
+   "citations": [
+    {
+     "url": "http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_selection_method",
+   "citations": [
+    {
+     "url": "http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.last_general_election",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/brief-history/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.official_members_url",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/brief-history/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "{\"total_seats\":53,\"general_seats\":45,\"general_seat_selection_method\":\"direct_election\",\"constituency_prefix\":\"LA\",\"constituency_first\":1,\"constituency_last\":45,\"reserved_women\":5,\"reserved_minorities\":0,\"reserved_other\":3,\"reserved_selection_method\":\"indirect_election\",\"last_general_election\":\"2026-07-27, 2026-08-02 and 2026-08-10\",\"official_members_url\":\"https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/\",\"source_urls\":[\"https://ajkassembly.gok.pk/brief-history/\",\"https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/\",\"http://ajkassembly.gok.pk/wp-content/uploads/2022/04/Act-1974.pdf\"]}"
+}

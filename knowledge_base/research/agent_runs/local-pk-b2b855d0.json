@@ -1,0 +1,2478 @@
+{
+ "purpose": "local:PK",
+ "query": "Describe municipal/local government in Pakistan: the generic name of local units and how many exist, the governing council and its offices (for example municipal president/mayor, trustees, councillors) with how each office is filled and its term length. Then list the current heads of the 10 most populous municipalities as of 2026-11-14: municipality name, the first-level division it belongs to, head title in English and local language, how the head is selected, and the current officeholder (full name, party, term start/end) with source URLs. Exclude sub-units of the national capital if the capital is governed differently.",
+ "run_id": "agent_run_99ef3f6f66074bcf923f619f57f95d3b",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:56:43+00:00",
+ "cost_dollars": {
+  "total": 0.7135,
+  "agent_compute": 0.4945,
+  "search": 0.219,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "units": [
+   {
+    "name": "Karachi",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Barrister Murtaza Wahab Siddiqui",
+     "is_acting": false,
+     "party_name": "Pakistan Peoples Party",
+     "term_start": "2023-06-19",
+     "source_urls": [
+      "https://kmc.gos.pk/mayor-profile/",
+      "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab"
+     ],
+     "party_acronym": "PPP"
+    },
+    "head_title_en": "Mayor",
+    "parent_division": "Sindh",
+    "head_title_local": "میئر",
+    "head_selection_method": "indirect_election"
+   },
+   {
+    "name": "Lahore",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Muhammad Ali Ejaz",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": null,
+     "source_urls": [
+      "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+      "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Administrator",
+    "parent_division": "Punjab",
+    "head_title_local": "ایڈمنسٹریٹر",
+    "head_selection_method": "appointment"
+   },
+   {
+    "name": "Faisalabad",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Muhammad Nauman Siddique",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": null,
+     "source_urls": [
+      "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Administrator",
+    "parent_division": "Punjab",
+    "head_title_local": "ایڈمنسٹریٹر",
+    "head_selection_method": "appointment"
+   },
+   {
+    "name": "Rawalpindi",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Nadeem Nasir",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": null,
+     "source_urls": [
+      "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Administrator",
+    "parent_division": "Punjab",
+    "head_title_local": "ایڈمنسٹریٹر",
+    "head_selection_method": "appointment"
+   },
+   {
+    "name": "Gujranwala",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Naveed Ahmad",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": null,
+     "source_urls": [
+      "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+      "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Administrator",
+    "parent_division": "Punjab",
+    "head_title_local": "ایڈمنسٹریٹر",
+    "head_selection_method": "appointment"
+   },
+   {
+    "name": "Multan",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Dr Faisal Saleem",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": null,
+     "source_urls": [
+      "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+      "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+      "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Administrator",
+    "parent_division": "Punjab",
+    "head_title_local": "ایڈمنسٹریٹر",
+    "head_selection_method": "appointment"
+   },
+   {
+    "name": "Hyderabad",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Kashif Ali Shoro",
+     "is_acting": false,
+     "party_name": "Pakistan Peoples Party",
+     "term_start": "2023-06-19",
+     "source_urls": [
+      "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+      "https://www.dawn.com/news/2043149"
+     ],
+     "party_acronym": "PPP"
+    },
+    "head_title_en": "Mayor",
+    "parent_division": "Sindh",
+    "head_title_local": "میئر",
+    "head_selection_method": "indirect_election"
+   },
+   {
+    "name": "Peshawar",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Dr Afaq Wazir",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": "2026-10-13",
+     "source_urls": [
+      "https://www.dawn.com/news/1985042",
+      "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+      "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Administrator of the Capital Metropolitan Government",
+    "parent_division": "Khyber Pakhtunkhwa",
+    "head_title_local": "ایڈمنسٹریٹر",
+    "head_selection_method": "appointment"
+   },
+   {
+    "name": "Quetta",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Maj (retired) Bashir Ahmed Barech",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": null,
+     "source_urls": [
+      "https://mcq.gob.pk/",
+      "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Administrator",
+    "parent_division": "Balochistan",
+    "head_title_local": "ایڈمنسٹریٹر",
+    "head_selection_method": "appointment"
+   },
+   {
+    "name": "Sargodha",
+    "officeholder": {
+     "term_end": null,
+     "coalition": null,
+     "full_name": "Hussain Ahmad Raza Chaudhry",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": null,
+     "source_urls": [
+      "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+      "https://sargodha.punjab.gov.pk/dc-message"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Administrator",
+    "parent_division": "Punjab",
+    "head_title_local": "ایڈمنسٹریٹر",
+    "head_selection_method": "appointment"
+   }
+  ],
+  "offices": [
+   {
+    "seats": null,
+    "keywords": [
+     "mayor",
+     "chairperson",
+     "میئر",
+     "چیئرمین"
+    ],
+    "title_en": "Mayor / chairperson",
+    "source_urls": [
+     "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf"
+    ],
+    "title_local": "میئر / چیئرمین",
+    "current_holders": [],
+    "selection_method": "mixed",
+    "selection_details": "Sindh and Punjab 2025: council elects the head indirectly; Khyber Pakhtunkhwa city/tehsil heads are elected directly. Balochistan metropolitan head is designated mayor and elected by council. Sindh and KP councils serve four years; Punjab 2025 councils five years. No uniform national tenure.",
+    "term_length_years": null
+   },
+   {
+    "seats": null,
+    "keywords": [
+     "deputy mayor",
+     "vice chairperson",
+     "ڈپٹی میئر"
+    ],
+    "title_en": "Deputy mayor / vice chairperson",
+    "source_urls": [
+     "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf"
+    ],
+    "title_local": "ڈپٹی میئر / وائس چیئرمین",
+    "current_holders": [],
+    "selection_method": "indirect_election",
+    "selection_details": "Elected by the council under provincial local-government laws; number of deputies varies by type and province. Council term: four years in Sindh and KP, five years under Punjab 2025.",
+    "term_length_years": null
+   },
+   {
+    "seats": null,
+    "keywords": [
+     "councillor",
+     "member",
+     "کونسلر"
+    ],
+    "title_en": "Councillor / council member",
+    "source_urls": [
+     "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf"
+    ],
+    "title_local": "کونسلر / رکن کونسل",
+    "current_holders": [],
+    "selection_method": "mixed",
+    "selection_details": "General local-council seats are directly elected; reserved seats are generally indirectly elected; in Punjab 2025, union-council chairpersons sit ex officio in higher councils. Provincial term lengths differ (Sindh/KP four years, Punjab 2025 five years).",
+    "term_length_years": null
+   },
+   {
+    "seats": null,
+    "keywords": [
+     "administrator",
+     "ایڈمنسٹریٹر",
+     "منتظم"
+    ],
+    "title_en": "Administrator (when elected council is absent)",
+    "source_urls": [
+     "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "https://www.dawn.com/news/1985042",
+     "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators"
+    ],
+    "title_local": "ایڈمنسٹریٹر / منتظم",
+    "current_holders": [],
+    "selection_method": "appointment",
+    "selection_details": "Provincial government appoints/authorizes an official to exercise council or head powers pending a newly elected council; no fixed elected term.",
+    "term_length_years": null
+   }
+  ],
+  "source_urls": [
+   "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+   "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+   "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+   "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+   "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+   "https://www.dawn.com/news/2041307"
+  ],
+  "total_units": null,
+  "unit_name_en": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+  "council_name_en": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+  "unit_name_local": "مقامی حکومت / بلدیہ",
+  "council_name_local": "بلدیاتی کونسل"
+ },
+ "grounding": [
+  {
+   "field": "structured.unit_name_en",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.unit_name_local",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.council_name_en",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.council_name_local",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.source_urls",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2041307",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].title_en",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].title_local",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].selection_method",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].selection_details",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.offices[0].keywords",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].title_en",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].title_local",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].selection_method",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].selection_details",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.offices[1].keywords",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    },
+    {
+     "url": "https://lgrd.gob.pk/wp-content/uploads/2025/02/Balochistan-Local-Government-Act-2010-with-foot-note.doc-OK.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].title_en",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].title_local",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].selection_method",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].selection_details",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.offices[2].keywords",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.offices[2].source_urls",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kpcode.kp.gov.pk/uploads/THE_KHYBER_PAKHTUNKHWA_LOCAL_GOVERNMENT_ACT.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[3].title_en",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[3].title_local",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[3].selection_method",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[3].selection_details",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.offices[3].keywords",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.offices[3].source_urls",
+   "citations": [
+    {
+     "url": "https://khalidzafar.com/laws-of-pakistan/the-punjab-local-government-act-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pas.gov.pk/uploads/acts/Sindh%20Act%20No.XLII%20of%202013.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[0].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[0].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://kmc.gos.pk/mayor-profile/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1436571-kmc-info-being-made-available-online-wahab",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[1].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[1].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/19-Jul-2026/lahore-dc-issues-advisory-dumping-construction-debris-roads",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/pakistan/news/lahore/important-news/live-news-5000315.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[2].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[2].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://www.app.com.pk/business/dc-pledges-resolution-of-business-issues-on-priority/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[3].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[3].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[4].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[4].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[4].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[4].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://therealtimeofficial.com/trt-news/deputy-commissioner-gujranwala-naveed-ahmed-visits-the-park-and-green-belt-on-pasrur-road/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[5].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+     "title": null
+    },
+    {
+     "url": "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+     "title": null
+    },
+    {
+     "url": "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+     "title": null
+    },
+    {
+     "url": "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+     "title": null
+    },
+    {
+     "url": "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[5].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+     "title": null
+    },
+    {
+     "url": "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[5].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+     "title": null
+    },
+    {
+     "url": "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[5].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+     "title": null
+    },
+    {
+     "url": "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[5].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2634354/dcs-get-greater-authority-as-administrators",
+     "title": null
+    },
+    {
+     "url": "https://www.urdupoint.com/en/pakistan/suthra-punjab-agency-intensifies-cleanliness-2286334.html",
+     "title": null
+    },
+    {
+     "url": "https://dailyads.pk/ad/94764/public-notice-fee-schedule-and-important-dates-nov-dec-2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[6].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[6].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[6].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://www.nation.com.pk/20-Jun-2023/kashif-qureshi-take-oath-as-hyderabad-mayor-deputy-mayor",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2043149",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[7].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[7].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/1985042",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/illegal-structures-demolished-in-anti-encroachment-operation/",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/newly-appointed-dc-afaq-wazir-assumed-charge/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://mcq.gob.pk/",
+     "title": null
+    },
+    {
+     "url": "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://mcq.gob.pk/",
+     "title": null
+    },
+    {
+     "url": "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://mcq.gob.pk/",
+     "title": null
+    },
+    {
+     "url": "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://mcq.gob.pk/",
+     "title": null
+    },
+    {
+     "url": "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[8].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://mcq.gob.pk/",
+     "title": null
+    },
+    {
+     "url": "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://mcq.gob.pk/",
+     "title": null
+    },
+    {
+     "url": "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://mcq.gob.pk/",
+     "title": null
+    },
+    {
+     "url": "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[8].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://mcq.gob.pk/",
+     "title": null
+    },
+    {
+     "url": "https://www.dailyindependent.com.pk/2026/11/11/quetta-administration-intensifies-anti-encroachment-operations/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].name",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+     "title": null
+    },
+    {
+     "url": "https://sargodha.punjab.gov.pk/dc-message",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].parent_division",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+     "title": null
+    },
+    {
+     "url": "https://sargodha.punjab.gov.pk/dc-message",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].head_title_en",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+     "title": null
+    },
+    {
+     "url": "https://sargodha.punjab.gov.pk/dc-message",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].head_title_local",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+     "title": null
+    },
+    {
+     "url": "https://sargodha.punjab.gov.pk/dc-message",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[9].head_selection_method",
+   "citations": [
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+     "title": null
+    },
+    {
+     "url": "https://sargodha.punjab.gov.pk/dc-message",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+     "title": null
+    },
+    {
+     "url": "https://sargodha.punjab.gov.pk/dc-message",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+     "title": null
+    },
+    {
+     "url": "https://sargodha.punjab.gov.pk/dc-message",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.units[9].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://dailybalochistantimes.com/dc-reviews-administrative-financial-planning-matter/",
+     "title": null
+    },
+    {
+     "url": "https://sargodha.punjab.gov.pk/dc-message",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "Pakistan has no single nationwide municipality type, uniform council term, or reliable current national unit count: provincial laws differ. The ten largest cities outside differently governed Islamabad are ranked using the 2023 census, with Sargodha replacing Islamabad. As of 14 November 2026, Karachi and Hyderabad have elected mayors; the other eight listed municipal governments are headed by appointed administrators. Punjab’s 2025 framework provides five-year elected councils, whereas Sindh and Khyber Pakhtunkhwa prescribe four-year councils. Administrator appointment dates and end dates are left blank where not established by the cited sources; the Gujranwala and Multan administrators are identified by combining the province-wide deputy-commissioner appointment policy with contemporary reports naming their deputy commissioners."
+}

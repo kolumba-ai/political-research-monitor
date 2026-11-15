@@ -1,0 +1,230 @@
+{
+ "exported_at": "2026-11-15T01:18:47+00:00",
+ "format_version": 1,
+ "counts": {
+  "nodes": {
+   "Country": 249,
+   "PoliticalOffice": 182,
+   "DemocracyAssessment": 365,
+   "Source": 859,
+   "ContactRule": 2,
+   "Earth": 1,
+   "Continent": 7,
+   "GovernmentLevel": 112,
+   "GovernmentBody": 161,
+   "Person": 313,
+   "Term": 334,
+   "PoliticalParty": 24
+  },
+  "edges": {
+   "CONTAINS": 362,
+   "HAS_OFFICE": 182,
+   "SUPPORTED_BY": 1988,
+   "HAS_ASSESSMENT": 365,
+   "HAS_CONTACT_RULE": 2,
+   "HAS_GOVERNMENT_LEVEL": 6,
+   "HAS_BODY": 161,
+   "HAS_TERM": 334,
+   "TERM_HELD_BY": 334,
+   "HOLDS_OFFICE": 333,
+   "MEMBER_OF_PARTY": 241
+  },
+  "officeholdings": 333,
+  "agent_runs": 25,
+  "unresolved_or_weak_claims": 199
+ },
+ "exa_lifetime_spend_usd": 13.7518,
+ "pipeline_runs": [
+  {
+   "run_id": "run-MX-20261114T230040Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-14T23:02:41+00:00"
+  },
+  {
+   "run_id": "run-MX-20261114T230324Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-14T23:03:25+00:00"
+  },
+  {
+   "run_id": "run-MX-20261114T230332Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-14T23:03:32+00:00"
+  },
+  {
+   "run_id": "run-MX-20261114T230338Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-14T23:21:28+00:00"
+  },
+  {
+   "run_id": "run-PK-20261114T234407Z",
+   "country": "PK",
+   "status": "ok",
+   "finished_at": "2026-11-15T00:02:03+00:00"
+  },
+  {
+   "run_id": "run-PK-20261115T004748Z",
+   "country": "PK",
+   "status": "ok",
+   "finished_at": "2026-11-15T00:52:52+00:00"
+  },
+  {
+   "run_id": "run-PK-20261115T005427Z",
+   "country": "PK",
+   "status": "ok",
+   "finished_at": "2026-11-15T00:54:31+00:00"
+  },
+  {
+   "run_id": "run-PK-20261115T005438Z",
+   "country": "PK",
+   "status": "running",
+   "finished_at": null
+  }
+ ],
+ "files": {
+  "graph/edges.jsonl": {
+   "bytes": 1669521,
+   "sha256": "a47984de1fa1776f466786c067c0becd492fd5134434685bba4109cfa5b0cc7b"
+  },
+  "graph/nodes.jsonl": {
+   "bytes": 1396004,
+   "sha256": "a2f43d39264ae6a3157d8c188c46dc7aa5bb771a58b9eb040895f878241423ba"
+  },
+  "research/agent_runs/assembly-pk-azad-jammu-and-kashmir-f217c62a.json": {
+   "bytes": 5618,
+   "sha256": "19ebe56ae3c630a5311355dbe24cea953b636eb74df0a10d4aef2771394be799"
+  },
+  "research/agent_runs/assembly-pk-balochistan-321ce052.json": {
+   "bytes": 6527,
+   "sha256": "4061848c56988acf7b2994830298a18457d1d3b8f2c28d64e66555bf27887de4"
+  },
+  "research/agent_runs/assembly-pk-gilgit-baltistan-b92b6259.json": {
+   "bytes": 7031,
+   "sha256": "fa225550c5e7ddff7b6d4ec6ed7a58e15649ab5a45f02e13ebeec4b6b0a2bbd0"
+  },
+  "research/agent_runs/assembly-pk-khyber-pakhtunkhwa-b15d8e72.json": {
+   "bytes": 5964,
+   "sha256": "62c1c057bfcb37c72449f26b0c891eadf6a0be834e6174612bfdf56d9676ee43"
+  },
+  "research/agent_runs/contact-mx-c6f4fab1.json": {
+   "bytes": 42857,
+   "sha256": "6ee0a65d5982a8b09261770f6fda33ab315627fe6d3cb33297eb0fd1af76dc18"
+  },
+  "research/agent_runs/contact-pk-0f325a62.json": {
+   "bytes": 27093,
+   "sha256": "6bff8b043c7a3ddfc3772a8add2dca89d862a7d3d99c26ab861fef67054dba00"
+  },
+  "research/agent_runs/democracy-mx-85c4982a.json": {
+   "bytes": 8999,
+   "sha256": "c3c6c5557a826fda4514c699c2b7cb78ec1a3a107b5d43d52c6acdf6fbfa1cfa"
+  },
+  "research/agent_runs/democracy-pk-d0058cb1.json": {
+   "bytes": 3540,
+   "sha256": "abbbb028fed5a4df24b0744d21236c34908f3dbe0b7a063b2fdceabc63f1d73a"
+  },
+  "research/agent_runs/divisions-mx-3ca6a9da.json": {
+   "bytes": 51134,
+   "sha256": "c92453d3ffc206a213544b7f5b0958515a7e1445c289f01c942fe85699e377bd"
+  },
+  "research/agent_runs/divisions-pk-b4398505.json": {
+   "bytes": 53064,
+   "sha256": "7cc94e72e80a1a2249b581da6eecfd34588499e6b2936c644b8d9b3b75b95e2b"
+  },
+  "research/agent_runs/legislators-pk-azad-jammu-and-kashmir-general-seats-for-constituencies-la-1-to-l-12aab9ca.json": {
+   "bytes": 112471,
+   "sha256": "2325b7f546a95766cc9161e233d93cad4e1a97372a484950d948635bea46b289"
+  },
+  "research/agent_runs/legislators-pk-azad-jammu-and-kashmir-seats-reserved-for-women-for-minorities-no-fbec19d6.json": {
+   "bytes": 32794,
+   "sha256": "ea6968dc4e510d5e44d54cd58f35b695ccfca3bc8d694d9922cded9d3279aaee"
+  },
+  "research/agent_runs/legislators-pk-balochistan-general-seats-for-constituencies-pb-1-to-pb-50-132d87ba.json": {
+   "bytes": 198193,
+   "sha256": "f0dffcc0e98a8eb7666a8d100639ebb3b15a7b2cab173132a98d6b2574657619"
+  },
+  "research/agent_runs/legislators-pk-balochistan-general-seats-for-constituencies-pb-51-to-pb-51-7e8ff183.json": {
+   "bytes": 5279,
+   "sha256": "dd81d44faa8167533f3343e3b8838e549f039bf886f5e6cd4053ba50cdb7be89"
+  },
+  "research/agent_runs/legislators-pk-balochistan-seats-reserved-for-women-for-minorities-non-muslims-a-ef1c694c.json": {
+   "bytes": 16525,
+   "sha256": "afe51a0c44f12efb002f6e36ee473e14b4ed4c94a72f3648366cae70477ccc70"
+  },
+  "research/agent_runs/legislators-pk-gilgit-baltistan-general-seats-for-constituencies-gba-1-to-gba-24-fa340a41.json": {
+   "bytes": 25211,
+   "sha256": "01153fd38e20ee8f7d037ff3129124bf250d94ecc7530ce7032c6d0818e7395c"
+  },
+  "research/agent_runs/legislators-pk-gilgit-baltistan-seats-reserved-for-women-for-minorities-non-musl-a32fc282.json": {
+   "bytes": 32645,
+   "sha256": "7a9d4c0d4d4936fd3cae8aaf2aa91eedd3d33229fd58dc46ef86365f80f0bf98"
+  },
+  "research/agent_runs/legislators-pk-khyber-pakhtunkhwa-general-seats-for-constituencies-pk-1-to-pk-50-b665b8ff.json": {
+   "bytes": 55823,
+   "sha256": "7ad189feafa6a6a23c7c684750386427152e5db609028ae4829c0f61a1ede58b"
+  },
+  "research/agent_runs/legislators-pk-khyber-pakhtunkhwa-general-seats-for-constituencies-pk-51-to-pk-1-45adf67d.json": {
+   "bytes": 77018,
+   "sha256": "1c5642edc3b2a7fb334413c2be4f4efc35eb72eeb802b23668cb7d3f842c5bf5"
+  },
+  "research/agent_runs/local-mx-32924843.json": {
+   "bytes": 109454,
+   "sha256": "ba5532419388cf36ec9947b8aa6e1cf635148ee839d330cb5fc3e3b91e89b3e0"
+  },
+  "research/agent_runs/local-pk-b2b855d0.json": {
+   "bytes": 69799,
+   "sha256": "117d262415082e138b4edef5ff5319f0f981198d9604f93a5f05e4117d1583b9"
+  },
+  "research/agent_runs/national-mx-ea70f849.json": {
+   "bytes": 76984,
+   "sha256": "28a4a32ebde2215b4c0587b3ff9463eb87df58cdf5fd754c6225982f275b648f"
+  },
+  "research/agent_runs/national-pk-1eb1a183.json": {
+   "bytes": 68033,
+   "sha256": "090e14cc48c35387fb6e22362e8efb9a1e1bb38e6b9d4e0fbbae98f62494d00b"
+  },
+  "research/agent_runs/special-mx-d7d9495b.json": {
+   "bytes": 30622,
+   "sha256": "265aab326be68668b7956945926d55f277dd04ee4c46b8a68ec67959ecfafd93"
+  },
+  "research/agent_runs/special-pk-ea704ab7.json": {
+   "bytes": 57145,
+   "sha256": "3f5b96c244294314bf8a057ede2c8c94d8adcd81a9ed81b82548cd791d4b27ee"
+  },
+  "research/exa_usage_ledger.csv": {
+   "bytes": 291149,
+   "sha256": "a148ad70acfd7a1c50cfdf614c90a73f90898fae23ba24434e75c887198cb61c"
+  },
+  "research/pipeline_runs.json": {
+   "bytes": 24362,
+   "sha256": "a09c1bbbeb90bcdcf1381394ec40ae1d386995fa56f3b2bbd00e6aedae82e20a"
+  },
+  "research/reviews.json": {
+   "bytes": 2,
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "research/stage_runs.json": {
+   "bytes": 3850,
+   "sha256": "d0838fa6c1957d72b54b0bf4e432b7a633623bd3dc599b2b886dae0748b3faa0"
+  },
+  "research/unresolved_claims.jsonl": {
+   "bytes": 200976,
+   "sha256": "d697db087bf00ebb1b38d0fb882ec465aa8aa4add6b877e64591d59685798805"
+  },
+  "tables/countries.csv": {
+   "bytes": 30283,
+   "sha256": "40a20faf59fbb588b2e14214f87f0879872767ac2d92220d3a29f6ec5c00fc99"
+  },
+  "tables/officeholders.csv": {
+   "bytes": 229180,
+   "sha256": "f4dee208d2bd01da92b5c9f1ed9b46941073912b536ae33220ff78ebf0ab1f70"
+  }
+ },
+ "not_included": [
+  "raw page text from the Exa response cache (third-party copyrighted content)",
+  "monitor webhook secrets",
+  "API keys / credentials"
+ ]
+}

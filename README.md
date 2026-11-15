@@ -64,6 +64,13 @@ Democracy labels are verified only if the label appears within 400 characters of
 page from the index publisher (or Our World in Data for V-Dem/EIU). V-Dem grey-zone codes (`EA+`, `ED-`)
 are detected and force human review.
 
+## Knowledge base snapshot
+
+The complete graph and its research provenance are committed in [knowledge_base/](knowledge_base/)
+(nodes, relationships, flattened CSVs, Exa Agent outputs with citations, unresolved claims, cost ledger).
+Load it with `make import-kb`, with no Exa key needed; refresh it with `make export`. See
+[knowledge_base/README.md](knowledge_base/README.md).
+
 ## Regime classification (all countries)
 
 `python -m polgraph classify-world` gives every country a `regime_group`: **Democratic**, **Partly democratic**,

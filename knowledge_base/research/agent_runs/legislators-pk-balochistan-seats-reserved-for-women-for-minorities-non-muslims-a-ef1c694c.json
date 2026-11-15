@@ -1,0 +1,546 @@
+{
+ "purpose": "legislators:PK:Balochistan:seats reserved for women, for minorities/non-Muslims and any other reserved category",
+ "query": "List the CURRENT members of the Provincial Assembly of Balochistan (Balochistan, Pakistan) holding the seats reserved for women, for minorities/non-Muslims and any other reserved category, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_cdba3c1617d742f79c707f89b323a222",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T00:52:43+00:00",
+ "cost_dollars": {
+  "total": 0.3885,
+  "agent_compute": 0.2775,
+  "search": 0.111,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ghazala Gola Begum",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2024-02-29",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/565"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Raheela Hameed Khan Durrani",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/613"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Dr. Rubaba Khan Buledi",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/625"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Meena Majeed",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/640"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Hadiya Nawaz",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/624"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Shahida Rauf",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat-e-Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/626"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Farah Azeem Shah",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Balochistan Awami Party",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/582"
+    ],
+    "party_acronym": "BAP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Shehnaz Umrani",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/623"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ume Kalsoom",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "National Party",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/628"
+    ],
+    "party_acronym": "NP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Salma Bibi",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Awami National Party",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/630"
+    ],
+    "party_acronym": "ANP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Safia Fazlur Rehman",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat-e-Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/627"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ashok Kumar",
+    "is_acting": false,
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-10-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/643",
+     "https://ecp.gov.pk/notification-of-ashok-kumar-returned-candidate-of-reserved-seat-for-non-muslim-in-pa-balochistan"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ravi Pahuja",
+    "is_acting": false,
+    "seat_type": "minority_reserved",
+    "party_name": "Jamiat-e-Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://pabalochistan.gov.pk/member-profile/577"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sanjay Kumar",
+    "is_acting": false,
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pabalochistan.gov.pk/list-members",
+     "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "https://www.pabalochistan.gov.pk/member-profile/631"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/565",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/613",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/625",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/640",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/624",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/626",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/582",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/623",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/628",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/630",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/627",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/643",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/notification-of-ashok-kumar-returned-candidate-of-reserved-seat-for-non-muslim-in-pa-balochistan",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/member-profile/577",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13]",
+   "citations": [
+    {
+     "url": "https://www.pabalochistan.gov.pk/list-members",
+     "title": null
+    },
+    {
+     "url": "https://pabalochistan.gov.pk/storage/9073/69a1d4a871e36_2nd-Annual-Performance-Report,-2025-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pabalochistan.gov.pk/member-profile/631",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "As of 15 November 2026, the assembly lists 11 women and 3 non-Muslim members on reserved seats. Ashok Kumar succeeded Patrick Sant Masih following Masih’s death; his accession was a reserved-list replacement, not a by-election. Reserved seats have no geographic constituencies, and the assembly’s 2024–2029 tenure designation does not establish an exact scheduled end date."
+}

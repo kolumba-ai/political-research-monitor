@@ -1,0 +1,989 @@
+[
+ {
+  "run_id": "run-MX-20261114T230040Z",
+  "country": "MX",
+  "mode": "research_only",
+  "started_at": "2026-11-14T23:00:40+00:00",
+  "finished_at": "2026-11-14T23:02:41+00:00",
+  "status": "ok",
+  "summary": {
+   "run_id": "run-MX-20261114T230040Z",
+   "country": "MX",
+   "mode": "research_only",
+   "stages": {
+    "democracy": {
+     "assessments": 3,
+     "verified": 2,
+     "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+    }
+   },
+   "gates": {
+    "democracy": {
+     "status": "fail",
+     "reasons": [
+      "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+      "no source classifies the country within the accepted categories"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "freedom_house": "partly_free (2026) -> does not meet policy",
+      "vdem": "electoral_autocracy (2026) -> does not meet policy"
+     }
+    },
+    "contact": {
+     "status": "fail",
+     "reasons": [
+      "contact rules not researched",
+      "contact legality unknown — unknown never passes the gate"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "aggregate": "unknown"
+     }
+    },
+    "eligible": false,
+    "evaluated_at": "2026-11-14T23:02:41+00:00"
+   },
+   "coverage": {
+    "nodes_by_label": {
+     "Country": 1,
+     "DemocracyAssessment": 3,
+     "Source": 2
+    },
+    "offices": 0,
+    "elected_offices": 0,
+    "offices_with_current_holder": 0,
+    "current_holders_by_evidence": {
+     "verified": 0,
+     "official_single": 0,
+     "single_source": 0
+    },
+    "stages": [
+     {
+      "stage": "democracy",
+      "completed_at": "2026-11-14T23:02:41+00:00",
+      "status": "ok",
+      "summary": {
+       "assessments": 3,
+       "verified": 2,
+       "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+      }
+     }
+    ]
+   },
+   "usage": {
+    "spent_usd": 0.7438,
+    "calls": {
+     "agent": 1,
+     "contents": 3,
+     "search": 1
+    },
+    "cache_hits": 0
+   },
+   "unresolved_claims": 1
+  }
+ },
+ {
+  "run_id": "run-MX-20261114T230324Z",
+  "country": "MX",
+  "mode": "research_only",
+  "started_at": "2026-11-14T23:03:24+00:00",
+  "finished_at": "2026-11-14T23:03:25+00:00",
+  "status": "ok",
+  "summary": {
+   "run_id": "run-MX-20261114T230324Z",
+   "country": "MX",
+   "mode": "research_only",
+   "stages": {
+    "democracy": {
+     "assessments": 3,
+     "verified": 2,
+     "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+    }
+   },
+   "gates": {
+    "democracy": {
+     "status": "fail",
+     "reasons": [
+      "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+      "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+      "no source classifies the country within the accepted categories"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "freedom_house": "partly_free (2026) -> does not meet policy",
+      "vdem": "electoral_autocracy (2026) -> does not meet policy"
+     }
+    },
+    "contact": {
+     "status": "fail",
+     "reasons": [
+      "contact rules not researched",
+      "contact legality unknown — unknown never passes the gate"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "aggregate": "unknown"
+     }
+    },
+    "eligible": false,
+    "evaluated_at": "2026-11-14T23:03:25+00:00"
+   },
+   "coverage": {
+    "nodes_by_label": {
+     "Country": 1,
+     "DemocracyAssessment": 3,
+     "Source": 2
+    },
+    "offices": 0,
+    "elected_offices": 0,
+    "offices_with_current_holder": 0,
+    "current_holders_by_evidence": {
+     "verified": 0,
+     "official_single": 0,
+     "single_source": 0
+    },
+    "stages": [
+     {
+      "stage": "democracy",
+      "completed_at": "2026-11-14T23:03:25+00:00",
+      "status": "ok",
+      "summary": {
+       "assessments": 3,
+       "verified": 2,
+       "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+      }
+     }
+    ]
+   },
+   "usage": {
+    "spent_usd": 0.0,
+    "calls": {},
+    "cache_hits": 5
+   },
+   "unresolved_claims": 1
+  }
+ },
+ {
+  "run_id": "run-MX-20261114T230332Z",
+  "country": "MX",
+  "mode": "research_only",
+  "started_at": "2026-11-14T23:03:32+00:00",
+  "finished_at": "2026-11-14T23:03:32+00:00",
+  "status": "ok",
+  "summary": {
+   "run_id": "run-MX-20261114T230332Z",
+   "country": "MX",
+   "mode": "research_only",
+   "stages": {
+    "democracy": {
+     "assessments": 3,
+     "verified": 2,
+     "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+    }
+   },
+   "gates": {
+    "democracy": {
+     "status": "fail",
+     "reasons": [
+      "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+      "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+      "no source classifies the country within the accepted categories"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "freedom_house": "partly_free (2026) -> does not meet policy",
+      "vdem": "electoral_autocracy (2026) -> does not meet policy"
+     }
+    },
+    "contact": {
+     "status": "fail",
+     "reasons": [
+      "contact rules not researched",
+      "contact legality unknown — unknown never passes the gate"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "aggregate": "unknown"
+     }
+    },
+    "eligible": false,
+    "evaluated_at": "2026-11-14T23:03:32+00:00"
+   },
+   "coverage": {
+    "nodes_by_label": {
+     "Country": 1,
+     "DemocracyAssessment": 3,
+     "Source": 2
+    },
+    "offices": 0,
+    "elected_offices": 0,
+    "offices_with_current_holder": 0,
+    "current_holders_by_evidence": {
+     "verified": 0,
+     "official_single": 0,
+     "single_source": 0
+    },
+    "stages": [
+     {
+      "stage": "democracy",
+      "completed_at": "2026-11-14T23:03:32+00:00",
+      "status": "ok",
+      "summary": {
+       "assessments": 3,
+       "verified": 2,
+       "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+      }
+     }
+    ]
+   },
+   "usage": {
+    "spent_usd": 0.0,
+    "calls": {},
+    "cache_hits": 5
+   },
+   "unresolved_claims": 1
+  }
+ },
+ {
+  "run_id": "run-MX-20261114T230338Z",
+  "country": "MX",
+  "mode": "research_only",
+  "started_at": "2026-11-14T23:03:38+00:00",
+  "finished_at": "2026-11-14T23:21:28+00:00",
+  "status": "ok",
+  "summary": {
+   "run_id": "run-MX-20261114T230338Z",
+   "country": "MX",
+   "mode": "research_only",
+   "stages": {
+    "democracy": {
+     "skipped": "fresh"
+    },
+    "contact": {
+     "dimensions": 24,
+     "aggregate_status": "restricted",
+     "laws": 10,
+     "agent_run_id": "agent_run_8fc705da58f8423aa44bf11681151aed"
+    },
+    "national": {
+     "bodies": 9,
+     "offices": 20,
+     "holders_persisted": 5,
+     "holders_unresolved": 0,
+     "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795"
+    },
+    "divisions": {
+     "divisions": 32,
+     "offices": 64,
+     "holders_persisted": 32,
+     "holders_unresolved": 0,
+     "unmatched": 0,
+     "agent_run_id": "agent_run_c22b978ece0a41a2a418e08a9a9c1e0e",
+     "iso_expected": 32,
+     "iso_covered": 32,
+     "iso_missing": []
+    },
+    "local": {
+     "units": 10,
+     "offices": 13,
+     "holders_persisted": 10,
+     "holders_unresolved": 0,
+     "agent_run_id": "agent_run_a323289bb53945e4b640e53192dd881e"
+    },
+    "special": {
+     "jurisdictions": 1,
+     "subunits": 16,
+     "offices": 16,
+     "holders_persisted": 16,
+     "holders_unresolved": 0,
+     "agent_run_id": "agent_run_3bbfc3f805764a668600be23a22cb12f"
+    }
+   },
+   "gates": {
+    "democracy": {
+     "status": "fail",
+     "reasons": [
+      "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+      "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+      "no source classifies the country within the accepted categories"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "freedom_house": "partly_free (2026) -> does not meet policy",
+      "vdem": "electoral_autocracy (2026) -> does not meet policy"
+     }
+    },
+    "contact": {
+     "status": "fail",
+     "reasons": [
+      "status 'restricted' not in accepted statuses ['allowed']"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "aggregate": "restricted"
+     }
+    },
+    "eligible": false,
+    "evaluated_at": "2026-11-14T23:05:34+00:00"
+   },
+   "coverage": {
+    "nodes_by_label": {
+     "Country": 1,
+     "DemocracyAssessment": 3,
+     "ContactRule": 1,
+     "GovernmentLevel": 62,
+     "Source": 12,
+     "GovernmentBody": 100,
+     "PoliticalOffice": 113,
+     "Person": 63,
+     "PoliticalParty": 6
+    },
+    "offices": 113,
+    "elected_offices": 77,
+    "offices_with_current_holder": 63,
+    "current_holders_by_evidence": {
+     "verified": 61,
+     "official_single": 1,
+     "single_source": 1
+    },
+    "stages": [
+     {
+      "stage": "contact",
+      "completed_at": "2026-11-14T23:05:34+00:00",
+      "status": "ok",
+      "summary": {
+       "dimensions": 24,
+       "aggregate_status": "restricted",
+       "laws": 10,
+       "agent_run_id": "agent_run_8fc705da58f8423aa44bf11681151aed"
+      }
+     },
+     {
+      "stage": "democracy",
+      "completed_at": "2026-11-14T23:03:32+00:00",
+      "status": "ok",
+      "summary": {
+       "assessments": 3,
+       "verified": 2,
+       "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+      }
+     },
+     {
+      "stage": "divisions",
+      "completed_at": "2026-11-14T23:15:51+00:00",
+      "status": "ok",
+      "summary": {
+       "divisions": 32,
+       "offices": 64,
+       "holders_persisted": 32,
+       "holders_unresolved": 0,
+       "unmatched": 0,
+       "agent_run_id": "agent_run_c22b978ece0a41a2a418e08a9a9c1e0e",
+       "iso_expected": 32,
+       "iso_covered": 32,
+       "iso_missing": []
+      }
+     },
+     {
+      "stage": "local",
+      "completed_at": "2026-11-14T23:18:24+00:00",
+      "status": "ok",
+      "summary": {
+       "units": 10,
+       "offices": 13,
+       "holders_persisted": 10,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_a323289bb53945e4b640e53192dd881e"
+      }
+     },
+     {
+      "stage": "national",
+      "completed_at": "2026-11-14T23:08:11+00:00",
+      "status": "ok",
+      "summary": {
+       "bodies": 9,
+       "offices": 20,
+       "holders_persisted": 5,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795"
+      }
+     },
+     {
+      "stage": "special",
+      "completed_at": "2026-11-14T23:21:28+00:00",
+      "status": "ok",
+      "summary": {
+       "jurisdictions": 1,
+       "subunits": 16,
+       "offices": 16,
+       "holders_persisted": 16,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_3bbfc3f805764a668600be23a22cb12f"
+      }
+     }
+    ]
+   },
+   "usage": {
+    "spent_usd": 3.7091,
+    "calls": {
+     "agent": 5,
+     "contents": 133,
+     "search": 45
+    },
+    "cache_hits": 309
+   },
+   "unresolved_claims": 2
+  }
+ },
+ {
+  "run_id": "run-PK-20261114T234407Z",
+  "country": "PK",
+  "mode": "research_only",
+  "started_at": "2026-11-14T23:44:07+00:00",
+  "finished_at": "2026-11-15T00:02:03+00:00",
+  "status": "ok",
+  "summary": {
+   "run_id": "run-PK-20261114T234407Z",
+   "country": "PK",
+   "mode": "research_only",
+   "stages": {
+    "democracy": {
+     "assessments": 3,
+     "verified": 2,
+     "agent_run_id": "agent_run_c564cb2e55f9484bb6df793f0f0b14f5"
+    },
+    "contact": {
+     "dimensions": 24,
+     "aggregate_status": "restricted",
+     "laws": 8,
+     "agent_run_id": "agent_run_9bd5c5fce101482b8e8345b261115b75"
+    },
+    "national": {
+     "bodies": 9,
+     "offices": 25,
+     "holders_persisted": 9,
+     "holders_unresolved": 0,
+     "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064"
+    },
+    "divisions": {
+     "divisions": 7,
+     "offices": 13,
+     "holders_persisted": 7,
+     "holders_unresolved": 0,
+     "unmatched": 0,
+     "agent_run_id": "agent_run_f7ec31accdba460791627232c4020875",
+     "iso_expected": 7,
+     "iso_covered": 7,
+     "iso_missing": []
+    },
+    "local": {
+     "units": 10,
+     "offices": 14,
+     "holders_persisted": 8,
+     "holders_unresolved": 2,
+     "agent_run_id": "agent_run_99ef3f6f66074bcf923f619f57f95d3b"
+    },
+    "special": {
+     "jurisdictions": 2,
+     "subunits": 28,
+     "offices": 28,
+     "holders_persisted": 24,
+     "holders_unresolved": 0,
+     "agent_run_id": "agent_run_31d179e1cd5640948d87a7786cccc0c3"
+    }
+   },
+   "gates": {
+    "democracy": {
+     "status": "fail",
+     "reasons": [
+      "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+      "no source classifies the country within the accepted categories"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "freedom_house": "partly_free (2026) -> does not meet policy",
+      "vdem": "electoral_autocracy (2026) -> does not meet policy"
+     }
+    },
+    "contact": {
+     "status": "fail",
+     "reasons": [
+      "status 'restricted' not in accepted statuses ['allowed']"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "aggregate": "restricted"
+     }
+    },
+    "eligible": false,
+    "evaluated_at": "2026-11-14T23:47:59+00:00"
+   },
+   "coverage": {
+    "nodes_by_label": {
+     "Country": 1,
+     "DemocracyAssessment": 3,
+     "ContactRule": 1,
+     "GovernmentLevel": 50,
+     "Source": 10,
+     "GovernmentBody": 61,
+     "PoliticalOffice": 61,
+     "Person": 48,
+     "PoliticalParty": 5
+    },
+    "offices": 61,
+    "elected_offices": 39,
+    "offices_with_current_holder": 46,
+    "current_holders_by_evidence": {
+     "verified": 39,
+     "official_single": 1,
+     "single_source": 6
+    },
+    "stages": [
+     {
+      "stage": "contact",
+      "completed_at": "2026-11-14T23:47:59+00:00",
+      "status": "ok",
+      "summary": {
+       "dimensions": 24,
+       "aggregate_status": "restricted",
+       "laws": 8,
+       "agent_run_id": "agent_run_9bd5c5fce101482b8e8345b261115b75"
+      }
+     },
+     {
+      "stage": "democracy",
+      "completed_at": "2026-11-14T23:45:52+00:00",
+      "status": "ok",
+      "summary": {
+       "assessments": 3,
+       "verified": 2,
+       "agent_run_id": "agent_run_c564cb2e55f9484bb6df793f0f0b14f5"
+      }
+     },
+     {
+      "stage": "divisions",
+      "completed_at": "2026-11-14T23:54:50+00:00",
+      "status": "ok",
+      "summary": {
+       "divisions": 7,
+       "offices": 13,
+       "holders_persisted": 7,
+       "holders_unresolved": 0,
+       "unmatched": 0,
+       "agent_run_id": "agent_run_f7ec31accdba460791627232c4020875",
+       "iso_expected": 7,
+       "iso_covered": 7,
+       "iso_missing": []
+      }
+     },
+     {
+      "stage": "local",
+      "completed_at": "2026-11-14T23:57:45+00:00",
+      "status": "ok",
+      "summary": {
+       "units": 10,
+       "offices": 14,
+       "holders_persisted": 8,
+       "holders_unresolved": 2,
+       "agent_run_id": "agent_run_99ef3f6f66074bcf923f619f57f95d3b"
+      }
+     },
+     {
+      "stage": "national",
+      "completed_at": "2026-11-14T23:51:36+00:00",
+      "status": "ok",
+      "summary": {
+       "bodies": 9,
+       "offices": 25,
+       "holders_persisted": 9,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064"
+      }
+     },
+     {
+      "stage": "special",
+      "completed_at": "2026-11-15T00:02:03+00:00",
+      "status": "ok",
+      "summary": {
+       "jurisdictions": 2,
+       "subunits": 28,
+       "offices": 28,
+       "holders_persisted": 24,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_31d179e1cd5640948d87a7786cccc0c3"
+      }
+     }
+    ]
+   },
+   "usage": {
+    "spent_usd": 4.7624,
+    "calls": {
+     "agent": 6,
+     "contents": 103,
+     "search": 34
+    },
+    "cache_hits": 291
+   },
+   "unresolved_claims": 10
+  }
+ },
+ {
+  "run_id": "run-PK-20261115T004748Z",
+  "country": "PK",
+  "mode": "research_only",
+  "started_at": "2026-11-15T00:47:48+00:00",
+  "finished_at": "2026-11-15T00:52:52+00:00",
+  "status": "ok",
+  "summary": {
+   "run_id": "run-PK-20261115T004748Z",
+   "country": "PK",
+   "mode": "research_only",
+   "stages": {
+    "legislators": {
+     "assemblies": {
+      "PK-BA": {
+       "seats": 65,
+       "persisted": 64,
+       "unresolved": 0,
+       "slices": 3
+      }
+     },
+     "members_persisted": 64,
+     "members_unresolved": 0
+    }
+   },
+   "gates": {
+    "democracy": {
+     "status": "fail",
+     "reasons": [
+      "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+      "no source classifies the country within the accepted categories"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "freedom_house": "partly_free (2026) -> does not meet policy",
+      "vdem": "electoral_autocracy (2026) -> does not meet policy"
+     }
+    },
+    "contact": {
+     "status": "fail",
+     "reasons": [
+      "status 'restricted' not in accepted statuses ['allowed']"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "aggregate": "restricted"
+     }
+    },
+    "eligible": false,
+    "evaluated_at": "2026-11-15T00:47:49+00:00"
+   },
+   "coverage": {
+    "nodes_by_label": {
+     "Country": 1,
+     "DemocracyAssessment": 3,
+     "ContactRule": 1,
+     "GovernmentLevel": 50,
+     "Source": 10,
+     "GovernmentBody": 61,
+     "PoliticalOffice": 62,
+     "Person": 106,
+     "PoliticalParty": 12
+    },
+    "offices": 62,
+    "elected_offices": 41,
+    "offices_with_current_holder": 48,
+    "current_holders_by_evidence": {
+     "verified": 39,
+     "official_single": 61,
+     "single_source": 6
+    },
+    "stages": [
+     {
+      "stage": "contact",
+      "completed_at": "2026-11-14T23:47:59+00:00",
+      "status": "ok",
+      "summary": {
+       "dimensions": 24,
+       "aggregate_status": "restricted",
+       "laws": 8,
+       "agent_run_id": "agent_run_9bd5c5fce101482b8e8345b261115b75"
+      }
+     },
+     {
+      "stage": "democracy",
+      "completed_at": "2026-11-14T23:45:52+00:00",
+      "status": "ok",
+      "summary": {
+       "assessments": 3,
+       "verified": 2,
+       "agent_run_id": "agent_run_c564cb2e55f9484bb6df793f0f0b14f5"
+      }
+     },
+     {
+      "stage": "divisions",
+      "completed_at": "2026-11-14T23:54:50+00:00",
+      "status": "ok",
+      "summary": {
+       "divisions": 7,
+       "offices": 13,
+       "holders_persisted": 7,
+       "holders_unresolved": 0,
+       "unmatched": 0,
+       "agent_run_id": "agent_run_f7ec31accdba460791627232c4020875",
+       "iso_expected": 7,
+       "iso_covered": 7,
+       "iso_missing": []
+      }
+     },
+     {
+      "stage": "legislators:PK-BA",
+      "completed_at": "2026-11-15T00:52:51+00:00",
+      "status": "ok",
+      "summary": {
+       "assemblies": {
+        "PK-BA": {
+         "seats": 65,
+         "persisted": 64,
+         "unresolved": 0,
+         "slices": 3
+        }
+       },
+       "members_persisted": 64,
+       "members_unresolved": 0
+      }
+     },
+     {
+      "stage": "local",
+      "completed_at": "2026-11-14T23:57:45+00:00",
+      "status": "ok",
+      "summary": {
+       "units": 10,
+       "offices": 14,
+       "holders_persisted": 8,
+       "holders_unresolved": 2,
+       "agent_run_id": "agent_run_99ef3f6f66074bcf923f619f57f95d3b"
+      }
+     },
+     {
+      "stage": "national",
+      "completed_at": "2026-11-14T23:51:36+00:00",
+      "status": "ok",
+      "summary": {
+       "bodies": 9,
+       "offices": 25,
+       "holders_persisted": 9,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064"
+      }
+     },
+     {
+      "stage": "special",
+      "completed_at": "2026-11-15T00:02:03+00:00",
+      "status": "ok",
+      "summary": {
+       "jurisdictions": 2,
+       "subunits": 28,
+       "offices": 28,
+       "holders_persisted": 24,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_31d179e1cd5640948d87a7786cccc0c3"
+      }
+     }
+    ]
+   },
+   "usage": {
+    "spent_usd": 1.302,
+    "calls": {
+     "agent": 4,
+     "contents": 64
+    },
+    "cache_hits": 127
+   },
+   "unresolved_claims": 64
+  }
+ },
+ {
+  "run_id": "run-PK-20261115T005427Z",
+  "country": "PK",
+  "mode": "research_only",
+  "started_at": "2026-11-15T00:54:27+00:00",
+  "finished_at": "2026-11-15T00:54:31+00:00",
+  "status": "ok",
+  "summary": {
+   "run_id": "run-PK-20261115T005427Z",
+   "country": "PK",
+   "mode": "research_only",
+   "stages": {
+    "legislators": {
+     "assemblies": {
+      "PK-BA": {
+       "seats": 65,
+       "persisted": 64,
+       "unresolved": 0,
+       "slices": 3
+      }
+     },
+     "members_persisted": 64,
+     "members_unresolved": 0
+    }
+   },
+   "gates": {
+    "democracy": {
+     "status": "fail",
+     "reasons": [
+      "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+      "no source classifies the country within the accepted categories"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "freedom_house": "partly_free (2026) -> does not meet policy",
+      "vdem": "electoral_autocracy (2026) -> does not meet policy"
+     }
+    },
+    "contact": {
+     "status": "fail",
+     "reasons": [
+      "status 'restricted' not in accepted statuses ['allowed']"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "aggregate": "restricted"
+     }
+    },
+    "eligible": false,
+    "evaluated_at": "2026-11-15T00:54:28+00:00"
+   },
+   "coverage": {
+    "nodes_by_label": {
+     "Country": 1,
+     "DemocracyAssessment": 3,
+     "ContactRule": 1,
+     "GovernmentLevel": 50,
+     "Source": 10,
+     "GovernmentBody": 61,
+     "PoliticalOffice": 63,
+     "Person": 106,
+     "PoliticalParty": 12
+    },
+    "offices": 63,
+    "elected_offices": 42,
+    "offices_with_current_holder": 49,
+    "current_holders_by_evidence": {
+     "verified": 40,
+     "official_single": 60,
+     "single_source": 6
+    },
+    "stages": [
+     {
+      "stage": "contact",
+      "completed_at": "2026-11-14T23:47:59+00:00",
+      "status": "ok",
+      "summary": {
+       "dimensions": 24,
+       "aggregate_status": "restricted",
+       "laws": 8,
+       "agent_run_id": "agent_run_9bd5c5fce101482b8e8345b261115b75"
+      }
+     },
+     {
+      "stage": "democracy",
+      "completed_at": "2026-11-14T23:45:52+00:00",
+      "status": "ok",
+      "summary": {
+       "assessments": 3,
+       "verified": 2,
+       "agent_run_id": "agent_run_c564cb2e55f9484bb6df793f0f0b14f5"
+      }
+     },
+     {
+      "stage": "divisions",
+      "completed_at": "2026-11-14T23:54:50+00:00",
+      "status": "ok",
+      "summary": {
+       "divisions": 7,
+       "offices": 13,
+       "holders_persisted": 7,
+       "holders_unresolved": 0,
+       "unmatched": 0,
+       "agent_run_id": "agent_run_f7ec31accdba460791627232c4020875",
+       "iso_expected": 7,
+       "iso_covered": 7,
+       "iso_missing": []
+      }
+     },
+     {
+      "stage": "legislators:PK-BA",
+      "completed_at": "2026-11-15T00:54:31+00:00",
+      "status": "ok",
+      "summary": {
+       "assemblies": {
+        "PK-BA": {
+         "seats": 65,
+         "persisted": 64,
+         "unresolved": 0,
+         "slices": 3
+        }
+       },
+       "members_persisted": 64,
+       "members_unresolved": 0
+      }
+     },
+     {
+      "stage": "local",
+      "completed_at": "2026-11-14T23:57:45+00:00",
+      "status": "ok",
+      "summary": {
+       "units": 10,
+       "offices": 14,
+       "holders_persisted": 8,
+       "holders_unresolved": 2,
+       "agent_run_id": "agent_run_99ef3f6f66074bcf923f619f57f95d3b"
+      }
+     },
+     {
+      "stage": "national",
+      "completed_at": "2026-11-14T23:51:36+00:00",
+      "status": "ok",
+      "summary": {
+       "bodies": 9,
+       "offices": 25,
+       "holders_persisted": 9,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064"
+      }
+     },
+     {
+      "stage": "special",
+      "completed_at": "2026-11-15T00:02:03+00:00",
+      "status": "ok",
+      "summary": {
+       "jurisdictions": 2,
+       "subunits": 28,
+       "offices": 28,
+       "holders_persisted": 24,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_31d179e1cd5640948d87a7786cccc0c3"
+      }
+     }
+    ]
+   },
+   "usage": {
+    "spent_usd": 0.0,
+    "calls": {},
+    "cache_hits": 206
+   },
+   "unresolved_claims": 63
+  }
+ },
+ {
+  "run_id": "run-PK-20261115T005438Z",
+  "country": "PK",
+  "mode": "research_only",
+  "started_at": "2026-11-15T00:54:38+00:00",
+  "finished_at": null,
+  "status": "running",
+  "summary": null
+ }
+]

@@ -1,0 +1,94 @@
+{
+ "purpose": "democracy:PK",
+ "query": "Find the most recent published democracy classifications for Pakistan:\n1. Freedom House 'Freedom in the World': status (Free / Partly Free / Not Free) and global score out of 100, from the freedomhouse.org country report page.\n2. V-Dem 'Regimes of the World' classification (Liberal Democracy / Electoral Democracy / Electoral Autocracy / Closed Autocracy) from the latest V-Dem Democracy Report or v-dem.net; note if it is in the grey zone (upper/lower bound).\n3. EIU Democracy Index category (Full democracy / Flawed democracy / Hybrid regime / Authoritarian) and score.\nReport each index separately with its edition year, the exact URL that states the classification, and a short verbatim quote. Omit an index rather than guess if its classification cannot be found.",
+ "run_id": "agent_run_c564cb2e55f9484bb6df793f0f0b14f5",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:45:48+00:00",
+ "cost_dollars": {
+  "total": 0.4861,
+  "agent_compute": 0.3781,
+  "search": 0.108,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "assessments": [
+   {
+    "index": "freedom_house",
+    "score": 32,
+    "publication": "Freedom in the World 2026",
+    "score_scale": "0-100",
+    "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+    "evidence_quote": "Pakistan\n\nPartly Free\n\n32 100",
+    "assessment_year": 2026,
+    "classification_raw": "Partly Free"
+   },
+   {
+    "index": "vdem",
+    "score": null,
+    "publication": "V-Dem Democracy Report 2026 (Regimes of the World, 2025)",
+    "score_scale": null,
+    "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+    "evidence_quote": "Pakistan | EA |",
+    "assessment_year": 2026,
+    "classification_raw": "Electoral Autocracy"
+   },
+   {
+    "index": "eiu",
+    "score": 2.44,
+    "publication": "Democracy Index 2025",
+    "score_scale": "0-10",
+    "evidence_url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+    "evidence_quote": "| 139 | 🇵🇰 Pakistan | 2.44 | Authoritarian |",
+    "assessment_year": 2025,
+    "classification_raw": "Authoritarian"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.assessments[0]",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[1]",
+   "citations": [
+    {
+     "url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[2]",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.kverulant.org/wp-content/uploads/2026/04/DemocracyIndex2025.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "V-Dem’s table marks Pakistan EA without a + sign, so it is not in the upper-bound grey zone. The EIU’s publisher report confirms the 2.44 score, while the linked classification table is a secondary reproduction because a publisher-hosted Pakistan classification for the 2025 edition was not located."
+}

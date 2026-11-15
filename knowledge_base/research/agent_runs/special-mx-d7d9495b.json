@@ -1,0 +1,855 @@
+{
+ "purpose": "special:MX",
+ "query": "Identify jurisdictions in Mexico whose local government differs from the standard first-level division / municipality model — in particular the national capital. For each: explain how its governance differs, name its sub-units (e.g. boroughs) and their councils, and list EVERY sub-unit with the head's title (English and local), how the head is selected, and the current officeholder as of 2026-11-14 (full name, party, term start/end) with source URLs.",
+ "run_id": "agent_run_3bbfc3f805764a668600be23a22cb12f",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:20:14+00:00",
+ "cost_dollars": {
+  "total": 0.6121,
+  "agent_compute": 0.4381,
+  "search": 0.174,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "jurisdictions": [
+   {
+    "name": "Mexico City",
+    "subunits": [
+     {
+      "name": "Azcapotzalco",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "Nancy Marlene Núñez Reséndiz",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://azcapotzalco.cdmx.gob.mx/hoy-por-la-maana-estuvimos-en-la-euzkadi-con-bienestar-en-tu-comunidad20251112",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcaldesa",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Benito Juárez",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "VA X LA CDMX",
+       "full_name": "Luis Alberto Mendoza Acevedo",
+       "is_acting": false,
+       "party_name": "Partido Acción Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://alcaldiabenitojuarez.gob.mx/2025/prensa/alcalde-luis-mendoza-anuncia-gira-por-colonias-en-benito-juarez-para-fortalecer-contacto-ciudadano-y-evitar-coyotaje-en-gestiones/",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "PAN"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcalde",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Coyoacán",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "VA X LA CDMX",
+       "full_name": "José Giovani Gutiérrez Aguilar",
+       "is_acting": false,
+       "party_name": "Partido Acción Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://coyoacan.cdmx.gob.mx/boletines/files/2024_2027/BOLETI%CC%81N%20116%20SOMOS%20UN%20GOBIERNO%20DE%20LOGROS,%20GIOVANI%20GUTIE%CC%81RREZ%20-%2019OCT25.pdf",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "PAN"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcalde",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Cuajimalpa de Morelos",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "VA X LA CDMX",
+       "full_name": "Carlos Orvañanos Rea",
+       "is_acting": false,
+       "party_name": "Partido Acción Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://cuajimalpa.gob.mx/alcalde/",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "PAN"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcalde",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Cuauhtémoc",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "VA X LA CDMX",
+       "full_name": "Alessandra Rojo de la Vega Piccolo",
+       "is_acting": false,
+       "party_name": null,
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://cuauhtemoc.cdmx.gob.mx/",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": null
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcaldesa",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Gustavo A. Madero",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "Ricardo Janecarlo Lozano Reynoso",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "http://gamadero.cdmx.gob.mx/Areas/Estructura/generar-directorio-pdf.php",
+        "http://gamadero.cdmx.gob.mx/Boletines/SintesisInformativa/index.php",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcalde",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Iztacalco",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "María de Lourdes Paz Reyes",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://www.iztacalco.cdmx.gob.mx/octubre",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcaldesa",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Iztapalapa",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "Aleida Alavez Ruiz",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://iztapalapa.cdmx.gob.mx/principal/boletines/boletines/Mayo2026/070526BOL584.pdf",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcaldesa",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "La Magdalena Contreras",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "José Fernando Mercado Guaida",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://mcontreras.gob.mx/directorio-alcaldia-2024-2027/",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcalde",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Miguel Hidalgo",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "VA X LA CDMX",
+       "full_name": "Mauricio Tabe Echartea",
+       "is_acting": false,
+       "party_name": "Partido Acción Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://miguelhidalgo.cdmx.gob.mx/tabe-reverdece-miguel-hidalgo-y-anuncia-plantacion-de-600-arboles-tras-afectaciones-por-lluvias/",
+        "https://quienmegobierna.com.mx/ciudad-de-mexico/miguel-hidalgo/",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "PAN"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcalde",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Milpa Alta",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "José Octavio Rivero Villaseñor",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://www.milpa-alta.cdmx.gob.mx/doc/noticias/2026/03/ALCALDE_PREMIO.pdf",
+        "https://quienmegobierna.com.mx/ciudad-de-mexico/milpa-alta/",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcalde",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Tlalpan",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "Gabriela Osorio Hernández",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://tlalpan.cdmx.gob.mx/conoce-a-la-alcaldesa/",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcaldesa",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Tláhuac",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": null,
+       "full_name": "Araceli Berenice Hernández Calderón",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://www.tlahuac.cdmx.gob.mx/wp-content/uploads/2026/09/Directorio-completo-Septiembre-2026.pdf",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcaldesa",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Venustiano Carranza",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "Evelyn Parra Álvarez",
+       "is_acting": false,
+       "party_name": "Movimiento Regeneración Nacional",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://www.vcarranza.cdmx.gob.mx/Documentos/2025/Gabinete_2025.pdf",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "Morena"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcaldesa",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Xochimilco",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "Circe Camacho Bastida",
+       "is_acting": false,
+       "party_name": "Partido del Trabajo",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://www.xochimilco.cdmx.gob.mx/wp-content/uploads/2026/01/Estructura-Organica-con-numero-AL-XOCH-13-010525.pdf",
+        "http://servicios.xochimilco.cdmx.gob.mx:8081/09/2024/4to/Art_121/Frac_XVII/Inc_A/C1.pdf",
+        "https://www.lapoliticaonline.com/mexico/ciudad-mx/a-la-espera-de-las-definiciones-nacionales-el-pt-busca-reforzar-sus-puestos-de-poder-en-cdmx/",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "PT"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcaldesa",
+      "head_selection_method": "direct_election"
+     },
+     {
+      "name": "Álvaro Obregón",
+      "officeholder": {
+       "term_end": "2027-09-30",
+       "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+       "full_name": "Javier Joaquín López Casarín",
+       "is_acting": false,
+       "party_name": "Partido Verde Ecologista de México",
+       "term_start": "2024-10-01",
+       "source_urls": [
+        "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+        "https://aao.cdmx.gob.mx/boletines/boletin327-18112025.html",
+        "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/"
+       ],
+       "party_acronym": "PVEM"
+      },
+      "head_title_en": "Borough mayor",
+      "parent_division": "Mexico City",
+      "head_title_local": "Alcalde",
+      "head_selection_method": "direct_election"
+     }
+    ],
+    "source_urls": [
+     "https://www.iecm.mx/www/marconormativo/docs/CPCDMX-08-10-2026.pdf",
+     "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16"
+    ],
+    "why_distinct": "Mexico City is the national capital and an autonomous federal entity, rather than an ordinary state divided into municipalities. Its 16 territorial demarcations are governed by alcaldías, each consisting of a directly elected mayor and concejo; the mayor runs the local administration, while the concejo oversees government and spending and approves the draft borough budget. Members serve three years, beginning October 1 of the election year.",
+    "subunit_name_en": "Borough (territorial demarcation)",
+    "subunit_name_local": "Demarcación territorial (alcaldía)",
+    "subunit_council_name_en": "Borough council",
+    "subunit_council_name_local": "Concejo"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.jurisdictions[0]",
+   "citations": [
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/CPCDMX-08-10-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    },
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[0]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://azcapotzalco.cdmx.gob.mx/hoy-por-la-maana-estuvimos-en-la-euzkadi-con-bienestar-en-tu-comunidad20251112",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[1]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://alcaldiabenitojuarez.gob.mx/2025/prensa/alcalde-luis-mendoza-anuncia-gira-por-colonias-en-benito-juarez-para-fortalecer-contacto-ciudadano-y-evitar-coyotaje-en-gestiones/",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[2]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://coyoacan.cdmx.gob.mx/boletines/files/2024_2027/BOLETI%CC%81N%20116%20SOMOS%20UN%20GOBIERNO%20DE%20LOGROS,%20GIOVANI%20GUTIE%CC%81RREZ%20-%2019OCT25.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[3]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://cuajimalpa.gob.mx/alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[4]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://cuauhtemoc.cdmx.gob.mx/",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[5]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "http://gamadero.cdmx.gob.mx/Areas/Estructura/generar-directorio-pdf.php",
+     "title": null
+    },
+    {
+     "url": "http://gamadero.cdmx.gob.mx/Boletines/SintesisInformativa/index.php",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[6]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://www.iztacalco.cdmx.gob.mx/octubre",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[7]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://iztapalapa.cdmx.gob.mx/principal/boletines/boletines/Mayo2026/070526BOL584.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[8]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://mcontreras.gob.mx/directorio-alcaldia-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[9]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://miguelhidalgo.cdmx.gob.mx/tabe-reverdece-miguel-hidalgo-y-anuncia-plantacion-de-600-arboles-tras-afectaciones-por-lluvias/",
+     "title": null
+    },
+    {
+     "url": "https://quienmegobierna.com.mx/ciudad-de-mexico/miguel-hidalgo/",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[10]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://www.milpa-alta.cdmx.gob.mx/doc/noticias/2026/03/ALCALDE_PREMIO.pdf",
+     "title": null
+    },
+    {
+     "url": "https://quienmegobierna.com.mx/ciudad-de-mexico/milpa-alta/",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[11]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://tlalpan.cdmx.gob.mx/conoce-a-la-alcaldesa/",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[12]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://www.tlahuac.cdmx.gob.mx/wp-content/uploads/2026/09/Directorio-completo-Septiembre-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[13]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://www.vcarranza.cdmx.gob.mx/Documentos/2025/Gabinete_2025.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[14]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://www.xochimilco.cdmx.gob.mx/wp-content/uploads/2026/01/Estructura-Organica-con-numero-AL-XOCH-13-010525.pdf",
+     "title": null
+    },
+    {
+     "url": "http://servicios.xochimilco.cdmx.gob.mx:8081/09/2024/4to/Art_121/Frac_XVII/Inc_A/C1.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.lapoliticaonline.com/mexico/ciudad-mx/a-la-espera-de-las-definiciones-nacionales-el-pt-busca-reforzar-sus-puestos-de-poder-en-cdmx/",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.jurisdictions[0].subunits[15]",
+   "citations": [
+    {
+     "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16",
+     "title": null
+    },
+    {
+     "url": "https://aao.cdmx.gob.mx/boletines/boletin327-18112025.html",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion/",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/noticias/aprueba-iecm-registro-de-candidaturas-para-alcaldias-y-diputaciones/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "Mexico City is the exception to Mexico’s state–municipality arrangement: its 16 territorial demarcations have elected alcaldías and concejos. The list identifies all 16 borough mayors for the 2024–2027 term as of November 14, 2026."
+}

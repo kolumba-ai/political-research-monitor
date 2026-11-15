@@ -1,0 +1,1429 @@
+{
+ "purpose": "legislators:PK:Azad Jammu and Kashmir:seats reserved for women, for minorities/non-Muslims and any other reserved category",
+ "query": "List the CURRENT members of the Azad Jammu and Kashmir Legislative Assembly (Azad Jammu and Kashmir, Pakistan) holding the seats reserved for women, for minorities/non-Muslims and any other reserved category, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_f4ecb45bd50047deae05a97028476206",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T01:03:55+00:00",
+ "cost_dollars": {
+  "total": 0.3523,
+  "agent_compute": 0.2383,
+  "search": 0.114,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "term_end": "2031",
+    "coalition": null,
+    "full_name": "Sehrish Qamar",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2026-08-24",
+    "by_election": false,
+    "source_urls": [
+     "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "https://ajkassembly.gok.pk/members-directory/",
+     "https://www.dawn.com/news/2024952"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2031",
+    "coalition": null,
+    "full_name": "Farzana Yaqoob",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party",
+    "term_start": "2026-08-24",
+    "by_election": false,
+    "source_urls": [
+     "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "https://ajkassembly.gok.pk/members-directory/",
+     "https://www.dawn.com/news/2024952"
+    ],
+    "party_acronym": "PPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2031",
+    "coalition": null,
+    "full_name": "Maryam Adrees",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2026-08-24",
+    "by_election": false,
+    "source_urls": [
+     "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "https://ajkassembly.gok.pk/members-directory/",
+     "https://www.dawn.com/news/2024952"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2031",
+    "coalition": null,
+    "full_name": "Mariam Zaman",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2026-08-24",
+    "by_election": false,
+    "source_urls": [
+     "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "https://ajkassembly.gok.pk/members-directory/",
+     "https://www.dawn.com/news/2024952"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2031",
+    "coalition": null,
+    "full_name": "Zobia Khurshid",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party",
+    "term_start": "2026-08-24",
+    "by_election": false,
+    "source_urls": [
+     "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "https://ajkassembly.gok.pk/members-directory/",
+     "https://www.dawn.com/news/2024952"
+    ],
+    "party_acronym": "PPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2031",
+    "coalition": "Pakistan Muslim League (N)",
+    "full_name": "Muhammad Mazhir Saeed",
+    "is_acting": false,
+    "seat_type": "other_reserved",
+    "party_name": "All Jammu Kashmir Jamiat Ulema-i-Islam",
+    "term_start": "2026-08-24",
+    "by_election": false,
+    "source_urls": [
+     "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "https://ajkassembly.gok.pk/members-directory/",
+     "https://www.dawn.com/news/2024952",
+     "https://www.dawn.com/news/2023900"
+    ],
+    "party_acronym": "AJKJUI",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2031",
+    "coalition": null,
+    "full_name": "Chaudhry Abdul Rehman Arain",
+    "is_acting": false,
+    "seat_type": "other_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2026-08-24",
+    "by_election": false,
+    "source_urls": [
+     "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "https://ajkassembly.gok.pk/members-directory/",
+     "https://www.dawn.com/news/2024952",
+     "https://www.dawn.com/news/2023900"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2031",
+    "coalition": null,
+    "full_name": "Syed Iftikhar Ali Gillani",
+    "is_acting": false,
+    "seat_type": "other_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2026-08-24",
+    "by_election": false,
+    "source_urls": [
+     "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "https://ajkassembly.gok.pk/members-directory/",
+     "https://www.dawn.com/news/2024952",
+     "https://www.dawn.com/news/2023900"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0].full_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].seat_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].party_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].party_acronym",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].term_end",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[0].is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[0].by_election",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[0].source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].full_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].seat_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].party_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].party_acronym",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].term_end",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[1].is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[1].by_election",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[1].source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].full_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].seat_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].party_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].party_acronym",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].term_end",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[2].is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[2].by_election",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[2].source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].full_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].seat_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].party_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].party_acronym",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].term_end",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[3].is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[3].by_election",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[3].source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].full_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].seat_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].party_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].party_acronym",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].term_end",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[4].is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[4].by_election",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[4].source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].full_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].seat_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].party_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2023900",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].party_acronym",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2023900",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].coalition",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2023900",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].term_end",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[5].is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[5].by_election",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[5].source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].full_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].seat_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].party_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].party_acronym",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].term_end",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[6].is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[6].by_election",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[6].source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].full_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].seat_type",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].party_name",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].party_acronym",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].term_start",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].term_end",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[7].is_acting",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[7].by_election",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[7].source_urls",
+   "citations": [
+    {
+     "url": "https://ajkassembly.gok.pk/list-of-members-ajk-legislative-assembly/",
+     "title": null
+    },
+    {
+     "url": "https://ajkassembly.gok.pk/members-directory/",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2024952",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "As of 15 November 2026, the Assembly lists eight occupied reserved seats: five for women, one for Ulema/Mashaikh, one for overseas state subjects, and one for technocrats/professionals. There is no separate non-Muslim/minority reserved seat. All eight belong to the Assembly elected in 2026, not to by-elections. The Assembly’s list identifies Muhammad Mazhir Saeed’s party as AJKJUI; contemporary reporting says he won on a PML-N ticket, which is reflected in the coalition field. The Assembly directory’s party entries for Farzana Yaqoob and Zobia Khurshid conflict with its own member list and election reporting; their reported election party was PPP."
+}

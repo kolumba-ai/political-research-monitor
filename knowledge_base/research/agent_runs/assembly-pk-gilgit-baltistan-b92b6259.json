@@ -1,0 +1,236 @@
+{
+ "purpose": "assembly:PK:Gilgit-Baltistan",
+ "query": "For the Gilgit-Baltistan Assembly (Gilgit-Baltistan, Pakistan) give its current composition: total seats, number of general (constituency) seats and how they are filled, the constituency code prefix and the first and last constituency numbers (e.g. PP-1 to PP-297), the number of seats reserved for women, for minorities/non-Muslims and any other reserved category and how reserved seats are filled, the date of the last general election, and the URL of the official page listing current members.",
+ "run_id": "agent_run_0426df1b63c144a69769ad51708e0b6e",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T00:55:30+00:00",
+ "cost_dollars": {
+  "total": 0.2316,
+  "agent_compute": 0.1926,
+  "search": 0.039,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "source_urls": [
+   "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+   "https://gba.gov.pk/members/",
+   "https://gba.gov.pk/members/?constituency=&district=&member_name=&party_name=6&seat_type=&tenure=2",
+   "https://www.ecgb.gov.pk/pages/notifications",
+   "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+   "https://www.ifes.org/sites/default/files/migrate/the_gilgit-baltistan_elections.pdf"
+  ],
+  "total_seats": 33,
+  "general_seats": 24,
+  "reserved_other": 3,
+  "reserved_women": 6,
+  "constituency_last": 24,
+  "constituency_first": 1,
+  "constituency_prefix": "GBA",
+  "reserved_minorities": 0,
+  "official_members_url": "https://gba.gov.pk/members/",
+  "last_general_election": "2026-06-07",
+  "reserved_selection_method": "indirect_election",
+  "general_seat_selection_method": "direct_election"
+ },
+ "grounding": [
+  {
+   "field": "structured.total_seats",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gba.gov.pk/members/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.general_seats",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gba.gov.pk/members/",
+     "title": null
+    },
+    {
+     "url": "https://www.ifes.org/sites/default/files/migrate/the_gilgit-baltistan_elections.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.general_seat_selection_method",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ifes.org/sites/default/files/migrate/the_gilgit-baltistan_elections.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_prefix",
+   "citations": [
+    {
+     "url": "https://gba.gov.pk/members/?constituency=&district=&member_name=&party_name=6&seat_type=&tenure=2",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_first",
+   "citations": [
+    {
+     "url": "https://gba.gov.pk/members/?constituency=&district=&member_name=&party_name=6&seat_type=&tenure=2",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_last",
+   "citations": [
+    {
+     "url": "https://gba.gov.pk/members/?constituency=&district=&member_name=&party_name=6&seat_type=&tenure=2",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_women",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gba.gov.pk/members/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_minorities",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gba.gov.pk/members/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.reserved_other",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gba.gov.pk/members/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_selection_method",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.ifes.org/sites/default/files/migrate/the_gilgit-baltistan_elections.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.last_general_election",
+   "citations": [
+    {
+     "url": "https://www.ecgb.gov.pk/pages/notifications",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.official_members_url",
+   "citations": [
+    {
+     "url": "https://gba.gov.pk/members/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.source_urls",
+   "citations": [
+    {
+     "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf",
+     "title": null
+    },
+    {
+     "url": "https://gba.gov.pk/members/",
+     "title": null
+    },
+    {
+     "url": "https://gba.gov.pk/members/?constituency=&district=&member_name=&party_name=6&seat_type=&tenure=2",
+     "title": null
+    },
+    {
+     "url": "https://www.ecgb.gov.pk/pages/notifications",
+     "title": null
+    },
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.ifes.org/sites/default/files/migrate/the_gilgit-baltistan_elections.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "{\"total_seats\":33,\"general_seats\":24,\"general_seat_selection_method\":\"direct_election\",\"constituency_prefix\":\"GBA\",\"constituency_first\":1,\"constituency_last\":24,\"reserved_women\":6,\"reserved_minorities\":0,\"reserved_other\":3,\"reserved_selection_method\":\"indirect_election\",\"last_general_election\":\"2026-06-07\",\"official_members_url\":\"https://gba.gov.pk/members/\",\"source_urls\":[\"https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf\",\"https://gba.gov.pk/members/\",\"https://gba.gov.pk/members/?constituency=&district=&member_name=&party_name=6&seat_type=&tenure=2\",\"https://www.ecgb.gov.pk/pages/notifications\",\"https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house\",\"https://www.ifes.org/sites/default/files/migrate/the_gilgit-baltistan_elections.pdf\"]}"
+}

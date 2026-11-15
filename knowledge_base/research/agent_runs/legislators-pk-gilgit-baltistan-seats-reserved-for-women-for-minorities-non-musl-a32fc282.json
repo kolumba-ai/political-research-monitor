@@ -1,0 +1,1256 @@
+{
+ "purpose": "legislators:PK:Gilgit-Baltistan:seats reserved for women, for minorities/non-Muslims and any other reserved category",
+ "query": "List the CURRENT members of the Gilgit-Baltistan Assembly (Gilgit-Baltistan, Pakistan) holding the seats reserved for women, for minorities/non-Muslims and any other reserved category, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_dc9978fc15e24313a8ee278f779f36c9",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T00:58:28+00:00",
+ "cost_dollars": {
+  "total": 0.2473,
+  "agent_compute": 0.1513,
+  "search": 0.096,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Kalsoom Jahangir",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sadia Danish",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sobia Jabeen",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sajida Begum",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League-Nawaz",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Jennifer Bahadur",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League-Nawaz",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Dilshad Bano",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Istehkam-e-Pakistan Party",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "IPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Sharif",
+    "is_acting": false,
+    "seat_type": "other_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sahib Khan",
+    "is_acting": false,
+    "seat_type": "other_reserved",
+    "party_name": "Pakistan Muslim League-Nawaz",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Ali",
+    "is_acting": false,
+    "seat_type": "other_reserved",
+    "party_name": "Istehkam-e-Pakistan Party",
+    "term_start": "2026-06-19",
+    "by_election": false,
+    "source_urls": [
+     "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified"
+    ],
+    "party_acronym": "IPP",
+    "constituency_code": null,
+    "constituency_name": null
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[0].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[1].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[2].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[3].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[4].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[5].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[6].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[7].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].full_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].party_name",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].party_acronym",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].term_start",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[8].is_acting",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].source_urls",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].seat_type",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].by_election",
+   "citations": [
+    {
+     "url": "https://tribune.com.pk/story/2614190/g-b-ec-moves-to-complete-house",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.pk/print/1421563-21-winners-of-gb-assembly-seats-notified",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "As of 15 November 2026, the nine reserved-seat members comprise six women and three technocrats/professionals; there is no separate minority/non-Muslim reserved category. These members were notified on 19 June 2026 and sworn in on 22 June. The assembly’s online member directory has not been updated for the fourth assembly, so the seat-by-seat identifications rely on contemporary reporting of the election commission’s returned-candidate notification. No reserved-seat by-election or subsequent vacancy was identified."
+}

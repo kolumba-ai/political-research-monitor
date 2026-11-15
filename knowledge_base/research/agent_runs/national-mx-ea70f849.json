@@ -1,0 +1,1946 @@
+{
+ "purpose": "national:MX",
+ "query": "Describe the national (federal) government structure of Mexico as of 2026-11-14. For each body in the executive, legislative and judicial branches, plus the national electoral authority, list its offices with: English and local-language title, how the OFFICE is filled (direct_election, indirect_election, appointment, mixed, hereditary, ex_officio), number of seats, term length, and the CURRENT holder(s) for single-seat or leadership offices only (head of state/government, presiding officer of each legislative chamber, president of the highest court, head of the electoral authority) with party and term start/end. For multi-member bodies give seat counts and selection method but do not list every member. Note recent reforms that changed how offices are filled (for example judicial elections). Also list the subnational tiers of government (first-level divisions, and municipal/local government) with counts. Give source URLs for every current officeholder.",
+ "run_id": "agent_run_af5abbdff5664f90a6387c5854a83795",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:07:34+00:00",
+ "cost_dollars": {
+  "total": 0.5347,
+  "agent_compute": 0.3847,
+  "search": 0.15,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "bodies": [
+   {
+    "branch": "executive",
+    "name_en": "Presidency and federal executive administration",
+    "offices": [
+     {
+      "seats": 1,
+      "keywords": [
+       "presidenta",
+       "president"
+      ],
+      "title_en": "President of Mexico",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://cronica.diputados.gob.mx/Ve01oct2024.html"
+      ],
+      "title_local": "Presidenta o Presidente de los Estados Unidos Mexicanos",
+      "current_holders": [
+       {
+        "term_end": "2030-09-30",
+        "coalition": "Sigamos Haciendo Historia",
+        "full_name": "Claudia Sheinbaum Pardo",
+        "is_acting": false,
+        "party_name": "Morena",
+        "term_start": "2024-10-01",
+        "source_urls": [
+         "https://cronica.diputados.gob.mx/Ve01oct2024.html"
+        ],
+        "party_acronym": "MORENA"
+       }
+      ],
+      "selection_method": "direct_election",
+      "selection_details": "Direct nationwide popular election, single six-year term, no reelection.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 21,
+      "keywords": [
+       "titular",
+       "secretary"
+      ],
+      "title_en": "Secretary of State",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf"
+      ],
+      "title_local": "Titular de Secretaría de Estado",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Heads of the 21 secretariats listed in Article 26 of the Organic Law; appointed/removed by the President, with constitutional exceptions to confirmation.",
+      "term_length_years": null
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "titular",
+       "head"
+      ],
+      "title_en": "Head of the Agency for Digital Transformation and Telecommunications",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+      ],
+      "title_local": "Titular de la Agencia de Transformación Digital y Telecomunicaciones",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Executive agency listed separately from the 21 secretariats in Article 26; presidential appointment.",
+      "term_length_years": null
+     }
+    ],
+    "name_local": "Poder Ejecutivo Federal",
+    "description": "The President is both head of state and head of government; executive departments are presidentially headed.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+     "https://cronica.diputados.gob.mx/Ve01oct2024.html"
+    ]
+   },
+   {
+    "branch": "legislative",
+    "name_en": "Chamber of Deputies",
+    "offices": [
+     {
+      "seats": 500,
+      "keywords": [
+       "diputada",
+       "deputy"
+      ],
+      "title_en": "Deputy",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1"
+      ],
+      "title_local": "Diputada o Diputado",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "300 elected in single-member districts by relative majority; 200 elected by proportional representation in five multi-member constituencies.",
+      "term_length_years": 3
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "presidenta",
+       "president"
+      ],
+      "title_en": "President of the Chamber of Deputies",
+      "source_urls": [
+       "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html",
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+      ],
+      "title_local": "Presidenta o Presidente de la Mesa Directiva de la Cámara de Diputados",
+      "current_holders": [
+       {
+        "term_end": "2027-08-31",
+        "coalition": null,
+        "full_name": "Raúl Bolaños-Cacho Cué",
+        "is_acting": false,
+        "party_name": "Partido Verde Ecologista de México",
+        "term_start": "2026-09-01",
+        "source_urls": [
+         "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html"
+        ],
+        "party_acronym": "PVEM"
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Elected by deputies to preside over the chamber for a legislative year.",
+      "term_length_years": 1
+     }
+    ],
+    "name_local": "Cámara de Diputados",
+    "description": "Lower chamber of the bicameral Congress of the Union.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html"
+    ]
+   },
+   {
+    "branch": "legislative",
+    "name_en": "Senate of the Republic",
+    "offices": [
+     {
+      "seats": 128,
+      "keywords": [
+       "senadora",
+       "senator"
+      ],
+      "title_en": "Senator",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1"
+      ],
+      "title_local": "Senadora o Senador",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "64 elected by relative majority (two per state/federal entity), 32 by first-minority allocation (one per entity), and 32 by nationwide proportional representation.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "presidenta",
+       "president"
+      ],
+      "title_en": "President of the Senate",
+      "source_urls": [
+       "https://www.senado.gob.mx/66/mesa_directiva/integrantes",
+       "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/"
+      ],
+      "title_local": "Presidenta o Presidente de la Mesa Directiva del Senado de la República",
+      "current_holders": [
+       {
+        "term_end": "2027-08-31",
+        "coalition": null,
+        "full_name": "Higinio Martínez Miranda",
+        "is_acting": false,
+        "party_name": "Morena",
+        "term_start": "2026-09-01",
+        "source_urls": [
+         "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/"
+        ],
+        "party_acronym": "MORENA"
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Elected from among senators by absolute majority of members present, by ballot; serves one legislative year.",
+      "term_length_years": 1
+     }
+    ],
+    "name_local": "Senado de la República",
+    "description": "Upper chamber of the Congress of the Union.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "https://www.senado.gob.mx/66/mesa_directiva/integrantes",
+     "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "Supreme Court of Justice of the Nation",
+    "offices": [
+     {
+      "seats": 9,
+      "keywords": [
+       "ministra",
+       "justice"
+      ],
+      "title_en": "Justice of the Supreme Court",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+       "https://www.ine.mx/cargos-pj-2025/"
+      ],
+      "title_local": "Ministra o Ministro de la Suprema Corte de Justicia de la Nación",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Nationwide direct, secret popular vote; ordinary twelve-year nonrenewable term. The first elected cohort beginning 2025 has transitional eight- and eleven-year terms.",
+      "term_length_years": 12
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "presidenta",
+       "president"
+      ],
+      "title_en": "President of the Supreme Court",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://www.scjn.gob.mx/presidencia"
+      ],
+      "title_local": "Presidenta o Presidente de la Suprema Corte de Justicia de la Nación",
+      "current_holders": [
+       {
+        "term_end": "2027",
+        "coalition": null,
+        "full_name": "Hugo Aguilar Ortiz",
+        "is_acting": false,
+        "party_name": null,
+        "term_start": "2025-09-01",
+        "source_urls": [
+         "https://www.scjn.gob.mx/presidencia"
+        ],
+        "party_acronym": null
+       }
+      ],
+      "selection_method": "direct_election",
+      "selection_details": "Rotates every two years among elected justices by number of popular votes received.",
+      "term_length_years": 2
+     }
+    ],
+    "name_local": "Suprema Corte de Justicia de la Nación",
+    "description": "Highest constitutional court; since the 2024 reform, nine justices sitting in plenary rather than two chambers.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "https://www.scjn.gob.mx/presidencia"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "Federal Electoral Tribunal",
+    "offices": [
+     {
+      "seats": 7,
+      "keywords": [
+       "magistrada",
+       "electoral"
+      ],
+      "title_en": "Electoral magistrate, Superior Chamber",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+       "https://www.ine.mx/cargos-pj-2025/"
+      ],
+      "title_local": "Magistrada o Magistrado Electoral de la Sala Superior",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Nationwide direct popular vote; ordinary six-year nonrenewable term, subject to transitional rules for sitting and newly elected magistrates.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 15,
+      "keywords": [
+       "magistrada",
+       "electoral"
+      ],
+      "title_en": "Electoral magistrate, regional chambers",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+       "https://www.te.gob.mx/front3/ContenidoSalas/salasRegionales",
+       "https://www.te.gob.mx/front3/bulletins/detail/26498/0"
+      ],
+      "title_local": "Magistrada o Magistrado Electoral de las Salas Regionales",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Five regional chambers of three; direct popular election by electoral constituency. The 2025 elected cohort is reported by the tribunal for 2025–2033 under transitional provisions.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "presidenta",
+       "president"
+      ],
+      "title_en": "President of the Electoral Tribunal",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024"
+      ],
+      "title_local": "Presidenta o Presidente del Tribunal Electoral",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Presidency rotates according to popular vote ranking under reformed Constitution Article 99; not the president of the Supreme Court.",
+      "term_length_years": 2
+     }
+    ],
+    "name_local": "Tribunal Electoral del Poder Judicial de la Federación",
+    "description": "Specialized federal electoral court, within the judiciary, distinct from the autonomous INE.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "https://www.te.gob.mx/front3/ContenidoSalas/salasRegionales",
+     "https://www.te.gob.mx/front3/bulletins/detail/26498/0"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "Federal Judicial Discipline Tribunal",
+    "offices": [
+     {
+      "seats": 5,
+      "keywords": [
+       "magistrada",
+       "judicial"
+      ],
+      "title_en": "Judicial discipline magistrate",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+       "https://www.ine.mx/cargos-pj-2025/"
+      ],
+      "title_local": "Magistrada o Magistrado del Tribunal de Disciplina Judicial",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Direct nationwide popular vote; staggered, nonrenewable six-year terms.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "presidenta",
+       "president"
+      ],
+      "title_en": "President of the Judicial Discipline Tribunal",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024"
+      ],
+      "title_local": "Presidenta o Presidente del Tribunal de Disciplina Judicial",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Two-year rotation according to votes won in the popular judicial election.",
+      "term_length_years": 2
+     }
+    ],
+    "name_local": "Tribunal de Disciplina Judicial",
+    "description": "Independent federal judicial disciplinary body created by the 2024 reform.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "https://www.ine.mx/cargos-pj-2025/"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "Federal Judicial Administration Body",
+    "offices": [
+     {
+      "seats": 5,
+      "keywords": [
+       "integrante",
+       "member"
+      ],
+      "title_en": "Member of the Judicial Administration Body",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024"
+      ],
+      "title_local": "Integrante del Pleno del Órgano de Administración Judicial",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "One designated by the President, one by a two-thirds vote of senators present, and three by six Supreme Court votes.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "presidenta",
+       "president"
+      ],
+      "title_en": "President of the Judicial Administration Body",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024"
+      ],
+      "title_local": "Presidenta o Presidente del Órgano de Administración Judicial",
+      "current_holders": [],
+      "selection_method": "indirect_election",
+      "selection_details": "Rotating two-year leadership from among its five appointed members, under applicable law.",
+      "term_length_years": 2
+     }
+    ],
+    "name_local": "Órgano de Administración Judicial",
+    "description": "Administers the federal judiciary and judicial career, separately from the discipline tribunal.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "Federal circuit courts and district courts",
+    "offices": [
+     {
+      "seats": null,
+      "keywords": [
+       "magistrada",
+       "circuit"
+      ],
+      "title_en": "Circuit magistrate",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+       "https://www.ine.mx/cargos-pj-2025/"
+      ],
+      "title_local": "Magistrada o Magistrado de Circuito",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Direct popular election within judicial circuits; renewable for consecutive nine-year terms. 464 posts were contested in 2025, not the systemwide total.",
+      "term_length_years": 9
+     },
+     {
+      "seats": null,
+      "keywords": [
+       "jueza",
+       "district"
+      ],
+      "title_en": "District judge",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+       "https://www.ine.mx/cargos-pj-2025/"
+      ],
+      "title_local": "Jueza o Juez de Distrito",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Direct popular election within judicial circuits; renewable for consecutive nine-year terms. 386 posts were contested in 2025, not the systemwide total.",
+      "term_length_years": 9
+     }
+    ],
+    "name_local": "Tribunales de Circuito y Juzgados de Distrito",
+    "description": "Circuit appellate and collegiate courts and first-instance district courts; total authorized seats vary and are determined by the Judicial Administration Body. The 2025 election filled 464 circuit and 386 district posts, not their total seat counts.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "https://www.ine.mx/cargos-pj-2025/"
+    ]
+   },
+   {
+    "branch": "electoral",
+    "name_en": "National Electoral Institute, General Council",
+    "offices": [
+     {
+      "seats": 10,
+      "keywords": [
+       "consejera",
+       "electoral"
+      ],
+      "title_en": "Electoral councillor",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf"
+      ],
+      "title_local": "Consejera o Consejero Electoral",
+      "current_holders": [],
+      "selection_method": "indirect_election",
+      "selection_details": "Chosen by two-thirds of deputies present via constitutionally specified selection procedure; staggered nine-year nonrenewable terms.",
+      "term_length_years": 9
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "consejera",
+       "president"
+      ],
+      "title_en": "President of the General Council",
+      "source_urls": [
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+       "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+       "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+       "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/"
+      ],
+      "title_local": "Consejera Presidenta o Consejero Presidente del Consejo General",
+      "current_holders": [
+       {
+        "term_end": null,
+        "coalition": null,
+        "full_name": "Blanca Yassahara Cruz García",
+        "is_acting": true,
+        "party_name": null,
+        "term_start": "2026-10-27",
+        "source_urls": [
+         "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+         "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+         "https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/"
+        ],
+        "party_acronym": null
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Ordinarily chosen by two-thirds of deputies present for a nonrenewable nine-year term; on a definitive vacancy, councillors internally elect a provisional president until the Chamber selects a replacement.",
+      "term_length_years": 9
+     }
+    ],
+    "name_local": "Instituto Nacional Electoral, Consejo General",
+    "description": "Constitutionally autonomous national election administrator; the Council has 11 voting electoral councillor positions, including the presidency. Legislative and party representatives and the executive secretary attend without vote.",
+    "source_urls": [
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+     "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+     "https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/"
+    ]
+   }
+  ],
+  "source_urls": [
+   "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+   "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/cngmd/CNGMD_RR_25.pdf",
+   "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+   "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf"
+  ],
+  "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+  "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+  "subnational_levels": [
+   {
+    "tier": "state",
+    "count": 32,
+    "name_en": "States and Mexico City",
+    "name_local": "Estados y Ciudad de México",
+    "description": "31 states and Mexico City, together called entidades federativas."
+   },
+   {
+    "tier": "municipal",
+    "count": 2462,
+    "name_en": "Municipalities",
+    "name_local": "Municipios",
+    "description": "Local governments of the states; Mexico City instead has 16 territorial boroughs (alcaldías)."
+   },
+   {
+    "tier": "municipal",
+    "count": 16,
+    "name_en": "Mexico City territorial boroughs",
+    "name_local": "Demarcaciones territoriales (alcaldías) de la Ciudad de México",
+    "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide."
+   }
+  ],
+  "system_of_government": "Federal presidential republic"
+ },
+ "grounding": [
+  {
+   "field": "structured.system_of_government",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constitution_name",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constitution_url",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/cngmd/CNGMD_RR_25.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.subnational_levels",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/cngmd/CNGMD_RR_25.pdf",
+     "title": null
+    },
+    {
+     "url": "https://inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/nueva_estruc/889463928997.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+     "title": null
+    },
+    {
+     "url": "https://cronica.diputados.gob.mx/Ve01oct2024.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+     "title": null
+    },
+    {
+     "url": "https://cronica.diputados.gob.mx/Ve01oct2024.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://cronica.diputados.gob.mx/Ve01oct2024.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://cronica.diputados.gob.mx/Ve01oct2024.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[0].current_holders",
+   "citations": [
+    {
+     "url": "https://cronica.diputados.gob.mx/Ve01oct2024.html",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[0].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://cronica.diputados.gob.mx/Ve01oct2024.html",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[0].current_holders[0].source_urls",
+   "citations": [
+    {
+     "url": "https://cronica.diputados.gob.mx/Ve01oct2024.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[2]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[2].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[1]",
+   "citations": [
+    {
+     "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[1].current_holders",
+   "citations": [
+    {
+     "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[1].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[1].current_holders[0].source_urls",
+   "citations": [
+    {
+     "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "title": null
+    },
+    {
+     "url": "https://www.senado.gob.mx/66/mesa_directiva/integrantes",
+     "title": null
+    },
+    {
+     "url": "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "title": null
+    },
+    {
+     "url": "https://www.senado.gob.mx/66/mesa_directiva/integrantes",
+     "title": null
+    },
+    {
+     "url": "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[1]",
+   "citations": [
+    {
+     "url": "https://www.senado.gob.mx/66/mesa_directiva/integrantes",
+     "title": null
+    },
+    {
+     "url": "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.senado.gob.mx/66/mesa_directiva/integrantes",
+     "title": null
+    },
+    {
+     "url": "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[1].current_holders",
+   "citations": [
+    {
+     "url": "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/",
+     "title": null
+    },
+    {
+     "url": "https://www.senado.gob.mx/66/mesa_directiva/integrantes",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[1].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/",
+     "title": null
+    },
+    {
+     "url": "https://www.senado.gob.mx/66/mesa_directiva/integrantes",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[1].current_holders[0].source_urls",
+   "citations": [
+    {
+     "url": "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.scjn.gob.mx/presidencia",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.scjn.gob.mx/presidencia",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.scjn.gob.mx/presidencia",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.scjn.gob.mx/presidencia",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[1].current_holders",
+   "citations": [
+    {
+     "url": "https://www.scjn.gob.mx/presidencia",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[1].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://www.scjn.gob.mx/presidencia",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[1].current_holders[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.scjn.gob.mx/presidencia",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/ContenidoSalas/salasRegionales",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/bulletins/detail/26498/0",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/ContenidoSalas/salasRegionales",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/bulletins/detail/26498/0",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/ContenidoSalas/salasRegionales",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/bulletins/detail/26498/0",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/ContenidoSalas/salasRegionales",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/bulletins/detail/26498/0",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[2]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[2].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5].offices[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6].offices[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7].offices[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024",
+     "title": null
+    },
+    {
+     "url": "https://www.ine.mx/cargos-pj-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[0]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[1]",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[1].current_holders",
+   "citations": [
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[1].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[1].current_holders[0].source_urls",
+   "citations": [
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/",
+     "title": null
+    },
+    {
+     "url": "https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "{\"system_of_government\":\"Federal presidential republic\",\"constitution_name\":\"Constitución Política de los Estados Unidos Mexicanos\",\"constitution_url\":\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"bodies\":[{\"name_en\":\"Presidency and federal executive administration\",\"name_local\":\"Poder Ejecutivo Federal\",\"branch\":\"executive\",\"description\":\"The President is both head of state and head of government; executive departments are presidentially headed.\",\"offices\":[{\"title_en\":\"President of Mexico\",\"title_local\":\"Presidenta o Presidente de los Estados Unidos Mexicanos\",\"selection_method\":\"direct_election\",\"selection_details\":\"Direct nationwide popular election, single six-year term, no reelection.\",\"seats\":1,\"term_length_years\":6,\"keywords\":[\"presidenta\",\"president\"],\"current_holders\":[{\"full_name\":\"Claudia Sheinbaum Pardo\",\"party_name\":\"Morena\",\"party_acronym\":\"MORENA\",\"coalition\":\"Sigamos Haciendo Historia\",\"term_start\":\"2024-10-01\",\"term_end\":\"2030-09-30\",\"is_acting\":false,\"source_urls\":[\"https://cronica.diputados.gob.mx/Ve01oct2024.html\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://cronica.diputados.gob.mx/Ve01oct2024.html\"]},{\"title_en\":\"Secretary of State\",\"title_local\":\"Titular de Secretaría de Estado\",\"selection_method\":\"appointment\",\"selection_details\":\"Heads of the 21 secretariats listed in Article 26 of the Organic Law; appointed/removed by the President, with constitutional exceptions to confirmation.\",\"seats\":21,\"term_length_years\":null,\"keywords\":[\"titular\",\"secretary\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf\"]},{\"title_en\":\"Head of the Agency for Digital Transformation and Telecommunications\",\"title_local\":\"Titular de la Agencia de Transformación Digital y Telecomunicaciones\",\"selection_method\":\"appointment\",\"selection_details\":\"Executive agency listed separately from the 21 secretariats in Article 26; presidential appointment.\",\"seats\":1,\"term_length_years\":null,\"keywords\":[\"titular\",\"head\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf\",\"https://cronica.diputados.gob.mx/Ve01oct2024.html\"]},{\"name_en\":\"Chamber of Deputies\",\"name_local\":\"Cámara de Diputados\",\"branch\":\"legislative\",\"description\":\"Lower chamber of the bicameral Congress of the Union.\",\"offices\":[{\"title_en\":\"Deputy\",\"title_local\":\"Diputada o Diputado\",\"selection_method\":\"direct_election\",\"selection_details\":\"300 elected in single-member districts by relative majority; 200 elected by proportional representation in five multi-member constituencies.\",\"seats\":500,\"term_length_years\":3,\"keywords\":[\"diputada\",\"deputy\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1\"]},{\"title_en\":\"President of the Chamber of Deputies\",\"title_local\":\"Presidenta o Presidente de la Mesa Directiva de la Cámara de Diputados\",\"selection_method\":\"indirect_election\",\"selection_details\":\"Elected by deputies to preside over the chamber for a legislative year.\",\"seats\":1,\"term_length_years\":1,\"keywords\":[\"presidenta\",\"president\"],\"current_holders\":[{\"full_name\":\"Raúl Bolaños-Cacho Cué\",\"party_name\":\"Partido Verde Ecologista de México\",\"party_acronym\":\"PVEM\",\"coalition\":null,\"term_start\":\"2026-09-01\",\"term_end\":\"2027-08-31\",\"is_acting\":false,\"source_urls\":[\"https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html\"]}],\"source_urls\":[\"https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1\",\"https://gaceta.diputados.gob.mx/Gaceta/66/2026/nov/20261104.html\"]},{\"name_en\":\"Senate of the Republic\",\"name_local\":\"Senado de la República\",\"branch\":\"legislative\",\"description\":\"Upper chamber of the Congress of the Union.\",\"offices\":[{\"title_en\":\"Senator\",\"title_local\":\"Senadora o Senador\",\"selection_method\":\"direct_election\",\"selection_details\":\"64 elected by relative majority (two per state/federal entity), 32 by first-minority allocation (one per entity), and 32 by nationwide proportional representation.\",\"seats\":128,\"term_length_years\":6,\"keywords\":[\"senadora\",\"senator\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1\"]},{\"title_en\":\"President of the Senate\",\"title_local\":\"Presidenta o Presidente de la Mesa Directiva del Senado de la República\",\"selection_method\":\"indirect_election\",\"selection_details\":\"Elected from among senators by absolute majority of members present, by ballot; serves one legislative year.\",\"seats\":1,\"term_length_years\":1,\"keywords\":[\"presidenta\",\"president\"],\"current_holders\":[{\"full_name\":\"Higinio Martínez Miranda\",\"party_name\":\"Morena\",\"party_acronym\":\"MORENA\",\"coalition\":null,\"term_start\":\"2026-09-01\",\"term_end\":\"2027-08-31\",\"is_acting\":false,\"source_urls\":[\"https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/\"]}],\"source_urls\":[\"https://www.senado.gob.mx/66/mesa_directiva/integrantes\",\"https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1\",\"https://www.senado.gob.mx/66/mesa_directiva/integrantes\",\"https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo/\"]},{\"name_en\":\"Supreme Court of Justice of the Nation\",\"name_local\":\"Suprema Corte de Justicia de la Nación\",\"branch\":\"judicial\",\"description\":\"Highest constitutional court; since the 2024 reform, nine justices sitting in plenary rather than two chambers.\",\"offices\":[{\"title_en\":\"Justice of the Supreme Court\",\"title_local\":\"Ministra o Ministro de la Suprema Corte de Justicia de la Nación\",\"selection_method\":\"direct_election\",\"selection_details\":\"Nationwide direct, secret popular vote; ordinary twelve-year nonrenewable term. The first elected cohort beginning 2025 has transitional eight- and eleven-year terms.\",\"seats\":9,\"term_length_years\":12,\"keywords\":[\"ministra\",\"justice\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.ine.mx/cargos-pj-2025/\"]},{\"title_en\":\"President of the Supreme Court\",\"title_local\":\"Presidenta o Presidente de la Suprema Corte de Justicia de la Nación\",\"selection_method\":\"direct_election\",\"selection_details\":\"Rotates every two years among elected justices by number of popular votes received.\",\"seats\":1,\"term_length_years\":2,\"keywords\":[\"presidenta\",\"president\"],\"current_holders\":[{\"full_name\":\"Hugo Aguilar Ortiz\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2025-09-01\",\"term_end\":\"2027\",\"is_acting\":false,\"source_urls\":[\"https://www.scjn.gob.mx/presidencia\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://www.scjn.gob.mx/presidencia\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.scjn.gob.mx/presidencia\"]},{\"name_en\":\"Federal Electoral Tribunal\",\"name_local\":\"Tribunal Electoral del Poder Judicial de la Federación\",\"branch\":\"judicial\",\"description\":\"Specialized federal electoral court, within the judiciary, distinct from the autonomous INE.\",\"offices\":[{\"title_en\":\"Electoral magistrate, Superior Chamber\",\"title_local\":\"Magistrada o Magistrado Electoral de la Sala Superior\",\"selection_method\":\"direct_election\",\"selection_details\":\"Nationwide direct popular vote; ordinary six-year nonrenewable term, subject to transitional rules for sitting and newly elected magistrates.\",\"seats\":7,\"term_length_years\":6,\"keywords\":[\"magistrada\",\"electoral\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.ine.mx/cargos-pj-2025/\"]},{\"title_en\":\"Electoral magistrate, regional chambers\",\"title_local\":\"Magistrada o Magistrado Electoral de las Salas Regionales\",\"selection_method\":\"direct_election\",\"selection_details\":\"Five regional chambers of three; direct popular election by electoral constituency. The 2025 elected cohort is reported by the tribunal for 2025–2033 under transitional provisions.\",\"seats\":15,\"term_length_years\":6,\"keywords\":[\"magistrada\",\"electoral\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.te.gob.mx/front3/ContenidoSalas/salasRegionales\",\"https://www.te.gob.mx/front3/bulletins/detail/26498/0\"]},{\"title_en\":\"President of the Electoral Tribunal\",\"title_local\":\"Presidenta o Presidente del Tribunal Electoral\",\"selection_method\":\"direct_election\",\"selection_details\":\"Presidency rotates according to popular vote ranking under reformed Constitution Article 99; not the president of the Supreme Court.\",\"seats\":1,\"term_length_years\":2,\"keywords\":[\"presidenta\",\"president\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.te.gob.mx/front3/ContenidoSalas/salasRegionales\",\"https://www.te.gob.mx/front3/bulletins/detail/26498/0\"]},{\"name_en\":\"Federal Judicial Discipline Tribunal\",\"name_local\":\"Tribunal de Disciplina Judicial\",\"branch\":\"judicial\",\"description\":\"Independent federal judicial disciplinary body created by the 2024 reform.\",\"offices\":[{\"title_en\":\"Judicial discipline magistrate\",\"title_local\":\"Magistrada o Magistrado del Tribunal de Disciplina Judicial\",\"selection_method\":\"direct_election\",\"selection_details\":\"Direct nationwide popular vote; staggered, nonrenewable six-year terms.\",\"seats\":5,\"term_length_years\":6,\"keywords\":[\"magistrada\",\"judicial\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.ine.mx/cargos-pj-2025/\"]},{\"title_en\":\"President of the Judicial Discipline Tribunal\",\"title_local\":\"Presidenta o Presidente del Tribunal de Disciplina Judicial\",\"selection_method\":\"direct_election\",\"selection_details\":\"Two-year rotation according to votes won in the popular judicial election.\",\"seats\":1,\"term_length_years\":2,\"keywords\":[\"presidenta\",\"president\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.ine.mx/cargos-pj-2025/\"]},{\"name_en\":\"Federal Judicial Administration Body\",\"name_local\":\"Órgano de Administración Judicial\",\"branch\":\"judicial\",\"description\":\"Administers the federal judiciary and judicial career, separately from the discipline tribunal.\",\"offices\":[{\"title_en\":\"Member of the Judicial Administration Body\",\"title_local\":\"Integrante del Pleno del Órgano de Administración Judicial\",\"selection_method\":\"appointment\",\"selection_details\":\"One designated by the President, one by a two-thirds vote of senators present, and three by six Supreme Court votes.\",\"seats\":5,\"term_length_years\":6,\"keywords\":[\"integrante\",\"member\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\"]},{\"title_en\":\"President of the Judicial Administration Body\",\"title_local\":\"Presidenta o Presidente del Órgano de Administración Judicial\",\"selection_method\":\"indirect_election\",\"selection_details\":\"Rotating two-year leadership from among its five appointed members, under applicable law.\",\"seats\":1,\"term_length_years\":2,\"keywords\":[\"presidenta\",\"president\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\"]},{\"name_en\":\"Federal circuit courts and district courts\",\"name_local\":\"Tribunales de Circuito y Juzgados de Distrito\",\"branch\":\"judicial\",\"description\":\"Circuit appellate and collegiate courts and first-instance district courts; total authorized seats vary and are determined by the Judicial Administration Body. The 2025 election filled 464 circuit and 386 district posts, not their total seat counts.\",\"offices\":[{\"title_en\":\"Circuit magistrate\",\"title_local\":\"Magistrada o Magistrado de Circuito\",\"selection_method\":\"direct_election\",\"selection_details\":\"Direct popular election within judicial circuits; renewable for consecutive nine-year terms. 464 posts were contested in 2025, not the systemwide total.\",\"seats\":null,\"term_length_years\":9,\"keywords\":[\"magistrada\",\"circuit\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.ine.mx/cargos-pj-2025/\"]},{\"title_en\":\"District judge\",\"title_local\":\"Jueza o Juez de Distrito\",\"selection_method\":\"direct_election\",\"selection_details\":\"Direct popular election within judicial circuits; renewable for consecutive nine-year terms. 386 posts were contested in 2025, not the systemwide total.\",\"seats\":null,\"term_length_years\":9,\"keywords\":[\"jueza\",\"district\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.ine.mx/cargos-pj-2025/\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.ine.mx/cargos-pj-2025/\"]},{\"name_en\":\"National Electoral Institute, General Council\",\"name_local\":\"Instituto Nacional Electoral, Consejo General\",\"branch\":\"electoral\",\"description\":\"Constitutionally autonomous national election administrator; the Council has 11 voting electoral councillor positions, including the presidency. Legislative and party representatives and the executive secretary attend without vote.\",\"offices\":[{\"title_en\":\"Electoral councillor\",\"title_local\":\"Consejera o Consejero Electoral\",\"selection_method\":\"indirect_election\",\"selection_details\":\"Chosen by two-thirds of deputies present via constitutionally specified selection procedure; staggered nine-year nonrenewable terms.\",\"seats\":10,\"term_length_years\":9,\"keywords\":[\"consejera\",\"electoral\"],\"current_holders\":[],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf\"]},{\"title_en\":\"President of the General Council\",\"title_local\":\"Consejera Presidenta o Consejero Presidente del Consejo General\",\"selection_method\":\"indirect_election\",\"selection_details\":\"Ordinarily chosen by two-thirds of deputies present for a nonrenewable nine-year term; on a definitive vacancy, councillors internally elect a provisional president until the Chamber selects a replacement.\",\"seats\":1,\"term_length_years\":9,\"keywords\":[\"consejera\",\"president\"],\"current_holders\":[{\"full_name\":\"Blanca Yassahara Cruz García\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2026-10-27\",\"term_end\":null,\"is_acting\":true,\"source_urls\":[\"https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/\",\"https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/\",\"https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf\",\"https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/\",\"https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/\"]}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf\",\"https://centralelectoral.ine.mx/2026/10/27/blanca-yassahara-cruz-garcia-designada-como-consejera-presidenta-provisional-del-ine/\",\"https://centralelectoral.ine.mx/2026/10/27/asegura-ine-continuidad-institucional-con-la-designacion-de-blanca-cruz-garcia-como-consejera-presidenta-provisional/\",\"https://centralelectoral.ine.mx/2026/11/13/designa-ine-a-nuevo-titular-del-comite-de-transparencia/\"]}],\"subnational_levels\":[{\"name_en\":\"States and Mexico City\",\"name_local\":\"Estados y Ciudad de México\",\"tier\":\"state\",\"count\":32,\"description\":\"31 states and Mexico City, together called entidades federativas.\"},{\"name_en\":\"Municipalities\",\"name_local\":\"Municipios\",\"tier\":\"municipal\",\"count\":2462,\"description\":\"Local governments of the states; Mexico City instead has 16 territorial boroughs (alcaldías).\"},{\"name_en\":\"Mexico City territorial boroughs\",\"name_local\":\"Demarcaciones territoriales (alcaldías) de la Ciudad de México\",\"tier\":\"municipal\",\"count\":16,\"description\":\"Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.\"}],\"source_urls\":[\"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf\",\"https://dof.gob.mx/nota_detalle.php?codigo=5738985&fecha=15/09/2024\",\"https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/cngmd/CNGMD_RR_25.pdf\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf\",\"https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf\"]}"
+}

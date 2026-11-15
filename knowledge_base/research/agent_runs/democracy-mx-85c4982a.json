@@ -1,0 +1,327 @@
+{
+ "purpose": "democracy:MX",
+ "query": "Find the most recent published democracy classifications for Mexico:\n1. Freedom House 'Freedom in the World': status (Free / Partly Free / Not Free) and global score out of 100, from the freedomhouse.org country report page.\n2. V-Dem 'Regimes of the World' classification (Liberal Democracy / Electoral Democracy / Electoral Autocracy / Closed Autocracy) from the latest V-Dem Democracy Report or v-dem.net; note if it is in the grey zone (upper/lower bound).\n3. EIU Democracy Index category (Full democracy / Flawed democracy / Hybrid regime / Authoritarian) and score.\nReport each index separately with its edition year, the exact URL that states the classification, and a short verbatim quote. Omit an index rather than guess if its classification cannot be found.",
+ "run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:02:34+00:00",
+ "cost_dollars": {
+  "total": 0.7338,
+  "agent_compute": 0.6138,
+  "search": 0.12,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "assessments": [
+   {
+    "index": "freedom_house",
+    "score": 58,
+    "publication": "Freedom in the World 2026",
+    "score_scale": "0-100",
+    "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+    "evidence_quote": "Mexico\n\nPartly Free\n\n58 100",
+    "assessment_year": 2026,
+    "classification_raw": "Partly Free"
+   },
+   {
+    "index": "vdem",
+    "score": null,
+    "publication": "V-Dem Democracy Report 2026 (Regimes of the World, 2025)",
+    "score_scale": null,
+    "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+    "evidence_quote": "Mexico | EA+ | ",
+    "assessment_year": 2026,
+    "classification_raw": "Electoral Autocracy"
+   },
+   {
+    "index": "eiu",
+    "score": 5.4,
+    "publication": "Democracy Index 2025",
+    "score_scale": "0-10",
+    "evidence_url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+    "evidence_quote": "81 | 🇲🇽 Mexico | 5.40 | Hybrid regime",
+    "assessment_year": 2025,
+    "classification_raw": "Hybrid regime"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.assessments[0].index",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[0].classification_raw",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[0].score",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[0].score_scale",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[0].assessment_year",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[0].publication",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[0].evidence_url",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[0].evidence_quote",
+   "citations": [
+    {
+     "url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[1].index",
+   "citations": [
+    {
+     "url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[1].classification_raw",
+   "citations": [
+    {
+     "url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[1].assessment_year",
+   "citations": [
+    {
+     "url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[1].publication",
+   "citations": [
+    {
+     "url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[1].evidence_url",
+   "citations": [
+    {
+     "url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[1].evidence_quote",
+   "citations": [
+    {
+     "url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[2].index",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.assessments[2].classification_raw",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[2].score",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.assessments[2].score_scale",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.assessments[2].assessment_year",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.assessments[2].publication",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.assessments[2].evidence_url",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.assessments[2].evidence_quote",
+   "citations": [
+    {
+     "url": "https://www.visualcapitalist.com/mapped-state-of-democracy-around-the-world/",
+     "title": null
+    },
+    {
+     "url": "https://www.eiu.com/n/campaigns/democracy-index-2025/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "Mexico is Partly Free (58/100) in Freedom House’s 2026 edition; an Electoral Autocracy in the upper-bound grey zone (EA+) in V-Dem’s 2026 report, whose regime classifications refer to 2025; and a Hybrid regime (5.40/10) in the EIU’s 2025 index. The EIU’s publisher confirms the 2025 edition, but its publicly accessible page does not list Mexico: the linked Mexico-specific quotation is from a secondary publication reproducing the EIU rankings."
+}

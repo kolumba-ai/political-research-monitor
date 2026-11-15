@@ -1,0 +1,697 @@
+{
+ "purpose": "contact:PK",
+ "query": "Research the law in Pakistan on communicating with public officials about political issues. For each meaningful combination below determine whether it is allowed, restricted (allowed with conditions), prohibited, or unknown, citing the statute/article and an official URL:\n- purposes: issue_communication (contacting an elected official about a policy issue), fact_verification_request (asking an official or their office to confirm or deny a factual claim), petition, lobbying, campaign_communication\n- channels: email, postal_mail, web_form, phone, social_media\n- senders: citizen, foreign_national, organization (domestic NGO/company), foreign_organization, automated_system\n- recipients: elected_official, candidate (consider campaign periods), public_servant\nCover the constitutional right of petition, data-protection/privacy law (use of officials' contact data, bulk messaging), election law (campaign/blackout periods, restrictions on foreigners in political affairs), lobbying regulation, and telecommunications/anti-spam rules. Include at least the organization and foreign_organization senders for issue_communication and fact_verification_request to elected officials.",
+ "run_id": "agent_run_9bd5c5fce101482b8e8345b261115b75",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:47:58+00:00",
+ "cost_dollars": {
+  "total": 0.4597,
+  "agent_compute": 0.3427,
+  "search": 0.117,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "laws": [
+   {
+    "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+    "name": "Constitution of the Islamic Republic of Pakistan, arts. 4, 16–17, 19–19A",
+    "category": "constitutional",
+    "relevance": "Citizen speech and information; no expressly enumerated general petition-to-official right."
+   },
+   {
+    "url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf",
+    "name": "Right of Access to Information Act, 2017",
+    "category": "other",
+    "relevance": "Federal recorded-information requests by Pakistani citizens or agents acting for them."
+   },
+   {
+    "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+    "name": "Elections Act, 2017",
+    "category": "election",
+    "relevance": "Publicity, election meetings/processions blackout and foreign-source political-party contributions."
+   },
+   {
+    "url": "https://dpr.gob.pk/wp-content/uploads/2026/09/The-Prevention-of-Electronic-Crimes-Act-2016-Amendment-2025-2016.pdf",
+    "name": "Prevention of Electronic Crimes Act, 2016 (as amended)",
+    "category": "communications",
+    "relevance": "Section 25 spamming, unsubscribe for direct marketing; amended definition of unsolicited information."
+   },
+   {
+    "url": "https://www.pta.gov.pk/category/pta-issues-regulations-for-unsolicited-and-obnoxious-communications-533423703-2023-06-01",
+    "name": "Protection from SPAM, Unsolicited, Fraudulent and Obnoxious Communication Regulations, 2009",
+    "category": "communications",
+    "relevance": "PTA call/SMS operator controls and Do Not Call Register."
+   },
+   {
+    "url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf",
+    "name": "Policy for Local NGOs/NPOs Receiving Foreign Contributions, 2022",
+    "category": "other",
+    "relevance": "Foreign-funded local NGO approval, project-specific MoU and prohibited activities; not a general foreign-organization permission."
+   },
+   {
+    "url": "https://www.moitt.gov.pk/Legislations",
+    "name": "Personal Data Protection Bill, May 2023 (draft)",
+    "category": "privacy",
+    "relevance": "Official legislation register labels this draft, not an enacted general personal-data statute."
+   },
+   {
+    "url": "https://www.establishment.gov.pk/SiteImage/Misc/files/Letter%20for%20instructions%20on%20use%20of%20social%20media.pdf",
+    "name": "Government Servants (Conduct) Rules, 1964 and 2021 social-media instructions",
+    "category": "other",
+    "relevance": "Rules restricting government servants’ public political expression and disclosure; not a ban on citizens contacting them."
+   }
+  ],
+  "notes": "Compliance research summary, not legal advice; position as of 2026-11-14. Rows are representative rule-bearing combinations, not the 5×5×5×3 Cartesian product; “any” means the stated rule applies across that axis, not that every possible conduct is permitted. For foreign-source campaign rows, the contribution is prohibited, NOT the bare act of contacting a candidate. Constitution art. 19A and the federal RTI Act establish information-access rights, not a free-standing constitutional right to petition and receive a reply. The 2023 personal-data bill is listed as draft; do not treat its proposed consent provisions as law. Publishing an official work address does not itself establish consent to mass marketing; no general statutory ban on use of all published official contact details was established. No general federal lobbyist-registration statute was verified; parliamentary survey data is internally inconsistent about accredited-lobbyist registers. Foreign NGO project/MoU terms must be checked individually. Election-specific ECP codes and provincial statutes can impose further restrictions.",
+  "dimensions": [
+   {
+    "sender": "citizen",
+    "status": "allowed",
+    "channel": "email",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Peaceful, lawful policy communication; no entitlement to an answer or to use a particular inbox/platform. Electronic messages must not violate PECA s.25.",
+    "legal_basis": "Constitution arts. 4(2)(b), 19; PECA 2016 s.25",
+    "evidence_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "allowed",
+    "channel": "postal_mail",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Peaceful, lawful policy communication; no entitlement to an answer or to use a particular inbox/platform. Electronic messages must not violate PECA s.25.",
+    "legal_basis": "Constitution arts. 4(2)(b), 19",
+    "evidence_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "allowed",
+    "channel": "web_form",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Peaceful, lawful policy communication; no entitlement to an answer or to use a particular inbox/platform. Electronic messages must not violate PECA s.25.",
+    "legal_basis": "Constitution arts. 4(2)(b), 19; PECA 2016 s.25",
+    "evidence_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "allowed",
+    "channel": "phone",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Peaceful, lawful policy communication; no entitlement to an answer or to use a particular inbox/platform. Electronic messages must not violate PECA s.25.",
+    "legal_basis": "Constitution arts. 4(2)(b), 19",
+    "evidence_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "allowed",
+    "channel": "social_media",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Peaceful, lawful policy communication; no entitlement to an answer or to use a particular inbox/platform. Electronic messages must not violate PECA s.25.",
+    "legal_basis": "Constitution arts. 4(2)(b), 19; PECA 2016 s.25",
+    "evidence_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Ordinary lawful advocacy; foreign-funded local NGOs must comply with approved EAD projects/MoU where applicable; no prohibited electronic spam. No general lobbyist registration established.",
+    "legal_basis": "Constitution art. 4(2)(b); EAD Local NGOs/NPOs Policy 2022 paras 6–9, 13",
+    "evidence_url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf"
+   },
+   {
+    "sender": "foreign_organization",
+    "status": "unknown",
+    "channel": "postal_mail",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "No general permission or ban on a foreign organization’s nonpartisan letter was established; check its registration, visa/status and any INGO-specific MoU. Do not infer political campaign permission.",
+    "legal_basis": "Constitution arts. 4, 19 (citizen-specific speech); EAD Local NGOs/NPOs Policy 2022 (local NGO scope)",
+    "evidence_url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf"
+   },
+   {
+    "sender": "foreign_national",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "Nonpartisan contact is not itself shown prohibited; foreign nationals do not hold the citizen-specific constitutional speech guarantee. Do not provide prohibited party donations or campaign facilities; comply with electronic-message law.",
+    "legal_basis": "Constitution arts. 4, 19; Elections Act 2017 s.204(3); PECA 2016 s.25",
+    "evidence_url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf"
+   },
+   {
+    "sender": "automated_system",
+    "status": "restricted",
+    "channel": "phone",
+    "purpose": "issue_communication",
+    "recipient": "elected_official",
+    "conditions": "An automated call is not a legal person with independent speech rights; human/operator bears responsibility. Telecom anti-spam controls cover calls; avoid unwanted bulk calling.",
+    "legal_basis": "PTA Protection from SPAM, Unsolicited, Fraudulent and Obnoxious Communication Regulations 2009",
+    "evidence_url": "https://www.pta.gov.pk/category/pta-issues-regulations-for-unsolicited-and-obnoxious-communications-533423703-2023-06-01"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "fact_verification_request",
+    "recipient": "elected_official",
+    "conditions": "Ordinary factual inquiry may be made; for an enforceable federal records request, act for/on behalf of an identifiable Pakistani citizen and submit to the designated official, not merely the member.",
+    "legal_basis": "Right of Access to Information Act 2017 ss.2(ii), 3, 9–11",
+    "evidence_url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf"
+   },
+   {
+    "sender": "foreign_organization",
+    "status": "unknown",
+    "channel": "web_form",
+    "purpose": "fact_verification_request",
+    "recipient": "elected_official",
+    "conditions": "No verified right to compel an elected official to answer a foreign organization’s claim-verification form. Federal RTI applicant must be a Pakistani citizen or someone acting for that citizen.",
+    "legal_basis": "Constitution art.19A; Right of Access to Information Act 2017 s.2(ii)",
+    "evidence_url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "restricted",
+    "channel": "postal_mail",
+    "purpose": "fact_verification_request",
+    "recipient": "public_servant",
+    "conditions": "For federal records, submit a sufficiently described request to the designated official under the RTI Act; a demand for an official opinion or a confirmation of a claim not in records is not necessarily a records request. Provincial bodies have separate regimes.",
+    "legal_basis": "Constitution art.19A; Right of Access to Information Act 2017 ss.2, 3, 9–11",
+    "evidence_url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf"
+   },
+   {
+    "sender": "foreign_national",
+    "status": "unknown",
+    "channel": "phone",
+    "purpose": "fact_verification_request",
+    "recipient": "public_servant",
+    "conditions": "Informal asking is not shown banned, but the cited federal statutory access right defines applicant by Pakistani citizenship (or an agent for a Pakistani citizen); no right to compel a spoken answer established.",
+    "legal_basis": "Right of Access to Information Act 2017 ss.2(ii), 3",
+    "evidence_url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "restricted",
+    "channel": "postal_mail",
+    "purpose": "petition",
+    "recipient": "elected_official",
+    "conditions": "Peaceful written petition/representation is protected as expression; Pakistan’s Constitution does NOT expressly state a free-standing right to petition an elected official or demand a response.",
+    "legal_basis": "Constitution arts.4(2)(b), 19, 19A",
+    "evidence_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "web_form",
+    "purpose": "petition",
+    "recipient": "public_servant",
+    "conditions": "A lawful representation may be submitted through an available government form; the cited Constitution does not guarantee a particular form, processing, or response. Formal RTI requests follow separate procedures.",
+    "legal_basis": "Constitution arts.4(2)(b), 19A; Right of Access to Information Act 2017 ss.2–3",
+    "evidence_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "in_person",
+    "purpose": "lobbying",
+    "recipient": "elected_official",
+    "conditions": "Nonpartisan advocacy is not shown subject to a general federal lobbyist license; no immunity from other laws, and foreign-funded NGO approved-project/MoU restrictions may apply.",
+    "legal_basis": "Constitution arts.4, 17, 19; EAD Local NGOs/NPOs Policy 2022 paras 6–9, 13",
+    "evidence_url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf"
+   },
+   {
+    "sender": "foreign_organization",
+    "status": "unknown",
+    "channel": "email",
+    "purpose": "lobbying",
+    "recipient": "public_servant",
+    "conditions": "No general federal lobbyist-registration rule or permission for all foreign entities established; organization-specific authorization and anti-corruption constraints require separate review.",
+    "legal_basis": "EAD Local NGOs/NPOs Policy 2022 (scope: local NGOs)",
+    "evidence_url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf"
+   },
+   {
+    "sender": "citizen",
+    "status": "restricted",
+    "channel": "social_media",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "Lawful campaign discussion remains subject to applicable election code, publicity restrictions and PECA; s.182 prohibits public meetings/processions in the specified 48-hour period, not every private online message.",
+    "legal_basis": "Elections Act 2017 ss.180–183; PECA 2016 s.25",
+    "evidence_url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf"
+   },
+   {
+    "sender": "organization",
+    "status": "restricted",
+    "channel": "phone",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "Campaign services/facilities may amount to in-kind contributions; observe applicable ECP code and publicity rules. Statutory s.182 meeting/procession blackout is not a blanket ban on private calls.",
+    "legal_basis": "Elections Act 2017 ss.180–183, 204",
+    "evidence_url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf"
+   },
+   {
+    "sender": "foreign_national",
+    "status": "restricted",
+    "channel": "postal_mail",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "Contact itself is not categorically barred; foreign-source contributions to a political party (cash or in-kind campaign facilities) are prohibited. Overseas Pakistani NICOP exception applies.",
+    "legal_basis": "Elections Act 2017 s.204(3) and Explanation",
+    "evidence_url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf"
+   },
+   {
+    "sender": "foreign_organization",
+    "status": "restricted",
+    "channel": "email",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "Contact itself is not categorically barred; foreign-source contributions to a political party, including paid campaigning or in-kind facilities, are prohibited.",
+    "legal_basis": "Elections Act 2017 s.204(3)–(4)",
+    "evidence_url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf"
+   },
+   {
+    "sender": "automated_system",
+    "status": "restricted",
+    "channel": "social_media",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "Responsible operator must avoid misleading/illegal information and commercial marketing contrary to explicit rejection; if a foreign source supplies party campaign facilities, foreign-donation ban may apply. No universal statutory bot ban established.",
+    "legal_basis": "PECA 2016 ss.2(1)(xxxiii), 25; Elections Act 2017 s.204(3)",
+    "evidence_url": "https://dpr.gob.pk/wp-content/uploads/2026/09/The-Prevention-of-Electronic-Crimes-Act-2016-Amendment-2025-2016.pdf"
+   },
+   {
+    "sender": "automated_system",
+    "status": "restricted",
+    "channel": "social_media",
+    "purpose": "fact_verification_request",
+    "recipient": "public_servant",
+    "conditions": "A system has no separate statutory request right; operator must comply with applicable PECA rules, including prohibitions on harmful/fraudulent/misleading/illegal messaging; no obligation to reply on social media.",
+    "legal_basis": "PECA 2016 s.25",
+    "evidence_url": "https://dpr.gob.pk/wp-content/uploads/2026/09/The-Prevention-of-Electronic-Crimes-Act-2016-Amendment-2025-2016.pdf"
+   },
+   {
+    "sender": "any",
+    "status": "restricted",
+    "channel": "any",
+    "purpose": "campaign_communication",
+    "recipient": "candidate",
+    "conditions": "Election campaign publicity is regulated; s.182 bars public meetings/processions during the statutory 48-hour window ending at midnight after the poll. Do not treat this as a blanket ban on every private message or every online post.",
+    "legal_basis": "Elections Act 2017 ss.180, 182–183",
+    "evidence_url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.dimensions[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[2]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[3]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[4]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[5]",
+   "citations": [
+    {
+     "url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[6]",
+   "citations": [
+    {
+     "url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[7]",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[8]",
+   "citations": [
+    {
+     "url": "https://www.pta.gov.pk/category/pta-issues-regulations-for-unsolicited-and-obnoxious-communications-533423703-2023-06-01",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[9]",
+   "citations": [
+    {
+     "url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[10]",
+   "citations": [
+    {
+     "url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[11]",
+   "citations": [
+    {
+     "url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[12]",
+   "citations": [
+    {
+     "url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[13]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[14]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[15]",
+   "citations": [
+    {
+     "url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[16]",
+   "citations": [
+    {
+     "url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.dimensions[17]",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[18]",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[19]",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[20]",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[21]",
+   "citations": [
+    {
+     "url": "https://dpr.gob.pk/wp-content/uploads/2026/09/The-Prevention-of-Electronic-Crimes-Act-2016-Amendment-2025-2016.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[22]",
+   "citations": [
+    {
+     "url": "https://dpr.gob.pk/wp-content/uploads/2026/09/The-Prevention-of-Electronic-Crimes-Act-2016-Amendment-2025-2016.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.dimensions[23]",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[1]",
+   "citations": [
+    {
+     "url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[2]",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[3]",
+   "citations": [
+    {
+     "url": "https://dpr.gob.pk/wp-content/uploads/2026/09/The-Prevention-of-Electronic-Crimes-Act-2016-Amendment-2025-2016.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[4]",
+   "citations": [
+    {
+     "url": "https://www.pta.gov.pk/category/pta-issues-regulations-for-unsolicited-and-obnoxious-communications-533423703-2023-06-01",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[5]",
+   "citations": [
+    {
+     "url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[6]",
+   "citations": [
+    {
+     "url": "https://www.moitt.gov.pk/Legislations",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.laws[7]",
+   "citations": [
+    {
+     "url": "https://www.establishment.gov.pk/SiteImage/Misc/files/Letter%20for%20instructions%20on%20use%20of%20social%20media.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.notes",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://download1.fbr.gov.pk/Docs/20181091110018405RightofAccesstoInformationAct2017.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/1506961151_781.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.moitt.gov.pk/Legislations",
+     "title": null
+    },
+    {
+     "url": "https://data.ipu.org/parliament/PK/PK-LC01/working-methods/openness-and-transparency",
+     "title": null
+    },
+    {
+     "url": "https://ead.gov.pk/SiteImage/Policy/NGOs-Policy-2022.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  }
+ ],
+ "text": "Pakistan compliance research summary as of 14 November 2026; representative combinations, with statutory and official-source links. Not legal advice."
+}

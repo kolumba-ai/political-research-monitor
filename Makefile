@@ -2,7 +2,7 @@ PY := $(CURDIR)/.venv/bin/python
 NEO4J_HOME := $(CURDIR)/.local/neo4j-community-5.26.0
 RUN := cd backend && $(PY) -m polgraph
 
-.PHONY: classify install neo4j-start neo4j-stop seed mexico mexico-production refresh-mexico report path serve test
+.PHONY: export import-kb classify install neo4j-start neo4j-stop seed mexico mexico-production refresh-mexico report path serve test
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -44,3 +44,9 @@ pakistan:
 
 classify:
 	$(RUN) classify-world
+
+export:
+	$(RUN) export --out ../knowledge_base
+
+import-kb:
+	$(RUN) import --from ../knowledge_base

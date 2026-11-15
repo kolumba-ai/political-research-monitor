@@ -1,0 +1,250 @@
+iso2,iso3,name,continent,regime_group,regime_class,regime_basis,indices_agree,eiu,freedom_house,vdem,government_researched
+AD,AND,Andorra,Europe,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+AE,ARE,United Arab Emirates,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+AF,AFG,Afghanistan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+AG,ATG,Antigua and Barbuda,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+AI,AIA,Anguilla,North America,Unclassified,,no index covers this country/territory,,,,,False
+AL,ALB,Albania,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+AM,ARM,Armenia,Asia,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+AO,AGO,Angola,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+AQ,ATA,Antarctica,Antarctica,Unclassified,,no index covers this country/territory,,,,,False
+AR,ARG,Argentina,South America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+AS,ASM,American Samoa,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+AT,AUT,Austria,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+AU,AUS,Australia,Oceania,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+AW,ABW,Aruba,North America,Unclassified,,no index covers this country/territory,,,,,False
+AX,ALA,Åland Islands,Europe,Unclassified,,no index covers this country/territory,,,,,False
+AZ,AZE,Azerbaijan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+BA,BIH,Bosnia and Herzegovina,Europe,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+BB,BRB,Barbados,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+BD,BGD,Bangladesh,Asia,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+BE,BEL,Belgium,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+BF,BFA,Burkina Faso,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+BG,BGR,Bulgaria,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+BH,BHR,Bahrain,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+BI,BDI,Burundi,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+BJ,BEN,Benin,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+BL,BLM,Saint Barthélemy,North America,Unclassified,,no index covers this country/territory,,,,,False
+BM,BMU,Bermuda,North America,Unclassified,,no index covers this country/territory,,,,,False
+BN,BRN,Brunei Darussalam,Asia,Authoritarian,Not free,Freedom House Freedom in the World 2024,True,,Not free (2024),,False
+BO,BOL,"Bolivia, Plurinational State of",South America,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+BQ,BES,"Bonaire, Sint Eustatius and Saba",North America,Unclassified,,no index covers this country/territory,,,,,False
+BR,BRA,Brazil,South America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+BS,BHS,Bahamas,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+BT,BTN,Bhutan,Asia,Partly democratic,Hybrid regime,EIU Democracy Index 2025,False,Hybrid regime (2025),Free (2024),,False
+BV,BVT,Bouvet Island,South America,Unclassified,,no index covers this country/territory,,,,,False
+BW,BWA,Botswana,Africa,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+BY,BLR,Belarus,Europe,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+BZ,BLZ,Belize,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+CA,CAN,Canada,North America,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+CC,CCK,Cocos (Keeling) Islands,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+CD,COD,"Congo, Democratic Republic of the",Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+CF,CAF,Central African Republic,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+CG,COG,Congo,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+CH,CHE,Switzerland,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+CI,CIV,Côte d'Ivoire,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+CK,COK,Cook Islands,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+CL,CHL,Chile,South America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+CM,CMR,Cameroon,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+CN,CHN,China,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+CO,COL,Colombia,South America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+CR,CRI,Costa Rica,North America,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+CU,CUB,Cuba,North America,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+CV,CPV,Cabo Verde,Africa,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+CW,CUW,Curaçao,North America,Unclassified,,no index covers this country/territory,,,,,False
+CX,CXR,Christmas Island,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+CY,CYP,Cyprus,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+CZ,CZE,Czechia,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+DE,DEU,Germany,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+DJ,DJI,Djibouti,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+DK,DNK,Denmark,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+DM,DMA,Dominica,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+DO,DOM,Dominican Republic,North America,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+DZ,DZA,Algeria,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+EC,ECU,Ecuador,South America,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+EE,EST,Estonia,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+EG,EGY,Egypt,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+EH,ESH,Western Sahara,Africa,Unclassified,,no index covers this country/territory,,,,,False
+ER,ERI,Eritrea,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+ES,ESP,Spain,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+ET,ETH,Ethiopia,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+FI,FIN,Finland,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+FJ,FJI,Fiji,Oceania,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+FK,FLK,Falkland Islands (Malvinas),South America,Unclassified,,no index covers this country/territory,,,,,False
+FM,FSM,"Micronesia, Federated States of",Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+FO,FRO,Faroe Islands,Europe,Unclassified,,no index covers this country/territory,,,,,False
+FR,FRA,France,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+GA,GAB,Gabon,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+GB,GBR,United Kingdom of Great Britain and Northern Ireland,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+GD,GRD,Grenada,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+GE,GEO,Georgia,Asia,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+GF,GUF,French Guiana,South America,Unclassified,,no index covers this country/territory,,,,,False
+GG,GGY,Guernsey,Europe,Unclassified,,no index covers this country/territory,,,,,False
+GH,GHA,Ghana,Africa,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+GI,GIB,Gibraltar,Europe,Unclassified,,no index covers this country/territory,,,,,False
+GL,GRL,Greenland,North America,Unclassified,,no index covers this country/territory,,,,,False
+GM,GMB,Gambia,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+GN,GIN,Guinea,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+GP,GLP,Guadeloupe,North America,Unclassified,,no index covers this country/territory,,,,,False
+GQ,GNQ,Equatorial Guinea,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+GR,GRC,Greece,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+GS,SGS,South Georgia and the South Sandwich Islands,South America,Unclassified,,no index covers this country/territory,,,,,False
+GT,GTM,Guatemala,North America,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+GU,GUM,Guam,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+GW,GNB,Guinea-Bissau,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,False,Authoritarian (2025),Partly free (2024),,False
+GY,GUY,Guyana,South America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+HK,HKG,Hong Kong,Asia,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),,,False
+HM,HMD,Heard Island and McDonald Islands,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+HN,HND,Honduras,North America,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+HR,HRV,Croatia,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+HT,HTI,Haiti,North America,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+HU,HUN,Hungary,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+ID,IDN,Indonesia,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+IE,IRL,Ireland,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+IL,ISR,Israel,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+IM,IMN,Isle of Man,Europe,Unclassified,,no index covers this country/territory,,,,,False
+IN,IND,India,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+IO,IOT,British Indian Ocean Territory,Africa,Unclassified,,no index covers this country/territory,,,,,False
+IQ,IRQ,Iraq,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+IR,IRN,"Iran, Islamic Republic of",Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+IS,ISL,Iceland,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+IT,ITA,Italy,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+JE,JEY,Jersey,Europe,Unclassified,,no index covers this country/territory,,,,,False
+JM,JAM,Jamaica,North America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+JO,JOR,Jordan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,False,Authoritarian (2025),Partly free (2024),,False
+JP,JPN,Japan,Asia,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+KE,KEN,Kenya,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+KG,KGZ,Kyrgyzstan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+KH,KHM,Cambodia,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+KI,KIR,Kiribati,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+KM,COM,Comoros,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,False,Authoritarian (2025),Partly free (2024),,False
+KN,KNA,Saint Kitts and Nevis,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+KP,PRK,"Korea, Democratic People's Republic of",Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+KR,KOR,"Korea, Republic of",Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+KW,KWT,Kuwait,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+KY,CYM,Cayman Islands,North America,Unclassified,,no index covers this country/territory,,,,,False
+KZ,KAZ,Kazakhstan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+LA,LAO,Lao People's Democratic Republic,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+LB,LBN,Lebanon,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,False,Authoritarian (2025),Partly free (2024),,False
+LC,LCA,Saint Lucia,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+LI,LIE,Liechtenstein,Europe,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+LK,LKA,Sri Lanka,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+LR,LBR,Liberia,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+LS,LSO,Lesotho,Africa,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+LT,LTU,Lithuania,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+LU,LUX,Luxembourg,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+LV,LVA,Latvia,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+LY,LBY,Libya,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+MA,MAR,Morocco,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+MC,MCO,Monaco,Europe,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+MD,MDA,"Moldova, Republic of",Europe,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+ME,MNE,Montenegro,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+MF,MAF,Saint Martin (French part),North America,Unclassified,,no index covers this country/territory,,,,,False
+MG,MDG,Madagascar,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+MH,MHL,Marshall Islands,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+MK,MKD,North Macedonia,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+ML,MLI,Mali,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+MM,MMR,Myanmar,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+MN,MNG,Mongolia,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+MO,MAC,Macao,Asia,Unclassified,,no index covers this country/territory,,,,,False
+MP,MNP,Northern Mariana Islands,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+MQ,MTQ,Martinique,North America,Unclassified,,no index covers this country/territory,,,,,False
+MR,MRT,Mauritania,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,False,Authoritarian (2025),Partly free (2024),,False
+MS,MSR,Montserrat,North America,Unclassified,,no index covers this country/territory,,,,,False
+MT,MLT,Malta,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+MU,MUS,Mauritius,Africa,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+MV,MDV,Maldives,Asia,Partly democratic,Partly free,Freedom House Freedom in the World 2024,True,,Partly free (2024),,False
+MW,MWI,Malawi,Africa,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+MX,MEX,Mexico,North America,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2026),Electoral autocracy (2026),True
+MY,MYS,Malaysia,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+MZ,MOZ,Mozambique,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,False,Authoritarian (2025),Partly free (2024),,False
+NA,NAM,Namibia,Africa,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+NC,NCL,New Caledonia,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+NE,NER,Niger,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+NF,NFK,Norfolk Island,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+NG,NGA,Nigeria,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+NI,NIC,Nicaragua,North America,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+NL,NLD,"Netherlands, Kingdom of the",Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+NO,NOR,Norway,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+NP,NPL,Nepal,Asia,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+NR,NRU,Nauru,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+NU,NIU,Niue,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+NZ,NZL,New Zealand,Oceania,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+OM,OMN,Oman,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+PA,PAN,Panama,North America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+PE,PER,Peru,South America,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+PF,PYF,French Polynesia,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+PG,PNG,Papua New Guinea,Oceania,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+PH,PHL,Philippines,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+PK,PAK,Pakistan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,False,Authoritarian (2025),Partly free (2026),Electoral autocracy (2026),True
+PL,POL,Poland,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+PM,SPM,Saint Pierre and Miquelon,North America,Unclassified,,no index covers this country/territory,,,,,False
+PN,PCN,Pitcairn,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+PR,PRI,Puerto Rico,North America,Unclassified,,no index covers this country/territory,,,,,False
+PS,PSE,"Palestine, State of",Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),,,False
+PT,PRT,Portugal,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+PW,PLW,Palau,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+PY,PRY,Paraguay,South America,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+QA,QAT,Qatar,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+RE,REU,Réunion,Africa,Unclassified,,no index covers this country/territory,,,,,False
+RO,ROU,Romania,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+RS,SRB,Serbia,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+RU,RUS,Russian Federation,Europe,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+RW,RWA,Rwanda,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+SA,SAU,Saudi Arabia,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+SB,SLB,Solomon Islands,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+SC,SYC,Seychelles,Africa,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+SD,SDN,Sudan,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+SE,SWE,Sweden,Europe,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+SG,SGP,Singapore,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Partly free (2024),,False
+SH,SHN,"Saint Helena, Ascension and Tristan da Cunha",Africa,Unclassified,,no index covers this country/territory,,,,,False
+SI,SVN,Slovenia,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+SJ,SJM,Svalbard and Jan Mayen,Europe,Unclassified,,no index covers this country/territory,,,,,False
+SK,SVK,Slovakia,Europe,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+SL,SLE,Sierra Leone,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+SM,SMR,San Marino,Europe,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+SN,SEN,Senegal,Africa,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+SO,SOM,Somalia,Africa,Authoritarian,Not free,Freedom House Freedom in the World 2024,True,,Not free (2024),,False
+SR,SUR,Suriname,South America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+SS,SSD,South Sudan,Africa,Authoritarian,Not free,Freedom House Freedom in the World 2024,True,,Not free (2024),,False
+ST,STP,Sao Tome and Principe,Africa,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+SV,SLV,El Salvador,North America,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+SX,SXM,Sint Maarten (Dutch part),North America,Unclassified,,no index covers this country/territory,,,,,False
+SY,SYR,Syrian Arab Republic,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+SZ,SWZ,Eswatini,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+TC,TCA,Turks and Caicos Islands,North America,Unclassified,,no index covers this country/territory,,,,,False
+TD,TCD,Chad,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+TF,ATF,French Southern Territories,Africa,Unclassified,,no index covers this country/territory,,,,,False
+TG,TGO,Togo,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,False,Authoritarian (2025),Partly free (2024),,False
+TH,THA,Thailand,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,False,Flawed democracy (2025),Not free (2024),,False
+TJ,TJK,Tajikistan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+TK,TKL,Tokelau,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+TL,TLS,Timor-Leste,Asia,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+TM,TKM,Turkmenistan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+TN,TUN,Tunisia,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+TO,TON,Tonga,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+TR,TUR,Türkiye,Asia,Partly democratic,Hybrid regime,EIU Democracy Index 2025,False,Hybrid regime (2025),Not free (2024),,False
+TT,TTO,Trinidad and Tobago,North America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+TV,TUV,Tuvalu,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+TW,TWN,"Taiwan, Province of China",Asia,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+TZ,TZA,"Tanzania, United Republic of",Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,False,Hybrid regime (2025),Not free (2024),,False
+UA,UKR,Ukraine,Europe,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+UG,UGA,Uganda,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,False,Hybrid regime (2025),Not free (2024),,False
+UM,UMI,United States Minor Outlying Islands,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+US,USA,United States of America,North America,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+UY,URY,Uruguay,South America,Democratic,Full democracy,EIU Democracy Index 2025,True,Full democracy (2025),Free (2024),,False
+UZ,UZB,Uzbekistan,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+VA,VAT,Holy See,Europe,Unclassified,,no index covers this country/territory,,,,,False
+VC,VCT,Saint Vincent and the Grenadines,North America,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+VE,VEN,"Venezuela, Bolivarian Republic of",South America,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+VG,VGB,Virgin Islands (British),North America,Unclassified,,no index covers this country/territory,,,,,False
+VI,VIR,Virgin Islands (U.S.),North America,Unclassified,,no index covers this country/territory,,,,,False
+VN,VNM,Viet Nam,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+VU,VUT,Vanuatu,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+WF,WLF,Wallis and Futuna,Oceania,Unclassified,,no index covers this country/territory,,,,,False
+WS,WSM,Samoa,Oceania,Democratic,Free,Freedom House Freedom in the World 2024,True,,Free (2024),,False
+YE,YEM,Yemen,Asia,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False
+YT,MYT,Mayotte,Africa,Unclassified,,no index covers this country/territory,,,,,False
+ZA,ZAF,South Africa,Africa,Democratic,Flawed democracy,EIU Democracy Index 2025,True,Flawed democracy (2025),Free (2024),,False
+ZM,ZMB,Zambia,Africa,Partly democratic,Hybrid regime,EIU Democracy Index 2025,True,Hybrid regime (2025),Partly free (2024),,False
+ZW,ZWE,Zimbabwe,Africa,Authoritarian,Authoritarian,EIU Democracy Index 2025,True,Authoritarian (2025),Not free (2024),,False

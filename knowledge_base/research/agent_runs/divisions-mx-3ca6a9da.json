@@ -1,0 +1,1477 @@
+{
+ "purpose": "divisions:MX",
+ "query": "List ALL 32 first-level administrative divisions of Mexico (Tamaulipas; Jalisco; Tlaxcala; Aguascalientes; México; Veracruz de Ignacio de la Llave; Michoacán de Ocampo; Baja California; Yucatán; Morelos; Baja California Sur; Zacatecas; Nayarit; Campeche; Nuevo León; Chihuahua; Oaxaca; Chiapas; Puebla; Ciudad de México; Querétaro; Coahuila de Zaragoza; Quintana Roo; Colima; Sinaloa; Durango; San Luis Potosí; Guerrero; Sonora; Guanajuato; Tabasco; Hidalgo). For each give: the executive office title in English and the local language, how that office is filled, its term length, the CURRENT officeholder as of 2026-11-14 (full name, party name and acronym, coalition, term start and end, whether acting/interim) with source URLs, and the division's legislature (English and local name, number of seats, how filled). Explain in special_status_note any division whose governance differs from the others (for example a capital district).",
+ "run_id": "agent_run_c22b978ece0a41a2a418e08a9a9c1e0e",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:11:16+00:00",
+ "cost_dollars": {
+  "total": 0.921,
+  "agent_compute": 0.681,
+  "search": 0.24,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "divisions": [
+   {
+    "name": "Tamaulipas",
+    "officeholder": {
+     "term_end": "2028-09-30",
+     "coalition": "Candidatura común Juntos Haremos Historia en Tamaulipas (MORENA, PT, PVEM)",
+     "full_name": "Américo Villarreal Anaya",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2022-10-01",
+     "source_urls": [
+      "https://www.te.gob.mx/front3/bulletins/detail/4743/0",
+      "https://en.wikipedia.org/wiki/List_of_current_state_governors_in_Mexico"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 36,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Tamaulipas",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Congreso del Estado Libre y Soberano de Tamaulipas",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Jalisco",
+    "officeholder": {
+     "term_end": "2030-12-05",
+     "coalition": null,
+     "full_name": "Jesús Pablo Lemus Navarro",
+     "is_acting": false,
+     "party_name": "Movimiento Ciudadano",
+     "term_start": "2024-12-06",
+     "source_urls": [
+      "https://jalisco.gob.mx/inicio"
+     ],
+     "party_acronym": "MC"
+    },
+    "division_type": "state",
+    "legislature_seats": 38,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Jalisco",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Congreso del Estado de Jalisco",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Tlaxcala",
+    "officeholder": {
+     "term_end": "2027-08-30",
+     "coalition": "Juntos Haremos Historia en Tlaxcala (MORENA, PT, PVEM, Nueva Alianza Tlaxcala)",
+     "full_name": "Lorena Cuéllar Cisneros",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-08-31",
+     "source_urls": [
+      "https://tlaxcala.gob.mx/index.php/gobierno/dependencias"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 25,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Tlaxcala",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Congreso del Estado Libre y Soberano de Tlaxcala",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Aguascalientes",
+    "officeholder": {
+     "term_end": "2027-09-30",
+     "coalition": "Va por Aguascalientes (PAN, PRI, PRD)",
+     "full_name": "María Teresa Jiménez Esquivel",
+     "is_acting": false,
+     "party_name": "Partido Acción Nacional",
+     "term_start": "2022-10-01",
+     "source_urls": [
+      "https://www.aguascalientes.gob.mx/gabinete.html"
+     ],
+     "party_acronym": "PAN"
+    },
+    "division_type": "state",
+    "legislature_seats": 27,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Aguascalientes",
+    "special_status_note": "The current governor serves a transitional five-year term (2022–2027) rather than the usual six years, to align election calendars.",
+    "executive_term_years": 5,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Honorable Congreso del Estado de Aguascalientes",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "México",
+    "officeholder": {
+     "term_end": "2029-09-15",
+     "coalition": "Juntos Hacemos Historia en el Estado de México (MORENA, PT, PVEM)",
+     "full_name": "Delfina Gómez Álvarez",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2023-09-16",
+     "source_urls": [
+      "http://edomex.gob.mx/"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 75,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of México",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Congreso del Estado Libre y Soberano de México",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Veracruz de Ignacio de la Llave",
+    "officeholder": {
+     "term_end": "2030-11-30",
+     "coalition": "Sigamos Haciendo Historia en Veracruz (MORENA, PT, PVEM)",
+     "full_name": "Norma Rocío Nahle García",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2024-12-01",
+     "source_urls": [
+      "https://www.veracruz.gob.mx/2024/12/01/por-primera-vez-en-la-historia-una-mujer-gobernadora-rocio-nahle-rinde-protesta/"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 50,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Veracruz de Ignacio de la Llave",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Congreso del Estado de Veracruz de Ignacio de la Llave",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Michoacán de Ocampo",
+    "officeholder": {
+     "term_end": "2027-09-30",
+     "coalition": "Juntos Haremos Historia en Michoacán (MORENA, PT)",
+     "full_name": "Alfredo Ramírez Bedolla",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-10-01",
+     "source_urls": [
+      "https://michoacan.gob.mx/noticias/alfredo-ramirez-bedolla-rinde-protesta-como-gobernador-de-michoacan/"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 40,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Michoacán de Ocampo",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Congreso del Estado de Michoacán de Ocampo",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Baja California",
+    "officeholder": {
+     "term_end": "2027-10-31",
+     "coalition": "Juntos Haciendo Historia en Baja California (MORENA, PT, PVEM)",
+     "full_name": "Marina del Pilar Ávila Olmeda",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-11-01",
+     "source_urls": [
+      "https://bajacalifornia.gob.mx/Gobierno/Gabinete"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 25,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Baja California",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Congreso del Estado de Baja California",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Yucatán",
+    "officeholder": {
+     "term_end": "2030-09-30",
+     "coalition": "Morena–PT–PVEM (Juntos Hacemos Historia en Yucatán)",
+     "full_name": "Joaquín Díaz Mena",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2024-10-01",
+     "source_urls": [
+      "https://www.congresoyucatan.gob.mx/difusion/2233"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 35,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Yucatán",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado de Yucatán",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Morelos",
+    "officeholder": {
+     "term_end": "2030-09-30",
+     "coalition": "Morena–PT–PVEM (Sigamos Haciendo Historia en Morelos)",
+     "full_name": "Margarita González Saravia Calderón",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2024-10-01",
+     "source_urls": [
+      "https://www.morelos.gob.mx/gobiernos-vistas/gobernadora"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 20,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Morelos",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Congreso del Estado Libre y Soberano de Morelos",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Baja California Sur",
+    "officeholder": {
+     "term_end": "2027-09-09",
+     "coalition": "Morena–PT (Juntos Haremos Historia)",
+     "full_name": "Víctor Manuel Castro Cosío",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-09-10",
+     "source_urls": [
+      "https://sgg.bcs.gob.mx/victor-castro-rinde-protesta-ante-pleno-la-xvi-legislatura-congreso-del-estado/"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 21,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Baja California Sur",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado de Baja California Sur",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Zacatecas",
+    "officeholder": {
+     "term_end": "2027-09-11",
+     "coalition": "Morena–PVEM–PT–PANAL (Juntos Haremos Historia en Zacatecas)",
+     "full_name": "David Monreal Ávila",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-09-12",
+     "source_urls": [
+      "https://www.zacatecas.gob.mx/gobierno/gobernador/"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 30,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Zacatecas",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Poder Legislativo del Estado de Zacatecas",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Nayarit",
+    "officeholder": {
+     "term_end": "2027-09-18",
+     "coalition": "Morena–PT–PVEM–PANAL (Juntos Haremos Historia en Nayarit)",
+     "full_name": "Miguel Ángel Navarro Quintero",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-09-19",
+     "source_urls": [
+      "https://transparencia.nayarit.gob.mx/admin2/resources/uploads/despachoejecutivo/pdfs/Ficha%20curr%C3%ADcular%20del%20Gobernador%20Dr.%20Miguel%20%C3%81ngel%20Navarro%20Quintero.pdf"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 30,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Nayarit",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado de Nayarit",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Campeche",
+    "officeholder": {
+     "term_end": "2027-09-15",
+     "coalition": "Juntos Haremos Historia en Campeche (Morena–PT)",
+     "full_name": "Layda Elena Sansores San Román",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-09-16",
+     "source_urls": [
+      "https://periodicooficial.campeche.gob.mx/sipoec/public/periodicos/202109/PO1519TS14092021.pdf"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 35,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Campeche",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Honorable Congreso del Estado de Campeche",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Nuevo León",
+    "officeholder": {
+     "term_end": "2027-10-03",
+     "coalition": null,
+     "full_name": "Samuel Alejandro García Sepúlveda",
+     "is_acting": false,
+     "party_name": "Movimiento Ciudadano",
+     "term_start": "2021-10-04",
+     "source_urls": [
+      "https://www.nl.gob.mx/es/gobernador"
+     ],
+     "party_acronym": "MC"
+    },
+    "division_type": "state",
+    "legislature_seats": 42,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Nuevo León",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado de Nuevo León",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Chihuahua",
+    "officeholder": {
+     "term_end": "2027-09-07",
+     "coalition": "PAN–PRI–PRD (Nos Une Chihuahua)",
+     "full_name": "María Eugenia Campos Galván",
+     "is_acting": false,
+     "party_name": "Partido Acción Nacional",
+     "term_start": "2021-09-08",
+     "source_urls": [
+      "https://www.chihuahua.gob.mx/contenidos/rinde-protesta-maru-campos-como-gobernadora-en-plaza-de-la-mexicanidad-en-ciudad-juarez"
+     ],
+     "party_acronym": "PAN"
+    },
+    "division_type": "state",
+    "legislature_seats": 33,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Chihuahua",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Honorable Congreso del Estado de Chihuahua",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Oaxaca",
+    "officeholder": {
+     "term_end": "2028-11-30",
+     "coalition": "Juntos Hacemos Historia en Oaxaca (PT-PVEM-PUP-MORENA)",
+     "full_name": "Salomón Jara Cruz",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2022-12-01",
+     "source_urls": [
+      "https://www.ieepco.org.mx/autoridades_electas/resultados/gobernador.php"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 42,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Oaxaca",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado Libre y Soberano de Oaxaca",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Chiapas",
+    "officeholder": {
+     "term_end": "2030-12-07",
+     "coalition": "Sigamos Haciendo Historia en Chiapas",
+     "full_name": "Óscar Eduardo Ramírez Aguilar",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2024-12-08",
+     "source_urls": [
+      "https://www.iepc-chiapas.org.mx/comunicados/3724-declara-iepc-validez-de-la-eleccion-y-entrega-constancia-a-gobernador-electo-de-chiapas"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 40,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Chiapas",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado de Chiapas",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Puebla",
+    "officeholder": {
+     "term_end": "2030-12-13",
+     "coalition": "Sigamos Haciendo Historia en Puebla (MORENA-PT-PVEM-Nueva Alianza Puebla-Fuerza por México Puebla)",
+     "full_name": "Alejandro Armenta Mier",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2024-12-14",
+     "source_urls": [
+      "https://www.ieepuebla.org.mx/2024/boletines/70/70.pdf"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 41,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Puebla",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado Libre y Soberano de Puebla",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Ciudad de México",
+    "officeholder": {
+     "term_end": "2030-10-04",
+     "coalition": "Candidatura común Sigamos haciendo historia en la Ciudad de México (MORENA-PT-PVEM)",
+     "full_name": "Clara Marina Brugada Molina",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2024-10-05",
+     "source_urls": [
+      "https://www.iecm.mx/normatividad-y-transparencia/transparencia/transparencia-proactiva/transparencia-proactiva-integrantes-de-comites-ciudadanos-y-consejos-de-los-pueblos-2010-2016/entrega-iecm-constancia-de-mayoria-a-jefa-de-gobierno-electa/",
+      "https://en.wikipedia.org/wiki/List_of_current_state_governors_in_Mexico"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "federal entity / capital",
+    "legislature_seats": 66,
+    "executive_title_en": "Head of Government",
+    "legislature_name_en": "Congress of Mexico City",
+    "special_status_note": "Federal capital and federal entity, not a state; its executive is the Head of Government and its legislature is the Congress of Mexico City. The 66-member legislature includes one migrant constituency seat.",
+    "executive_term_years": 6,
+    "executive_title_local": "Jefa de Gobierno",
+    "legislature_name_local": "Congreso de la Ciudad de México",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Querétaro",
+    "officeholder": {
+     "term_end": "2027-09-30",
+     "coalition": "PAN-Querétaro Independiente",
+     "full_name": "Mauricio Kuri González",
+     "is_acting": false,
+     "party_name": "Partido Acción Nacional",
+     "term_start": "2021-10-01",
+     "source_urls": [
+      "https://ieeq.mx/elecciones/historico"
+     ],
+     "party_acronym": "PAN"
+    },
+    "division_type": "state",
+    "legislature_seats": 25,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Legislature of the State of Querétaro",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Legislatura del Estado de Querétaro",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Coahuila de Zaragoza",
+    "officeholder": {
+     "term_end": "2029-11-30",
+     "coalition": "Alianza Ciudadana por la Seguridad (PAN-PRI-PRD)",
+     "full_name": "Manolo Jiménez Salinas",
+     "is_acting": false,
+     "party_name": "Partido Revolucionario Institucional",
+     "term_start": "2023-12-01",
+     "source_urls": [
+      "http://www.iec.org.mx/v1/index.php/sesion-extraordinaria-de-consejo-general-01-de-abril-de-2023"
+     ],
+     "party_acronym": "PRI"
+    },
+    "division_type": "state",
+    "legislature_seats": 25,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Coahuila de Zaragoza",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Congreso del Estado Independiente, Libre y Soberano de Coahuila de Zaragoza",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Quintana Roo",
+    "officeholder": {
+     "term_end": "2027-09-24",
+     "coalition": "Juntos Hacemos Historia en Quintana Roo",
+     "full_name": "María Elena Hermelinda Lezama Espinosa",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2022-09-25",
+     "source_urls": [
+      "https://www.ieqroo.org.mx/descargas/2022/estadistica-electoral-2022.pdf"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 25,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Quintana Roo",
+    "special_status_note": "The current governor serves a transitional five-year term (2022–2027) rather than the usual six years, to align election calendars.",
+    "executive_term_years": 5,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Poder Legislativo del Estado de Quintana Roo",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Colima",
+    "officeholder": {
+     "term_end": "2027-10-31",
+     "coalition": "Juntos Haremos Historia por Colima (MORENA-Nueva Alianza Colima)",
+     "full_name": "Indira Vizcaíno Silva",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-11-01",
+     "source_urls": [
+      "https://ieecolima.org.mx/candidatosganadores.htm"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 25,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Colima",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Honorable Congreso del Estado de Colima",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Sinaloa",
+    "officeholder": {
+     "term_end": "2027-10-31",
+     "coalition": null,
+     "full_name": "Graciela Domínguez Nava",
+     "is_acting": true,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2026-08-25",
+     "source_urls": [
+      "https://www.congresosinaloa.gob.mx/comunicados/nombra-congreso-de-sinaloa-a-graciela-dominguez-nava-como-gobernadora-interina/",
+      "https://sinaloa.gob.mx/congreso-del-estado-designa-a-graciela-dominguez-nava-como-gobernadora-interina-de-sinaloa/"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 40,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Sinaloa",
+    "special_status_note": "Graciela Domínguez Nava was appointed interim governor by the state congress on 2026-08-25 following Rubén Rocha Moya’s indefinite leave; she is expected to complete the term ending 2027-10-31.",
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Honorable Congreso del Estado de Sinaloa",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Durango",
+    "officeholder": {
+     "term_end": "2028-09-14",
+     "coalition": "Va por Durango (PRI–PAN–PRD)",
+     "full_name": "Esteban Alejandro Villegas Villarreal",
+     "is_acting": false,
+     "party_name": "Partido Revolucionario Institucional",
+     "term_start": "2022-09-15",
+     "source_urls": [
+      "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+      "https://congresodurango.gob.mx/2024/08/20/entrega-congreso-constancia-a-diputados-electos/"
+     ],
+     "party_acronym": "PRI"
+    },
+    "division_type": "state",
+    "legislature_seats": 25,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Durango",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado de Durango",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "San Luis Potosí",
+    "officeholder": {
+     "term_end": "2027-09-25",
+     "coalition": "Juntos Hacemos Historia (PVEM–PT)",
+     "full_name": "José Ricardo Gallardo Cardona",
+     "is_acting": false,
+     "party_name": "Partido Verde Ecologista de México",
+     "term_start": "2021-09-26",
+     "source_urls": [
+      "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+      "http://lix.congresosanluis.gob.mx/content/rinden-protesta-las-y-los-integrantes-de-la-lxiv-legislatura"
+     ],
+     "party_acronym": "PVEM"
+    },
+    "division_type": "state",
+    "legislature_seats": 27,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of San Luis Potosí",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado de San Luis Potosí",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Guerrero",
+    "officeholder": {
+     "term_end": "2027-10-14",
+     "coalition": "Juntos Hacemos Historia (MORENA–PT–PVEM)",
+     "full_name": "Evelyn Cecia Salgado Pineda",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-10-15",
+     "source_urls": [
+      "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+      "https://congresogro.gob.mx/64/diputadas-diputados/"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 46,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Guerrero",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Honorable Congreso del Estado de Guerrero",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Sonora",
+    "officeholder": {
+     "term_end": "2027-09-12",
+     "coalition": "Juntos Hacemos Historia (MORENA–PT–PVEM–Nueva Alianza Sonora)",
+     "full_name": "Francisco Alfonso Durazo Montaño",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2021-09-13",
+     "source_urls": [
+      "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+      "https://congresoson.gob.mx/legislaturas-anteriores"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 33,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Sonora",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Congreso del Estado de Sonora",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Guanajuato",
+    "officeholder": {
+     "term_end": "2030-09-25",
+     "coalition": "Fuerza y Corazón por Guanajuato (PAN–PRI–PRD)",
+     "full_name": "Libia Dennise García Muñoz Ledo",
+     "is_acting": false,
+     "party_name": "Partido Acción Nacional",
+     "term_start": "2024-09-26",
+     "source_urls": [
+      "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+      "https://www.congresogto.gob.mx/comunicados/declaran-a-libia-dennise-garcia-munoz-ledo-gobernadora-electa"
+     ],
+     "party_acronym": "PAN"
+    },
+    "division_type": "state",
+    "legislature_seats": 36,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Guanajuato",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernadora",
+    "legislature_name_local": "Congreso del Estado de Guanajuato",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Tabasco",
+    "officeholder": {
+     "term_end": "2030-09-30",
+     "coalition": "Juntos Hacemos Historia (MORENA–PT–PVEM)",
+     "full_name": "Javier May Rodríguez",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2024-10-01",
+     "source_urls": [
+      "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+      "https://congresotabasco.gob.mx/rinde-protesta-como-gobernador-constitucional-del-estado-de-tabasco-el-ciudadano-javier-may-rodriguez/"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 35,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Tabasco",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Honorable Congreso del Estado Libre y Soberano de Tabasco",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   },
+   {
+    "name": "Hidalgo",
+    "officeholder": {
+     "term_end": "2028-09-04",
+     "coalition": "Juntos Hacemos Historia en Hidalgo (MORENA–PT–Nueva Alianza Hidalgo)",
+     "full_name": "Julio Ramón Menchaca Salazar",
+     "is_acting": false,
+     "party_name": "Movimiento Regeneración Nacional",
+     "term_start": "2022-09-05",
+     "source_urls": [
+      "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+      "https://www.congreso-hidalgo.gob.mx/LXVI_LEGISLATURA/integrantes-lxvi-legislatura.html"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "division_type": "state",
+    "legislature_seats": 30,
+    "executive_title_en": "Governor",
+    "legislature_name_en": "Congress of the State of Hidalgo",
+    "special_status_note": null,
+    "executive_term_years": 6,
+    "executive_title_local": "Gobernador",
+    "legislature_name_local": "Congreso del Estado Libre y Soberano de Hidalgo",
+    "executive_selection_method": "direct_election",
+    "legislature_selection_method": "mixed"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.divisions[0]",
+   "citations": [
+    {
+     "url": "https://www.congresotamaulipas.gob.mx/Parlamentario/Archivos/Constituciones/Reformas/PDF/Reforma%20%20No%2011%20art%2026_%2012_marzo_%202025%20-.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.congresotamaulipas.gob.mx/AsambleaLegislativa/IntegrantesPleno/ProcesoElectoral.asp",
+     "title": null
+    },
+    {
+     "url": "https://www.te.gob.mx/front3/bulletins/detail/4743/0",
+     "title": null
+    },
+    {
+     "url": "https://www.congresotamaulipas.gob.mx/Parlamentario/Archivos/Actas/ACTA59.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_current_state_governors_in_Mexico",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[1]",
+   "citations": [
+    {
+     "url": "https://jalisco.gob.mx/inicio",
+     "title": null
+    },
+    {
+     "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+     "title": null
+    },
+    {
+     "url": "https://www.congresojal.gob.mx/nuestro/estructura",
+     "title": null
+    },
+    {
+     "url": "https://transparencia.jalisco.gob.mx/informacion/contenido/85/141",
+     "title": null
+    },
+    {
+     "url": "https://transparencia.info.jalisco.gob.mx/sites/default/files/C%C3%B3digo%20Electoral%20y%20de%20Participaci%C3%B3n%20Ciudadana%20del%20Estado%20de%20Jalisco_0.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[2]",
+   "citations": [
+    {
+     "url": "https://tlaxcala.gob.mx/index.php/gobierno/dependencias",
+     "title": null
+    },
+    {
+     "url": "https://gubernatura.tlaxcala.gob.mx/Pdf-Curri/Curriculum-LORENA%20CUELLAR%20CISNEROS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://congresodetlaxcala.gob.mx/diputadoslxv/",
+     "title": null
+    },
+    {
+     "url": "https://congresodetlaxcala.gob.mx/designan-a-ever-campech-presidente-de-la-jccp/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[3]",
+   "citations": [
+    {
+     "url": "https://www.aguascalientes.gob.mx/gabinete.html",
+     "title": null
+    },
+    {
+     "url": "https://www.eluniversal.com.mx/estados/tere-jimenez-recibe-constancia-de-mayoria-como-gobernadora-electa-de-aguascalientes/",
+     "title": null
+    },
+    {
+     "url": "https://eservicios2.aguascalientes.gob.mx/servicios/sicaf2/Uploads/316789primerinformedegobierno_terejim%C3%A9nez.pdf",
+     "title": null
+    },
+    {
+     "url": "https://congresoags.gob.mx/legislatura/grupos_parlamentarios",
+     "title": null
+    },
+    {
+     "url": "https://congresoags.gob.mx/legislatura/conoce_a_tu_diputado",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[4]",
+   "citations": [
+    {
+     "url": "http://edomex.gob.mx/",
+     "title": null
+    },
+    {
+     "url": "https://legislacion.edomex.gob.mx/sites/legislacion.edomex.gob.mx/files/files/pdf/gct/2024/sep052.pdf",
+     "title": null
+    },
+    {
+     "url": "https://legislacion.legislativoedomex.gob.mx/asuntosparlamentarios/diputadasydiputados",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[5]",
+   "citations": [
+    {
+     "url": "https://www.veracruz.gob.mx/2024/12/01/por-primera-vez-en-la-historia-una-mujer-gobernadora-rocio-nahle-rinde-protesta/",
+     "title": null
+    },
+    {
+     "url": "https://www.legisver.gob.mx/Inicio.php?p=actasConsLXVII",
+     "title": null
+    },
+    {
+     "url": "https://repositorio.veracruz.gob.mx/desarrolloeconomico/wp-content/uploads/sites/13/2025/01/CONSTITUCION27122024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[6]",
+   "citations": [
+    {
+     "url": "https://michoacan.gob.mx/noticias/alfredo-ramirez-bedolla-rinde-protesta-como-gobernador-de-michoacan/",
+     "title": null
+    },
+    {
+     "url": "http://congresomich.gob.mx/acuerdos-legislativos/page/15/",
+     "title": null
+    },
+    {
+     "url": "http://congresomich.gob.mx/file/23-Belinda-Iturbide-Nueva-Ley-Org%C3%A1nica-Congreso-1.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[7]",
+   "citations": [
+    {
+     "url": "https://bajacalifornia.gob.mx/Gobierno/Gabinete",
+     "title": null
+    },
+    {
+     "url": "https://www.bajacalifornia.gob.mx/Documentos/hacienda/legislacion-hacendaria/CONSTITUCI%C3%93N%20POL%C3%8DTICA%20DEL%20ESTADO%20LIBRE%20Y%20SOBERANO%20DE%20BAJA%20CALIFORNIA.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.congresobc.gob.mx/Documentos/Parlamentarias/Version/20240801vig1.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.congresobc.gob.mx/TrabajoLegislativo/Diputados",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[8]",
+   "citations": [
+    {
+     "url": "https://www.congresoyucatan.gob.mx/difusion/2233",
+     "title": null
+    },
+    {
+     "url": "https://congresoyucatan.gob.mx/institucional",
+     "title": null
+    },
+    {
+     "url": "https://congresoyucatan.gob.mx/difusion/2211",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[9]",
+   "citations": [
+    {
+     "url": "https://www.morelos.gob.mx/gobiernos-vistas/gobernadora",
+     "title": null
+    },
+    {
+     "url": "https://congresomorelos.gob.mx/legisladores/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[10]",
+   "citations": [
+    {
+     "url": "https://sgg.bcs.gob.mx/victor-castro-rinde-protesta-ante-pleno-la-xvi-legislatura-congreso-del-estado/",
+     "title": null
+    },
+    {
+     "url": "https://www.bcs.gob.mx/gobernador-del-estado/",
+     "title": null
+    },
+    {
+     "url": "https://tramites.bcs.gob.mx/wp-content/uploads/2025/01/CPoliticaBCS-REFORMA-11-07-2024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[11]",
+   "citations": [
+    {
+     "url": "https://www.zacatecas.gob.mx/gobierno/gobernador/",
+     "title": null
+    },
+    {
+     "url": "https://www.zacatecas.gob.mx/hoy-inicia-la-transformacion-de-zacatecas-con-una-nueva-gobernanza-david-monreal-avila/",
+     "title": null
+    },
+    {
+     "url": "https://www.congresozac.gob.mx/65/inicio",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[12]",
+   "citations": [
+    {
+     "url": "https://transparencia.nayarit.gob.mx/admin2/resources/uploads/despachoejecutivo/pdfs/Ficha%20curr%C3%ADcular%20del%20Gobernador%20Dr.%20Miguel%20%C3%81ngel%20Navarro%20Quintero.pdf",
+     "title": null
+    },
+    {
+     "url": "https://congresonayarit.gob.mx/xxxiv/",
+     "title": null
+    },
+    {
+     "url": "https://educacion.nayarit.gob.mx/archivos/NORMATIVIDAD/2026/e/c/constitucion_politica_del_estado_libre_y_soberano_de_nayarit.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[13]",
+   "citations": [
+    {
+     "url": "https://periodicooficial.campeche.gob.mx/sipoec/public/periodicos/202109/PO1519TS14092021.pdf",
+     "title": null
+    },
+    {
+     "url": "https://periodicooficial.campeche.gob.mx/sipoec/public/periodicos/202110/PO1537SS12102021.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.congresocam.gob.mx/legislatura-lxiv/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.divisions[14]",
+   "citations": [
+    {
+     "url": "https://www.nl.gob.mx/es/gobernador",
+     "title": null
+    },
+    {
+     "url": "https://historico.nl.gob.mx/gobernador",
+     "title": null
+    },
+    {
+     "url": "https://www.hcnl.gob.mx/proceso_de_eleccion_de_diputados/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[15]",
+   "citations": [
+    {
+     "url": "https://www.chihuahua.gob.mx/contenidos/rinde-protesta-maru-campos-como-gobernadora-en-plaza-de-la-mexicanidad-en-ciudad-juarez",
+     "title": null
+    },
+    {
+     "url": "https://www.congresochihuahua.gob.mx/detalleNota.php?id=10442",
+     "title": null
+    },
+    {
+     "url": "https://www.congresochihuahua.gob.mx/diputados/partidos.php",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[16]",
+   "citations": [
+    {
+     "url": "https://www.ieepco.org.mx/autoridades_electas/resultados/gobernador.php",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/archivos/acuerdos/2022/AIEEPCOCG582022.pdf",
+     "title": null
+    },
+    {
+     "url": "https://congresooaxaca.gob.mx/docs66.congresooaxaca.gob.mx/version_estenografs/Version_Estenografica_Sesion_de_Instalacion_de_la_LXVI_Legislatura_Constitucional_del_Estado_Libre_y_Soberano_de_Oaxaca_13_noviembre_2024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[17]",
+   "citations": [
+    {
+     "url": "https://www.iepc-chiapas.org.mx/comunicados/3724-declara-iepc-validez-de-la-eleccion-y-entrega-constancia-a-gobernador-electo-de-chiapas",
+     "title": null
+    },
+    {
+     "url": "https://web.congresochiapas.gob.mx/comunicacion-social/boletines/2182-boletin-lxix-legislatura",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[18]",
+   "citations": [
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/boletines/70/70.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.congresopuebla.gob.mx/index.php",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[19]",
+   "citations": [
+    {
+     "url": "https://www.iecm.mx/normatividad-y-transparencia/transparencia/transparencia-proactiva/transparencia-proactiva-integrantes-de-comites-ciudadanos-y-consejos-de-los-pueblos-2010-2016/entrega-iecm-constancia-de-mayoria-a-jefa-de-gobierno-electa/",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_current_state_governors_in_Mexico",
+     "title": null
+    },
+    {
+     "url": "https://www.iecm.mx/www/marconormativo/docs/CPCDMX-23-07-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.congresocdmx.gob.mx/comsoc-instalo-iii-legislatura-congreso-capitalino-5459-1.html",
+     "title": null
+    },
+    {
+     "url": "https://www.congresocdmx.gob.mx/archivo-dd8d855f429a451951ec71a1b0057deaf2f8b9ad.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[20]",
+   "citations": [
+    {
+     "url": "https://ieeq.mx/elecciones/historico",
+     "title": null
+    },
+    {
+     "url": "http://legislaturaqueretaro.gob.mx/se-llevo-a-cabo-la-sesion-solemne-de-instalacion-de-la-lxi-legislatura-del-estado-de-queretaro/",
+     "title": null
+    },
+    {
+     "url": "http://legislaturaqueretaro.gob.mx/legisladores/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[21]",
+   "citations": [
+    {
+     "url": "http://www.iec.org.mx/v1/index.php/sesion-extraordinaria-de-consejo-general-01-de-abril-de-2023",
+     "title": null
+    },
+    {
+     "url": "http://www.iec.org.mx/v1/images/proceso2023/Conovocatorias_PEL2023_GUBERNATURA-1.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.congresocoahuila.gob.mx/PDF/documentos/Agenda_conjunta.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[22]",
+   "citations": [
+    {
+     "url": "https://www.ieqroo.org.mx/descargas/2022/estadistica-electoral-2022.pdf",
+     "title": null
+    },
+    {
+     "url": "https://cgc.qroo.gob.mx/mara-lezama-llega-a-su-tercer-informe-al-pueblo-con-avances-historicos-en-bienestar-desarrollo-y-amplio-respaldo-ciudadano/",
+     "title": null
+    },
+    {
+     "url": "https://congresoqroo.gob.mx/diputados/",
+     "title": null
+    },
+    {
+     "url": "https://documentos.congresoqroo.gob.mx/diariodedebates/DD-XVIII-2024-9-3-1097-sesion-no-01.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[23]",
+   "citations": [
+    {
+     "url": "https://ieecolima.org.mx/candidatosganadores.htm",
+     "title": null
+    },
+    {
+     "url": "https://ieecolima.org.mx/MemoriaF2021/files/basic-html/page124.html",
+     "title": null
+    },
+    {
+     "url": "https://congresocol.gob.mx/web/www/index.php",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[24]",
+   "citations": [
+    {
+     "url": "https://www.congresosinaloa.gob.mx/comunicados/nombra-congreso-de-sinaloa-a-graciela-dominguez-nava-como-gobernadora-interina/",
+     "title": null
+    },
+    {
+     "url": "https://sinaloa.gob.mx/congreso-del-estado-designa-a-graciela-dominguez-nava-como-gobernadora-interina-de-sinaloa/",
+     "title": null
+    },
+    {
+     "url": "https://www.congresosinaloa.gob.mx/comunicados/en-sesion-solemne-se-instala-la-lxv-legislatura-del-h-congreso-del-estado-de-sinaloa/",
+     "title": null
+    },
+    {
+     "url": "https://iip.congresosinaloa.gob.mx/docs/est_par/est/2026/006.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[25]",
+   "citations": [
+    {
+     "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+     "title": null
+    },
+    {
+     "url": "https://congresodurango.gob.mx/2024/08/20/entrega-congreso-constancia-a-diputados-electos/",
+     "title": null
+    },
+    {
+     "url": "https://congresodurango.gob.mx/2024/09/04/desde-el-congreso-de-estado-respaldaran-acciones-de-gobierno/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[26]",
+   "citations": [
+    {
+     "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+     "title": null
+    },
+    {
+     "url": "http://lix.congresosanluis.gob.mx/content/rinden-protesta-las-y-los-integrantes-de-la-lxiv-legislatura",
+     "title": null
+    },
+    {
+     "url": "http://lx.congresosanluis.gob.mx/conocenos/legislaturas-de-estado",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[27]",
+   "citations": [
+    {
+     "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+     "title": null
+    },
+    {
+     "url": "https://congresogro.gob.mx/64/diputadas-diputados/",
+     "title": null
+    },
+    {
+     "url": "https://congresogro.gob.mx/63/inicio/2024/08/21/concluye-el-registro-de-diputadas-y-diputados-electos-para-integrar-la-lxiv-legislatura-local/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[28]",
+   "citations": [
+    {
+     "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+     "title": null
+    },
+    {
+     "url": "https://congresoson.gob.mx/legislaturas-anteriores",
+     "title": null
+    },
+    {
+     "url": "https://gestion.api.congresoson.gob.mx/publico/media/consulta?id=33217",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[29]",
+   "citations": [
+    {
+     "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+     "title": null
+    },
+    {
+     "url": "https://www.congresogto.gob.mx/comunicados/declaran-a-libia-dennise-garcia-munoz-ledo-gobernadora-electa",
+     "title": null
+    },
+    {
+     "url": "https://www.congresogto.gob.mx/historico_comunicados",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[30]",
+   "citations": [
+    {
+     "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+     "title": null
+    },
+    {
+     "url": "https://congresotabasco.gob.mx/rinde-protesta-como-gobernador-constitucional-del-estado-de-tabasco-el-ciudadano-javier-may-rodriguez/",
+     "title": null
+    },
+    {
+     "url": "https://congresotabasco.gob.mx/catalogo-diputados/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.divisions[31]",
+   "citations": [
+    {
+     "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente/",
+     "title": null
+    },
+    {
+     "url": "https://www.congreso-hidalgo.gob.mx/LXVI_LEGISLATURA/integrantes-lxvi-legislatura.html",
+     "title": null
+    },
+    {
+     "url": "https://www.ieehidalgo.org.mx/images/Indigenas/foros_dialogo/Integraciones/Integracion_Diputaciones_2024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "All 32 Mexican federal entities, with their executives and legislatures as of 2026-11-14. Mexico City's capital status, Sinaloa's interim governorship, and the two transitional five-year terms are noted."
+}

@@ -1,0 +1,1777 @@
+{
+ "purpose": "legislators:PK:Khyber Pakhtunkhwa:general seats for constituencies PK-1 to PK-50",
+ "query": "List the CURRENT members of the Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa, Pakistan) holding the general seats for constituencies PK-1 to PK-50, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_a25cac2822a647369411ee2d31ae6faf",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T01:06:57+00:00",
+ "cost_dollars": {
+  "total": 0.4229,
+  "agent_compute": 0.3539,
+  "search": 0.069,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Suriya Bibi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/suriya-bibi-pk-01-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-1",
+    "constituency_name": "Chitral Upper"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Fateh Ul Mulk Ali Nasir",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/fateh-ul-mulk-ali-nasir-pk-02-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-2",
+    "constituency_name": "Chitral Lower"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sharafat Ali",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/sharafat-ali-pk-02-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-3",
+    "constituency_name": "Swat-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ali Shah",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ali-shah-pk-04-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-4",
+    "constituency_name": "Swat-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Akhtar Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/akhtar-khan-pk-05-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-5",
+    "constituency_name": "Swat-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Fazal Hakeem Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/fazal-hakeem-khan-pk-05-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-6",
+    "constituency_name": "Swat-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Amjad Ali",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/amjad-ali-pk-06-2018-13/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-7",
+    "constituency_name": "Swat-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Hamid Ur Rahman",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/hamid-ur-rahman-pk-08-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-8",
+    "constituency_name": "Swat-VI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sultan Room",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/sultan-room-pk-09-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-9",
+    "constituency_name": "Swat-VII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Naeem",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-naeem-pk-10-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-10",
+    "constituency_name": "Swat-VIII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Gul Ibrahim Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/gul-ibrahim-khan-pk-11-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-11",
+    "constituency_name": "Upper Dir-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Yamin",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-yamin-pk-12-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-12",
+    "constituency_name": "Upper Dir-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Anwar Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-anwar-khan-pk-13-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-13",
+    "constituency_name": "Upper Dir-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Azam Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-azam-khan-pk-13-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-14",
+    "constituency_name": "Lower Dir-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Humayun Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/humayun-khan-pk-14-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-15",
+    "constituency_name": "Lower Dir-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Shafi Ullah",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/shafi-ullah-pk-15-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-16",
+    "constituency_name": "Lower Dir-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ubaidur Rahman",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ubaidur-rahman-pk-17-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-17",
+    "constituency_name": "Lower Dir IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Liaqat Ali Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/liaqat-khan-pk-17-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-18",
+    "constituency_name": "Lower Dir-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Hamid Ur Rehman",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/hamid-ur-rehman-pk-19-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-19",
+    "constituency_name": "Bajaur-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Anwar Zeb Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/anwar-zeb-khan-pk-100-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-20",
+    "constituency_name": "Bajaur-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ajmal Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ajmal-khan-pk-101-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-21",
+    "constituency_name": "Bajaur-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Nisar Baaz",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Awami National Party",
+    "term_start": "2024-07-29",
+    "by_election": true,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-nisar-pk-22-2024/"
+    ],
+    "party_acronym": "ANP",
+    "constituency_code": "PK-22",
+    "constituency_name": "Bajaur-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Shakeel Ahmed",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/shakeel-khan-pk-18-2018-13/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-23",
+    "constituency_name": "Malakand-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Musavir Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/musavir-khan-pk-19-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-24",
+    "constituency_name": "Malakand-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Riaz Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/riaz-khan-pk-20-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-25",
+    "constituency_name": "Buner-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Syed Fakhar Jehan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/syed-fakhar-jehan-pk-21-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-26",
+    "constituency_name": "Buner-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Abdul Kabir Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/abdul-kabir-khan-pk-27-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-27",
+    "constituency_name": "Buner-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Rashad Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-rashad-khan-pk-28-2024/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PK-28",
+    "constituency_name": "Shangla-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Abdul Munim",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-03-29",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/abdul-munim-pk-29-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-29",
+    "constituency_name": "Shangla-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ibadullah Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ibadullah-khan-pk-30-2024/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PK-30",
+    "constituency_name": "Shangla-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Fazal Haq",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/fazal-haq-pk-31-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-31",
+    "constituency_name": "Kohistan Upper"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sajjad Ullah",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/sajjad-ullah-pk-32-2024/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": "PK-32",
+    "constituency_name": "Kohistan Lower"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Riaz",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-riaz-pk-33-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-33",
+    "constituency_name": "Kolai Palas Kohistan"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Zubair Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/zubair-khan-pk-28-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-34",
+    "constituency_name": "Battagram-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Taj Muhammad",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/taj-muhammad-pk-29-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-35",
+    "constituency_name": "Battagram-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Munir Hussain",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/munir-hussain-pk-36-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-36",
+    "constituency_name": "Mansehra-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Babar Saleem Swati",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/babar-saleem-swati-pk-31-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-37",
+    "constituency_name": "Mansehra-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Zahid Chanzeb",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/zahid-chanzeb-pk-38-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-38",
+    "constituency_name": "Mansehra-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ikram Ullah",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ikram-ullah-pk-39-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-39",
+    "constituency_name": "Mansehra-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sardar Shahjehan Yousaf",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/sardar-shahjehan-yousaf-pk-40-2024/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PK-40",
+    "constituency_name": "Mansehra-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Laiq Muhammad Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-03-29",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/laiq-muhammad-khan-pk-35-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-41",
+    "constituency_name": "Tor Ghar"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Nazir Ahmed Abbasi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/nazir-ahmed-abbasi-pk-36-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-42",
+    "constituency_name": "Abbottabad-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Rajab Ali Khan Abbasi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/rajab-ali-khan-abbasi-pk-43-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-43",
+    "constituency_name": "Abbottabad-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Iftikhar Jadoon",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/iftikhar-jadoon-pk-44-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-44",
+    "constituency_name": "Abbottabad-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mushtaq Ahmed Ghani",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/mushtaq-ahmed-ghani-pk-39-2018-13-02/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-45",
+    "constituency_name": "Abbottabad-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Akbar Ayub Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/akbar-ayub-khan-pk-40-2018-13/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-46",
+    "constituency_name": "Haripur-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Arshad Ayub Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/arshad-ayub-khan-pk-41-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-47",
+    "constituency_name": "Haripur-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Malik Adeel lqbal",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/malik-adeel-lqbal-pk-48-2024/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-48",
+    "constituency_name": "Haripur-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Rangez Ahmad",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/rangez-ahmad-pk-43-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-49",
+    "constituency_name": "Swabi-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Aqib Ullah Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/aqib-ullah-khan-pk-44-2018/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-50",
+    "constituency_name": "Swabi-II"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/suriya-bibi-pk-01-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/fateh-ul-mulk-ali-nasir-pk-02-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/sharafat-ali-pk-02-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-shah-pk-04-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akhtar-khan-pk-05-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/fazal-hakeem-khan-pk-05-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/amjad-ali-pk-06-2018-13/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hamid-ur-rahman-pk-08-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/sultan-room-pk-09-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-naeem-pk-10-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/gul-ibrahim-khan-pk-11-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-yamin-pk-12-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-anwar-khan-pk-13-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-azam-khan-pk-13-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/humayun-khan-pk-14-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[15]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/shafi-ullah-pk-15-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[16]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ubaidur-rahman-pk-17-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[17]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/liaqat-khan-pk-17-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[18]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hamid-ur-rehman-pk-19-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[19]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/anwar-zeb-khan-pk-100-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[20]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajmal-khan-pk-101-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[21]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-nisar-pk-22-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[22]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/shakeel-khan-pk-18-2018-13/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[23]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/musavir-khan-pk-19-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[24]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/riaz-khan-pk-20-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[25]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/syed-fakhar-jehan-pk-21-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[26]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/abdul-kabir-khan-pk-27-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[27]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-rashad-khan-pk-28-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[28]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/abdul-munim-pk-29-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[29]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ibadullah-khan-pk-30-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[30]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/fazal-haq-pk-31-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[31]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/sajjad-ullah-pk-32-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[32]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-riaz-pk-33-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[33]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/zubair-khan-pk-28-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[34]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/taj-muhammad-pk-29-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[35]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/munir-hussain-pk-36-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[36]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/babar-saleem-swati-pk-31-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[37]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/zahid-chanzeb-pk-38-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[38]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ikram-ullah-pk-39-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[39]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/sardar-shahjehan-yousaf-pk-40-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[40]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/laiq-muhammad-khan-pk-35-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[41]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nazir-ahmed-abbasi-pk-36-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[42]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/rajab-ali-khan-abbasi-pk-43-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[43]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/iftikhar-jadoon-pk-44-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[44]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/mushtaq-ahmed-ghani-pk-39-2018-13-02/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/wp-content/uploads/2024/02/28-Feb-2024-SoP.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[45]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akbar-ayub-khan-pk-40-2018-13/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[46]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/arshad-ayub-khan-pk-41-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[47]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/malik-adeel-lqbal-pk-48-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[48]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/rangez-ahmad-pk-43-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[49]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/aqib-ullah-khan-pk-44-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "The 50 currently listed general-seat members for PK-1–PK-50 are included. PK-22 was won in a July 2024 by-election; its current member took the assembly oath on 29 July 2024. Party affiliations follow the Election Commission’s later party-position list, which classifies most members as independent."
+}

@@ -1,0 +1,3775 @@
+{
+ "purpose": "local:MX",
+ "query": "Describe municipal/local government in Mexico: the generic name of local units and how many exist, the governing council and its offices (for example municipal president/mayor, trustees, councillors) with how each office is filled and its term length. Then list the current heads of the 10 most populous municipalities as of 2026-11-14: municipality name, the first-level division it belongs to, head title in English and local language, how the head is selected, and the current officeholder (full name, party, term start/end) with source URLs. Exclude sub-units of the national capital if the capital is governed differently.",
+ "run_id": "agent_run_a323289bb53945e4b640e53192dd881e",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:17:52+00:00",
+ "cost_dollars": {
+  "total": 0.6268,
+  "agent_compute": 0.4558,
+  "search": 0.171,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "units": [
+   {
+    "name": "Tijuana",
+    "officeholder": {
+     "term_end": "2027-09-30",
+     "coalition": "Sigamos Haciendo Historia en Baja California",
+     "full_name": "Ismael Burgueño Ruiz",
+     "is_acting": false,
+     "party_name": "Morena",
+     "term_start": "2024-10-01",
+     "source_urls": [
+      "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+      "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+      "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Baja California",
+    "head_title_local": "Presidente Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "León",
+    "officeholder": {
+     "term_end": "2027-10-09",
+     "coalition": null,
+     "full_name": "Alejandra Gutiérrez Campos",
+     "is_acting": false,
+     "party_name": "Partido Acción Nacional",
+     "term_start": "2024-10-10",
+     "source_urls": [
+      "https://www.leon.gob.mx/presidente-municipal.php",
+      "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+      "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html"
+     ],
+     "party_acronym": "PAN"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Guanajuato",
+    "head_title_local": "Presidenta Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "Puebla",
+    "officeholder": {
+     "term_end": "2027-10-14",
+     "coalition": null,
+     "full_name": "José Chedraui Budib",
+     "is_acting": false,
+     "party_name": "Morena",
+     "term_start": "2024-10-15",
+     "source_urls": [
+      "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+      "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Puebla",
+    "head_title_local": "Presidente Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "Ecatepec de Morelos",
+    "officeholder": {
+     "term_end": "2027-12-31",
+     "coalition": null,
+     "full_name": "Azucena Cisneros Coss",
+     "is_acting": false,
+     "party_name": "Morena",
+     "term_start": "2025-01-01",
+     "source_urls": [
+      "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+      "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Estado de México",
+    "head_title_local": "Presidenta Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "Juárez",
+    "officeholder": {
+     "term_end": "2027-09-09",
+     "coalition": null,
+     "full_name": "Héctor Rafael Ortiz Orpinel",
+     "is_acting": true,
+     "party_name": null,
+     "term_start": "2026-06-17",
+     "source_urls": [
+      "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+      "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+      "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+      "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html"
+     ],
+     "party_acronym": null
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Chihuahua",
+    "head_title_local": "Presidente Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "Zapopan",
+    "officeholder": {
+     "term_end": "2027-09-30",
+     "coalition": null,
+     "full_name": "Juan José Frangie Saade",
+     "is_acting": false,
+     "party_name": "Movimiento Ciudadano",
+     "term_start": "2024-10-01",
+     "source_urls": [
+      "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+      "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal"
+     ],
+     "party_acronym": "MC"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Jalisco",
+    "head_title_local": "Presidente Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "Guadalajara",
+    "officeholder": {
+     "term_end": "2027-09-30",
+     "coalition": null,
+     "full_name": "Verónica Delgadillo García",
+     "is_acting": false,
+     "party_name": "Movimiento Ciudadano",
+     "term_start": "2024-10-01",
+     "source_urls": [
+      "https://guadalajara.gob.mx/organigrama",
+      "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf"
+     ],
+     "party_acronym": "MC"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Jalisco",
+    "head_title_local": "Presidenta Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "Monterrey",
+    "officeholder": {
+     "term_end": "2027-09-29",
+     "coalition": "Fuerza y Corazón x Nuevo León",
+     "full_name": "Adrián Emilio de la Garza Santos",
+     "is_acting": false,
+     "party_name": "Partido Revolucionario Institucional",
+     "term_start": "2024-09-30",
+     "source_urls": [
+      "https://www.monterrey.gob.mx/gobierno/",
+      "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+      "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/"
+     ],
+     "party_acronym": "PRI"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Nuevo León",
+    "head_title_local": "Presidente Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "Nezahualcóyotl",
+    "officeholder": {
+     "term_end": "2027-12-31",
+     "coalition": "Sigamos Haciendo Historia en el Estado de México",
+     "full_name": "Adolfo Cerqueda Rebollo",
+     "is_acting": false,
+     "party_name": "Morena",
+     "term_start": "2025-01-01",
+     "source_urls": [
+      "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+      "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Estado de México",
+    "head_title_local": "Presidente Municipal",
+    "head_selection_method": "direct_election"
+   },
+   {
+    "name": "Mexicali",
+    "officeholder": {
+     "term_end": "2027-09-30",
+     "coalition": null,
+     "full_name": "Norma Alicia Bustamante Martínez",
+     "is_acting": false,
+     "party_name": "Morena",
+     "term_start": "2024-10-01",
+     "source_urls": [
+      "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+      "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886"
+     ],
+     "party_acronym": "MORENA"
+    },
+    "head_title_en": "Municipal President",
+    "parent_division": "Baja California",
+    "head_title_local": "Presidenta Municipal",
+    "head_selection_method": "direct_election"
+   }
+  ],
+  "offices": [
+   {
+    "seats": 1,
+    "keywords": [
+     "presidente municipal",
+     "presidenta municipal",
+     "alcalde",
+     "mayor"
+    ],
+    "title_en": "Municipal President",
+    "source_urls": [
+     "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "https://www.ieepco.org.mx/sistemas-normativos"
+    ],
+    "title_local": "Presidente/a Municipal",
+    "current_holders": [],
+    "selection_method": "direct_election",
+    "selection_details": "Elected with the municipal slate by popular vote; indigenous customary-system municipalities choose authorities under their own community rules. A substitute can assume office on leave of the elected president. Usually three years, but some states have four-year councils and indigenous customary systems may prescribe one, one-and-a-half, two or three years.",
+    "term_length_years": null
+   },
+   {
+    "seats": null,
+    "keywords": [
+     "síndico",
+     "síndica",
+     "trustee"
+    ],
+    "title_en": "Municipal trustee",
+    "source_urls": [
+     "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "https://www.ieepco.org.mx/sistemas-normativos"
+    ],
+    "title_local": "Síndico/a",
+    "current_holders": [],
+    "selection_method": "direct_election",
+    "selection_details": "Elected on municipal slates, with some states providing a proportional-representation trustee; indigenous customary-system selection also exists. Usually three years, but some states have four-year councils and indigenous customary systems may prescribe one, one-and-a-half, two or three years.",
+    "term_length_years": null
+   },
+   {
+    "seats": null,
+    "keywords": [
+     "regidor",
+     "regidora",
+     "councillor"
+    ],
+    "title_en": "Municipal councillor",
+    "source_urls": [
+     "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "https://www.ieepco.org.mx/sistemas-normativos"
+    ],
+    "title_local": "Regidor/a",
+    "current_holders": [],
+    "selection_method": "mixed",
+    "selection_details": "Seats filled by election on winning slates and proportional representation under state rules, or by indigenous community electoral procedures. Usually three years, but some states have four-year councils and indigenous customary systems may prescribe one, one-and-a-half, two or three years.",
+    "term_length_years": null
+   }
+  ],
+  "source_urls": [
+   "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+   "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+   "https://www.ieepco.org.mx/sistemas-normativos",
+   "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population"
+  ],
+  "total_units": 2462,
+  "unit_name_en": "Municipality",
+  "council_name_en": "Municipal council",
+  "unit_name_local": "Municipio",
+  "council_name_local": "Ayuntamiento (cabildo)"
+ },
+ "grounding": [
+  {
+   "field": "structured.unit_name_en",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.unit_name_local",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.total_units",
+   "citations": [
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.council_name_en",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.council_name_local",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.source_urls",
+   "citations": [
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].title_en",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].title_local",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].selection_details",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].seats",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].keywords",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[0].source_urls",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].title_en",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].title_local",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].selection_details",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].keywords",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[1].source_urls",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].title_en",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].title_local",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].selection_details",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].keywords",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.offices[2].source_urls",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2025/doc/cngmd_2025_resultados.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepco.org.mx/sistemas-normativos",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.coalition",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[0].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.tijuana.gob.mx/webpanel/Curriculum/Documento/CV6101.pdf",
+     "title": null
+    },
+    {
+     "url": "https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.uniradiobaja.com/gobierno/inician-campanas-electorales-locales-bc-siete-aspirantes-presidencia-municipal-tijuana-n740677",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[1].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.leon.gob.mx/presidente-municipal.php",
+     "title": null
+    },
+    {
+     "url": "https://enterate.leon.gob.mx/entrega-ale-gutierrez-a-la-gobernadora-el-plan-de-trabajo-para-la-administracion-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://periodicocorreo.com.mx/elecciones-2024-guanajuato/2024/feb/20/quien-es-alejandra-gutierrez-candidata-del-pan-en-leon-elecciones-2024-92786.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[2].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e",
+     "title": null
+    },
+    {
+     "url": "https://www.ieepuebla.org.mx/2024/banner/GANADORES_PARA_AYUNTAMIENTOS.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[3].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://ecatepec.gob.mx/wp-content/uploads/2026/03/REGLAMENTO-INTERNO-DE-LA-ADMINISTRACION-2026.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.ieem.org.mx/assets/docs/procesos-electorales/resultados/2024/Ayuntamientos/INTEGRACI%C3%93N%20DE%20LOS%20AYUNTAMIENTOS%202024.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[4].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/32971/refrenda-ortiz-orpinel-compromiso-de-dar-continuidad-al-trabajo-por-juarez",
+     "title": null
+    },
+    {
+     "url": "https://juarez.gob.mx/noticia/35969/alcanza-juarez-amanece-limpio-los-100-espacios-publicos-renovados",
+     "title": null
+    },
+    {
+     "url": "https://www.juarez.gob.mx/noticia/34700/obras-pendientes-se-entregarAn-en-tiempo-y-forma-alcalde/",
+     "title": null
+    },
+    {
+     "url": "https://diario.mx/juarez/2026/jun/17/toma-protesta-hector-ortiz-orpinel-como-alcalde-de-ciudad-juarez-1123331.html",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[5].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/gobierno/estructura-de-gobierno/pleno-del-ayuntamiento-2024-2027/",
+     "title": null
+    },
+    {
+     "url": "https://www.zapopan.gob.mx/v3/gobierno/presidente-municipal",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[6].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://guadalajara.gob.mx/organigrama",
+     "title": null
+    },
+    {
+     "url": "https://www2.iepcjalisco.org.mx/proceso-electoral-2024/wp-content/uploads/2024/06/GUADALAJARA.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.coalition",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[7].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/gobierno/",
+     "title": null
+    },
+    {
+     "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf",
+     "title": null
+    },
+    {
+     "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.coalition",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[8].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php",
+     "title": null
+    },
+    {
+     "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9]",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].parent_division",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].head_title_en",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].head_title_local",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].head_selection_method",
+   "citations": [
+    {
+     "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf",
+     "title": null
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.full_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.party_name",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.party_acronym",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.term_start",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.term_end",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.is_acting",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.units[9].officeholder.source_urls",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Mexico_by_population",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "As of 14 November 2026, Mexico has 2,462 municipalities, excluding Mexico City’s 16 differently governed boroughs. The ten listed are the largest municipalities by the 2020 census. Municipal councils comprise a president, trustees and councillors; usual three-year terms vary under state and indigenous community rules. Juárez is headed by substitute president Héctor Rafael Ortiz Orpinel following the elected president’s leave in June 2026; his personal party affiliation is unconfirmed."
+}

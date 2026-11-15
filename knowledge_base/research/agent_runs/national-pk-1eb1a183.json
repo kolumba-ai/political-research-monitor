@@ -1,0 +1,1496 @@
+{
+ "purpose": "national:PK",
+ "query": "Describe the national (federal) government structure of Pakistan as of 2026-11-14. For each body in the executive, legislative and judicial branches, plus the national electoral authority, list its offices with: English and local-language title, how the OFFICE is filled (direct_election, indirect_election, appointment, mixed, hereditary, ex_officio), number of seats, term length, and the CURRENT holder(s) for single-seat or leadership offices only (head of state/government, presiding officer of each legislative chamber, president of the highest court, head of the electoral authority) with party and term start/end. For multi-member bodies give seat counts and selection method but do not list every member. Note recent reforms that changed how offices are filled (for example judicial elections). Also list the subnational tiers of government (first-level divisions, and municipal/local government) with counts. Give source URLs for every current officeholder.",
+ "run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-14T23:50:42+00:00",
+ "cost_dollars": {
+  "total": 0.8604,
+  "agent_compute": 0.6444,
+  "search": 0.216,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "bodies": [
+   {
+    "branch": "executive",
+    "name_en": "Presidency",
+    "offices": [
+     {
+      "seats": 1,
+      "keywords": [
+       "president"
+      ],
+      "title_en": "President of Pakistan",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://president.gov.pk/about/president-asif-ali-zardari"
+      ],
+      "title_local": "صدرِ مملکت",
+      "current_holders": [
+       {
+        "term_end": "2029-03-09",
+        "coalition": null,
+        "full_name": "Asif Ali Zardari",
+        "is_acting": false,
+        "party_name": "Pakistan Peoples Party Parliamentarians",
+        "term_start": "2024-03-10",
+        "source_urls": [
+         "https://president.gov.pk/about/president-asif-ali-zardari"
+        ],
+        "party_acronym": "PPPP"
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Elected by the members of both Houses of Parliament and the four provincial assemblies; maximum two consecutive terms.",
+      "term_length_years": 5
+     }
+    ],
+    "name_local": "صدارت",
+    "description": "Head of state; normally acts on the advice of the Prime Minister/Cabinet.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "https://president.gov.pk/about/president-asif-ali-zardari"
+    ]
+   },
+   {
+    "branch": "executive",
+    "name_en": "Federal Government and Cabinet",
+    "offices": [
+     {
+      "seats": 1,
+      "keywords": [
+       "prime minister"
+      ],
+      "title_en": "Prime Minister of Pakistan",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://pmo.gov.pk/pm_profile.php",
+       "https://www.pmo.gov.pk/press_release_detailes.php?pr_id=5045"
+      ],
+      "title_local": "وزیر اعظم",
+      "current_holders": [
+       {
+        "term_end": null,
+        "coalition": null,
+        "full_name": "Muhammad Shehbaz Sharif",
+        "is_acting": false,
+        "party_name": "Pakistan Muslim League (N)",
+        "term_start": "2024-03-04",
+        "source_urls": [
+         "https://pmo.gov.pk/pm_profile.php",
+         "https://www.pmo.gov.pk/press_release_detailes.php?pr_id=5045"
+        ],
+        "party_acronym": "PML-N"
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Elected by the National Assembly from among its Muslim members and formally appointed by the President; tenure depends on Assembly confidence, with no fixed personal term.",
+      "term_length_years": null
+     },
+     {
+      "seats": 31,
+      "keywords": [
+       "federal minister"
+      ],
+      "title_en": "Federal minister",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://www.cabinet.gov.pk/Detail/ZGZiYzkyMjktNmYwNC00NTY1LWE0MzUtMjg3MzUxMTU0Mjk3"
+      ],
+      "title_local": "وفاقی وزیر",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Appointed by the President on the advice of the Prime Minister; 31 are listed in the Cabinet Division roster.",
+      "term_length_years": null
+     },
+     {
+      "seats": 11,
+      "keywords": [
+       "minister"
+      ],
+      "title_en": "Minister of state",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://cabinet.gov.pk/Detail/ZWQxNTVhY2ItNzBlYy00YTJhLWJmYzEtMTdlMDVhZmE1ZTQ2"
+      ],
+      "title_local": "وزیر مملکت",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Appointed to ministerial office on the advice of the Prime Minister; 11 are listed in the published roster.",
+      "term_length_years": null
+     }
+    ],
+    "name_local": "وفاقی حکومت اور وفاقی کابینہ",
+    "description": "Prime Minister heads government; the Cabinet is collectively responsible to the National Assembly. Cabinet portfolio numbers are the published roster, not fixed constitutional strengths.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "https://pmo.gov.pk/pm_profile.php",
+     "https://www.cabinet.gov.pk/Detail/ZGZiYzkyMjktNmYwNC00NTY1LWE0MzUtMjg3MzUxMTU0Mjk3",
+     "https://cabinet.gov.pk/Detail/ZWQxNTVhY2ItNzBlYy00YTJhLWJmYzEtMTdlMDVhZmE1ZTQ2"
+    ]
+   },
+   {
+    "branch": "legislative",
+    "name_en": "National Assembly",
+    "offices": [
+     {
+      "seats": 266,
+      "keywords": [
+       "member"
+      ],
+      "title_en": "Member of National Assembly, general seat",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://na.gov.pk/en/content.php?id=246"
+      ],
+      "title_local": "رکن قومی اسمبلی، عمومی نشست",
+      "current_holders": [],
+      "selection_method": "direct_election",
+      "selection_details": "Single-member constituencies, direct plurality voting.",
+      "term_length_years": 5
+     },
+     {
+      "seats": 60,
+      "keywords": [
+       "member"
+      ],
+      "title_en": "Member of National Assembly, reserved seat for women",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://na.gov.pk/en/content.php?id=246"
+      ],
+      "title_local": "رکن قومی اسمبلی، خواتین کی مخصوص نشست",
+      "current_holders": [],
+      "selection_method": "indirect_election",
+      "selection_details": "Provincial party lists allocated proportionally to general seats won by political parties.",
+      "term_length_years": 5
+     },
+     {
+      "seats": 10,
+      "keywords": [
+       "member"
+      ],
+      "title_en": "Member of National Assembly, reserved seat for non-Muslims",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://na.gov.pk/en/content.php?id=246"
+      ],
+      "title_local": "رکن قومی اسمبلی، غیر مسلموں کی مخصوص نشست",
+      "current_holders": [],
+      "selection_method": "indirect_election",
+      "selection_details": "Party lists allocated proportionally on nationwide general-seat results.",
+      "term_length_years": 5
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "speaker"
+      ],
+      "title_en": "Speaker of the National Assembly",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://na.gov.pk/en/content.php?id=220",
+       "https://www.na.gov.pk/en/profile.php?uid=1735"
+      ],
+      "title_local": "اسپیکر قومی اسمبلی",
+      "current_holders": [
+       {
+        "term_end": null,
+        "coalition": null,
+        "full_name": "Sardar Ayaz Sadiq",
+        "is_acting": false,
+        "party_name": "Pakistan Muslim League (N)",
+        "term_start": "2024-03-01",
+        "source_urls": [
+         "https://na.gov.pk/en/content.php?id=220",
+         "https://www.na.gov.pk/en/profile.php?uid=1735"
+        ],
+        "party_acronym": "PML-N"
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Elected from the Assembly membership; continues until successor chosen subject to constitutional rules.",
+      "term_length_years": null
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "deputy speaker"
+      ],
+      "title_en": "Deputy Speaker of the National Assembly",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://www.na.gov.pk/en/content.php?id=219",
+       "https://na.gov.pk/en/profile.php?uid=1823"
+      ],
+      "title_local": "ڈپٹی اسپیکر قومی اسمبلی",
+      "current_holders": [
+       {
+        "term_end": null,
+        "coalition": null,
+        "full_name": "Syed Ghulam Mustafa Shah",
+        "is_acting": false,
+        "party_name": "Pakistan Peoples Party Parliamentarians",
+        "term_start": "2024-03-01",
+        "source_urls": [
+         "https://www.na.gov.pk/en/content.php?id=219",
+         "https://na.gov.pk/en/profile.php?uid=1823"
+        ],
+        "party_acronym": "PPPP"
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Elected by the Assembly from its members.",
+      "term_length_years": null
+     }
+    ],
+    "name_local": "قومی اسمبلی",
+    "description": "Lower house; 336 membership seats. Speaker and deputy occupy seats already counted among members; the Assembly normally lasts five years unless dissolved.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "https://na.gov.pk/en/content.php?id=246",
+     "https://na.gov.pk/en/content.php?id=220",
+     "https://www.na.gov.pk/en/content.php?id=219"
+    ]
+   },
+   {
+    "branch": "legislative",
+    "name_en": "Senate",
+    "offices": [
+     {
+      "seats": 58,
+      "keywords": [
+       "senator, general seat"
+      ],
+      "title_en": "Senator, general seat",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://senate.gov.pk/en/essence.php?id=24"
+      ],
+      "title_local": "سینیٹر، عمومی نشست",
+      "current_holders": [],
+      "selection_method": "indirect_election",
+      "selection_details": "56 provincial and two capital general seats; elected by relevant assembly electoral colleges through proportional representation by single transferable vote.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 17,
+      "keywords": [
+       "senator, reserved seat for women"
+      ],
+      "title_en": "Senator, reserved seat for women",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://senate.gov.pk/en/essence.php?id=24"
+      ],
+      "title_local": "سینیٹر، خواتین کی مخصوص نشست",
+      "current_holders": [],
+      "selection_method": "indirect_election",
+      "selection_details": "Four from each province and one from the capital; elected by relevant electoral colleges.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 17,
+      "keywords": [
+       "senator, technocrat or ulema seat"
+      ],
+      "title_en": "Senator, technocrat or ulema seat",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://senate.gov.pk/en/essence.php?id=24"
+      ],
+      "title_local": "سینیٹر، ٹیکنوکریٹ یا علماء کی نشست",
+      "current_holders": [],
+      "selection_method": "indirect_election",
+      "selection_details": "Four per province and one from the capital; indirect election.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 4,
+      "keywords": [
+       "senator, non-muslim seat"
+      ],
+      "title_en": "Senator, non-Muslim seat",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://senate.gov.pk/en/essence.php?id=24"
+      ],
+      "title_local": "سینیٹر، غیر مسلم نشست",
+      "current_holders": [],
+      "selection_method": "indirect_election",
+      "selection_details": "One from each province; indirect election by provincial assembly.",
+      "term_length_years": 6
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "chairman"
+      ],
+      "title_en": "Chairman of the Senate",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://senate.gov.pk/en/essence.php?id=24",
+       "https://senate.gov.pk/en/profile.php?uid=1014"
+      ],
+      "title_local": "چیئرمین سینیٹ",
+      "current_holders": [
+       {
+        "term_end": "2027-04-08",
+        "coalition": null,
+        "full_name": "Syed Yousaf Raza Gilani",
+        "is_acting": false,
+        "party_name": "Pakistan Peoples Party Parliamentarians",
+        "term_start": "2024-04-09",
+        "source_urls": [
+         "https://senate.gov.pk/en/profile.php?uid=1014"
+        ],
+        "party_acronym": "PPPP"
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Elected by senators from among themselves.",
+      "term_length_years": 3
+     },
+     {
+      "seats": 1,
+      "keywords": [
+       "deputy chairman"
+      ],
+      "title_en": "Deputy Chairman of the Senate",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://senate.gov.pk/en/essence.php?id=24",
+       "https://www.senate.gov.pk/en/profile.php?uid=1020"
+      ],
+      "title_local": "ڈپٹی چیئرمین سینیٹ",
+      "current_holders": [
+       {
+        "term_end": "2027-04-08",
+        "coalition": null,
+        "full_name": "Syedaal Khan",
+        "is_acting": false,
+        "party_name": "Pakistan Muslim League (N)",
+        "term_start": "2024-04-09",
+        "source_urls": [
+         "https://www.senate.gov.pk/en/profile.php?uid=1020"
+        ],
+        "party_acronym": "PML-N"
+       }
+      ],
+      "selection_method": "indirect_election",
+      "selection_details": "Elected by senators from among themselves.",
+      "term_length_years": 3
+     }
+    ],
+    "name_local": "سینیٹ",
+    "description": "Permanent upper house; 96 seats, with half the senators retiring every three years. Chairman and deputy chairman are already counted among the senators.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "https://senate.gov.pk/en/essence.php?id=24",
+     "https://senate.gov.pk/en/profile.php?uid=1014",
+     "https://www.senate.gov.pk/en/profile.php?uid=1020"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "Federal Constitutional Court",
+    "offices": [
+     {
+      "seats": 1,
+      "keywords": [
+       "chief justice"
+      ],
+      "title_en": "Chief Justice of the Federal Constitutional Court",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf",
+       "https://www.fccp.gov.pk/chief-justice"
+      ],
+      "title_local": "وفاقی آئینی عدالت کے چیف جسٹس",
+      "current_holders": [
+       {
+        "term_end": "2028-11-13",
+        "coalition": null,
+        "full_name": "Amin-ud-Din Khan",
+        "is_acting": false,
+        "party_name": null,
+        "term_start": "2025-11-14",
+        "source_urls": [
+         "https://www.fccp.gov.pk/chief-justice"
+        ],
+        "party_acronym": null
+       }
+      ],
+      "selection_method": "appointment",
+      "selection_details": "President appoints under Article 175A; first chief exceptionally appointed on Prime Minister’s advice. Three years or retirement at 68, whichever earlier.",
+      "term_length_years": 3
+     },
+     {
+      "seats": 12,
+      "keywords": [
+       "judge"
+      ],
+      "title_en": "Judge of the Federal Constitutional Court",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://www.dawn.com/news/2044385/situationer-time-flies-after-judicial-hierarchy-rewritten",
+       "https://www.fccp.gov.pk/judges"
+      ],
+      "title_local": "وفاقی آئینی عدالت کے جج",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Up to 12 other authorized positions (six filled as of the cutoff); nominated by the Judicial Commission and appointed by the President; serve until age 68 unless earlier departure.",
+      "term_length_years": null
+     }
+    ],
+    "name_local": "وفاقی آئینی عدالت",
+    "description": "Created by the Twenty-Seventh Amendment (2025); hears major constitutional matters formerly heard by the Supreme Court. Constitutional size is one chief justice plus judges set by Parliament or, pending legislation, the President. Thirteen authorized positions, seven reported filled on the cutoff. The inaugural chief and initial judges were exceptionally appointed by the President on prime-ministerial advice; later appointments follow the Judicial Commission procedure, not popular judicial elections.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf",
+     "https://www.fccp.gov.pk/chief-justice",
+     "https://www.dawn.com/news/2044385/situationer-time-flies-after-judicial-hierarchy-rewritten"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "Supreme Court of Pakistan",
+    "offices": [
+     {
+      "seats": 1,
+      "keywords": [
+       "chief justice"
+      ],
+      "title_en": "Chief Justice of the Supreme Court of Pakistan",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://www.supremecourt.gov.pk/honorable-chief-justice/"
+      ],
+      "title_local": "چیف جسٹس سپریم کورٹ",
+      "current_holders": [
+       {
+        "term_end": "2027-10-25",
+        "coalition": null,
+        "full_name": "Yahya Afridi",
+        "is_acting": false,
+        "party_name": null,
+        "term_start": "2024-10-26",
+        "source_urls": [
+         "https://www.supremecourt.gov.pk/honorable-chief-justice/"
+        ],
+        "party_acronym": null
+       }
+      ],
+      "selection_method": "appointment",
+      "selection_details": "President appoints following selection by a special parliamentary committee from the three most senior judges; term ends earlier on reaching 65.",
+      "term_length_years": 3
+     },
+     {
+      "seats": 33,
+      "keywords": [
+       "judge"
+      ],
+      "title_en": "Judge of the Supreme Court",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://www.na.gov.pk/uploads/documents/6729fbb602d98_375.pdf"
+      ],
+      "title_local": "جج سپریم کورٹ",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Maximum 33 other judges by 2024 statute; Judicial Commission nominations and presidential appointment; retirement at age 65.",
+      "term_length_years": null
+     }
+    ],
+    "name_local": "عدالتِ عظمیٰ پاکستان",
+    "description": "Highest ordinary appellate court, distinct from the constitutional court. Statute permits up to 33 judges in addition to the chief justice. The 2024 Twenty-Sixth Amendment changed chief-justice selection to a parliamentary committee choice from the three senior-most judges and capped the chief-justice term at three years; judges are appointed, not directly elected.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "https://www.supremecourt.gov.pk/honorable-chief-justice/",
+     "https://www.na.gov.pk/uploads/documents/6729fbb602d98_375.pdf"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "Federal Shariat Court",
+    "offices": [
+     {
+      "seats": 1,
+      "keywords": [
+       "chief justice"
+      ],
+      "title_en": "Chief Justice of the Federal Shariat Court",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://www.federalshariatcourt.gov.pk/en/sitting-judges/"
+      ],
+      "title_local": "چیف جسٹس وفاقی شرعی عدالت",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Appointed by the President under Article 175A; term not exceeding three years, renewable.",
+      "term_length_years": 3
+     },
+     {
+      "seats": 7,
+      "keywords": [
+       "judge"
+      ],
+      "title_en": "Judge of the Federal Shariat Court",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://www.federalshariatcourt.gov.pk/en/sitting-judges/"
+      ],
+      "title_local": "جج وفاقی شرعی عدالت",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Up to seven additional judges; appointed by the President under Article 175A for a term not exceeding three years, renewable.",
+      "term_length_years": 3
+     }
+    ],
+    "name_local": "وفاقی شرعی عدالت",
+    "description": "Reviews whether specified laws conform to the injunctions of Islam; constitutional maximum eight judges, including its chief justice.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "https://www.federalshariatcourt.gov.pk/en/sitting-judges/"
+    ]
+   },
+   {
+    "branch": "judicial",
+    "name_en": "High Courts",
+    "offices": [
+     {
+      "seats": 5,
+      "keywords": [
+       "chief justice"
+      ],
+      "title_en": "Chief Justice of a High Court",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+      ],
+      "title_local": "چیف جسٹس ہائی کورٹ",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Each court has a chief justice; appointed via constitutional Judicial Commission and President; normal retirement age 62.",
+      "term_length_years": null
+     },
+     {
+      "seats": null,
+      "keywords": [
+       "judge"
+      ],
+      "title_en": "Judge of a High Court",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+      ],
+      "title_local": "جج ہائی کورٹ",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "Judicial Commission nomination and presidential appointment; regular retirement at age 62.",
+      "term_length_years": null
+     }
+    ],
+    "name_local": "اعلیٰ عدالتیں",
+    "description": "Five constitutional High Courts: one for each of the four provinces and one for Islamabad Capital Territory; their judges are appointed rather than popularly elected. Court-by-court judge strength is not uniformly established here.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+    ]
+   },
+   {
+    "branch": "electoral",
+    "name_en": "Election Commission of Pakistan",
+    "offices": [
+     {
+      "seats": 1,
+      "keywords": [
+       "chief election commissioner"
+      ],
+      "title_en": "Chief Election Commissioner",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://ecp.gov.pk/honourable-cec"
+      ],
+      "title_local": "چیف الیکشن کمشنر",
+      "current_holders": [
+       {
+        "term_end": null,
+        "coalition": null,
+        "full_name": "Sikandar Sultan Raja",
+        "is_acting": false,
+        "party_name": null,
+        "term_start": "2020-01-27",
+        "source_urls": [
+         "https://ecp.gov.pk/honourable-cec"
+        ],
+        "party_acronym": null
+       }
+      ],
+      "selection_method": "appointment",
+      "selection_details": "President appoints after Prime Minister–opposition leader nominations, parliamentary committee hearing and confirmation; holds over until successor assumes office.",
+      "term_length_years": 5
+     },
+     {
+      "seats": 4,
+      "keywords": [
+       "election commission member"
+      ],
+      "title_en": "Election Commission member",
+      "source_urls": [
+       "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+       "https://ecp.gov.pk/honourable-members"
+      ],
+      "title_local": "رکن الیکشن کمیشن",
+      "current_holders": [],
+      "selection_method": "appointment",
+      "selection_details": "One from each province; nomination/confirmation process and appointment as provided in Articles 213 and 218; holdover until successor takes office.",
+      "term_length_years": 5
+     }
+    ],
+    "name_local": "الیکشن کمیشن آف پاکستان",
+    "description": "Independent permanent national election-management authority of five members. After the 2024 amendment, a member whose five-year term expires continues until a successor enters office; the sitting chief commissioner was still listed after his original 2025 expiry.",
+    "source_urls": [
+     "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "https://ecp.gov.pk/honourable-cec",
+     "https://ecp.gov.pk/overview-of-ecp"
+    ]
+   }
+  ],
+  "source_urls": [
+   "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf",
+   "https://na.gov.pk/en/content.php?id=246",
+   "https://senate.gov.pk/en/essence.php?id=24",
+   "https://www.pbs.gov.pk/wp-content/uploads/2020/07/Administrative-Units-2023.pdf",
+   "https://ecp.gov.pk/honourable-cec",
+   "https://www.fccp.gov.pk/chief-justice",
+   "https://www.supremecourt.gov.pk/honorable-chief-justice/"
+  ],
+  "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+  "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+  "subnational_levels": [
+   {
+    "tier": "state",
+    "count": 4,
+    "name_en": "Provinces",
+    "name_local": "صوبے",
+    "description": "Punjab, Sindh, Khyber Pakhtunkhwa and Balochistan; the Islamabad Capital Territory is separate, while Azad Jammu and Kashmir and Gilgit-Baltistan have distinct administrative arrangements."
+   },
+   {
+    "tier": "state",
+    "count": 3,
+    "name_en": "Other first-level administered areas",
+    "name_local": "دیگر انتظامی علاقے",
+    "description": "Islamabad Capital Territory, Azad Jammu and Kashmir, and Gilgit-Baltistan; not three additional provinces."
+   },
+   {
+    "tier": "state",
+    "count": 36,
+    "name_en": "Divisions",
+    "name_local": "ڈویژن",
+    "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ."
+   },
+   {
+    "tier": "municipal",
+    "count": null,
+    "name_en": "Municipal and other local governments",
+    "name_local": "بلدیاتی حکومتیں",
+    "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments."
+   }
+  ],
+  "system_of_government": "Federal parliamentary republic"
+ },
+ "grounding": [
+  {
+   "field": "structured.system_of_government",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constitution_name",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constitution_url",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.subnational_levels",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/Administrative-Units-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pbs.gov.pk/gis/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.source_urls",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/content.php?id=246",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/essence.php?id=24",
+     "title": null
+    },
+    {
+     "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/Administrative-Units-2023.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/honourable-cec",
+     "title": null
+    },
+    {
+     "url": "https://www.fccp.gov.pk/chief-justice",
+     "title": null
+    },
+    {
+     "url": "https://www.supremecourt.gov.pk/honorable-chief-justice/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://president.gov.pk/about/president-asif-ali-zardari",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://president.gov.pk/about/president-asif-ali-zardari",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[0].offices[0].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://president.gov.pk/about/president-asif-ali-zardari",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://pmo.gov.pk/pm_profile.php",
+     "title": null
+    },
+    {
+     "url": "https://www.cabinet.gov.pk/Detail/ZGZiYzkyMjktNmYwNC00NTY1LWE0MzUtMjg3MzUxMTU0Mjk3",
+     "title": null
+    },
+    {
+     "url": "https://cabinet.gov.pk/Detail/ZWQxNTVhY2ItNzBlYy00YTJhLWJmYzEtMTdlMDVhZmE1ZTQ2",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://pmo.gov.pk/pm_profile.php",
+     "title": null
+    },
+    {
+     "url": "https://www.pmo.gov.pk/press_release_detailes.php?pr_id=5045",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[0].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://pmo.gov.pk/pm_profile.php",
+     "title": null
+    },
+    {
+     "url": "https://www.pmo.gov.pk/press_release_detailes.php?pr_id=5045",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.cabinet.gov.pk/Detail/ZGZiYzkyMjktNmYwNC00NTY1LWE0MzUtMjg3MzUxMTU0Mjk3",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[1].offices[2]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://cabinet.gov.pk/Detail/ZWQxNTVhY2ItNzBlYy00YTJhLWJmYzEtMTdlMDVhZmE1ZTQ2",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/content.php?id=246",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/content.php?id=220",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/en/content.php?id=219",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/content.php?id=246",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/content.php?id=246",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[2]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/content.php?id=246",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[3]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/content.php?id=220",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/en/profile.php?uid=1735",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[3].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/en/content.php?id=220",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/en/profile.php?uid=1735",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[4]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/en/content.php?id=219",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/profile.php?uid=1823",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[2].offices[4].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/en/content.php?id=219",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/en/profile.php?uid=1823",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/essence.php?id=24",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/profile.php?uid=1014",
+     "title": null
+    },
+    {
+     "url": "https://www.senate.gov.pk/en/profile.php?uid=1020",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/essence.php?id=24",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/essence.php?id=24",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[2]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/essence.php?id=24",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[3]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/essence.php?id=24",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[4]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/essence.php?id=24",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/profile.php?uid=1014",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[4].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://senate.gov.pk/en/profile.php?uid=1014",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[5]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://senate.gov.pk/en/essence.php?id=24",
+     "title": null
+    },
+    {
+     "url": "https://www.senate.gov.pk/en/profile.php?uid=1020",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[3].offices[5].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://www.senate.gov.pk/en/profile.php?uid=1020",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.fccp.gov.pk/chief-justice",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044385/situationer-time-flies-after-judicial-hierarchy-rewritten",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.fccp.gov.pk/chief-justice",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[0].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://www.fccp.gov.pk/chief-justice",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[4].offices[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.dawn.com/news/2044385/situationer-time-flies-after-judicial-hierarchy-rewritten",
+     "title": null
+    },
+    {
+     "url": "https://www.fccp.gov.pk/judges",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.supremecourt.gov.pk/honorable-chief-justice/",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/6729fbb602d98_375.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.supremecourt.gov.pk/honorable-chief-justice/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5].offices[0].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://www.supremecourt.gov.pk/honorable-chief-justice/",
+     "title": null
+    },
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[5].offices[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/6729fbb602d98_375.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.federalshariatcourt.gov.pk/en/sitting-judges/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.federalshariatcourt.gov.pk/en/sitting-judges/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[6].offices[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.federalshariatcourt.gov.pk/en/sitting-judges/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[7].offices[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/honourable-cec",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/overview-of-ecp",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[0]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/honourable-cec",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[0].current_holders[0]",
+   "citations": [
+    {
+     "url": "https://ecp.gov.pk/honourable-cec",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.bodies[8].offices[1]",
+   "citations": [
+    {
+     "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+     "title": null
+    },
+    {
+     "url": "https://ecp.gov.pk/honourable-members",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "{\"system_of_government\":\"Federal parliamentary republic\",\"constitution_name\":\"Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)\",\"constitution_url\":\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"bodies\":[{\"name_en\":\"Presidency\",\"name_local\":\"صدارت\",\"branch\":\"executive\",\"description\":\"Head of state; normally acts on the advice of the Prime Minister/Cabinet.\",\"offices\":[{\"title_en\":\"President of Pakistan\",\"title_local\":\"صدرِ مملکت\",\"selection_method\":\"indirect_election\",\"seats\":1,\"term_length_years\":5,\"selection_details\":\"Elected by the members of both Houses of Parliament and the four provincial assemblies; maximum two consecutive terms.\",\"keywords\":[\"president\"],\"current_holders\":[{\"full_name\":\"Asif Ali Zardari\",\"party_name\":\"Pakistan Peoples Party Parliamentarians\",\"party_acronym\":\"PPPP\",\"coalition\":null,\"term_start\":\"2024-03-10\",\"term_end\":\"2029-03-09\",\"is_acting\":false,\"source_urls\":[\"https://president.gov.pk/about/president-asif-ali-zardari\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://president.gov.pk/about/president-asif-ali-zardari\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://president.gov.pk/about/president-asif-ali-zardari\"]},{\"name_en\":\"Federal Government and Cabinet\",\"name_local\":\"وفاقی حکومت اور وفاقی کابینہ\",\"branch\":\"executive\",\"description\":\"Prime Minister heads government; the Cabinet is collectively responsible to the National Assembly. Cabinet portfolio numbers are the published roster, not fixed constitutional strengths.\",\"offices\":[{\"title_en\":\"Prime Minister of Pakistan\",\"title_local\":\"وزیر اعظم\",\"selection_method\":\"indirect_election\",\"seats\":1,\"term_length_years\":null,\"selection_details\":\"Elected by the National Assembly from among its Muslim members and formally appointed by the President; tenure depends on Assembly confidence, with no fixed personal term.\",\"keywords\":[\"prime minister\"],\"current_holders\":[{\"full_name\":\"Muhammad Shehbaz Sharif\",\"party_name\":\"Pakistan Muslim League (N)\",\"party_acronym\":\"PML-N\",\"coalition\":null,\"term_start\":\"2024-03-04\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://pmo.gov.pk/pm_profile.php\",\"https://www.pmo.gov.pk/press_release_detailes.php?pr_id=5045\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://pmo.gov.pk/pm_profile.php\",\"https://www.pmo.gov.pk/press_release_detailes.php?pr_id=5045\"]},{\"title_en\":\"Federal minister\",\"title_local\":\"وفاقی وزیر\",\"selection_method\":\"appointment\",\"seats\":31,\"term_length_years\":null,\"selection_details\":\"Appointed by the President on the advice of the Prime Minister; 31 are listed in the Cabinet Division roster.\",\"keywords\":[\"federal minister\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.cabinet.gov.pk/Detail/ZGZiYzkyMjktNmYwNC00NTY1LWE0MzUtMjg3MzUxMTU0Mjk3\"]},{\"title_en\":\"Minister of state\",\"title_local\":\"وزیر مملکت\",\"selection_method\":\"appointment\",\"seats\":11,\"term_length_years\":null,\"selection_details\":\"Appointed to ministerial office on the advice of the Prime Minister; 11 are listed in the published roster.\",\"keywords\":[\"minister\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://cabinet.gov.pk/Detail/ZWQxNTVhY2ItNzBlYy00YTJhLWJmYzEtMTdlMDVhZmE1ZTQ2\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://pmo.gov.pk/pm_profile.php\",\"https://www.cabinet.gov.pk/Detail/ZGZiYzkyMjktNmYwNC00NTY1LWE0MzUtMjg3MzUxMTU0Mjk3\",\"https://cabinet.gov.pk/Detail/ZWQxNTVhY2ItNzBlYy00YTJhLWJmYzEtMTdlMDVhZmE1ZTQ2\"]},{\"name_en\":\"National Assembly\",\"name_local\":\"قومی اسمبلی\",\"branch\":\"legislative\",\"description\":\"Lower house; 336 membership seats. Speaker and deputy occupy seats already counted among members; the Assembly normally lasts five years unless dissolved.\",\"offices\":[{\"title_en\":\"Member of National Assembly, general seat\",\"title_local\":\"رکن قومی اسمبلی، عمومی نشست\",\"selection_method\":\"direct_election\",\"seats\":266,\"term_length_years\":5,\"selection_details\":\"Single-member constituencies, direct plurality voting.\",\"keywords\":[\"member\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://na.gov.pk/en/content.php?id=246\"]},{\"title_en\":\"Member of National Assembly, reserved seat for women\",\"title_local\":\"رکن قومی اسمبلی، خواتین کی مخصوص نشست\",\"selection_method\":\"indirect_election\",\"seats\":60,\"term_length_years\":5,\"selection_details\":\"Provincial party lists allocated proportionally to general seats won by political parties.\",\"keywords\":[\"member\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://na.gov.pk/en/content.php?id=246\"]},{\"title_en\":\"Member of National Assembly, reserved seat for non-Muslims\",\"title_local\":\"رکن قومی اسمبلی، غیر مسلموں کی مخصوص نشست\",\"selection_method\":\"indirect_election\",\"seats\":10,\"term_length_years\":5,\"selection_details\":\"Party lists allocated proportionally on nationwide general-seat results.\",\"keywords\":[\"member\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://na.gov.pk/en/content.php?id=246\"]},{\"title_en\":\"Speaker of the National Assembly\",\"title_local\":\"اسپیکر قومی اسمبلی\",\"selection_method\":\"indirect_election\",\"seats\":1,\"term_length_years\":null,\"selection_details\":\"Elected from the Assembly membership; continues until successor chosen subject to constitutional rules.\",\"keywords\":[\"speaker\"],\"current_holders\":[{\"full_name\":\"Sardar Ayaz Sadiq\",\"party_name\":\"Pakistan Muslim League (N)\",\"party_acronym\":\"PML-N\",\"coalition\":null,\"term_start\":\"2024-03-01\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://na.gov.pk/en/content.php?id=220\",\"https://www.na.gov.pk/en/profile.php?uid=1735\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://na.gov.pk/en/content.php?id=220\",\"https://www.na.gov.pk/en/profile.php?uid=1735\"]},{\"title_en\":\"Deputy Speaker of the National Assembly\",\"title_local\":\"ڈپٹی اسپیکر قومی اسمبلی\",\"selection_method\":\"indirect_election\",\"seats\":1,\"term_length_years\":null,\"selection_details\":\"Elected by the Assembly from its members.\",\"keywords\":[\"deputy speaker\"],\"current_holders\":[{\"full_name\":\"Syed Ghulam Mustafa Shah\",\"party_name\":\"Pakistan Peoples Party Parliamentarians\",\"party_acronym\":\"PPPP\",\"coalition\":null,\"term_start\":\"2024-03-01\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://www.na.gov.pk/en/content.php?id=219\",\"https://na.gov.pk/en/profile.php?uid=1823\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.na.gov.pk/en/content.php?id=219\",\"https://na.gov.pk/en/profile.php?uid=1823\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://na.gov.pk/en/content.php?id=246\",\"https://na.gov.pk/en/content.php?id=220\",\"https://www.na.gov.pk/en/content.php?id=219\"]},{\"name_en\":\"Senate\",\"name_local\":\"سینیٹ\",\"branch\":\"legislative\",\"description\":\"Permanent upper house; 96 seats, with half the senators retiring every three years. Chairman and deputy chairman are already counted among the senators.\",\"offices\":[{\"title_en\":\"Senator, general seat\",\"title_local\":\"سینیٹر، عمومی نشست\",\"selection_method\":\"indirect_election\",\"seats\":58,\"term_length_years\":6,\"selection_details\":\"56 provincial and two capital general seats; elected by relevant assembly electoral colleges through proportional representation by single transferable vote.\",\"keywords\":[\"senator, general seat\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://senate.gov.pk/en/essence.php?id=24\"]},{\"title_en\":\"Senator, reserved seat for women\",\"title_local\":\"سینیٹر، خواتین کی مخصوص نشست\",\"selection_method\":\"indirect_election\",\"seats\":17,\"term_length_years\":6,\"selection_details\":\"Four from each province and one from the capital; elected by relevant electoral colleges.\",\"keywords\":[\"senator, reserved seat for women\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://senate.gov.pk/en/essence.php?id=24\"]},{\"title_en\":\"Senator, technocrat or ulema seat\",\"title_local\":\"سینیٹر، ٹیکنوکریٹ یا علماء کی نشست\",\"selection_method\":\"indirect_election\",\"seats\":17,\"term_length_years\":6,\"selection_details\":\"Four per province and one from the capital; indirect election.\",\"keywords\":[\"senator, technocrat or ulema seat\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://senate.gov.pk/en/essence.php?id=24\"]},{\"title_en\":\"Senator, non-Muslim seat\",\"title_local\":\"سینیٹر، غیر مسلم نشست\",\"selection_method\":\"indirect_election\",\"seats\":4,\"term_length_years\":6,\"selection_details\":\"One from each province; indirect election by provincial assembly.\",\"keywords\":[\"senator, non-muslim seat\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://senate.gov.pk/en/essence.php?id=24\"]},{\"title_en\":\"Chairman of the Senate\",\"title_local\":\"چیئرمین سینیٹ\",\"selection_method\":\"indirect_election\",\"seats\":1,\"term_length_years\":3,\"selection_details\":\"Elected by senators from among themselves.\",\"keywords\":[\"chairman\"],\"current_holders\":[{\"full_name\":\"Syed Yousaf Raza Gilani\",\"party_name\":\"Pakistan Peoples Party Parliamentarians\",\"party_acronym\":\"PPPP\",\"coalition\":null,\"term_start\":\"2024-04-09\",\"term_end\":\"2027-04-08\",\"is_acting\":false,\"source_urls\":[\"https://senate.gov.pk/en/profile.php?uid=1014\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://senate.gov.pk/en/essence.php?id=24\",\"https://senate.gov.pk/en/profile.php?uid=1014\"]},{\"title_en\":\"Deputy Chairman of the Senate\",\"title_local\":\"ڈپٹی چیئرمین سینیٹ\",\"selection_method\":\"indirect_election\",\"seats\":1,\"term_length_years\":3,\"selection_details\":\"Elected by senators from among themselves.\",\"keywords\":[\"deputy chairman\"],\"current_holders\":[{\"full_name\":\"Syedaal Khan\",\"party_name\":\"Pakistan Muslim League (N)\",\"party_acronym\":\"PML-N\",\"coalition\":null,\"term_start\":\"2024-04-09\",\"term_end\":\"2027-04-08\",\"is_acting\":false,\"source_urls\":[\"https://www.senate.gov.pk/en/profile.php?uid=1020\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://senate.gov.pk/en/essence.php?id=24\",\"https://www.senate.gov.pk/en/profile.php?uid=1020\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://senate.gov.pk/en/essence.php?id=24\",\"https://senate.gov.pk/en/profile.php?uid=1014\",\"https://www.senate.gov.pk/en/profile.php?uid=1020\"]},{\"name_en\":\"Federal Constitutional Court\",\"name_local\":\"وفاقی آئینی عدالت\",\"branch\":\"judicial\",\"description\":\"Created by the Twenty-Seventh Amendment (2025); hears major constitutional matters formerly heard by the Supreme Court. Constitutional size is one chief justice plus judges set by Parliament or, pending legislation, the President. Thirteen authorized positions, seven reported filled on the cutoff. The inaugural chief and initial judges were exceptionally appointed by the President on prime-ministerial advice; later appointments follow the Judicial Commission procedure, not popular judicial elections.\",\"offices\":[{\"title_en\":\"Chief Justice of the Federal Constitutional Court\",\"title_local\":\"وفاقی آئینی عدالت کے چیف جسٹس\",\"selection_method\":\"appointment\",\"seats\":1,\"term_length_years\":3,\"selection_details\":\"President appoints under Article 175A; first chief exceptionally appointed on Prime Minister’s advice. Three years or retirement at 68, whichever earlier.\",\"keywords\":[\"chief justice\"],\"current_holders\":[{\"full_name\":\"Amin-ud-Din Khan\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2025-11-14\",\"term_end\":\"2028-11-13\",\"is_acting\":false,\"source_urls\":[\"https://www.fccp.gov.pk/chief-justice\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf\",\"https://www.fccp.gov.pk/chief-justice\"]},{\"title_en\":\"Judge of the Federal Constitutional Court\",\"title_local\":\"وفاقی آئینی عدالت کے جج\",\"selection_method\":\"appointment\",\"seats\":12,\"term_length_years\":null,\"selection_details\":\"Up to 12 other authorized positions (six filled as of the cutoff); nominated by the Judicial Commission and appointed by the President; serve until age 68 unless earlier departure.\",\"keywords\":[\"judge\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.dawn.com/news/2044385/situationer-time-flies-after-judicial-hierarchy-rewritten\",\"https://www.fccp.gov.pk/judges\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf\",\"https://www.fccp.gov.pk/chief-justice\",\"https://www.dawn.com/news/2044385/situationer-time-flies-after-judicial-hierarchy-rewritten\"]},{\"name_en\":\"Supreme Court of Pakistan\",\"name_local\":\"عدالتِ عظمیٰ پاکستان\",\"branch\":\"judicial\",\"description\":\"Highest ordinary appellate court, distinct from the constitutional court. Statute permits up to 33 judges in addition to the chief justice. The 2024 Twenty-Sixth Amendment changed chief-justice selection to a parliamentary committee choice from the three senior-most judges and capped the chief-justice term at three years; judges are appointed, not directly elected.\",\"offices\":[{\"title_en\":\"Chief Justice of the Supreme Court of Pakistan\",\"title_local\":\"چیف جسٹس سپریم کورٹ\",\"selection_method\":\"appointment\",\"seats\":1,\"term_length_years\":3,\"selection_details\":\"President appoints following selection by a special parliamentary committee from the three most senior judges; term ends earlier on reaching 65.\",\"keywords\":[\"chief justice\"],\"current_holders\":[{\"full_name\":\"Yahya Afridi\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2024-10-26\",\"term_end\":\"2027-10-25\",\"is_acting\":false,\"source_urls\":[\"https://www.supremecourt.gov.pk/honorable-chief-justice/\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.supremecourt.gov.pk/honorable-chief-justice/\"]},{\"title_en\":\"Judge of the Supreme Court\",\"title_local\":\"جج سپریم کورٹ\",\"selection_method\":\"appointment\",\"seats\":33,\"term_length_years\":null,\"selection_details\":\"Maximum 33 other judges by 2024 statute; Judicial Commission nominations and presidential appointment; retirement at age 65.\",\"keywords\":[\"judge\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.na.gov.pk/uploads/documents/6729fbb602d98_375.pdf\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.supremecourt.gov.pk/honorable-chief-justice/\",\"https://www.na.gov.pk/uploads/documents/6729fbb602d98_375.pdf\"]},{\"name_en\":\"Federal Shariat Court\",\"name_local\":\"وفاقی شرعی عدالت\",\"branch\":\"judicial\",\"description\":\"Reviews whether specified laws conform to the injunctions of Islam; constitutional maximum eight judges, including its chief justice.\",\"offices\":[{\"title_en\":\"Chief Justice of the Federal Shariat Court\",\"title_local\":\"چیف جسٹس وفاقی شرعی عدالت\",\"selection_method\":\"appointment\",\"seats\":1,\"term_length_years\":3,\"selection_details\":\"Appointed by the President under Article 175A; term not exceeding three years, renewable.\",\"keywords\":[\"chief justice\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.federalshariatcourt.gov.pk/en/sitting-judges/\"]},{\"title_en\":\"Judge of the Federal Shariat Court\",\"title_local\":\"جج وفاقی شرعی عدالت\",\"selection_method\":\"appointment\",\"seats\":7,\"term_length_years\":3,\"selection_details\":\"Up to seven additional judges; appointed by the President under Article 175A for a term not exceeding three years, renewable.\",\"keywords\":[\"judge\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.federalshariatcourt.gov.pk/en/sitting-judges/\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.federalshariatcourt.gov.pk/en/sitting-judges/\"]},{\"name_en\":\"High Courts\",\"name_local\":\"اعلیٰ عدالتیں\",\"branch\":\"judicial\",\"description\":\"Five constitutional High Courts: one for each of the four provinces and one for Islamabad Capital Territory; their judges are appointed rather than popularly elected. Court-by-court judge strength is not uniformly established here.\",\"offices\":[{\"title_en\":\"Chief Justice of a High Court\",\"title_local\":\"چیف جسٹس ہائی کورٹ\",\"selection_method\":\"appointment\",\"seats\":5,\"term_length_years\":null,\"selection_details\":\"Each court has a chief justice; appointed via constitutional Judicial Commission and President; normal retirement age 62.\",\"keywords\":[\"chief justice\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\"]},{\"title_en\":\"Judge of a High Court\",\"title_local\":\"جج ہائی کورٹ\",\"selection_method\":\"appointment\",\"seats\":null,\"term_length_years\":null,\"selection_details\":\"Judicial Commission nomination and presidential appointment; regular retirement at age 62.\",\"keywords\":[\"judge\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\"]},{\"name_en\":\"Election Commission of Pakistan\",\"name_local\":\"الیکشن کمیشن آف پاکستان\",\"branch\":\"electoral\",\"description\":\"Independent permanent national election-management authority of five members. After the 2024 amendment, a member whose five-year term expires continues until a successor enters office; the sitting chief commissioner was still listed after his original 2025 expiry.\",\"offices\":[{\"title_en\":\"Chief Election Commissioner\",\"title_local\":\"چیف الیکشن کمشنر\",\"selection_method\":\"appointment\",\"seats\":1,\"term_length_years\":5,\"selection_details\":\"President appoints after Prime Minister–opposition leader nominations, parliamentary committee hearing and confirmation; holds over until successor assumes office.\",\"keywords\":[\"chief election commissioner\"],\"current_holders\":[{\"full_name\":\"Sikandar Sultan Raja\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2020-01-27\",\"term_end\":null,\"is_acting\":false,\"source_urls\":[\"https://ecp.gov.pk/honourable-cec\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://ecp.gov.pk/honourable-cec\"]},{\"title_en\":\"Election Commission member\",\"title_local\":\"رکن الیکشن کمیشن\",\"selection_method\":\"appointment\",\"seats\":4,\"term_length_years\":5,\"selection_details\":\"One from each province; nomination/confirmation process and appointment as provided in Articles 213 and 218; holdover until successor takes office.\",\"keywords\":[\"election commission member\"],\"current_holders\":[],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://ecp.gov.pk/honourable-members\"]}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://ecp.gov.pk/honourable-cec\",\"https://ecp.gov.pk/overview-of-ecp\"]}],\"subnational_levels\":[{\"name_en\":\"Provinces\",\"name_local\":\"صوبے\",\"tier\":\"state\",\"count\":4,\"description\":\"Punjab, Sindh, Khyber Pakhtunkhwa and Balochistan; the Islamabad Capital Territory is separate, while Azad Jammu and Kashmir and Gilgit-Baltistan have distinct administrative arrangements.\"},{\"name_en\":\"Other first-level administered areas\",\"name_local\":\"دیگر انتظامی علاقے\",\"tier\":\"state\",\"count\":3,\"description\":\"Islamabad Capital Territory, Azad Jammu and Kashmir, and Gilgit-Baltistan; not three additional provinces.\"},{\"name_en\":\"Divisions\",\"name_local\":\"ڈویژن\",\"tier\":\"state\",\"count\":36,\"description\":\"Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.\"},{\"name_en\":\"Municipal and other local governments\",\"name_local\":\"بلدیاتی حکومتیں\",\"tier\":\"municipal\",\"count\":null,\"description\":\"Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.\"}],\"source_urls\":[\"https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf\",\"https://www.na.gov.pk/uploads/documents/691ec19a6a212_270.pdf\",\"https://na.gov.pk/en/content.php?id=246\",\"https://senate.gov.pk/en/essence.php?id=24\",\"https://www.pbs.gov.pk/wp-content/uploads/2020/07/Administrative-Units-2023.pdf\",\"https://ecp.gov.pk/honourable-cec\",\"https://www.fccp.gov.pk/chief-justice\",\"https://www.supremecourt.gov.pk/honorable-chief-justice/\"]}"
+}
