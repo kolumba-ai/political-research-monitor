@@ -267,6 +267,19 @@ def test_openai_client_parses_json_and_sends_strict_schema_request():
     }
 
 
+def test_openai_client_rejects_response_without_claims_list():
+    llm = OpenAILLM(
+        "test-key", "gpt-6.1-sol",
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, json={
+            "choices": [{"message": {"content": "{}"}, "finish_reason": "stop"}],
+            "usage": {"prompt_tokens": 1, "completion_tokens": 2},
+        })),
+    )
+
+    with pytest.raises(RuntimeError, match="openai response missing claims list"):
+        llm.extract("system", "prompt", {"name": "record_claims", "input_schema": {}})
+
+
 def test_openai_client_retries_429_using_retry_after():
     responses = [
         httpx.Response(429, headers={"Retry-After": "1.5"}),

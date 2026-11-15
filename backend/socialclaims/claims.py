@@ -182,7 +182,10 @@ class OpenAILLM(AnthropicLLM):
             if choice.get("finish_reason") == "length":
                 raise RuntimeError("openai output truncated at max_completion_tokens")
             u = data.get("usage", {})
-            return json.loads(choice["message"]["content"]), {
+            output = json.loads(choice["message"]["content"])
+            if not isinstance(output, dict) or not isinstance(output.get("claims"), list):
+                raise RuntimeError("openai response missing claims list")
+            return output, {
                 "input_tokens": u.get("prompt_tokens"), "output_tokens": u.get("completion_tokens")}
         raise RuntimeError("unreachable")
 
