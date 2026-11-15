@@ -28,6 +28,19 @@ def _client(s):
     return OrianeClient(s.oriane_api_key, s.oriane_base_url, s.oriane_timeout_s, s.oriane_max_retries)
 
 
+def _parse_shard(value: str) -> tuple[int, int]:
+    parts = value.split("/")
+    if len(parts) != 2:
+        raise argparse.ArgumentTypeError("shard must be I/N with 0 <= I < N")
+    try:
+        index, count = (int(part) for part in parts)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("shard must be I/N with 0 <= I < N") from exc
+    if count <= 0 or index < 0 or index >= count:
+        raise argparse.ArgumentTypeError("shard must be I/N with 0 <= I < N")
+    return index, count
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="socialclaims")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -103,7 +116,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--max-posts", type=int, help="per politician (default: CLAIM_MAX_POSTS_PER_RUN)")
     p.add_argument("--dry-run", action="store_true", help="print pending counts and the first prompt; no LLM call")
     p.add_argument("--confirm-spend", action="store_true")
-    p.add_argument("--shard", default="0/1", help="I/N: only posts whose id hashes to share I of N (parallel workers)")
+    p.add_argument("--shard", type=_parse_shard, default=(0, 1),
+                   help="I/N: only posts whose id hashes to share I of N (parallel workers)")
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -195,6 +209,7 @@ def main(argv: list[str] | None = None) -> int:
         _out([process_politician(conn, graph, s.raw_storage_dir, i) for i in ids])
     elif args.cmd == "extract-claims":
         from .claims import AnthropicLLM, Extractor, build_prompt
+        shard = args.shard
         if not args.dry_run and not args.confirm_spend:
             print("refusing: LLM extraction is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
             return 2
@@ -208,12 +223,11 @@ def main(argv: list[str] | None = None) -> int:
         for i in args.ids:
             pid = _pid(graph, i, args.country)
             if args.dry_run:
-                todo = ex.pending(pid)
+                todo = ex.pending(pid, shard)
                 results.append({"politician_id": pid, "extractor_version": ex.version, "pending": len(todo),
                                 "would_extract": min(len(todo), cap)})
             else:
-                i_, n_ = (int(x) for x in args.shard.split("/"))
-                results.append(ex.run(pid, cap, (i_, n_)))
+                results.append(ex.run(pid, cap, shard))
         _out(results)
     elif args.cmd == "replay-raw":
         from pathlib import Path

@@ -141,6 +141,16 @@ def test_idempotent_failures_and_versioning(conn, graph, segmented):
     assert Extractor(conn, graph, other).run(PID, 10)["extracted"] == 2
 
 
+def test_pending_shards_partition_the_full_pending_list(conn, graph, segmented):
+    ex = Extractor(conn, graph, FakeLLM(lambda p: []))
+    full = {row["oriane_id"] for row in ex.pending(PID)}
+    shard_0 = {row["oriane_id"] for row in ex.pending(PID, (0, 2))}
+    shard_1 = {row["oriane_id"] for row in ex.pending(PID, (1, 2))}
+
+    assert shard_0.isdisjoint(shard_1)
+    assert shard_0 | shard_1 == full
+
+
 def test_anthropic_client_uses_structured_output():
     seen = {}
 

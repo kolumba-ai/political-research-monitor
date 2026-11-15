@@ -327,8 +327,11 @@ class Extractor:
         self.version = extractor_version(self.llm.model, self.taxonomy)
         self.tool = _claim_schema(sorted(self.topic_ids))
 
-    def pending(self, politician_id: str) -> list[dict]:
-        return self.conn.execute(
+    def pending(self, politician_id: str, shard: tuple[int, int] = (0, 1)) -> list[dict]:
+        index, count = shard
+        if count <= 0 or index < 0 or index >= count:
+            raise ValueError("shard must satisfy 0 <= index < count")
+        rows = self.conn.execute(
             "SELECT DISTINCT pp.oriane_id, pp.raw_id, pp.canonical_oriane_id, p.published_at, p.platform, "
             "pp.uploader_handle, pp.low_information FROM run_post rp "
             "JOIN post p ON p.oriane_id = rp.oriane_id "
@@ -339,13 +342,14 @@ class Extractor:
             "WHERE rp.politician_id = ANY(%s) AND rp.relevance <> 'low' AND ce.oriane_id IS NULL "
             "AND pp.canonical_oriane_id = pp.oriane_id ORDER BY p.published_at DESC, pp.oriane_id",
             (SEGMENTS_VERSION, self.version, politician_id, merged_ids(self.conn, politician_id))).fetchall()
+        return [row for row in rows
+                if int(hashlib.sha256(row["oriane_id"].encode()).hexdigest(), 16) % count == index]
 
     def run(self, politician_id: str, max_posts: int, shard: tuple[int, int] = (0, 1)) -> dict:
         snap = read_person(self.graph, politician_id)
         if snap is None:
             raise LookupError(f"{politician_id} not in System A")
-        todo = [r for r in self.pending(politician_id)
-                if int(hashlib.sha256(r["oriane_id"].encode()).hexdigest(), 16) % shard[1] == shard[0]]
+        todo = self.pending(politician_id, shard)
         out = {"politician_id": politician_id, "extractor_version": self.version, "pending": len(todo),
                "extracted": 0, "failed": 0, "claims": 0, "grounding": {}, "input_tokens": 0, "output_tokens": 0}
         for row in todo[:max_posts]:
