@@ -29,6 +29,8 @@ REDIRECT_CODES = {301, 302, 303, 307, 308}
 BLOCKED_CODES = {401, 402, 403, 451}
 BLOCKED_PAGE = re.compile(r"captcha|verify you are human|sign in to continue|log in to continue|login required",
                           re.IGNORECASE)
+VOID_HTML_ELEMENTS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param",
+                      "source", "track", "wbr"}
 _TRAFILATURA_WARNING_LOCK = Lock()
 _TRAFILATURA_WARNING_EMITTED = False
 
@@ -47,17 +49,22 @@ class _PageParser(HTMLParser):
         self._in_jsonld = False
         self._skip_depth = 0
         self._script_parts: list[str] = []
-        self.has_password_input = False
+        self._element_stack: list[tuple[str, bool]] = []
+        self.has_visible_password_input = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         tag = tag.lower()
+        hidden_ancestor = self._element_stack[-1][1] if self._element_stack else False
+        style_hidden = bool(re.search(r"\bdisplay\s*:\s*none\b", attrs.get("style") or "", re.IGNORECASE))
+        hidden = hidden_ancestor or "hidden" in attrs or style_hidden
         if tag == "html":
             self.language = attrs.get("lang")
         elif tag == "title":
             self._in_title = True
-        elif tag == "input" and (attrs.get("type") or "").lower() == "password":
-            self.has_password_input = True
+        elif tag == "input" and (attrs.get("type") or "").strip().lower() == "password":
+            if not hidden:
+                self.has_visible_password_input = True
         elif tag in {"script", "style", "noscript"}:
             if tag == "script" and attrs.get("type", "").lower() == "application/ld+json":
                 self._in_jsonld = True
@@ -72,9 +79,15 @@ class _PageParser(HTMLParser):
             self.canonical = attrs.get("href")
         elif tag == "a" and attrs.get("href"):
             self.links.append(attrs["href"])
+        if tag not in VOID_HTML_ELEMENTS:
+            self._element_stack.append((tag, hidden))
 
     def handle_endtag(self, tag):
         tag = tag.lower()
+        for index in range(len(self._element_stack) - 1, -1, -1):
+            if self._element_stack[index][0] == tag:
+                del self._element_stack[index:]
+                break
         if tag == "title":
             self._in_title = False
         elif tag == "script" and self._in_jsonld:
@@ -497,9 +510,12 @@ class Fetcher:
         except Exception as exc:
             return self._retry(key, url, f"document parsing failed: {exc}")
 
-        if is_html and text is not None and len(text) < 1000:
+        if is_html and text is not None:
             barrier_text = f"{metadata.get('title') or ''}\n{text}"
-            if BLOCKED_PAGE.search(barrier_text) or parser.has_password_input:
+            if (
+                len(text) < 1000 and BLOCKED_PAGE.search(barrier_text)
+                or len(text) < 300 and parser.has_visible_password_input
+            ):
                 self._record_status(key, url, "blocked", "login or CAPTCHA page")
                 self._document_stub(original_id, url, registry_row, "blocked")
                 return {"url": url, "document_id": original_id, "fetch_status": "blocked",

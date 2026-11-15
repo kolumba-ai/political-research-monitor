@@ -95,19 +95,64 @@ def test_recaptcha_script_does_not_block_a_long_article(conn, ev_settings):
 
 
 def test_short_login_barriers_in_title_and_password_input_are_blocked(conn, ev_settings):
+    short_article = "Short public article text. " * 4
+    assert len(short_article) < 300
+
     def handler(request):
         if request.url.path == "/robots.txt":
             return httpx.Response(404)
         if request.url.path == "/title":
             body = "<html><head><title>Sign in to continue</title></head><body>Checking your session.</body></html>"
         else:
-            body = "<html><body><form><input type='password'></form><p>Enter account details.</p></body></html>"
+            body = f"<html><body><p>{short_article}</p><form><input type='password'></form></body></html>"
         return httpx.Response(200, text=body, headers={"content-type": "text/html"})
 
     fetcher, client = _fetcher(conn, ev_settings, handler)
 
     assert fetcher.fetch("https://barrier.example/title")["fetch_status"] == "blocked"
     assert fetcher.fetch("https://barrier.example/password")["fetch_status"] == "blocked"
+    client.close()
+
+
+def test_password_inputs_do_not_block_public_articles_or_hidden_modals(conn, ev_settings):
+    article = ("Public reporting describes a city policy update and its expected effects. " * 12)[:600]
+    short_article = "A short public article describes the local announcement. " * 2
+    assert len(article) == 600
+    assert len(short_article) < 300
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        if request.url.path == "/hidden":
+            forms = (
+                "<div hidden><form><input type='password'></form></div>"
+                "<div style='color: black; display:none'><form><input type='password'></form></div>"
+            )
+        elif request.url.path == "/hidden-short":
+            forms = (
+                "<div hidden><input type='password'></div>"
+                "<div style='display:none'><input type='password'></div>"
+            )
+            article_text = short_article
+            return httpx.Response(
+                200,
+                text=f"<html><head><title>Public article</title></head><body><article>{article_text}</article>"
+                     f"{forms}</body></html>",
+                headers={"content-type": "text/html"},
+            )
+        else:
+            forms = "<form><input type='password'></form>"
+        return httpx.Response(
+            200,
+            text=f"<html><head><title>Public article</title></head><body><article>{article}</article>{forms}</body></html>",
+            headers={"content-type": "text/html"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+
+    assert fetcher.fetch("https://public.example/hidden")["fetch_status"] == "fetched"
+    assert fetcher.fetch("https://public.example/visible")["fetch_status"] == "fetched"
+    assert fetcher.fetch("https://public.example/hidden-short")["fetch_status"] == "fetched"
     client.close()
 
 
