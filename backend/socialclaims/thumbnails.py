@@ -43,39 +43,55 @@ def _rel_path(platform: str, platform_id: str | None, oriane_id: str, url: str) 
     return f"{platform}/{safe}{ext}"
 
 
+ALLOWED_HOST_SUFFIX = ".oriane.xyz"
+
+
+def _allowed(url: str) -> bool:
+    u = urlparse(url)
+    return u.scheme == "https" and bool(u.hostname) and u.hostname.endswith(ALLOWED_HOST_SUFFIX)
+
+
 def download(conn, out_dir: Path | str, *, formats: list[str] | None = None, client: httpx.Client | None = None,
              redownload: bool = False) -> dict:
-    """Save each post's thumbnail under out_dir/<platform>/<platform_id>.<ext> and record thumbnail_path."""
+    """Save each post's thumbnail under out_dir/<platform>/<platform_id>.<ext> and record thumbnail_path.
+
+    A post is skipped only when its recorded thumbnail_path exists under out_dir; capture clears the path when
+    Oriane reports a new thumbnail URL. Only HTTPS URLs on Oriane hosts are fetched, without following redirects."""
     out_dir = Path(out_dir)
-    sql = "SELECT oriane_id, platform, platform_id, thumbnail_url FROM post WHERE thumbnail_url IS NOT NULL"
+    sql = ("SELECT oriane_id, platform, platform_id, thumbnail_url, thumbnail_path FROM post "
+           "WHERE thumbnail_url IS NOT NULL")
     params: list = []
     if formats:
         sql += " AND format = ANY(%s)"
         params.append(formats)
-    if not redownload:
-        sql += " AND thumbnail_path IS NULL"
     rows = conn.execute(sql + " ORDER BY oriane_id", params).fetchall()
-    http = client or httpx.Client(timeout=30.0, follow_redirects=True)
-    saved = skipped = 0
+    http = client or httpx.Client(timeout=30.0, follow_redirects=False)
+    saved = present = 0
     failed: list[dict] = []
     try:
         for r in rows:
+            if not redownload and r["thumbnail_path"] and (out_dir / r["thumbnail_path"]).is_file():
+                present += 1
+                continue
+            if not _allowed(r["thumbnail_url"]):
+                failed.append({"oriane_id": r["oriane_id"], "error": "thumbnail_url is not an https Oriane URL"})
+                continue
+            try:
+                resp = http.get(r["thumbnail_url"])
+                resp.raise_for_status()
+                if resp.status_code != 200:
+                    raise httpx.HTTPStatusError(f"unexpected status {resp.status_code}", request=resp.request,
+                                                response=resp)
+            except httpx.HTTPError as exc:
+                failed.append({"oriane_id": r["oriane_id"], "error": str(exc)[:200]})
+                continue
             rel = _rel_path(r["platform"], r["platform_id"], r["oriane_id"], r["thumbnail_url"])
             dest = out_dir / rel
-            if dest.exists() and not redownload:
-                skipped += 1
-            else:
-                try:
-                    resp = http.get(r["thumbnail_url"])
-                    resp.raise_for_status()
-                except httpx.HTTPError as exc:
-                    failed.append({"oriane_id": r["oriane_id"], "error": str(exc)[:200]})
-                    continue
-                dest.parent.mkdir(parents=True, exist_ok=True)
-                dest.write_bytes(resp.content)
-                saved += 1
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(resp.content)
             conn.execute("UPDATE post SET thumbnail_path = %s WHERE oriane_id = %s", (rel, r["oriane_id"]))
+            saved += 1
     finally:
         if client is None:
             http.close()
-    return {"candidates": len(rows), "saved": saved, "already_present": skipped, "failed": failed}
+    return {"checked": len(rows), "saved": saved, "already_present": present, "failed": failed}

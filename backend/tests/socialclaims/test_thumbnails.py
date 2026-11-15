@@ -1,4 +1,5 @@
 import httpx
+import pytest
 
 from socialclaims import thumbnails
 from socialclaims.capture import Capturer
@@ -9,8 +10,8 @@ PID = "person:MX:claudia-sheinbaum-pardo"
 URL = "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/{}/thumbnail.webp"
 
 
-def _capture(conn, graph, sc_settings, results):
-    Capturer(conn, graph, FakeOriane(results).client(), sc_settings, clock=lambda: FIXED_NOW).capture(PID)
+def _capture(conn, graph, sc_settings, results, pid=PID):
+    Capturer(conn, graph, FakeOriane(results).client(), sc_settings, clock=lambda: FIXED_NOW).capture(pid)
 
 
 def _results():
@@ -47,12 +48,46 @@ def test_download_filters_format_and_is_idempotent(conn, graph, sc_settings, tmp
 
     client = httpx.Client(transport=httpx.MockTransport(handler))
     out = thumbnails.download(conn, tmp_path / "thumbs", formats=["video"], client=client)
-    assert out["candidates"] == 1 and out["saved"] == 1 and out["failed"] == []
+    assert out == {"checked": 1, "saved": 1, "already_present": 0, "failed": []}
     assert seen == [URL.format(1)]
     rel = conn.execute("SELECT thumbnail_path FROM post WHERE oriane_id = %s", (make_result(1)["id"],)).fetchone()
     assert rel["thumbnail_path"] == f"tiktok/{make_result(1)['platformId']}.webp"
     assert (tmp_path / "thumbs" / rel["thumbnail_path"]).read_bytes() == b"webp-bytes"
-    assert thumbnails.download(conn, tmp_path / "thumbs", formats=["video"], client=client)["candidates"] == 0
+    again = thumbnails.download(conn, tmp_path / "thumbs", formats=["video"], client=client)
+    assert again["saved"] == 0 and again["already_present"] == 1 and len(seen) == 1
+    other = thumbnails.download(conn, tmp_path / "other", formats=["video"], client=client)
+    assert other["saved"] == 1 and (tmp_path / "other" / rel["thumbnail_path"]).is_file()
+
+
+def test_download_rejects_non_oriane_urls(conn, graph, sc_settings, tmp_path):
+    _capture(conn, graph, sc_settings, [make_result(1, thumbnailMediaUrl="http://169.254.169.254/latest"),
+                                        make_result(2, thumbnailMediaUrl="https://evil.example/oriane.xyz.webp")])
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: pytest.fail(f"fetched {r.url}")))
+    out = thumbnails.download(conn, tmp_path / "thumbs", client=client)
+    assert out["saved"] == 0 and len(out["failed"]) == 2
+
+
+def test_redirects_are_not_followed(conn, graph, sc_settings, tmp_path):
+    _capture(conn, graph, sc_settings, [make_result(1, thumbnailMediaUrl=URL.format(1))])
+    client = httpx.Client(transport=httpx.MockTransport(
+        lambda r: httpx.Response(302, headers={"location": "http://169.254.169.254/"})))
+    out = thumbnails.download(conn, tmp_path / "thumbs", client=client)
+    assert out["saved"] == 0 and len(out["failed"]) == 1
+
+
+def test_recapture_with_new_thumbnail_clears_local_path(conn, graph, sc_settings, tmp_path):
+    _capture(conn, graph, sc_settings, [make_result(1, thumbnailMediaUrl=URL.format(1))])
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=str(r.url).encode())))
+    thumbnails.download(conn, tmp_path / "thumbs", client=client)
+    new_url = URL.format(1).replace("thumbnail.webp", "thumbnail-v2.webp")
+    # Another politician's capture re-returns the same post (a politician's own captures exclude it).
+    _capture(conn, graph, sc_settings, [make_result(1, thumbnailMediaUrl=new_url)],
+             pid="person:MX:clara-marina-brugada-molina")
+    row = conn.execute("SELECT thumbnail_url, thumbnail_path FROM post").fetchone()
+    assert row == {"thumbnail_url": new_url, "thumbnail_path": None}
+    assert thumbnails.download(conn, tmp_path / "thumbs", client=client)["saved"] == 1
+    path = conn.execute("SELECT thumbnail_path FROM post").fetchone()["thumbnail_path"]
+    assert (tmp_path / "thumbs" / path).read_bytes() == new_url.encode()
 
 
 def test_download_records_failures(conn, graph, sc_settings, tmp_path):

@@ -108,7 +108,9 @@ cd backend && ../.venv/bin/python -m socialclaims rematch person:MX:maria-lourde
 Thumbnails: capture stores Oriane's `thumbnailMediaUrl`/`thumbnailMediaId` on `post`. For posts captured before
 that, `thumbnails` backfills them from the saved raw payloads, then downloads the images to `THUMBNAIL_DIR`
 (default `var/socialclaims/thumbnails/<platform>/<platform_id>.webp`) and records `post.thumbnail_path`. It makes no
-Oriane API call (images come from Oriane's public static CDN) and skips files already on disk:
+Oriane API call: it only fetches HTTPS URLs on `*.oriane.xyz` (Oriane's public static CDN), without following
+redirects. A post is skipped when its recorded file exists under the output directory; a recapture that reports a
+new thumbnail URL clears `thumbnail_path`, so the next run fetches the new image:
 
 ```bash
 cd backend && ../.venv/bin/python -m socialclaims thumbnails --format video   # --no-download: URLs only

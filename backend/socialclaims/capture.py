@@ -273,6 +273,8 @@ class Capturer:
                 "location_country_code = EXCLUDED.location_country_code, profile_handle = EXCLUDED.profile_handle, "
                 "pipeline_mode = EXCLUDED.pipeline_mode, latest_raw_id = EXCLUDED.latest_raw_id, "
                 "last_captured_at = EXCLUDED.last_captured_at, "
+                "thumbnail_path = CASE WHEN EXCLUDED.thumbnail_url IS DISTINCT FROM post.thumbnail_url "
+                "AND EXCLUDED.thumbnail_url IS NOT NULL THEN NULL ELSE post.thumbnail_path END, "
                 "thumbnail_url = COALESCE(EXCLUDED.thumbnail_url, post.thumbnail_url), "
                 "thumbnail_media_id = COALESCE(EXCLUDED.thumbnail_media_id, post.thumbnail_media_id)",
                 (oid, r.get("platform"), r.get("platformId"), r.get("format"), _post_url(r), r.get("profileId"),
