@@ -1,10 +1,11 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { ChevronRight, LayoutDashboard, LoaderCircle, MessageSquareQuote, Network, Users, Workflow } from "lucide-react";
+import { BarChart3, ChevronRight, LayoutDashboard, LoaderCircle, MessageSquareQuote, Network, Users, Workflow } from "lucide-react";
 import { claimsApi, type ClaimsSummary, type CountryRow } from "../lib/api";
 import { flagOf } from "../lib/geo";
 import Avatar from "./Avatar";
 import { cn, fmtDate } from "../lib/presentation";
 import CountryPanel from "./CountryPanel";
+import Metrics from "./Metrics";
 import PoliticianPage from "./PoliticianPage";
 import { SocialClaimsCard, Timeline } from "./SocialClaims";
 import { Card } from "./ui";
@@ -12,12 +13,13 @@ import { Card } from "./ui";
 const GovernmentGraph = lazy(() => import("./GovernmentGraph"));
 const Pipeline = lazy(() => import("./Pipeline"));
 
-export type Section = "structure" | "overview" | "politicians" | "claims" | "pipeline" | "politician";
+export type Section = "structure" | "overview" | "politicians" | "claims" | "metrics" | "pipeline" | "politician";
 const NAV: { id: Section; label: string; icon: typeof Network }[] = [
   { id: "structure", label: "Government structure", icon: Network },
   { id: "overview", label: "Country overview", icon: LayoutDashboard },
   { id: "politicians", label: "Politicians", icon: Users },
   { id: "claims", label: "Claims & analysis", icon: MessageSquareQuote },
+  { id: "metrics", label: "Metrics", icon: BarChart3 },
   { id: "pipeline", label: "Pipeline", icon: Workflow },
 ];
 
@@ -44,10 +46,10 @@ function PageHeader({ crumbs, title, subtitle }: { crumbs: string[]; title: stri
   </div>;
 }
 
-export default function Investigate({ iso2, row, section, onSection, graphTarget, onGraphNode, personId, onOpenPerson, lowMotion }: {
+export default function Investigate({ iso2, row, section, onSection, graphTarget, onGraphNode, personId, personTab, onOpenPerson, lowMotion }: {
   iso2: string; row?: CountryRow; section: Section; onSection: (s: Section) => void;
-  graphTarget?: string; onGraphNode: (id: string) => void; personId?: string;
-  onOpenPerson: (id: string) => void; lowMotion: boolean;
+  graphTarget?: string; onGraphNode: (id: string) => void; personId?: string; personTab?: string;
+  onOpenPerson: (id: string, tab?: string) => void; lowMotion: boolean;
 }) {
   const summary = useClaimsSummary(iso2);
   const name = row?.name ?? iso2;
@@ -82,7 +84,7 @@ export default function Investigate({ iso2, row, section, onSection, graphTarget
         <div className="m-4 flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-line bg-white shadow-sm lg:mx-6">
           <Suspense fallback={<Loading text="Preparing the government graph…" />}>
             <GovernmentGraph key={iso2} iso2={iso2} countryName={name} lowMotion={lowMotion} initialNode={graphTarget}
-              onNodeChange={onGraphNode} onOpenPerson={onOpenPerson} />
+              onNodeChange={onGraphNode} onOpenPerson={(id) => onOpenPerson(id)} />
           </Suspense>
         </div>
       </div>}
@@ -111,11 +113,15 @@ export default function Investigate({ iso2, row, section, onSection, graphTarget
         <PageHeader crumbs={[...crumbs, "Claims & analysis"]} title="Claims & analysis" subtitle="Social media claims collected for this country's politicians." />
         <div className="p-4 lg:px-6"><SocialClaimsCard iso2={iso2} onOpenPerson={onOpenPerson} /></div>
       </div>}
+      {section === "metrics" && <div className="mx-auto w-full max-w-6xl">
+        <PageHeader crumbs={[...crumbs, "Metrics"]} title="Social media metrics" subtitle="Engagement on each politician's captured posts, how videos present them, and how commenters respond. Select a politician to open their profile." />
+        <Metrics iso2={iso2} onOpenPerson={(id) => onOpenPerson(id, "metrics")} />
+      </div>}
       {section === "pipeline" && <div className="mx-auto w-full max-w-6xl">
         <PageHeader crumbs={[...crumbs, "Pipeline"]} title="Pipeline" subtitle="How social media claims travel from capture, through claim extraction and evidence checking, into past.dev." />
         <Suspense fallback={<Loading text="Loading the pipeline…" />}><Pipeline iso2={iso2} /></Suspense>
       </div>}
-      {section === "politician" && personId && <PoliticianPage key={personId} iso2={iso2} personId={personId} onViewInGraph={viewInGraph}
+      {section === "politician" && personId && <PoliticianPage key={`${personId}:${personTab ?? ""}`} iso2={iso2} personId={personId} initialTab={personTab} onViewInGraph={viewInGraph}
         onNavigate={(id) => id.startsWith("person:") ? onOpenPerson(id) : /^country:/.test(id) ? onSection("overview") : viewInGraph(id)} />}
     </section>
   </div>;

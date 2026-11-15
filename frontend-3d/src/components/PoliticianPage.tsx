@@ -1,23 +1,25 @@
 import { useEffect, useMemo, useState } from "react";
-import { BadgeCheck, CalendarDays, CalendarRange, ChevronRight, Clock, ExternalLink, FileText, Landmark, MapPin, MessageSquareQuote, Network } from "lucide-react";
+import { BadgeCheck, BarChart3, CalendarDays, CalendarRange, ChevronRight, Clock, ExternalLink, FileText, Landmark, MapPin, MessageSquareQuote, Network } from "lucide-react";
 import { claimsApi, type PoliticianClaims } from "../lib/api";
 import { CLAIM_TYPE_COLORS, PLATFORM_META, SPEAKER_COLORS, SPEAKER_NAMES } from "../lib/claims";
 import Avatar from "./Avatar";
 import { detailUrl, graphGet, type GraphDetail } from "../lib/graph";
 import { fmtDate } from "../lib/presentation";
 import { BarList, ClaimsBrowser, ClaimsTimeline, Donut, Timeline } from "./SocialClaims";
+import { PoliticianMetrics } from "./Metrics";
 import { StorylinesView } from "./Storylines";
 import { Badge, Button, Card, CardHeader, ExtLink } from "./ui";
 import { cn } from "../lib/presentation";
 
-type Tab = "claims" | "storylines" | "timeline" | "sources";
+type Tab = "claims" | "storylines" | "metrics" | "timeline" | "sources";
+const TABS: Tab[] = ["claims", "storylines", "metrics", "timeline", "sources"];
 
-export default function PoliticianPage({ iso2, personId, onViewInGraph, onNavigate }: {
-  iso2: string; personId: string; onViewInGraph: (id: string) => void; onNavigate: (id: string) => void;
+export default function PoliticianPage({ iso2, personId, initialTab, onViewInGraph, onNavigate }: {
+  iso2: string; personId: string; initialTab?: string; onViewInGraph: (id: string) => void; onNavigate: (id: string) => void;
 }) {
   const [detail, setDetail] = useState<{ id: string; data: GraphDetail | null; error: string | null } | null>(null);
   const [claims, setClaims] = useState<{ id: string; data: PoliticianClaims | null } | null>(null);
-  const [tab, setTab] = useState<Tab>("claims");
+  const [tab, setTab] = useState<Tab>(TABS.includes(initialTab as Tab) ? (initialTab as Tab) : "claims");
 
   useEffect(() => {
     const ctl = new AbortController();
@@ -76,6 +78,7 @@ export default function PoliticianPage({ iso2, personId, onViewInGraph, onNaviga
             </dl>
             <div className="mt-4 flex flex-wrap gap-2">
               <Button onClick={() => onViewInGraph(personId)}><Network className="size-4" />View in graph</Button>
+              <Button onClick={() => setTab("metrics")}><BarChart3 className="size-4" />Social media metrics</Button>
               <Button onClick={() => setTab("sources")}><ExternalLink className="size-4" />Open sources ({sources.length})</Button>
             </div>
             {current.length > 1 && <p className="mt-3 text-xs text-muted">Also holds: {current.slice(1).map((o) => o.office.name).join(", ")}</p>}
@@ -84,7 +87,7 @@ export default function PoliticianPage({ iso2, personId, onViewInGraph, onNaviga
 
         <Card className="shadow-sm">
           <div role="tablist" aria-label="Politician data" className="flex gap-1 overflow-x-auto border-b border-line px-3 pt-2">
-            {([["claims", `Collected claims (${stats?.claims ?? 0})`, MessageSquareQuote], ["storylines", "Storylines by week", CalendarRange], ["timeline", "Timeline", Clock], ["sources", `Sources (${sources.length})`, FileText]] as const).map(([k, text, Icon]) =>
+            {([["claims", `Collected claims (${stats?.claims ?? 0})`, MessageSquareQuote], ["storylines", "Storylines by week", CalendarRange], ["metrics", "Metrics", BarChart3], ["timeline", "Timeline", Clock], ["sources", `Sources (${sources.length})`, FileText]] as const).map(([k, text, Icon]) =>
               <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={cn("flex items-center gap-1.5 whitespace-nowrap rounded-t-lg border-b-2 px-3 py-2 text-sm",
                 tab === k ? "border-accent bg-accent/5 font-medium text-accent" : "border-transparent text-muted hover:text-fg")}><Icon className="size-4" />{text}</button>)}
           </div>
@@ -92,6 +95,7 @@ export default function PoliticianPage({ iso2, personId, onViewInGraph, onNaviga
             {tab === "claims" && (stats?.claims ? <ClaimsBrowser iso2={iso2} politicianId={personId} stats={stats} /> :
               <p className="rounded-lg border border-dashed border-line p-6 text-center text-sm text-muted">No social media claims have been collected for this politician yet.</p>)}
             {tab === "storylines" && <StorylinesView iso2={iso2} politicianId={personId} />}
+            {tab === "metrics" && <PoliticianMetrics iso2={iso2} politicianKey={personId} />}
             {tab === "timeline" && (stats?.claims ? <ClaimsTimeline iso2={iso2} politicianId={personId} /> : <p className="text-sm text-muted">No claims to place on a timeline yet.</p>)}
             {tab === "sources" && <div className="space-y-4">
               <section>

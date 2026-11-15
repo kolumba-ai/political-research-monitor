@@ -75,7 +75,9 @@ class ClaimsExport:
         return data
 
 
-def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict | None] | None = None) -> APIRouter:
+def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict | None] | None = None,
+                 get_metrics: Callable[[str, dict], dict | None] | None = None) -> APIRouter:
+    """`get_metrics(country, claim)` adds the post's engagement and perception labels from the metrics export."""
     r = APIRouter()
     exports: dict[Path, ClaimsExport] = {}
 
@@ -141,7 +143,9 @@ def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict |
         for c in rows[offset:offset + limit]:
             post = data["posts"].get(c.get("data_point_id")) or {}
             evidence = data["evidence"].get((c.get("proposition_id") or "", c.get("politician_id") or ""), [])
-            page.append({**c, "engagement": post.get("engagement") or {}, "format": post.get("format"),
+            extra = (get_metrics(code, c) if get_metrics else None) or {}
+            page.append({**c, "engagement": post.get("engagement") or extra.get("engagement") or {},
+                         "perception": extra.get("perception"), "format": post.get("format"),
                          "caption": post.get("caption"), "transcript_excerpt": post.get("transcript_excerpt"),
                          "evidence": evidence, "evidence_counts": st.stance_counts(evidence)})
         return {"country": code.upper(), "politician_id": politician_id, "available": bool(data),

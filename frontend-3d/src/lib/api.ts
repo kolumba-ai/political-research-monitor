@@ -107,7 +107,7 @@ export interface SocialClaim {
   evidence_span: string | null; platform: string | null; url: string | null; uploader_handle: string | null;
   uploader_name: string | null; published_at: string | null; format: string | null;
   engagement: { views?: number; likes?: number; comments?: number; shares?: number; captured_at?: string };
-  evidence?: ClaimEvidence[]; evidence_counts?: StanceCounts;
+  evidence?: ClaimEvidence[]; evidence_counts?: StanceCounts; perception?: Perception | null;
 }
 
 // System C evidence: one document's relation to a claim. A stance is never a verdict on the claim.
@@ -241,4 +241,53 @@ export const pipelineApi = {
   records: (iso2: string, f: PipelineFilters = {}, s?: AbortSignal) => get<PipelineRecords>(`/api/pipeline/${encodeURIComponent(iso2)}/records?${qs(f)}`, s),
   trace: (iso2: string, propositionId: string, politicianId: string, s?: AbortSignal) =>
     get<PipelineTrace>(`/api/pipeline/${encodeURIComponent(iso2)}/trace/${encodeURIComponent(propositionId)}?${qs({ politician_id: politicianId })}`, s),
+};
+
+// Social metrics per politician: engagement from captured posts, and the presentation and feedback indices.
+export type Tone3 = "positive" | "neutral" | "negative";
+export type VideoReading = "official_communication" | "favourable_third_party" | "critical_content";
+export interface EngagementSummary {
+  posts: number; videos: number; views: number; likes: number; comments: number; shares: number; posts_with_views: number;
+  own_posts: number; posts_with_claims: number; engagement_rate: number | null; platforms: Record<string, number>;
+  first: string | null; last: string | null;
+}
+export interface PresentationSummary {
+  positive: number; neutral: number; negative: number; total: number; index: number; label: Tone3;
+  official: number; favourable_third_party: number; critical: number;
+}
+export interface FeedbackCounts {
+  for: number; against: number; neutral: number; bot_for: number; bot_against: number; bot_neutral: number;
+  analyzed: number; humans: number; bots: number; index: number | null; label: Tone3 | null; videos?: number;
+}
+export interface Perception {
+  presentation: Tone3 | null; presentation_reason: string | null; feedback: FeedbackCounts | null; reading: VideoReading | null;
+}
+export interface MetricsPolitician {
+  key: string; politician_id: string | null; name: string | null; image_url: string | null; in_graph: boolean; role?: string | null;
+  engagement: EngagementSummary | null; presentation: PresentationSummary | null; feedback: FeedbackCounts | null;
+}
+export interface MetricsSources {
+  engagement?: { source: string; exported_at: string; posts: number; politicians: number; first: string | null; last: string | null } | null;
+  perception?: { source: string; imported_at: string; generated_at: string | null; range: { after: string; before: string } | null;
+    platform: string; pairs: number; videos: number; videos_with_feedback: number; unmatched: string[] } | null;
+}
+export interface MetricsMethod { presentation: string; feedback: string; threshold: number; min_human_comments: number; limits: string }
+export interface MetricsSummary {
+  country: string; available: boolean; politicians: MetricsPolitician[]; sources: MetricsSources; method: MetricsMethod;
+  totals?: { engagement: EngagementSummary | null; presentation: PresentationSummary | null; feedback: FeedbackCounts | null };
+}
+export interface MetricsVideo extends Perception {
+  platform: string | null; platform_id: string | null; format: string | null; url: string | null; uploader_handle: string | null;
+  caption: string | null; published_at: string | null; views: number | null; likes: number | null; comments: number | null;
+  shares: number | null; claims: number; own_account: boolean; captured: boolean; labelled: boolean;
+}
+export interface PoliticianMetrics extends Partial<MetricsPolitician> {
+  country: string; key: string; available: boolean; sources: MetricsSources; method: MetricsMethod;
+  total: number; offset?: number; limit?: number; videos: MetricsVideo[];
+}
+export interface MetricsFilters { sort?: string; labelled?: boolean; presentation?: string; platform?: string; limit?: number; offset?: number }
+export const metricsApi = {
+  summary: (iso2: string, s?: AbortSignal) => get<MetricsSummary>(`/api/metrics/${encodeURIComponent(iso2)}/summary`, s),
+  politician: (iso2: string, key: string, f: MetricsFilters = {}, s?: AbortSignal) =>
+    get<PoliticianMetrics>(`/api/metrics/${encodeURIComponent(iso2)}/politicians/${encodeURIComponent(key)}?${qs(f)}`, s),
 };

@@ -11,9 +11,9 @@ import { cn } from "./lib/presentation";
 
 const GlobeView = lazy(() => import("./components/GlobeView"));
 const prefersReducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
-const SECTIONS: Section[] = ["structure", "overview", "politicians", "claims", "pipeline", "politician"];
+const SECTIONS: Section[] = ["structure", "overview", "politicians", "claims", "metrics", "pipeline", "politician"];
 
-interface View { country: string | null; investigating: boolean; section: Section; node?: string }
+interface View { country: string | null; investigating: boolean; section: Section; node?: string; tab?: string }
 
 function readView(): View {
   const params = new URLSearchParams(location.search);
@@ -23,7 +23,7 @@ function readView(): View {
   const section = raw && SECTIONS.includes(raw) ? raw : "structure";
   const node = params.get("node") ?? undefined;
   const investigating = !!country && (params.get("explore") === "1" || params.get("view") === "investigate");
-  return { country, investigating, section: section === "politician" && !node ? "politicians" : section, node };
+  return { country, investigating, section: section === "politician" && !node ? "politicians" : section, node, tab: params.get("tab") ?? undefined };
 }
 
 function Loading({ text }: { text: string }) {
@@ -76,6 +76,7 @@ export default function App() {
     set("view", view.country && view.investigating && "investigate");
     set("section", view.country && view.investigating && view.section);
     set("node", view.country && view.investigating && view.node);
+    set("tab", view.country && view.investigating && view.section === "politician" && view.tab);
     history.replaceState(null, "", u);
   }, [view]);
 
@@ -95,7 +96,7 @@ export default function App() {
   const chooseCountry = (iso2: string) => {
     if (iso2 !== view.country) { setGraphTarget(undefined); navigate({ country: iso2, investigating: false, section: "structure", node: undefined }); }
   };
-  const openPerson = (id: string, country = view.country) => navigate({ country, investigating: true, section: "politician", node: id });
+  const openPerson = (id: string, country = view.country, tab?: string) => navigate({ country, investigating: true, section: "politician", node: id, tab });
   const chooseEntity = (hit: EntitySearchHit) => {
     const country = hit.path.find((id) => /^country:[A-Z]{2}$/.test(id))?.split(":")[1];
     if (!country) return;
@@ -143,7 +144,8 @@ export default function App() {
         <Investigate iso2={selected} row={row} section={view.section} lowMotion={lowMotion}
           onSection={(section) => navigate({ section, node: section === "structure" ? view.node : undefined }, false)}
           graphTarget={graphTarget} onGraphNode={(id) => { setView((v) => ({ ...v, node: id })); if (id !== graphTarget) setGraphTarget(id); }}
-          personId={view.section === "politician" ? view.node : undefined} onOpenPerson={(id) => openPerson(id)} />
+          personId={view.section === "politician" ? view.node : undefined} personTab={view.tab}
+          onOpenPerson={(id, tab) => openPerson(id, view.country, tab)} />
       ) : (
         <main className="grid min-h-0 flex-1 grid-cols-1 overflow-y-auto lg:grid-cols-[minmax(0,1fr)_480px] lg:overflow-hidden">
           <section className="relative min-h-[55svh] bg-gradient-to-b from-white to-ink-850 lg:min-h-0" aria-label="Globe">

@@ -141,3 +141,23 @@ needs `--confirm-spend` (`--dry-run` only counts); `--workers N` judges politici
 `GET /api/claims/{ISO2}/storylines/{person_id}` returns the week grid and, with `?storyline=<id>[&week=YYYY-MM-DD]`,
 one storyline in full: versions, every post with its link and account, each statement and its evidence documents.
 The explorer shows it in the politician page's "Storylines by week" tab.
+
+## Social metrics per politician
+
+Two files next to the claims export feed the explorer's Metrics page and the Metrics tab on each politician:
+
+| Command | Writes | Source |
+| --- | --- | --- |
+| `metrics-export` (`make sc-metrics`) | `metrics_posts.jsonl`: every captured post per politician with its latest views, likes, comments and shares | System B Postgres, read-only, no API call |
+| `metrics-import <checkout>` | `metrics_perception.jsonl`: per politician and video, how the video presents them and the stance counts of its top comments | A [LatamPoliticalMonitor](https://github.com/kolumba-ai/LatamPoliticalMonitor) checkout |
+
+* **Presentation index**: +1 positive, 0 neutral, -1 negative per politician–video pair, averaged, shown from -100 to +100.
+  A positive video from the politician's own account reads as official communication, from another account as
+  favourable third-party content; a negative one as critical content.
+* **Feedback index**: (for - against) / human comments, -100 to +100. Likely bots are counted apart and a single
+  video needs 3 human comments for its own label.
+
+The import maps the monitor's politicians to System A ids (a reviewed crosswalk in `socialclaims/metrics.py`, then an
+exact full-name match); the rest are listed without a profile link. Commenters' handles and texts are never copied,
+only counts. `GET /api/metrics/{ISO2}/summary` and `/api/metrics/{ISO2}/politicians/{person_id}` serve the result, and
+the claim list carries each post's engagement and labels.

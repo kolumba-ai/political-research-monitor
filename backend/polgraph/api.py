@@ -116,7 +116,18 @@ def create_app() -> FastAPI:
     from .world_api import build_router
     app.include_router(build_router(_store, _state))
     from .claims_api import build_router as build_claims_router
-    app.include_router(build_claims_router(lambda: s.claims_export_dir, lambda pid: _store().get_node(pid)))
+    from .metrics_api import MetricsExport, build_router as build_metrics_router
+    metrics_exports: dict = {}
+
+    def claim_metrics(code: str, claim: dict) -> dict | None:
+        root = Path(s.claims_export_dir)
+        return metrics_exports.setdefault(root, MetricsExport(root)).for_post(
+            code.upper(), claim.get("politician_id"), claim.get("oriane_content_id"), claim.get("platform"),
+            claim.get("platform_id"))
+    app.include_router(build_claims_router(lambda: s.claims_export_dir, lambda pid: _store().get_node(pid),
+                                           claim_metrics))
+    app.include_router(build_metrics_router(lambda: s.claims_export_dir, lambda pid: _store().get_node(pid),
+                                            metrics_exports))
     from .pipeline_api import build_router as build_pipeline_router
     app.include_router(build_pipeline_router(lambda: s.pipeline_database_url, lambda: s.claims_export_dir))
 

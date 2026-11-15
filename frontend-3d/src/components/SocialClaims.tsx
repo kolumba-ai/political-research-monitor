@@ -3,6 +3,7 @@ import { ChevronRight, ExternalLink, MessageSquareQuote, Search } from "lucide-r
 import { claimsApi, type ClaimStats, type ClaimsSummary, type PoliticianClaims, type SocialClaim } from "../lib/api";
 import { CLAIM_TYPE_COLORS, colorOf, compact, humanize, PLATFORM_META, pct, SPEAKER_NAMES, titleCase } from "../lib/claims";
 import { fmtDate } from "../lib/presentation";
+import { PerceptionPills } from "./Metrics";
 import { EvidenceCard, StanceChips } from "./Storylines";
 import { Badge, Button, Card, CardHeader } from "./ui";
 
@@ -86,6 +87,7 @@ export function ClaimRow({ c }: { c: SocialClaim }) {
         {c.speaker && <Badge>{SPEAKER_NAMES[c.speaker] ?? titleCase(c.speaker)}</Badge>}
         {c.about_politician === false && <Badge tone="warn">Context</Badge>}
         <StanceChips counts={c.evidence_counts} className="justify-end" />
+        <PerceptionPills p={c.perception} className="justify-end" />
       </div>
       <ChevronRight className={`size-4 shrink-0 self-center text-muted transition-transform ${open ? "rotate-90" : ""}`} />
     </button>

@@ -204,6 +204,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-evidence", action="store_true", help="skip evidence links and documents (faster)")
     p.add_argument("--no-post-links", action="store_true",
                    help="do not read post links, accounts and proposition fields from the System B Postgres")
+    p = sub.add_parser("metrics-export", help="export per-politician post engagement from the System B Postgres "
+                                              "(read-only, free)")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
+    p = sub.add_parser("metrics-import", help="import presentation and comment-stance labels from a "
+                                              "LatamPoliticalMonitor checkout (no API call)")
+    p.add_argument("source", help="path to the LatamPoliticalMonitor checkout")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
     p = sub.add_parser("storylines", help="group the exported claims into storylines with the judge model (billed)")
     p.add_argument("ids", nargs="*", help="politician ids or names (default: every politician in the export)")
     p.add_argument("--country", default="MX")
@@ -249,6 +258,24 @@ def main(argv: list[str] | None = None) -> int:
         url = None if args.no_post_links else (s.pipeline_database_url or s.database_url)
         _out(pull(client, _graph(s), args.country, args.out or s.claims_export_dir, args.workers,
                   evidence=not args.no_evidence, lookup=PostgresLookup(url) if url else None))
+        return 0
+
+    if args.cmd == "metrics-export":
+        from .metrics import export_engagement
+        from .pastdev import PostgresLookup
+        with PostgresLookup(s.pipeline_database_url or s.database_url)._conn() as conn:
+            _out(export_engagement(conn, args.country, args.out or s.claims_export_dir))
+        return 0
+
+    if args.cmd == "metrics-import":
+        from .metrics import import_monitor
+        try:
+            from .systema import list_persons
+            names = {x.politician_id: x.name for x in list_persons(_graph(s), args.country, include_ineligible=True)}
+        except Exception as exc:  # the graph is optional: the reviewed crosswalk still applies
+            print(f"graph not available for name matching: {type(exc).__name__}", file=sys.stderr)
+            names = {}
+        _out(import_monitor(args.source, args.country, args.out or s.claims_export_dir, names))
         return 0
 
     if args.cmd in ("storylines", "storylines-review"):
