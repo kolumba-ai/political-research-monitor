@@ -1,5 +1,5 @@
 {
- "exported_at": "2026-11-15T02:16:54+00:00",
+ "exported_at": "2026-11-15T02:54:22+00:00",
  "format_version": 1,
  "counts": {
   "nodes": {
@@ -10,20 +10,20 @@
    "ContactRule": 2,
    "Earth": 1,
    "Continent": 7,
-   "GovernmentLevel": 2559,
-   "GovernmentBody": 2608,
+   "GovernmentLevel": 2591,
+   "GovernmentBody": 2612,
    "Person": 1420,
    "Term": 1432,
    "PoliticalParty": 28
   },
   "edges": {
-   "CONTAINS": 2809,
+   "CONTAINS": 2842,
    "HAS_OFFICE": 2636,
-   "SUPPORTED_BY": 6070,
+   "SUPPORTED_BY": 6067,
    "HAS_ASSESSMENT": 365,
    "HAS_CONTACT_RULE": 2,
-   "HAS_GOVERNMENT_LEVEL": 6,
-   "HAS_BODY": 2608,
+   "HAS_GOVERNMENT_LEVEL": 5,
+   "HAS_BODY": 2612,
    "HAS_TERM": 1432,
    "TERM_HELD_BY": 1452,
    "HOLDS_OFFICE": 1415,
@@ -33,7 +33,7 @@
   "agent_runs": 37,
   "unresolved_or_weak_claims": 507
  },
- "exa_lifetime_spend_usd": 21.2944,
+ "exa_lifetime_spend_usd": 21.3024,
  "pipeline_runs": [
   {
    "run_id": "run-MX-20261114T230040Z",
@@ -130,16 +130,22 @@
    "country": "MX",
    "status": "ok",
    "finished_at": "2026-11-15T02:15:36+00:00"
+  },
+  {
+   "run_id": "run-MX-20261115T024447Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T02:45:21+00:00"
   }
  ],
  "files": {
   "graph/edges.jsonl": {
-   "bytes": 6435304,
-   "sha256": "929dd928e9b731c580ac7635f3d31b0b4d1b078b66eca649233755b8be545eec"
+   "bytes": 6463333,
+   "sha256": "bbc3ec39a7702114561d91be83122ea95fc6e03948f8e1aba26ecf7567736792"
   },
   "graph/nodes.jsonl": {
-   "bytes": 5544947,
-   "sha256": "6acded777634efc8865c5abe9de52f5899ad855839fff7ae40b068c8a0e803e5"
+   "bytes": 5556302,
+   "sha256": "295f33a2e6076b0ce118beda49442058471061a4c6564724f6c2f2ff37c0b9ad"
   },
   "research/agent_runs/assembly-pk-azad-jammu-and-kashmir-f217c62a.json": {
    "bytes": 5618,
@@ -290,20 +296,20 @@
    "sha256": "3f5b96c244294314bf8a057ede2c8c94d8adcd81a9ed81b82548cd791d4b27ee"
   },
   "research/exa_usage_ledger.csv": {
-   "bytes": 446144,
-   "sha256": "a17e9928183393ed94efae161ccdfec96bc6db3936d390a1fcd894a1ed60142e"
+   "bytes": 446984,
+   "sha256": "3f62d6b09266a051b8a8c214a5e058a2c34c3f113778b77f3ba30771322d198b"
   },
   "research/pipeline_runs.json": {
-   "bytes": 62592,
-   "sha256": "a5b50ae97fd83999e9b42ee34f8257945e6048984fb50cca8b7b62d397702f17"
+   "bytes": 67500,
+   "sha256": "ef238c3e0bbd7fb35243ddf36d7a09bf5cb0cc8da268ee3b9cdb2c9dc764e7fa"
   },
   "research/reviews.json": {
    "bytes": 2,
    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
   "research/stage_runs.json": {
-   "bytes": 4402,
-   "sha256": "b8f9d520dbc5c8594fb009c5c342980befc0f828bcc34094e0e98995b4c7e47e"
+   "bytes": 4421,
+   "sha256": "4b5ca84e53ddde343933cb3a6c739d9b4bed4f9743710bd58cee107ffa5a9f12"
   },
   "research/unresolved_claims.jsonl": {
    "bytes": 446856,
@@ -314,8 +320,8 @@
    "sha256": "40a20faf59fbb588b2e14214f87f0879872767ac2d92220d3a29f6ec5c00fc99"
   },
   "tables/officeholders.csv": {
-   "bytes": 715215,
-   "sha256": "7abbc99209ba9b61323bd3d8711b44476867ca1f6c0633066ebc79a28c02df27"
+   "bytes": 726525,
+   "sha256": "02214a1c10d0667b1300fbf81aec23bc5be3b51caf799254b296ef1fa24bc0cb"
   }
  },
  "not_included": [

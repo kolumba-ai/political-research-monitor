@@ -35,6 +35,10 @@ class GraphStore(ABC):
     @abstractmethod
     def delete_edge(self, src: str, etype: str, dst: str) -> None: ...
 
+    @abstractmethod
+    def delete_node(self, node_id: str) -> None:
+        """Remove a node and all its relationships."""
+
     # ---- reads ----
     @abstractmethod
     def get_node(self, node_id: str) -> dict | None: ...
@@ -169,6 +173,11 @@ class SqliteGraphStore(GraphStore):
         with self._lock, self._db:
             self._db.execute("DELETE FROM edges WHERE src=? AND type=? AND dst=?", (src, etype, dst))
 
+    def delete_node(self, node_id: str) -> None:
+        with self._lock, self._db:
+            self._db.execute("DELETE FROM edges WHERE src=? OR dst=?", (node_id, node_id))
+            self._db.execute("DELETE FROM nodes WHERE id=?", (node_id,))
+
     def _row(self, row) -> dict:
         return {"id": row[0], "label": row[1], **json.loads(row[2])}
 
@@ -287,6 +296,10 @@ class Neo4jGraphStore(GraphStore):
         self._check(etype=etype)
         with self.driver.session() as s:
             s.run(f"MATCH (:Node {{id:$src}})-[r:{etype}]->(:Node {{id:$dst}}) DELETE r", src=src, dst=dst)
+
+    def delete_node(self, node_id: str) -> None:
+        with self.driver.session() as s:
+            s.run("MATCH (n:Node {id:$id}) DETACH DELETE n", id=node_id)
 
     def get_node(self, node_id: str) -> dict | None:
         with self.driver.session() as s:

@@ -242,17 +242,19 @@ def mx_municipalities(gw: ExaGateway, store: GraphStore, w: GraphWriter, country
     rows = list(csv.DictReader(io.StringIO(page["text"])))
     if len(rows) < 2000:
         raise RuntimeError(f"municipal register looks incomplete ({len(rows)} rows); refusing to load")
-    mun_lid = ids.level_id("MX", "municipal")
-    w.node(mun_lid, "GovernmentLevel", name="Municipal / Local government", tier="municipal", country="MX",
-           unit_name="Municipality", unit_name_local="Municipio", unit_count=len(rows),
-           council_name="Municipal council", council_name_local="Ayuntamiento",
-           researched_name="Municipalities (municipios)", name_local="Municipios",
-           register_url=MX_INAFED_URL, register_note="Municipality list and selection system from the INAFED "
-           "register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.")
-    w.edge(ids.country_id("MX"), "HAS_GOVERNMENT_LEVEL", mun_lid)
+    # Municipalities are nested under their state (CPEUM art. 115; structures/MX.md), never a country-wide tier.
+    from .structure import local_container
     src = SupportingSource(url=MX_INAFED_URL, title="INAFED — Presidentas y Presidentes municipales",
                            domain=registrable_domain(MX_INAFED_URL), tier=1, via="official_directory")
-    stats = {"municipalities": 0, "customary": 0, "skipped_cdmx": 0, "unmatched_state": 0}
+    stats = {"municipalities": 0, "customary": 0, "skipped_cdmx": 0, "unmatched_state": 0, "homonyms": 0}
+    # Some states have distinct municipalities with the same name (e.g. two "San Juan Mixtepec" in Oaxaca);
+    # those get the official INEGI code in their id and display name so they are never merged.
+    name_count: dict[tuple[str, str], int] = {}
+    for r in rows:
+        sub = match_subdivision("MX", r["estado"].strip())
+        if sub:
+            key = (sub["code"], ids.slugify(r["municipio"].strip().rstrip(".")))
+            name_count[key] = name_count.get(key, 0) + 1
     for r in rows:
         estado, mun = r["estado"].strip(), r["municipio"].strip()
         if normalize_text(estado) in ("cdmx", "ciudad de mexico"):
@@ -263,13 +265,28 @@ def mx_municipalities(gw: ExaGateway, store: GraphStore, w: GraphWriter, country
             stats["unmatched_state"] += 1
             continue
         customary = "UYC" in (r.get("partido") or "").upper() or "USOS" in (r.get("descripcion") or "").upper()
-        ulid = ids.level_id("MX", "municipal", sub["code"], mun)
-        w.node(ulid, "GovernmentLevel", name=f"{mun}, {sub['name']}", tier="municipal_unit", country="MX",
+        mun = mun.rstrip(".")
+        homonym = name_count.get((sub["code"], ids.slugify(mun)), 0) > 1
+        inegi = (r.get("cve_inegi") or "").strip()
+        ulid = ids.level_id("MX", "municipal", sub["code"], f"{mun} {inegi}" if homonym else mun)
+        if homonym:
+            stats["homonyms"] += 1
+            merged = ids.level_id("MX", "municipal", sub["code"], mun)   # node from before this fix
+            if store.get_node(merged) and not any(store.edges(o["id"], "HOLDS_OFFICE", "in")
+                                                  for _, b in store.edges(merged, "HAS_BODY", "out")
+                                                  for _, o in store.edges(b["id"], "HAS_OFFICE", "out")):
+                for _, b in store.edges(merged, "HAS_BODY", "out"):
+                    for _, o in store.edges(b["id"], "HAS_OFFICE", "out"):
+                        store.delete_node(o["id"])
+                    store.delete_node(b["id"])
+                store.delete_node(merged)
+        w.node(ulid, "GovernmentLevel", name=f"{mun}, {sub['name']}" + (f" (INEGI {inegi})" if homonym else ""),
+               tier="municipal_unit", country="MX",
                parent_division=sub["name"], parent_iso_3166_2=sub["code"], inegi_code=r.get("cve_inegi"),
                population=_int(r.get("total_pob")),
                selection_system="usos y costumbres (customary community assembly)" if customary
                else "party-based popular election")
-        w.edge(mun_lid, "CONTAINS", ulid)
+        w.edge(local_container(w, "MX", sub["code"], sub["name"]), "CONTAINS", ulid)
         body = ids.body_id(ulid, "council")
         w.node(body, "GovernmentBody", name=f"Municipal council of {mun}", name_local=f"Ayuntamiento de {mun}",
                branch="executive", website=(r.get("pag_web") or "").strip() or None)

@@ -25,7 +25,7 @@
  {
   "country": "MX",
   "stage": "directories",
-  "completed_at": "2026-11-15T02:15:32+00:00",
+  "completed_at": "2026-11-15T02:45:18+00:00",
   "status": "ok",
   "summary": {
    "mx_federal_deputies": {
@@ -45,7 +45,8 @@
     "municipalities": 2459,
     "customary": 316,
     "skipped_cdmx": 16,
-    "unmatched_state": 0
+    "unmatched_state": 0,
+    "homonyms": 4
    }
   }
  },

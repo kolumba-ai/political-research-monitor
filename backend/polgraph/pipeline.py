@@ -27,6 +27,7 @@ from .registry import CountryRecord, get_country, load_registry, match_subdivisi
 from .research import (INDEX_NAMES, ExtractionError, research_contact_rules, research_democracy, research_divisions,
                        research_local, research_national, research_special, verify_holder)
 from .schemas import OfficeX, office_is_elected
+from .structure import local_container, tier_name
 from .state import PipelineState
 
 log = get_logger("pipeline")
@@ -282,7 +283,7 @@ class Pipeline:
         self.store.upsert_node(ids.country_id(country.iso2), "Country", {
             "system_of_government": data.system_of_government, "constitution_name": data.constitution_name,
             "constitution_url": data.constitution_url})
-        lid = self._level(w, country, "national", "National / Federal government", agent_run_id=run.get("id"))
+        lid = self._level(w, country, "national", tier_name(country.iso2, "national"), agent_run_id=run.get("id"))
         stats = {"bodies": 0, "offices": 0, "holders_persisted": 0, "holders_unresolved": 0, "agent_run_id": run.get("id")}
         for bi, body in enumerate(data.bodies):
             bid = ids.body_id(lid, body.name_en)
@@ -295,17 +296,23 @@ class Pipeline:
                 st = self._office_with_holders(w, country, bid, office, cited, None, "national")
                 for k in ("offices", "holders_persisted", "holders_unresolved"):
                     stats[k] += st[k]
+        local_notes = []
         for lvl in data.subnational_levels:
-            tier = "state" if "state" in lvl.tier.lower() or "province" in lvl.tier.lower() or "division" in lvl.tier.lower() \
-                else "municipal" if any(k in lvl.tier.lower() for k in ("munic", "local", "city")) else None
-            if tier:
-                self._level(w, country, tier, _level_name(tier), name_local=lvl.name_local,
+            t = lvl.tier.lower()
+            if "state" in t or "province" in t or "division" in t:
+                self._level(w, country, "state", tier_name(country.iso2, "state"), name_local=lvl.name_local,
                             researched_name=lvl.name_en, unit_count=lvl.count, description=lvl.description)
+            else:
+                # Local government is nested under each division (AGENTS.md 2.1), never a country-wide tier.
+                local_notes.append({"name": lvl.name_en, "name_local": lvl.name_local, "count": lvl.count,
+                                    "description": lvl.description})
+        if local_notes:
+            self.store.upsert_node(ids.country_id(country.iso2), "Country", {"local_government_summary": local_notes})
         return stats
 
     def _stage_divisions(self, country: CountryRecord, w: GraphWriter, ttl_hours) -> dict:
         data, run = research_divisions(self.gw, country, ttl_hours=ttl_hours)
-        state_lid = self._level(w, country, "state", _level_name("state"))
+        state_lid = self._level(w, country, "state", tier_name(country.iso2, "state"))
         expected = {s["code"] for s in subdivisions(country.iso2)}
         covered: set[str] = set()
         stats = {"divisions": 0, "offices": 0, "holders_persisted": 0, "holders_unresolved": 0, "unmatched": 0,
@@ -356,26 +363,28 @@ class Pipeline:
 
     def _stage_local(self, country: CountryRecord, w: GraphWriter, ttl_hours) -> dict:
         data, run = research_local(self.gw, country, ttl_hours=ttl_hours)
-        lid = self._level(w, country, "municipal", _level_name("municipal"), unit_name=data.unit_name_en,
-                          unit_name_local=data.unit_name_local, unit_count=data.total_units,
-                          council_name=data.council_name_en, council_name_local=data.council_name_local)
-        stats = {"units": 0, "offices": 0, "holders_persisted": 0, "holders_unresolved": 0, "agent_run_id": run.get("id")}
-        if data.offices:
-            tmpl = ids.body_id(lid, "standard-council")
-            w.node(tmpl, "GovernmentBody", name=f"{data.council_name_en or 'Municipal council'} — standard structure",
-                   name_local=data.council_name_local, branch="executive", template=True, pipeline_mode=w.mode,
-                   description="Generic office structure shared by every unit; holders are listed per unit.")
-            w.edge(lid, "HAS_BODY", tmpl)
-            for o in data.offices:
-                o.current_holders = []
-                stats["offices"] += self._office_with_holders(w, country, tmpl, o, data.source_urls, None, "local")["offices"]
+        # Generic local structure is recorded on the Country; local units nest under their division.
+        self.store.upsert_node(ids.country_id(country.iso2), "Country", {"local_government_researched": {
+            "unit_name": data.unit_name_en, "unit_name_local": data.unit_name_local, "total_units": data.total_units,
+            "council_name": data.council_name_en, "council_name_local": data.council_name_local,
+            "offices": [o.model_dump(include={"title_en", "title_local", "selection_method", "selection_details"})
+                        for o in data.offices]}})
+        stats = {"units": 0, "offices": 0, "holders_persisted": 0, "holders_unresolved": 0, "unplaced": 0,
+                 "agent_run_id": run.get("id")}
         for i, u in enumerate(data.units):
             sub = match_subdivision(country.iso2, u.parent_division) if u.parent_division else None
-            ulid = ids.level_id(country.iso2, "municipal", sub["code"] if sub else "unassigned", u.name)
-            w.node(ulid, "GovernmentLevel", name=u.name + (f", {sub['name']}" if sub else ""), tier="municipal_unit",
-                   parent_division=u.parent_division, parent_iso_3166_2=sub["code"] if sub else None,
+            if not sub:
+                stats["unplaced"] += 1
+                self.state.record_claim(country.iso2, "local", u.name, u.model_dump(), "unplaced",
+                                        "local unit's parent division not resolved; not attached (no country-wide tier)",
+                                        [], w.run_ref)
+                continue
+            parent = local_container(w, country.iso2, sub["code"], sub["name"])
+            ulid = ids.level_id(country.iso2, "municipal", sub["code"], u.name)
+            w.node(ulid, "GovernmentLevel", name=f"{u.name}, {sub['name']}", tier="municipal_unit",
+                   parent_division=u.parent_division, parent_iso_3166_2=sub["code"],
                    country=country.iso2, pipeline_mode=w.mode, last_verified=utcnow())
-            w.edge(lid, "CONTAINS", ulid)
+            w.edge(parent, "CONTAINS", ulid)
             body = ids.body_id(ulid, "council")
             w.node(body, "GovernmentBody", name=f"{data.council_name_en or 'Municipal government'} of {u.name}",
                    name_local=f"{data.council_name_local} de {u.name}" if data.council_name_local else None,
@@ -393,23 +402,28 @@ class Pipeline:
 
     def _stage_special(self, country: CountryRecord, w: GraphWriter, ttl_hours) -> dict:
         data, run = research_special(self.gw, country, ttl_hours=ttl_hours)
-        mun_lid = self._level(w, country, "municipal", _level_name("municipal"))
-        state_lid = self._level(w, country, "state", _level_name("state"))
+        state_lid = self._level(w, country, "state", tier_name(country.iso2, "state"))
         stats = {"jurisdictions": 0, "subunits": 0, "offices": 0, "holders_persisted": 0, "holders_unresolved": 0,
                  "agent_run_id": run.get("id")}
         for ji, j in enumerate(data.jurisdictions):
             sub = match_subdivision(country.iso2, j.name)
-            code = sub["code"] if sub else ids.slugify(j.name)
+            if not sub:
+                self.state.record_claim(country.iso2, "special", j.name, {"why_distinct": j.why_distinct}, "unplaced",
+                                        "special jurisdiction not matched to a first-level division; not attached",
+                                        j.source_urls, w.run_ref)
+                continue
+            code = sub["code"]
             if sub:
                 dlid = ids.level_id(country.iso2, "state", sub["code"])
                 w.node(dlid, "GovernmentLevel", name=sub["name"], tier="state_unit", iso_3166_2=sub["code"],
                        special_status=True, why_distinct=j.why_distinct, country=country.iso2)
                 w.edge(state_lid, "CONTAINS", dlid)
             container = ids.level_id(country.iso2, "municipal", code)
-            w.node(container, "GovernmentLevel", name=f"{j.name} — {j.subunit_name_en}", tier="special_local",
-                   special_status=True, why_distinct=j.why_distinct, subunit_name_local=j.subunit_name_local,
+            w.node(container, "GovernmentLevel", name=tier_name(country.iso2, "special_local").format(division=sub["name"]),
+                   tier="special_local", special_status=True, why_distinct=j.why_distinct,
+                   subunit_name_local=j.subunit_name_local, parent_iso_3166_2=code,
                    country=country.iso2, pipeline_mode=w.mode, last_verified=utcnow())
-            w.edge(mun_lid, "CONTAINS", container)
+            w.edge(ids.level_id(country.iso2, "state", code), "CONTAINS", container)
             w.support(container, j.source_urls, via="agent_citation", claim="special jurisdiction structure")
             stats["jurisdictions"] += 1
             for i, u in enumerate(j.subunits):
@@ -574,7 +588,6 @@ class Pipeline:
                 "stages": self.state.stages(iso2)}
 
 
-def _level_name(tier: str) -> str:
-    return {"national": "National / Federal government", "state": "State / Provincial government",
-            "municipal": "Municipal / Local government"}[tier]
+def _level_name(tier: str, iso2: str = "") -> str:
+    return tier_name(iso2, tier)
 

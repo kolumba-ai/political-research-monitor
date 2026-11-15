@@ -40,8 +40,10 @@ one line of pandas (`pd.read_json("graph/nodes.jsonl", lines=True)`).
 
 ## Snapshot status
 
-* **Mexico:** 688 popularly elected officials (President, 500 deputies, 128 senators, 32 governors, 16 borough
-  mayors, 10 municipal presidents) and the full municipal structure (2,459 municipalities + 16 boroughs).
+* **Mexico:** structure per the approved, constitution-based spec ([structures/MX.md](../structures/MX.md)):
+  Federation → Federal entities → each state's municipalities (2,459) / Mexico City's alcaldías (16).
+  688 popularly elected officials (President, 500 deputies, 128 senators, 32 governors, 16 alcaldes,
+  10 municipal presidents).
 * **Pakistan:** national and provincial executives; members of the Balochistan, Punjab, Khyber Pakhtunkhwa,
   Gilgit-Baltistan and Azad Kashmir assemblies (Sindh pending).
 * **All 249 countries:** regime classification.

@@ -9,6 +9,10 @@ graph. Every persisted claim links to the sources that support it.
 Researched so far: **Mexico** and **Pakistan** (government structure and verified officeholders; for Pakistan also
 individual provincial-assembly members via the opt-in `legislators` stage), plus a **regime classification for all 249 countries**.
 
+
+> **Building or extending a country?** Follow [AGENTS.md](AGENTS.md) first: derive the structure from the
+> country's constitution, get it reviewed, and only then fetch politicians.
+
 ## Where Exa is called (main loop)
 
 All Exa traffic goes through one gateway, [backend/polgraph/exa_gateway.py](backend/polgraph/exa_gateway.py),

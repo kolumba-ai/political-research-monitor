@@ -3056,3 +3056,9 @@ ts,endpoint,purpose,cost_usd,estimated,cached,ref
 2026-11-15T02:15:03+00:00,contents,directory:mx-deputies,0.0,0,1,https://sitl.diputados.gob.mx/LXVI_leg/listado_diputados_gpnp.php
 2026-11-15T02:15:10+00:00,contents,directory:mx-senate,0.0,0,1,https://www.senado.gob.mx/66/senadores/por_principio_de_eleccion
 2026-11-15T02:15:11+00:00,contents,directory:mx-municipalities,0.0,0,1,https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv
+2026-11-15T02:34:41+00:00,search,constitution:MX,0.007,0,0,search:739159afaa57b10022c6161f
+2026-11-15T02:34:41+00:00,contents,constitution:MX,0.001,0,0,
+2026-11-15T02:43:53+00:00,contents,x,0.0,0,1,https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv
+2026-11-15T02:44:47+00:00,contents,directory:mx-deputies,0.0,0,1,https://sitl.diputados.gob.mx/LXVI_leg/listado_diputados_gpnp.php
+2026-11-15T02:44:53+00:00,contents,directory:mx-senate,0.0,0,1,https://www.senado.gob.mx/66/senadores/por_principio_de_eleccion
+2026-11-15T02:44:55+00:00,contents,directory:mx-municipalities,0.0,0,1,https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv

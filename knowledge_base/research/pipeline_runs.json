@@ -2499,5 +2499,199 @@
    },
    "unresolved_claims": 0
   }
+ },
+ {
+  "run_id": "run-MX-20261115T024447Z",
+  "country": "MX",
+  "mode": "research_only",
+  "started_at": "2026-11-15T02:44:47+00:00",
+  "finished_at": "2026-11-15T02:45:21+00:00",
+  "status": "ok",
+  "summary": {
+   "run_id": "run-MX-20261115T024447Z",
+   "country": "MX",
+   "mode": "research_only",
+   "stages": {
+    "directories": {
+     "mx_federal_deputies": {
+      "deputies": 500,
+      "district": 300,
+      "list": 200,
+      "removed_not_on_roster": 0
+     },
+     "mx_senators": {
+      "senators": 128,
+      "relative_majority": 64,
+      "first_minority": 32,
+      "proportional_list": 32,
+      "removed_not_on_roster": 0
+     },
+     "mx_municipalities": {
+      "municipalities": 2459,
+      "customary": 316,
+      "skipped_cdmx": 16,
+      "unmatched_state": 0,
+      "homonyms": 4
+     }
+    }
+   },
+   "gates": {
+    "democracy": {
+     "status": "fail",
+     "reasons": [
+      "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+      "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+      "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+      "no source classifies the country within the accepted categories"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "freedom_house": "partly_free (2026) -> does not meet policy",
+      "vdem": "electoral_autocracy (2026) -> does not meet policy"
+     }
+    },
+    "contact": {
+     "status": "fail",
+     "reasons": [
+      "status 'restricted' not in accepted statuses ['allowed']"
+     ],
+     "disagreement": false,
+     "per_source": {
+      "aggregate": "restricted"
+     }
+    },
+    "eligible": false,
+    "evaluated_at": "2026-11-15T02:44:47+00:00"
+   },
+   "coverage": {
+    "nodes_by_label": {
+     "Country": 1,
+     "DemocracyAssessment": 4,
+     "ContactRule": 1,
+     "GovernmentLevel": 1666,
+     "Source": 14,
+     "GovernmentBody": 76,
+     "PoliticalOffice": 64,
+     "Person": 653
+    },
+    "offices": 64,
+    "elected_offices": 41,
+    "offices_with_current_holder": 30,
+    "current_holders_by_evidence": {
+     "verified": 24,
+     "official_single": 628,
+     "single_source": 1
+    },
+    "stages": [
+     {
+      "stage": "contact",
+      "completed_at": "2026-11-14T23:05:34+00:00",
+      "status": "ok",
+      "summary": {
+       "dimensions": 24,
+       "aggregate_status": "restricted",
+       "laws": 10,
+       "agent_run_id": "agent_run_8fc705da58f8423aa44bf11681151aed"
+      }
+     },
+     {
+      "stage": "democracy",
+      "completed_at": "2026-11-14T23:03:32+00:00",
+      "status": "ok",
+      "summary": {
+       "assessments": 3,
+       "verified": 2,
+       "agent_run_id": "agent_run_b337baf5577f4461aad0d78f90f0aed2"
+      }
+     },
+     {
+      "stage": "directories",
+      "completed_at": "2026-11-15T02:45:18+00:00",
+      "status": "ok",
+      "summary": {
+       "mx_federal_deputies": {
+        "deputies": 500,
+        "district": 300,
+        "list": 200,
+        "removed_not_on_roster": 0
+       },
+       "mx_senators": {
+        "senators": 128,
+        "relative_majority": 64,
+        "first_minority": 32,
+        "proportional_list": 32,
+        "removed_not_on_roster": 0
+       },
+       "mx_municipalities": {
+        "municipalities": 2459,
+        "customary": 316,
+        "skipped_cdmx": 16,
+        "unmatched_state": 0,
+        "homonyms": 4
+       }
+      }
+     },
+     {
+      "stage": "divisions",
+      "completed_at": "2026-11-14T23:15:51+00:00",
+      "status": "ok",
+      "summary": {
+       "divisions": 32,
+       "offices": 64,
+       "holders_persisted": 32,
+       "holders_unresolved": 0,
+       "unmatched": 0,
+       "agent_run_id": "agent_run_c22b978ece0a41a2a418e08a9a9c1e0e",
+       "iso_expected": 32,
+       "iso_covered": 32,
+       "iso_missing": []
+      }
+     },
+     {
+      "stage": "local",
+      "completed_at": "2026-11-14T23:18:24+00:00",
+      "status": "ok",
+      "summary": {
+       "units": 10,
+       "offices": 13,
+       "holders_persisted": 10,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_a323289bb53945e4b640e53192dd881e"
+      }
+     },
+     {
+      "stage": "national",
+      "completed_at": "2026-11-14T23:08:11+00:00",
+      "status": "ok",
+      "summary": {
+       "bodies": 9,
+       "offices": 20,
+       "holders_persisted": 5,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795"
+      }
+     },
+     {
+      "stage": "special",
+      "completed_at": "2026-11-14T23:21:28+00:00",
+      "status": "ok",
+      "summary": {
+       "jurisdictions": 1,
+       "subunits": 16,
+       "offices": 16,
+       "holders_persisted": 16,
+       "holders_unresolved": 0,
+       "agent_run_id": "agent_run_3bbfc3f805764a668600be23a22cb12f"
+      }
+     }
+    ]
+   },
+   "usage": {
+    "spent_usd": 0.0,
+    "calls": {},
+    "cache_hits": 3
+   },
+   "unresolved_claims": 0
+  }
  }
 ]

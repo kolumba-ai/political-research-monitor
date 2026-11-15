@@ -76,6 +76,17 @@ def cmd_repair_people(a) -> int:
     return 0
 
 
+def cmd_apply_structure(a) -> int:
+    from .structure import apply_spec_mx, restructure_local
+    _, _, store, _, _ = _components()
+    iso = a.country.upper()
+    out = {"restructure_local": restructure_local(store, iso)}
+    if iso == "MX":
+        out["spec"] = apply_spec_mx(store)
+    print(json.dumps(out, indent=2, default=str))
+    return 0
+
+
 def cmd_seed(a) -> int:
     _, _, _, _, pipe = _components()
     print(f"seeded {pipe.seed_world()} countries under Earth")
@@ -193,6 +204,11 @@ def main(argv: list[str] | None = None) -> int:
     b.set_defaults(fn=cmd_build)
 
     sub.add_parser("seed", help="seed Earth/continents/countries from ISO 3166 + UN M49").set_defaults(fn=cmd_seed)
+
+    ap = sub.add_parser("apply-structure", help="apply the approved Structure Spec (structures/<ISO>.md): nest local "
+                                                 "government under divisions, constitutional names and bodies")
+    ap.add_argument("--country", required=True)
+    ap.set_defaults(fn=cmd_apply_structure)
 
     rp = sub.add_parser("repair-people", help="split Person nodes that were merged by name matching in error")
     rp.add_argument("--country")

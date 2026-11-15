@@ -12,7 +12,7 @@ Earth                                         1 node        conceptual root
         ├── DemocracyAssessment               3 nodes       one per index (Freedom House, V-Dem, EIU)
         ├── ContactRule                       1 node        contact / verification legality
         └── GovernmentLevel (tier)                          National · State · Municipal
-            ├── GovernmentLevel (sub-unit)   59 nodes       32 states, 10 municipalities, Mexico City + 16 boroughs
+            ├── GovernmentLevel (sub-unit)                  32 entities → their municipalities (MX: 2,459) / alcaldías (16)
             └── GovernmentBody              100 nodes       executive, legislature, court, council…
                 └── PoliticalOffice         113 nodes       President, Governor of Jalisco, Borough Mayor…
                     ├── Person               63 nodes       current officeholder(s)
@@ -74,20 +74,23 @@ ID: `assessment:MX:freedom-house:2026`.
 ID: `contactrule:MX`. This is a research and compliance assessment, not legal authorization.
 
 ### 5. GovernmentLevel (child of Country, and of other levels)
-The `tier` property says which kind of level it is:
+Levels follow each country's **approved Structure Spec** (see [AGENTS.md](AGENTS.md), [structures/MX.md](structures/MX.md)).
+Local government is **nested under the division that constitutes it**; there is no country-wide municipal tier.
+Each level carries an `article` property citing the constitution.
 
-| `tier` | Count | What it represents | Extra properties |
+| `tier` | What it represents (Mexico) | Example id | Article |
 | --- | --- | --- | --- |
-| `national` | 1 | National / Federal government | — |
-| `state` | 1 | State / Provincial government (container) | `name_local`, `unit_count`, `description` |
-| `municipal` | 1 | Municipal / Local government (container) | `unit_name`, `unit_count`, `council_name` |
-| `state_unit` | 32 | One state (incl. Mexico City) | `iso_3166_2` (e.g. MX-JAL), `iso_type`, `division_type`, `special_status_note` |
-| `municipal_unit` | 10 | One municipality | `parent_division`, `parent_iso_3166_2` |
-| `special_local` | 1 | Jurisdiction with distinct local governance (Mexico City boroughs) | `special_status`, `why_distinct`, `subunit_name_local` |
-| `special_local_unit` | 16 | One borough (alcaldía) | — |
+| `national` | Federation (Federación) | `level:MX:national` | CPEUM arts. 40, 49 |
+| `state` | Federal entities (Entidades federativas) | `level:MX:state` | CPEUM art. 43 |
+| `state_unit` | One state, or Mexico City (32) | `level:MX:state:MX-JAL` | CPEUM art. 116 (CDMX: 44, 122) |
+| `municipal` | Municipalities of <state> (31 containers) | `level:MX:state:MX-JAL:local` | CPEUM art. 115 |
+| `municipal_unit` | One municipality (2,459; namesakes carry their INEGI code) | `level:MX:municipal:MX-JAL:guadalajara` | CPEUM art. 115 |
+| `special_local` | Alcaldías of Mexico City (Demarcaciones territoriales) | `level:MX:municipal:MX-CMX` | CPEUM art. 122-A-VI |
+| `special_local_unit` | One alcaldía (16) | `level:MX:municipal:MX-CMX:iztapalapa` | CPEUM art. 122-A-VI |
 
-IDs: `level:MX:national`, `level:MX:state:MX-JAL`, `level:MX:municipal:MX-JAL:guadalajara`,
-`level:MX:municipal:MX-CMX:iztapalapa`.
+Path example: Earth → North America → Mexico → Federal entities → Baja California → Municipalities of
+Baja California → Tijuana → Municipal council → Municipal President of Tijuana → Ismael Burgueño Ruiz.
+Unit ids are stable identifiers; their position in the hierarchy comes from the `CONTAINS` edges.
 
 ### 6. GovernmentBody (child of a GovernmentLevel)
 | Holds | Example |
