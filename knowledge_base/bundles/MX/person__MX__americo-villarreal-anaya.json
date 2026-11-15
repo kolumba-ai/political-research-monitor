@@ -1,0 +1,381 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "src": "body:MX:state:MX-TAM:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-TAM",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-TAM:executive",
+   "src": "level:MX:state:MX-TAM",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:b6422ed7bad4",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "src": "office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:11:18+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:17+00:00",
+   "claim": "office exists: Governor of Tamaulipas",
+   "dst": "source:aaf6bb314ed65db7",
+   "first_seen": "2026-11-14T23:11:17+00:00",
+   "src": "office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:17+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:17+00:00",
+   "claim": "office exists: Governor of Tamaulipas",
+   "dst": "source:af44cbfb0e0f227b",
+   "first_seen": "2026-11-14T23:11:17+00:00",
+   "src": "office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:17+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:17+00:00",
+   "claim": "office exists: Governor of Tamaulipas",
+   "dst": "source:b987f18862cd068f",
+   "first_seen": "2026-11-14T23:11:17+00:00",
+   "src": "office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:17+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "end": "2028-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:11:18+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:americo-villarreal-anaya",
+   "start": "2022-10-01",
+   "status": "current",
+   "term_id": "term:b6422ed7bad4",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:11:18+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:11:18+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Candidatura común Juntos Haremos Historia en Tamaulipas (MORENA, PT, PVEM)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "src": "person:MX:americo-villarreal-anaya",
+   "term_id": "term:b6422ed7bad4",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:11:18+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:18+00:00",
+   "claim": "Américo Villarreal Anaya holds office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "dst": "source:1bc7a5228af97950",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "snippet": "…intana Roo | Mara Lezama Espinosa | | | Municipal president of Benito Juárez | 25 September 2022 | 24 September 2027 | List | | San Luis Potosí | Ricardo Gallardo Cardona | | | Chamber of Deputies, Municipal president of Soledad de Graciano Sánchez | 26 September 2021 | 25 September 2027 | List | | Sinaloa | Graciela D…",
+   "src": "term:b6422ed7bad4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:18+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:18+00:00",
+   "claim": "Américo Villarreal Anaya holds office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "dst": "source:aaf6bb314ed65db7",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "snippet": "…| CONGRESO DEL ESTADO LIBRE Y SOBERANO U L I P A S I V O | DE TAMAULIPAS | | --- | --- | --- | --- | | Periódico Oficial: Tomo: Fecha de Publicación: | No.31 CL | 12-03-2025 | REFORMA No. 11 | AMÉRICO VILLARREAL ANAYA, Gobernador Constitucional del Estado de Tamaulipas, a sus habitantes hace saber: Que el Honorable Con…",
+   "src": "term:b6422ed7bad4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:18+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:18+00:00",
+   "claim": "Américo Villarreal Anaya holds office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "dst": "source:af44cbfb0e0f227b",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "snippet": "…La Sala Superior confirma la validez de la elección de la gubernatura de Tamaulipas, así como la entrega de la constancia de mayoría, en favor de Américo Villarreal Anaya > 28/septiembre/2022 / Sala Superior 339/2022 #### Ciudad de México La Sala Superior del Tribunal Electoral confirmó, por unanimidad de votos, el cóm…",
+   "src": "term:b6422ed7bad4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:18+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:18+00:00",
+   "claim": "Américo Villarreal Anaya holds office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "dst": "source:b987f18862cd068f",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "snippet": "…del quórum legal y apertura de la Sesión Pública y Solemne; Tercero. Lectura del Orden del Día; Cuarto. Declaración de Apertura del Primer Periodo Ordinario de Sesiones, correspondiente al Segundo año de Ejercicio Legal de la Legislatura 65 Constitucional del Estado. Quinto. Designación de la comisión para recibir en…",
+   "src": "term:b6422ed7bad4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:18+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:americo-villarreal-anaya",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "src": "term:b6422ed7bad4",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:11:18+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:11:16+00:00",
+   "id": "body:MX:state:MX-TAM:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:11:16+00:00",
+   "name": "Executive of Tamaulipas",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:11:16+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:11:16+00:00",
+   "id": "level:MX:state:MX-TAM",
+   "iso_3166_2": "MX-TAM",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:11:16+00:00",
+   "name": "Tamaulipas",
+   "pipeline_mode": "research_only",
+   "researched_name": "Tamaulipas",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:11:16+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:11:17+00:00",
+   "id": "office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:11:17+00:00",
+   "name": "Governor of Tamaulipas",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:11:17+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "id": "person:MX:americo-villarreal-anaya",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:11:18+00:00",
+   "name": "Américo Villarreal Anaya",
+   "updated_at": "2026-11-15T02:15:36+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "id": "source:1bc7a5228af97950",
+   "label": "Source",
+   "name": "List of current state governors in Mexico",
+   "published_date": "2026-09-23T02:03:29.000Z",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://en.wikipedia.org/wiki/List_of_current_state_governors_in_Mexico"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresotamaulipas.gob.mx",
+   "first_seen": "2026-11-14T23:11:17+00:00",
+   "id": "source:aaf6bb314ed65db7",
+   "label": "Source",
+   "name": "ARTÍCULO 26.- El Congreso del Estado se integrará por 22 Diputadas y Diputados electos según el principio de",
+   "retrieved_at": "2026-11-14T23:11:18+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:18+00:00",
+   "url": "https://www.congresotamaulipas.gob.mx/Parlamentario/Archivos/Constituciones/Reformas/PDF/Reforma%20%20No%2011%20art%2026_%2012_marzo_%202025%20-.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "te.gob.mx",
+   "first_seen": "2026-11-14T23:11:17+00:00",
+   "id": "source:af44cbfb0e0f227b",
+   "label": "Source",
+   "name": "Tribunal Electoral del Poder Judicial de la Federación",
+   "retrieved_at": "2026-11-14T23:11:18+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:18+00:00",
+   "url": "https://www.te.gob.mx/front3/bulletins/detail/4743/0"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresotamaulipas.gob.mx",
+   "first_seen": "2026-11-14T23:11:17+00:00",
+   "id": "source:b987f18862cd068f",
+   "label": "Source",
+   "name": "-------- SESIÓN PÚBLICA Y SOLEMNE DEL PRIMER PERÍODO ORDINARIO DE SESIONES CORRESPONDIENTE AL SEGUNDO AÑO DE EJERCICIO LEGAL DE LA LEGISLATURA 65 CONSTITUCIONAL DEL ESTADO LIBRE Y",
+   "retrieved_at": "2026-11-14T23:11:18+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:18+00:00",
+   "url": "https://www.congresotamaulipas.gob.mx/Parlamentario/Archivos/Actas/ACTA59.pdf"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2028-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "id": "term:b6422ed7bad4",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:11:18+00:00",
+   "name": "Américo Villarreal Anaya — term from 2022-10-01",
+   "office": "office:MX:state:MX-TAM:executive:governor-of-tamaulipas",
+   "person": "person:MX:americo-villarreal-anaya",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2022-10-01",
+   "updated_at": "2026-11-14T23:11:18+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-TAM:executive:governor-of-tamaulipas": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-TAM",
+   "body:MX:state:MX-TAM:executive",
+   "office:MX:state:MX-TAM:executive:governor-of-tamaulipas"
+  ]
+ },
+ "politician": "person:MX:americo-villarreal-anaya",
+ "sha256": "4b302db18a95b390b6c71e0c43cea49ead551992fa2a5fe0acaf9ad0aac158c1",
+ "unreached_offices": []
+}

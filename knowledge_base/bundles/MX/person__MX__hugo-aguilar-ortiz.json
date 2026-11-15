@@ -1,0 +1,362 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "src": "body:MX:national:supreme-court-of-justice-of-the-nation",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:national",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:MX:national:supreme-court-of-justice-of-the-nation",
+   "src": "level:MX:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:9533aea77d54",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "src": "office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:08:02+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:59+00:00",
+   "claim": "office exists: President of the Supreme Court",
+   "dst": "source:4d4ccd704b5a604b",
+   "first_seen": "2026-11-14T23:07:59+00:00",
+   "src": "office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "end": "2027",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:08:02+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:hugo-aguilar-ortiz",
+   "start": "2025-09-01",
+   "status": "current",
+   "term_id": "term:9533aea77d54",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:08:02+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:08:02+00:00",
+   "claim": "Hugo Aguilar Ortiz holds office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "dst": "source:23a04d4dc0a54187",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "snippet": "…ho is Hugo Aguilar, Mexico's new Supreme Court President? # Who is Hugo Aguilar, Mexico’s first elected Supreme Court President? By MND Staff June 12, 2025 Hugo Aguilar Ortiz, an Indigenous Mixtec originally from Oaxaca, was the top vote-getter among 60 candidates for Supreme Court seats in the June 1 judicial election…",
+   "src": "term:9533aea77d54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:08:02+00:00",
+   "claim": "Hugo Aguilar Ortiz holds office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "dst": "source:2cb42fd7f7003352",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "snippet": "…cia de la Nación Conoce la Corte | Suprema Corte de Justicia de la Nación ## Presidencia Presidente de la Suprema Corte de Justicia de la Nación Ministro Hugo Aguilar Ortiz Ministra Lenia Batres Guadarrama Ministra Yasmín Esquivel Mossa Ministra Loretta Ortiz Ahlf Ministra María Estela Ríos González Ministro Giovanni A…",
+   "src": "term:9533aea77d54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:08:02+00:00",
+   "claim": "Hugo Aguilar Ortiz holds office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "dst": "source:4d4ccd704b5a604b",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "snippet": "…de la Nación # Presidencia Presidente de la Suprema Corte de Justicia de la Nación del 1 de septiembre de 2025 a septiembre de 2027. Ministro Presidente Hugo Aguilar Ortiz Suprema Corte de Justicia de la Nación: Pino Suárez no. 2, Colonia Centro. Cuauhtémoc, C.P. 06065, México, Ciudad de México…",
+   "src": "term:9533aea77d54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:08:02+00:00",
+   "claim": "Hugo Aguilar Ortiz holds office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "dst": "source:5651a49f4cb7275c",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "snippet": "…Hugo Aguilar Ortiz Hugo Aguilar Ortiz | Hugo Aguilar Ortiz | | | --- | --- | | President of the Supreme Court of Justice of the Nation | | | Incumbent | | | Assumed office 1…",
+   "src": "term:9533aea77d54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:08:02+00:00",
+   "claim": "Hugo Aguilar Ortiz holds office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "dst": "source:a06c76380773ebcb",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "snippet": "…Hugo Aguilar Ortiz | Suprema Corte de Justicia de la Nación Hugo Aguilar Ortiz | Suprema Corte de Justicia de la Nación # Hugo Aguilar Ortiz Presidente de la Suprema Corte d…",
+   "src": "term:9533aea77d54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:08:02+00:00",
+   "claim": "Hugo Aguilar Ortiz holds office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "dst": "source:cb8c73f0aedd5e9b",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "snippet": "…de la Nación # Presidencia Presidente de la Suprema Corte de Justicia de la Nación del 1 de septiembre de 2025 a septiembre de 2027. Ministro Presidente Hugo Aguilar Ortiz ## UBICACIÓN Suprema Corte de Justicia de la Nación: Pino Suárez no. 2, Colonia Centro. Cuauhtémoc, C.P. 06065, México, Ciudad de México Presidenci…",
+   "src": "term:9533aea77d54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:hugo-aguilar-ortiz",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "src": "term:9533aea77d54",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:08:02+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "judicial",
+   "description": "Highest constitutional court; since the 2024 reform, nine justices sitting in plenary rather than two chambers.",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "body:MX:national:supreme-court-of-justice-of-the-nation",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:07:53+00:00",
+   "name": "Supreme Court of Justice of the Nation",
+   "name_local": "Suprema Corte de Justicia de la Nación",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:07:53+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795",
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:34+00:00",
+   "id": "level:MX:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:07:34+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:07:59+00:00",
+   "id": "office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "presidenta"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:07:59+00:00",
+   "name": "President of the Supreme Court",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Rotates every two years among elected justices by number of popular votes received.",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 2.0,
+   "title_local": "Presidenta o Presidente de la Suprema Corte de Justicia de la Nación",
+   "updated_at": "2026-11-14T23:07:59+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "id": "person:MX:hugo-aguilar-ortiz",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:08:02+00:00",
+   "name": "Hugo Aguilar Ortiz",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "mexiconewsdaily.com",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "id": "source:23a04d4dc0a54187",
+   "label": "Source",
+   "name": "Who is Hugo Aguilar, Mexico's new Supreme Court President?",
+   "published_date": "2025-06-12T18:46:08.000Z",
+   "retrieved_at": "2026-11-14T23:08:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "url": "https://mexiconewsdaily.com/news/who-is-hugo-aguilar-mexicos-first-elected-supreme-court-president/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "supremacorte.gob.mx",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "id": "source:2cb42fd7f7003352",
+   "label": "Source",
+   "name": "Conoce la Corte | Suprema Corte de Justicia de la Nación",
+   "retrieved_at": "2026-11-14T23:08:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "url": "https://www.supremacorte.gob.mx/conoce-la-corte"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "scjn.gob.mx",
+   "first_seen": "2026-11-14T23:07:59+00:00",
+   "id": "source:4d4ccd704b5a604b",
+   "label": "Source",
+   "name": "Presidencia | Suprema Corte de Justicia de la Nación",
+   "retrieved_at": "2026-11-14T23:08:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "url": "https://www.scjn.gob.mx/presidencia"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "id": "source:5651a49f4cb7275c",
+   "label": "Source",
+   "name": "Hugo Aguilar Ortiz",
+   "published_date": "2026-10-30T17:40:35.000Z",
+   "retrieved_at": "2026-11-14T23:08:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "url": "https://en.wikipedia.org/wiki/Hugo_Aguilar_Ortiz"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "supremacorte.gob.mx",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "id": "source:a06c76380773ebcb",
+   "label": "Source",
+   "name": "Hugo Aguilar Ortiz | Suprema Corte de Justicia de la Nación",
+   "retrieved_at": "2026-11-14T23:08:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "url": "https://www.supremacorte.gob.mx/ministro-hugo-aguilar-ortiz"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "supremacorte.gob.mx",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "id": "source:cb8c73f0aedd5e9b",
+   "label": "Source",
+   "name": "Presidencia | Suprema Corte de Justicia de la Nación",
+   "retrieved_at": "2026-11-14T23:08:02+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:08:02+00:00",
+   "url": "https://www.supremacorte.gob.mx/presidencia"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:08:02+00:00",
+   "id": "term:9533aea77d54",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:08:02+00:00",
+   "name": "Hugo Aguilar Ortiz — term from 2025-09-01",
+   "office": "office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court",
+   "person": "person:MX:hugo-aguilar-ortiz",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2025-09-01",
+   "updated_at": "2026-11-14T23:08:02+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court": [
+   "country:MX",
+   "level:MX:national",
+   "body:MX:national:supreme-court-of-justice-of-the-nation",
+   "office:MX:national:supreme-court-of-justice-of-the-nation:president-of-the-supreme-court"
+  ]
+ },
+ "politician": "person:MX:hugo-aguilar-ortiz",
+ "sha256": "3b92e37dc770878f38b4396f5a735249e450aa173dd18ff95981546d9067e6ad",
+ "unreached_offices": []
+}

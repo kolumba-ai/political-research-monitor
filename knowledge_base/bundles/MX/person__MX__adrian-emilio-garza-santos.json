@@ -1,0 +1,388 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "src": "body:MX:municipal:MX-NLE:monterrey:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-NLE:monterrey",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-NLE:monterrey:council",
+   "src": "level:MX:municipal:MX-NLE:monterrey",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:c401407e0a46",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "src": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:18:20+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:19+00:00",
+   "claim": "office exists: Municipal President of Monterrey",
+   "dst": "source:32c61547ad889c5b",
+   "first_seen": "2026-11-14T23:18:19+00:00",
+   "src": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:19+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:19+00:00",
+   "claim": "office exists: Municipal President of Monterrey",
+   "dst": "source:5e00a92efbe2b9fe",
+   "first_seen": "2026-11-14T23:18:19+00:00",
+   "src": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:19+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:20+00:00",
+   "claim": "municipality and its selection system (INAFED register)",
+   "dst": "source:73327df7bbd85a9f",
+   "first_seen": "2026-11-15T01:58:36+00:00",
+   "src": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:20+00:00",
+   "via": "official_directory"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:19+00:00",
+   "claim": "office exists: Municipal President of Monterrey",
+   "dst": "source:773b6405149607e5",
+   "first_seen": "2026-11-14T23:18:19+00:00",
+   "src": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:19+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "dst": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "end": "2027-09-29",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:18:20+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:adrian-emilio-garza-santos",
+   "start": "2024-09-30",
+   "status": "current",
+   "term_id": "term:c401407e0a46",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:18:20+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:18:20+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Fuerza y Corazón x Nuevo León",
+   "dst": "party:MX:pri",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "src": "person:MX:adrian-emilio-garza-santos",
+   "term_id": "term:c401407e0a46",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:18:20+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:20+00:00",
+   "claim": "Adrián Emilio de la Garza Santos holds office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "dst": "source:32c61547ad889c5b",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "snippet": "…entrante, rendirá protesta de ley a sus integrantes, para el período constitucional comprendido de los años 2024 – 2027, el cual presidirá el licenciado Adrián Emilio de la Garza Santos. Por lo que solicito al ciudadano Secretario del Ayuntamiento se sirva pasar lista de asistencia y verificar el quórum legal, y con fu…",
+   "src": "term:c401407e0a46",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:20+00:00",
+   "claim": "Adrián Emilio de la Garza Santos holds office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "dst": "source:5e00a92efbe2b9fe",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "snippet": "…PRI destapa a Adrián de la Garza para la gubernatura de Nuevo León PRI destapa a Adrián de la Garza para la gubernatura de Nuevo León # PRI destapa a Adrián de la Garza para…",
+   "src": "term:c401407e0a46",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:20+00:00",
+   "claim": "Adrián Emilio de la Garza Santos holds office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "dst": "source:773b6405149607e5",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "snippet": "…Gobierno - Gobierno de Monterrey Gobierno - Gobierno de Monterrey # Gobierno # Alcalde de Monterrey y sus atribuciones, Síndicos y Regidores. ## Adrián Emilio de la Garza Santos Esposo, padre y presidente municipal de Monterrey, capital de Nuevo León y centro de la segunda zona metropolitana más grande de México. Apa…",
+   "src": "term:c401407e0a46",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:adrian-emilio-garza-santos",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "src": "term:c401407e0a46",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:18:20+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "body:MX:municipal:MX-NLE:monterrey:council",
+   "label": "GovernmentBody",
+   "name": "Municipal council of Monterrey",
+   "name_local": "Ayuntamiento de Monterrey",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T02:15:20+00:00",
+   "website": "http://www.monterrey.gob.mx/"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:15+00:00",
+   "id": "level:MX:municipal:MX-NLE:monterrey",
+   "inegi_code": "19039",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:18:15+00:00",
+   "name": "Monterrey, Nuevo León",
+   "parent_division": "Nuevo León",
+   "parent_iso_3166_2": "MX-NLE",
+   "pipeline_mode": "research_only",
+   "population": 1142994,
+   "selection_system": "party-based popular election",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-15T02:15:20+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:18:19+00:00",
+   "id": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "municipal president",
+    "presidente municipal"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:18:19+00:00",
+   "name": "Municipal President of Monterrey",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by popular vote with the council slate (planilla)",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Presidente(a) Municipal de Monterrey",
+   "updated_at": "2026-11-15T02:15:20+00:00"
+  },
+  {
+   "acronym": "PRI",
+   "aliases": [
+    "PRI",
+    "Partido Revolucionario Institucional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "party:MX:pri",
+   "label": "PoliticalParty",
+   "name": "Partido Revolucionario Institucional",
+   "updated_at": "2026-11-14T23:18:20+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "id": "person:MX:adrian-emilio-garza-santos",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:18:20+00:00",
+   "name": "Adrián Emilio de la Garza Santos",
+   "updated_at": "2026-11-15T02:15:36+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "monterrey.gob.mx",
+   "first_seen": "2026-11-14T23:18:19+00:00",
+   "id": "source:32c61547ad889c5b",
+   "label": "Source",
+   "name": "ACTA NÚMERO 23 SESIÓN SOLEMNE DEL AYUNTAMIENTO 29 DE SEPTIEMBRE DE 2024",
+   "retrieved_at": "2026-11-14T23:18:20+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "url": "https://www.monterrey.gob.mx/pdf/actas/2024/ACTA_23_SESION_SOLEMNE_DEL_29_DE_SEPTIEMBRE_DE_2024.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "politico.mx",
+   "first_seen": "2026-11-14T23:18:19+00:00",
+   "id": "source:5e00a92efbe2b9fe",
+   "label": "Source",
+   "name": "PRI destapa a Adrián de la Garza para la gubernatura de Nuevo León",
+   "published_date": "2026-03-17T16:52:06.000Z",
+   "retrieved_at": "2026-11-14T23:18:20+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "url": "https://politico.mx/2026/03/17/pri-destapa-a-adrian-de-la-garza-para-la-gubernatura-de-nuevo-leon"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "datos.gob.mx",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "id": "source:73327df7bbd85a9f",
+   "label": "Source",
+   "name": "INAFED — Presidentas y Presidentes municipales",
+   "retrieved_at": "2026-11-15T02:15:32+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:32+00:00",
+   "url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "monterrey.gob.mx",
+   "first_seen": "2026-11-14T23:18:19+00:00",
+   "id": "source:773b6405149607e5",
+   "label": "Source",
+   "name": "Gobierno - Gobierno de Monterrey",
+   "retrieved_at": "2026-11-14T23:18:20+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "url": "https://www.monterrey.gob.mx/gobierno"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "end": "2027-09-29",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "id": "term:c401407e0a46",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:18:20+00:00",
+   "name": "Adrián Emilio de la Garza Santos — term from 2024-09-30",
+   "office": "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey",
+   "person": "person:MX:adrian-emilio-garza-santos",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-09-30",
+   "updated_at": "2026-11-14T23:18:20+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-NLE:monterrey",
+   "body:MX:municipal:MX-NLE:monterrey:council",
+   "office:MX:municipal:MX-NLE:monterrey:council:municipal-president-of-monterrey"
+  ]
+ },
+ "politician": "person:MX:adrian-emilio-garza-santos",
+ "sha256": "8f46c8f9ac4ae340e9fb0b7c8526c4e693eac0c3100755f6d2393fee8d6b278c",
+ "unreached_offices": []
+}

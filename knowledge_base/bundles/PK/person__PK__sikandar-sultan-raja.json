@@ -1,0 +1,430 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "src": "body:PK:national:election-commission-of-pakistan",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:national",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:PK:national:election-commission-of-pakistan",
+   "src": "level:PK:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:0ad7b1b339f4",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "src": "office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:51:36+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:34+00:00",
+   "claim": "office exists: Chief Election Commissioner",
+   "dst": "source:5df3e4890c5bf9af",
+   "first_seen": "2026-11-14T23:51:34+00:00",
+   "src": "office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:34+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "office exists: Election Commission member",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:51:34+00:00",
+   "src": "office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "office exists: Election Commission member",
+   "dst": "source:cd2af59531a91af6",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "src": "office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:51:36+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:sikandar-sultan-raja",
+   "start": "2020-01-27",
+   "status": "current",
+   "term_id": "term:0ad7b1b339f4",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:51:36+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "Sikandar Sultan Raja holds office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "dst": "source:01a4beb7ab83013d",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "snippet": "…CEC Raja alleges federal govt wants to 'sabotage' Islamabad LG polls - Pakistan - DAWN.COM CEC Raja alleges federal govt wants to 'sabotage' Islamabad LG polls - Pa…",
+   "src": "term:0ad7b1b339f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "Sikandar Sultan Raja holds office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "dst": "source:036dc1025cd61628",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "snippet": "…Sikandar Sultan Raja's term as Chief Election Commissioner ends on Jan 26 Sikandar Sultan Raja's term as Chief Election Commissioner ends on Jan 26 # Sikandar Sultan Raja's ter…",
+   "src": "term:0ad7b1b339f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "Sikandar Sultan Raja holds office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "dst": "source:17059c83d046d56f",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "snippet": "…Who is the next Chief Election Commissioner, Sikandar Sultan Raja? Who is the next Chief Election Commissioner, Sikandar Sultan Raja? # Who is the next Chief Election Commissioner, Sikandar Sultan Raja? ## Raja will like…",
+   "src": "term:0ad7b1b339f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "Sikandar Sultan Raja holds office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "dst": "source:2dd3b5a0f6fb1894",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "snippet": "…Sikandar Sultan Raja Sikandar Sultan Raja | Sikandar Sultan Raja سکندر سلطان راجہ | | | --- | --- | | Election Commission of Pakistan | | | Incumbent | | | Assumed office 27 Ja…",
+   "src": "term:0ad7b1b339f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "Sikandar Sultan Raja holds office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "dst": "source:5df3e4890c5bf9af",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "snippet": "…Election Commission of Pakistan Election Commission of Pakistan #### Hon’ble Chief Election Commissioner of Pakistan Mr. Sikandar Sultan Raja belongs to Bhera, district Sargodha. He completed his early education from the most prestigious institutions of the country. He did his Matric and F.…",
+   "src": "term:0ad7b1b339f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "Sikandar Sultan Raja holds office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "dst": "source:68aadc4cc081021a",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "snippet": "…HCJP ADMINISTERS OATH TO MR. MOHAMMAD JALAL SIKANDAR SULTAN AS CHIEF ELECTION COMMISSIONER OF PAKISTAN – Supreme Court of Pakistan HCJP ADMINISTERS OATH TO MR. MOHAMMAD JALAL SIKANDAR SULTAN AS CHIEF ELE…",
+   "src": "term:0ad7b1b339f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:36+00:00",
+   "claim": "Sikandar Sultan Raja holds office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "dst": "source:f439b10368287795",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "snippet": "…nd 215 of the Constitution of Islamic Republic of Pakistan, read with Article 48 thereof, the President of the Islamic Republic of Pakistan is pleased to appoint Mr. Sikandar Sultan Raja as the Chief Election Commissioner for a term of five years from the day he enters upon his office. No. 5(7)/2013-PA(C)] ( Wagar Uddi…",
+   "src": "term:0ad7b1b339f4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:sikandar-sultan-raja",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "src": "term:0ad7b1b339f4",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:51:36+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "electoral",
+   "description": "Independent permanent national election-management authority of five members. After the 2024 amendment, a member whose five-year term expires continues until a successor enters office; the sitting chief commissioner was still listed after his original 2025 expiry.",
+   "first_seen": "2026-11-14T23:51:34+00:00",
+   "id": "body:PK:national:election-commission-of-pakistan",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:51:34+00:00",
+   "name": "Election Commission of Pakistan",
+   "name_local": "الیکشن کمیشن آف پاکستان",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:51:34+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064",
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:42+00:00",
+   "id": "level:PK:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:50:42+00:00"
+  },
+  {
+   "aliases": [
+    "Election Commission member"
+   ],
+   "first_seen": "2026-11-14T23:51:34+00:00",
+   "id": "office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "is_elected": false,
+   "keywords": [
+    "election",
+    "election commission member"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:51:36+00:00",
+   "name": "Chief Election Commissioner",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 4,
+   "selection_details": "One from each province; nomination/confirmation process and appointment as provided in Articles 213 and 218; holdover until successor takes office.",
+   "selection_method": "appointment",
+   "single_seat": false,
+   "structure_evidence": "verified",
+   "term_length_years": 5.0,
+   "title_local": "رکن الیکشن کمیشن",
+   "updated_at": "2026-11-14T23:51:36+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "person:PK:sikandar-sultan-raja",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:51:36+00:00",
+   "name": "Sikandar Sultan Raja",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "source:01a4beb7ab83013d",
+   "label": "Source",
+   "name": "CEC Raja alleges federal govt wants to 'sabotage' Islamabad LG polls - Pakistan - DAWN.COM",
+   "published_date": "2026-11-12T15:41:04.000Z",
+   "retrieved_at": "2026-11-14T23:51:36+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "url": "https://www.dawn.com/news/2044064/cec-raja-alleges-federal-govt-wants-to-sabotage-islamabad-lg-polls"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "tribune.com.pk",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "source:036dc1025cd61628",
+   "label": "Source",
+   "name": "Sikandar Sultan Raja's term as Chief Election Commissioner ends on Jan 26",
+   "published_date": "2025-01-08T16:10:21.000Z",
+   "retrieved_at": "2026-11-14T23:51:36+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "url": "https://tribune.com.pk/story/2520863/sikandar-sultan-rajas-term-as-chief-election-commissioner-ends-on-jan-26"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "geo.tv",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "source:17059c83d046d56f",
+   "label": "Source",
+   "name": "Who is the next Chief Election Commissioner, Sikandar Sultan Raja?",
+   "published_date": "2020-01-21T08:18:22.000Z",
+   "retrieved_at": "2026-11-14T23:51:36+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "url": "https://www.geo.tv/latest/268452-who-is-sikander-sultan-raja"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "source:2dd3b5a0f6fb1894",
+   "label": "Source",
+   "name": "Sikandar Sultan Raja",
+   "published_date": "2026-10-06T03:41:01.000Z",
+   "retrieved_at": "2026-11-14T23:51:36+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "url": "https://en.wikipedia.org/wiki/Sikandar_Sultan_Raja"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "ecp.gov.pk",
+   "first_seen": "2026-11-14T23:51:34+00:00",
+   "id": "source:5df3e4890c5bf9af",
+   "label": "Source",
+   "name": "Election Commission of Pakistan",
+   "retrieved_at": "2026-11-14T23:51:36+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "url": "https://ecp.gov.pk/honourable-cec"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "supremecourt.gov.pk",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "source:68aadc4cc081021a",
+   "label": "Source",
+   "name": "HCJP ADMINISTERS OATH TO MR. MOHAMMAD JALAL SIKANDAR SULTAN AS CHIEF ELECTION COMMISSIONER OF PAKISTAN – Supreme Court of Pakistan",
+   "published_date": "2020-01-27T10:30:54.000Z",
+   "retrieved_at": "2026-11-14T23:51:36+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "url": "https://www.supremecourt.gov.pk/hcjp-administers-oath-to-mr-mohammad-jalal-sikandar-sultan-as-chief-election-commissioner-of-pakistan/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "ecp.gov.pk",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "source:cd2af59531a91af6",
+   "label": "Source",
+   "name": "Election Commission of Pakistan",
+   "retrieved_at": "2026-11-14T23:51:36+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "url": "https://ecp.gov.pk/honourable-members"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "mopa.gov.pk",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "source:f439b10368287795",
+   "label": "Source",
+   "name": "mopa.gov.pk",
+   "retrieved_at": "2026-11-14T23:51:36+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:36+00:00",
+   "url": "https://mopa.gov.pk/SiteImage/Misc/files/Notification%20Chief%20Election%20Commissioner.pdf"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "term:0ad7b1b339f4",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:51:36+00:00",
+   "name": "Sikandar Sultan Raja — term from 2020-01-27",
+   "office": "office:PK:national:election-commission-of-pakistan:chief-election-commissioner",
+   "person": "person:PK:sikandar-sultan-raja",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2020-01-27",
+   "updated_at": "2026-11-14T23:51:36+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:national:election-commission-of-pakistan:chief-election-commissioner": [
+   "country:PK",
+   "level:PK:national",
+   "body:PK:national:election-commission-of-pakistan",
+   "office:PK:national:election-commission-of-pakistan:chief-election-commissioner"
+  ]
+ },
+ "politician": "person:PK:sikandar-sultan-raja",
+ "sha256": "31b3b68691fd481bf52c477db1786030e1bfb3f641a7efb9f024e52343154a8d",
+ "unreached_offices": []
+}

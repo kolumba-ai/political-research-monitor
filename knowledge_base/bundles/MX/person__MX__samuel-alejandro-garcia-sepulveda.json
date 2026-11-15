@@ -1,0 +1,463 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "src": "body:MX:state:MX-NLE:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-NLE",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-NLE:executive",
+   "src": "level:MX:state:MX-NLE",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:593f693a3e45",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "src": "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:14:04+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:57+00:00",
+   "claim": "office exists: Governor of Nuevo León",
+   "dst": "source:2af6355e9884a436",
+   "first_seen": "2026-11-14T23:13:57+00:00",
+   "src": "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:57+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:57+00:00",
+   "claim": "office exists: Governor of Nuevo León",
+   "dst": "source:7cf861411feda4e5",
+   "first_seen": "2026-11-14T23:13:57+00:00",
+   "src": "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:57+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:57+00:00",
+   "claim": "office exists: Governor of Nuevo León",
+   "dst": "source:86f2a427467e944c",
+   "first_seen": "2026-11-14T23:13:57+00:00",
+   "src": "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:57+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "end": "2027-10-03",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:14:04+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:samuel-alejandro-garcia-sepulveda",
+   "start": "2021-10-04",
+   "status": "current",
+   "term_id": "term:593f693a3e45",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:14:04+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:14:04+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:mc",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "src": "person:MX:samuel-alejandro-garcia-sepulveda",
+   "term_id": "term:593f693a3e45",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:14:04+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:04+00:00",
+   "claim": "Samuel Alejandro García Sepúlveda holds office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "dst": "source:0f310ce627f6ecfc",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "snippet": "…Candidate Profile: Samuel García Sepúlveda | Wilson Center Candidate Profile: Samuel García Sepúlveda | Wilson Center # Candidate Profile: Samuel García Sepúlveda Posted date/time: November 15…",
+   "src": "term:593f693a3e45",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:04+00:00",
+   "claim": "Samuel Alejandro García Sepúlveda holds office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "dst": "source:29762cfe5031c038",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "snippet": "…Samuel García (politician) Samuel García (politician) | Samuel García Sepúlveda | | | --- | --- | | García in 2022 | | | Governor of Nuevo León | | | Incumbent | | | Assumed office 4 October 2021 [Note 1] | | | Preceded by |…",
+   "src": "term:593f693a3e45",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:04+00:00",
+   "claim": "Samuel Alejandro García Sepúlveda holds office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "dst": "source:2af6355e9884a436",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "snippet": "…Samuel Alejandro García Sepúlveda | Gobierno del Estado de Nuevo León Samuel Alejandro García Sepúlveda | Gobierno del Estado de Nuevo León close ¿Podemos ayudarte? ## Samuel Alejandro…",
+   "src": "term:593f693a3e45",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:04+00:00",
+   "claim": "Samuel Alejandro García Sepúlveda holds office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "dst": "source:339e2fa7495cff97",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "snippet": "…Quién es Samuel García, gobernador de Nuevo León Quién es Samuel García, gobernador de Nuevo León # Quién es Samuel Alejandro García Sepúlveda, gobernador de Nuevo León por Ernesto Palacios Najera julio 31, 2026 en Agenda Colectiva Samuel Alejandro García Sepúlveda es el gobernador consti…",
+   "src": "term:593f693a3e45",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:04+00:00",
+   "claim": "Samuel Alejandro García Sepúlveda holds office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "dst": "source:74b4b8602f6a5848",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "snippet": "…A Conversation With Samuel García Sepúlveda, Governor of Nuevo León Mexico 2025 and Beyond: A Conversation with Samuel García Sepúlveda, Governor of Nuevo León Center for Energy Studies Wed, Jul…",
+   "src": "term:593f693a3e45",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:04+00:00",
+   "claim": "Samuel Alejandro García Sepúlveda holds office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "dst": "source:86f2a427467e944c",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "snippet": "…Samuel Alejandro García Sepúlveda | Gobierno del Estado de Nuevo León Samuel Alejandro García Sepúlveda | Gobierno del Estado de Nuevo León # Gobernador Constitucional del Estado de Nu…",
+   "src": "term:593f693a3e45",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:04+00:00",
+   "claim": "Samuel Alejandro García Sepúlveda holds office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "dst": "source:b69d465659e20dcf",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "snippet": "…edecesor | Marcela Guerra Castillo | | Sucesor | Luis David Ortiz Salinas | | Diputado del Congreso de Nuevo León por Representación proporcional | | | 1 de septiembre de 2015-31 de agosto de 2018 | | | Información personal | | | Nombre de nacimiento | Samuel Alejandro García Sepúlveda | | Nacimiento | 28 de diciembre…",
+   "src": "term:593f693a3e45",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:samuel-alejandro-garcia-sepulveda",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "src": "term:593f693a3e45",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:14:04+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "body:MX:state:MX-NLE:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:13:55+00:00",
+   "name": "Executive of Nuevo León",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:13:55+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "level:MX:state:MX-NLE",
+   "iso_3166_2": "MX-NLE",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:13:55+00:00",
+   "name": "Nuevo León",
+   "pipeline_mode": "research_only",
+   "researched_name": "Nuevo León",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:13:55+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:13:57+00:00",
+   "id": "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:13:57+00:00",
+   "name": "Governor of Nuevo León",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:13:57+00:00"
+  },
+  {
+   "acronym": "MC",
+   "aliases": [
+    "MC",
+    "Movimiento Ciudadano"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "party:MX:mc",
+   "label": "PoliticalParty",
+   "name": "Movimiento Ciudadano",
+   "updated_at": "2026-11-14T23:18:15+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "id": "person:MX:samuel-alejandro-garcia-sepulveda",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:14:04+00:00",
+   "name": "Samuel Alejandro García Sepúlveda",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "wilsoncenter.org",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "id": "source:0f310ce627f6ecfc",
+   "label": "Source",
+   "name": "Candidate Profile: Samuel García Sepúlveda | Wilson Center",
+   "published_date": "2023-11-16T04:52:36.000Z",
+   "retrieved_at": "2026-11-14T23:14:04+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "url": "https://www.wilsoncenter.org/article/candidate-profile-samuel-garcia-sepulveda"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "id": "source:29762cfe5031c038",
+   "label": "Source",
+   "name": "Samuel García (politician)",
+   "published_date": "2026-10-27T09:28:08.000Z",
+   "retrieved_at": "2026-11-14T23:14:04+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "url": "https://en.wikipedia.org/wiki/Samuel_Garc%C3%ADa_(politician)"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "nl.gob.mx",
+   "first_seen": "2026-11-14T23:13:57+00:00",
+   "id": "source:2af6355e9884a436",
+   "label": "Source",
+   "name": "Samuel Alejandro García Sepúlveda | Gobierno del Estado de Nuevo León",
+   "retrieved_at": "2026-11-14T23:14:04+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "url": "https://www.nl.gob.mx/es/gobernador"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "culturacolectiva.com",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "id": "source:339e2fa7495cff97",
+   "label": "Source",
+   "name": "Quién es Samuel García, gobernador de Nuevo León",
+   "published_date": "2026-07-31T18:30:39.000Z",
+   "retrieved_at": "2026-11-14T23:14:04+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "url": "https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-samuel-garcia/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "bakerinstitute.org",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "id": "source:74b4b8602f6a5848",
+   "label": "Source",
+   "name": "A Conversation With Samuel García Sepúlveda, Governor of Nuevo León",
+   "retrieved_at": "2026-11-14T23:14:04+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "url": "https://www.bakerinstitute.org/event/mexico-2025-and-beyond-conversation-samuel-garcia-sepulveda-governor-nuevo-leon"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "hcnl.gob.mx",
+   "first_seen": "2026-11-14T23:13:57+00:00",
+   "id": "source:7cf861411feda4e5",
+   "label": "Source",
+   "name": "H. Congreso de Nuevo León | Proceso de Elección de Diputados",
+   "retrieved_at": "2026-11-14T23:14:04+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "url": "https://www.hcnl.gob.mx/proceso_de_eleccion_de_diputados"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "nl.gob.mx",
+   "first_seen": "2026-11-14T23:13:57+00:00",
+   "id": "source:86f2a427467e944c",
+   "label": "Source",
+   "name": "Samuel Alejandro García Sepúlveda | Gobierno del Estado de Nuevo León",
+   "retrieved_at": "2026-11-14T23:14:04+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "url": "https://historico.nl.gob.mx/gobernador"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "id": "source:b69d465659e20dcf",
+   "label": "Source",
+   "name": "Samuel García",
+   "published_date": "2026-10-25T14:56:06.000Z",
+   "retrieved_at": "2026-11-14T23:14:04+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:04+00:00",
+   "url": "https://es.wikipedia.org/wiki/Samuel_Garc%C3%ADa"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-10-03",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:04+00:00",
+   "id": "term:593f693a3e45",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:14:04+00:00",
+   "name": "Samuel Alejandro García Sepúlveda — term from 2021-10-04",
+   "office": "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon",
+   "person": "person:MX:samuel-alejandro-garcia-sepulveda",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-10-04",
+   "updated_at": "2026-11-14T23:14:04+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-NLE",
+   "body:MX:state:MX-NLE:executive",
+   "office:MX:state:MX-NLE:executive:governor-of-nuevo-leon"
+  ]
+ },
+ "politician": "person:MX:samuel-alejandro-garcia-sepulveda",
+ "sha256": "47f0608c05ff282479b4fc84647a5377b250dfb7b8dd4ca06b6002c6fef7b409",
+ "unreached_offices": []
+}

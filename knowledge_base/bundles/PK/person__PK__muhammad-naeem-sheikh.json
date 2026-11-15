@@ -1,0 +1,608 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "src": "body:PK:municipal:karachi-division:korangi:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "src": "body:PK:state:PK-KP:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division:korangi",
+   "src": "level:PK:municipal:karachi-division",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:karachi-division:korangi:government",
+   "src": "level:PK:municipal:karachi-division:korangi",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "level:PK:state:PK-KP",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-KP:legislature",
+   "src": "level:PK:state:PK-KP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:69233b931ac1",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "office exists: Town Chairman of Korangi",
+   "dst": "source:15ce6186d08736ee",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "office exists: Town Chairman of Korangi",
+   "dst": "source:20425df0022ed880",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "office exists: Town Chairman of Korangi",
+   "dst": "source:206755dea27e855a",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "office exists: Town Chairman of Korangi",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "term:4db34ebdd48b",
+   "first_seen": "2026-11-15T01:08:17+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:08:17+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of Khyber Pakhtunkhwa",
+   "dst": "source:74f729f4e69365d3",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of Khyber Pakhtunkhwa",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.75,
+   "current": true,
+   "dst": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T00:01:15+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:muhammad-naeem-sheikh",
+   "status": "current",
+   "term_id": "term:69233b931ac1",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.7,
+   "constituency_code": "PK-10",
+   "constituency_name": "Swat-VIII",
+   "current": true,
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:08:17+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:08:17+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "src": "person:PK:muhammad-naeem-sheikh",
+   "start": "2024-02-28",
+   "status": "current",
+   "term_id": "term:4db34ebdd48b",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:08:17+00:00"
+  },
+  {
+   "as_of": "2026-11-15T00:01:15+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ppp",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "person:PK:muhammad-naeem-sheikh",
+   "term_id": "term:69233b931ac1",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:08:17+00:00",
+   "claim": "Muhammad Naeem holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:5e5e0fc099825915",
+   "first_seen": "2026-11-15T01:08:17+00:00",
+   "snippet": "…mjad Ali Muzafar Ali lndependent PK-8 SwalVl Hamid Ur Rahman Habib Ur Rahman lndependent q PK.9 Swat-Vll Sultan Room Afsar lndependent 10 PK-10 Swat-Vlll Muhammad Naeem Akhtar Gul lndependent 11 PK-1 1 Upper Dir-l Gul lbrahim Khan Muhammad lssa Khan lndependent 12 PK-12 Upper Dir-ll Muhammad Yamin Muhammad Tawas Khan l…",
+   "src": "term:4db34ebdd48b",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:08:17+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:muhammad-naeem-sheikh",
+   "first_seen": "2026-11-15T01:08:17+00:00",
+   "src": "term:4db34ebdd48b",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:08:17+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "Muhammad Naeem Sheikh holds office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "dst": "source:20425df0022ed880",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "snippet": "…chairman-message chairman-message - # Chairman's Message - CLEAN & GREEN KORANGI, ROSHAN KORANGI, PARHAY GA KORANGI TO BERHAY GA KORANGI - MUHAMMAD NAEEM SHEIKH - Chairman TMC Korangi ##### TMC Korangi 021-99333929 ST-1/3, Sector 41/B, Korangi 2-½ Near Chiniot General Hospital Korangi Karachi Karachi…",
+   "src": "term:69233b931ac1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "Muhammad Naeem Sheikh holds office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "snippet": "…uncils | Category | Name | Party affiliation/ Independent | | --- | --- | --- | --- | --- | | Karachi Division | Karachi Metropolitan Corporation | Mayor | Murtaza Wahab | PPPP | | | | Deputy Mayor | Salman Abdullah | | | Malir | TMC Malir | Chairman | Jaan Muhammad Baloch | PPPP | | | | Vice Chairman | Muzammil Shah |…",
+   "src": "term:69233b931ac1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:muhammad-naeem-sheikh",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "term:69233b931ac1",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "body:PK:municipal:karachi-division:korangi:government",
+   "label": "GovernmentBody",
+   "name": "Town Municipal Council of Korangi",
+   "name_local": "ٹاؤن میونسپل کونسل",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "branch": "legislative",
+   "constituency_prefix": "PK",
+   "constituency_range": "PK-1 to PK-115",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "general_seats": 115,
+   "id": "body:PK:state:PK-KP:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2024-02-08",
+   "last_verified": "2026-11-15T01:30:53+00:00",
+   "members_verified": 144,
+   "name": "Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa)",
+   "name_local": "خیبر پختونخوا صوبائی اسمبلی",
+   "official_members_url": "https://www.pakp.gov.pk/members-listing/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 4,
+   "reserved_other": 0,
+   "reserved_women": 26,
+   "structure_agent_run": "agent_run_ceead2044f7b42aa9d194671e59f2fe3",
+   "total_seats": 145,
+   "updated_at": "2026-11-15T01:30:53+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "level:PK:municipal:karachi-division",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:05+00:00",
+   "name": "Karachi Division — Town municipal corporation (town)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "ٹاؤن میونسپل کارپوریشن",
+   "tier": "special_local",
+   "updated_at": "2026-11-15T00:01:05+00:00",
+   "why_distinct": "Three-tier urban local government: Karachi Metropolitan Corporation/City Council, 25 town municipal corporations and their town councils, and union committees. Unlike an ordinary standalone municipality, the metropolitan body overlays town-level councils; town chairmen are selected by the town councils rather than directly by residents. The names below are the 2023 returned town heads; a town-by-town 2026 incumbency confirmation is unavailable for some, so later replacements cannot be ruled out. Four-year terms run from oath, but an exact end date is not confirmed for each head."
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "level:PK:municipal:karachi-division:korangi",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:15+00:00",
+   "name": "Korangi",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "level:PK:state:PK-KP",
+   "iso_3166_2": "PK-KP",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Khyber Pakhtunkhwa",
+   "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "is_elected": true,
+   "keywords": [
+    "town",
+    "town chairman"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-15T00:01:15+00:00",
+   "name": "Town Chairman of Korangi",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "ٹاؤن چیئرمین",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "aliases": [
+    "Member of the Provincial Assembly of Khyber Pakhtunkhwa"
+   ],
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "is_elected": true,
+   "keywords": [
+    "member",
+    "provincial",
+    "diputad",
+    "deputy",
+    "legislat",
+    "congres"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:54:49+00:00",
+   "name": "Member of the Provincial Assembly of Khyber Pakhtunkhwa (general seat)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seat_type": "general",
+   "seats": 115,
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "official_single",
+   "updated_at": "2026-11-15T01:04:44+00:00"
+  },
+  {
+   "acronym": "PPP",
+   "aliases": [
+    "PPP",
+    "Pakistan Peoples Party"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "party:PK:ppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party",
+   "updated_at": "2026-11-15T01:04:12+00:00"
+  },
+  {
+   "aliases": [
+    "Muhammad Naeem"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "person:PK:muhammad-naeem-sheikh",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:47:10+00:00",
+   "name": "Muhammad Naeem Sheikh",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "sindhlaws.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:15ce6186d08736ee",
+   "label": "Source",
+   "name": "Preamble",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gos.pk",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "source:20425df0022ed880",
+   "label": "Source",
+   "name": "chairman-message",
+   "retrieved_at": "2026-11-15T00:01:15+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "url": "https://www.tmckorangi.gos.pk/page/message"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "lgdsindh.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:206755dea27e855a",
+   "label": "Source",
+   "name": "GOVERNMENT",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "aaj.tv",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:55eaf0edad507ff0",
+   "label": "Source",
+   "name": "Who controls Karachi 25 towns - Must Read - Aaj English TV",
+   "published_date": "2023-06-15T14:02:27.000Z",
+   "retrieved_at": "2026-11-15T00:02:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:03+00:00",
+   "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "ecp.gov.pk",
+   "first_seen": "2026-11-15T01:07:05+00:00",
+   "id": "source:5e5e0fc099825915",
+   "label": "Source",
+   "name": "PROVINCIAL ASSEMBLY OF KHYBER PAKHTUNKHWA",
+   "retrieved_at": "2026-11-15T01:30:23+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:30:23+00:00",
+   "url": "https://ecp.gov.pk/storage/files/2/party%20position%20in%20light%20of%20court%208-10-2025/compressed/Party%20Position%20in%20the%20Provincial%20Assembly%20of%20Khyber%20Pakhtunkhwa%20in%20light%20of%20Judgement%20of%20Constitutional%20Bench%20of%20Supreme%20Court%20dated%2025th%20August,%202025_compressed.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:54:39+00:00",
+   "id": "source:74f729f4e69365d3",
+   "label": "Source",
+   "name": "Bulletin Secretaries Conference Final for Printing copy",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.7,
+   "constituency_code": "PK-10",
+   "constituency_name": "Swat-VIII",
+   "current": true,
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:08:17+00:00",
+   "id": "term:4db34ebdd48b",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:08:17+00:00",
+   "name": "Muhammad Naeem — term from 2024-02-28",
+   "office": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "person": "person:PK:muhammad-naeem-sheikh",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "start": "2024-02-28",
+   "updated_at": "2026-11-15T01:08:17+00:00"
+  },
+  {
+   "confidence": 0.75,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "term:69233b931ac1",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T00:01:15+00:00",
+   "name": "Muhammad Naeem Sheikh — term from ?",
+   "office": "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi",
+   "person": "person:PK:muhammad-naeem-sheikh",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:karachi-division",
+   "level:PK:municipal:karachi-division:korangi",
+   "body:PK:municipal:karachi-division:korangi:government",
+   "office:PK:municipal:karachi-division:korangi:government:town-chairman-of-korangi"
+  ],
+  "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-KP",
+   "body:PK:state:PK-KP:legislature",
+   "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa"
+  ]
+ },
+ "politician": "person:PK:muhammad-naeem-sheikh",
+ "sha256": "ec59c0825c427dd9a6d6fc87c24c8c6d0e257a8db4c8fe7279264e7f046cddeb",
+ "unreached_offices": []
+}

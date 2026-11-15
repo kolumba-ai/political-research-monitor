@@ -1,0 +1,455 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "src": "body:MX:state:MX-BCN:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-BCN",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-BCN:executive",
+   "src": "level:MX:state:MX-BCN",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:7c91f2edcadb",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "src": "office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:12:44+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:40+00:00",
+   "claim": "office exists: Governor of Baja California",
+   "dst": "source:0ec99f49c83fed13",
+   "first_seen": "2026-11-14T23:12:40+00:00",
+   "src": "office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:40+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:40+00:00",
+   "claim": "office exists: Governor of Baja California",
+   "dst": "source:849ac9479b9ca2da",
+   "first_seen": "2026-11-14T23:12:40+00:00",
+   "src": "office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:40+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "end": "2027-10-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:12:44+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:marina-pilar-avila-olmeda",
+   "start": "2021-11-01",
+   "status": "current",
+   "term_id": "term:7c91f2edcadb",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:12:44+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:12:44+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Haciendo Historia en Baja California (MORENA, PT, PVEM)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "src": "person:MX:marina-pilar-avila-olmeda",
+   "term_id": "term:7c91f2edcadb",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:12:44+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:44+00:00",
+   "claim": "Marina del Pilar Ávila Olmeda holds office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "dst": "source:3fa91f46add5c26c",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "snippet": "…¿Quién Soy? – Marina Del Pilar ¿Quién Soy? – Marina Del Pilar ## Mujer, madre, y la primera mujer Gobernadora de Baja California. Soy Marina del Pilar Ávila Olmeda, nací el 19 de octubre de 1985 en Mexicali, Baja California. Desde pequeña, estuve rodeada de un entorno donde el derecho y la política era…",
+   "src": "term:7c91f2edcadb",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:44+00:00",
+   "claim": "Marina del Pilar Ávila Olmeda holds office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "dst": "source:4e5468cba1dc4985",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "snippet": "…Marina del Pilar Ávila Olmeda Marina del Pilar Ávila Olmeda Mexican politician (born 1985) | | This article may **require cleanup** to meet Wikipedia's quality standards. The specific…",
+   "src": "term:7c91f2edcadb",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:44+00:00",
+   "claim": "Marina del Pilar Ávila Olmeda holds office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "dst": "source:6c2efae91a417d4d",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "snippet": "…y Diego José, orgullosa bajacaliforniana. Gobernadora de mi Estado. Mexicali, Baja California, Mexico (MX) 120 connections • 7,663 followers ## About Marina del Pilar Ávila Olmeda (born 19 October 1985) is a Mexican politician and attorney. A member of the MORENA party, she is the current Governor of Baja California,…",
+   "src": "term:7c91f2edcadb",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:44+00:00",
+   "claim": "Marina del Pilar Ávila Olmeda holds office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "dst": "source:849ac9479b9ca2da",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "snippet": "…Gobierno de Baja California Gobierno de Baja California # Gobernadora del Estado ## Marina del Pilar Avila Olmeda Gobernadora Constitucional del Estado de Baja California ### A cargo desde el 01 de Noviembre del 2021 ### @ gobernadora@baja.gob.mx (686) 558-1000…",
+   "src": "term:7c91f2edcadb",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:44+00:00",
+   "claim": "Marina del Pilar Ávila Olmeda holds office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "dst": "source:cb15c422fcec64c9",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "snippet": "…Marina del Pilar Ávila Olmeda, Gobernadora · Gubernatura de Baja California · ENFEMEX Marina del Pilar Ávila Olmeda, Gobernadora · Gubernatura de Baja California · ENFEMEX # Marina de…",
+   "src": "term:7c91f2edcadb",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:44+00:00",
+   "claim": "Marina del Pilar Ávila Olmeda holds office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "dst": "source:e474a16573742f82",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "snippet": "…Governor of Baja California Governor of Baja California | Governor of Baja California | | | --- | --- | | | | | Incumbent Marina del Pilar Ávila Olmeda since November 1, 2021 | | | Inaugural holder | Alfonso García González | | Formation | November 26, 1952 | The governor of B…",
+   "src": "term:7c91f2edcadb",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:44+00:00",
+   "claim": "Marina del Pilar Ávila Olmeda holds office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "dst": "source:f904dfd357e26424",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "snippet": "…de resultados. 07/11/2026. | Foto: Captura de pantalla, Facebook: Marina del Pilar. Estados | 08-11-26 | 03:33 | Redacción El Universal Mexicali.— La gobernadora Marina del Pilar Ávila Olmeda presentó este sábado su Quinto Informe de Gobierno, en el que hizo un balance de su gestión. Puso el acento en la infraestructur…",
+   "src": "term:7c91f2edcadb",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:marina-pilar-avila-olmeda",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "src": "term:7c91f2edcadb",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:12:44+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:12:39+00:00",
+   "id": "body:MX:state:MX-BCN:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:12:39+00:00",
+   "name": "Executive of Baja California",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:12:39+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:12:39+00:00",
+   "id": "level:MX:state:MX-BCN",
+   "iso_3166_2": "MX-BCN",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:12:39+00:00",
+   "name": "Baja California",
+   "pipeline_mode": "research_only",
+   "researched_name": "Baja California",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:12:39+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:12:40+00:00",
+   "id": "office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:12:40+00:00",
+   "name": "Governor of Baja California",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:12:40+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "person:MX:marina-pilar-avila-olmeda",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:12:44+00:00",
+   "name": "Marina del Pilar Ávila Olmeda",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "bajacalifornia.gob.mx",
+   "first_seen": "2026-11-14T23:12:40+00:00",
+   "id": "source:0ec99f49c83fed13",
+   "label": "Source",
+   "name": "CONSTITUCIÓN POLÍTICA DEL ESTADO LIBRE Y SOBERANO DE BAJA CALIFORNIA",
+   "retrieved_at": "2026-11-14T23:12:44+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "url": "https://www.bajacalifornia.gob.mx/Documentos/hacienda/legislacion-hacendaria/CONSTITUCI%C3%93N%20POL%C3%8DTICA%20DEL%20ESTADO%20LIBRE%20Y%20SOBERANO%20DE%20BAJA%20CALIFORNIA.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "marinadelpilar.mx",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "source:3fa91f46add5c26c",
+   "label": "Source",
+   "name": "¿Quién Soy? – Marina Del Pilar",
+   "retrieved_at": "2026-11-14T23:12:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "url": "https://marinadelpilar.mx/quien-soy/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "source:4e5468cba1dc4985",
+   "label": "Source",
+   "name": "Marina del Pilar Ávila Olmeda",
+   "retrieved_at": "2026-11-14T23:12:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "url": "https://en.wikipedia.org/wiki/Marina_del_Pilar_%C3%81vila_Olmeda"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "linkedin.com",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "source:6c2efae91a417d4d",
+   "label": "Source",
+   "name": "marina del pilar",
+   "published_date": "2026-10-29T02:59:12.000Z",
+   "retrieved_at": "2026-11-14T23:12:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "url": "https://linkedin.com/in/marinadelpilar"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "bajacalifornia.gob.mx",
+   "first_seen": "2026-11-14T23:12:40+00:00",
+   "id": "source:849ac9479b9ca2da",
+   "label": "Source",
+   "name": "Gobierno de Baja California",
+   "retrieved_at": "2026-11-14T23:12:44+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "url": "https://bajacalifornia.gob.mx/Gobierno/Gabinete"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "enfemex.com",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "source:cb15c422fcec64c9",
+   "label": "Source",
+   "name": "Marina del Pilar Ávila Olmeda, Gobernadora · Gubernatura de Baja California · ENFEMEX",
+   "retrieved_at": "2026-11-14T23:12:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "url": "https://enfemex.com/quien-gobierna/baja-california/gubernatura/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "source:e474a16573742f82",
+   "label": "Source",
+   "name": "Governor of Baja California",
+   "published_date": "2026-09-07T05:03:17.000Z",
+   "retrieved_at": "2026-11-14T23:12:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_Baja_California"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "eluniversal.com.mx",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "source:f904dfd357e26424",
+   "label": "Source",
+   "name": "Gobernadora presenta 5 años de resultados | El Universal",
+   "published_date": "2026-11-08T09:34:09.000Z",
+   "retrieved_at": "2026-11-14T23:12:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:44+00:00",
+   "url": "https://www.eluniversal.com.mx/estados/gobernadora-presenta-5-anos-de-resultados/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-10-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:12:44+00:00",
+   "id": "term:7c91f2edcadb",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:12:44+00:00",
+   "name": "Marina del Pilar Ávila Olmeda — term from 2021-11-01",
+   "office": "office:MX:state:MX-BCN:executive:governor-of-baja-california",
+   "person": "person:MX:marina-pilar-avila-olmeda",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-11-01",
+   "updated_at": "2026-11-14T23:12:44+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-BCN:executive:governor-of-baja-california": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-BCN",
+   "body:MX:state:MX-BCN:executive",
+   "office:MX:state:MX-BCN:executive:governor-of-baja-california"
+  ]
+ },
+ "politician": "person:MX:marina-pilar-avila-olmeda",
+ "sha256": "9c82ebeeaac2f2bef68dda8e3d29584be6b47f025862509b4f4d386877b78860",
+ "unreached_offices": []
+}

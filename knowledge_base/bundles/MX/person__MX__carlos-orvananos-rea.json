@@ -1,0 +1,391 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "src": "body:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-CMX",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:MX:municipal:MX-CMX:cuajimalpa-de-morelos",
+   "src": "level:MX:municipal:MX-CMX",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government",
+   "src": "level:MX:municipal:MX-CMX:cuajimalpa-de-morelos",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:8a66723b2487",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "src": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:20:33+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:32+00:00",
+   "claim": "office exists: Borough mayor of Cuajimalpa de Morelos",
+   "dst": "source:23e7c10b60321045",
+   "first_seen": "2026-11-14T23:20:32+00:00",
+   "src": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:32+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:32+00:00",
+   "claim": "office exists: Borough mayor of Cuajimalpa de Morelos",
+   "dst": "source:439d9a2d39e080b9",
+   "first_seen": "2026-11-14T23:20:32+00:00",
+   "src": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:32+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:32+00:00",
+   "claim": "office exists: Borough mayor of Cuajimalpa de Morelos",
+   "dst": "source:75f0e663bb285232",
+   "first_seen": "2026-11-14T23:20:32+00:00",
+   "src": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:32+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:32+00:00",
+   "claim": "office exists: Borough mayor of Cuajimalpa de Morelos",
+   "dst": "source:c5b0050558c914c3",
+   "first_seen": "2026-11-14T23:20:32+00:00",
+   "src": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:32+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "dst": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:20:33+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:carlos-orvananos-rea",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:8a66723b2487",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:20:33+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:20:33+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "VA X LA CDMX",
+   "dst": "party:MX:pan",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "src": "person:MX:carlos-orvananos-rea",
+   "term_id": "term:8a66723b2487",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:20:33+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:33+00:00",
+   "claim": "Carlos Orvañanos Rea holds office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "dst": "source:23e7c10b60321045",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "snippet": "…Alcalde - Cuajimalpa # Carlos Orvañanos Alcalde de Cuajimalpa de Morelos Información sobre trayectoria, gestión pública y rendición de cuentas. ## Perfil Carlos Orvañanos Rea es Alcalde de Cuajimalpa de Morelos, electo con más del 46% de los votos en 2024. Cuenta con formación en administración pública, políticas públi…",
+   "src": "term:8a66723b2487",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:33+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:33+00:00",
+   "claim": "Carlos Orvañanos Rea holds office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "dst": "source:439d9a2d39e080b9",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "snippet": "…2 | Demarcación territorial Azcapotzalco | Nombres (s) Nancy Marlene | Apellido paterno Núñez | Apellido materno Fuerza política Reséndiz | | 3 | Coyoacán | José Giovani | Gutiérrez | Aguilar | | 4 | Cuajimalpa de Morelos | Carlos | Orvañanos | Rea | | 5 | Gustavo A. Madero | Ricardo Janecarlo | Lozano | Reynoso | | 6…",
+   "src": "term:8a66723b2487",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:33+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:carlos-orvananos-rea",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "src": "term:8a66723b2487",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:20:33+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:20:29+00:00",
+   "id": "body:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government",
+   "label": "GovernmentBody",
+   "name": "Borough council of Cuajimalpa de Morelos",
+   "name_local": "Concejo",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:20:29+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:14+00:00",
+   "id": "level:MX:municipal:MX-CMX",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:20:14+00:00",
+   "name": "Mexico City — Borough (territorial demarcation)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "Demarcación territorial (alcaldía)",
+   "tier": "special_local",
+   "updated_at": "2026-11-14T23:20:14+00:00",
+   "why_distinct": "Mexico City is the national capital and an autonomous federal entity, rather than an ordinary state divided into municipalities. Its 16 territorial demarcations are governed by alcaldías, each consisting of a directly elected mayor and concejo; the mayor runs the local administration, while the concejo oversees government and spending and approves the draft borough budget. Members serve three years, beginning October 1 of the election year."
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:29+00:00",
+   "id": "level:MX:municipal:MX-CMX:cuajimalpa-de-morelos",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:20:29+00:00",
+   "name": "Cuajimalpa de Morelos",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-14T23:20:29+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:20:32+00:00",
+   "id": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "is_elected": true,
+   "keywords": [
+    "borough",
+    "alcald",
+    "borough mayor",
+    "alcalde"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:20:32+00:00",
+   "name": "Borough mayor of Cuajimalpa de Morelos",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Alcalde",
+   "updated_at": "2026-11-14T23:20:32+00:00"
+  },
+  {
+   "acronym": "PAN",
+   "aliases": [
+    "PAN",
+    "Partido Acción Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "party:MX:pan",
+   "label": "PoliticalParty",
+   "name": "Partido Acción Nacional",
+   "updated_at": "2026-11-14T23:21:02+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "id": "person:MX:carlos-orvananos-rea",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:20:33+00:00",
+   "name": "Carlos Orvañanos Rea",
+   "updated_at": "2026-11-15T02:15:36+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "cuajimalpa.gob.mx",
+   "first_seen": "2026-11-14T23:20:32+00:00",
+   "id": "source:23e7c10b60321045",
+   "label": "Source",
+   "name": "Tu Alcalde - Cuajimalpa",
+   "retrieved_at": "2026-11-14T23:20:33+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:20:33+00:00",
+   "url": "https://cuajimalpa.gob.mx/alcalde"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iecm.mx",
+   "first_seen": "2026-11-14T23:20:14+00:00",
+   "id": "source:439d9a2d39e080b9",
+   "label": "Source",
+   "name": "DIRECCIÓN EJECUTIVA DE ORGANIZACIÓN ELECTORAL Y GEOESTADÍSTICA",
+   "retrieved_at": "2026-11-14T23:21:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:21:28+00:00",
+   "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iecm.mx",
+   "first_seen": "2026-11-14T23:20:14+00:00",
+   "id": "source:75f0e663bb285232",
+   "label": "Source",
+   "name": "PUBLICADO EN LA GACETA OFICIAL DE LA CIUDAD DE MÉXICO EL 4 DE MAYO DE 2018 FECHA DE ÚLTIMA REFORMA EL 31 DE MARZO DE 2025",
+   "retrieved_at": "2026-11-14T23:21:27+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:21:27+00:00",
+   "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "eluniversal.com.mx",
+   "first_seen": "2026-11-14T23:20:18+00:00",
+   "id": "source:c5b0050558c914c3",
+   "label": "Source",
+   "name": "Alcaldes, ¿quiénes pueden ir por reelección?  | El Universal",
+   "published_date": "2026-10-01T14:06:21.000Z",
+   "retrieved_at": "2026-11-14T23:21:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:21:28+00:00",
+   "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "id": "term:8a66723b2487",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:20:33+00:00",
+   "name": "Carlos Orvañanos Rea — term from 2024-10-01",
+   "office": "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos",
+   "person": "person:MX:carlos-orvananos-rea",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:20:33+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-CMX",
+   "level:MX:municipal:MX-CMX:cuajimalpa-de-morelos",
+   "body:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government",
+   "office:MX:municipal:MX-CMX:cuajimalpa-de-morelos:government:borough-mayor-of-cuajimalpa-de-morelos"
+  ]
+ },
+ "politician": "person:MX:carlos-orvananos-rea",
+ "sha256": "ab0dd0b64ced1bcb37f08e2beccd68ffcde39578f7c78c3a2b16a18c1a2fc09d",
+ "unreached_offices": []
+}

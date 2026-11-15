@@ -1,0 +1,430 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "src": "body:MX:municipal:MX-CMX:cuauhtemoc:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-CMX",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:MX:municipal:MX-CMX:cuauhtemoc",
+   "src": "level:MX:municipal:MX-CMX",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-CMX:cuauhtemoc:government",
+   "src": "level:MX:municipal:MX-CMX:cuauhtemoc",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:3128b46f58ea",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "src": "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:20:37+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:35+00:00",
+   "claim": "office exists: Borough mayor of Cuauhtémoc",
+   "dst": "source:75f0e663bb285232",
+   "first_seen": "2026-11-14T23:20:35+00:00",
+   "src": "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:35+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:35+00:00",
+   "claim": "office exists: Borough mayor of Cuauhtémoc",
+   "dst": "source:c5b0050558c914c3",
+   "first_seen": "2026-11-14T23:20:35+00:00",
+   "src": "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:35+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "dst": "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:20:38+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:20:37+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:alessandra-rojo-vega-piccolo",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:3128b46f58ea",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:20:38+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:37+00:00",
+   "claim": "Alessandra Rojo de la Vega Piccolo holds office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "dst": "source:2a100fab42d58a32",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "snippet": "…Rodríguez | | Diputada del Congreso de la Ciudad de México por Representación proporcional | | | 17 de septiembre de 2018-31 de agosto de 2021 | | | Información personal | | | Nombre de nacimiento | Alessandra Rojo de la Vega Piccolo | | Nacimiento | 16 de enero de 1986 (40 años) Miguel Hidalgo, Ciudad de México | | Na…",
+   "src": "term:3128b46f58ea",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:37+00:00",
+   "claim": "Alessandra Rojo de la Vega Piccolo holds office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "dst": "source:55b15f146e417979",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "snippet": "…ga durante su toma de protesta como Alcaldesa de Cuauhtémoc. Foto: Ale Rojo Por: La Razón Online 01/10/2024 20:59:25 La mañana de este miércoles, Alessandra Rojo de la Vega Piccolo rindió protesta ante el Congreso de la Ciudad de México como Alcaldesa de la Cuauhtémoc, después de haber ganado las elecciones del pasado…",
+   "src": "term:3128b46f58ea",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:37+00:00",
+   "claim": "Alessandra Rojo de la Vega Piccolo holds office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "dst": "source:85c131ad816b08c4",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "snippet": "…Alessandra Rojo de la Vega Piccolo, Alcaldesa de Cuauhtémoc | El Mediático Alessandra Rojo de la Vega Piccolo, Alcaldesa de Cuauhtémoc | El Mediático # Alessandra Rojo de la Vega Piccolo…",
+   "src": "term:3128b46f58ea",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:37+00:00",
+   "claim": "Alessandra Rojo de la Vega Piccolo holds office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "dst": "source:a4af48e4d03a2052",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "snippet": "…Quién es Alessandra Rojo de la Vega Quién es Alessandra Rojo de la Vega # QUIÉN ES Alessandra Rojo de la Vega Alessandra Rojo de la Vega Piccolo es alcaldesa de Cuauhtémoc, Ciudad de México, desde el 1 de octubre de 2024, para el periodo 2024–2027. Nació en la Ciudad de México el 16 de enero de…",
+   "src": "term:3128b46f58ea",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:37+00:00",
+   "claim": "Alessandra Rojo de la Vega Piccolo holds office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "dst": "source:c5b0050558c914c3",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "snippet": "…o, el resto no respondió. De los 16 ediles, 12 podrían aspirar a la reelección: Javier López Casarín, de Álvaro Obregón; Nancy Núñez, de Azcapotzalco; Luis Mendoza, de Benito Juárez; Carlos Orvañanos, de Cuajimalpa; Alessandra Rojo de la Vega, de Cuauhtémoc; Janecarlo Lozano, de Gustavo A. Madero; Lourdes Paz, de Iztac…",
+   "src": "term:3128b46f58ea",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:37+00:00",
+   "claim": "Alessandra Rojo de la Vega Piccolo holds office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "dst": "source:c6f3c67e0d6a7dd0",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "snippet": "…s | | | Born | 16 January 1986 (age 40) Mexico City, Mexico | | Party | Institutional Revolutionary Party (as mayor) Ecologist Green Party (as deputy) | | Spouse | Emmanuel Gray ​ ​ (m. 2014; div. 2022)​ | | Children | 3 | | Occupation | Politician | Alessandra Rojo de la Vega Piccolo (born 16 January 1986) is a Mexica…",
+   "src": "term:3128b46f58ea",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:alessandra-rojo-vega-piccolo",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "src": "term:3128b46f58ea",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:20:37+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "id": "body:MX:municipal:MX-CMX:cuauhtemoc:government",
+   "label": "GovernmentBody",
+   "name": "Borough council of Cuauhtémoc",
+   "name_local": "Concejo",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:20:33+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:14+00:00",
+   "id": "level:MX:municipal:MX-CMX",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:20:14+00:00",
+   "name": "Mexico City — Borough (territorial demarcation)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "Demarcación territorial (alcaldía)",
+   "tier": "special_local",
+   "updated_at": "2026-11-14T23:20:14+00:00",
+   "why_distinct": "Mexico City is the national capital and an autonomous federal entity, rather than an ordinary state divided into municipalities. Its 16 territorial demarcations are governed by alcaldías, each consisting of a directly elected mayor and concejo; the mayor runs the local administration, while the concejo oversees government and spending and approves the draft borough budget. Members serve three years, beginning October 1 of the election year."
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:33+00:00",
+   "id": "level:MX:municipal:MX-CMX:cuauhtemoc",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:20:33+00:00",
+   "name": "Cuauhtémoc",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-14T23:20:33+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:20:35+00:00",
+   "id": "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "is_elected": true,
+   "keywords": [
+    "borough",
+    "alcaldes",
+    "borough mayor",
+    "alcaldesa"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:20:35+00:00",
+   "name": "Borough mayor of Cuauhtémoc",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Alcaldesa",
+   "updated_at": "2026-11-14T23:20:35+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "id": "person:MX:alessandra-rojo-vega-piccolo",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:20:37+00:00",
+   "name": "Alessandra Rojo de la Vega Piccolo",
+   "updated_at": "2026-11-15T02:15:36+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "id": "source:2a100fab42d58a32",
+   "label": "Source",
+   "name": "Alessandra Rojo de la Vega",
+   "published_date": "2026-11-08T21:12:12.000Z",
+   "retrieved_at": "2026-11-14T23:20:37+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "url": "https://es.wikipedia.org/wiki/Alessandra_Rojo_de_la_Vega"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "razon.com.mx",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "id": "source:55b15f146e417979",
+   "label": "Source",
+   "name": "Alessandra Rojo de la Vega toma protesta como alcaldesa de la Cuauhtémoc - La Razón de México",
+   "published_date": "2024-10-01T20:59:25.000Z",
+   "retrieved_at": "2026-11-14T23:20:37+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "url": "https://www.razon.com.mx/ciudad/2024/10/01/alessandra-rojo-de-la-vega-toma-protesta-como-alcaldesa-de-la-cuauhtemoc/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iecm.mx",
+   "first_seen": "2026-11-14T23:20:14+00:00",
+   "id": "source:75f0e663bb285232",
+   "label": "Source",
+   "name": "PUBLICADO EN LA GACETA OFICIAL DE LA CIUDAD DE MÉXICO EL 4 DE MAYO DE 2018 FECHA DE ÚLTIMA REFORMA EL 31 DE MARZO DE 2025",
+   "retrieved_at": "2026-11-14T23:21:27+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:21:27+00:00",
+   "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "elmediatico.com",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "id": "source:85c131ad816b08c4",
+   "label": "Source",
+   "name": "Alessandra Rojo de la Vega Piccolo, Alcaldesa de Cuauhtémoc | El Mediático",
+   "retrieved_at": "2026-11-14T23:20:37+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "url": "https://www.elmediatico.com/gobierno/alcaldia-cuauhtemoc"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "alerojo.mx",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "id": "source:a4af48e4d03a2052",
+   "label": "Source",
+   "name": "Quién es Alessandra Rojo de la Vega",
+   "retrieved_at": "2026-11-14T23:20:37+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "url": "https://alerojo.mx/quien-es-alessandra-rojo-de-la-vega/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "eluniversal.com.mx",
+   "first_seen": "2026-11-14T23:20:18+00:00",
+   "id": "source:c5b0050558c914c3",
+   "label": "Source",
+   "name": "Alcaldes, ¿quiénes pueden ir por reelección?  | El Universal",
+   "published_date": "2026-10-01T14:06:21.000Z",
+   "retrieved_at": "2026-11-14T23:21:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:21:28+00:00",
+   "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "id": "source:c6f3c67e0d6a7dd0",
+   "label": "Source",
+   "name": "Alessandra Rojo de la Vega",
+   "published_date": "2026-05-10T02:33:59.000Z",
+   "retrieved_at": "2026-11-14T23:20:37+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:20:37+00:00",
+   "url": "https://en.wikipedia.org/wiki/Alessandra_Rojo_de_la_Vega"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:20:37+00:00",
+   "id": "term:3128b46f58ea",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:20:37+00:00",
+   "name": "Alessandra Rojo de la Vega Piccolo — term from 2024-10-01",
+   "office": "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc",
+   "person": "person:MX:alessandra-rojo-vega-piccolo",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:20:37+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-CMX",
+   "level:MX:municipal:MX-CMX:cuauhtemoc",
+   "body:MX:municipal:MX-CMX:cuauhtemoc:government",
+   "office:MX:municipal:MX-CMX:cuauhtemoc:government:borough-mayor-of-cuauhtemoc"
+  ]
+ },
+ "politician": "person:MX:alessandra-rojo-vega-piccolo",
+ "sha256": "6e0e3887cb8e266211f830b1238fde61523e5c44491943983dff8b23b38560c6",
+ "unreached_offices": []
+}

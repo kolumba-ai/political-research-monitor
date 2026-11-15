@@ -1,0 +1,508 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "src": "body:PK:national:federal-government-and-cabinet",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:national",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:PK:national:federal-government-and-cabinet",
+   "src": "level:PK:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:6c58ba363bda",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "src": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:50:48+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:49+00:00",
+   "claim": "office exists: Minister of state",
+   "dst": "source:791482f3619114e0",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "src": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:46+00:00",
+   "claim": "office exists: Prime Minister of Pakistan",
+   "dst": "source:7ea488aa61475eee",
+   "first_seen": "2026-11-14T23:50:46+00:00",
+   "src": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:46+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:46+00:00",
+   "claim": "office exists: Prime Minister of Pakistan",
+   "dst": "source:7f35df90197f368e",
+   "first_seen": "2026-11-14T23:50:46+00:00",
+   "src": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:46+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:49+00:00",
+   "claim": "office exists: Minister of state",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:50:46+00:00",
+   "src": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "office exists: Federal minister",
+   "dst": "source:92363b1ba81d1a8d",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "src": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:50:48+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:muhammad-shehbaz-sharif",
+   "start": "2024-03-04",
+   "status": "current",
+   "term_id": "term:6c58ba363bda",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:50:48+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:50:48+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:pmln",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "src": "person:PK:muhammad-shehbaz-sharif",
+   "term_id": "term:6c58ba363bda",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:50:48+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "Muhammad Shehbaz Sharif holds office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "dst": "source:146d55e1372a7da3",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "snippet": "…vloniy Street, Yakkasaroy Tumani, Tashkent, Uzbekistaan ## Prime Minister of the Islamic Republic of Pakistan and President of the Pakistan Muslim League (N) Mr. Muhammad Shehbaz Sharif, the son of (late) Mian Muhammad Sharif, was born on 23 September 1951. He graduated from the then Government College, Lahore with a d…",
+   "src": "term:6c58ba363bda",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "Muhammad Shehbaz Sharif holds office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "dst": "source:1cab86fd3a25bd60",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "snippet": "…Shehbaz Sharif Shehbaz Sharif | Shehbaz Sharif | | | --- | --- | | شہباز شریف | | | Sharif in 2025 | | | Prime Minister of Pakistan | | | Incumbent | | | Assumed office…",
+   "src": "term:6c58ba363bda",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "Muhammad Shehbaz Sharif holds office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "dst": "source:7ea488aa61475eee",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "snippet": "…Prime Minister's Office, Islamabad, Pakistan Prime Minister's Office, Islamabad, Pakistan Mr. Muhammad Shehbaz Sharif Prime Minister of the Islamic Republic of Pakistan and President of the Pakistan Muslim League (N)…",
+   "src": "term:6c58ba363bda",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "Muhammad Shehbaz Sharif holds office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "dst": "source:7f35df90197f368e",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "snippet": "…Prime Minister's Office, Islamabad, Pakistan Prime Minister's Office, Islamabad, Pakistan World leaders greet Prime Minister Muhammad Shehbaz Sharif March 04, 2024 Islamabad: 4 March, 2024. World leaders greet Prime Minister Muhammad Shehbaz Sharif On his first day in office, Prime Minister Muhamm…",
+   "src": "term:6c58ba363bda",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "Muhammad Shehbaz Sharif holds office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "dst": "source:826dfd562d925eff",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "snippet": "…Ministry of Planning,Development & Special Initiatives Ministry of Planning,Development & Special Initiatives # Mr. Shehbaz Sharif Prime Minister of Pakistan & Chairman, Planning Commission Executive leadership Executive leadership # Mr. Shehbaz Sharif Prime Minister of Pakist…",
+   "src": "term:6c58ba363bda",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "Muhammad Shehbaz Sharif holds office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "dst": "source:c34d4f03ccdd4a5e",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "snippet": "…Mian Muhammad Shehbaz Sharif Mian Muhammad Shehbaz Sharif PRIME MINISTER OF PAKISTAN Mian Muhammad Shehbaz Sharif Mr. Mian Muhammad Shehbaz Sharif Prime Minister of the Islamic Repub…",
+   "src": "term:6c58ba363bda",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "Muhammad Shehbaz Sharif holds office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "dst": "source:edec276e64d15ac5",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "snippet": "…Washington - Prime Minister Washington - Prime Minister ### Mr. Muhammad Shehbaz Sharif The Prime Minister of the Islamic Republic of Pakistan Mr. Muhammad Shehbaz Sharif son of (late) Mian Muhammad Sharif graduated from Government…",
+   "src": "term:6c58ba363bda",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:48+00:00",
+   "claim": "Muhammad Shehbaz Sharif holds office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "dst": "source:fb845c8fcd59c154",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "snippet": "…ter of Islamic Republic of Pakistan Consulate General of Pakistan - Toronto - Prime Minister of Islamic Republic of Pakistan 04:43 PM 06:43 AM #### Mr. Mian Muhammad Shehbaz Sharif Prime Minister of Islamic Republic of Pakistan Prime Minister Muhammad Shahbaz Sharif took oath of the office on 4 March 2024. Previously,…",
+   "src": "term:6c58ba363bda",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:muhammad-shehbaz-sharif",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "src": "term:6c58ba363bda",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:50:48+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "description": "Prime Minister heads government; the Cabinet is collectively responsible to the National Assembly. Cabinet portfolio numbers are the published roster, not fixed constitutional strengths.",
+   "first_seen": "2026-11-14T23:50:45+00:00",
+   "id": "body:PK:national:federal-government-and-cabinet",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:50:45+00:00",
+   "name": "Federal Government and Cabinet",
+   "name_local": "وفاقی حکومت اور وفاقی کابینہ",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:50:45+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064",
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:42+00:00",
+   "id": "level:PK:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:50:42+00:00"
+  },
+  {
+   "aliases": [
+    "Federal minister",
+    "Minister of state"
+   ],
+   "first_seen": "2026-11-14T23:50:46+00:00",
+   "id": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "is_elected": false,
+   "keywords": [
+    "minister"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:50:49+00:00",
+   "name": "Prime Minister of Pakistan",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 11,
+   "selection_details": "Appointed to ministerial office on the advice of the Prime Minister; 11 are listed in the published roster.",
+   "selection_method": "appointment",
+   "single_seat": false,
+   "structure_evidence": "verified",
+   "title_local": "وزیر مملکت",
+   "updated_at": "2026-11-14T23:50:49+00:00"
+  },
+  {
+   "acronym": "PML-N",
+   "aliases": [
+    "PML-N",
+    "Pakistan Muslim League (N)",
+    "Pakistan Muslim League (Nawaz)",
+    "Pakistan Muslim League-Nawaz"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "party:PK:pmln",
+   "label": "PoliticalParty",
+   "name": "Pakistan Muslim League (N)",
+   "updated_at": "2026-11-15T01:51:06+00:00"
+  },
+  {
+   "aliases": [
+    "Muhammad Sharif"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "person:PK:muhammad-shehbaz-sharif",
+   "label": "Person",
+   "last_verified": "2026-11-15T00:58:35+00:00",
+   "name": "Muhammad Shehbaz Sharif",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "pakembassytashkent.org.pk",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "source:146d55e1372a7da3",
+   "label": "Source",
+   "name": "The Prime Minister - Embassy of the Islamic Republic of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://pakembassytashkent.org.pk/the-prime-minister/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "source:1cab86fd3a25bd60",
+   "label": "Source",
+   "name": "Shehbaz Sharif",
+   "published_date": "2026-11-11T21:13:07.000Z",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://en.wikipedia.org/wiki/Shehbaz_Sharif"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "cabinet.gov.pk",
+   "first_seen": "2026-11-14T23:50:49+00:00",
+   "id": "source:791482f3619114e0",
+   "label": "Source",
+   "name": "Cabinet Division",
+   "retrieved_at": "2026-11-14T23:50:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:49+00:00",
+   "url": "https://cabinet.gov.pk/Detail/ZWQxNTVhY2ItNzBlYy00YTJhLWJmYzEtMTdlMDVhZmE1ZTQ2"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pmo.gov.pk",
+   "first_seen": "2026-11-14T23:50:46+00:00",
+   "id": "source:7ea488aa61475eee",
+   "label": "Source",
+   "name": "Prime Minister's Office, Islamabad, Pakistan",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://pmo.gov.pk/pm_profile.php"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pmo.gov.pk",
+   "first_seen": "2026-11-14T23:50:46+00:00",
+   "id": "source:7f35df90197f368e",
+   "label": "Source",
+   "name": "Prime Minister's Office, Islamabad, Pakistan",
+   "published_date": "2024-03-04T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://www.pmo.gov.pk/press_release_detailes.php?pr_id=5045"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pc.gov.pk",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "source:826dfd562d925eff",
+   "label": "Source",
+   "name": "Ministry of Planning,Development & Special Initiatives",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://pc.gov.pk/web/senior/profile/shehbaz-sharif"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "cabinet.gov.pk",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "source:92363b1ba81d1a8d",
+   "label": "Source",
+   "name": "Cabinet Division",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://www.cabinet.gov.pk/Detail/ZGZiYzkyMjktNmYwNC00NTY1LWE0MzUtMjg3MzUxMTU0Mjk3"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "mofa.gov.pk",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "source:c34d4f03ccdd4a5e",
+   "label": "Source",
+   "name": "Mian Muhammad Shehbaz Sharif",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://www.mofa.gov.pk/mian-muhammad-shehbaz-sharif"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "mofa.gov.pk",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "source:edec276e64d15ac5",
+   "label": "Source",
+   "name": "Washington - Prime Minister",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://mofa.gov.pk/washington-prime-minister"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "pakconsulate.ca",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "source:fb845c8fcd59c154",
+   "label": "Source",
+   "name": "Consulate General of Pakistan - Toronto - Prime Minister of Islamic Republic of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:50:48+00:00",
+   "url": "https://www.pakconsulate.ca/prime-minister"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "term:6c58ba363bda",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:50:48+00:00",
+   "name": "Muhammad Shehbaz Sharif — term from 2024-03-04",
+   "office": "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan",
+   "person": "person:PK:muhammad-shehbaz-sharif",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2024-03-04",
+   "updated_at": "2026-11-14T23:50:48+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan": [
+   "country:PK",
+   "level:PK:national",
+   "body:PK:national:federal-government-and-cabinet",
+   "office:PK:national:federal-government-and-cabinet:prime-minister-of-pakistan"
+  ]
+ },
+ "politician": "person:PK:muhammad-shehbaz-sharif",
+ "sha256": "e7559220267f85a68583ae33368c77279a554a7db0842aa48bfdaf459ccfb167",
+ "unreached_offices": []
+}

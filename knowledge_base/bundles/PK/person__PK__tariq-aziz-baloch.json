@@ -1,0 +1,487 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "src": "body:PK:municipal:karachi-division:gadap:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:municipal",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division",
+   "src": "level:PK:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:PK:municipal:karachi-division:gadap",
+   "src": "level:PK:municipal:karachi-division",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:municipal:karachi-division:gadap:government",
+   "src": "level:PK:municipal:karachi-division:gadap",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:604726ac3805",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:12+00:00",
+   "claim": "office exists: Town Chairman of Gadap",
+   "dst": "source:15ce6186d08736ee",
+   "first_seen": "2026-11-15T00:01:12+00:00",
+   "src": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:12+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:12+00:00",
+   "claim": "office exists: Town Chairman of Gadap",
+   "dst": "source:206755dea27e855a",
+   "first_seen": "2026-11-15T00:01:12+00:00",
+   "src": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:12+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:12+00:00",
+   "claim": "office exists: Town Chairman of Gadap",
+   "dst": "source:55eaf0edad507ff0",
+   "first_seen": "2026-11-15T00:01:12+00:00",
+   "src": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:12+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:12+00:00",
+   "claim": "office exists: Town Chairman of Gadap",
+   "dst": "source:e518b4492f0c745b",
+   "first_seen": "2026-11-15T00:01:12+00:00",
+   "src": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:12+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "dst": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T00:01:15+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:tariq-aziz-baloch",
+   "status": "current",
+   "term_id": "term:604726ac3805",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "as_of": "2026-11-15T00:01:15+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ppp",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "person:PK:tariq-aziz-baloch",
+   "term_id": "term:604726ac3805",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "Tariq Aziz Baloch holds office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "dst": "source:5558d308d6c20b0e",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "snippet": "…چیئرمین طارق عزیز بلوچ کی میزبانی میں پُروقار تقریب | Peoples TV Pakistan گڈاپ ٹاؤن میں افطار پارٹی — چیئرمین طارق عزیز بلوچ کی میزبانی میں پُروقار تقریب | Peoples TV Pakistan # گڈاپ ٹاؤن میں افطار پارٹی — چیئرمین طارق عزیز بلوچ کی میزبانی میں پُروقار تقریب | Peoples TV Pakistan مارچ 12, 2026 0 # گڈاپ ٹاؤن میں چیئرمین…",
+   "src": "term:604726ac3805",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "Tariq Aziz Baloch holds office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "dst": "source:5aa66258b3d1810b",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "snippet": "…| 9 UC1- Gadap UC2- Gaghar UC3- Pipri UC4- Gulshan-e-Hadeed UC5- Steel Town UC6- Saleh Muhammad UC7- Murad Memon Goth UC8- Darsano Chana UC9- Shah Mureed | | Government | | | • Type | Subdivision (Tehsil)/TMC | | • Assistant Commissioner | Mr. Babur Ali, PAS | | • TMC, Chairman | Tariq Aziz Baloch | | Population (2023…",
+   "src": "term:604726ac3805",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "Tariq Aziz Baloch holds office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "dst": "source:5b87a7531339d944",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "snippet": "…g better facilities to citizens is top priority, Chairman TMC Gadap By Bilal Zafar Solangi Last updated Aug 19, 2024 > Town Municipal Corporation Gadap Chairman Tariq Aziz Baloch met officers, council members and area dignitaries at Gadap town office. Chairman Tariq Aziz Baloch said that he is working on his commitment…",
+   "src": "term:604726ac3805",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "Tariq Aziz Baloch holds office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "dst": "source:7760025d79f412a0",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "snippet": "…ated Feb 3, 2025 > A new NADRA office was inaugurated in UC Saleh Muhammad Goth, Gadap Town, in a ceremony led by Town Municipal Corporation (TMC) Gadap Chairman Tariq Aziz Baloch. The event was attended by Member of the National Assembly (MNA) Syed Agha Rafiullah, Member of the Provincial Assembly (MPA) Raja Abdul Raz…",
+   "src": "term:604726ac3805",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "Tariq Aziz Baloch holds office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "dst": "source:932f6cd6367fee7c",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "snippet": "…Municipal Corporation Chairman Pays Tribute to Workers on Labour Day By Bilal Zafar Solangi On May 1, 2025 > Chairman of the Gadap Town Municipal Corporation, Tariq Aziz Baloch, issued a statement on the occasion of International Labour Day, observed on May 1st, expressing solidarity with workers worldwide, particularl…",
+   "src": "term:604726ac3805",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:01:15+00:00",
+   "claim": "Tariq Aziz Baloch holds office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "dst": "source:e518b4492f0c745b",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "snippet": "…chairman-message chairman-message TARIQ AZIZ BALOCH Chairman TOWN MUNICIPAL CORPORATION GADAP Chairman Message It is with great pleasure that I address you, reflecting on our collective journey of growth a…",
+   "src": "term:604726ac3805",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:tariq-aziz-baloch",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "src": "term:604726ac3805",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-15T00:01:12+00:00",
+   "id": "body:PK:municipal:karachi-division:gadap:government",
+   "label": "GovernmentBody",
+   "name": "Town Municipal Council of Gadap",
+   "name_local": "ٹاؤن میونسپل کونسل",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T00:01:12+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "council_name": "Local council (municipal or metropolitan corporation council; tehsil, town or union council according to locality)",
+   "council_name_local": "بلدیاتی کونسل",
+   "country": "PK",
+   "description": "Province-specific elected local-government structures include metropolitan or municipal corporations, municipal and town committees, and union, village or neighbourhood councils; no verified, consistent nationwide 2026 count of governing bodies. The 2023 census lists 650 urban areas, which must not be equated with 650 municipal governments.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "بلدیاتی حکومتیں",
+   "researched_name": "Municipal and other local governments",
+   "tier": "municipal",
+   "unit_name": "Local government (municipal corporation, town corporation, municipal committee, tehsil council or union council, depending on province)",
+   "unit_name_local": "مقامی حکومت / بلدیہ",
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "level:PK:municipal:karachi-division",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:05+00:00",
+   "name": "Karachi Division — Town municipal corporation (town)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "ٹاؤن میونسپل کارپوریشن",
+   "tier": "special_local",
+   "updated_at": "2026-11-15T00:01:05+00:00",
+   "why_distinct": "Three-tier urban local government: Karachi Metropolitan Corporation/City Council, 25 town municipal corporations and their town councils, and union committees. Unlike an ordinary standalone municipality, the metropolitan body overlays town-level councils; town chairmen are selected by the town councils rather than directly by residents. The names below are the 2023 returned town heads; a town-by-town 2026 incumbency confirmation is unavailable for some, so later replacements cannot be ruled out. Four-year terms run from oath, but an exact end date is not confirmed for each head."
+  },
+  {
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:12+00:00",
+   "id": "level:PK:municipal:karachi-division:gadap",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-15T00:01:12+00:00",
+   "name": "Gadap",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-15T00:01:12+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T00:01:12+00:00",
+   "id": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "is_elected": true,
+   "keywords": [
+    "town",
+    "town chairman"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-15T00:01:12+00:00",
+   "name": "Town Chairman of Gadap",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "ٹاؤن چیئرمین",
+   "updated_at": "2026-11-15T00:01:12+00:00"
+  },
+  {
+   "acronym": "PPP",
+   "aliases": [
+    "PPP",
+    "Pakistan Peoples Party"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "party:PK:ppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party",
+   "updated_at": "2026-11-15T01:04:12+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "person:PK:tariq-aziz-baloch",
+   "label": "Person",
+   "last_verified": "2026-11-15T00:01:15+00:00",
+   "name": "Tariq Aziz Baloch",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "sindhlaws.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:15ce6186d08736ee",
+   "label": "Source",
+   "name": "Preamble",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "http://www.sindhlaws.gov.pk/DownloadDocument.aspx?Lang=EN&PubID=PUB-NEW-18-000156"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "lgdsindh.gov.pk",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:206755dea27e855a",
+   "label": "Source",
+   "name": "GOVERNMENT",
+   "retrieved_at": "2026-11-15T00:02:02+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:02+00:00",
+   "url": "https://www.lgdsindh.gov.pk/downloads/UCsKarachi.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "peoplestvpk.com",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "source:5558d308d6c20b0e",
+   "label": "Source",
+   "name": "گڈاپ ٹاؤن میں افطار پارٹی — چیئرمین طارق عزیز بلوچ کی میزبانی میں پُروقار تقریب | Peoples TV Pakistan",
+   "published_date": "2026-03-12T07:11:00.000Z",
+   "retrieved_at": "2026-11-15T00:01:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "url": "https://www.peoplestvpk.com/2026/03/gadap-town-iftar-party-tariq-aziz-baloch-council-members-ramazan-2026.html"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "aaj.tv",
+   "first_seen": "2026-11-15T00:01:05+00:00",
+   "id": "source:55eaf0edad507ff0",
+   "label": "Source",
+   "name": "Who controls Karachi 25 towns - Must Read - Aaj English TV",
+   "published_date": "2023-06-15T14:02:27.000Z",
+   "retrieved_at": "2026-11-15T00:02:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:02:03+00:00",
+   "url": "https://english.aaj.tv/news/30324552/who-controls-karachi-25-towns"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "source:5aa66258b3d1810b",
+   "label": "Source",
+   "name": "Gadap Town",
+   "published_date": "2026-10-03T21:24:11.000Z",
+   "retrieved_at": "2026-11-15T00:01:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "url": "https://en.wikipedia.org/wiki/Gadap_Town"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "citynews.com.pk",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "source:5b87a7531339d944",
+   "label": "Source",
+   "name": "Providing better facilities to citizens is top priority, Chairman TMC Gadap - City News",
+   "published_date": "2024-08-19T15:20:37.000Z",
+   "retrieved_at": "2026-11-15T00:01:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "url": "https://citynews.com.pk/providing-better-facilities-to-citizens-is-top-priority-chairman-tmc-gadap/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "citynews.com.pk",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "source:7760025d79f412a0",
+   "label": "Source",
+   "name": "PPP Leaders inaugurate Nadra office in Gadap Town - City News",
+   "published_date": "2025-02-03T13:15:33.000Z",
+   "retrieved_at": "2026-11-15T00:01:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "url": "https://citynews.com.pk/ppp-leaders-inaugurate-nadra-office-in-gadap-town/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "citynews.com.pk",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "source:932f6cd6367fee7c",
+   "label": "Source",
+   "name": "Gadap Town Municipal Corporation Chairman Pays Tribute to Workers on Labour Day – Daily City News",
+   "published_date": "2025-05-01T03:05:00.000Z",
+   "retrieved_at": "2026-11-15T00:01:15+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "url": "https://citynews.com.pk/gadap-town-municipal-corporation-chairman-pays-tribute-to-workers-on-labour-day/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "gos.pk",
+   "first_seen": "2026-11-15T00:01:12+00:00",
+   "id": "source:e518b4492f0c745b",
+   "label": "Source",
+   "name": "chairman-message",
+   "retrieved_at": "2026-11-15T00:01:15+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:01:15+00:00",
+   "url": "https://tmcgadap.gos.pk/page/message"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:01:15+00:00",
+   "id": "term:604726ac3805",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T00:01:15+00:00",
+   "name": "Tariq Aziz Baloch — term from ?",
+   "office": "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap",
+   "person": "person:PK:tariq-aziz-baloch",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "updated_at": "2026-11-15T00:01:15+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap": [
+   "country:PK",
+   "level:PK:municipal",
+   "level:PK:municipal:karachi-division",
+   "level:PK:municipal:karachi-division:gadap",
+   "body:PK:municipal:karachi-division:gadap:government",
+   "office:PK:municipal:karachi-division:gadap:government:town-chairman-of-gadap"
+  ]
+ },
+ "politician": "person:PK:tariq-aziz-baloch",
+ "sha256": "a266be6506cd20c961b9707dd66832b41bc7231988603f8f6b01413357378c39",
+ "unreached_offices": []
+}

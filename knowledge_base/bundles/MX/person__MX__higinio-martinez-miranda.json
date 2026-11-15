@@ -1,0 +1,571 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "src": "body:MX:national:senate-of-the-republic",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "office:MX:national:senate-of-the-republic:senator",
+   "src": "body:MX:national:senate-of-the-republic",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:national",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:MX:national:senate-of-the-republic",
+   "src": "level:MX:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:2cb6a047ab52",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "src": "office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:07:53+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:49+00:00",
+   "claim": "office exists: President of the Senate",
+   "dst": "source:1539403695cf1100",
+   "first_seen": "2026-11-14T23:07:49+00:00",
+   "src": "office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:49+00:00",
+   "claim": "office exists: President of the Senate",
+   "dst": "source:d9c673ab6b262208",
+   "first_seen": "2026-11-14T23:07:49+00:00",
+   "src": "office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "term:59141d4f9cfc",
+   "first_seen": "2026-11-15T01:58:23+00:00",
+   "src": "office:MX:national:senate-of-the-republic:senator",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T02:15:10+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:46+00:00",
+   "claim": "office exists: Senator",
+   "dst": "source:ad112f44cc259b10",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "src": "office:MX:national:senate-of-the-republic:senator",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "end": "2027-08-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:07:53+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:higinio-martinez-miranda",
+   "start": "2026-09-01",
+   "status": "current",
+   "term_id": "term:2cb6a047ab52",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:07:53+00:00"
+  },
+  {
+   "confidence": 0.7,
+   "constituency_code": "MX-SON",
+   "constituency_name": "Sonora",
+   "current": true,
+   "dst": "office:MX:national:senate-of-the-republic:senator",
+   "end": "2030-08-31",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:58:23+00:00",
+   "last_verified": "2026-11-15T02:15:10+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261115T021503Z",
+   "seat_type": "relative_majority",
+   "src": "person:MX:higinio-martinez-miranda",
+   "start": "2024-09-01",
+   "status": "current",
+   "term_id": "term:59141d4f9cfc",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T02:15:10+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:07:53+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "src": "person:MX:higinio-martinez-miranda",
+   "term_id": "term:2cb6a047ab52",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:07:53+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:53+00:00",
+   "claim": "Higinio Martínez Miranda holds office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "dst": "source:2db5b7154d3c35e3",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "snippet": "…SIL - Sistema de Información Legislativa-PopUp Legislador SIL - Sistema de Información Legislativa-PopUp Legislador | Senador Higinio Martínez Miranda | | | --- | --- | | Número de la legislatura: | LXVI Legislatura | | --- | --- | | Periodo de la legislatura: | Del 29/08/2024 al 31/08/2027 | | P…",
+   "src": "term:2cb6a047ab52",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:53+00:00",
+   "claim": "Higinio Martínez Miranda holds office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "dst": "source:46384fee4d8ac087",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "snippet": "…icamente todo el pleno Por Alexa Cirel ¡Nuevo presidente! Higinio Martínez rinde protesta al frente del Senado 31 Ago, 2026 10:47 p. m. EST El senador de Morena, Higinio Martínez Miranda, fue elegido como nuevo presidente de la Mesa Directiva del Senado de la República para encabezar el tercer y último año de ejercicio…",
+   "src": "term:2cb6a047ab52",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:53+00:00",
+   "claim": "Higinio Martínez Miranda holds office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "dst": "source:8074f5b813d34bd5",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "snippet": "…y 2015 Succeeded by Horacio Duarte Olivares Constituency Proportional representation In office 5 September 2006 – 4 September 2009 Constituency Proportional representation In office 5 December 1990 – 4 December 1993 Constituency Proportional representation | | | Personal details | | | Born | Higinio Martínez Miranda 18…",
+   "src": "term:2cb6a047ab52",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:53+00:00",
+   "claim": "Higinio Martínez Miranda holds office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "dst": "source:d9c673ab6b262208",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "snippet": "…ndujano, Mariela Gutiérrez Escalante, Claudia Tello Espinosa, Anabell Ávalos Zempoalteca, María Alejandra Barrales Magdaleno y Ángel García Yáñez. En el presídium estuvieron también el presidente de la Mesa Directiva del Senado, Higinio Martínez Miranda, y el vicecoordinador del Grupo Parlamentario de Morena, Óscar Can…",
+   "src": "term:2cb6a047ab52",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:53+00:00",
+   "claim": "Higinio Martínez Miranda holds office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "dst": "source:ec996722e7c2c105",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "snippet": "…inio Martínez rinde protesta como presidente del Senado, el 31 de agosto de 2026. Foto: Captura de Pantalla Por: César Huerta 01/09/2026 01:42:57 El senador Higinio Martínez Miranda, de Morena, rindió protesta este lunes como presidente de la Mesa Directiva del Senado de la República para los trabajos del tercer año de…",
+   "src": "term:2cb6a047ab52",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:53+00:00",
+   "claim": "Higinio Martínez Miranda holds office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "dst": "source:fe36be8e18e02cee",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "snippet": "…Formation | 1 January 1825; 201 years ago | | First holder | Valentín Gómez Farías | The president of the Senate (Spanish: Presidente de la Cámara de Senadores) is the presiding officer of the Mexican Senate. [1] The incumbent president is Senator Higinio Martínez Miranda. The Senate of Mexico, at the beginning of eac…",
+   "src": "term:2cb6a047ab52",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:53+00:00",
+   "claim": "Higinio Martínez Miranda holds office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "dst": "source:ff85724fca69da4b",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "snippet": "…mentó que debido a su responsabilidad institucional como presidente de la Cámara alta procura mantenerse al margen de los asuntos internos de Morena Higinio Martínez Miranda, diputado de Morena, en la Comisión Permanente del Senado (19/08/26). Foto: Carlos Mejía/EL UNIVERSAL Nación | 11-11-26 | 18:11 | Víctor Gamboa Lu…",
+   "src": "term:2cb6a047ab52",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:higinio-martinez-miranda",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "src": "term:2cb6a047ab52",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:07:53+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:10+00:00",
+   "claim": "Higinio Martínez Miranda holds office:MX:national:senate-of-the-republic:senator",
+   "dst": "source:3b6285e2a72f0f34",
+   "first_seen": "2026-11-15T01:58:23+00:00",
+   "src": "term:59141d4f9cfc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:10+00:00",
+   "via": "official_directory"
+  },
+  {
+   "dst": "person:MX:higinio-martinez-miranda",
+   "first_seen": "2026-11-15T01:58:23+00:00",
+   "src": "term:59141d4f9cfc",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T02:15:10+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "description": "Upper chamber of the Congress of the Union.",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "body:MX:national:senate-of-the-republic",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:07:46+00:00",
+   "name": "Senate of the Republic",
+   "name_local": "Senado de la República",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:07:46+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795",
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:34+00:00",
+   "id": "level:MX:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:07:34+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:07:49+00:00",
+   "id": "office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "presidenta"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:07:49+00:00",
+   "name": "President of the Senate",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected from among senators by absolute majority of members present, by ballot; serves one legislative year.",
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 1.0,
+   "title_local": "Presidenta o Presidente de la Mesa Directiva del Senado de la República",
+   "updated_at": "2026-11-14T23:07:49+00:00"
+  },
+  {
+   "aliases": [
+    "Senator (relative majority)"
+   ],
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "office:MX:national:senate-of-the-republic:senator",
+   "is_elected": true,
+   "keywords": [
+    "senator",
+    "senador",
+    "senadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:07:46+00:00",
+   "name": "Senator (relative majority)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seat_type": "relative_majority",
+   "seats": 64,
+   "selection_details": "Two seats per state for the most-voted formula",
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "official_single",
+   "term_length_years": 6,
+   "title_local": "Senador(a) de mayoría relativa",
+   "updated_at": "2026-11-15T02:15:10+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "person:MX:higinio-martinez-miranda",
+   "label": "Person",
+   "last_verified": "2026-11-15T02:15:10+00:00",
+   "name": "Higinio Martínez Miranda",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senado.gob.mx",
+   "first_seen": "2026-11-14T23:07:49+00:00",
+   "id": "source:1539403695cf1100",
+   "label": "Source",
+   "name": "Integrantes de la Mesa Directiva",
+   "retrieved_at": "2026-11-14T23:07:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:07:49+00:00",
+   "url": "https://www.senado.gob.mx/66/mesa_directiva/integrantes"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "gobernacion.gob.mx",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "source:2db5b7154d3c35e3",
+   "label": "Source",
+   "name": "SIL - Sistema de Información Legislativa-PopUp Legislador",
+   "retrieved_at": "2026-11-14T23:07:53+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "url": "https://sil.gobernacion.gob.mx/Librerias/pp_PerfilLegislador.php?Referencia=9228972"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senado.gob.mx",
+   "first_seen": "2026-11-15T01:58:22+00:00",
+   "id": "source:3b6285e2a72f0f34",
+   "label": "Source",
+   "name": "Por principio de elección",
+   "retrieved_at": "2026-11-15T02:15:11+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:11+00:00",
+   "url": "https://www.senado.gob.mx/66/senadores/por_principio_de_eleccion"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "infobae.com",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "source:46384fee4d8ac087",
+   "label": "Source",
+   "name": "Con 116 votos a favor, Higinio Martínez rinde protesta como presidente del Senado - Infobae",
+   "published_date": "2026-09-01T02:47:07.000Z",
+   "retrieved_at": "2026-11-14T23:07:53+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "url": "https://www.infobae.com/mexico/2026/09/01/con-116-votos-a-favor-higinio-martinez-rinde-protesta-como-presidente-del-senado/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "source:8074f5b813d34bd5",
+   "label": "Source",
+   "name": "Higinio Martínez",
+   "published_date": "2026-09-10T15:12:05.000Z",
+   "retrieved_at": "2026-11-14T23:07:53+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "url": "https://en.wikipedia.org/wiki/Higinio_Mart%C3%ADnez"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "gobernacion.gob.mx",
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "id": "source:ad112f44cc259b10",
+   "label": "Source",
+   "name": "SIL :: Sistema de Información Legislativa",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senado.gob.mx",
+   "first_seen": "2026-11-14T23:07:49+00:00",
+   "id": "source:d9c673ab6b262208",
+   "label": "Source",
+   "name": "Saldos positivos en política social, reporta la secretaria de Bienestar; Huerta destaca avances y seguimiento legislativo - Grupo Parlamentario de Morena en el Senado de la República",
+   "published_date": "2026-11-05T22:01:11.000Z",
+   "retrieved_at": "2026-11-14T23:07:53+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "url": "https://morena.senado.gob.mx/saldos-positivos-en-politica-social-reporta-la-secretaria-de-bienestar-huerta-destaca-avances-y-seguimiento-legislativo"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "razon.com.mx",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "source:ec996722e7c2c105",
+   "label": "Source",
+   "name": "Higinio Martínez rinde protesta como presidente del Senado para tercer año de la LXVI Legislatura - La Razón de México",
+   "published_date": "2026-09-01T01:42:57.000Z",
+   "retrieved_at": "2026-11-14T23:07:53+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "url": "https://www.razon.com.mx/mexico/2026/08/31/higinio-martinez-rinde-protesta-como-presidente-del-senado-para-tercer-ano-de-la-lxvi-legislatura/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "source:fe36be8e18e02cee",
+   "label": "Source",
+   "name": "President of the Senate (Mexico)",
+   "published_date": "2026-09-07T19:53:16.000Z",
+   "retrieved_at": "2026-11-14T23:07:53+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "url": "https://en.wikipedia.org/wiki/President_of_the_Senate_(Mexico)"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "eluniversal.com.mx",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "source:ff85724fca69da4b",
+   "label": "Source",
+   "name": "Higinio Martínez se distancia de propuesta de Ariadna Montiel sobre elecciones de 2006",
+   "published_date": "2026-11-12T00:11:18.000Z",
+   "retrieved_at": "2026-11-14T23:07:53+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:07:53+00:00",
+   "url": "https://www.eluniversal.com.mx/nacion/higinio-martinez-se-distancia-de-propuesta-de-ariadna-montiel-sobre-elecciones-de-2006-senala-que-la-ley-impide-juzgar-dos-veces/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-08-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:07:53+00:00",
+   "id": "term:2cb6a047ab52",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:07:53+00:00",
+   "name": "Higinio Martínez Miranda — term from 2026-09-01",
+   "office": "office:MX:national:senate-of-the-republic:president-of-the-senate",
+   "person": "person:MX:higinio-martinez-miranda",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2026-09-01",
+   "updated_at": "2026-11-14T23:07:53+00:00"
+  },
+  {
+   "confidence": 0.7,
+   "constituency_code": "MX-SON",
+   "constituency_name": "Sonora",
+   "current": true,
+   "end": "2030-08-31",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:58:23+00:00",
+   "id": "term:59141d4f9cfc",
+   "label": "Term",
+   "last_verified": "2026-11-15T02:15:10+00:00",
+   "name": "Higinio Martínez Miranda — term from 2024-09-01",
+   "office": "office:MX:national:senate-of-the-republic:senator",
+   "person": "person:MX:higinio-martinez-miranda",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261115T021503Z",
+   "seat_type": "relative_majority",
+   "start": "2024-09-01",
+   "updated_at": "2026-11-15T02:15:10+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:national:senate-of-the-republic:president-of-the-senate": [
+   "country:MX",
+   "level:MX:national",
+   "body:MX:national:senate-of-the-republic",
+   "office:MX:national:senate-of-the-republic:president-of-the-senate"
+  ],
+  "office:MX:national:senate-of-the-republic:senator": [
+   "country:MX",
+   "level:MX:national",
+   "body:MX:national:senate-of-the-republic",
+   "office:MX:national:senate-of-the-republic:senator"
+  ]
+ },
+ "politician": "person:MX:higinio-martinez-miranda",
+ "sha256": "d9e1465696f4b14567709fd1e061e4173344cb330399000dc7c3ce710c8babed",
+ "unreached_offices": []
+}

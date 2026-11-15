@@ -1,0 +1,435 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "src": "body:MX:state:MX-OAX:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-OAX",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-OAX:executive",
+   "src": "level:MX:state:MX-OAX",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:b215c5080b0d",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "src": "office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:14:16+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:11+00:00",
+   "claim": "office exists: Governor of Oaxaca",
+   "dst": "source:2134995abac5bdea",
+   "first_seen": "2026-11-14T23:14:11+00:00",
+   "src": "office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:11+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "end": "2028-11-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:14:16+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:salomon-jara-cruz",
+   "start": "2022-12-01",
+   "status": "current",
+   "term_id": "term:b215c5080b0d",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:14:16+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:14:16+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Hacemos Historia en Oaxaca (PT-PVEM-PUP-MORENA)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "src": "person:MX:salomon-jara-cruz",
+   "term_id": "term:b215c5080b0d",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:14:16+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:16+00:00",
+   "claim": "Salomón Jara Cruz holds office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "dst": "source:2134995abac5bdea",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "snippet": "…Ojeda Mejía, Francisco Javier Niño Hernández, Isidro Ortega Silva, Analy Peral Vivar, Tania Caballero Navarro, Dulce Belén Uribe Mendoza, Nicolás Enrique Feria Romero, Mauro Cruz Sánchez, Isaías Carranza Secundino, Raynel Ramírez Mijangos, Oliver López García, Sandra Daniela Taurino Jiménez, Haydeé Irma Reyes Soto, El…",
+   "src": "term:b215c5080b0d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:16+00:00",
+   "claim": "Salomón Jara Cruz holds office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "dst": "source:68abda36d38c9851",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "snippet": "…Salomón Jara Cruz toma protesta de ley como Gobernador de Oaxaca – Coordinación de Comunicación Social del Gobierno del Estado Salomón Jara Cruz toma protesta de ley como Go…",
+   "src": "term:b215c5080b0d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:16+00:00",
+   "claim": "Salomón Jara Cruz holds office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "dst": "source:73153cc27757ecf0",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "snippet": "…Salomón Jara Cruz Salomón Jara Cruz | Salomón Jara Cruz | | | --- | --- | | Salomón Jara Cruz en 2022 | | | Gobernador de Oaxaca Actualmente en el cargo | | | Desde el 1 de…",
+   "src": "term:b215c5080b0d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:16+00:00",
+   "claim": "Salomón Jara Cruz holds office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "dst": "source:86da8a65dcb5c952",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "snippet": "…ón de mandato federal Oaxaca de Juárez, Oax. 25 de enero de 2026.- En un ejercicio histórico e inédito en el país, el pueblo de Oaxaca ratificó en el cargo al Gobernador Salomón Jara Cruz durante la jornada de Revocación de Mandato, con una diferencia de 21 puntos porcentuales frente a quienes promovieron su destitució…",
+   "src": "term:b215c5080b0d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:16+00:00",
+   "claim": "Salomón Jara Cruz holds office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "dst": "source:ce4d8d0cf119deb6",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "snippet": "…Governor of Oaxaca Governor of Oaxaca | Governor of Oaxaca | | | --- | --- | | | | | Incumbent Salomón Jara Cruz since 1 December 2022 | | | Term length | Six years, non-renewable. | The governor of Oaxaca (officially in Spanish Gobernador…",
+   "src": "term:b215c5080b0d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:16+00:00",
+   "claim": "Salomón Jara Cruz holds office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "dst": "source:d65eefe00ef55630",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "snippet": "…Salomón Jara Cruz Salomón Jara | Salomón Jara | | | --- | --- | | Governor of Oaxaca | | | Incumbent | | | Assumed office 1 December 2022 | | | Preceded by | Alejandro Murat…",
+   "src": "term:b215c5080b0d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:16+00:00",
+   "claim": "Salomón Jara Cruz holds office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "dst": "source:da6f7a85cb4643e6",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "snippet": "…ador de Oaxaca (Foto: Twitter/@salomonj) Este jueves primero de diciembre uno de los fundadores de Movimiento Regeneración Nacional (Morena) en la entidad y exlegislador, Salomón Jara Cruz, rindió protesta como gobernador de Oaxaca para el periodo 2022-2028 ante el Congreso estatal. Durante su toma de protesta, el ahor…",
+   "src": "term:b215c5080b0d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:salomon-jara-cruz",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "src": "term:b215c5080b0d",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:14:16+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:14:09+00:00",
+   "id": "body:MX:state:MX-OAX:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:14:09+00:00",
+   "name": "Executive of Oaxaca",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:14:09+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:14:09+00:00",
+   "id": "level:MX:state:MX-OAX",
+   "iso_3166_2": "MX-OAX",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:14:09+00:00",
+   "name": "Oaxaca",
+   "pipeline_mode": "research_only",
+   "researched_name": "Oaxaca",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:14:09+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:14:11+00:00",
+   "id": "office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:14:11+00:00",
+   "name": "Governor of Oaxaca",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:14:11+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "person:MX:salomon-jara-cruz",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:14:16+00:00",
+   "name": "Salomón Jara Cruz",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresooaxaca.gob.mx",
+   "first_seen": "2026-11-14T23:14:11+00:00",
+   "id": "source:2134995abac5bdea",
+   "label": "Source",
+   "name": "SESIÓN DE INSTALACIÓN DE LA LXVI LEGISLATURA DEL HONORABLE CONGRESO DEL ESTADO LIBRE Y SOBERANO DE OAXACA",
+   "retrieved_at": "2026-11-14T23:14:16+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "url": "https://congresooaxaca.gob.mx/docs66.congresooaxaca.gob.mx/version_estenografs/Version_Estenografica_Sesion_de_Instalacion_de_la_LXVI_Legislatura_Constitucional_del_Estado_Libre_y_Soberano_de_Oaxaca_13_noviembre_2024.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "oaxaca.gob.mx",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "source:68abda36d38c9851",
+   "label": "Source",
+   "name": "Salomón Jara Cruz toma protesta de ley como Gobernador de Oaxaca – Coordinación de Comunicación Social del Gobierno del Estado",
+   "published_date": "2022-12-01T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:14:16+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "url": "https://www.oaxaca.gob.mx/comunicacion/salomon-jara-cruz-toma-protesta-de-ley-como-gobernador-de-oaxaca/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "source:73153cc27757ecf0",
+   "label": "Source",
+   "name": "Salomón Jara Cruz",
+   "published_date": "2026-11-05T02:48:23.000Z",
+   "retrieved_at": "2026-11-14T23:14:16+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "url": "https://es.wikipedia.org/wiki/Salom%C3%B3n_Jara_Cruz"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "oaxaca.gob.mx",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "source:86da8a65dcb5c952",
+   "label": "Source",
+   "name": "Con 21 puntos de ventaja, el pueblo de Oaxaca ratificó a Salomón Jara en histórica jornada de Revocación de Mandato – Coordinación de Comunicación Social del Gobierno del Estado",
+   "published_date": "2026-01-25T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:14:16+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "url": "https://www.oaxaca.gob.mx/comunicacion/con-21-puntos-de-ventaja-el-pueblo-de-oaxaca-ratifico-a-salomon-jara-en-historica-jornada-de-revocacion-de-mandato/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "source:ce4d8d0cf119deb6",
+   "label": "Source",
+   "name": "Governor of Oaxaca",
+   "published_date": "2026-09-07T05:14:14.000Z",
+   "retrieved_at": "2026-11-14T23:14:16+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_Oaxaca"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "source:d65eefe00ef55630",
+   "label": "Source",
+   "name": "Salomón Jara Cruz",
+   "published_date": "2026-07-17T20:05:12.000Z",
+   "retrieved_at": "2026-11-14T23:14:16+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "url": "https://en.wikipedia.org/wiki/Salom%C3%B3n_Jara_Cruz"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "infobae.com",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "source:da6f7a85cb4643e6",
+   "label": "Source",
+   "name": "Quién es Salomón Jara, el gobernador de Oaxaca que busca una revocación de mandato a mitad de su gestión - Infobae",
+   "published_date": "2022-12-01T20:14:17.000Z",
+   "retrieved_at": "2026-11-14T23:14:16+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:16+00:00",
+   "url": "https://www.infobae.com/america/mexico/2022/12/01/quien-es-salomon-jara-el-gobernador-de-oaxaca-que-busca-una-revocacion-de-mandato-a-mitad-de-su-gestion/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2028-11-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:16+00:00",
+   "id": "term:b215c5080b0d",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:14:16+00:00",
+   "name": "Salomón Jara Cruz — term from 2022-12-01",
+   "office": "office:MX:state:MX-OAX:executive:governor-of-oaxaca",
+   "person": "person:MX:salomon-jara-cruz",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2022-12-01",
+   "updated_at": "2026-11-14T23:14:16+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-OAX:executive:governor-of-oaxaca": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-OAX",
+   "body:MX:state:MX-OAX:executive",
+   "office:MX:state:MX-OAX:executive:governor-of-oaxaca"
+  ]
+ },
+ "politician": "person:MX:salomon-jara-cruz",
+ "sha256": "a4c0a3013df122fe381347c8a6b8cca3a03303a054f178ff05421aede4d5e57a",
+ "unreached_offices": []
+}

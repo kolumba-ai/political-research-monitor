@@ -1,0 +1,336 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "src": "body:MX:state:MX-SLP:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-SLP",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-SLP:executive",
+   "src": "level:MX:state:MX-SLP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:c0b264111913",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "src": "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:15:19+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:18+00:00",
+   "claim": "office exists: Governor of San Luis Potosí",
+   "dst": "source:328f155084c9168b",
+   "first_seen": "2026-11-14T23:15:18+00:00",
+   "src": "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:18+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:18+00:00",
+   "claim": "office exists: Governor of San Luis Potosí",
+   "dst": "source:ee9db2adceb5be83",
+   "first_seen": "2026-11-14T23:15:18+00:00",
+   "src": "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:18+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "dst": "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "end": "2027-09-25",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:15:19+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:jose-ricardo-gallardo-cardona",
+   "start": "2021-09-26",
+   "status": "current",
+   "term_id": "term:c0b264111913",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:15:19+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:15:19+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Hacemos Historia (PVEM–PT)",
+   "dst": "party:MX:pvem",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "src": "person:MX:jose-ricardo-gallardo-cardona",
+   "term_id": "term:c0b264111913",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:15:19+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:19+00:00",
+   "claim": "José Ricardo Gallardo Cardona holds office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "dst": "source:328f155084c9168b",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "snippet": "…Joaquín López Hermosa José María Quintana José Vicente Liñán Fernando Santamaría José Pedro de Arcos José Ignacio Duque Francisco León Mariano Martínez Manuel del Conde Anastasio Parrodi Manuel María Esparza José María Faz y Cardona José Gabriel Maciel 10 DICIEMBRE 1851 – DICIEMBRE 1852 1 ENERO 1853 – 9 FEBRERO 1853 El…",
+   "src": "term:c0b264111913",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:19+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:19+00:00",
+   "claim": "José Ricardo Gallardo Cardona holds office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "dst": "source:43f2404452c8addf",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "snippet": "…| Guerrero | Evelyn Salgado Pineda | Morena | | Michoacán | Alfredo Ramírez Bedolla | Morena | | Nayarit | Miguel Ángel Navarro Quintero | Morena | | Nuevo León | Samuel Alejandro García Sepúlveda | Movimiento Ciudadano | | Querétaro | Mauricio Kuri González | PAN | | Quintana Roo | María Elena Lezama Espinosa | Morena…",
+   "src": "term:c0b264111913",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:19+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:jose-ricardo-gallardo-cardona",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "src": "term:c0b264111913",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:15:19+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:15:18+00:00",
+   "id": "body:MX:state:MX-SLP:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:15:18+00:00",
+   "name": "Executive of San Luis Potosí",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:15:18+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:15:18+00:00",
+   "id": "level:MX:state:MX-SLP",
+   "iso_3166_2": "MX-SLP",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:15:18+00:00",
+   "name": "San Luis Potosí",
+   "pipeline_mode": "research_only",
+   "researched_name": "San Luis Potosí",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:15:18+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:15:18+00:00",
+   "id": "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:15:18+00:00",
+   "name": "Governor of San Luis Potosí",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:15:18+00:00"
+  },
+  {
+   "acronym": "PVEM",
+   "aliases": [
+    "PVEM",
+    "Partido Verde Ecologista de México"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:46+00:00",
+   "id": "party:MX:pvem",
+   "label": "PoliticalParty",
+   "name": "Partido Verde Ecologista de México",
+   "updated_at": "2026-11-14T23:21:28+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "id": "person:MX:jose-ricardo-gallardo-cardona",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:15:19+00:00",
+   "name": "José Ricardo Gallardo Cardona",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresosanluis.gob.mx",
+   "first_seen": "2026-11-14T23:15:18+00:00",
+   "id": "source:328f155084c9168b",
+   "label": "Source",
+   "name": "Legislaturas del Estado | Congreso de San Luis Potosi",
+   "retrieved_at": "2026-11-14T23:15:19+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:19+00:00",
+   "url": "http://lx.congresosanluis.gob.mx/conocenos/legislaturas-de-estado"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "unotv.com",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "id": "source:43f2404452c8addf",
+   "label": "Source",
+   "name": "Elecciones en México 2027: ¿Qué estados cambiarán de gobernador en 2027 y qué partidos gobiernan actualmente? - UnoTV",
+   "published_date": "2026-09-10T16:10:14.000Z",
+   "retrieved_at": "2026-11-14T23:15:26+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:26+00:00",
+   "url": "https://www.unotv.com/nacional/elecciones-en-mexico-2027-que-estados-cambiaran-de-gobernador-en-2027-y-que-partidos-gobiernan-actualmente"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresosanluis.gob.mx",
+   "first_seen": "2026-11-14T23:15:18+00:00",
+   "id": "source:ee9db2adceb5be83",
+   "label": "Source",
+   "name": "Rinden protesta las y los integrantes de la LXIV Legislatura.  | Congreso de San Luis Potosi",
+   "retrieved_at": "2026-11-14T23:15:19+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:19+00:00",
+   "url": "http://lix.congresosanluis.gob.mx/content/rinden-protesta-las-y-los-integrantes-de-la-lxiv-legislatura"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "end": "2027-09-25",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:19+00:00",
+   "id": "term:c0b264111913",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:15:19+00:00",
+   "name": "José Ricardo Gallardo Cardona — term from 2021-09-26",
+   "office": "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi",
+   "person": "person:MX:jose-ricardo-gallardo-cardona",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-09-26",
+   "updated_at": "2026-11-14T23:15:19+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-SLP",
+   "body:MX:state:MX-SLP:executive",
+   "office:MX:state:MX-SLP:executive:governor-of-san-luis-potosi"
+  ]
+ },
+ "politician": "person:MX:jose-ricardo-gallardo-cardona",
+ "sha256": "2f284aea1329b1c3cc2a6249ba6f9e2709695812e2b2e0d724be6a29fa092545",
+ "unreached_offices": []
+}

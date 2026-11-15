@@ -1,0 +1,467 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "src": "body:MX:state:MX-TLA:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-TLA",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-TLA:executive",
+   "src": "level:MX:state:MX-TLA",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:b351f7756e2d",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "src": "office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:11:48+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:44+00:00",
+   "claim": "office exists: Governor of Tlaxcala",
+   "dst": "source:5abbe60b2ac742a0",
+   "first_seen": "2026-11-14T23:11:44+00:00",
+   "src": "office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:44+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:44+00:00",
+   "claim": "office exists: Governor of Tlaxcala",
+   "dst": "source:7daa3fd865f85577",
+   "first_seen": "2026-11-14T23:11:44+00:00",
+   "src": "office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:44+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "end": "2027-08-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:11:48+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:lorena-cuellar-cisneros",
+   "start": "2021-08-31",
+   "status": "current",
+   "term_id": "term:b351f7756e2d",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:11:48+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:11:48+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Haremos Historia en Tlaxcala (MORENA, PT, PVEM, Nueva Alianza Tlaxcala)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "src": "person:MX:lorena-cuellar-cisneros",
+   "term_id": "term:b351f7756e2d",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:11:48+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:48+00:00",
+   "claim": "Lorena Cuéllar Cisneros holds office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "dst": "source:2f842d3972100eb2",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "snippet": "…Tlaxcala Elige Tlaxcala Elige Lorena Cuéllar Cisneros Gobernadora de Tlaxcala 31 de agosto de 2021 - 30 de agosto de 2027 58.3% Porcentaje de aprobación en el Estado 17/32 Posición de aprobación entre los…",
+   "src": "term:b351f7756e2d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:48+00:00",
+   "claim": "Lorena Cuéllar Cisneros holds office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "dst": "source:45e24b2703b4e121",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "snippet": "…ator of the Congress of the Union | | | In office 1 September 2012 – 31 August 2018 | | | Preceded by | Minerva Hernández Ramos | | Succeeded by | Ana Lilia Rivera Rivera | | Municipal President of Tlaxcala | | | In office 2008–2010 | | | Personal details | | | Born | Lorena Cuéllar Cisneros 20 February 1962 (age 64) T…",
+   "src": "term:b351f7756e2d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:48+00:00",
+   "claim": "Lorena Cuéllar Cisneros holds office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "dst": "source:5abbe60b2ac742a0",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "snippet": "…Gobernadora y Gabinete Gobernadora y Gabinete # Lorena Cuéllar Cisneros Gobernadora del Estado de Tlaxcala 2021 - 2027 ##### LIC. LORENA CUÉLLAR CISNEROS. Su trabajo se ha centrado, principalmente, en la atención a grupos…",
+   "src": "term:b351f7756e2d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:48+00:00",
+   "claim": "Lorena Cuéllar Cisneros holds office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "dst": "source:74879521f21d7e0b",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "snippet": "…Governor of Tlaxcala Governor of Tlaxcala | Governor of Tlaxcala | | | --- | --- | | | | | Incumbent Lorena Cuéllar Cisneros since August 31, 2021 | | | Term length | Six years, non-renewable | The governor of Tlaxcala is the position representing…",
+   "src": "term:b351f7756e2d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:48+00:00",
+   "claim": "Lorena Cuéllar Cisneros holds office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "dst": "source:7daa3fd865f85577",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "snippet": "…LORENA CUÉLLAR CISNEROS ## LORENA CUÉLLAR CISNEROS ## DESPACHO DE LA ## GOBERNADORA • DIPUTADA FEDERAL DEL CONGRESO DE LA UNIÓN DE MEXICO 2018. • COORDINADORA DE LOS PROGRAMAS…",
+   "src": "term:b351f7756e2d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:48+00:00",
+   "claim": "Lorena Cuéllar Cisneros holds office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "dst": "source:c5f5e6f9df49358c",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "snippet": "…Lic. Lorena Cuéllar Cisneros - CONAGO Lic. Lorena Cuéllar Cisneros - CONAGO # LIC. LORENA CUÉLLAR CISNEROS - Cargo: Gobernadora Constitucional - Lugar y fecha de nacimiento: Tlaxc…",
+   "src": "term:b351f7756e2d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:48+00:00",
+   "claim": "Lorena Cuéllar Cisneros holds office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "dst": "source:d5b8bc138b03cd2d",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "snippet": "…LIC. Lorena Cuéllar Cisneros, Gobernadora constitucional del Estado de Tlaxcala. (Del 01 de septiembre de 2021 al 2027) LIC. Lorena Cuéllar Cisneros, Gobernadora constitucional de…",
+   "src": "term:b351f7756e2d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:48+00:00",
+   "claim": "Lorena Cuéllar Cisneros holds office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "dst": "source:e7d8439418b18906",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "snippet": "…Quién es Lorena Cuéllar Cisneros, gobernadora de Tlaxcala Quién es Lorena Cuéllar Cisneros, gobernadora de Tlaxcala # Quién es Lorena Cuéllar Cisneros, gobernadora de Tlaxcala por Erne…",
+   "src": "term:b351f7756e2d",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:lorena-cuellar-cisneros",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "src": "term:b351f7756e2d",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:11:48+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "body:MX:state:MX-TLA:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:11:35+00:00",
+   "name": "Executive of Tlaxcala",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:11:35+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:11:35+00:00",
+   "id": "level:MX:state:MX-TLA",
+   "iso_3166_2": "MX-TLA",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:11:35+00:00",
+   "name": "Tlaxcala",
+   "pipeline_mode": "research_only",
+   "researched_name": "Tlaxcala",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:11:35+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:11:44+00:00",
+   "id": "office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:11:44+00:00",
+   "name": "Governor of Tlaxcala",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:11:44+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "person:MX:lorena-cuellar-cisneros",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:11:48+00:00",
+   "name": "Lorena Cuéllar Cisneros",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "tlaxcalaelige.com",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "source:2f842d3972100eb2",
+   "label": "Source",
+   "name": "Tlaxcala Elige",
+   "retrieved_at": "2026-11-14T23:11:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "url": "https://www.tlaxcalaelige.com/gobernador/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "source:45e24b2703b4e121",
+   "label": "Source",
+   "name": "Lorena Cuéllar",
+   "published_date": "2026-10-06T16:50:47.000Z",
+   "retrieved_at": "2026-11-14T23:11:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "url": "https://en.wikipedia.org/wiki/Lorena_Cu%C3%A9llar"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "tlaxcala.gob.mx",
+   "first_seen": "2026-11-14T23:11:44+00:00",
+   "id": "source:5abbe60b2ac742a0",
+   "label": "Source",
+   "name": "Gobernadora y Gabinete",
+   "retrieved_at": "2026-11-14T23:11:48+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "url": "https://tlaxcala.gob.mx/index.php/gobierno/dependencias"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "source:74879521f21d7e0b",
+   "label": "Source",
+   "name": "Governor of Tlaxcala",
+   "published_date": "2026-09-07T05:19:00.000Z",
+   "retrieved_at": "2026-11-14T23:11:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_Tlaxcala"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "tlaxcala.gob.mx",
+   "first_seen": "2026-11-14T23:11:44+00:00",
+   "id": "source:7daa3fd865f85577",
+   "label": "Source",
+   "name": "LORENA CUÉLLAR CISNEROS",
+   "retrieved_at": "2026-11-14T23:11:48+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "url": "https://gubernatura.tlaxcala.gob.mx/Pdf-Curri/Curriculum-LORENA%20CUELLAR%20CISNEROS.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "conago.org.mx",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "source:c5f5e6f9df49358c",
+   "label": "Source",
+   "name": "Lic. Lorena Cuéllar Cisneros - CONAGO",
+   "retrieved_at": "2026-11-14T23:11:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "url": "https://www.conago.org.mx/miembros/detalle/lorena-cuellar-cisneros"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "agendatlaxcala.com",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "source:d5b8bc138b03cd2d",
+   "label": "Source",
+   "name": "LIC. Lorena Cuéllar Cisneros, Gobernadora constitucional del Estado de Tlaxcala. (Del 01 de septiembre de 2021 al 2027)",
+   "published_date": "2026-02-02T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:11:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "url": "https://agendatlaxcala.com/2026/columnistas/lic-lorena-cuellar-cisneros-gobernadora-constitucional-del-estado-de-tlaxcala-del-01-de-septiembre-de-2021-al-2027-"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "culturacolectiva.com",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "source:e7d8439418b18906",
+   "label": "Source",
+   "name": "Quién es Lorena Cuéllar Cisneros, gobernadora de Tlaxcala",
+   "published_date": "2026-08-03T18:33:55.000Z",
+   "retrieved_at": "2026-11-14T23:11:48+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:48+00:00",
+   "url": "https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-lorena-cuellar/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-08-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "term:b351f7756e2d",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:11:48+00:00",
+   "name": "Lorena Cuéllar Cisneros — term from 2021-08-31",
+   "office": "office:MX:state:MX-TLA:executive:governor-of-tlaxcala",
+   "person": "person:MX:lorena-cuellar-cisneros",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-08-31",
+   "updated_at": "2026-11-14T23:11:48+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-TLA:executive:governor-of-tlaxcala": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-TLA",
+   "body:MX:state:MX-TLA:executive",
+   "office:MX:state:MX-TLA:executive:governor-of-tlaxcala"
+  ]
+ },
+ "politician": "person:MX:lorena-cuellar-cisneros",
+ "sha256": "95cf71ee9f3d1b37e38255e17d8f666bc38cab7d18b7a8269cdbacef8b5cacb8",
+ "unreached_offices": []
+}

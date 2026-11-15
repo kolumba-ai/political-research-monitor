@@ -1,0 +1,486 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "src": "body:MX:municipal:MX-PUE:puebla:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-PUE:puebla",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-PUE:puebla:council",
+   "src": "level:MX:municipal:MX-PUE:puebla",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:2e0855cd64ca",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "src": "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:18:03+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:17:59+00:00",
+   "claim": "office exists: Municipal President of Puebla",
+   "dst": "source:29e2c2e26aea3908",
+   "first_seen": "2026-11-14T23:17:59+00:00",
+   "src": "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:17:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:17:59+00:00",
+   "claim": "office exists: Municipal President of Puebla",
+   "dst": "source:2feab9a5ccb9fba6",
+   "first_seen": "2026-11-14T23:17:59+00:00",
+   "src": "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:17:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:25+00:00",
+   "claim": "municipality and its selection system (INAFED register)",
+   "dst": "source:73327df7bbd85a9f",
+   "first_seen": "2026-11-15T01:58:44+00:00",
+   "src": "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:25+00:00",
+   "via": "official_directory"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "end": "2027-10-14",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:18:03+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:jose-chedraui-budib",
+   "start": "2024-10-15",
+   "status": "current",
+   "term_id": "term:2e0855cd64ca",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:18:03+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:18:03+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "src": "person:MX:jose-chedraui-budib",
+   "term_id": "term:2e0855cd64ca",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:18:03+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:03+00:00",
+   "claim": "José Chedraui Budib holds office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "dst": "source:02dae79b8180f418",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "snippet": "…cano que se formó en las filas del PRI Por Miguel Flores 15 Oct, 2024 02:27 p. m. EST (Foto: Facebook @Pepe Chedraui) Este 15 de octubre, el empresario y político José Chedraui Budib, tomó las riendas de la capital del estado de Puebla, del mismo nombre, y se convirtió oficialmente en presidente municipal de esa entida…",
+   "src": "term:2e0855cd64ca",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:03+00:00",
+   "claim": "José Chedraui Budib holds office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "dst": "source:2feab9a5ccb9fba6",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "snippet": "…A TOMA DE PROTESTA DE LEY E INSTALACIÓN DEL HONORABLE AYUNTAMIENTO DEL MUNICIPIO DE PUEBLA, PERIODO 2024-2027; EL PRESIDENTE MUNICIPAL CONSTITUCIONAL, CIUDADANO JOSÉ CHEDRAUI BUDIB MANIFIESTA: BUENAS TARDES REGIDORAS, REGIDORES, SÍNDICA MUNICIPAL, Y DISTINGUIDOS INVITADOS QUE NOS ACOMPAÑAN EN ESTA SESIÓN SOLEMNE. CON F…",
+   "src": "term:2e0855cd64ca",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:03+00:00",
+   "claim": "José Chedraui Budib holds office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "dst": "source:6efd2469ca32d556",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "snippet": "…ebla ### Realiza la BUAP su Feria Profesiográfica 2026 ### La 28 de Octubre y sus justas demandas CARTONES ### Reforma aprobada Osvaldo Este martes 15 de octubre rindió protesta como alcalde de Puebla, José Chedraui Budib, quien el pasado mes de junio obtuvo la mayoría de votos en las urnas como abanderado del partido…",
+   "src": "term:2e0855cd64ca",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:03+00:00",
+   "claim": "José Chedraui Budib holds office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "dst": "source:9127aab10660ee2e",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "snippet": "…an C. Bonilla - ## Mario Díaz Hernández Presidente Municipal Municipio Libres - ## Alfonso Vélez Merino Presidente Municipal Municipio Los Reyes de Juárez - ## Aristóteles Campos Flores Presidente Municipal Municipio Ocoyucan - ## Fidel Flores Concha Presidente Municipal Municipio Oriental - ## Juan Carlos Varillas Lim…",
+   "src": "term:2e0855cd64ca",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:03+00:00",
+   "claim": "José Chedraui Budib holds office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "dst": "source:a627422dbe344337",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "snippet": "…presidente municipal de Puebla? ¿Quién es Pepe Chedraui, nuevo presidente municipal de Puebla? # Él es Pepe Chedraui, nuevo presidente municipal de Puebla ## José Chedraui Budib, mejor conocido como Pepe Chedraui, tomó protesta como presidente municipal de Puebla para la gestión 2024-2027; te decimos quién es. Crédito:…",
+   "src": "term:2e0855cd64ca",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:03+00:00",
+   "claim": "José Chedraui Budib holds office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "dst": "source:ac1e536ed7ceae0b",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "snippet": "…Hablamos solo de temas personales: Chedraui tras visita de Monreal El alcalde de Puebla, José Chedraui Budib, aseguró que su conversación con el presidente de la Junta de Coordinación Política (Jucopo) de la Cámara de Diputados federales, Ricardo Monreal Ávila,…",
+   "src": "term:2e0855cd64ca",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:03+00:00",
+   "claim": "José Chedraui Budib holds office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "dst": "source:e52ae34bb399e21c",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "snippet": "…Presidente municipal de Puebla Presidente municipal de Puebla | Presidente municipal de Puebla | | | --- | --- | | Escudo de Puebla de Zaragoza | | | José Chedraui Budib | | | Desde el 15 de octubre de 2024 | | | Ámbito | México | | Sede (y residencia) | Palacio Municipal de Puebla (sede adminis…",
+   "src": "term:2e0855cd64ca",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:jose-chedraui-budib",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "src": "term:2e0855cd64ca",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:18:03+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:17:57+00:00",
+   "id": "body:MX:municipal:MX-PUE:puebla:council",
+   "label": "GovernmentBody",
+   "name": "Municipal council of Puebla",
+   "name_local": "Ayuntamiento de Puebla",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T02:15:25+00:00",
+   "website": "http://www.pueblacapital.gob.mx"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:17:57+00:00",
+   "id": "level:MX:municipal:MX-PUE:puebla",
+   "inegi_code": "21114",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:17:57+00:00",
+   "name": "Puebla, Puebla",
+   "parent_division": "Puebla",
+   "parent_iso_3166_2": "MX-PUE",
+   "pipeline_mode": "research_only",
+   "population": 1692181,
+   "selection_system": "party-based popular election",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-15T02:15:25+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:17:59+00:00",
+   "id": "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "municipal president",
+    "presidente municipal"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:17:59+00:00",
+   "name": "Municipal President of Puebla",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by popular vote with the council slate (planilla)",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Presidente(a) Municipal de Puebla",
+   "updated_at": "2026-11-15T02:15:25+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "id": "person:MX:jose-chedraui-budib",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:18:03+00:00",
+   "name": "José Chedraui Budib",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "infobae.com",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "id": "source:02dae79b8180f418",
+   "label": "Source",
+   "name": "José Chedraui toma protesta y se convierte en presidente municipal de Puebla capital - Infobae",
+   "published_date": "2024-10-15T18:27:08.000Z",
+   "retrieved_at": "2026-11-14T23:18:03+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "url": "https://www.infobae.com/mexico/2024/10/15/jose-chedraui-toma-protesta-y-se-convierte-en-presidente-municipal-de-puebla-capital/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:17:54+00:00",
+   "id": "source:29e2c2e26aea3908",
+   "label": "Source",
+   "name": "Reforma 281: Constitución Política de los Estados Unidos Mexicanos. DOF 23-04-2026",
+   "retrieved_at": "2026-11-14T23:18:21+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pueblacapital.gob.mx",
+   "first_seen": "2026-11-14T23:17:59+00:00",
+   "id": "source:2feab9a5ccb9fba6",
+   "label": "Source",
+   "name": "pueblacapital.gob.mx",
+   "retrieved_at": "2026-11-14T23:18:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "url": "https://gaceta.pueblacapital.gob.mx/publicaciones/actas/cabildo/item/download/848_5411f834d0acd1b18d5f859745f1239e"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "elsoldemexico.com.mx",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "id": "source:6efd2469ca32d556",
+   "label": "Source",
+   "name": "¿Quién es José Chedraui, el nuevo alcalde de Puebla capital? - El Sol de Puebla | Noticias Locales, Policiacas, sobre México, Puebla y el Mundo",
+   "published_date": "2024-10-15T09:41:29.000Z",
+   "retrieved_at": "2026-11-14T23:18:03+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "url": "https://www.elsoldemexico.com.mx/elsoldepuebla/local/quien-es-jose-chedraui-el-nuevo-alcalde-de-puebla-capital-23914548"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "datos.gob.mx",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "id": "source:73327df7bbd85a9f",
+   "label": "Source",
+   "name": "INAFED — Presidentas y Presidentes municipales",
+   "retrieved_at": "2026-11-15T02:15:32+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:32+00:00",
+   "url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "puebla.gob.mx",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "id": "source:9127aab10660ee2e",
+   "label": "Source",
+   "name": "puebla.gob.mx",
+   "retrieved_at": "2026-11-14T23:18:03+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "url": "https://sepasevm.puebla.gob.mx/integrantes"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "aztecapuebla.com",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "id": "source:a627422dbe344337",
+   "label": "Source",
+   "name": "¿Quién es Pepe Chedraui, nuevo presidente municipal de Puebla?",
+   "published_date": "2024-10-16T17:29:31.000Z",
+   "retrieved_at": "2026-11-14T23:18:03+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "url": "https://www.aztecapuebla.com/noticias/quien-es-pepe-chedraui-nuevo-presidente-municipal-puebla/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "milenio.com",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "id": "source:ac1e536ed7ceae0b",
+   "label": "Source",
+   "name": "Hablamos solo de temas personales: Chedraui tras visita de Monreal",
+   "published_date": "2026-11-11T01:26:38.000Z",
+   "retrieved_at": "2026-11-14T23:18:03+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "url": "https://www.milenio.com/politica/hablamos-temas-personales-chedraui-visita-monreal"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "id": "source:e52ae34bb399e21c",
+   "label": "Source",
+   "name": "Presidente municipal de Puebla",
+   "published_date": "2026-09-30T11:19:18.000Z",
+   "retrieved_at": "2026-11-14T23:18:03+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:03+00:00",
+   "url": "https://es.wikipedia.org/wiki/Presidente_municipal_de_Puebla"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-10-14",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:03+00:00",
+   "id": "term:2e0855cd64ca",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:18:03+00:00",
+   "name": "José Chedraui Budib — term from 2024-10-15",
+   "office": "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla",
+   "person": "person:MX:jose-chedraui-budib",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-15",
+   "updated_at": "2026-11-14T23:18:03+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-PUE:puebla",
+   "body:MX:municipal:MX-PUE:puebla:council",
+   "office:MX:municipal:MX-PUE:puebla:council:municipal-president-of-puebla"
+  ]
+ },
+ "politician": "person:MX:jose-chedraui-budib",
+ "sha256": "a42366c693a15d002889cfedf2475714ff39ef8122bc69ce06bcee5fdc840c72",
+ "unreached_offices": []
+}

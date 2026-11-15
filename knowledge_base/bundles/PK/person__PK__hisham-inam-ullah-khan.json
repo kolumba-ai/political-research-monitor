@@ -1,0 +1,467 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "src": "body:PK:state:PK-KP:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-KP",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-KP:legislature",
+   "src": "level:PK:state:PK-KP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:d44a91c39b54",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:22:29+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of Khyber Pakhtunkhwa",
+   "dst": "source:74f729f4e69365d3",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of Khyber Pakhtunkhwa",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.99,
+   "constituency_code": "PK-106",
+   "constituency_name": "Lakki Marwat-II",
+   "current": true,
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:22:29+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "src": "person:PK:hisham-inam-ullah-khan",
+   "start": "2024-02-28",
+   "status": "current",
+   "term_id": "term:d44a91c39b54",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:22:29+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:22:29+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:pmln",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "src": "person:PK:hisham-inam-ullah-khan",
+   "term_id": "term:d44a91c39b54",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:22:29+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:29+00:00",
+   "claim": "Hisham Inam Ullah Khan holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:5530bb1bc75d4475",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "snippet": "…Hisham Inam Ullah Khan PK-92-2018/PK-106-24 – PAKP Hisham Inam Ullah Khan PK-92-2018/PK-106-24 – PAKP ## KHYBER PAKHTUNKHWA ### PK-106 Lakki Marwat-II Pakistan Muslim League (N)…",
+   "src": "term:d44a91c39b54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:29+00:00",
+   "claim": "Hisham Inam Ullah Khan holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:5c6891f5fe6c3afc",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "snippet": "…Independent candidate Hisham Inamullah Khan wins PK-106 Independent candidate Hisham Inamullah Khan wins PK-106 # Independent candidate Hisham Inamullah Khan wins PK-106 Independent candidate Hisham…",
+   "src": "term:d44a91c39b54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:29+00:00",
+   "claim": "Hisham Inam Ullah Khan holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:5d6592107db1d462",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "snippet": "…Hisham Inamullah Khan Hisham Inamullah Khan | Hisham Inamullah Khan | | | --- | --- | | Member of the Provincial Assembly of Khyber Pakhtunkhwa | | | Incumbent | | | Assumed off…",
+   "src": "term:d44a91c39b54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:29+00:00",
+   "claim": "Hisham Inam Ullah Khan holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:72a771c3c18fd552",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "snippet": "…-right:inherit}} | PK-106 Lakki Marwat-II | | | --- | --- | | Constituency for the Khyber Pakhtunkhwa Assembly | | | | | | Region | Bettani Tehsil and Ghazni Khel Tehsil of Lakki Marwat District | | Current constituency | | | Party | Pakistan Tehreek-e-Insaf | | Member(s) | Hisham Inamullah Khan | | Created from | PK-7…",
+   "src": "term:d44a91c39b54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:29+00:00",
+   "claim": "Hisham Inam Ullah Khan holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:d5f490d260ffda4e",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "snippet": "…TURNED CANDIDATE 1. PK-01 Chitral Upper Suriya Bibi 2. PK-02 Chitral Lower Fateh Ul Mulk Ali Nasir 3. PK-03 Swat-I Sharafat Ali 4. PK-04 Swat-II Ali Shah 5. PK-05 Swat-III Akhtar Khan 6. PK-6 Swat-IV Fazal Hakim Khan Yousafzai 7. PK-07 Swat-V Amjad Ali 8. PK-08 Swat-VI Hamid Ur Rehman 9. PK-09 Swat-VII Sultan Room 10.…",
+   "src": "term:d44a91c39b54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:29+00:00",
+   "claim": "Hisham Inam Ullah Khan holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:e2c254fe15d6f3b9",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "snippet": "…| Sr | Member Name | Constituency | | --- | --- | --- | | 1 | Suriya Bibi | PK-1 Chitral Upper | | 2 | Fateh Ul Mulk Ali Nasir | PK-2 Chitral Lower | | 3 | Sharafat Ali | PK-3 Swat-I | | 4 | Ali Shah | PK-4 Swat-II | | 5 | Akhtar Khan | PK-5 Swat-III | | 6 | Fazal Hakeem Khan | PK-6 Swat-IV | | 7 | Amjad Ali | PK-7 Swa…",
+   "src": "term:d44a91c39b54",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:hisham-inam-ullah-khan",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "src": "term:d44a91c39b54",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:22:29+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "PK",
+   "constituency_range": "PK-1 to PK-115",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "general_seats": 115,
+   "id": "body:PK:state:PK-KP:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2024-02-08",
+   "last_verified": "2026-11-15T01:30:53+00:00",
+   "members_verified": 144,
+   "name": "Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa)",
+   "name_local": "خیبر پختونخوا صوبائی اسمبلی",
+   "official_members_url": "https://www.pakp.gov.pk/members-listing/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 4,
+   "reserved_other": 0,
+   "reserved_women": 26,
+   "structure_agent_run": "agent_run_ceead2044f7b42aa9d194671e59f2fe3",
+   "total_seats": 145,
+   "updated_at": "2026-11-15T01:30:53+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "level:PK:state:PK-KP",
+   "iso_3166_2": "PK-KP",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Khyber Pakhtunkhwa",
+   "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "aliases": [
+    "Member of the Provincial Assembly of Khyber Pakhtunkhwa"
+   ],
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "is_elected": true,
+   "keywords": [
+    "member",
+    "provincial",
+    "diputad",
+    "deputy",
+    "legislat",
+    "congres"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:54:49+00:00",
+   "name": "Member of the Provincial Assembly of Khyber Pakhtunkhwa (general seat)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seat_type": "general",
+   "seats": 115,
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "official_single",
+   "updated_at": "2026-11-15T01:04:44+00:00"
+  },
+  {
+   "acronym": "PML-N",
+   "aliases": [
+    "PML-N",
+    "Pakistan Muslim League (N)",
+    "Pakistan Muslim League (Nawaz)",
+    "Pakistan Muslim League-Nawaz"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "party:PK:pmln",
+   "label": "PoliticalParty",
+   "name": "Pakistan Muslim League (N)",
+   "updated_at": "2026-11-15T01:51:06+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "id": "person:PK:hisham-inam-ullah-khan",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:22:29+00:00",
+   "name": "Hisham Inam Ullah Khan",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "id": "source:5530bb1bc75d4475",
+   "label": "Source",
+   "name": "Hisham Inam Ullah Khan PK-92-2018/PK-106-24 – PAKP",
+   "retrieved_at": "2026-11-15T01:22:29+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "app.com.pk",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "id": "source:5c6891f5fe6c3afc",
+   "label": "Source",
+   "name": "Independent candidate Hisham Inamullah Khan wins PK-106",
+   "published_date": "2024-02-09T16:42:53.000Z",
+   "retrieved_at": "2026-11-15T01:22:29+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "url": "https://www.app.com.pk/national/independent-candidate-hisham-inamullah-khan-wins-pk-106/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "id": "source:5d6592107db1d462",
+   "label": "Source",
+   "name": "Hisham Inamullah Khan",
+   "published_date": "2026-04-09T09:18:26.000Z",
+   "retrieved_at": "2026-11-15T01:22:29+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "url": "https://en.wikipedia.org/wiki/Hisham_Inamullah_Khan"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "id": "source:72a771c3c18fd552",
+   "label": "Source",
+   "name": "PK-106 Lakki Marwat-II",
+   "published_date": "2025-07-18T10:23:42.000Z",
+   "retrieved_at": "2026-11-15T01:22:29+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:22:29+00:00",
+   "url": "https://en.wikipedia.org/wiki/PK-106_Lakki_Marwat-II"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:54:39+00:00",
+   "id": "source:74f729f4e69365d3",
+   "label": "Source",
+   "name": "Bulletin Secretaries Conference Final for Printing copy",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:09:47+00:00",
+   "id": "source:d5f490d260ffda4e",
+   "label": "Source",
+   "name": "pakp.gov.pk",
+   "retrieved_at": "2026-11-15T01:23:32+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:23:32+00:00",
+   "url": "https://www.pakp.gov.pk/wp-content/uploads/2024/02/28-Feb-2024-SoP.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:04:44+00:00",
+   "id": "source:e2c254fe15d6f3b9",
+   "label": "Source",
+   "name": "Members Listing – PAKP",
+   "retrieved_at": "2026-11-15T01:23:32+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:23:32+00:00",
+   "url": "https://www.pakp.gov.pk/members-listing/"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.99,
+   "constituency_code": "PK-106",
+   "constituency_name": "Lakki Marwat-II",
+   "current": true,
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:22:29+00:00",
+   "id": "term:d44a91c39b54",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:22:29+00:00",
+   "name": "Hisham Inam Ullah Khan — term from 2024-02-28",
+   "office": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "person": "person:PK:hisham-inam-ullah-khan",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "start": "2024-02-28",
+   "updated_at": "2026-11-15T01:22:29+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-KP",
+   "body:PK:state:PK-KP:legislature",
+   "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa"
+  ]
+ },
+ "politician": "person:PK:hisham-inam-ullah-khan",
+ "sha256": "9931843b35a2ed97bee3ae97cd242ba7af0b75237f2c82c9b717580b5b5ea3ef",
+ "unreached_offices": []
+}

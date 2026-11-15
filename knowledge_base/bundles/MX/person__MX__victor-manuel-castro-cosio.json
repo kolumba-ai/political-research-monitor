@@ -1,0 +1,422 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "src": "body:MX:state:MX-BCS:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-BCS",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-BCS:executive",
+   "src": "level:MX:state:MX-BCS",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:d1d2878e5646",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "src": "office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:13:20+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:09+00:00",
+   "claim": "office exists: Governor of Baja California Sur",
+   "dst": "source:335bb7cde7fc85cb",
+   "first_seen": "2026-11-14T23:13:09+00:00",
+   "src": "office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:09+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "end": "2027-09-09",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:13:20+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:victor-manuel-castro-cosio",
+   "start": "2021-09-10",
+   "status": "current",
+   "term_id": "term:d1d2878e5646",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:13:20+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:13:20+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Morena–PT (Juntos Haremos Historia)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "src": "person:MX:victor-manuel-castro-cosio",
+   "term_id": "term:d1d2878e5646",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:13:20+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:20+00:00",
+   "claim": "Víctor Manuel Castro Cosío holds office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "dst": "source:0604395fb2d94ea9",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "snippet": "…Víctor Manuel Castro Cosío Víctor Manuel Castro Cosío | Víctor Manuel Castro Cosío | | | --- | --- | | Official portrait, 2022 | | | Governor of Baja California Sur | | | Incumbent…",
+   "src": "term:d1d2878e5646",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:20+00:00",
+   "claim": "Víctor Manuel Castro Cosío holds office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "dst": "source:2eccd4ce434edbb5",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "snippet": "…Víctor Manuel Castro Cosío Víctor Manuel Castro Cosío | Víctor Manuel Castro Cosío | | | --- | --- | | Castro Cosío en 2021 | | | Gobernador de Baja California Sur Actualmente en el…",
+   "src": "term:d1d2878e5646",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:20+00:00",
+   "claim": "Víctor Manuel Castro Cosío holds office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "dst": "source:3e21fa2a6963b5b3",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "snippet": "…Directorio Institucional – Gobierno de Baja California Sur Directorio Institucional – Gobierno de Baja California Sur # Directorio Institucional VÍCTOR MANUEL CASTRO COSÍO GOBERNADOR CONSTITUCIONAL DEL ESTADO DE BAJA CALIFORNIA SUR victor.castro@bcs.gob.mx (612) 123 9400 Palacio de Gobierno Isabel la Católica e Ignacio…",
+   "src": "term:d1d2878e5646",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:20+00:00",
+   "claim": "Víctor Manuel Castro Cosío holds office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "dst": "source:57bc1d8efd2f383c",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "snippet": "…GOBERNADOR DEL ESTADO – Gobierno de Baja California Sur GOBERNADOR DEL ESTADO – Gobierno de Baja California Sur # GOBERNADOR DEL ESTADO Prof. Víctor Manuel Castro Cosío Gobernador Constitucional del Estado de Baja California Sur (2021-2027) Político y profesor sudcaliforniano. Nació en La Paz, Baja California Sur,…",
+   "src": "term:d1d2878e5646",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:20+00:00",
+   "claim": "Víctor Manuel Castro Cosío holds office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "dst": "source:6b07c1c611a14efa",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "snippet": "…Governor of Baja California Sur Governor of Baja California Sur | Governor of Baja California Sur | | | --- | --- | | | | | Incumbent Víctor Manuel Castro Cosío since 10 September 2021 | | | Term length | Six years, non-renewable. | | Inaugural holder | Félix Agramont Cota | | Formation…",
+   "src": "term:d1d2878e5646",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:20+00:00",
+   "claim": "Víctor Manuel Castro Cosío holds office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "dst": "source:b57a2aa57a7c316f",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "snippet": "…Quién es Víctor Manuel Castro Cosío, gobernador de BCS Quién es Víctor Manuel Castro Cosío, gobernador de BCS # Quién es Víctor Manuel Castro Cosío, gobernador de BCS por Ernesto Palacios Na…",
+   "src": "term:d1d2878e5646",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:victor-manuel-castro-cosio",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "src": "term:d1d2878e5646",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:13:20+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "body:MX:state:MX-BCS:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:12:59+00:00",
+   "name": "Executive of Baja California Sur",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:12:59+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:12:59+00:00",
+   "id": "level:MX:state:MX-BCS",
+   "iso_3166_2": "MX-BCS",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:12:59+00:00",
+   "name": "Baja California Sur",
+   "pipeline_mode": "research_only",
+   "researched_name": "Baja California Sur",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:12:59+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:13:09+00:00",
+   "id": "office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:13:09+00:00",
+   "name": "Governor of Baja California Sur",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:13:09+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "person:MX:victor-manuel-castro-cosio",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:58:19+00:00",
+   "name": "Víctor Manuel Castro Cosío",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "source:0604395fb2d94ea9",
+   "label": "Source",
+   "name": "Víctor Manuel Castro Cosío",
+   "published_date": "2026-08-30T03:25:46.000Z",
+   "retrieved_at": "2026-11-14T23:13:20+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "url": "https://en.wikipedia.org/wiki/V%C3%ADctor_Manuel_Castro_Cos%C3%ADo"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "source:2eccd4ce434edbb5",
+   "label": "Source",
+   "name": "Víctor Manuel Castro Cosío",
+   "published_date": "2026-09-22T22:58:29.000Z",
+   "retrieved_at": "2026-11-14T23:13:20+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "url": "https://es.wikipedia.org/wiki/V%C3%ADctor_Manuel_Castro_Cos%C3%ADo"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "bcs.gob.mx",
+   "first_seen": "2026-11-14T23:13:09+00:00",
+   "id": "source:335bb7cde7fc85cb",
+   "label": "Source",
+   "name": "CONSTITUCIÓN POLÍTICA DEL ESTADO LIBRE Y SOBERANO",
+   "retrieved_at": "2026-11-14T23:13:20+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "url": "https://tramites.bcs.gob.mx/wp-content/uploads/2025/01/CPoliticaBCS-REFORMA-11-07-2024.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "bcs.gob.mx",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "source:3e21fa2a6963b5b3",
+   "label": "Source",
+   "name": "Directorio Institucional – Gobierno de Baja California Sur",
+   "retrieved_at": "2026-11-14T23:13:20+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "url": "https://www.bcs.gob.mx/directorio-institucional/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "bcs.gob.mx",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "source:57bc1d8efd2f383c",
+   "label": "Source",
+   "name": "GOBERNADOR DEL ESTADO – Gobierno de Baja California Sur",
+   "retrieved_at": "2026-11-14T23:13:20+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "url": "https://www.bcs.gob.mx/gobernador-del-estado/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "source:6b07c1c611a14efa",
+   "label": "Source",
+   "name": "Governor of Baja California Sur",
+   "published_date": "2026-09-07T05:03:19.000Z",
+   "retrieved_at": "2026-11-14T23:13:20+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_Baja_California_Sur"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "culturacolectiva.com",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "source:b57a2aa57a7c316f",
+   "label": "Source",
+   "name": "Quién es Víctor Manuel Castro Cosío, gobernador de BCS",
+   "published_date": "2026-08-03T04:53:58.000Z",
+   "retrieved_at": "2026-11-14T23:13:20+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:20+00:00",
+   "url": "https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-victor-castro-cosio/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-09",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:13:20+00:00",
+   "id": "term:d1d2878e5646",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:13:20+00:00",
+   "name": "Víctor Manuel Castro Cosío — term from 2021-09-10",
+   "office": "office:MX:state:MX-BCS:executive:governor-of-baja-california-sur",
+   "person": "person:MX:victor-manuel-castro-cosio",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-09-10",
+   "updated_at": "2026-11-14T23:13:20+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-BCS:executive:governor-of-baja-california-sur": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-BCS",
+   "body:MX:state:MX-BCS:executive",
+   "office:MX:state:MX-BCS:executive:governor-of-baja-california-sur"
+  ]
+ },
+ "politician": "person:MX:victor-manuel-castro-cosio",
+ "sha256": "dc6ea74dff92391c2d838fb214f2ea6db9cdc4e0310c93aadd419f4ab24006b3",
+ "unreached_offices": []
+}

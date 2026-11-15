@@ -1,0 +1,405 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "src": "body:PK:state:PK-KP:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-KP",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-KP:legislature",
+   "src": "level:PK:state:PK-KP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:e83e5c6e7b42",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:27:23+00:00"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:27:23+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "women_reserved",
+   "src": "person:PK:madina-gul-afridi",
+   "start": "2025-07-20",
+   "status": "current",
+   "term_id": "term:e83e5c6e7b42",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:27:23+00:00"
+  },
+  {
+   "as_of": "2026-11-15T01:27:23+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:juif",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "src": "person:PK:madina-gul-afridi",
+   "term_id": "term:e83e5c6e7b42",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T01:27:23+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:23+00:00",
+   "claim": "Madina Gul Afridi holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:170776d0416a7078",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "snippet": "…9-2024) – PAKP # Drawing attention towards the incomplete work on Bata Tal Road Bara? CAN # 608 CAN Motion Date 08 Dec 2025 Status Statement Made On CAN Movers Madina Gul Afridi, Related Department Communication & Works CAN Document CAN 608 ## Provincial Assembly Khyber Pakhtunkhwa Khyber Road, Cantt, Peshawar Exchange…",
+   "src": "term:e83e5c6e7b42",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:23+00:00",
+   "claim": "Madina Gul Afridi holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:4504ed7c5a4fc4cb",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "snippet": "…ecurity in KP # Opposition MPs concerned over worsening security in KP By Web Desk - August 13, 2025 PESHAWAR Opposition lawmaker Khyber Pakhtunkhwa Assembly Madina Afridi raised concerns about the worsening law and order situation in the province. Speaking on the floor of the house, she emphasized that maintaining pea…",
+   "src": "term:e83e5c6e7b42",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:23+00:00",
+   "claim": "Madina Gul Afridi holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:91a5739f8b71d81d",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "snippet": "…se on Friday. The delegation included Khadija Bibi of the Awami National Party (ANP), Afshan Hussain of PML-N, Rehana Ismail of Jamiat Ulema-e-Islam-Fazl (JUI-F) and Madina Gul Afridi of JUI-F. During the meeting, the Governor and MPAs exchanged views on the province’s political landscape and discussed the need to adva…",
+   "src": "term:e83e5c6e7b42",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:23+00:00",
+   "claim": "Madina Gul Afridi holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:d96a4a4b246196ef",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "snippet": "…Madina Gul Afridi WR-08-2025 – PAKP Madina Gul Afridi WR-08-2025 – PAKP ## KHYBER PAKHTUNKHWA ### WR-8 Jamiat Ulema Islam (F) ##### DoB 1997-08-10 Ms. Madina Gul Afridi ha…",
+   "src": "term:e83e5c6e7b42",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:23+00:00",
+   "claim": "Madina Gul Afridi holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:db5cb8d4c202525f",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "snippet": "…war Khan and James Iqbal (Non-Muslim). The notified members of the Khyber Pakhtunkhwa Assembly on reserved seats for women and non-Muslims including Jamiat Ulema-e-Islam-Fazl’s (JUI-F) Balqees, Saira Afreen, Aiman Jalil Jan, Madina Gul Afridi, Rabia Shaheen, Nelofar Begum, Naheeda Noor, and Arifa Bibi. Pakistan Muslim…",
+   "src": "term:e83e5c6e7b42",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:27:23+00:00",
+   "claim": "Madina Gul Afridi holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "dst": "source:e911895ca9d13662",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "snippet": "…tarians got reserved seats. It said JUIF got 8 seats, PMLN and PPP got five seats each and ANP and PTIP one seat each. JUIF’s Naeema Kishor, Sitara Afreen, Aiman Jalil, Madina Gul Afridi, Rabia Shaheen, Nilofar Begum, Nahida Noor and Arifa Bibi became MPAs on reserved seats. Similarly, PMLN’s Amina Sardar, Faiza Malik,…",
+   "src": "term:e83e5c6e7b42",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:madina-gul-afridi",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "src": "term:e83e5c6e7b42",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:27:23+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "PK",
+   "constituency_range": "PK-1 to PK-115",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "general_seats": 115,
+   "id": "body:PK:state:PK-KP:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2024-02-08",
+   "last_verified": "2026-11-15T01:30:53+00:00",
+   "members_verified": 144,
+   "name": "Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa)",
+   "name_local": "خیبر پختونخوا صوبائی اسمبلی",
+   "official_members_url": "https://www.pakp.gov.pk/members-listing/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 4,
+   "reserved_other": 0,
+   "reserved_women": 26,
+   "structure_agent_run": "agent_run_ceead2044f7b42aa9d194671e59f2fe3",
+   "total_seats": 145,
+   "updated_at": "2026-11-15T01:30:53+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "level:PK:state:PK-KP",
+   "iso_3166_2": "PK-KP",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Khyber Pakhtunkhwa",
+   "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "first_seen": "2026-11-15T01:04:44+00:00",
+   "id": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "is_elected": true,
+   "label": "PoliticalOffice",
+   "name": "Member of the Provincial Assembly of Khyber Pakhtunkhwa (reserved seat for women)",
+   "seat_type": "women_reserved",
+   "seats": 26,
+   "selection_method": "indirect_election",
+   "single_seat": false,
+   "updated_at": "2026-11-15T01:04:44+00:00"
+  },
+  {
+   "acronym": "JUI-F",
+   "aliases": [
+    "JUI-F",
+    "Jamiat Ulema Islam (F)",
+    "Jamiat Ulema-e-Islam (F)",
+    "Jamiat-e-Ulema Islam (F)"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:50:08+00:00",
+   "id": "party:PK:juif",
+   "label": "PoliticalParty",
+   "name": "Jamiat-e-Ulema Islam (F)",
+   "updated_at": "2026-11-15T01:30:34+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "id": "person:PK:madina-gul-afridi",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:27:23+00:00",
+   "name": "Madina Gul Afridi",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "id": "source:170776d0416a7078",
+   "label": "Source",
+   "name": "CAN No 608(S09-2024) – PAKP",
+   "retrieved_at": "2026-11-15T01:27:23+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "url": "https://www.pakp.gov.pk/canotices/can-no-608s09-2024/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "leadpakistan.com.pk",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "id": "source:4504ed7c5a4fc4cb",
+   "label": "Source",
+   "name": "Opposition MPs concerned over worsening security in KP",
+   "published_date": "2025-08-12T21:12:55.000Z",
+   "retrieved_at": "2026-11-15T01:27:23+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "url": "https://leadpakistan.com.pk/news/opposition-mps-concerned-over-worsening-security-in-kp/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "app.com.pk",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "id": "source:91a5739f8b71d81d",
+   "label": "Source",
+   "name": "Women MPAs delegation meets Governor KP",
+   "published_date": "2025-09-26T13:26:47.000Z",
+   "retrieved_at": "2026-11-15T01:28:29+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:28:29+00:00",
+   "url": "https://www.app.com.pk/domestic/women-mpas-delegation-meets-governor-kp/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "id": "source:d96a4a4b246196ef",
+   "label": "Source",
+   "name": "Madina Gul Afridi WR-08-2025 – PAKP",
+   "retrieved_at": "2026-11-15T01:27:23+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:27:23+00:00",
+   "url": "https://www.pakp.gov.pk/members/madina-gul-afridi-wr-08-2025/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "app.com.pk",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "id": "source:db5cb8d4c202525f",
+   "label": "Source",
+   "name": "ECP restores reserved Assembly seats after SC verdict",
+   "published_date": "2025-07-02T15:28:11.000Z",
+   "retrieved_at": "2026-11-15T01:51:06+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:06+00:00",
+   "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "app.com.pk",
+   "first_seen": "2026-11-15T01:27:04+00:00",
+   "id": "source:e911895ca9d13662",
+   "label": "Source",
+   "name": "ECP notifies allotment of 20 reserved seats for women in KP assembly",
+   "published_date": "2024-03-05T18:21:41.000Z",
+   "retrieved_at": "2026-11-15T01:30:04+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:30:04+00:00",
+   "url": "https://www.app.com.pk/domestic/ecp-notifies-allotment-of-20-reserved-seats-for-women-in-kp-assembly/"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.99,
+   "current": true,
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:27:23+00:00",
+   "id": "term:e83e5c6e7b42",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:27:23+00:00",
+   "name": "Madina Gul Afridi — term from 2025-07-20",
+   "office": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women",
+   "person": "person:PK:madina-gul-afridi",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "women_reserved",
+   "start": "2025-07-20",
+   "updated_at": "2026-11-15T01:27:23+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-KP",
+   "body:PK:state:PK-KP:legislature",
+   "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa-reserved-seat-for-women"
+  ]
+ },
+ "politician": "person:PK:madina-gul-afridi",
+ "sha256": "b3c493fe6006baf1e1aff62f46eb5ec4b6be7e321df48a28876b406b26ed70e9",
+ "unreached_offices": []
+}

@@ -1,0 +1,466 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "src": "body:MX:state:MX-CAM:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-CAM",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-CAM:executive",
+   "src": "level:MX:state:MX-CAM",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:746c4cd04375",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "src": "office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:13:55+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:53+00:00",
+   "claim": "office exists: Governor of Campeche",
+   "dst": "source:3a2a3e53c4415f80",
+   "first_seen": "2026-11-14T23:13:53+00:00",
+   "src": "office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:53+00:00",
+   "claim": "office exists: Governor of Campeche",
+   "dst": "source:a5fada351bead68a",
+   "first_seen": "2026-11-14T23:13:53+00:00",
+   "src": "office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "end": "2027-09-15",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:13:55+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:layda-elena-sansores-san-roman",
+   "start": "2021-09-16",
+   "status": "current",
+   "term_id": "term:746c4cd04375",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:13:55+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:13:55+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Haremos Historia en Campeche (Morena–PT)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "src": "person:MX:layda-elena-sansores-san-roman",
+   "term_id": "term:746c4cd04375",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:13:55+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:55+00:00",
+   "claim": "Layda Elena Sansores San Román holds office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "dst": "source:26d9a257593ba9cc",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "snippet": "…Layda Elena Sansores San Román rinde protesta ante el Congreso como Gobernadora Constitucional del Estado de Campeche – Poder Legislativo del Estado de Campeche Layda Elena Sansores San…",
+   "src": "term:746c4cd04375",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:55+00:00",
+   "claim": "Layda Elena Sansores San Román holds office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "dst": "source:3a2a3e53c4415f80",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "snippet": "…del 01 de octubre de 2021 al 30 de septiembre de 2024. LISTADO DE CANDIDATURAS ELECTAS POR PARTIDO POLÍTICO | GOBERNADORA ELECTA | | | | --- | --- | --- | | PARTIDO POLÍTICO COALICIÓN | O NOMBRE | SEXO | | | LAYDA ELENA SANSORES SAN ROMAN | M | | | | FÓRMULAS DE DIPUTACIONES LOCALES ELECTAS POR EL PRINCIPIO DE MAYORÍA…",
+   "src": "term:746c4cd04375",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:55+00:00",
+   "claim": "Layda Elena Sansores San Román holds office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "dst": "source:45bd8d06020abce7",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "snippet": "…91-31 de agosto de 1994 | | | Senadora del Congreso de la Unión por Campeche Segunda Fórmula | | | 1 de septiembre de 1994-31 de agosto de 2000 | | | Predecesor | Carlos Sales Gutiérrez | | Sucesora | Aracely Escalante Jasso | | Información personal | | | Nombre de nacimiento | Layda Elena Sansores San Román | | Nacimi…",
+   "src": "term:746c4cd04375",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:55+00:00",
+   "claim": "Layda Elena Sansores San Román holds office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "dst": "source:53fbc0606ca1fe13",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "snippet": "…layda elena sansores # Layda Elena Sansores ## About Layda Elena Sansores San Román (born 7 August 1945) is a Mexican politician affiliated with the National Regeneration Movement and the Governor of Campeche since 2021. She served a…",
+   "src": "term:746c4cd04375",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:55+00:00",
+   "claim": "Layda Elena Sansores San Román holds office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "dst": "source:5e66713bcf3bc992",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "snippet": "…--- | --- | | Sansores in 2022 | | | Governor of Campeche | | | Incumbent | | | Assumed office 15 September 2021 | | | Preceded by | Carlos Miguel Aysa González | | Personal details | | | Born | Layda Elena Sansores San Román 7 August 1945 (age 81) Campeche, Campeche, Mexico | | Party | National Regeneration Movement (…",
+   "src": "term:746c4cd04375",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:55+00:00",
+   "claim": "Layda Elena Sansores San Román holds office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "dst": "source:a5fada351bead68a",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "snippet": "…mbramiento de las comisiones de ceremonial. 4. Receso. 5. Reanudación de la sesión. 6. Protesta de ley de la Gobernadora Electa. 7. Uso de la palabra a la Licenciada Layda Elena Sansores San Román, Gobernadora Constitucional del Estado. (Opcional) 8. En su caso, concesión del uso de la palabra del Licenciado Adán Augus…",
+   "src": "term:746c4cd04375",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:55+00:00",
+   "claim": "Layda Elena Sansores San Román holds office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "dst": "source:d6a60bd3104b89ba",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "snippet": "…Biografías - Layda Sansores San Román Biografías - Layda Sansores San Román # Biografías ##### Gobernadora de Campeche 2021 - 2027 Layda Elena Sansores San Román nació en la ciudad de Campec…",
+   "src": "term:746c4cd04375",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:13:55+00:00",
+   "claim": "Layda Elena Sansores San Román holds office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "dst": "source:d93d02dc3e3d5798",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "snippet": "…Layda Elena Sansores San Román, Gobernadora · Gubernatura de Campeche · ENFEMEX Layda Elena Sansores San Román, Gobernadora · Gubernatura de Campeche · ENFEMEX # Layda Elena Sansores Sa…",
+   "src": "term:746c4cd04375",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:layda-elena-sansores-san-roman",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "src": "term:746c4cd04375",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:13:55+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "body:MX:state:MX-CAM:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:13:46+00:00",
+   "name": "Executive of Campeche",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:13:46+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:13:46+00:00",
+   "id": "level:MX:state:MX-CAM",
+   "iso_3166_2": "MX-CAM",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:13:46+00:00",
+   "name": "Campeche",
+   "pipeline_mode": "research_only",
+   "researched_name": "Campeche",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:13:46+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:13:53+00:00",
+   "id": "office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:13:53+00:00",
+   "name": "Governor of Campeche",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:13:53+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "person:MX:layda-elena-sansores-san-roman",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:13:55+00:00",
+   "name": "Layda Elena Sansores San Román",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresocam.gob.mx",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "source:26d9a257593ba9cc",
+   "label": "Source",
+   "name": "Layda Elena Sansores San Román rinde protesta ante el Congreso como Gobernadora Constitucional del Estado de Campeche – Poder Legislativo del Estado de Campeche",
+   "published_date": "2021-10-01T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:13:55+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "url": "https://www.congresocam.gob.mx/layda-elena-sansores-san-roman-rinde-protesta-ante-el-congreso-como-gobernadora-constitucional-del-estado-de-campeche/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "campeche.gob.mx",
+   "first_seen": "2026-11-14T23:13:53+00:00",
+   "id": "source:3a2a3e53c4415f80",
+   "label": "Source",
+   "name": "SECCIÓN ADMINISTRATIVA",
+   "retrieved_at": "2026-11-14T23:13:55+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "url": "https://periodicooficial.campeche.gob.mx/sipoec/public/periodicos/202110/PO1537SS12102021.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "source:45bd8d06020abce7",
+   "label": "Source",
+   "name": "Layda Sansores",
+   "published_date": "2026-11-05T00:19:08.000Z",
+   "retrieved_at": "2026-11-14T23:13:55+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "url": "https://es.wikipedia.org/wiki/Layda_Sansores"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "exa.ai",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "source:53fbc0606ca1fe13",
+   "label": "Source",
+   "name": "layda elena sansores",
+   "retrieved_at": "2026-11-14T23:13:55+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "url": "https://exa.ai/library/person/gbwx2kyc5lw"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "source:5e66713bcf3bc992",
+   "label": "Source",
+   "name": "Layda Sansores",
+   "published_date": "2026-11-11T20:37:01.000Z",
+   "retrieved_at": "2026-11-14T23:13:55+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "url": "https://en.wikipedia.org/wiki/Layda_Sansores"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "campeche.gob.mx",
+   "first_seen": "2026-11-14T23:13:53+00:00",
+   "id": "source:a5fada351bead68a",
+   "label": "Source",
+   "name": "SECCIÓN LEGISLATIVA",
+   "retrieved_at": "2026-11-14T23:13:55+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "url": "https://periodicooficial.campeche.gob.mx/sipoec/public/periodicos/202109/PO1519TS14092021.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "layda.com.mx",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "source:d6a60bd3104b89ba",
+   "label": "Source",
+   "name": "Biografías - Layda Sansores San Román",
+   "retrieved_at": "2026-11-14T23:13:55+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "url": "https://layda.com.mx/biografias/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "enfemex.com",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "source:d93d02dc3e3d5798",
+   "label": "Source",
+   "name": "Layda Elena Sansores San Román, Gobernadora · Gubernatura de Campeche · ENFEMEX",
+   "retrieved_at": "2026-11-14T23:13:55+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:13:55+00:00",
+   "url": "https://enfemex.com/quien-gobierna/campeche/gubernatura/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-15",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:13:55+00:00",
+   "id": "term:746c4cd04375",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:13:55+00:00",
+   "name": "Layda Elena Sansores San Román — term from 2021-09-16",
+   "office": "office:MX:state:MX-CAM:executive:governor-of-campeche",
+   "person": "person:MX:layda-elena-sansores-san-roman",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2021-09-16",
+   "updated_at": "2026-11-14T23:13:55+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-CAM:executive:governor-of-campeche": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-CAM",
+   "body:MX:state:MX-CAM:executive",
+   "office:MX:state:MX-CAM:executive:governor-of-campeche"
+  ]
+ },
+ "politician": "person:MX:layda-elena-sansores-san-roman",
+ "sha256": "ea1fd7a53a147d4949545646bd36bdec58d243d521a0328f0a77a7ec23334eeb",
+ "unreached_offices": []
+}

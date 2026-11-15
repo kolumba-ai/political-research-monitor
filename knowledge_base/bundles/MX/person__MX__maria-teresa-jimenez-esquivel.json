@@ -1,0 +1,455 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "src": "body:MX:state:MX-AGU:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-AGU",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-AGU:executive",
+   "src": "level:MX:state:MX-AGU",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:36a6f76c4e08",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "src": "office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:11:59+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:53+00:00",
+   "claim": "office exists: Governor of Aguascalientes",
+   "dst": "source:03c451068fde079b",
+   "first_seen": "2026-11-14T23:11:53+00:00",
+   "src": "office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:53+00:00",
+   "claim": "office exists: Governor of Aguascalientes",
+   "dst": "source:43f806bdf4f2259f",
+   "first_seen": "2026-11-14T23:11:53+00:00",
+   "src": "office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:53+00:00",
+   "claim": "office exists: Governor of Aguascalientes",
+   "dst": "source:9d7ec7cde3009fe1",
+   "first_seen": "2026-11-14T23:11:53+00:00",
+   "src": "office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:11:59+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:maria-teresa-jimenez-esquivel",
+   "start": "2022-10-01",
+   "status": "current",
+   "term_id": "term:36a6f76c4e08",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:11:59+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:11:59+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Va por Aguascalientes (PAN, PRI, PRD)",
+   "dst": "party:MX:pan",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "src": "person:MX:maria-teresa-jimenez-esquivel",
+   "term_id": "term:36a6f76c4e08",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:11:59+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:59+00:00",
+   "claim": "María Teresa Jiménez Esquivel holds office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "dst": "source:43f806bdf4f2259f",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "snippet": "…ientes Foto: Especial Estados | 12-06-22 | 11:44 | Xóchitl Álvarez | Actualizada | 11-03-23 | 10:57 | Xóchitl Álvarez Álvarez Aguascalientes, Ags.- La panista María Teresa Jiménez Esquivel recibió esta mañana la Constancia de Mayoría que la acredita como gobernadora electa de Aguascalientes para el periodo 2022-2027, y…",
+   "src": "term:36a6f76c4e08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:59+00:00",
+   "claim": "María Teresa Jiménez Esquivel holds office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "dst": "source:5bfc2ec1c3f48e73",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "snippet": "…ménez | Tere Jiménez | | | --- | --- | | Tere Jiménez en 2026. | | | Gobernadora de Aguascalientes Actualmente en el cargo | | | Desde el 1 de octubre de 2022 | | | Gabinete | Gabinete de Teresa Jiménez Esquivel | | Predecesor | Martín Orozco Sandoval | | Diputada del Congreso de la Unión Representación Proporcional |…",
+   "src": "term:36a6f76c4e08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:59+00:00",
+   "claim": "María Teresa Jiménez Esquivel holds office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "dst": "source:65954597e3d68042",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "snippet": "…Governor of Aguascalientes Governor of Aguascalientes | Governor of Aguascalientes | | | --- | --- | | | | | Incumbent María Teresa Jiménez Esquivel since October 1, 2022 | | | Term length | Six years, non-renewable. | | Inaugural holder | Pedro García Rojas | | Formation…",
+   "src": "term:36a6f76c4e08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:59+00:00",
+   "claim": "María Teresa Jiménez Esquivel holds office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "dst": "source:c2b4c896467146cf",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "snippet": "…Versión Estenográfica, Sesión Solemne Toma de Protesta María Teresa Esquivel Jiménez, Gobernadora Constitucional del Estado de Aguascalientes, Primer Periodo Ordinario de Sesiones, Segundo Año de Ejercicio Constitucional del Po…",
+   "src": "term:36a6f76c4e08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:59+00:00",
+   "claim": "María Teresa Jiménez Esquivel holds office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "dst": "source:e1ab0be197b3b6f9",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "snippet": "…ESQUIVEL ### CURRICULAR PROFILE María Teresa Jiménez Esquivel comes from a working-class family; from a young age, she has dedicated herself to fighting for peo…",
+   "src": "term:36a6f76c4e08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:11:59+00:00",
+   "claim": "María Teresa Jiménez Esquivel holds office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "dst": "source:e1ace827bdf39706",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "snippet": "…María Teresa Jiménez Esquivel María Teresa Jiménez Esquivel María Teresa Jiménez Esquivel (born 25 May 1984) is a Mexican politician affiliated with the National Action Party(PAN).…",
+   "src": "term:36a6f76c4e08",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:maria-teresa-jimenez-esquivel",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "src": "term:36a6f76c4e08",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:11:59+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "body:MX:state:MX-AGU:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:11:48+00:00",
+   "name": "Executive of Aguascalientes",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:11:48+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:11:48+00:00",
+   "id": "level:MX:state:MX-AGU",
+   "iso_3166_2": "MX-AGU",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:11:48+00:00",
+   "name": "Aguascalientes",
+   "pipeline_mode": "research_only",
+   "researched_name": "Aguascalientes",
+   "special_status_note": "The current governor serves a transitional five-year term (2022–2027) rather than the usual six years, to align election calendars.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:11:48+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:11:53+00:00",
+   "id": "office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:11:53+00:00",
+   "name": "Governor of Aguascalientes",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 5.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:11:53+00:00"
+  },
+  {
+   "acronym": "PAN",
+   "aliases": [
+    "PAN",
+    "Partido Acción Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "party:MX:pan",
+   "label": "PoliticalParty",
+   "name": "Partido Acción Nacional",
+   "updated_at": "2026-11-14T23:21:02+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "person:MX:maria-teresa-jimenez-esquivel",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:58:15+00:00",
+   "name": "María Teresa Jiménez Esquivel",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "aguascalientes.gob.mx",
+   "first_seen": "2026-11-14T23:11:53+00:00",
+   "id": "source:03c451068fde079b",
+   "label": "Source",
+   "name": "Gobernadora y Gabinete",
+   "retrieved_at": "2026-11-14T23:11:59+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "url": "https://www.aguascalientes.gob.mx/gabinete.html"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "eluniversal.com.mx",
+   "first_seen": "2026-11-14T23:11:53+00:00",
+   "id": "source:43f806bdf4f2259f",
+   "label": "Source",
+   "name": "Tere Jiménez recibe Constancia de Mayoría como gobernadora electa de Aguascalientes",
+   "published_date": "2022-06-12T17:44:22.000Z",
+   "retrieved_at": "2026-11-14T23:11:59+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "url": "https://www.eluniversal.com.mx/estados/tere-jimenez-recibe-constancia-de-mayoria-como-gobernadora-electa-de-aguascalientes"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "source:5bfc2ec1c3f48e73",
+   "label": "Source",
+   "name": "Tere Jiménez",
+   "published_date": "2026-11-05T00:16:36.000Z",
+   "retrieved_at": "2026-11-14T23:11:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "url": "https://es.wikipedia.org/wiki/Tere_Jim%C3%A9nez"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "source:65954597e3d68042",
+   "label": "Source",
+   "name": "Governor of Aguascalientes",
+   "published_date": "2026-10-24T22:13:22.000Z",
+   "retrieved_at": "2026-11-14T23:11:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "url": "https://en.wikipedia.org/wiki/Governor_of_Aguascalientes"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "aguascalientes.gob.mx",
+   "first_seen": "2026-11-14T23:11:53+00:00",
+   "id": "source:9d7ec7cde3009fe1",
+   "label": "Source",
+   "name": "aguascalientes.gob.mx",
+   "retrieved_at": "2026-11-14T23:11:53+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:11:53+00:00",
+   "url": "https://eservicios2.aguascalientes.gob.mx/servicios/sicaf2/Uploads/316789primerinformedegobierno_terejim%C3%A9nez.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresoags.gob.mx",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "source:c2b4c896467146cf",
+   "label": "Source",
+   "name": "congresoags.gob.mx",
+   "retrieved_at": "2026-11-14T23:11:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "url": "https://congresoags.gob.mx/agenda_legislativa/descargar_pdf/4179"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "asms.mx",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "source:e1ab0be197b3b6f9",
+   "label": "Source",
+   "name": "ESQUIVEL",
+   "retrieved_at": "2026-11-14T23:11:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "url": "https://asms.mx/assets/img/Perfiles%20comitiva/Tere.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "source:e1ace827bdf39706",
+   "label": "Source",
+   "name": "María Teresa Jiménez Esquivel",
+   "published_date": "2026-05-13T03:11:19.000Z",
+   "retrieved_at": "2026-11-14T23:11:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:11:59+00:00",
+   "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Jim%C3%A9nez_Esquivel"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:11:59+00:00",
+   "id": "term:36a6f76c4e08",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:11:59+00:00",
+   "name": "María Teresa Jiménez Esquivel — term from 2022-10-01",
+   "office": "office:MX:state:MX-AGU:executive:governor-of-aguascalientes",
+   "person": "person:MX:maria-teresa-jimenez-esquivel",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2022-10-01",
+   "updated_at": "2026-11-14T23:11:59+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-AGU:executive:governor-of-aguascalientes": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-AGU",
+   "body:MX:state:MX-AGU:executive",
+   "office:MX:state:MX-AGU:executive:governor-of-aguascalientes"
+  ]
+ },
+ "politician": "person:MX:maria-teresa-jimenez-esquivel",
+ "sha256": "9abdd8b46de7dbd2861b0cc01f6dc54ff8af7b2dcc9d56ae4a8ecdc8ba6ec29a",
+ "unreached_offices": []
+}

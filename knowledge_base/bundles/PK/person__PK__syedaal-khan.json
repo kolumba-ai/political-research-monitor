@@ -1,0 +1,460 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:national:senate:senator-general-seat",
+   "src": "body:PK:national:senate",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:national",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:PK:national:senate",
+   "src": "level:PK:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:a7b41de5f9a4",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:51:00+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:57+00:00",
+   "claim": "office exists: Chairman of the Senate",
+   "dst": "source:33840cc7424b3a7d",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:57+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:59+00:00",
+   "claim": "office exists: Deputy Chairman of the Senate",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:59+00:00",
+   "claim": "office exists: Deputy Chairman of the Senate",
+   "dst": "source:a7181840e02a7a93",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:50:59+00:00",
+   "claim": "office exists: Deputy Chairman of the Senate",
+   "dst": "source:f43fb07da7fc2a60",
+   "first_seen": "2026-11-14T23:50:59+00:00",
+   "src": "office:PK:national:senate:senator-general-seat",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:50:59+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:national:senate:senator-general-seat",
+   "end": "2027-04-08",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:51:00+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:syedaal-khan",
+   "start": "2024-04-09",
+   "status": "current",
+   "term_id": "term:a7b41de5f9a4",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:51:00+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:51:00+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:pmln",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "src": "person:PK:syedaal-khan",
+   "term_id": "term:a7b41de5f9a4",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:51:00+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:00+00:00",
+   "claim": "Syedaal Khan holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:71ae595fb83978d7",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "snippet": "…s amid PTI walkout - Pakistan - DAWN.COM Senate chooses its custodians amid PTI walkout - Pakistan - DAWN.COM ## Senate chooses its custodians amid PTI walkout Iftikhar A. Khan Published April 10, 2024 • PPP’s Yousuf Raza Gillani elected chairman, PML-N’s Syedaal Khan Nasar becomes deputy chairman • Former prime minist…",
+   "src": "term:a7b41de5f9a4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:00+00:00",
+   "claim": "Syedaal Khan holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:901f8d020ed0488c",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "snippet": "…Deputy Chairman of the Senate of Pakistan Deputy Chairman of the Senate of Pakistan | Deputy chairman of the Senate of Pakistan | | | --- | --- | | | | | Incumbent Syedaal Khan Nasar since 9 April 2024 | | | Style | Mr. Deputy chairman | | Member of | Senate of Pakistan | | Seat | Islamabad | | Appointe…",
+   "src": "term:a7b41de5f9a4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:00+00:00",
+   "claim": "Syedaal Khan holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:901fb8842985f0d4",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "snippet": "…seas Pakistanis valuable national asset: Deputy Chairman Senate # Overseas Pakistanis valuable national asset: Deputy Chairman Senate Deputy Chairman Senate Syedaal Khan Nasir Friday said overseas Pakistanis are a valuable national asset who, through their hard work, capabilities and professional services abroad, not o…",
+   "src": "term:a7b41de5f9a4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:00+00:00",
+   "claim": "Syedaal Khan holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:a399216b3dd414f4",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "snippet": "…Syedaal Khan Nasar Syedaal Khan Nasar | Syedaal Khan Nasar | | | --- | --- | | سیدال خان ناصر | | | Deputy Chairman of the Senate of Pakistan | | | Incumbent | | | Assu…",
+   "src": "term:a7b41de5f9a4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:00+00:00",
+   "claim": "Syedaal Khan holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:c5d6feecdcdd4f36",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "snippet": "…Syedaal Khan to act as Senate chairman Syedaal Khan to act as Senate chairman # Syedaal Khan to act as Senate chairman Deputy Chairman Senate Syedaal Khan Nasar will pe…",
+   "src": "term:a7b41de5f9a4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:00+00:00",
+   "claim": "Syedaal Khan holds office:PK:national:senate:senator-general-seat",
+   "dst": "source:f43fb07da7fc2a60",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "snippet": "…Senate of Pakistan Senate of Pakistan # Syedaal Khan | Name: | Syedaal Khan | | | --- | --- | --- | | Tenure: | March 2024 to March 2030 | | | Province: | Balochistan | | | Party: | Pakistan Muslim League N…",
+   "src": "term:a7b41de5f9a4",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:PK:syedaal-khan",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "src": "term:a7b41de5f9a4",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:51:00+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "description": "Permanent upper house; 96 seats, with half the senators retiring every three years. Chairman and deputy chairman are already counted among the senators.",
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "body:PK:national:senate",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:50:56+00:00",
+   "name": "Senate",
+   "name_local": "سینیٹ",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:50:56+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064",
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:42+00:00",
+   "id": "level:PK:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:50:42+00:00"
+  },
+  {
+   "aliases": [
+    "Chairman of the Senate",
+    "Deputy Chairman of the Senate",
+    "Senator, non-Muslim seat",
+    "Senator, reserved seat for women",
+    "Senator, technocrat or ulema seat"
+   ],
+   "first_seen": "2026-11-14T23:50:56+00:00",
+   "id": "office:PK:national:senate:senator-general-seat",
+   "is_elected": true,
+   "keywords": [
+    "deputy",
+    "deputy chairman"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:50:59+00:00",
+   "name": "Senator, general seat",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_details": "Elected by senators from among themselves.",
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 3.0,
+   "title_local": "ڈپٹی چیئرمین سینیٹ",
+   "updated_at": "2026-11-14T23:50:59+00:00"
+  },
+  {
+   "acronym": "PML-N",
+   "aliases": [
+    "PML-N",
+    "Pakistan Muslim League (N)",
+    "Pakistan Muslim League (Nawaz)",
+    "Pakistan Muslim League-Nawaz"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:48+00:00",
+   "id": "party:PK:pmln",
+   "label": "PoliticalParty",
+   "name": "Pakistan Muslim League (N)",
+   "updated_at": "2026-11-15T01:51:06+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "person:PK:syedaal-khan",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:51:00+00:00",
+   "name": "Syedaal Khan",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senate.gov.pk",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "id": "source:33840cc7424b3a7d",
+   "label": "Source",
+   "name": "Senate of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:58+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:58+00:00",
+   "url": "https://senate.gov.pk/en/profile.php?uid=1014"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "source:71ae595fb83978d7",
+   "label": "Source",
+   "name": "Senate chooses its custodians amid PTI walkout - Pakistan - DAWN.COM",
+   "published_date": "2024-04-10T03:38:40.000Z",
+   "retrieved_at": "2026-11-14T23:51:00+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "url": "https://www.dawn.com/news/1826830"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "source:901f8d020ed0488c",
+   "label": "Source",
+   "name": "Deputy Chairman of the Senate of Pakistan",
+   "published_date": "2026-10-30T19:12:01.000Z",
+   "retrieved_at": "2026-11-14T23:51:00+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "url": "https://en.wikipedia.org/wiki/Deputy_Chairman_of_the_Senate_of_Pakistan"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "app.com.pk",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "source:901fb8842985f0d4",
+   "label": "Source",
+   "name": "Overseas Pakistanis valuable national asset: Deputy Chairman Senate",
+   "published_date": "2026-11-13T16:35:28.000Z",
+   "retrieved_at": "2026-11-14T23:51:00+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "url": "https://www.app.com.pk/national/overseas-pakistanis-valuable-national-asset-deputy-chairman-senate/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "source:a399216b3dd414f4",
+   "label": "Source",
+   "name": "Syedaal Khan Nasar",
+   "published_date": "2026-11-11T20:36:57.000Z",
+   "retrieved_at": "2026-11-14T23:51:00+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "url": "https://en.wikipedia.org/wiki/Syedaal_Khan_Nasar"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senate.gov.pk",
+   "first_seen": "2026-11-14T23:50:57+00:00",
+   "id": "source:a7181840e02a7a93",
+   "label": "Source",
+   "name": "Senate of Pakistan",
+   "retrieved_at": "2026-11-14T23:50:59+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:50:59+00:00",
+   "url": "https://senate.gov.pk/en/essence.php?id=24"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "app.com.pk",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "source:c5d6feecdcdd4f36",
+   "label": "Source",
+   "name": "Syedaal Khan to act as Senate chairman",
+   "published_date": "2026-10-04T15:15:49.000Z",
+   "retrieved_at": "2026-11-14T23:51:00+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "url": "https://www.app.com.pk/national/syedaal-khan-to-act-as-senate-chairman/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "senate.gov.pk",
+   "first_seen": "2026-11-14T23:50:59+00:00",
+   "id": "source:f43fb07da7fc2a60",
+   "label": "Source",
+   "name": "Senate of Pakistan",
+   "retrieved_at": "2026-11-14T23:51:00+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:00+00:00",
+   "url": "https://www.senate.gov.pk/en/profile.php?uid=1020"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-04-08",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:51:00+00:00",
+   "id": "term:a7b41de5f9a4",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:51:00+00:00",
+   "name": "Syedaal Khan — term from 2024-04-09",
+   "office": "office:PK:national:senate:senator-general-seat",
+   "person": "person:PK:syedaal-khan",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2024-04-09",
+   "updated_at": "2026-11-14T23:51:00+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:national:senate:senator-general-seat": [
+   "country:PK",
+   "level:PK:national",
+   "body:PK:national:senate",
+   "office:PK:national:senate:senator-general-seat"
+  ]
+ },
+ "politician": "person:PK:syedaal-khan",
+ "sha256": "ab46f9dce0c3c596fbcac227ea13c76193b504d7a7379adc92d21d742b0fbb0b",
+ "unreached_offices": []
+}

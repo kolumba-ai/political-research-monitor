@@ -1,0 +1,465 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "src": "body:PK:state:PK-KP:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-KP",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-KP:executive",
+   "src": "level:PK:state:PK-KP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:d988fe2803af",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:54:49+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:39+00:00",
+   "claim": "office exists: Chief Minister of Khyber Pakhtunkhwa",
+   "dst": "source:74f729f4e69365d3",
+   "first_seen": "2026-11-14T23:54:39+00:00",
+   "src": "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:39+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:39+00:00",
+   "claim": "office exists: Chief Minister of Khyber Pakhtunkhwa",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:54:39+00:00",
+   "src": "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:39+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:54:49+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:muhammad-sohail-khan-afridi",
+   "start": "2025-10-15",
+   "status": "current",
+   "term_id": "term:d988fe2803af",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:54:49+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:54:49+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "PTI-backed independent legislators (not a confirmed formal multi-party coalition)",
+   "dst": "party:PK:pti",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "person:PK:muhammad-sohail-khan-afridi",
+   "term_id": "term:d988fe2803af",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:54:49+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "Muhammad Sohail Khan Afridi holds office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "dst": "source:227d38ae0ecca437",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "snippet": "…Governor Khyber Pakhtunkhwa Faisal Karim Kundi administers oath from newly elected Chief Minister Khyber Pakhtunkhwa Muhammad Sohail Afridi, during an impressive ceremony at Governor House Peshawar on Wednesday. | Governor House KP Governor Khyber Pakhtunkhwa Faisal Karim Kundi administers oa…",
+   "src": "term:d988fe2803af",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "Muhammad Sohail Khan Afridi holds office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "dst": "source:5984fc7f9ff41c33",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "snippet": "…Peshawar ATC initiates absconder proceedings against ... Peshawar ATC initiates absconder proceedings against Afridi in Radio Pakistan case # Peshawar ATC initiates absconder proceedings against Sohail Afridi in Radio Pakistan case Court issues Section 87 notices af…",
+   "src": "term:d988fe2803af",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "Muhammad Sohail Khan Afridi holds office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "dst": "source:61933f404c726ec7",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "snippet": "…Sohail Afridi | Pakistan Tehreek-e-Insaf Chief Minister of Khyber Pakhtunkhwa Muhammad Sohail Khan Afridi is a young political leader who is currently serving as the 1…",
+   "src": "term:d988fe2803af",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "Muhammad Sohail Khan Afridi holds office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "dst": "source:8de0297d0f72a2d4",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "snippet": "…Sohail Afridi Sohail Afridi | Sohail Afridi | | | --- | --- | | سہیل آفریدی | | | Afridi in 2025 | | | Chief Minister of Khyber Pakhtunkhwa | | | In office 15 October…",
+   "src": "term:d988fe2803af",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "Muhammad Sohail Khan Afridi holds office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "dst": "source:af758729fba242f5",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "snippet": "…Achakzai, Abbas move FCC for release of Sohail Afridi, detained lawmakers - Pakistan - DAWN.COM Achakzai, Abbas move FCC for release of Sohail Afridi, detained lawmakers - Pakistan - DAWN.COM ## Achakzai, A…",
+   "src": "term:d988fe2803af",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "Muhammad Sohail Khan Afridi holds office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "dst": "source:c0005b83479e7ba8",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "snippet": "…Talking to Media Chief Minister Khyber Pakhtunkhwa Muhammad Sohail Afridi talking to the media outside Pakhtunkhwa House, Islamabad. Meeting on Law and Order Chief Minister Khyber Pakhtunkhwa Muhammad Sohail Afridi, while atten…",
+   "src": "term:d988fe2803af",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "Muhammad Sohail Khan Afridi holds office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "dst": "source:ddb44edc2b6d1b8a",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "snippet": "…Muhammad Sohail Afridi PK-70-2024 – PAKP Muhammad Sohail Afridi PK-70-2024 – PAKP ### PK-70 Khyber-II Independents ##### Constituency Address SHalobar, Qambar Khel, Wand Garay,…",
+   "src": "term:d988fe2803af",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:muhammad-sohail-khan-afridi",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "term:d988fe2803af",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "body:PK:state:PK-KP:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Executive of Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "level:PK:state:PK-KP",
+   "iso_3166_2": "PK-KP",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Khyber Pakhtunkhwa",
+   "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:54:39+00:00",
+   "id": "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "is_elected": true,
+   "keywords": [
+    "chief",
+    "minister",
+    "chief minister"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:54:39+00:00",
+   "name": "Chief Minister of Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 1,
+   "selection_method": "indirect_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "title_local": "وزیرِ اعلیٰ خیبر پختونخوا",
+   "updated_at": "2026-11-14T23:54:39+00:00"
+  },
+  {
+   "acronym": "PTI",
+   "aliases": [
+    "PTI",
+    "Pakistan Tehreek-e-Insaf"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "party:PK:pti",
+   "label": "PoliticalParty",
+   "name": "Pakistan Tehreek-e-Insaf",
+   "updated_at": "2026-11-15T01:47:11+00:00"
+  },
+  {
+   "aliases": [
+    "Muhammad Sohail Afridi"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "person:PK:muhammad-sohail-khan-afridi",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:47:11+00:00",
+   "name": "Muhammad Sohail Khan Afridi",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "kp.gov.pk",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "source:227d38ae0ecca437",
+   "label": "Source",
+   "name": "Governor Khyber Pakhtunkhwa Faisal Karim Kundi administers oath from newly elected Chief Minister Khyber Pakhtunkhwa Muhammad Sohail Afridi, during an  impressive ceremony at Governor House Peshawar on Wednesday. | Governor House KP",
+   "published_date": "2025-10-15T12:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://governor.kp.gov.pk/node/516"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "tribune.com.pk",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "source:5984fc7f9ff41c33",
+   "label": "Source",
+   "name": "Peshawar ATC initiates absconder proceedings against ...",
+   "published_date": "2026-11-14T16:59:25.000Z",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://tribune.com.pk/story/2640314/peshawar-atc-initiates-absconder-proceedings-against-sohail-afridi-in-radio-pakistan-case"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "insaf.pk",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "source:61933f404c726ec7",
+   "label": "Source",
+   "name": "Sohail Afridi | Pakistan Tehreek-e-Insaf",
+   "published_date": "2025-10-20T01:10:25.000Z",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://insaf.pk/leadership/sohail-afridi"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:54:39+00:00",
+   "id": "source:74f729f4e69365d3",
+   "label": "Source",
+   "name": "Bulletin Secretaries Conference Final for Printing copy",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "source:8de0297d0f72a2d4",
+   "label": "Source",
+   "name": "Sohail Afridi",
+   "published_date": "2026-10-23T13:56:44.000Z",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://en.wikipedia.org/wiki/Sohail_Afridi"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "source:af758729fba242f5",
+   "label": "Source",
+   "name": "Achakzai, Abbas move FCC for release of Sohail Afridi, detained lawmakers - Pakistan - DAWN.COM",
+   "published_date": "2026-11-14T11:54:12.000Z",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://www.dawn.com/news/2044493/achakzai-abbas-move-fcc-for-release-of-sohail-afridi-detained-lawmakers"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "cmkp.gov.pk",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "source:c0005b83479e7ba8",
+   "label": "Source",
+   "name": "cmkp.gov.pk",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://www.cmkp.gov.pk/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "source:ddb44edc2b6d1b8a",
+   "label": "Source",
+   "name": "Muhammad Sohail Afridi PK-70-2024 – PAKP",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://www.pakp.gov.pk/members/muhammad-sohail-afridi-pk-70-2024/"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "term:d988fe2803af",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:54:49+00:00",
+   "name": "Muhammad Sohail Khan Afridi — term from 2025-10-15",
+   "office": "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa",
+   "person": "person:PK:muhammad-sohail-khan-afridi",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2025-10-15",
+   "updated_at": "2026-11-14T23:54:49+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-KP",
+   "body:PK:state:PK-KP:executive",
+   "office:PK:state:PK-KP:executive:chief-minister-of-khyber-pakhtunkhwa"
+  ]
+ },
+ "politician": "person:PK:muhammad-sohail-khan-afridi",
+ "sha256": "d5407411b8a482d19d4e6539818e31499897b9a01b72960636c4f0dc75b1654d",
+ "unreached_offices": []
+}

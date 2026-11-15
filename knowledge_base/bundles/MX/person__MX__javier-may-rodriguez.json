@@ -1,0 +1,434 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "src": "body:MX:state:MX-TAB:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-TAB",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-TAB:executive",
+   "src": "level:MX:state:MX-TAB",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:d27f08358cd1",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "src": "office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:15:45+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:42+00:00",
+   "claim": "office exists: Governor of Tabasco",
+   "dst": "source:37a68f584511a877",
+   "first_seen": "2026-11-14T23:15:42+00:00",
+   "src": "office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "end": "2030-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:15:45+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:javier-may-rodriguez",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:d27f08358cd1",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:15:45+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:15:45+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Juntos Hacemos Historia (MORENA–PT–PVEM)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "src": "person:MX:javier-may-rodriguez",
+   "term_id": "term:d27f08358cd1",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:15:45+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:45+00:00",
+   "claim": "Javier May Rodríguez holds office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "dst": "source:31aafde9db657fc2",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "snippet": "…Inicio Inicio - contacto@javiermay.mx TabascoJavier @TabascoJavier JavierMayRodriguez JavierMay_ contacto@javiermay.mx # SOY JAVIER MAY Soy un tabasqueño que ha luchado junto al pueblo por más de 30 años. He escuchado y trabajado con…",
+   "src": "term:d27f08358cd1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:45+00:00",
+   "claim": "Javier May Rodríguez holds office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "dst": "source:37a68f584511a877",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "snippet": "…Rinde protesta como Gobernador Constitucional del Estado de Tabasco, el Ciudadano Javier May Rodríguez - Congreso del Estado de Tabasco Rinde protesta como Gobernador Constitucional del Estado de Tabasco, el Ciudadano Javier May Rodríguez - Congreso de…",
+   "src": "term:d27f08358cd1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:45+00:00",
+   "claim": "Javier May Rodríguez holds office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "dst": "source:71e2dbcb12dc08ea",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "snippet": "…Gobernador Constitucional del Estado de Tabasco | Portal Tabasco Gobernador Constitucional del Estado de Tabasco | Portal Tabasco ## Javier May Rodríguez Nació el 5 de mayo de 1966. Fue presidente municipal de su natal Comalcalco en dos ocasiones, Diputado en el Congreso de Tabasco y Senador de l…",
+   "src": "term:d27f08358cd1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:45+00:00",
+   "claim": "Javier May Rodríguez holds office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "dst": "source:7fbb263076cbd54e",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "snippet": "…Javier May destaca los resultados de su gobierno en Tabasco El gobernador de Tabasco, Javier May Rodríguez, destacó que, a dos años de su administración, la entidad registra una inversión social histórica superior a 30 mil 400 millones de pesos, una reducc…",
+   "src": "term:d27f08358cd1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:45+00:00",
+   "claim": "Javier May Rodríguez holds office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "dst": "source:8280a163e53e1593",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "snippet": "…Javier May Rodríguez Javier May Rodríguez Javier May Rodríguez (born 5 May 1966) is a Mexican politician affiliated with the National Regeneration Movement(Morena). He ser…",
+   "src": "term:d27f08358cd1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:45+00:00",
+   "claim": "Javier May Rodríguez holds office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "dst": "source:a8470a9aa6d35ec9",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "snippet": "…May Javier May | Javier May | | | --- | --- | | Governor of Tabasco | | | Incumbent | | | Assumed office 1 October 2024 | | | Preceded by | Carlos Manuel Merino Campos | | Personal details | | | Born | Javier May Rodríguez 5 May 1966 (age 60) Comalcalco, Tabasco, Mexico | | Party | Morena | Javier May Rodríguez (born…",
+   "src": "term:d27f08358cd1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:15:45+00:00",
+   "claim": "Javier May Rodríguez holds office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "dst": "source:c7cabacd4ceefe0a",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "snippet": "…Javier May Rodríguez Javier May Rodríguez | Javier May Rodríguez | | | --- | --- | | Gobernador de Tabasco Actualmente en el cargo | | | Desde el 1 de octubre de 2024 | |…",
+   "src": "term:d27f08358cd1",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:javier-may-rodriguez",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "src": "term:d27f08358cd1",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:15:45+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "body:MX:state:MX-TAB:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:15:35+00:00",
+   "name": "Executive of Tabasco",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:15:35+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:15:35+00:00",
+   "id": "level:MX:state:MX-TAB",
+   "iso_3166_2": "MX-TAB",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:15:35+00:00",
+   "name": "Tabasco",
+   "pipeline_mode": "research_only",
+   "researched_name": "Tabasco",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:15:35+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:15:42+00:00",
+   "id": "office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:15:42+00:00",
+   "name": "Governor of Tabasco",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:15:42+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "person:MX:javier-may-rodriguez",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:15:45+00:00",
+   "name": "Javier May Rodríguez",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "javiermayrodriguez.mx",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "source:31aafde9db657fc2",
+   "label": "Source",
+   "name": "Inicio",
+   "retrieved_at": "2026-11-14T23:15:45+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "url": "https://javiermayrodriguez.mx/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresotabasco.gob.mx",
+   "first_seen": "2026-11-14T23:15:42+00:00",
+   "id": "source:37a68f584511a877",
+   "label": "Source",
+   "name": "Rinde protesta como Gobernador Constitucional del Estado de Tabasco, el Ciudadano Javier May Rodríguez - Congreso del Estado de Tabasco",
+   "published_date": "2024-10-01T00:33:08.000Z",
+   "retrieved_at": "2026-11-14T23:15:45+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "url": "https://congresotabasco.gob.mx/rinde-protesta-como-gobernador-constitucional-del-estado-de-tabasco-el-ciudadano-javier-may-rodriguez"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "tabasco.gob.mx",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "source:71e2dbcb12dc08ea",
+   "label": "Source",
+   "name": "Gobernador Constitucional del Estado de Tabasco | Portal Tabasco",
+   "retrieved_at": "2026-11-14T23:15:45+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "url": "https://tabasco.gob.mx/gobernador-constitucional-del-estado-de-tabasco"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "milenio.com",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "source:7fbb263076cbd54e",
+   "label": "Source",
+   "name": "Javier May destaca los resultados de su gobierno en Tabasco",
+   "published_date": "2026-11-09T04:56:00.000Z",
+   "retrieved_at": "2026-11-14T23:15:45+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "url": "https://www.milenio.com/politica/javier-may-destaca-los-resultados-de-su-gobierno-en-tabasco"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "source:8280a163e53e1593",
+   "label": "Source",
+   "name": "Javier May Rodríguez",
+   "published_date": "2025-02-10T23:51:30.000Z",
+   "retrieved_at": "2026-11-14T23:15:45+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "url": "https://en.wikipedia.org/wiki/Javier_May_Rodr%C3%ADguez"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "source:a8470a9aa6d35ec9",
+   "label": "Source",
+   "name": "Javier May",
+   "published_date": "2026-09-03T04:14:42.000Z",
+   "retrieved_at": "2026-11-14T23:15:45+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "url": "https://en.wikipedia.org/wiki/Javier_May"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "source:c7cabacd4ceefe0a",
+   "label": "Source",
+   "name": "Javier May Rodríguez",
+   "published_date": "2026-11-10T03:24:50.000Z",
+   "retrieved_at": "2026-11-14T23:15:45+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:15:45+00:00",
+   "url": "https://es.wikipedia.org/wiki/Javier_May_Rodr%C3%ADguez"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2030-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:15:45+00:00",
+   "id": "term:d27f08358cd1",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:15:45+00:00",
+   "name": "Javier May Rodríguez — term from 2024-10-01",
+   "office": "office:MX:state:MX-TAB:executive:governor-of-tabasco",
+   "person": "person:MX:javier-may-rodriguez",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:15:45+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-TAB:executive:governor-of-tabasco": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-TAB",
+   "body:MX:state:MX-TAB:executive",
+   "office:MX:state:MX-TAB:executive:governor-of-tabasco"
+  ]
+ },
+ "politician": "person:MX:javier-may-rodriguez",
+ "sha256": "891616cb4f1223b76b053737fca0a6ff9eb1a5b3f18d413c9f0bd5608daa72e1",
+ "unreached_offices": []
+}

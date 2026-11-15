@@ -1,0 +1,293 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:national:chamber-of-deputies:deputy",
+   "src": "body:MX:national:chamber-of-deputies",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:national",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:MX:national:chamber-of-deputies",
+   "src": "level:MX:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:780cf25c57fc",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "src": "office:MX:national:chamber-of-deputies:deputy",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T02:15:07+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:42+00:00",
+   "claim": "office exists: Deputy",
+   "dst": "source:ad112f44cc259b10",
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "src": "office:MX:national:chamber-of-deputies:deputy",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:07:42+00:00",
+   "claim": "office exists: Deputy",
+   "dst": "source:f1187c9a1636e23b",
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "src": "office:MX:national:chamber-of-deputies:deputy",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:07:42+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.7,
+   "constituency_code": "MX-NLE-DF01",
+   "constituency_name": "Nuevo León, federal district 1",
+   "current": true,
+   "dst": "office:MX:national:chamber-of-deputies:deputy",
+   "end": "2027-08-31",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "home_entity": "Nuevo León",
+   "last_verified": "2026-11-15T02:15:07+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261115T021503Z",
+   "roster_name": "Niño de Rivera Vela Homero Ricardo",
+   "seat_type": "general",
+   "src": "person:MX:vela-homero-ricardo-nino-rivera",
+   "start": "2024-09-01",
+   "status": "current",
+   "term_id": "term:780cf25c57fc",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T02:15:07+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:07+00:00",
+   "claim": "Vela Homero Ricardo Niño de Rivera holds office:MX:national:chamber-of-deputies:deputy",
+   "dst": "source:15d70b03bcbdd052",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "src": "term:780cf25c57fc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:07+00:00",
+   "via": "official_directory"
+  },
+  {
+   "dst": "person:MX:vela-homero-ricardo-nino-rivera",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "src": "term:780cf25c57fc",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T02:15:07+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "description": "Lower chamber of the bicameral Congress of the Union.",
+   "first_seen": "2026-11-14T23:07:41+00:00",
+   "id": "body:MX:national:chamber-of-deputies",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:07:41+00:00",
+   "name": "Chamber of Deputies",
+   "name_local": "Cámara de Diputados",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:07:41+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_af5abbdff5664f90a6387c5854a83795",
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:34+00:00",
+   "id": "level:MX:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:07:34+00:00"
+  },
+  {
+   "aliases": [
+    "Federal Deputy (single-member district)"
+   ],
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "id": "office:MX:national:chamber-of-deputies:deputy",
+   "is_elected": true,
+   "keywords": [
+    "deputy",
+    "diputad",
+    "diputada"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:07:42+00:00",
+   "name": "Federal Deputy (single-member district)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seat_type": "general",
+   "seats": 300,
+   "selection_details": "Plurality vote in one of 300 federal districts",
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "verified",
+   "term_length_years": 3,
+   "title_local": "Diputada o Diputado",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "aliases": [
+    "Niño de Rivera Vela Homero Ricardo"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "id": "person:MX:vela-homero-ricardo-nino-rivera",
+   "label": "Person",
+   "last_verified": "2026-11-15T02:15:07+00:00",
+   "name": "Vela Homero Ricardo Niño de Rivera",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-15T01:58:13+00:00",
+   "id": "source:15d70b03bcbdd052",
+   "label": "Source",
+   "name": "Listado de Diputados LXVI",
+   "retrieved_at": "2026-11-15T02:15:10+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:10+00:00",
+   "url": "https://sitl.diputados.gob.mx/LXVI_leg/listado_diputados_gpnp.php"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "gobernacion.gob.mx",
+   "first_seen": "2026-11-14T23:07:42+00:00",
+   "id": "source:ad112f44cc259b10",
+   "label": "Source",
+   "name": "SIL :: Sistema de Información Legislativa",
+   "retrieved_at": "2026-11-14T23:07:46+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:07:46+00:00",
+   "url": "https://sil.gobernacion.gob.mx/Congreso/congreso2.php?accion=1"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:05:34+00:00",
+   "id": "source:f1187c9a1636e23b",
+   "label": "Source",
+   "name": "Constitución Política de los Estados Unidos Mexicanos",
+   "retrieved_at": "2026-11-14T23:08:03+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:08:03+00:00",
+   "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+  },
+  {
+   "confidence": 0.7,
+   "constituency_code": "MX-NLE-DF01",
+   "constituency_name": "Nuevo León, federal district 1",
+   "current": true,
+   "end": "2027-08-31",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-15T01:58:19+00:00",
+   "home_entity": "Nuevo León",
+   "id": "term:780cf25c57fc",
+   "label": "Term",
+   "last_verified": "2026-11-15T02:15:07+00:00",
+   "name": "Vela Homero Ricardo Niño de Rivera — term from 2024-09-01",
+   "office": "office:MX:national:chamber-of-deputies:deputy",
+   "person": "person:MX:vela-homero-ricardo-nino-rivera",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261115T021503Z",
+   "roster_name": "Niño de Rivera Vela Homero Ricardo",
+   "seat_type": "general",
+   "start": "2024-09-01",
+   "updated_at": "2026-11-15T02:15:07+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:national:chamber-of-deputies:deputy": [
+   "country:MX",
+   "level:MX:national",
+   "body:MX:national:chamber-of-deputies",
+   "office:MX:national:chamber-of-deputies:deputy"
+  ]
+ },
+ "politician": "person:MX:vela-homero-ricardo-nino-rivera",
+ "sha256": "5a3c351f251fec80c09df7da88157325d022b0641f6ea81f896d8457312510b6",
+ "unreached_offices": []
+}

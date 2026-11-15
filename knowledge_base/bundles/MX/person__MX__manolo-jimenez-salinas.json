@@ -1,0 +1,372 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "src": "body:MX:state:MX-COA:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-COA",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-COA:executive",
+   "src": "level:MX:state:MX-COA",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:9624d793994a",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "src": "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:14:59+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:54+00:00",
+   "claim": "office exists: Governor of Coahuila de Zaragoza",
+   "dst": "source:8e9093e920c269c7",
+   "first_seen": "2026-11-14T23:14:54+00:00",
+   "src": "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:54+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:54+00:00",
+   "claim": "office exists: Governor of Coahuila de Zaragoza",
+   "dst": "source:e52b6e4977cde19c",
+   "first_seen": "2026-11-14T23:14:54+00:00",
+   "src": "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:54+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "dst": "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "end": "2029-11-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:14:59+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:manolo-jimenez-salinas",
+   "start": "2023-12-01",
+   "status": "current",
+   "term_id": "term:9624d793994a",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:14:59+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:14:59+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Alianza Ciudadana por la Seguridad (PAN-PRI-PRD)",
+   "dst": "party:MX:pri",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "src": "person:MX:manolo-jimenez-salinas",
+   "term_id": "term:9624d793994a",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:14:59+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:59+00:00",
+   "claim": "Manolo Jiménez Salinas holds office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "dst": "source:03bacf10d98e32bc",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "snippet": "…llo, Coahuila de Zaragoza; ### REITERAN COORDINACIÓN PARA MANTENER A COAHUILA SEGURO Y EN ORDEN REITERAN COORDINACIÓN PARA MANTENER A COAHUILA SEGURO Y EN ORDEN Preside gobernador Manolo Jiménez Salinas la Mesa Estatal para la Construcción de Paz y Seguridad ### INSPIRA APOYA LA SALUD MENTAL DE 90 MIL TRABAJADORES CON…",
+   "src": "term:9624d793994a",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:59+00:00",
+   "claim": "Manolo Jiménez Salinas holds office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "dst": "source:97eb3cdbd77ece6c",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "snippet": "…ina LA PRENSA SALTILLO, COAHUILA.- El Congreso del Estado llevó a cabo el día de hoy la Sesión Solemne en la cual rindió la protesta de ley el ciudadano Ingeniero Manolo Jiménez Salinas, como Gobernador del Estado de Coahuila de Zaragoza, quien durará en su encargo seis años a partir de esta fecha. Al inicio, la presid…",
+   "src": "term:9624d793994a",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:59+00:00",
+   "claim": "Manolo Jiménez Salinas holds office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "dst": "source:c113f24f5a1fddc2",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "snippet": "…Manolo Jiménez Salinas Manolo Jiménez Salinas | Manolo Jiménez Salinas | | | --- | --- | | Jiménez en 2023. | | | Gobernador de Coahuila Actualmente en el cargo | | | Desde el…",
+   "src": "term:9624d793994a",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:59+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:manolo-jimenez-salinas",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "src": "term:9624d793994a",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:14:59+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "body:MX:state:MX-COA:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:14:49+00:00",
+   "name": "Executive of Coahuila de Zaragoza",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:14:49+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:14:49+00:00",
+   "id": "level:MX:state:MX-COA",
+   "iso_3166_2": "MX-COA",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:14:49+00:00",
+   "name": "Coahuila de Zaragoza",
+   "pipeline_mode": "research_only",
+   "researched_name": "Coahuila de Zaragoza",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:14:49+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:14:54+00:00",
+   "id": "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:14:54+00:00",
+   "name": "Governor of Coahuila de Zaragoza",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 6.0,
+   "title_local": "Gobernador",
+   "updated_at": "2026-11-14T23:14:54+00:00"
+  },
+  {
+   "acronym": "PRI",
+   "aliases": [
+    "PRI",
+    "Partido Revolucionario Institucional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "party:MX:pri",
+   "label": "PoliticalParty",
+   "name": "Partido Revolucionario Institucional",
+   "updated_at": "2026-11-14T23:18:20+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "person:MX:manolo-jimenez-salinas",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:14:59+00:00",
+   "name": "Manolo Jiménez Salinas",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "manolojimenez.mx",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "source:03bacf10d98e32bc",
+   "label": "Source",
+   "name": "manolojimenez.mx",
+   "retrieved_at": "2026-11-14T23:14:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:59+00:00",
+   "url": "https://manolojimenez.mx/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iec.org.mx",
+   "first_seen": "2026-11-14T23:14:54+00:00",
+   "id": "source:8e9093e920c269c7",
+   "label": "Source",
+   "name": "Conovocatorias PEL2023 GUBERNATURA",
+   "retrieved_at": "2026-11-14T23:14:59+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:59+00:00",
+   "url": "http://www.iec.org.mx/v1/images/proceso2023/Conovocatorias_PEL2023_GUBERNATURA-1.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "laprensadecoahuila.com.mx",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "source:97eb3cdbd77ece6c",
+   "label": "Source",
+   "name": "Asume Manolo Jiménez cargo como Gobernador - La Prensa de Coahuila | Noticias de Coahuila al instante",
+   "published_date": "2023-12-02T01:45:42.000Z",
+   "retrieved_at": "2026-11-14T23:14:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:59+00:00",
+   "url": "https://laprensadecoahuila.com.mx/2023/12/01/asume-manolo-jimenez-cargo-como-gobernador/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "source:c113f24f5a1fddc2",
+   "label": "Source",
+   "name": "Manolo Jiménez Salinas",
+   "published_date": "2026-09-22T22:58:27.000Z",
+   "retrieved_at": "2026-11-14T23:14:59+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:59+00:00",
+   "url": "https://es.wikipedia.org/wiki/Manolo_Jim%C3%A9nez_Salinas"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresocoahuila.gob.mx",
+   "first_seen": "2026-11-14T23:14:54+00:00",
+   "id": "source:e52b6e4977cde19c",
+   "label": "Source",
+   "name": "LXIII LEGISLATURALEGISLATIVA",
+   "retrieved_at": "2026-11-14T23:14:59+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:59+00:00",
+   "url": "https://www.congresocoahuila.gob.mx/PDF/documentos/Agenda_conjunta.pdf"
+  },
+  {
+   "confidence": 0.95,
+   "current": true,
+   "end": "2029-11-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:59+00:00",
+   "id": "term:9624d793994a",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:14:59+00:00",
+   "name": "Manolo Jiménez Salinas — term from 2023-12-01",
+   "office": "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza",
+   "person": "person:MX:manolo-jimenez-salinas",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2023-12-01",
+   "updated_at": "2026-11-14T23:14:59+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-COA",
+   "body:MX:state:MX-COA:executive",
+   "office:MX:state:MX-COA:executive:governor-of-coahuila-de-zaragoza"
+  ]
+ },
+ "politician": "person:MX:manolo-jimenez-salinas",
+ "sha256": "5513483aab6b2fc2397a5c0640a5554896c836e3e95e498e9ea3f1e8789b2c2d",
+ "unreached_offices": []
+}

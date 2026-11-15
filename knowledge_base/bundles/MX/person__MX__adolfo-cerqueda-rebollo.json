@@ -1,0 +1,377 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "src": "body:MX:municipal:MX-MEX:nezahualcoyotl:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-MEX:nezahualcoyotl",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-MEX:nezahualcoyotl:council",
+   "src": "level:MX:municipal:MX-MEX:nezahualcoyotl",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:93b66b9cec1f",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "src": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:18:21+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:20+00:00",
+   "claim": "office exists: Municipal President of Nezahualcóyotl",
+   "dst": "source:04652c33d74d12cb",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "src": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:20+00:00",
+   "claim": "office exists: Municipal President of Nezahualcóyotl",
+   "dst": "source:29e2c2e26aea3908",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "src": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:17+00:00",
+   "claim": "municipality and its selection system (INAFED register)",
+   "dst": "source:73327df7bbd85a9f",
+   "first_seen": "2026-11-15T01:58:33+00:00",
+   "src": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:17+00:00",
+   "via": "official_directory"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:20+00:00",
+   "claim": "office exists: Municipal President of Nezahualcóyotl",
+   "dst": "source:dd7ed23548bde4bc",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "src": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:20+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "dst": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "end": "2027-12-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:18:21+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:adolfo-cerqueda-rebollo",
+   "start": "2025-01-01",
+   "status": "current",
+   "term_id": "term:93b66b9cec1f",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:18:21+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:18:21+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Sigamos Haciendo Historia en el Estado de México",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "src": "person:MX:adolfo-cerqueda-rebollo",
+   "term_id": "term:93b66b9cec1f",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:18:21+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:21+00:00",
+   "claim": "Adolfo Cerqueda Rebollo holds office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "dst": "source:04652c33d74d12cb",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "snippet": "…Cabildo Cabildo Buzon de quejas y sugerencias Ayuntamiento: 55 57169070 Emergencias: 55 57434343 ##### CONOCE A TU CABILDO #### Adolfo Cerqueda Rebollo Presidente Municipal 55 57169070 Ext. 1106, 1107, 1108 #### Karen Guerrero Suarez Primera Síndica 55 57169070 Ext. 1301 #### Norma Julieta…",
+   "src": "term:93b66b9cec1f",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:21+00:00",
+   "claim": "Adolfo Cerqueda Rebollo holds office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "dst": "source:dd7ed23548bde4bc",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "snippet": "…##### GOBIERNO MUNICIPAL DE NEZAHUALCÓYOTL 2025-2027 ADOLFO CERQUEDA REBOLLO PRESIDENTE MUNICIPAL CONSTITUCIONAL MARÍA DARINKA RENDÓN SÁNCHEZ SECRETARIA DEL H. AYUNTAMIENTO MAURICIO MEJÍA ROJAS DIRECTOR DE COMUNICACIÓN SOCI…",
+   "src": "term:93b66b9cec1f",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "dst": "person:MX:adolfo-cerqueda-rebollo",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "src": "term:93b66b9cec1f",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:18:21+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "id": "body:MX:municipal:MX-MEX:nezahualcoyotl:council",
+   "label": "GovernmentBody",
+   "name": "Municipal council of Nezahualcóyotl",
+   "name_local": "Ayuntamiento de Nezahualcóyotl",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T02:15:17+00:00",
+   "website": "https://www.neza.gob.mx/"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "id": "level:MX:municipal:MX-MEX:nezahualcoyotl",
+   "inegi_code": "15058",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:18:20+00:00",
+   "name": "Nezahualcóyotl, México",
+   "parent_division": "México",
+   "parent_iso_3166_2": "MX-MEX",
+   "pipeline_mode": "research_only",
+   "population": 1077208,
+   "selection_system": "party-based popular election",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-15T02:15:17+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "id": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "municipal president",
+    "presidente municipal"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:18:20+00:00",
+   "name": "Municipal President of Nezahualcóyotl",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by popular vote with the council slate (planilla)",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Presidente(a) Municipal de Nezahualcóyotl",
+   "updated_at": "2026-11-15T02:15:17+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "id": "person:MX:adolfo-cerqueda-rebollo",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:18:21+00:00",
+   "name": "Adolfo Cerqueda Rebollo",
+   "updated_at": "2026-11-15T02:15:36+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "nezahualcoyotl.gob.mx",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "id": "source:04652c33d74d12cb",
+   "label": "Source",
+   "name": "Cabildo",
+   "retrieved_at": "2026-11-14T23:18:21+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "url": "https://www.nezahualcoyotl.gob.mx/cabildo.php"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:17:54+00:00",
+   "id": "source:29e2c2e26aea3908",
+   "label": "Source",
+   "name": "Reforma 281: Constitución Política de los Estados Unidos Mexicanos. DOF 23-04-2026",
+   "retrieved_at": "2026-11-14T23:18:21+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "datos.gob.mx",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "id": "source:73327df7bbd85a9f",
+   "label": "Source",
+   "name": "INAFED — Presidentas y Presidentes municipales",
+   "retrieved_at": "2026-11-15T02:15:32+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:32+00:00",
+   "url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "neza.gob.mx",
+   "first_seen": "2026-11-14T23:18:20+00:00",
+   "id": "source:dd7ed23548bde4bc",
+   "label": "Source",
+   "name": "neza.gob.mx",
+   "retrieved_at": "2026-11-14T23:18:21+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "url": "https://neza.gob.mx/publicaciones/2026/BANDO%20MUNICIPAL%202026%20REFORMA%2018%20DE%20MAYO%20DEL%202026.pdf"
+  },
+  {
+   "confidence": 0.9,
+   "current": true,
+   "end": "2027-12-31",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "id": "term:93b66b9cec1f",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:18:21+00:00",
+   "name": "Adolfo Cerqueda Rebollo — term from 2025-01-01",
+   "office": "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl",
+   "person": "person:MX:adolfo-cerqueda-rebollo",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2025-01-01",
+   "updated_at": "2026-11-14T23:18:21+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-MEX:nezahualcoyotl",
+   "body:MX:municipal:MX-MEX:nezahualcoyotl:council",
+   "office:MX:municipal:MX-MEX:nezahualcoyotl:council:municipal-president-of-nezahualcoyotl"
+  ]
+ },
+ "politician": "person:MX:adolfo-cerqueda-rebollo",
+ "sha256": "2020c57bc69cd7271203fe7892ae546f4c73a96289c1dcea56197d1b221e3ff4",
+ "unreached_offices": []
+}

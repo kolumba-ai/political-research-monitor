@@ -1,0 +1,428 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "src": "body:MX:municipal:MX-CMX:la-magdalena-contreras:government",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-CMX",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "level:MX:municipal:MX-CMX:la-magdalena-contreras",
+   "src": "level:MX:municipal:MX-CMX",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-CMX:la-magdalena-contreras:government",
+   "src": "level:MX:municipal:MX-CMX:la-magdalena-contreras",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:0b0911693ddc",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "src": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:20:53+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:50+00:00",
+   "claim": "office exists: Borough mayor of La Magdalena Contreras",
+   "dst": "source:16090b67c30ddbc5",
+   "first_seen": "2026-11-14T23:20:50+00:00",
+   "src": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:50+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:50+00:00",
+   "claim": "office exists: Borough mayor of La Magdalena Contreras",
+   "dst": "source:439d9a2d39e080b9",
+   "first_seen": "2026-11-14T23:20:50+00:00",
+   "src": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:50+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:50+00:00",
+   "claim": "office exists: Borough mayor of La Magdalena Contreras",
+   "dst": "source:75f0e663bb285232",
+   "first_seen": "2026-11-14T23:20:50+00:00",
+   "src": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:50+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:50+00:00",
+   "claim": "office exists: Borough mayor of La Magdalena Contreras",
+   "dst": "source:c5b0050558c914c3",
+   "first_seen": "2026-11-14T23:20:50+00:00",
+   "src": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:50+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:20:53+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:jose-fernando-mercado-guaida",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:0b0911693ddc",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:20:53+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:20:53+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Seguiremos Haciendo Historia en la Ciudad de México",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "src": "person:MX:jose-fernando-mercado-guaida",
+   "term_id": "term:0b0911693ddc",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:20:53+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:53+00:00",
+   "claim": "José Fernando Mercado Guaida holds office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "dst": "source:0ffbaea659f5086e",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "snippet": "…residente Av. Álvaro Obregón 20, Barranca Seca, La Magdalena Contreras, 10580 CDMX. Teléfono: 55 5449 6001 y 55 5449 6003 f.mercado@mcontreras.gob.mx José Fernando Mercado Guaida Marco Antonio Reyes García Secretario Técnico Fortín 5, Barranca Seca, La Magdalena Contreras, 10580 CDMX Teléfono: 55 9037 5268 ma.reyes@mco…",
+   "src": "term:0b0911693ddc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:53+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:53+00:00",
+   "claim": "José Fernando Mercado Guaida holds office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "dst": "source:439d9a2d39e080b9",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "snippet": "…tiérrez | Aguilar | | 4 | Cuajimalpa de Morelos | Carlos | Orvañanos | Rea | | 5 | Gustavo A. Madero | Ricardo Janecarlo | Lozano | Reynoso | | 6 | Iztacalco | María de Lourdes | Paz | Reyes | | 7 | Iztapalapa | Aleida | Alavez | Ruiz | | 8 | La Magdalena Contreras | José Fernando | Mercado | Guaida | | 9 | Milpa Alta…",
+   "src": "term:0b0911693ddc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:53+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:20:53+00:00",
+   "claim": "José Fernando Mercado Guaida holds office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "dst": "source:66cf7c895f402844",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "snippet": "…Fernando Mercado Guaida Fernando Mercado Guaida | José Fernando Mercado Guaida | | | --- | --- | | Alcalde de La Magdalena Contreras Actualmente en el cargo | | | Desde el 1 de…",
+   "src": "term:0b0911693ddc",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:20:53+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:jose-fernando-mercado-guaida",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "src": "term:0b0911693ddc",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:20:53+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:20:47+00:00",
+   "id": "body:MX:municipal:MX-CMX:la-magdalena-contreras:government",
+   "label": "GovernmentBody",
+   "name": "Borough council of La Magdalena Contreras",
+   "name_local": "Concejo",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:20:47+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:14+00:00",
+   "id": "level:MX:municipal:MX-CMX",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:20:14+00:00",
+   "name": "Mexico City — Borough (territorial demarcation)",
+   "pipeline_mode": "research_only",
+   "special_status": true,
+   "subunit_name_local": "Demarcación territorial (alcaldía)",
+   "tier": "special_local",
+   "updated_at": "2026-11-14T23:20:14+00:00",
+   "why_distinct": "Mexico City is the national capital and an autonomous federal entity, rather than an ordinary state divided into municipalities. Its 16 territorial demarcations are governed by alcaldías, each consisting of a directly elected mayor and concejo; the mayor runs the local administration, while the concejo oversees government and spending and approves the draft borough budget. Members serve three years, beginning October 1 of the election year."
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:47+00:00",
+   "id": "level:MX:municipal:MX-CMX:la-magdalena-contreras",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:20:47+00:00",
+   "name": "La Magdalena Contreras",
+   "pipeline_mode": "research_only",
+   "tier": "special_local_unit",
+   "updated_at": "2026-11-14T23:20:47+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:20:50+00:00",
+   "id": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "is_elected": true,
+   "keywords": [
+    "borough",
+    "alcald",
+    "borough mayor",
+    "alcalde"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:20:50+00:00",
+   "name": "Borough mayor of La Magdalena Contreras",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Alcalde",
+   "updated_at": "2026-11-14T23:20:50+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "id": "person:MX:jose-fernando-mercado-guaida",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:20:53+00:00",
+   "name": "José Fernando Mercado Guaida",
+   "updated_at": "2026-11-15T02:15:37+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "mcontreras.gob.mx",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "id": "source:0ffbaea659f5086e",
+   "label": "Source",
+   "name": "Concejo de LMC: supervisión y voz ciudadana",
+   "retrieved_at": "2026-11-14T23:20:53+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:20:53+00:00",
+   "url": "https://mcontreras.gob.mx/concejo/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "mcontreras.gob.mx",
+   "first_seen": "2026-11-14T23:20:50+00:00",
+   "id": "source:16090b67c30ddbc5",
+   "label": "Source",
+   "name": "Directorio Alcaldía 2024/2027 - Alcaldía La Magdalena Contreras",
+   "retrieved_at": "2026-11-14T23:20:50+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:20:50+00:00",
+   "url": "https://mcontreras.gob.mx/directorio-alcaldia-2024-2027"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iecm.mx",
+   "first_seen": "2026-11-14T23:20:14+00:00",
+   "id": "source:439d9a2d39e080b9",
+   "label": "Source",
+   "name": "DIRECCIÓN EJECUTIVA DE ORGANIZACIÓN ELECTORAL Y GEOESTADÍSTICA",
+   "retrieved_at": "2026-11-14T23:21:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:21:28+00:00",
+   "url": "https://estadisticaresultadospelo2024.iecm.mx/archivos/alc/downloadalc.php?arc=alcgan16"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "id": "source:66cf7c895f402844",
+   "label": "Source",
+   "name": "Fernando Mercado Guaida",
+   "published_date": "2026-08-26T07:29:39.000Z",
+   "retrieved_at": "2026-11-14T23:20:53+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:20:53+00:00",
+   "url": "https://es.wikipedia.org/wiki/Fernando_Mercado_Guaida"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iecm.mx",
+   "first_seen": "2026-11-14T23:20:14+00:00",
+   "id": "source:75f0e663bb285232",
+   "label": "Source",
+   "name": "PUBLICADO EN LA GACETA OFICIAL DE LA CIUDAD DE MÉXICO EL 4 DE MAYO DE 2018 FECHA DE ÚLTIMA REFORMA EL 31 DE MARZO DE 2025",
+   "retrieved_at": "2026-11-14T23:21:27+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:21:27+00:00",
+   "url": "https://www.iecm.mx/www/marconormativo/docs/LEY_ORGANICA_DE_ALCALD%C3%8DAS.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "eluniversal.com.mx",
+   "first_seen": "2026-11-14T23:20:18+00:00",
+   "id": "source:c5b0050558c914c3",
+   "label": "Source",
+   "name": "Alcaldes, ¿quiénes pueden ir por reelección?  | El Universal",
+   "published_date": "2026-10-01T14:06:21.000Z",
+   "retrieved_at": "2026-11-14T23:21:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:21:28+00:00",
+   "url": "https://www.eluniversal.com.mx/metropoli/alcaldes-quienes-pueden-ir-por-reeleccion"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:20:53+00:00",
+   "id": "term:0b0911693ddc",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:20:53+00:00",
+   "name": "José Fernando Mercado Guaida — term from 2024-10-01",
+   "office": "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras",
+   "person": "person:MX:jose-fernando-mercado-guaida",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:20:53+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-CMX",
+   "level:MX:municipal:MX-CMX:la-magdalena-contreras",
+   "body:MX:municipal:MX-CMX:la-magdalena-contreras:government",
+   "office:MX:municipal:MX-CMX:la-magdalena-contreras:government:borough-mayor-of-la-magdalena-contreras"
+  ]
+ },
+ "politician": "person:MX:jose-fernando-mercado-guaida",
+ "sha256": "f3df56f988c399e5f9fda2239c1fda441cdab89786b27e5125f77bdca0464131",
+ "unreached_offices": []
+}

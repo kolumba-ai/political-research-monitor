@@ -1,0 +1,304 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave",
+   "src": "body:MX:state:MX-VER:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-VER",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-VER:executive",
+   "src": "level:MX:state:MX-VER",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:1ad83ed8ce8e",
+   "first_seen": "2026-11-14T23:12:27+00:00",
+   "src": "office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:12:27+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:13+00:00",
+   "claim": "office exists: Governor of Veracruz de Ignacio de la Llave",
+   "dst": "source:e9692b5bf9bbd816",
+   "first_seen": "2026-11-14T23:12:13+00:00",
+   "src": "office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:13+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.7,
+   "current": true,
+   "dst": "office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave",
+   "end": "2030-11-30",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-14T23:12:27+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:12:27+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:norma-rocio-nahle-garcia",
+   "start": "2024-12-01",
+   "status": "current",
+   "term_id": "term:1ad83ed8ce8e",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:12:27+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:12:27+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Sigamos Haciendo Historia en Veracruz (MORENA, PT, PVEM)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:12:27+00:00",
+   "src": "person:MX:norma-rocio-nahle-garcia",
+   "term_id": "term:1ad83ed8ce8e",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:12:27+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:12:27+00:00",
+   "claim": "Norma Rocío Nahle García holds office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave",
+   "dst": "source:cfaf0c24617f658e",
+   "first_seen": "2026-11-14T23:12:27+00:00",
+   "snippet": "…doctora Claudia Sheinbaum Pardo, y gobernadores de 13 entidades Xalapa, Ver., 01 de diciembre de 2024.- Ante el Pleno de la LXVII Legislatura, la ingeniera Norma Rocío Nahle García rindió protesta de ley como Gobernadora Constitucional del Estado de Veracruz de Ignacio de la Llave, para el periodo comprendido del 1 de…",
+   "src": "term:1ad83ed8ce8e",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:12:27+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:norma-rocio-nahle-garcia",
+   "first_seen": "2026-11-14T23:12:27+00:00",
+   "src": "term:1ad83ed8ce8e",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:12:27+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "body:MX:state:MX-VER:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:12:02+00:00",
+   "name": "Executive of Veracruz de Ignacio de la Llave",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:12:02+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "state",
+   "first_seen": "2026-11-14T23:12:02+00:00",
+   "id": "level:MX:state:MX-VER",
+   "iso_3166_2": "MX-VER",
+   "iso_type": "State",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:12:02+00:00",
+   "name": "Veracruz de Ignacio de la Llave",
+   "pipeline_mode": "research_only",
+   "researched_name": "Veracruz de Ignacio de la Llave",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:12:02+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:12:13+00:00",
+   "id": "office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave",
+   "is_elected": true,
+   "keywords": [
+    "governor",
+    "gobernador",
+    "gobernadora"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:12:13+00:00",
+   "name": "Governor of Veracruz de Ignacio de la Llave",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "official_single",
+   "term_length_years": 6.0,
+   "title_local": "Gobernadora",
+   "updated_at": "2026-11-14T23:12:13+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:12:27+00:00",
+   "id": "person:MX:norma-rocio-nahle-garcia",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:12:27+00:00",
+   "name": "Norma Rocío Nahle García",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "legisver.gob.mx",
+   "first_seen": "2026-11-14T23:12:27+00:00",
+   "id": "source:cfaf0c24617f658e",
+   "label": "Source",
+   "name": "En el Congreso, rinde protesta Rocío Nahle como Gobernadora de Veracruz",
+   "retrieved_at": "2026-11-14T23:12:27+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:12:27+00:00",
+   "url": "https://www.legisver.gob.mx/boletines/boletinesLXVII/BOLETIN0072-24.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "veracruz.gob.mx",
+   "first_seen": "2026-11-14T23:12:13+00:00",
+   "id": "source:e9692b5bf9bbd816",
+   "label": "Source",
+   "name": "CONSTITUCIÓN POLÍTICA DEL ESTADO LIBRE Y SOBERANO",
+   "retrieved_at": "2026-11-14T23:12:27+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:12:27+00:00",
+   "url": "https://repositorio.veracruz.gob.mx/desarrolloeconomico/wp-content/uploads/sites/13/2025/01/CONSTITUCION27122024.pdf"
+  },
+  {
+   "confidence": 0.7,
+   "current": true,
+   "end": "2030-11-30",
+   "evidence_status": "official_single",
+   "first_seen": "2026-11-14T23:12:27+00:00",
+   "id": "term:1ad83ed8ce8e",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:12:27+00:00",
+   "name": "Norma Rocío Nahle García — term from 2024-12-01",
+   "office": "office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave",
+   "person": "person:MX:norma-rocio-nahle-garcia",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-12-01",
+   "updated_at": "2026-11-14T23:12:27+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-VER",
+   "body:MX:state:MX-VER:executive",
+   "office:MX:state:MX-VER:executive:governor-of-veracruz-de-ignacio-de-la-llave"
+  ]
+ },
+ "politician": "person:MX:norma-rocio-nahle-garcia",
+ "sha256": "70a0e6c447bb5cff5269be2e2c61c30188b724caab0640d8c7f38a7c62805bd1",
+ "unreached_offices": []
+}

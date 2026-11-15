@@ -1,0 +1,419 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "src": "body:PK:state:PK-KP:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-KP",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-KP:legislature",
+   "src": "level:PK:state:PK-KP",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:80a8b52845df",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T01:22:18+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of Khyber Pakhtunkhwa",
+   "dst": "source:74f729f4e69365d3",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:49+00:00",
+   "claim": "office exists: Member of the Provincial Assembly of Khyber Pakhtunkhwa",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "src": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.99,
+   "constituency_code": "PK-105",
+   "constituency_name": "Lakki Marwat-I",
+   "current": true,
+   "dst": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T01:22:18+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "src": "person:PK:johar-muhammad",
+   "start": "2024-02-28",
+   "status": "current",
+   "term_id": "term:80a8b52845df",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T01:22:18+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:18+00:00",
+   "claim": "Johar Muhammad holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:58a473dfac2f0dab",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "snippet": "…Johar Muhammad Johar Muhammad | Johar Muhammad | | | --- | --- | | Member of the Provincial Assembly of Khyber Pakhtunkhwa | | | Incumbent | | | Assumed office Februa…",
+   "src": "term:80a8b52845df",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:18+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:18+00:00",
+   "claim": "Johar Muhammad holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:8deebe708de751c9",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "snippet": "…Chitral | | SIC | Fateh-ul-Mulk Ali Nasir | | [4] | | PK-3 | Swat-I | | SIC | Sharafat Ali | | [4] | | PK-4 | Swat-II | | SIC | Ali Shah | | [4] | | PK-5 | Swat-III | | SIC | Akhtar Khan | | [4] | | PK-6 | Swat-IV | | SIC | Fazal Hakim | | [3] | | PK-7 | Swat-V | | SIC | Amjad Ali | | [3] | | PK-8 | Swat-VI | | SIC | H…",
+   "src": "term:80a8b52845df",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:18+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:18+00:00",
+   "claim": "Johar Muhammad holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:d50d66f997175122",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "snippet": "…Johar Muhammad PK-105-2024 – PAKP Johar Muhammad PK-105-2024 – PAKP ## KHYBER PAKHTUNKHWA ### PK-105 Lakki Marwat-I Independents ##### Email ##### DoB 0000-00-00 ## 1…",
+   "src": "term:80a8b52845df",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:18+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:18+00:00",
+   "claim": "Johar Muhammad holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:e2c254fe15d6f3b9",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "snippet": "…ral Lower | | 3 | Sharafat Ali | PK-3 Swat-I | | 4 | Ali Shah | PK-4 Swat-II | | 5 | Akhtar Khan | PK-5 Swat-III | | 6 | Fazal Hakeem Khan | PK-6 Swat-IV | | 7 | Amjad Ali | PK-7 Swat-V | | 8 | Hamid Ur Rahman | PK-8 Swat-VI | | 9 | Sultan Room | PK-9 Swat-VII | | 10 | Muhammad Naeem | PK-10 Swat-VIII | | 11 | Gul Ibra…",
+   "src": "term:80a8b52845df",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:18+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T01:22:18+00:00",
+   "claim": "Johar Muhammad holds office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "dst": "source:f3235d16d7d87446",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "snippet": "…Independent Candidate Johar Muhammad Khan Wins PK-105 Election - UrduPoint Independent Candidate Johar Muhammad Khan Wins PK-105 Election - UrduPoint # Independent Candidate Johar Muhammad…",
+   "src": "term:80a8b52845df",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T01:22:18+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:johar-muhammad",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "src": "term:80a8b52845df",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T01:22:18+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "PK",
+   "constituency_range": "PK-1 to PK-115",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "general_seats": 115,
+   "id": "body:PK:state:PK-KP:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2024-02-08",
+   "last_verified": "2026-11-15T01:30:53+00:00",
+   "members_verified": 144,
+   "name": "Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa)",
+   "name_local": "خیبر پختونخوا صوبائی اسمبلی",
+   "official_members_url": "https://www.pakp.gov.pk/members-listing/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 4,
+   "reserved_other": 0,
+   "reserved_women": 26,
+   "structure_agent_run": "agent_run_ceead2044f7b42aa9d194671e59f2fe3",
+   "total_seats": 145,
+   "updated_at": "2026-11-15T01:30:53+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "province",
+   "first_seen": "2026-11-14T23:54:31+00:00",
+   "id": "level:PK:state:PK-KP",
+   "iso_3166_2": "PK-KP",
+   "iso_type": "Province",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:31+00:00",
+   "name": "Khyber Pakhtunkhwa",
+   "pipeline_mode": "research_only",
+   "researched_name": "Khyber Pakhtunkhwa",
+   "special_status_note": "Governor’s rule and emergency imposed on 2026-10-11: Sohail Afridi remains the listed but non-functional Chief Minister, reportedly in preventive custody, while Governor Faisal Karim Kundi exercises provincial executive powers. This is not an acting-chief-minister appointment.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:31+00:00"
+  },
+  {
+   "aliases": [
+    "Member of the Provincial Assembly of Khyber Pakhtunkhwa"
+   ],
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "is_elected": true,
+   "keywords": [
+    "member",
+    "provincial",
+    "diputad",
+    "deputy",
+    "legislat",
+    "congres"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:54:49+00:00",
+   "name": "Member of the Provincial Assembly of Khyber Pakhtunkhwa (general seat)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seat_type": "general",
+   "seats": 115,
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "official_single",
+   "updated_at": "2026-11-15T01:04:44+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "id": "person:PK:johar-muhammad",
+   "label": "Person",
+   "last_verified": "2026-11-15T01:22:18+00:00",
+   "name": "Johar Muhammad",
+   "updated_at": "2026-11-15T02:11:58+00:00"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "id": "source:58a473dfac2f0dab",
+   "label": "Source",
+   "name": "Johar Muhammad",
+   "published_date": "2026-07-21T10:51:17.000Z",
+   "retrieved_at": "2026-11-15T01:22:18+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:22:18+00:00",
+   "url": "https://en.wikipedia.org/wiki/Johar_Muhammad"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:54:39+00:00",
+   "id": "source:74f729f4e69365d3",
+   "label": "Source",
+   "name": "Bulletin Secretaries Conference Final for Printing copy",
+   "retrieved_at": "2026-11-14T23:54:49+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:49+00:00",
+   "url": "https://www.na.gov.pk/uploads/676253d06d590_773.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T01:10:53+00:00",
+   "id": "source:8deebe708de751c9",
+   "label": "Source",
+   "name": "List of members of the 12th Provincial Assembly of Khyber Pakhtunkhwa",
+   "published_date": "2026-08-31T14:28:38.000Z",
+   "retrieved_at": "2026-11-15T01:23:00+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:23:00+00:00",
+   "url": "https://en.wikipedia.org/wiki/List_of_members_of_the_12th_Provincial_Assembly_of_Khyber_Pakhtunkhwa"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "id": "source:d50d66f997175122",
+   "label": "Source",
+   "name": "Johar Muhammad PK-105-2024 – PAKP",
+   "retrieved_at": "2026-11-15T01:22:18+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:22:18+00:00",
+   "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "pakp.gov.pk",
+   "first_seen": "2026-11-15T01:04:44+00:00",
+   "id": "source:e2c254fe15d6f3b9",
+   "label": "Source",
+   "name": "Members Listing – PAKP",
+   "retrieved_at": "2026-11-15T01:23:32+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:23:32+00:00",
+   "url": "https://www.pakp.gov.pk/members-listing/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "urdupoint.com",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "id": "source:f3235d16d7d87446",
+   "label": "Source",
+   "name": "Independent Candidate Johar Muhammad Khan Wins PK-105 Election - UrduPoint",
+   "published_date": "2024-02-09T17:10:07.000Z",
+   "retrieved_at": "2026-11-15T01:22:18+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T01:22:18+00:00",
+   "url": "https://www.urdupoint.com/en/pakistan/independent-candidate-johar-muhammad-khan-win-1794043.html"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.99,
+   "constituency_code": "PK-105",
+   "constituency_name": "Lakki Marwat-I",
+   "current": true,
+   "end": "2029",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T01:22:18+00:00",
+   "id": "term:80a8b52845df",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T01:22:18+00:00",
+   "name": "Johar Muhammad — term from 2024-02-28",
+   "office": "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa",
+   "person": "person:PK:johar-muhammad",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "start": "2024-02-28",
+   "updated_at": "2026-11-15T01:22:18+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-KP",
+   "body:PK:state:PK-KP:legislature",
+   "office:PK:state:PK-KP:legislature:member-of-the-provincial-assembly-of-khyber-pakhtunkhwa"
+  ]
+ },
+ "politician": "person:PK:johar-muhammad",
+ "sha256": "7f9a4235cbe71e0ebe8122ba027a2f73d667bf17ed31a9d383f504f1b6f6cf0e",
+ "unreached_offices": []
+}

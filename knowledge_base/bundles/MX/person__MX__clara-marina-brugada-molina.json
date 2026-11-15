@@ -1,0 +1,506 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "src": "body:MX:state:MX-CMX:executive",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:state",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:state:MX-CMX",
+   "src": "level:MX:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:state:MX-CMX:executive",
+   "src": "level:MX:state:MX-CMX",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:85bc0daff3e8",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "src": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:14:44+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:39+00:00",
+   "claim": "office exists: Head of Government of Ciudad de México",
+   "dst": "source:1bc7a5228af97950",
+   "first_seen": "2026-11-14T23:14:39+00:00",
+   "src": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:39+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:39+00:00",
+   "claim": "office exists: Head of Government of Ciudad de México",
+   "dst": "source:1d4cb0afd9b5aff5",
+   "first_seen": "2026-11-14T23:14:39+00:00",
+   "src": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:39+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:39+00:00",
+   "claim": "office exists: Head of Government of Ciudad de México",
+   "dst": "source:33027e2f7479fabc",
+   "first_seen": "2026-11-14T23:14:39+00:00",
+   "src": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:39+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:39+00:00",
+   "claim": "office exists: Head of Government of Ciudad de México",
+   "dst": "source:3e86a221b6a48a02",
+   "first_seen": "2026-11-14T23:14:39+00:00",
+   "src": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:39+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "end": "2030-10-04",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:14:44+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:clara-marina-brugada-molina",
+   "start": "2024-10-05",
+   "status": "current",
+   "term_id": "term:85bc0daff3e8",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:14:44+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:14:44+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "coalition": "Candidatura común Sigamos haciendo historia en la Ciudad de México (MORENA-PT-PVEM)",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "src": "person:MX:clara-marina-brugada-molina",
+   "term_id": "term:85bc0daff3e8",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:14:44+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:44+00:00",
+   "claim": "Clara Marina Brugada Molina holds office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "dst": "source:113e992a17a7ec7c",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "snippet": "…Acerca de Clara || Conoce a Clara Brugada || Perfil Clara Brugada Molina Acerca de Clara || Conoce a Clara Brugada || Perfil Clara Brugada Molina Clara Brugada, Candidata Electa, Jefa de Gobierno en CDMX 2024-2030, Sitio…",
+   "src": "term:85bc0daff3e8",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:44+00:00",
+   "claim": "Clara Marina Brugada Molina holds office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "dst": "source:33027e2f7479fabc",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "snippet": "…extraordinaria, la validez de la elección para la Jefatura de Gobierno del pasado 2 de junio y entregó la constancia de mayoría a la candidata ganadora Clara Marina Brugada Molina. Tras la suma de los resultados anotados en las actas de cómputo distrital y los votos recabados en el extranjero, el Consejo General elabor…",
+   "src": "term:85bc0daff3e8",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:44+00:00",
+   "claim": "Clara Marina Brugada Molina holds office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "dst": "source:5276a4eebe93f35d",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "snippet": "…Acerca de Acerca de ## Titular ### Clara Marina Brugada Molina #### Jefa de Gobierno de la Ciudad de México Teléfonos: 53458000 ext. Twitter: @ClaraBrugadaM ## Estructura orgánica - Jefa de Gobierno de la Ciud…",
+   "src": "term:85bc0daff3e8",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:44+00:00",
+   "claim": "Clara Marina Brugada Molina holds office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "dst": "source:6812d9bac2db2486",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "snippet": "…Jefa de Gobierno – Jefa de Gobierno Jefa de Gobierno – Jefa de Gobierno # Jefa de Gobierno ##### El futuro es feminista y colectivo Soy Clara Marina Brugada Molina. Nací en la Ciudad de México un 12 de agosto de 1963, en una ciudad que me enseñó desde temprano que la transformación comienza cuando las pe…",
+   "src": "term:85bc0daff3e8",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:44+00:00",
+   "claim": "Clara Marina Brugada Molina holds office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "dst": "source:884e83ea7d44e082",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "snippet": "…• Fuente: CNN ¿Cuáles son las propuestas que hicieron los candidatos a la jefatura de Gobierno de la Ciudad de México en el segundo debate? 02:55 (CNN Español) – Clara Marina Brugada Molina, de 60 años, ganó las elecciones a la jefatura de Ciudad de México, según los resultados oficiales preliminares, por lo que oficia…",
+   "src": "term:85bc0daff3e8",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:44+00:00",
+   "claim": "Clara Marina Brugada Molina holds office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "dst": "source:cf1c517708649d71",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "snippet": "…r 2003 | | | Preceded by | Daniel Martínez Enríquez | | Succeeded by | Aleida Alavez Ruiz | | Member of the Congress of the Union for Mexico City's 22nd district | | | In office 1 September 1997 – 31 August 2000 | | | Preceded by | Víctor Manuel Álvarez Trasviña | | Succeeded by | Esteban Daniel González Enríquez | | P…",
+   "src": "term:85bc0daff3e8",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:14:44+00:00",
+   "claim": "Clara Marina Brugada Molina holds office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "dst": "source:fa1dafb54a66d86e",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "snippet": "…conforman esta dependencia de la Ciudad de México, así como sus principales datos de contacto. ## Jefa de Gobierno de la Ciudad de México Titular: Clara Marina Brugada Molina Teléfono: 53458000 Lugar: Edificio Antiguo Palacio del Ayuntamiento. Dirección: Avenida Plaza de la Constitución 2, Colonia Centro (Área 1), C.P.…",
+   "src": "term:85bc0daff3e8",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:clara-marina-brugada-molina",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "src": "term:85bc0daff3e8",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:14:44+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:14:36+00:00",
+   "id": "body:MX:state:MX-CMX:executive",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:14:36+00:00",
+   "name": "Executive of Ciudad de México",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:14:36+00:00"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "country": "MX",
+   "description": "31 states and Mexico City, together called entidades federativas.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "Estados y Ciudad de México",
+   "researched_name": "States and Mexico City",
+   "tier": "state",
+   "unit_count": 32,
+   "updated_at": "2026-11-14T23:20:14+00:00"
+  },
+  {
+   "country": "MX",
+   "division_type": "federal entity / capital",
+   "first_seen": "2026-11-14T23:14:36+00:00",
+   "id": "level:MX:state:MX-CMX",
+   "iso_3166_2": "MX-CMX",
+   "iso_type": "Federal entity",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:14:36+00:00",
+   "name": "Ciudad de México",
+   "pipeline_mode": "research_only",
+   "researched_name": "Ciudad de México",
+   "special_status": true,
+   "special_status_note": "Federal capital and federal entity, not a state; its executive is the Head of Government and its legislature is the Congress of Mexico City. The 66-member legislature includes one migrant constituency seat.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:20:14+00:00",
+   "why_distinct": "Mexico City is the national capital and an autonomous federal entity, rather than an ordinary state divided into municipalities. Its 16 territorial demarcations are governed by alcaldías, each consisting of a directly elected mayor and concejo; the mayor runs the local administration, while the concejo oversees government and spending and approves the draft borough budget. Members serve three years, beginning October 1 of the election year."
+  },
+  {
+   "first_seen": "2026-11-14T23:14:39+00:00",
+   "id": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "is_elected": true,
+   "keywords": [
+    "head",
+    "government",
+    "jef",
+    "gobiern",
+    "head of government",
+    "jefa de gobierno"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:14:39+00:00",
+   "name": "Head of Government of Ciudad de México",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "term_length_years": 6.0,
+   "title_local": "Jefa de Gobierno",
+   "updated_at": "2026-11-14T23:14:39+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "person:MX:clara-marina-brugada-molina",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:14:44+00:00",
+   "name": "Clara Marina Brugada Molina",
+   "updated_at": "2026-11-15T02:15:36+00:00"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "clarabrugada.com",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "source:113e992a17a7ec7c",
+   "label": "Source",
+   "name": "Acerca de Clara || Conoce a Clara Brugada || Perfil Clara Brugada Molina",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://clarabrugada.com/acerca-de-clara-brugada.php"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:11:18+00:00",
+   "id": "source:1bc7a5228af97950",
+   "label": "Source",
+   "name": "List of current state governors in Mexico",
+   "published_date": "2026-09-23T02:03:29.000Z",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://en.wikipedia.org/wiki/List_of_current_state_governors_in_Mexico"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iecm.mx",
+   "first_seen": "2026-11-14T23:14:39+00:00",
+   "id": "source:1d4cb0afd9b5aff5",
+   "label": "Source",
+   "name": "CONSEJERÍA JURÍDICA Y DE SERVICIOS LEGALES",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://www.iecm.mx/www/marconormativo/docs/CPCDMX-23-07-2026.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "iecm.mx",
+   "first_seen": "2026-11-14T23:14:39+00:00",
+   "id": "source:33027e2f7479fabc",
+   "label": "Source",
+   "name": "Entrega IECM constancia de mayoría a Jefa de Gobierno electa | IECM",
+   "published_date": "2024-06-08T00:00:00.000Z",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://www.iecm.mx/normatividad-y-transparencia/transparencia/transparencia-proactiva/transparencia-proactiva-integrantes-de-comites-ciudadanos-y-consejos-de-los-pueblos-2010-2016/entrega-iecm-constancia-de-mayoria-a-jefa-de-gobierno-electa"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "congresocdmx.gob.mx",
+   "first_seen": "2026-11-14T23:14:39+00:00",
+   "id": "source:3e86a221b6a48a02",
+   "label": "Source",
+   "name": "Se instaló la III Legislatura del Congreso capitalino",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://www.congresocdmx.gob.mx/comsoc-instalo-iii-legislatura-congreso-capitalino-5459-1.html"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "cdmx.gob.mx",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "source:5276a4eebe93f35d",
+   "label": "Source",
+   "name": "Acerca de",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://jefaturadegobierno.cdmx.gob.mx/dependencia/acerca-de"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "cdmx.gob.mx",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "source:6812d9bac2db2486",
+   "label": "Source",
+   "name": "Jefa de Gobierno – Jefa de Gobierno",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://jefadegobierno.cdmx.gob.mx/about/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "cnn.com",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "source:884e83ea7d44e082",
+   "label": "Source",
+   "name": "¿Quién es Clara Brugada, jefa de Gobierno electa de la Ciudad de México? | CNN",
+   "published_date": "2024-06-09T01:15:04.000Z",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://cnnespanol.cnn.com/2024/06/08/clara-brugada-candidata-jefa-gobierno-elecciones-cdmx-2024-orix"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "source:cf1c517708649d71",
+   "label": "Source",
+   "name": "Clara Brugada",
+   "published_date": "2026-09-12T06:42:54.000Z",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://en.wikipedia.org/wiki/Clara_Brugada"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "cdmx.gob.mx",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "source:fa1dafb54a66d86e",
+   "label": "Source",
+   "name": "Directorio",
+   "retrieved_at": "2026-11-14T23:14:44+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:14:44+00:00",
+   "url": "https://www.jefaturadegobierno.cdmx.gob.mx/dependencia/directorio"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2030-10-04",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:14:44+00:00",
+   "id": "term:85bc0daff3e8",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:14:44+00:00",
+   "name": "Clara Marina Brugada Molina — term from 2024-10-05",
+   "office": "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico",
+   "person": "person:MX:clara-marina-brugada-molina",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-05",
+   "updated_at": "2026-11-14T23:14:44+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico": [
+   "country:MX",
+   "level:MX:state",
+   "level:MX:state:MX-CMX",
+   "body:MX:state:MX-CMX:executive",
+   "office:MX:state:MX-CMX:executive:head-of-government-of-ciudad-de-mexico"
+  ]
+ },
+ "politician": "person:MX:clara-marina-brugada-molina",
+ "sha256": "b10089104babad429ed0f08c2f763ed2831955e8f8f7034c3177acfbd2e8875a",
+ "unreached_offices": []
+}

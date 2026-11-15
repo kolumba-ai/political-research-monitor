@@ -13,6 +13,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Protocol
 
+from polgraph.bundle import BUNDLE_FORMAT, JsonlGraph, build_bundle, bundle_sha256
 from polgraph.ids import normalize_text
 
 TRACKABLE_STATUSES = {"verified", "official_single"}
@@ -25,44 +26,76 @@ class GraphReader(Protocol):
     def nodes_by_label(self, label: str) -> list[dict]: ...
 
 
-class KnowledgeBaseGraph:
-    """In-memory, read-only view of `knowledge_base/graph/{nodes,edges}.jsonl` (System A's export format)."""
+KnowledgeBaseGraph = JsonlGraph
 
-    def __init__(self, kb_dir: Path | str):
-        kb = Path(kb_dir)
-        self.manifest = json.loads((kb / "manifest.json").read_text()) if (kb / "manifest.json").exists() else {}
-        self._nodes: dict[str, dict] = {}
-        self._by_label: dict[str, list[dict]] = defaultdict(list)
-        self._out: dict[tuple[str, str], list[tuple[dict, str]]] = defaultdict(list)
-        self._in: dict[tuple[str, str], list[tuple[dict, str]]] = defaultdict(list)
-        with open(kb / "graph" / "nodes.jsonl", encoding="utf-8") as fh:
-            for line in fh:
-                if line.strip():
-                    n = json.loads(line)
-                    self._nodes[n["id"]] = n
-                    self._by_label[n["label"]].append(n)
-        with open(kb / "graph" / "edges.jsonl", encoding="utf-8") as fh:
-            for line in fh:
-                if not line.strip():
-                    continue
-                e = json.loads(line)
-                props = {k: v for k, v in e.items() if k not in ("src", "dst")}
-                self._out[(e["src"], e["type"])].append((props, e["dst"]))
-                self._in[(e["dst"], e["type"])].append((props, e["src"]))
+
+class BundleDir:
+    """System A's exported politician input bundles: `<dir>/<ISO2>/index.json` + one file per politician."""
+
+    def __init__(self, path: Path | str):
+        self.path = Path(path)
+        self._index: dict[str, tuple[Path, dict]] = {}
+        for idx in sorted(self.path.glob("*/index.json")):
+            data = json.loads(idx.read_text())
+            iso2 = data["country"].split(":")[1]
+            for entry in data["bundles"]:
+                node = {"id": entry["politician"], "label": "Person", "name": entry.get("name"),
+                        "aliases": entry.get("aliases") or [], "country": iso2}
+                self._index[entry["politician"]] = (idx.parent / entry["file"], node)
+
+    def bundle(self, politician_id: str) -> dict | None:
+        """Only politicians listed in an `index.json`; a leftover file from an older export is ignored."""
+        hit = self._index.get(politician_id)
+        return json.loads(hit[0].read_text()) if hit else None
 
     def get_node(self, node_id: str) -> dict | None:
-        return self._nodes.get(node_id)
+        hit = self._index.get(node_id)
+        return hit[1] if hit else None
 
     def edges(self, node_id: str, etype: str, direction: str) -> list[tuple[dict, dict]]:
-        idx = self._out if direction == "out" else self._in
-        out = [(p, self._nodes[o]) for p, o in idx.get((node_id, etype), []) if o in self._nodes]
-        return sorted(out, key=lambda t: t[1]["id"])
+        return []
 
     def nodes_by_label(self, label: str) -> list[dict]:
-        return sorted(self._by_label.get(label, []), key=lambda n: n["id"])
+        return sorted((n for _, n in self._index.values()), key=lambda n: n["id"]) if label == "Person" else []
+
+
+def get_bundle(g, politician_id: str, country_id: str) -> dict | None:
+    """The politician's input bundle: read from exported files, or built from a full graph (tests, live store)."""
+    return g.bundle(politician_id) if hasattr(g, "bundle") else build_bundle(g, country_id, politician_id)
+
+
+def validate_bundle(bundle: dict, country_id: str, politician_id: str) -> tuple[list[str], list[str]]:
+    """(errors, warnings). Paths are recomputed from the bundle's own nodes and edges, not trusted from `paths`."""
+    errors: list[str] = []
+    warnings: list[str] = []
+    if bundle.get("format") != BUNDLE_FORMAT:
+        errors.append(f"unsupported bundle format {bundle.get('format')!r}")
+    if bundle.get("country") != country_id:
+        errors.append(f"bundle country {bundle.get('country')!r} != {country_id!r}")
+    if bundle.get("politician") != politician_id:
+        errors.append(f"bundle politician {bundle.get('politician')!r} != {politician_id!r}")
+    if errors:
+        return errors, warnings
+    if bundle.get("sha256") != bundle_sha256(bundle):
+        errors.append("bundle sha256 does not match its content")
+    bg = JsonlGraph.from_bundle(bundle)
+    rebuilt = build_bundle(bg, country_id, politician_id)
+    if rebuilt is None:
+        return errors + ["bundle lacks the Country or Person node"], warnings
+    person_cc = (bg.get_node(politician_id).get("country") or "").upper()
+    if person_cc and f"country:{person_cc}" != country_id:
+        errors.append(f"person belongs to country:{person_cc}, not {country_id}")
+    for e, office in bg.edges(politician_id, "HOLDS_OFFICE", "out"):
+        if e.get("current") and office["id"] in rebuilt["unreached_offices"]:
+            errors.append(f"no Country -> ... -> PoliticalOffice path for current office {office['id']}")
+    if not bg.edges(politician_id, "MEMBER_OF_PARTY", "out"):
+        warnings.append("no MEMBER_OF_PARTY leaf")
+    return errors, warnings
 
 
 def open_reader(settings) -> GraphReader:
+    if settings.system_a_source == "bundles":
+        return BundleDir(settings.system_a_bundle_dir)
     if settings.system_a_source == "knowledge_base":
         return KnowledgeBaseGraph(settings.system_a_kb_dir)
     from polgraph.config import get_settings as system_a_settings
@@ -108,6 +141,9 @@ class PersonSnapshot:
     country: dict
     offices: list[OfficeHolding] = field(default_factory=list)
     parties: list[dict] = field(default_factory=list)
+    bundle_sha256: str | None = None
+    input_errors: list[str] = field(default_factory=list)
+    input_warnings: list[str] = field(default_factory=list)
 
     @property
     def current_offices(self) -> list[OfficeHolding]:
@@ -122,7 +158,10 @@ class PersonSnapshot:
 
     @property
     def tracking_status(self) -> str:
-        """`trackable` (verified / official_single current holding), `needs_review` (single_source), else `ineligible`."""
+        """`invalid_input` (bundle failed validation), `trackable` (verified / official_single current holding),
+        `needs_review` (single_source), else `ineligible`."""
+        if self.input_errors:
+            return "invalid_input"
         status = self.evidence_status
         if status in TRACKABLE_STATUSES:
             return "trackable"
@@ -175,7 +214,21 @@ def _jurisdiction(g: GraphReader, office_id: str) -> dict:
     return out
 
 
-def read_person(g: GraphReader, politician_id: str) -> PersonSnapshot | None:
+def read_person(g: GraphReader, politician_id: str, country_code: str | None = None) -> PersonSnapshot | None:
+    """Builds the snapshot from the politician's input bundle only (country + politician + the subgraph between)."""
+    iso2 = (country_code or politician_id.split(":")[1]).upper()
+    bundle = get_bundle(g, politician_id, f"country:{iso2}")
+    if bundle is None:
+        return None
+    errors, warnings = validate_bundle(bundle, f"country:{iso2}", politician_id)
+    snap = _snapshot(JsonlGraph.from_bundle(bundle), politician_id)
+    if snap:
+        snap.bundle_sha256, snap.input_errors, snap.input_warnings = bundle_sha256(bundle), errors, warnings
+        snap.bundle = bundle
+    return snap
+
+
+def _snapshot(g: GraphReader, politician_id: str) -> PersonSnapshot | None:
     person = g.get_node(politician_id)
     if not person or person.get("label") != "Person":
         return None
@@ -218,7 +271,7 @@ def list_persons(g: GraphReader, country_code: str | None = None, include_inelig
     for p in g.nodes_by_label("Person"):
         if country_code and (p.get("country") or "").upper() != country_code.upper():
             continue
-        snap = read_person(g, p["id"])
+        snap = read_person(g, p["id"], country_code)
         if snap and (include_ineligible or snap.tracking_status != "ineligible"):
             out.append(snap)
     return out

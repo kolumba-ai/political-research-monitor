@@ -1,0 +1,494 @@
+{
+ "country": "country:MX",
+ "edges": [
+  {
+   "dst": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "src": "body:MX:municipal:MX-BCN:mexicali:council",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:MX:municipal",
+   "src": "country:MX",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:MX:municipal:MX-BCN:mexicali",
+   "src": "level:MX:municipal",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:MX:municipal:MX-BCN:mexicali:council",
+   "src": "level:MX:municipal:MX-BCN:mexicali",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:078dac83f6d2",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "src": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:18:24+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:21+00:00",
+   "claim": "office exists: Municipal President of Mexicali",
+   "dst": "source:022185fc4e52f67e",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "src": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:21+00:00",
+   "claim": "office exists: Municipal President of Mexicali",
+   "dst": "source:29e2c2e26aea3908",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "src": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:21+00:00",
+   "claim": "office exists: Municipal President of Mexicali",
+   "dst": "source:4a225b76f5a67aaa",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "src": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T02:15:11+00:00",
+   "claim": "municipality and its selection system (INAFED register)",
+   "dst": "source:73327df7bbd85a9f",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "src": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T02:15:11+00:00",
+   "via": "official_directory"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:18:24+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "src": "person:MX:norma-alicia-bustamante-martinez",
+   "start": "2024-10-01",
+   "status": "current",
+   "term_id": "term:078dac83f6d2",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:18:24+00:00"
+  },
+  {
+   "as_of": "2026-11-14T23:18:24+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:MX:morena",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "src": "person:MX:norma-alicia-bustamante-martinez",
+   "term_id": "term:078dac83f6d2",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-14T23:18:24+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:24+00:00",
+   "claim": "Norma Alicia Bustamante Martínez holds office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "dst": "source:022185fc4e52f67e",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "snippet": "…y Convenciones de Mexicali (COTUCO) 68 Alianza Empresarial por la Seguridad en Mexicali 69 Funcionario Cargo y Domicilio Oficial Teléfonos H. CABILDO DE MEXICALI H. CABILDO NORMA ALICIA BUSTAMANTE MARTÍNEZ (686) 558-1600 nabustamante@mexicali.gob.mx Ext.: 1602, 1603 PRESIDENTA MUNICIPAL DEL 25 AYUNTAMIENTO DE MEXICALI…",
+   "src": "term:078dac83f6d2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:24+00:00",
+   "claim": "Norma Alicia Bustamante Martínez holds office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "dst": "source:11efae709400a6a4",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "snippet": "…Norma Alicia Bustamante Martínez · Presidenta Municipal de Mexicali, Baja California · InfoGobiernos Norma Alicia Bustamante Martínez · Presidenta Municipal de Mexicali, Baja Californi…",
+   "src": "term:078dac83f6d2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:24+00:00",
+   "claim": "Norma Alicia Bustamante Martínez holds office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "dst": "source:4a225b76f5a67aaa",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "snippet": "…Comunicado > NORMA BUSTAMANTE PRESENTA PLAN DE DESARROLLO MUNICIPAL 2025-2027 > 25 Ayuntamiento de Mexicali Comunicado > NORMA BUSTAMANTE PRESENTA PLAN DE DESARROLLO MUNIC…",
+   "src": "term:078dac83f6d2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:24+00:00",
+   "claim": "Norma Alicia Bustamante Martínez holds office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "dst": "source:6eb026a640953bd4",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "snippet": "…reelección a las afueras del instituto en compañía de los miembros de su planilla y algunos ciudadanos. Daniel Resendiz AGRADECIDA POR MAYOR VOTACIÓN En atención a medios, Bustamante Martínez, se expresó feliz y emocionada luego de recibir la constancia que finalmente la avala como presidenta municipal del próximo Ayun…",
+   "src": "term:078dac83f6d2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:24+00:00",
+   "claim": "Norma Alicia Bustamante Martínez holds office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "dst": "source:968a343311216c98",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "snippet": "…ediato. Banco de Imágenes Por Redacción-GH 09 de marzo 2025, 07:20 a.m. Mexicali, B.C.- Nacida el 12 de agosto de 1947 en Mexicali, Baja California, Norma Alicia Bustamante Martínez, actual presidenta municipal de Mexicali, es una figura política y social con trayectoria en diversas áreas educativas y culturales. Antes…",
+   "src": "term:078dac83f6d2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:24+00:00",
+   "claim": "Norma Alicia Bustamante Martínez holds office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "dst": "source:c47c538356a14dbd",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "snippet": "…resultados del Plan Municipal de Desarrollo 113 Administración Pública Municipal 116 Anexos H. INTEGRANTES DEL XXV AYUNTAMIENTO DE MEXICALI Norma Alicia Bustamante Martínez Presidenta Municipal José Óscar Vega Marín Síndico Procurador Suhey Rocha Corrales Regidora Isaías Morales Francisco Regidor César Castro Ponce Re…",
+   "src": "term:078dac83f6d2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:18:24+00:00",
+   "claim": "Norma Alicia Bustamante Martínez holds office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "dst": "source:fb1b43f0fe71a449",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "snippet": "…Norma Alicia Bustamante Martínez Norma Alicia Bustamante Martínez | Norma Alicia Bustamante Martínez | | | --- | --- | | Presidenta municipal de Mexicali Actualmente en el cargo | | |…",
+   "src": "term:078dac83f6d2",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:MX:norma-alicia-bustamante-martinez",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "src": "term:078dac83f6d2",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:18:24+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "executive",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "id": "body:MX:municipal:MX-BCN:mexicali:council",
+   "label": "GovernmentBody",
+   "name": "Municipal council of Mexicali",
+   "name_local": "Ayuntamiento de Mexicali",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-15T02:15:11+00:00",
+   "website": "http://www.mexicali.gob.mx"
+  },
+  {
+   "constitution_name": "Constitución Política de los Estados Unidos Mexicanos",
+   "constitution_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "North America",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'hybrid_regime' not confirmed on evidence page; ignored",
+     "freedom_house: 'partly_free' not confirmed on evidence page; ignored",
+     "vdem: 'electoral_autocracy' is in the index's grey zone (uncertain category)",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T02:15:03+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:46+00:00",
+   "id": "country:MX",
+   "iso2": "MX",
+   "iso3": "MEX",
+   "label": "Country",
+   "last_verified": "2026-11-15T02:15:32+00:00",
+   "m49": "484",
+   "name": "Mexico",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Hybrid regime",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Partly democratic",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/mexico/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Hybrid regime",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Partly democratic",
+   "regime_sources_agree": true,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal presidential republic",
+   "un_intermediate_region": "Central America",
+   "un_region": "Americas",
+   "un_sub_region": "Latin America and the Caribbean",
+   "updated_at": "2026-11-15T02:15:32+00:00"
+  },
+  {
+   "council_name": "Municipal council",
+   "council_name_local": "Ayuntamiento",
+   "country": "MX",
+   "description": "Mexico City local-government units; 2,478 municipalities plus boroughs nationwide.",
+   "first_seen": "2026-11-14T23:08:11+00:00",
+   "id": "level:MX:municipal",
+   "label": "GovernmentLevel",
+   "name": "Municipal / Local government",
+   "name_local": "Municipios",
+   "register_note": "Municipality list and selection system from the INAFED register; its officeholder columns are 2021–2024 terms and are not used as current officeholders.",
+   "register_url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv",
+   "researched_name": "Municipalities (municipios)",
+   "tier": "municipal",
+   "unit_count": 2475,
+   "unit_name": "Municipality",
+   "unit_name_local": "Municipio",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "id": "level:MX:municipal:MX-BCN:mexicali",
+   "inegi_code": "2002",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:18:21+00:00",
+   "name": "Mexicali, Baja California",
+   "parent_division": "Baja California",
+   "parent_iso_3166_2": "MX-BCN",
+   "pipeline_mode": "research_only",
+   "population": 1049792,
+   "selection_system": "party-based popular election",
+   "tier": "municipal_unit",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "id": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "is_elected": true,
+   "keywords": [
+    "president",
+    "municipal president",
+    "presidenta municipal"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:18:21+00:00",
+   "name": "Municipal President of Mexicali",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "seats": 1,
+   "selection_details": "Elected by popular vote with the council slate (planilla)",
+   "selection_method": "direct_election",
+   "single_seat": true,
+   "structure_evidence": "verified",
+   "title_local": "Presidente(a) Municipal de Mexicali",
+   "updated_at": "2026-11-15T02:15:11+00:00"
+  },
+  {
+   "acronym": "Morena",
+   "aliases": [
+    "MORENA",
+    "Morena",
+    "Movimiento Regeneración Nacional"
+   ],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:07:40+00:00",
+   "id": "party:MX:morena",
+   "label": "PoliticalParty",
+   "name": "Morena",
+   "updated_at": "2026-11-14T23:21:24+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "MX",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "id": "person:MX:norma-alicia-bustamante-martinez",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:18:24+00:00",
+   "name": "Norma Alicia Bustamante Martínez",
+   "updated_at": "2026-11-15T02:15:38+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "mexicali.gob.mx",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "id": "source:022185fc4e52f67e",
+   "label": "Source",
+   "name": "mexicali.gob.mx",
+   "retrieved_at": "2026-11-14T23:18:24+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "url": "https://www.mexicali.gob.mx/transparencia/administracion/directorio/DIRECTORIODEFUNCIONARIOS.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "infogobiernos.com",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "id": "source:11efae709400a6a4",
+   "label": "Source",
+   "name": "Norma Alicia Bustamante Martínez · Presidenta Municipal de Mexicali, Baja California · InfoGobiernos",
+   "retrieved_at": "2026-11-14T23:18:24+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "url": "https://infogobiernos.com/mx/gobernantes/norma-alicia-bustamante-martinez-mexicali-baja-california/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "diputados.gob.mx",
+   "first_seen": "2026-11-14T23:17:54+00:00",
+   "id": "source:29e2c2e26aea3908",
+   "label": "Source",
+   "name": "Reforma 281: Constitución Política de los Estados Unidos Mexicanos. DOF 23-04-2026",
+   "retrieved_at": "2026-11-14T23:18:21+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:21+00:00",
+   "url": "http://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_281_23abr26.pdf"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "mexicali.gob.mx",
+   "first_seen": "2026-11-14T23:18:21+00:00",
+   "id": "source:4a225b76f5a67aaa",
+   "label": "Source",
+   "name": "Comunicado > NORMA BUSTAMANTE PRESENTA PLAN DE DESARROLLO MUNICIPAL 2025-2027 > 25 Ayuntamiento de Mexicali",
+   "retrieved_at": "2026-11-14T23:18:24+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "url": "https://www.mexicali.gob.mx/portalmexicali/comunicado/ver/3886"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "elimparcial.com",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "id": "source:6eb026a640953bd4",
+   "label": "Source",
+   "name": "Oficializa IEEBC reelección de Norma Bustamante",
+   "published_date": "2024-06-14T15:23:04.000Z",
+   "retrieved_at": "2026-11-14T23:18:24+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "url": "https://www.elimparcial.com/mxl/mexicali/2024/06/13/es-norma-bustamante-alcaldesa-electa-de-mexicali/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "datos.gob.mx",
+   "first_seen": "2026-11-15T01:58:25+00:00",
+   "id": "source:73327df7bbd85a9f",
+   "label": "Source",
+   "name": "INAFED — Presidentas y Presidentes municipales",
+   "retrieved_at": "2026-11-15T02:15:32+00:00",
+   "retrieved_via": "official_directory",
+   "updated_at": "2026-11-15T02:15:32+00:00",
+   "url": "https://www.datos.gob.mx/dataset/a67f0a5b-5933-4d7f-8d51-53cb874ffd29/resource/22dec87e-ec40-45e6-9bf7-3065ad1ad7b5/download/presidentes_municipales.csv"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "elimparcial.com",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "id": "source:968a343311216c98",
+   "label": "Source",
+   "name": "Norma Bustamante: Una trayectoria de servicio",
+   "published_date": "2025-03-09T11:33:48.000Z",
+   "retrieved_at": "2026-11-14T23:18:24+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "url": "https://www.elimparcial.com/mxl/mexicali/2025/03/08/norma-bustamante-una-trayectoria-de-servicio/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "coplademm.org.mx",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "id": "source:c47c538356a14dbd",
+   "label": "Source",
+   "name": "coplademm.org.mx",
+   "retrieved_at": "2026-11-14T23:18:24+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "url": "https://coplademm.org.mx/data/planes/PMD_2025_2027.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "id": "source:fb1b43f0fe71a449",
+   "label": "Source",
+   "name": "Norma Alicia Bustamante Martínez",
+   "published_date": "2026-10-01T18:01:18.000Z",
+   "retrieved_at": "2026-11-14T23:18:24+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:18:24+00:00",
+   "url": "https://es.wikipedia.org/wiki/Norma_Alicia_Bustamante_Mart%C3%ADnez"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-09-30",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:18:24+00:00",
+   "id": "term:078dac83f6d2",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:18:24+00:00",
+   "name": "Norma Alicia Bustamante Martínez — term from 2024-10-01",
+   "office": "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali",
+   "person": "person:MX:norma-alicia-bustamante-martinez",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-MX-20261114T230338Z",
+   "start": "2024-10-01",
+   "updated_at": "2026-11-14T23:18:24+00:00"
+  }
+ ],
+ "paths": {
+  "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali": [
+   "country:MX",
+   "level:MX:municipal",
+   "level:MX:municipal:MX-BCN:mexicali",
+   "body:MX:municipal:MX-BCN:mexicali:council",
+   "office:MX:municipal:MX-BCN:mexicali:council:municipal-president-of-mexicali"
+  ]
+ },
+ "politician": "person:MX:norma-alicia-bustamante-martinez",
+ "sha256": "e952134d84dee9765d3ec08827c45d0ff383e06cabe6ce3da96229f855ad5f2b",
+ "unreached_offices": []
+}

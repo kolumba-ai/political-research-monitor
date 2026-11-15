@@ -1,0 +1,396 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "src": "body:PK:national:supreme-court-of-pakistan",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:national",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "body:PK:national:supreme-court-of-pakistan",
+   "src": "level:PK:national",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:3dde97a499c3",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "src": "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-14T23:51:25+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:26+00:00",
+   "claim": "office exists: Judge of the Supreme Court",
+   "dst": "source:826ba916d263cd28",
+   "first_seen": "2026-11-14T23:51:13+00:00",
+   "src": "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:26+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:26+00:00",
+   "claim": "office exists: Judge of the Supreme Court",
+   "dst": "source:bcb2da82f38cd5ab",
+   "first_seen": "2026-11-14T23:51:26+00:00",
+   "src": "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:26+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "dst": "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "end": "2027-10-25",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-14T23:51:25+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "src": "person:PK:yahya-afridi",
+   "start": "2024-10-26",
+   "status": "current",
+   "term_id": "term:3dde97a499c3",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-14T23:51:25+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:25+00:00",
+   "claim": "Yahya Afridi holds office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "dst": "source:125ac3c0b5768c70",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "snippet": "…ER 2024 ESTABLISHED 1988 FEDERAL JUDICIAL ACADEMY E-BULLETIN Hon’ble president Asif Ali Zardari administered the oath of the office to Hon’ble Mr. Justice Yahya Afridi as the 30 th Chief Justice of Pakistan during a ceremony at President House, Islamabad, on Oct 26, 2024. PROFILE HON’BLE MR. JUSTICE YAHYA AFRIDI CHIEF…",
+   "src": "term:3dde97a499c3",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:25+00:00",
+   "claim": "Yahya Afridi holds office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "dst": "source:22499b3cef69f8ae",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "snippet": "…Yahya Afridi Yahya Afridi | Yahya Afridi | | | --- | --- | | یحییٰ آفریدی | | | 30th Chief Justice of Pakistan | | | Incumbent | | | Assumed office 26 October 2024 |…",
+   "src": "term:3dde97a499c3",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:25+00:00",
+   "claim": "Yahya Afridi holds office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "dst": "source:8f576762fe517e3b",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "snippet": "…Yahya Afridi Yahya Afridi - Local Pakistan # Yahya Afridi Yahya Afridi is the 30th Chief Justice of Pakistan. Yahya Afridi was appointed as the Chief Justice of Pakis…",
+   "src": "term:3dde97a499c3",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:25+00:00",
+   "claim": "Yahya Afridi holds office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "dst": "source:996bf66b4d458e75",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "snippet": "…ustice of Pakistan – Supreme Court of Pakistan Honorable Chief Justice of Pakistan – Supreme Court of Pakistan # Honorable Chief Justice of Pakistan ## Mr. Justice Yahya Afridi Mr. Justice Yahya Afridi was born in Dera Ismail Khan on 23rd January 1965. He belongs to the Adam Khel section of the Afridi tribe located in…",
+   "src": "term:3dde97a499c3",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:25+00:00",
+   "claim": "Yahya Afridi holds office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "dst": "source:ab292254154755cf",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "snippet": "…Justice Yahya Afridi sworn in as CJP Justice Yahya Afridi sworn in as CJP ###### Justice Yahya Afridi sworn in as CJP ISLAMABAD, Oct 26 (APP): President Asif Ali Zardari on S…",
+   "src": "term:3dde97a499c3",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-14T23:51:25+00:00",
+   "claim": "Yahya Afridi holds office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "dst": "source:c229d7fb8f6a2148",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "snippet": "…Justice Yahya Afridi — a brief profile Justice Yahya Afridi — a brief profile # Justice Yahya Afridi — a brief profile ## Justice Yahya Afridi has been appointed for a fixed…",
+   "src": "term:3dde97a499c3",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:yahya-afridi",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "src": "term:3dde97a499c3",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-14T23:51:25+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "judicial",
+   "description": "Highest ordinary appellate court, distinct from the constitutional court. Statute permits up to 33 judges in addition to the chief justice. The 2024 Twenty-Sixth Amendment changed chief-justice selection to a parliamentary committee choice from the three senior-most judges and capped the chief-justice term at three years; judges are appointed, not directly elected.",
+   "first_seen": "2026-11-14T23:51:02+00:00",
+   "id": "body:PK:national:supreme-court-of-pakistan",
+   "label": "GovernmentBody",
+   "last_verified": "2026-11-14T23:51:02+00:00",
+   "name": "Supreme Court of Pakistan",
+   "name_local": "عدالتِ عظمیٰ پاکستان",
+   "pipeline_mode": "research_only",
+   "updated_at": "2026-11-14T23:51:02+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "agent_run_id": "agent_run_5d9596a2a7ab4f63a7d798cc79e0c064",
+   "country": "PK",
+   "first_seen": "2026-11-14T23:50:42+00:00",
+   "id": "level:PK:national",
+   "label": "GovernmentLevel",
+   "name": "National / Federal government",
+   "tier": "national",
+   "updated_at": "2026-11-14T23:50:42+00:00"
+  },
+  {
+   "aliases": [
+    "Judge of the Supreme Court"
+   ],
+   "first_seen": "2026-11-14T23:51:13+00:00",
+   "id": "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "is_elected": false,
+   "keywords": [
+    "judg",
+    "judge"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:51:26+00:00",
+   "name": "Chief Justice of the Supreme Court of Pakistan",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seats": 33,
+   "selection_details": "Maximum 33 other judges by 2024 statute; Judicial Commission nominations and presidential appointment; retirement at age 65.",
+   "selection_method": "appointment",
+   "single_seat": false,
+   "structure_evidence": "official_single",
+   "term_length_years": 3.0,
+   "title_local": "جج سپریم کورٹ",
+   "updated_at": "2026-11-14T23:51:26+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "id": "person:PK:yahya-afridi",
+   "label": "Person",
+   "last_verified": "2026-11-14T23:51:25+00:00",
+   "name": "Yahya Afridi",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "fja.gov.pk",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "id": "source:125ac3c0b5768c70",
+   "label": "Source",
+   "name": "E-BULLETIN",
+   "retrieved_at": "2026-11-14T23:51:25+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "url": "https://www.fja.gov.pk/files/fja_bulletin/oct_dec_2024.pdf"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "id": "source:22499b3cef69f8ae",
+   "label": "Source",
+   "name": "Yahya Afridi",
+   "published_date": "2026-10-25T22:29:07.000Z",
+   "retrieved_at": "2026-11-14T23:51:25+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "url": "https://en.wikipedia.org/wiki/Yahya_Afridi"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:47:59+00:00",
+   "id": "source:826ba916d263cd28",
+   "label": "Source",
+   "name": "na.gov.pk",
+   "retrieved_at": "2026-11-15T01:51:28+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T01:51:28+00:00",
+   "url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "local.com.pk",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "id": "source:8f576762fe517e3b",
+   "label": "Source",
+   "name": "Yahya Afridi",
+   "retrieved_at": "2026-11-14T23:51:25+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "url": "https://www.local.com.pk/government/people/yahya-afridi/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "supremecourt.gov.pk",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "id": "source:996bf66b4d458e75",
+   "label": "Source",
+   "name": "Honorable Chief Justice of Pakistan – Supreme Court of Pakistan",
+   "retrieved_at": "2026-11-14T23:51:25+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "url": "https://www.supremecourt.gov.pk/honorable-chief-justice/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "president.gov.pk",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "id": "source:ab292254154755cf",
+   "label": "Source",
+   "name": "Justice Yahya Afridi sworn in as CJP",
+   "retrieved_at": "2026-11-14T23:51:25+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "url": "https://president.gov.pk/justice-yahya-afridi-sworn-in-as-cjp-2"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "na.gov.pk",
+   "first_seen": "2026-11-14T23:51:26+00:00",
+   "id": "source:bcb2da82f38cd5ab",
+   "label": "Source",
+   "name": "d Ps[ilfim",
+   "retrieved_at": "2026-11-14T23:51:26+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:51:26+00:00",
+   "url": "https://www.na.gov.pk/uploads/documents/6729fbb602d98_375.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "geo.tv",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "id": "source:c229d7fb8f6a2148",
+   "label": "Source",
+   "name": "Justice Yahya Afridi — a brief profile",
+   "published_date": "2024-10-22T18:34:00.000Z",
+   "retrieved_at": "2026-11-14T23:51:25+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-14T23:51:25+00:00",
+   "url": "https://www.geo.tv/latest/570386-profile-who-is-justice-yahya-afridi"
+  },
+  {
+   "confidence": 0.99,
+   "current": true,
+   "end": "2027-10-25",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-14T23:51:25+00:00",
+   "id": "term:3dde97a499c3",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-14T23:51:25+00:00",
+   "name": "Yahya Afridi — term from 2024-10-26",
+   "office": "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan",
+   "person": "person:PK:yahya-afridi",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "start": "2024-10-26",
+   "updated_at": "2026-11-14T23:51:25+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan": [
+   "country:PK",
+   "level:PK:national",
+   "body:PK:national:supreme-court-of-pakistan",
+   "office:PK:national:supreme-court-of-pakistan:chief-justice-of-the-supreme-court-of-pakistan"
+  ]
+ },
+ "politician": "person:PK:yahya-afridi",
+ "sha256": "86cbe5d7605c9ebd562703292b90b72bc65edf76fcd238cf60a4cb48bd217b8b",
+ "unreached_offices": []
+}

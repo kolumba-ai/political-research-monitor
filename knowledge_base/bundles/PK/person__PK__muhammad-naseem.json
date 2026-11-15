@@ -1,0 +1,486 @@
+{
+ "country": "country:PK",
+ "edges": [
+  {
+   "dst": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "src": "body:PK:state:PK-GB:legislature",
+   "type": "HAS_OFFICE"
+  },
+  {
+   "dst": "level:PK:state",
+   "src": "country:PK",
+   "type": "HAS_GOVERNMENT_LEVEL"
+  },
+  {
+   "dst": "level:PK:state:PK-GB",
+   "src": "level:PK:state",
+   "type": "CONTAINS"
+  },
+  {
+   "dst": "body:PK:state:PK-GB:legislature",
+   "src": "level:PK:state:PK-GB",
+   "type": "HAS_BODY"
+  },
+  {
+   "dst": "term:f29a09366f68",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "src": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "type": "HAS_TERM",
+   "updated_at": "2026-11-15T00:57:30+00:00"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:50+00:00",
+   "claim": "office exists: Member of the Gilgit-Baltistan Assembly",
+   "dst": "source:01c846b730475571",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "src": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:50+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:50+00:00",
+   "claim": "office exists: Member of the Gilgit-Baltistan Assembly",
+   "dst": "source:0a1a449ddba388da",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "src": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:50+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:50+00:00",
+   "claim": "office exists: Member of the Gilgit-Baltistan Assembly",
+   "dst": "source:432a3aa31f722e70",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "src": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:50+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-14T23:54:50+00:00",
+   "claim": "office exists: Member of the Gilgit-Baltistan Assembly",
+   "dst": "source:8d50cb4412c897f5",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "src": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-14T23:54:50+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.95,
+   "constituency_code": "GBA-17",
+   "constituency_name": "Diamer-III",
+   "current": true,
+   "dst": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "is_acting": false,
+   "last_verified": "2026-11-15T00:57:30+00:00",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "src": "person:PK:muhammad-naseem",
+   "start": "2026-07-13",
+   "status": "current",
+   "term_id": "term:f29a09366f68",
+   "type": "HOLDS_OFFICE",
+   "updated_at": "2026-11-15T00:57:30+00:00"
+  },
+  {
+   "as_of": "2026-11-15T00:57:30+00:00",
+   "basis": "as reported alongside office-holding claim",
+   "dst": "party:PK:ppp",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "src": "person:PK:muhammad-naseem",
+   "term_id": "term:f29a09366f68",
+   "type": "MEMBER_OF_PARTY",
+   "updated_at": "2026-11-15T00:57:30+00:00"
+  },
+  {
+   "checked_at": "2026-11-15T00:57:30+00:00",
+   "claim": "Muhammad Naseem holds office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "dst": "source:056f2d9e9137af3f",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "snippet": "…rom different political parties and an independent contender, while political negotiations for the formation of a new government have intensified in the region. Muhammad Naseem of the Pakistan Peoples Party has been declared successful from GBA-17 Diamer-3. In GBA-18 Diamer-4, a candidate of the Pakistan Muslim League…",
+   "src": "term:f29a09366f68",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:57:30+00:00",
+   "claim": "Muhammad Naseem holds office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "dst": "source:62895942ddffa5e9",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "snippet": "…isional results, independent candidate Muhammad Dil Pazeer won in GBA-15 (Diamer-1), securing 6,033 votes to take first place. In GBA-17, Pakistan Peoples Party (PPP) candidate Muhammad Naseem emerged victorious with 10,421 votes. The Election Commission had withheld results from the nine affected polling stations afte…",
+   "src": "term:f29a09366f68",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:57:30+00:00",
+   "claim": "Muhammad Naseem holds office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "dst": "source:726671dd5e56e0c9",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "snippet": "…al Hassan | PPP | 22 June 2026 [4] [2] | | | 12 | GBA-12 Shigar | Imran Nadeem | PPP | 22 June 2026 [4] [2] | Speaker (2026—present) | | 13 | GBA-13 Astore-I | Rana Farman Ali | PML(N) | 22 June 2026 [4] [2] | | | 14 | GBA-14 Astore-II | Rana Muhammad Farooq | PML(N) | 22 June 2026 [4] [2] | | | 15 | GBA-15 Diamer-I |…",
+   "src": "term:f29a09366f68",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "via": "agent_citation"
+  },
+  {
+   "checked_at": "2026-11-15T00:57:30+00:00",
+   "claim": "Muhammad Naseem holds office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "dst": "source:9562514e91a10d52",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "snippet": "…ction Result 2026: Candidates and Votes GBLA-17 Diamer Election Result 2026: Candidates and Votes # GBLA-17 Diamer Gilgit-Baltistan Assembly · 2026 election Muhammad Naseem (PPP) won with 10,716 votes, beating Rehmat Khaliq (JUI-F) by 3,727. ## About this result Muhammad Naseem of Pakistan Peoples Party won GBLA-17 Dia…",
+   "src": "term:f29a09366f68",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "checked_at": "2026-11-15T00:57:30+00:00",
+   "claim": "Muhammad Naseem holds office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "dst": "source:bc3a1985475a168b",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "snippet": "…Candidate Votes # GBA-17 Diamer Election Result 2026 Complete candidate vote result and winner details of GBLA-17 Diamer ## Winner - GBLA-17 Diamer Election 2026 Muhammad Naseem (PPP) won the GBA-17 Diamer 3 constituency in Gilgit Baltistan Assembly Election 2026 by securing 10،716 votes. Candidates from PPP, PTI, JUI-…",
+   "src": "term:f29a09366f68",
+   "type": "SUPPORTED_BY",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "via": "corroboration_search"
+  },
+  {
+   "dst": "person:PK:muhammad-naseem",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "src": "term:f29a09366f68",
+   "type": "TERM_HELD_BY",
+   "updated_at": "2026-11-15T00:57:30+00:00"
+  }
+ ],
+ "format": 1,
+ "nodes": [
+  {
+   "branch": "legislative",
+   "constituency_prefix": "GBA",
+   "constituency_range": "GBA-1 to GBA-24",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "general_seats": 24,
+   "id": "body:PK:state:PK-GB:legislature",
+   "label": "GovernmentBody",
+   "last_general_election": "2026-06-07",
+   "last_verified": "2026-11-15T00:58:35+00:00",
+   "members_verified": 32,
+   "name": "Gilgit-Baltistan Assembly (Gilgit-Baltistan)",
+   "name_local": "گلگت بلتستان اسمبلی",
+   "official_members_url": "https://gba.gov.pk/members/",
+   "pipeline_mode": "research_only",
+   "reserved_minorities": 0,
+   "reserved_other": 3,
+   "reserved_women": 6,
+   "structure_agent_run": "agent_run_0426df1b63c144a69769ad51708e0b6e",
+   "total_seats": 33,
+   "updated_at": "2026-11-15T00:58:35+00:00"
+  },
+  {
+   "constitution_name": "Constitution of the Islamic Republic of Pakistan, 1973 (as amended through the Twenty-Seventh Amendment, 2025)",
+   "constitution_url": "https://na.gov.pk/uploads/documents/6926e060076ed_467.pdf",
+   "contact_gate": {
+    "disagreement": false,
+    "per_source": {
+     "aggregate": "restricted"
+    },
+    "reasons": [
+     "status 'restricted' not in accepted statuses ['allowed']"
+    ],
+    "status": "fail"
+   },
+   "continent": "Asia",
+   "democracy_gate": {
+    "disagreement": false,
+    "per_source": {
+     "freedom_house": "partly_free (2026) -> does not meet policy",
+     "vdem": "electoral_autocracy (2026) -> does not meet policy"
+    },
+    "reasons": [
+     "eiu: 'authoritarian' not confirmed on evidence page; ignored",
+     "no source classifies the country within the accepted categories"
+    ],
+    "status": "fail"
+   },
+   "eligibility_evaluated_at": "2026-11-15T00:54:38+00:00",
+   "eligible": false,
+   "first_seen": "2026-11-14T22:52:47+00:00",
+   "id": "country:PK",
+   "iso2": "PK",
+   "iso3": "PAK",
+   "label": "Country",
+   "last_verified": "2026-11-15T00:54:31+00:00",
+   "m49": "586",
+   "name": "Pakistan",
+   "regime_basis": "EIU Democracy Index 2025",
+   "regime_by_source": {
+    "eiu": {
+     "class": "Authoritarian",
+     "evidence_url": "https://en.wikipedia.org/wiki/The_Economist_Democracy_Index",
+     "group": "Authoritarian",
+     "verification": "secondary_compilation",
+     "year": 2025
+    },
+    "freedom_house": {
+     "class": "Partly free",
+     "evidence_url": "https://freedomhouse.org/country/pakistan/freedom-world/2026",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    },
+    "vdem": {
+     "class": "Electoral autocracy",
+     "evidence_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "group": "Partly democratic",
+     "verification": "verified",
+     "year": 2026
+    }
+   },
+   "regime_class": "Authoritarian",
+   "regime_classified_at": "2026-11-15T01:02:22+00:00",
+   "regime_group": "Authoritarian",
+   "regime_sources_agree": false,
+   "registry_source": "ISO 3166-1 + UN M49 (lukes/ISO-3166-Countries-with-Regional-Codes)",
+   "research_status": "research_only_enriched",
+   "system_of_government": "Federal parliamentary republic",
+   "un_region": "Asia",
+   "un_sub_region": "Southern Asia",
+   "updated_at": "2026-11-15T02:15:03+00:00"
+  },
+  {
+   "country": "PK",
+   "description": "Intermediate administrative units, not first-level federating units. Last nationwide official count verified is dated 1 March 2023; the 2026 total may differ.",
+   "first_seen": "2026-11-14T23:51:36+00:00",
+   "id": "level:PK:state",
+   "label": "GovernmentLevel",
+   "name": "State / Provincial government",
+   "name_local": "ڈویژن",
+   "researched_name": "Divisions",
+   "tier": "state",
+   "unit_count": 36,
+   "updated_at": "2026-11-15T00:01:05+00:00"
+  },
+  {
+   "country": "PK",
+   "division_type": "self-governing federally administered territory",
+   "first_seen": "2026-11-14T23:54:49+00:00",
+   "id": "level:PK:state:PK-GB",
+   "iso_3166_2": "PK-GB",
+   "iso_type": "Pakistan administered area",
+   "label": "GovernmentLevel",
+   "last_verified": "2026-11-14T23:54:49+00:00",
+   "name": "Gilgit-Baltistan",
+   "pipeline_mode": "research_only",
+   "researched_name": "Gilgit-Baltistan",
+   "special_status_note": "Federally administered, self-governing territory under the Gilgit-Baltistan Order 2018, not a constitutionally established Pakistani province. Its assembly has 24 directly elected and nine indirectly elected reserved seats.",
+   "tier": "state_unit",
+   "updated_at": "2026-11-14T23:54:49+00:00"
+  },
+  {
+   "aliases": [
+    "Member of the Gilgit-Baltistan Assembly"
+   ],
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "id": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "is_elected": true,
+   "keywords": [
+    "member",
+    "gilgit",
+    "diputad",
+    "deputy",
+    "legislat",
+    "congres"
+   ],
+   "label": "PoliticalOffice",
+   "last_verified": "2026-11-14T23:54:50+00:00",
+   "name": "Member of the Gilgit-Baltistan Assembly (general seat)",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261114T234407Z",
+   "seat_type": "general",
+   "seats": 24,
+   "selection_method": "direct_election",
+   "single_seat": false,
+   "structure_evidence": "verified",
+   "updated_at": "2026-11-15T00:55:30+00:00"
+  },
+  {
+   "acronym": "PPP",
+   "aliases": [
+    "PPP",
+    "Pakistan Peoples Party"
+   ],
+   "country": "PK",
+   "first_seen": "2026-11-14T23:54:18+00:00",
+   "id": "party:PK:ppp",
+   "label": "PoliticalParty",
+   "name": "Pakistan Peoples Party",
+   "updated_at": "2026-11-15T01:04:12+00:00"
+  },
+  {
+   "aliases": [],
+   "country": "PK",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "id": "person:PK:muhammad-naseem",
+   "label": "Person",
+   "last_verified": "2026-11-15T00:57:30+00:00",
+   "name": "Muhammad Naseem",
+   "updated_at": "2026-11-15T02:11:59+00:00"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "gilgitbaltistan.gov.pk",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "id": "source:01c846b730475571",
+   "label": "Source",
+   "name": "Government Of Gilgit Baltistan",
+   "retrieved_at": "2026-11-14T23:54:50+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:50+00:00",
+   "url": "https://gilgitbaltistan.gov.pk/pages/about"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "emranews.com",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "id": "source:056f2d9e9137af3f",
+   "label": "Source",
+   "name": "GB Election Commission announces results of three more constituencies – Emra News English",
+   "published_date": "2026-06-17T10:23:51.000Z",
+   "retrieved_at": "2026-11-15T00:57:30+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "url": "https://en.emranews.com/158622/"
+  },
+  {
+   "authority_tier": 1,
+   "domain": "gilgitbaltistan.gov.pk",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "id": "source:0a1a449ddba388da",
+   "label": "Source",
+   "name": "gilgitbaltistan.gov.pk",
+   "retrieved_at": "2026-11-15T00:55:30+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-15T00:55:30+00:00",
+   "url": "https://gilgitbaltistan.gov.pk/storage/downloads/GB%20Order%202018.pdf"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "id": "source:432a3aa31f722e70",
+   "label": "Source",
+   "name": "PPP’s Amjad Hussain sworn in as GB chief minister - Pakistan - DAWN.COM",
+   "published_date": "2026-07-06T09:21:35.000Z",
+   "retrieved_at": "2026-11-14T23:54:50+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:50+00:00",
+   "url": "https://www.dawn.com/news/2013368"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "tribunegb.com",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "id": "source:62895942ddffa5e9",
+   "label": "Source",
+   "name": "GBA-15 and GBA-17 Re-polling: Independent, PPP Candidate Win",
+   "published_date": "2026-07-12T01:47:52.000Z",
+   "retrieved_at": "2026-11-15T00:57:30+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "url": "https://tribunegb.com/re-polling-held-in-gba-15-and-gba-17-independent-and-ppp-candidates-emerge-victorious/"
+  },
+  {
+   "authority_tier": 2,
+   "domain": "wikipedia.org",
+   "first_seen": "2026-11-15T00:57:22+00:00",
+   "id": "source:726671dd5e56e0c9",
+   "label": "Source",
+   "name": "List of members of the 4th Assembly of Gilgit-Baltistan",
+   "published_date": "2026-10-06T23:42:26.000Z",
+   "retrieved_at": "2026-11-15T00:58:35+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:58:35+00:00",
+   "url": "https://en.wikipedia.org/wiki/List_of_members_of_the_4th_Assembly_of_Gilgit-Baltistan"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "dawn.com",
+   "first_seen": "2026-11-14T23:54:50+00:00",
+   "id": "source:8d50cb4412c897f5",
+   "label": "Source",
+   "name": "PPP's Amjad Hussain elected as GB chief minister after members take oath - Pakistan - DAWN.COM",
+   "published_date": "2026-06-22T06:29:08.000Z",
+   "retrieved_at": "2026-11-14T23:54:50+00:00",
+   "retrieved_via": "agent_citation",
+   "updated_at": "2026-11-14T23:54:50+00:00",
+   "url": "https://www.dawn.com/news/2009973"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "pakistanelections.pk",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "id": "source:9562514e91a10d52",
+   "label": "Source",
+   "name": "GBLA-17 Diamer Election Result 2026: Candidates and Votes",
+   "retrieved_at": "2026-11-15T00:57:30+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "url": "https://pakistanelections.pk/gb/2026/17-diamer/"
+  },
+  {
+   "authority_tier": 3,
+   "domain": "electionpakistani.com",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "id": "source:bc3a1985475a168b",
+   "label": "Source",
+   "name": "GBLA-17 Diamer 3 Election 2026 Result | Complete Candidate Votes",
+   "retrieved_at": "2026-11-15T00:57:30+00:00",
+   "retrieved_via": "corroboration_search",
+   "updated_at": "2026-11-15T00:57:30+00:00",
+   "url": "https://www.electionpakistani.com/gilgit-baltistan-2026/GBLA-17.html"
+  },
+  {
+   "by_election": false,
+   "confidence": 0.95,
+   "constituency_code": "GBA-17",
+   "constituency_name": "Diamer-III",
+   "current": true,
+   "evidence_status": "verified",
+   "first_seen": "2026-11-15T00:57:30+00:00",
+   "id": "term:f29a09366f68",
+   "is_acting": false,
+   "label": "Term",
+   "last_verified": "2026-11-15T00:57:30+00:00",
+   "name": "Muhammad Naseem — term from 2026-07-13",
+   "office": "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly",
+   "person": "person:PK:muhammad-naseem",
+   "pipeline_mode": "research_only",
+   "pipeline_run": "run-PK-20261115T005438Z",
+   "seat_type": "general",
+   "start": "2026-07-13",
+   "updated_at": "2026-11-15T00:57:30+00:00"
+  }
+ ],
+ "paths": {
+  "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly": [
+   "country:PK",
+   "level:PK:state",
+   "level:PK:state:PK-GB",
+   "body:PK:state:PK-GB:legislature",
+   "office:PK:state:PK-GB:legislature:member-of-the-gilgit-baltistan-assembly"
+  ]
+ },
+ "politician": "person:PK:muhammad-naseem",
+ "sha256": "1f84dd1f8681e526da8b605842064b4b0ecc8cde3e7f12a23c2a28cf048ef9ec",
+ "unreached_offices": []
+}
