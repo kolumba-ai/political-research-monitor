@@ -28,10 +28,10 @@ def _prepare_system_d(settings: Settings) -> Usage:
     from system_d.agents.question_designer import ensure_question_set
     from system_d.agents.social_scorer import score_unscored
     from system_d.db import Store, get_pool
-    from system_d.llm import AnthropicLLM, MeteredEmbedder, MeteredLLM, OpenAIEmbedder, UsageMeter
+    from system_d.llm import MeteredEmbedder, MeteredLLM, OpenAIEmbedder, UsageMeter, make_llm
 
     usage_meter = UsageMeter()
-    llm = MeteredLLM(AnthropicLLM(settings), usage_meter)
+    llm = MeteredLLM(make_llm(settings), usage_meter)
     embedder = MeteredEmbedder(OpenAIEmbedder(settings), usage_meter)
     pool = get_pool(settings)
     try:

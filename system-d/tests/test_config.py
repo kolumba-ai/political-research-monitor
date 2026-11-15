@@ -2,14 +2,15 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
-from system_d.config import Settings
+from system_d.config import Settings, provider_for
 from system_d.stopping import Config
 
 
 def test_settings_defaults_and_stopping_config():
     settings = Settings.from_env({})
-    assert settings.llm_model == "claude-sonnet-5-5"
-    assert settings.simulator_model == settings.llm_model
+    assert settings.llm_model == "gpt-6.1-sol"
+    assert settings.simulator_model == "gpt-6-luna"
+    assert settings.openai_base_url == "https://api.openai.com"
     assert settings.embedding_model == "text-embedding-3-small"
     assert settings.embedding_dim == 1536
     assert settings.seed_batch == 30
@@ -25,6 +26,8 @@ def test_settings_defaults_and_stopping_config():
     assert settings.max_usd == 5
     assert settings.personas_per_call == 8
     assert settings.prices_usd_per_million["claude-sonnet-5-5"] == {"input": 2.0, "output": 10.0}
+    assert settings.prices_usd_per_million["gpt-6.1-sol"] == {"input": 2.0, "output": 10.0}
+    assert settings.prices_usd_per_million["gpt-6-luna"] == {"input": 0.1, "output": 0.5}
     assert settings.stopping_config() == Config(
         seed_batch=30,
         next_batch=20,
@@ -42,6 +45,7 @@ def test_settings_load_env_overrides_and_simulator_model_default():
             "DATABASE_URL": "test-database-url",
             "ANTHROPIC_API_KEY": "anthropic-placeholder",
             "OPENAI_API_KEY": "openai-placeholder",
+            "OPENAI_BASE_URL": "https://api.example.test",
             "LLM_MODEL": "custom-model",
             "SIMULATOR_MODEL": "sim-model",
             "EMBEDDING_DIM": "3",
@@ -62,6 +66,7 @@ def test_settings_load_env_overrides_and_simulator_model_default():
     assert settings.database_url == "test-database-url"
     assert settings.anthropic_api_key == "anthropic-placeholder"
     assert settings.openai_api_key == "openai-placeholder"
+    assert settings.openai_base_url == "https://api.example.test"
     assert settings.llm_model == "custom-model"
     assert settings.simulator_model == "sim-model"
     assert settings.embedding_dim == 3
@@ -79,4 +84,18 @@ def test_settings_load_env_overrides_and_simulator_model_default():
     assert settings.personas_per_call == 3
 
     default_simulator = Settings.from_env({"LLM_MODEL": "chosen"})
-    assert default_simulator.simulator_model == "chosen"
+    assert default_simulator.simulator_model == "gpt-6-luna"
+
+
+@pytest.mark.parametrize(
+    ("model", "provider"),
+    [
+        ("gpt-6.1-sol", "openai"),
+        ("o1-mini", "openai"),
+        ("o3", "openai"),
+        ("o4-tiny", "openai"),
+        ("claude-sonnet-5-5", "anthropic"),
+    ],
+)
+def test_provider_for(model, provider):
+    assert provider_for(model) == provider

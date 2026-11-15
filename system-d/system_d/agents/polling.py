@@ -13,7 +13,7 @@ from ..channels.base import Channel
 from ..channels.simulator import SimulatorChannel
 from ..config import Settings
 from ..db import Store, configure_connection
-from ..llm import LLM, AnthropicLLM, Usage, UsageMeter
+from ..llm import LLM, Usage, UsageMeter, make_llm
 from ..models import PollResult, PollScore, QuestionScript, Respondent, TranscriptMessage
 from ..prompts import POLL_SCORER_SYSTEM, POLL_SCORER_USER
 
@@ -74,7 +74,7 @@ def run_poll(
             transcript=json.dumps([item.model_dump() for item in transcript], ensure_ascii=False),
         ),
         output_model=PollScore,
-        max_tokens=1024,
+        max_tokens=2048,
     )
     believes_claim = {"yes": True, "no": False, "dont_know": None}.get(score.believes_claim)
     sentiment = SENTIMENT_SCALE.get(score.sentiment_choice)
@@ -109,7 +109,7 @@ def poll_task(
 ) -> dict[str, Any]:
     conn = None
     try:
-        client = llm or AnthropicLLM(settings)
+        client = llm or make_llm(settings)
         if store is not None:
             return _poll_task_with_store(task, settings, store, client)
         if not settings.database_url:

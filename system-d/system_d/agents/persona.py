@@ -33,7 +33,7 @@ def generate(
                 used_names=", ".join(sorted(existing_names)),
             ),
             output_model=PersonaBatch,
-            max_tokens=3072,
+            max_tokens=4096,
         )
         for persona in result.personas:
             normalized_name = persona.name.casefold()

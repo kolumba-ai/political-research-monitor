@@ -11,7 +11,7 @@ from typing import Any
 from .agents.sampling import select_respondents
 from .config import Settings
 from .db import Store
-from .llm import LLM, AnthropicLLM, MeteredLLM, Usage, UsageMeter
+from .llm import LLM, MeteredLLM, Usage, UsageMeter, make_llm
 from .models import Respondent
 from .stopping import TERMINAL_STATUSES, Decision, Stats, Stratum, decide
 
@@ -182,7 +182,7 @@ def run_simulation(
     def get_llm() -> LLM:
         nonlocal lazy_llm, metered_llm
         if lazy_llm is None:
-            lazy_llm = AnthropicLLM(settings)
+            lazy_llm = make_llm(settings)
         if metered_llm is None:
             metered_llm = MeteredLLM(lazy_llm, activity_meter)
         return metered_llm

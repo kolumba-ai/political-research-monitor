@@ -5,12 +5,19 @@ from __future__ import annotations
 import os
 from collections.abc import Mapping
 from dataclasses import dataclass, field
+from typing import Literal
 
 DEFAULT_PRICES_USD_PER_MILLION: dict[str, dict[str, float]] = {
     "claude-sonnet-5-5": {"input": 2.00, "output": 10.00},
     "claude-haiku-5-5": {"input": 0.10, "output": 0.50},
+    "gpt-6.1-sol": {"input": 2.00, "output": 10.00},
+    "gpt-6-luna": {"input": 0.10, "output": 0.50},
     "text-embedding-3-small": {"input": 0.02, "output": 0.0},
 }
+
+
+def provider_for(model: str) -> Literal["openai", "anthropic"]:
+    return "openai" if model.startswith(("gpt-", "o1", "o3", "o4")) else "anthropic"
 
 
 def _read_int(env: Mapping[str, str], name: str, default: int) -> int:
@@ -28,8 +35,9 @@ class Settings:
     database_url: str | None = None
     anthropic_api_key: str | None = None
     openai_api_key: str | None = None
-    llm_model: str = "claude-sonnet-5-5"
-    simulator_model: str | None = None
+    openai_base_url: str = "https://api.openai.com"
+    llm_model: str = "gpt-6.1-sol"
+    simulator_model: str | None = "gpt-6-luna"
     embedding_model: str = "text-embedding-3-small"
     embedding_dim: int = 1536
     seed_batch: int = 30
@@ -55,13 +63,14 @@ class Settings:
     @classmethod
     def from_env(cls, environ: Mapping[str, str] | None = None) -> Settings:
         env = os.environ if environ is None else environ
-        llm_model = env.get("LLM_MODEL") or "claude-sonnet-5-5"
+        llm_model = env.get("LLM_MODEL") or "gpt-6.1-sol"
         return cls(
             database_url=env.get("DATABASE_URL") or None,
             anthropic_api_key=env.get("ANTHROPIC_API_KEY") or None,
             openai_api_key=env.get("OPENAI_API_KEY") or None,
+            openai_base_url=env.get("OPENAI_BASE_URL") or "https://api.openai.com",
             llm_model=llm_model,
-            simulator_model=env.get("SIMULATOR_MODEL") or llm_model,
+            simulator_model=env.get("SIMULATOR_MODEL") or "gpt-6-luna",
             embedding_model=env.get("EMBEDDING_MODEL") or "text-embedding-3-small",
             embedding_dim=_read_int(env, "EMBEDDING_DIM", 1536),
             seed_batch=_read_int(env, "SEED_BATCH", 30),

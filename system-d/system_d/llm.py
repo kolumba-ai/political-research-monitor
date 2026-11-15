@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import logging
 import random
 import time
@@ -14,7 +15,7 @@ from typing import Any, Protocol, TypeVar
 import httpx
 from pydantic import BaseModel, ValidationError
 
-from .config import Settings
+from .config import Settings, provider_for
 
 logger = logging.getLogger(__name__)
 _warned_unknown_models: set[str] = set()
@@ -191,12 +192,14 @@ class AnthropicLLM(_HTTPClient):
     def __init__(
         self,
         settings: Settings,
+        model: str,
         transport: httpx.BaseTransport | None = None,
         sleep: Callable[[float], None] = time.sleep,
     ) -> None:
         super().__init__(settings, sleep)
         if not settings.anthropic_api_key:
             raise ValueError("ANTHROPIC_API_KEY is required")
+        self.model = model
         self.client = httpx.Client(
             base_url="https://api.anthropic.com",
             headers={
@@ -210,7 +213,7 @@ class AnthropicLLM(_HTTPClient):
     def complete_json(self, system: str, user: str, output_model: type[T], max_tokens: int) -> tuple[T, Usage]:
         tool_name = output_model.__name__
         payload = {
-            "model": self.settings.llm_model,
+            "model": self.model,
             "max_tokens": max_tokens,
             "system": system,
             "messages": [{"role": "user", "content": user}],
@@ -227,7 +230,7 @@ class AnthropicLLM(_HTTPClient):
         for retry_index in range(self.settings.llm_max_retries + 1):
             response = self._post(self.client, "/v1/messages", payload, "anthropic")
             data = response.json()
-            usage = self._usage(data, self.settings.llm_model, "input_tokens", "output_tokens")
+            usage = self._usage(data, self.model, "input_tokens", "output_tokens")
             tool_block = next(
                 (
                     block
@@ -245,13 +248,11 @@ class AnthropicLLM(_HTTPClient):
                     last_error = exc
             if retry_index < self.settings.llm_max_retries:
                 self.sleep(self._delay(retry_index))
-        raise LLMError(
-            f"anthropic response did not validate after {self.settings.llm_max_retries} retries"
-        ) from last_error
+        raise LLMError(f"anthropic response did not validate after {self.settings.llm_max_retries} retries") from last_error
 
     def chat(self, system: str, messages: list[dict[str, str]], max_tokens: int) -> tuple[str, Usage]:
         payload = {
-            "model": self.settings.simulator_model,
+            "model": self.model,
             "max_tokens": max_tokens,
             "system": system,
             "messages": messages,
@@ -262,8 +263,83 @@ class AnthropicLLM(_HTTPClient):
             block["text"] for block in data.get("content", []) if block.get("type") == "text" and "text" in block
         )
         return text, self._usage(
-            data, self.settings.simulator_model or self.settings.llm_model, "input_tokens", "output_tokens"
+            data, self.model, "input_tokens", "output_tokens"
         )
+
+
+class OpenAILLM(_HTTPClient):
+    def __init__(
+        self,
+        settings: Settings,
+        model: str,
+        transport: httpx.BaseTransport | None = None,
+        sleep: Callable[[float], None] = time.sleep,
+    ) -> None:
+        super().__init__(settings, sleep)
+        if not settings.openai_api_key:
+            raise ValueError("OPENAI_API_KEY is required")
+        self.model = model
+        self.client = httpx.Client(
+            base_url=settings.openai_base_url,
+            headers={"Authorization": f"Bearer {settings.openai_api_key}"},
+            transport=transport,
+            timeout=60.0,
+        )
+
+    def complete_json(self, system: str, user: str, output_model: type[T], max_tokens: int) -> tuple[T, Usage]:
+        payload = {
+            "model": self.model,
+            "max_completion_tokens": max_tokens,
+            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": output_model.__name__,
+                    "schema": output_model.model_json_schema(),
+                    "strict": False,
+                },
+            },
+        }
+        current_max_tokens = max_tokens
+        last_error: Exception | None = None
+        for retry_index in range(self.settings.llm_max_retries + 1):
+            payload["max_completion_tokens"] = current_max_tokens
+            response = self._post(self.client, "/v1/chat/completions", payload, "openai")
+            data = response.json()
+            usage = self._usage(data, self.model, "prompt_tokens", "completion_tokens")
+            choices = data.get("choices") or []
+            choice = choices[0] if choices else {}
+            if choice.get("finish_reason") == "length":
+                last_error = ValueError("response was truncated at the token limit")
+                current_max_tokens = min(current_max_tokens * 2, 16_000)
+            else:
+                message = choice.get("message") or {}
+                content = message.get("content")
+                try:
+                    if not isinstance(content, str):
+                        raise ValueError("response did not include JSON content")
+                    result = output_model.model_validate(json.loads(content))
+                    return result, usage
+                except (json.JSONDecodeError, ValidationError, TypeError, ValueError) as exc:
+                    last_error = exc
+            if retry_index < self.settings.llm_max_retries:
+                self.sleep(self._delay(retry_index))
+        raise LLMError(f"openai response did not validate after {self.settings.llm_max_retries} retries") from last_error
+
+    def chat(self, system: str, messages: list[dict[str, str]], max_tokens: int) -> tuple[str, Usage]:
+        payload = {
+            "model": self.model,
+            "max_completion_tokens": max_tokens,
+            "messages": [{"role": "system", "content": system}, *messages],
+        }
+        response = self._post(self.client, "/v1/chat/completions", payload, "openai")
+        data = response.json()
+        choices = data.get("choices") or []
+        message = choices[0].get("message") if choices else None
+        content = message.get("content") if message else None
+        if not isinstance(content, str):
+            raise LLMError("openai response did not include message content")
+        return content, self._usage(data, self.model, "prompt_tokens", "completion_tokens")
 
 
 class OpenAIEmbedder(_HTTPClient):
@@ -277,7 +353,7 @@ class OpenAIEmbedder(_HTTPClient):
         if not settings.openai_api_key:
             raise ValueError("OPENAI_API_KEY is required")
         self.client = httpx.Client(
-            base_url="https://api.openai.com",
+            base_url=settings.openai_base_url,
             headers={"Authorization": f"Bearer {settings.openai_api_key}"},
             transport=transport,
             timeout=60.0,
@@ -300,3 +376,29 @@ class OpenAIEmbedder(_HTTPClient):
             raise ValueError(f"embedding dimension does not match settings.embedding_dim={self.settings.embedding_dim}")
         usage = self._usage(data, self.settings.embedding_model, "prompt_tokens", "total_tokens")
         return vectors, Usage(usage.model, usage.input_tokens, 0)
+
+
+class _LLMRouter:
+    def __init__(self, complete_client: LLM, chat_client: LLM) -> None:
+        self.complete_client = complete_client
+        self.chat_client = chat_client
+
+    def complete_json(self, system: str, user: str, output_model: type[T], max_tokens: int) -> tuple[T, Usage]:
+        return self.complete_client.complete_json(system, user, output_model, max_tokens)
+
+    def chat(self, system: str, messages: list[dict[str, str]], max_tokens: int) -> tuple[str, Usage]:
+        return self.chat_client.chat(system, messages, max_tokens)
+
+
+def _make_model_client(settings: Settings, model: str) -> LLM:
+    if provider_for(model) == "openai":
+        return OpenAILLM(settings, model)
+    return AnthropicLLM(settings, model)
+
+
+def make_llm(settings: Settings) -> LLM:
+    simulator_model = settings.simulator_model or settings.llm_model
+    return _LLMRouter(
+        complete_client=_make_model_client(settings, settings.llm_model),
+        chat_client=_make_model_client(settings, simulator_model),
+    )

@@ -70,7 +70,7 @@ def aggregate_pending(store: Store, llm: LLM, embedder: Embedder, settings: Sett
                 claim=claim["claim_text"],
             ),
             output_model=CanonicalClaim,
-            max_tokens=1024,
+            max_tokens=2048,
         )
         meter.add(usage)
         aggregate_id = store.add_aggregated_claim(
