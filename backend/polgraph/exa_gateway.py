@@ -77,6 +77,8 @@ def _norm_result(r: Any) -> dict:
         "score": g("score"),
         "text": g("text"),
         "highlights": g("highlights") or [],
+        "image": g("image"),
+        "image_links": (g("extras") or {}).get("image_links") or [],
     }
 
 
@@ -290,13 +292,13 @@ class ExaGateway:
                highlights: bool | dict = True, start_published_date: str | None = None,
                end_published_date: str | None = None, category: str | None = None,
                user_location: str | None = None, store_text: bool = True, search_type: str = "auto",
-               ttl_hours: float | None = None) -> list[dict]:
+               ttl_hours: float | None = None, image_links: int | None = None) -> list[dict]:
         return self.search_meta(
             query, purpose=purpose, num_results=num_results, include_domains=include_domains,
             exclude_domains=exclude_domains, text_chars=text_chars, highlights=highlights,
             start_published_date=start_published_date, end_published_date=end_published_date,
             category=category, user_location=user_location, store_text=store_text,
-            search_type=search_type, ttl_hours=ttl_hours,
+            search_type=search_type, ttl_hours=ttl_hours, image_links=image_links,
         )["results"]
 
     def search_meta(self, query: str, *, purpose: str, num_results: int = 8,
@@ -304,7 +306,8 @@ class ExaGateway:
                     text_chars: int | None = 6000, highlights: bool | dict = True,
                     start_published_date: str | None = None, end_published_date: str | None = None,
                     category: str | None = None, user_location: str | None = None, store_text: bool = True,
-                    search_type: str = "auto", ttl_hours: float | None = None) -> dict:
+                    search_type: str = "auto", ttl_hours: float | None = None,
+                    image_links: int | None = None) -> dict:
         self._validate_purpose(purpose)
         started = time.monotonic()
         contents: dict[str, Any] = {}
@@ -312,6 +315,8 @@ class ExaGateway:
             contents["text"] = {"max_characters": text_chars}
         if highlights:
             contents["highlights"] = highlights
+        if image_links:
+            contents["extras"] = {"image_links": image_links}
         req = {"query": query, "num_results": num_results, "include_domains": include_domains,
                "exclude_domains": exclude_domains, "contents": contents or None,
                "start_published_date": start_published_date, "type": search_type}

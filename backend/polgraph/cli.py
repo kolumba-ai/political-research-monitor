@@ -159,6 +159,16 @@ def cmd_path(a) -> int:
     return 0
 
 
+def cmd_portraits(a) -> int:
+    from .portraits import find_portraits
+    s, gw, store, _, _ = _components()
+    if a.budget:
+        s.exa_run_budget_usd = a.budget
+    res = find_portraits(gw, store, a.country, limit=a.limit, force=a.force, ids=a.ids or None)
+    print(json.dumps({**res, "usage": gw.usage_report()["this_run"]}, indent=2, default=str))
+    return 0
+
+
 def cmd_serve(a) -> int:
     import uvicorn
     s = get_settings()
@@ -252,6 +262,14 @@ def main(argv: list[str] | None = None) -> int:
     pa = sub.add_parser("path", help="print Earth -> ... -> person path with sources")
     pa.add_argument("query")
     pa.set_defaults(fn=cmd_path)
+
+    pt = sub.add_parser("portraits", help="find a verified portrait for each politician with Exa (image_url on Person)")
+    pt.add_argument("--country", default="MX")
+    pt.add_argument("--limit", type=int, help="at most N people this run (executives first, then legislators)")
+    pt.add_argument("--force", action="store_true", help="re-check people that already have a result")
+    pt.add_argument("--budget", type=float, help="USD ceiling for this run")
+    pt.add_argument("ids", nargs="*", help="only these person ids")
+    pt.set_defaults(fn=cmd_portraits)
 
     sv = sub.add_parser("serve", help="run the API + web UI")
     sv.add_argument("--host")

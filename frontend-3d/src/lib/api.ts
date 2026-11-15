@@ -96,7 +96,7 @@ export interface ClaimStats {
 
 export interface ClaimsSummary {
   country: string; available: boolean; source?: string; pulled_at?: string; partial_posts?: number;
-  politicians: (ClaimStats & { politician_id: string | null; name: string | null })[];
+  politicians: (ClaimStats & { politician_id: string | null; name: string | null; image_url?: string | null })[];
   stats: ClaimStats;
 }
 

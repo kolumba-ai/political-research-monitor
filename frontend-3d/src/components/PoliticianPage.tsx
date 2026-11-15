@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { BadgeCheck, CalendarDays, ChevronRight, Clock, ExternalLink, FileText, Landmark, MapPin, MessageSquareQuote, Network } from "lucide-react";
 import { claimsApi, type PoliticianClaims } from "../lib/api";
-import { CLAIM_TYPE_COLORS, initials, PLATFORM_META, SPEAKER_COLORS, SPEAKER_NAMES } from "../lib/claims";
+import { CLAIM_TYPE_COLORS, PLATFORM_META, SPEAKER_COLORS, SPEAKER_NAMES } from "../lib/claims";
+import Avatar from "./Avatar";
 import { detailUrl, graphGet, type GraphDetail } from "../lib/graph";
 import { fmtDate } from "../lib/presentation";
 import { BarList, ClaimsBrowser, ClaimsTimeline, Donut, Timeline } from "./SocialClaims";
@@ -53,8 +54,9 @@ export default function PoliticianPage({ iso2, personId, onViewInGraph, onNaviga
     <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
       <div className="min-w-0 space-y-4">
         <Card className="grid gap-5 p-5 shadow-sm md:grid-cols-[176px_1fr]">
-          <div className="flex aspect-[4/5] w-full max-w-44 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 via-violet-500 to-fuchsia-500 text-5xl font-semibold text-white shadow-inner" aria-hidden>
-            {initials(name)}
+          <div className="w-full max-w-44">
+            <Avatar name={name} src={d.node.image_url} rounded="rounded-2xl" className="aspect-[4/5] w-full text-5xl shadow-inner" />
+            {typeof d.node.image_source_url === "string" && <p className="mt-1 truncate text-[10px] text-muted">Photo: <ExtLink href={d.node.image_source_url}>{String(d.node.image_source_domain ?? "source")}</ExtLink></p>}
           </div>
           <div className="min-w-0">
             <h2 className="flex items-center gap-2 text-2xl font-semibold tracking-tight">{name}

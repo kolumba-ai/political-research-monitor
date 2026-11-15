@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { ChevronRight, LayoutDashboard, LoaderCircle, MessageSquareQuote, Network, Users } from "lucide-react";
 import { claimsApi, type ClaimsSummary, type CountryRow } from "../lib/api";
 import { flagOf } from "../lib/geo";
-import { initials } from "../lib/claims";
+import Avatar from "./Avatar";
 import { cn, fmtDate } from "../lib/presentation";
 import CountryPanel from "./CountryPanel";
 import PoliticianPage from "./PoliticianPage";
@@ -69,7 +69,7 @@ export default function Investigate({ iso2, row, section, onSection, graphTarget
       {summary?.available && <div className="mx-3 mt-3 hidden rounded-xl border border-line bg-white p-3 lg:block">
         <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">Tracked on social media</p>
         {summary.politicians.map((p) => p.politician_id && <button key={p.politician_id} onClick={() => onOpenPerson(p.politician_id!)} className="mt-2 flex w-full items-center gap-2 text-left text-xs hover:text-accent">
-          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-fuchsia-500 text-[10px] font-semibold text-white">{initials(p.name)}</span>
+          <Avatar name={p.name} src={p.image_url} className="size-7 text-[10px]" />
           <span className="min-w-0 flex-1 truncate">{p.name}</span><span className="text-muted">{p.claims}</span></button>)}
       </div>}
     </aside>
@@ -94,7 +94,7 @@ export default function Investigate({ iso2, row, section, onSection, graphTarget
           {(summary?.politicians ?? []).filter((p) => p.politician_id).map((p) => <Card key={p.politician_id} className="p-4 shadow-sm transition-shadow hover:shadow-md">
             <button className="w-full text-left" onClick={() => onOpenPerson(p.politician_id!)}>
               <div className="flex items-center gap-3">
-                <span className="flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-violet-500 to-fuchsia-500 text-lg font-semibold text-white">{initials(p.name)}</span>
+                <Avatar name={p.name} src={p.image_url} rounded="rounded-xl" className="size-12 text-lg" />
                 <div className="min-w-0"><p className="truncate font-semibold">{p.name}</p><p className="text-xs text-muted">{p.claims} claims · {p.posts} posts</p></div>
                 <ChevronRight className="ml-auto size-4 text-muted" />
               </div>

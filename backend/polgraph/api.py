@@ -44,7 +44,7 @@ def create_app() -> FastAPI:
                 "status": n.get("status"), "selection_method": n.get("selection_method"),
                 "is_elected": n.get("is_elected"), "template": n.get("template"),
                 "regime_group": n.get("regime_group"), "regime_class": n.get("regime_class"),
-                "last_verified": n.get("last_verified")}
+                "last_verified": n.get("last_verified"), "image_url": n.get("image_url")}
 
     def holder_visible(edge: dict, include_single: bool, include_former: bool) -> bool:
         if not include_former and not edge.get("current"):
@@ -116,7 +116,7 @@ def create_app() -> FastAPI:
     from .world_api import build_router
     app.include_router(build_router(_store, _state))
     from .claims_api import build_router as build_claims_router
-    app.include_router(build_claims_router(lambda: s.claims_export_dir))
+    app.include_router(build_claims_router(lambda: s.claims_export_dir, lambda pid: _store().get_node(pid)))
 
     @app.get("/api/search")
     def search(q: str, limit: int = 25):

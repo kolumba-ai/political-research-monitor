@@ -3,6 +3,7 @@ import cytoscape, { type Core, type ElementDefinition } from "cytoscape";
 import ELK from "elkjs/lib/elk.bundled.js";
 import { ChevronLeft, ChevronRight, Focus, LoaderCircle, Minus, Network, Plus, RotateCcw, UserRound } from "lucide-react";
 import { Badge, Button, ExtLink } from "./ui";
+import Avatar from "./Avatar";
 import { fmtDate } from "../lib/presentation";
 import { detailUrl, graphGet, kindName, NODE_COLORS, valueText, visibleChildren,
   type GraphChild, type GraphChildren, type GraphDetail } from "../lib/graph";
@@ -192,6 +193,9 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
           "border-color": "data(color)", "border-width": 1.5, "underlay-color": "#0f172a", "underlay-opacity": 0.04, "underlay-padding": 4, "underlay-shape": "round-rectangle", color: "#111827", label: "data(display)",
           "font-size": 11, "font-family": "system-ui, sans-serif", "text-wrap": "wrap", "text-max-width": "158px",
           "text-valign": "center", "text-halign": "center", "text-overflow-wrap": "whitespace" } },
+        { selector: "node.portrait", style: { "background-image": "data(image)", "background-image-crossorigin": "null" as unknown as "anonymous",
+          "background-fit": "cover", "background-clip": "none", "background-width": 44, "background-height": 52,
+          "background-position-x": 8, "background-position-y": 6, "text-margin-x": 22, "text-max-width": "112px" } },
         { selector: "node.open", style: { "background-color": "#eef2ff", "border-width": 2.5 } },
         { selector: "node:selected", style: { "border-color": "#4f46e5", "border-width": 3, "underlay-color": "#4f46e5", "underlay-opacity": 0.18, "underlay-padding": 6 } },
         { selector: "edge", style: { width: 1.2, "line-color": "#b6bfd1", "target-arrow-color": "#b6bfd1",
@@ -223,8 +227,9 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
         const childCount = expanded?.parent === node.id ? expanded.children.length : loaded ? loaded.children.length : node.child_count;
         const count = childCount ? ` · ${childCount}` : "";
         const seat = edge.constituency_code ? `${edge.constituency_code} · ` : "";
-        elements.push({ group: "nodes", classes: tree.openPath[depth] === node.id ? "open" : "", data: {
-          id: node.id, depth, color: NODE_COLORS[node.label] || "#687794",
+        const image = typeof node.image_url === "string" ? node.image_url : undefined;
+        elements.push({ group: "nodes", classes: [tree.openPath[depth] === node.id ? "open" : "", image ? "portrait" : ""].join(" ").trim(), data: {
+          id: node.id, depth, color: NODE_COLORS[node.label] || "#687794", image,
           display: `${seat}${title.length > 90 ? title.slice(0, 87) + "…" : title}\n${kindName(node.label)}${count}` } });
         if (level.parent) elements.push({ group: "edges", classes: edge.current === false ? "former" : "", data: {
           id: `${level.parent}->${node.id}`, source: level.parent, target: node.id } });
@@ -324,7 +329,7 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
           {breadcrumbs.map((n, i) => <span key={n.id}>{i > 0 && <span className="mx-1">›</span>}<button className="hover:text-fg focus-visible:outline-2 focus-visible:outline-accent" onClick={() => void reveal(n.id)}>{n.name || n.id}</button></span>)}
         </nav>
         <div className="flex items-start gap-2">
-          {detail.node.label === "Person" && <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-line bg-ink-800"><UserRound className="size-5 text-muted" /></div>}
+          {detail.node.label === "Person" && <Avatar name={detail.node.name} src={detail.node.image_url} rounded="rounded-lg" className="size-14 text-base" />}
           <div><h3 className="text-base font-semibold">{detail.node.name || detail.node.id}</h3><div className="mt-1 flex flex-wrap gap-1.5"><Badge>{kindName(detail.node.label)}</Badge>
             {typeof detail.node.evidence_status === "string" && <Badge>{valueText(detail.node.evidence_status)}</Badge>}
           </div></div>

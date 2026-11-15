@@ -57,7 +57,7 @@ class ClaimsExport:
         return data
 
 
-def build_router(get_dir: Callable[[], Path]) -> APIRouter:
+def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict | None] | None = None) -> APIRouter:
     r = APIRouter()
     exports: dict[Path, ClaimsExport] = {}
 
@@ -74,8 +74,13 @@ def build_router(get_dir: Callable[[], Path]) -> APIRouter:
         by_pol: dict[str, list[dict]] = {}
         for c in data["claims"]:
             by_pol.setdefault(c.get("politician_id") or "", []).append(c)
-        politicians = [{"politician_id": pid or None, "name": rows[0].get("politician_name"), **stats(rows)}
-                       for pid, rows in by_pol.items()]
+        def image(pid: str) -> str | None:
+            try:
+                return ((get_person(pid) if get_person and pid else None) or {}).get("image_url")
+            except Exception:  # the graph store is optional for this route
+                return None
+        politicians = [{"politician_id": pid or None, "name": rows[0].get("politician_name"), "image_url": image(pid),
+                        **stats(rows)} for pid, rows in by_pol.items()]
         politicians.sort(key=lambda p: -p["claims"])
         return {"country": code.upper(), "available": True, "source": m.get("source"),
                 "pulled_at": m.get("pulled_at"), "partial_posts": m.get("partial_posts", 0),
