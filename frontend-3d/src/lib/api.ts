@@ -127,7 +127,18 @@ export interface ClaimEvidence {
 // Storylines (`python -m socialclaims storylines`): statements grouped into one specific claim and its versions.
 /** Per week: [all, said by the politician, said by others]. */
 export interface WeekCell { statements: [number, number, number]; posts: [number, number, number] }
+/** System D's simulated polling of a storyline (`opinion.json`): LLM-generated respondents, not a real poll. */
+export interface OpinionResult {
+  status: "polling" | "converged" | "decisive" | "capped"; n_completed: number; p_believe: number | null;
+  ci_low: number | null; ci_high: number | null; sentiment_mean: number | null; social_sentiment: number | null; gap: number | null;
+}
+export interface OpinionRun extends OpinionResult {
+  sentiment_ci_low: number | null; sentiment_ci_high: number | null; social_comments: number; updated_at: string | null;
+  strata: { region: string; age_band: string; gender: string; n: number; share_believe: number | null; sentiment_mean: number | null }[];
+}
+export interface StorylineOpinion { storyline_id: string; polled_claim: string; latest: string; runs: Record<string, OpinionRun> }
 export interface StorylineRow {
+  opinion?: (OpinionResult & { sim_run: string }) | null;
   storyline_id: string; label: string | null; area: string | null; topic_id: string; judged: boolean; statements: number; posts: number;
   versions: number; weeks_active: number; counter_claims: number; needs_review: number; accounts: number;
   first: string | null; last: string | null; cells: Record<string, WeekCell>; evidence_counts: StanceCounts;
@@ -175,6 +186,7 @@ export interface StorylineDetail {
   cells: Record<string, WeekCell>; evidence_counts: StanceCounts; documents: number;
   pending_review: { decision_id: string; unit: string; relation: string; confidence: number; rationale: string; storyline_label: string | null }[];
   versions: StorylineVersion[];
+  opinion?: StorylineOpinion | null; opinion_updated_at?: string | null;
 }
 
 export interface PoliticianClaims {

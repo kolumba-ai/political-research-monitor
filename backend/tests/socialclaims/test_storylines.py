@@ -223,6 +223,22 @@ def test_week_grid_and_detail_keep_every_post_link_and_evidence(tmp_path):
     assert api.get(f"/api/claims/MX/storylines/{PID}", params={"storyline": "once"}).status_code == 404
     assert full["area"] == "seguridad" and full["topic"]["topic_id"] == "area:seguridad"
     assert api.get(f"/api/claims/MX/storylines/{PID}", params={"storyline": "sl-nope"}).status_code == 404
+    assert full["opinion"] is None and main["opinion"] is None  # no System D export yet
+
+    # System D's simulated polling (opinion.json) is attached to the storyline it was linked to.
+    run = {"status": "decisive", "n_completed": 80, "p_believe": 0.4, "ci_low": 0.3, "ci_high": 0.5,
+           "sentiment_mean": 0.1, "social_sentiment": 0.3, "gap": -0.2, "updated_at": "2026-11-15T21:00:00Z",
+           "strata": [{"region": "Centro", "age_band": "18-29", "gender": "mujer", "n": 7, "share_believe": 0.5,
+                       "sentiment_mean": 0.2}]}
+    (d / "opinion.json").write_text(json.dumps({"updated_at": "2026-11-15T21:05:00Z", "storylines": {
+        main["storyline_id"]: {"storyline_id": main["storyline_id"], "latest": "run-2",
+                               "runs": {"run-1": {**run, "status": "polling"}, "run-2": run}}}}))
+    polled = api.get(f"/api/claims/MX/storylines/{PID}").json()["storylines"]
+    assert polled[0]["opinion"] == {"sim_run": "run-2", **{k: run[k] for k in (
+        "status", "n_completed", "p_believe", "ci_low", "ci_high", "sentiment_mean", "social_sentiment", "gap")}}
+    assert polled[1]["opinion"] is None
+    full = api.get(f"/api/claims/MX/storylines/{PID}", params={"storyline": main["storyline_id"]}).json()["storyline"]
+    assert full["opinion"]["runs"]["run-2"]["strata"][0]["n"] == 7 and full["opinion_updated_at"] == "2026-11-15T21:05:00Z"
 
     # The claim list carries the same evidence, and still works when no grouping has been run.
     page = api.get(f"/api/claims/MX/politicians/{PID}").json()

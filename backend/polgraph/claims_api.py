@@ -1,7 +1,8 @@
 """Read-only routes over System B's social-claims export (`python -m socialclaims pull-pastdev`).
 
 The export is `<CLAIMS_EXPORT_DIR>/<ISO2>/{manifest.json,posts.jsonl,claims.jsonl}`, plus `documents.jsonl` and
-`evidence.jsonl` (System C evidence) and `storylines.json` (`python -m socialclaims storylines` / `topics`) when present; nothing
+`evidence.jsonl` (System C evidence), `storylines.json` (`python -m socialclaims storylines` / `topics`) and `opinion.json`
+(System D's simulated polling of storylines, `python -m system_d.export_opinion`) when present; nothing
 here calls past.dev. Claims are context about what was said on social media, not verified facts about the politician.
 An evidence stance is one document's relation to a claim, never a verdict on it.
 """
@@ -48,7 +49,7 @@ class ClaimsExport:
         files = [d / "manifest.json", d / "claims.jsonl", d / "posts.jsonl"]
         if not all(f.exists() for f in files):
             return None
-        optional = [d / "documents.jsonl", d / "evidence.jsonl", d / "storylines.json"]
+        optional = [d / "documents.jsonl", d / "evidence.jsonl", d / "storylines.json", d / "opinion.json"]
         stamp = tuple(f.stat().st_mtime_ns if f.exists() else 0 for f in files + optional)
         hit = self._cache.get(country)
         if hit and hit[0] == stamp:
@@ -70,9 +71,19 @@ class ClaimsExport:
         data = {"manifest": json.loads(files[0].read_text(encoding="utf-8")), "claims": claims, "posts": posts,
                 "by_politician": by_pol, "has_evidence": optional[1].exists(),
                 "evidence": st.evidence_index(st.read_jsonl(optional[1]), st.read_jsonl(optional[0])),
-                "storylines": stories.get("politicians") or {}, "storylines_updated_at": stories.get("updated_at")}
+                "storylines": stories.get("politicians") or {}, "storylines_updated_at": stories.get("updated_at"),
+                "opinion": json.loads(optional[3].read_text(encoding="utf-8")) if optional[3].exists() else {}}
         self._cache[country] = (stamp, data)
         return data
+
+
+def opinion_summary(entry: dict | None) -> dict | None:
+    """The latest simulated-polling result of one storyline, without the per-run and per-stratum detail."""
+    run = (entry or {}).get("runs", {}).get((entry or {}).get("latest") or "")
+    if not run:
+        return None
+    keys = ("status", "n_completed", "p_believe", "ci_low", "ci_high", "sentiment_mean", "social_sentiment", "gap")
+    return {"sim_run": entry["latest"], **{k: run.get(k) for k in keys}}
 
 
 def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict | None] | None = None,
@@ -123,11 +134,16 @@ def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict |
         if storyline is None:
             if evidence not in (None, "none", *st.STANCES):
                 raise HTTPException(422, "evidence must be supports, contradicts, context or none")
-            return {**base, **st.matrix(rows, pol, data["evidence"] if data else None, area, evidence, recurring)}
+            grid = st.matrix(rows, pol, data["evidence"] if data else None, area, evidence, recurring)
+            polled = ((data or {}).get("opinion") or {}).get("storylines") or {}
+            for r in grid["storylines"]:
+                r["opinion"] = opinion_summary(polled.get(r["storyline_id"]))
+            return {**base, **grid}
         found = st.detail(rows, data["posts"] if data else {}, pol, data["evidence"] if data else {}, storyline, week)
         if found is None:
             raise HTTPException(404, f"no storyline {storyline} for {politician_id}")
-        return {**base, "storyline": found}
+        entry = (((data or {}).get("opinion") or {}).get("storylines") or {}).get(storyline)
+        return {**base, "storyline": {**found, "opinion": entry, "opinion_updated_at": data["opinion"].get("updated_at") if entry else None}}
 
     @r.get("/api/claims/{code}/politicians/{politician_id:path}")
     def politician_claims(code: str, politician_id: str, type: str | None = None, speaker: str | None = None,

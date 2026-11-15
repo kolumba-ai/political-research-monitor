@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, ExternalLink, X } from "lucide-react";
 import {
   claimsApi, type ClaimEvidence, type StanceCounts, type StorylineDetail, type StorylineGrid, type StorylinePost,
-  type StorylineRow, type StorylineStatement, type StorylineTopic, type StorylineVersion, type WeekCell,
+  type OpinionResult, type OpinionRun, type StorylineOpinion, type StorylineRow, type StorylineStatement, type StorylineTopic, type StorylineVersion, type WeekCell,
 } from "../lib/api";
 import { CLAIM_TYPE_COLORS, colorOf, compact, PLATFORM_META, SPEAKER_NAMES, titleCase } from "../lib/claims";
 import { cn, fmtDate } from "../lib/presentation";
@@ -199,6 +199,7 @@ function Detail({ iso2, politicianId, weeks, selected, metric, side, onClearWeek
     {d.accounts.length > 0 && <p className="mt-2 text-xs text-muted">Accounts: {d.accounts.map((a) => `@${a}`).join(", ")}</p>}
     {!d.week && <div className="mt-3 flex items-center gap-3 text-[11px] text-muted"><WeekStrip weeks={weeks} cells={d.cells} metric={metric} />
       <span>{weeks.length > 0 && `${weekLabel(weeks[0])} to ${weekLabel(weeks.at(-1)!)}, ${metric} per week`}</span></div>}
+    {d.opinion && <OpinionPanel opinion={d.opinion} updatedAt={d.opinion_updated_at} />}
     {d.pending_review.length > 0 && <p className="mt-3 rounded-lg border border-warn/40 bg-warn/5 p-2.5 text-xs">
       {plural(d.pending_review.length, "statement")} here {d.pending_review.length === 1 ? "is" : "are"} waiting for review: the judge was not sure where {d.pending_review.length === 1 ? "it belongs" : "they belong"}, so nothing was merged.
       Resolve with <code>python -m socialclaims storylines-review</code>.
@@ -207,6 +208,78 @@ function Detail({ iso2, politicianId, weeks, selected, metric, side, onClearWeek
       {d.versions.map((v, i) => <Version key={v.version_id} v={v} index={i} weeks={weeks} metric={metric} side={side} showEvidence={showEvidence} single={d.versions.length === 1} />)}
     </ul>
   </div>;
+}
+
+const OPINION_STATUS: Record<OpinionResult["status"], string> = {
+  converged: "converged", decisive: "decisive", capped: "inconclusive", polling: "still polling",
+};
+const pct = (v: number | null) => (v == null ? "—" : `${Math.round(v * 100)}%`);
+const signed = (v: number | null | undefined) => (v == null ? "—" : `${v >= 0 ? "+" : "−"}${Math.abs(v).toFixed(2)}`);
+
+/** Belief share with its 95% CI on a 0–100% track. */
+function BeliefBar({ o, wide }: { o: OpinionResult; wide?: boolean }) {
+  if (o.p_believe == null) return null;
+  const lo = (o.ci_low ?? o.p_believe) * 100, hi = (o.ci_high ?? o.p_believe) * 100;
+  return <span className={cn("relative inline-block h-1.5 rounded-full bg-line align-middle", wide ? "w-40" : "w-14")} aria-hidden>
+    <span className="absolute inset-y-0 rounded-full bg-accent/35" style={{ left: `${lo}%`, width: `${Math.max(hi - lo, 1)}%` }} />
+    <span className="absolute -top-0.5 size-2.5 -translate-x-1/2 rounded-full bg-accent" style={{ left: `${o.p_believe * 100}%` }} />
+  </span>;
+}
+
+function OpinionChip({ o }: { o: OpinionResult & { sim_run: string } }) {
+  return <span className="mt-1 flex items-center gap-1.5 text-[11px] text-muted" data-testid="opinion-chip"
+    title={`Simulated respondents (${o.sim_run}): ${pct(o.p_believe)} believe it (95% CI ${pct(o.ci_low)}–${pct(o.ci_high)}), n=${o.n_completed}, ${OPINION_STATUS[o.status]}. Not a real poll.`}>
+    <span className="font-medium text-fg">Simulated belief {pct(o.p_believe)}</span><BeliefBar o={o} /><span>n={o.n_completed}</span>
+  </span>;
+}
+
+/** Diverging −1..+1 axis: polled sentiment with its CI against the social media sentiment. */
+function SentimentAxis({ run }: { run: OpinionRun }) {
+  const x = (v: number) => `${((v + 1) / 2) * 100}%`;
+  return <div className="relative mt-5 h-6 w-full max-w-md" role="img" aria-label={`Polled sentiment ${signed(run.sentiment_mean)}, social sentiment ${signed(run.social_sentiment)}`}>
+    <div className="absolute inset-x-0 top-3 h-px bg-line" /><div className="absolute top-1 h-4 w-px bg-muted/50" style={{ left: "50%" }} />
+    {run.sentiment_mean != null && run.sentiment_ci_low != null && run.sentiment_ci_high != null &&
+      <div className="absolute top-2.5 h-1 rounded-full bg-accent/35" style={{ left: x(run.sentiment_ci_low), width: `${((run.sentiment_ci_high - run.sentiment_ci_low) / 2) * 100}%` }} />}
+    {run.sentiment_mean != null && <span className="absolute top-1.5 size-3 -translate-x-1/2 rounded-full bg-accent" style={{ left: x(run.sentiment_mean) }} title="Polled (simulated)" />}
+    {run.social_sentiment != null && <span className="absolute top-1.5 size-3 -translate-x-1/2 rotate-45 bg-[#d97706]" style={{ left: x(run.social_sentiment) }} title="Social media comments" />}
+    <span className="absolute -bottom-3 left-0 text-[10px] text-muted">−1 negative</span><span className="absolute -bottom-3 right-0 text-[10px] text-muted">+1 positive</span>
+  </div>;
+}
+
+function OpinionPanel({ opinion, updatedAt }: { opinion: StorylineOpinion; updatedAt: string | null | undefined }) {
+  const runs = Object.keys(opinion.runs);
+  const [pick, setPick] = useState(opinion.latest);
+  const name = runs.includes(pick) ? pick : opinion.latest;
+  const run = opinion.runs[name];
+  const strata = [...run.strata].sort((a, b) => b.n - a.n);
+  return <section className="mt-4 rounded-xl border border-line bg-ink-850/40 p-3" data-testid="opinion-panel">
+    <div className="flex flex-wrap items-center gap-2">
+      <h4 className="text-sm font-semibold">Simulated population opinion</h4>
+      <Badge tone="warn">Simulated respondents, not a real poll</Badge>
+      <Badge tone={run.status === "polling" || run.status === "capped" ? "default" : "accent"}>{OPINION_STATUS[run.status]}</Badge>
+      {runs.length > 1 ? <select aria-label="Simulation run" value={name} onChange={(e) => setPick(e.target.value)} className={cn(selectCls, "ml-auto")}>
+        {runs.map((r) => <option key={r} value={r}>{r}</option>)}</select> : <span className="ml-auto text-[11px] text-muted">{name}</span>}
+    </div>
+    <p className="mt-1 text-xs text-muted">Asked: «{opinion.polled_claim}»</p>
+    <div className="mt-3 grid gap-4 sm:grid-cols-2">
+      <div>
+        <p className="text-[11px] uppercase tracking-[0.08em] text-muted">Believe the claim</p>
+        <p className="text-2xl font-bold tabular-nums">{pct(run.p_believe)} <span className="text-xs font-normal text-muted">95% CI {pct(run.ci_low)}–{pct(run.ci_high)} · n={run.n_completed}</span></p>
+        <BeliefBar o={run} wide />
+      </div>
+      <div>
+        <p className="text-[11px] uppercase tracking-[0.08em] text-muted">Sentiment: <span className="text-accent">● polled {signed(run.sentiment_mean)}</span> · <span className="text-[#d97706]">◆ social {signed(run.social_sentiment)}</span>{run.gap != null && <> · gap {signed(run.gap)}</>}</p>
+        <SentimentAxis run={run} />
+        <p className="mt-4 text-[11px] text-muted">Social sentiment from {run.social_comments} real comments on the source posts.</p>
+      </div>
+    </div>
+    {strata.length > 0 && <details className="mt-3 text-xs"><summary className="cursor-pointer text-muted">By population stratum ({strata.length})</summary>
+      <table className="mt-2 w-full text-left text-[11px]"><thead><tr className="text-muted"><th>Region</th><th>Age</th><th>Gender</th><th className="text-right">n</th><th className="text-right">Believe</th><th className="text-right">Sentiment</th></tr></thead>
+        <tbody>{strata.map((s) => <tr key={`${s.region}|${s.age_band}|${s.gender}`} className="border-t border-line"><td>{s.region}</td><td>{s.age_band}</td><td>{s.gender}</td>
+          <td className="text-right tabular-nums">{s.n}</td><td className="text-right tabular-nums">{pct(s.share_believe)}</td><td className="text-right tabular-nums">{signed(s.sentiment_mean)}</td></tr>)}</tbody></table>
+      <p className="mt-1 text-[11px] text-muted">Unweighted shares per stratum; the headline figure is post-stratified.</p></details>}
+    <p className="mt-2 text-[11px] text-muted">LLM-generated personas answering a survey script (System D){updatedAt && `, exported ${fmtDate(updatedAt)}`}. They show how a synthetic sample reacts, not measured Mexican public opinion.</p>
+  </section>;
 }
 
 function WeekCells({ row, label, weeks, metric, side, max, activeWeek, onPick, hint }: {
@@ -363,6 +436,7 @@ export function StorylinesView({ iso2, politicianId }: { iso2: string; politicia
                       plural(r.versions, "version"), r.counter_claims > 0 && plural(r.counter_claims, "counter-claim"),
                       r.accounts > 0 && plural(r.accounts, "account"), r.area && titleCase(r.area), !r.judged && "not grouped yet",
                       r.needs_review > 0 && `${r.needs_review} to review`].filter(Boolean).join(" · ")}</span>
+                    {r.opinion && <OpinionChip o={r.opinion} />}
                   </button>
                 </th>
                 <WeekCells row={r} label={r.label} weeks={weeks} metric={metric} side={side} max={max} activeWeek={active ? current.week : null}
