@@ -14,6 +14,15 @@ The new [Political World Explorer](frontend-3d/README.md) runs at
 Cytoscape/ELK government graph, all connected to the existing API. The original graph remains at `/`.
 Country image discovery and the Discover/Refresh UI are pending; portraits use neutral placeholders.
 
+## How it works
+
+![Animated workflow: world knowledge graph, Exa source fetching, social claims, evidence, past.dev memory, simulated people and the public explorer](docs/figures/pipeline.svg)
+
+System A builds the world and government graph with Exa, System B captures what politicians say and groups it into
+storylines, System C finds and judges evidence and shares it through past.dev, and System D interviews simulated
+respondents about each storyline. The explorer joins all four. Regenerate the figure with
+`python docs/figures/gen_pipeline.py`.
+
 > **Building or extending a country?** Follow [AGENTS.md](AGENTS.md) first: derive the structure from the
 > country's constitution, get it reviewed, and only then fetch politicians.
 
