@@ -163,7 +163,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "pull-pastdev":
         from .pastdev import PastDevClient, pull
         client = PastDevClient(
-            s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s,
+            s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s, max_retries=8,  # parallel reads get 429s
             rate_limiter_database_url=s.rate_limiter_database_url,
             requests_per_second=s.pastdev_requests_per_second,
         )
