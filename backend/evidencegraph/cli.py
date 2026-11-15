@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import time
 import json
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
@@ -55,6 +56,17 @@ def build_parser() -> argparse.ArgumentParser:
     reproject_cmd.add_argument("--country", default="MX")
     reproject_cmd.add_argument("--dry-run", action="store_true", help="count changed records and credits; free")
     reproject_cmd.add_argument("--confirm-spend", action="store_true", help="required: past.dev bills per record")
+    reproject_cmd.add_argument("--defer", action="store_true",
+                               help="mark changed propositions pastdev_pending for sync-pastdev instead of sending; free")
+    sync_cmd = commands.add_parser(
+        "sync-pastdev", help="write pastdev_pending propositions while past.dev's queue is under "
+                             "PASTDEV_MAX_QUEUE_MINUTES of work (no Exa or LLM calls)")
+    sync_cmd.add_argument("--country", default="MX")
+    sync_cmd.add_argument("--max-usd", type=float, help="stop once past.dev credits sent reach this")
+    sync_cmd.add_argument("--watch", type=float, metavar="SECONDS",
+                          help="repeat every SECONDS until nothing is pending or queued in past.dev")
+    sync_cmd.add_argument("--dry-run", action="store_true", help="show the backlog and what fits now; free")
+    sync_cmd.add_argument("--confirm-spend", action="store_true", help="required: past.dev bills per record")
     return parser
 
 
@@ -171,11 +183,37 @@ def main(argv: list[str] | None = None) -> int:
             if missing:
                 parser.error(f"missing {', '.join(missing)}")
             print(_json(_run_enrich(settings, args)))
+        elif args.command == "sync-pastdev":
+            from socialclaims.pastdev import PastDevClient
+
+            from .enrich import sync_pastdev
+
+            if not args.dry_run and not args.confirm_spend:
+                parser.error("sync-pastdev writes to past.dev (billed): run --dry-run first, then pass --confirm-spend")
+            if not args.dry_run and not settings.past_dev_api_key:
+                parser.error("missing PAST_DEV_API_KEY")
+            client = None if args.dry_run else PastDevClient(
+                settings.past_dev_api_key, settings.past_dev_base_url, rate_limiter_database_url=settings.database_url,
+                requests_per_second=settings.pastdev_requests_per_second)
+            spent = 0.0
+            while True:
+                out = sync_pastdev(conn, client, settings, args.country, dry_run=args.dry_run,
+                                   max_usd=None if args.max_usd is None else args.max_usd - spent)
+                spent += out["usd"]
+                print(_json(out), flush=True)
+                done = not out["candidates"] and not out["backlog_after"]["records"]
+                if (args.watch is None or args.dry_run or done or out["stopped"] == "max_usd"
+                        or out["stopped"] == "too many past.dev errors"):
+                    break
+                time.sleep(args.watch)
         elif args.command == "reproject":
             from socialclaims.pastdev import PastDevClient
 
             from .enrich import reproject
 
+            if args.defer:
+                print(_json(reproject(conn, None, settings, args.country, dry_run=args.dry_run, defer=True)))
+                return 0
             if not args.dry_run and not args.confirm_spend:
                 parser.error("reproject writes to past.dev (billed): run --dry-run first, then pass --confirm-spend")
             if not args.dry_run and not settings.past_dev_api_key:

@@ -39,6 +39,12 @@ class EvidenceSettings(BaseSettings):
     # How long to wait for past.dev to finish a batch; unfinished propositions stay queued and a later run only
     # re-projects them (their judgements are reused, no new search).
     enrich_poll_timeout_s: float = 20.0
+    # false: judge into Neon only; propositions wait as `pastdev_pending` for `sync-pastdev` to write them.
+    enrich_pastdev: bool = True
+    # sync-pastdev keeps past.dev's unprocessed queue below this many minutes of its indexing throughput, so
+    # anything sent is searchable within about that time; the rest waits in Neon as `pastdev_pending`.
+    pastdev_max_queue_minutes: float = 30.0
+    pastdev_bytes_per_hour: int = 600_000  # observed: ~400 records of ~1.5 KB an hour
     # Query-plan rows to search (comma-separated subset of neutral,counter,primary,indicator,fact_check,expert,english).
     enrich_rows: str = "neutral,counter,primary,indicator,fact_check,expert,english"
     # Prices used for the spend cap and estimates; check them against the real rates of the model and plan.

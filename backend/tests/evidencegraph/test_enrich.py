@@ -6,7 +6,7 @@ import httpx
 import pytest
 
 from evidencegraph.cli import main as cli_main
-from evidencegraph.enrich import Enricher, dry_run, quote_in_text
+from evidencegraph.enrich import PROP_SQL, Enricher, dry_run, quote_in_text
 from evidencegraph.fetch import Fetcher
 from evidencegraph.intake import run_intake
 from evidencegraph.project import _iso
@@ -144,15 +144,13 @@ def test_enrich_searches_fetches_judges_and_projects(conn, ev_settings, tmp_path
     assert len(links) == 3 and sum(r["quote_verified"] for r in links.values()) == 2
 
     [batch] = past.batches()
-    kinds = [it["metadata"]["kind"] for it in batch["items"]]
-    assert kinds == ["claim", "document", "document", "evidence_link", "evidence_link"]
-    claim, link = batch["items"][0], batch["items"][3]
-    assert claim["audience"] == "pol-claudia-sheinbaum-pardo" and link["audience"] == claim["audience"]
-    assert all("audience" not in it for it in batch["items"] if it["metadata"]["kind"] == "document")
-    assert "Resumen propio" in batch["items"][1]["content"]
-    assert not any("blog.example" in it["content"] for it in batch["items"])
+    [claim] = batch["items"]  # one record per politician, the evidence folded in
+    assert claim["metadata"]["kind"] == "claim" and claim["audience"] == "pol-claudia-sheinbaum-pardo"
+    assert sorted(e["stance"] for e in _evidence(claim)) == ["context", "supports"]
+    assert "Resumen propio" in claim["content"] and "SUPPORTS:" in claim["content"]
+    assert "blog.example" not in claim["content"]
     assert {r["status"] for r in conn.execute("SELECT status FROM ev_memory_record")} == {"completed"}
-    assert conn.execute("SELECT count(*) AS n FROM ev_memory_record").fetchone()["n"] == 5
+    assert conn.execute("SELECT count(*) AS n FROM ev_memory_record").fetchone()["n"] == 1
     assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "mapped"
     assert conn.execute("SELECT count(*) AS n FROM ev_exa_request").fetchone()["n"] == 2
 
@@ -237,27 +235,25 @@ def test_only_latest_document_version_is_projected(conn, ev_settings, tmp_path):
     gov = conn.execute("SELECT document_id FROM ev_evidence_link WHERE stance = 'supports'").fetchone()["document_id"]
     conn.execute("INSERT INTO ev_document_version(document_id, content_sha256, http_status, bytes, retrieved_at) "
                  "VALUES (%s, 'newer', 200, 1, now() + interval '1 hour')", (gov,))
-    kinds = [it["metadata"]["kind"] for it in build_items(conn, prop, claims, ev_settings.mapper_version)]
-    assert kinds == ["claim", "document", "evidence_link"]
+    [item] = build_items(conn, prop, claims, ev_settings.mapper_version)
+    assert [e["stance"] for e in _evidence(item)] == ["context"]
 
 
-def test_links_are_timed_like_their_claim(conn, ev_settings, tmp_path):
-    from evidencegraph.project import build_items
+def _evidence(item: dict) -> list[dict]:
+    return json.loads(item["content"].split("JSON:\n", 1)[1])["evidence"]
 
+
+def test_evidence_is_timed_like_its_claim(conn, ev_settings, tmp_path):
     _setup(conn)
     enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
     enricher.run(None, 5)
-    prop = conn.execute("SELECT * FROM ev_proposition_queue q JOIN proposition p USING (proposition_id)").fetchone()
-    claims = conn.execute(__import__("evidencegraph.enrich", fromlist=["CLAIMS_SQL"]).CLAIMS_SQL,
-                          (prop["proposition_id"],)).fetchall()
-    items = build_items(conn, prop, claims, ev_settings.mapper_version)
-    claim_ts = {it["metadata"]["politician_id"]: it["timestamp"] for it in items if it["metadata"]["kind"] == "claim"}
-    links = [it for it in items if it["metadata"]["kind"] == "evidence_link"]
-    assert links and all(it["timestamp"] == claim_ts[it["metadata"]["politician_id"]] for it in links)
-    payload = json.loads(links[0]["content"].split("JSON:\n", 1)[1])
-    assessed = conn.execute("SELECT assessed_at FROM ev_evidence_link WHERE link_id = %s",
-                            (payload["link_id"],)).fetchone()["assessed_at"]
-    assert payload["assessed_at"] == _iso(assessed)
+    [item] = _items(conn, ev_settings)
+    stated = conn.execute("SELECT min(stated_at) AS s FROM distilled_claim").fetchone()["s"]
+    assert item["timestamp"] == _iso(stated)
+    evidence = _evidence(item)
+    assessed = conn.execute("SELECT link_id, assessed_at FROM ev_evidence_link").fetchall()
+    assert evidence and all(e["assessed_at"] == _iso({r["link_id"]: r["assessed_at"] for r in assessed}[e["link_id"]])
+                            for e in evidence)
 
 
 def _items(conn, ev_settings):
@@ -275,7 +271,7 @@ def test_old_claim_links_fall_inside_the_claim_date_window(conn, ev_settings, tm
     conn.execute("UPDATE distilled_claim SET stated_at = %s", (stated,))
     enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
     enricher.run(None, 5)
-    links = [it for it in _items(conn, ev_settings) if it["metadata"]["kind"] == "evidence_link"]
+    links = [it for it in _items(conn, ev_settings) if _evidence(it)]
     window = (datetime(2026, 9, 1, tzinfo=timezone.utc), datetime(2026, 9, 30, 23, 59, tzinfo=timezone.utc))
     assert links and all(window[0] <= datetime.fromisoformat(it["timestamp"].replace("Z", "+00:00")) <= window[1]
                          for it in links)
@@ -297,11 +293,9 @@ def test_shared_claim_links_take_each_politicians_own_date(conn, ev_settings, tm
     enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
     enricher.run(None, 5)
     items = _items(conn, ev_settings)
-    links = {}
-    for it in items:
-        if it["metadata"]["kind"] == "evidence_link":
-            links.setdefault(it["metadata"]["politician_id"], set()).add(it["timestamp"])
-    assert links == {PID: {_iso(first)}, OTHER_PID: {_iso(second)}}
+    assert {it["metadata"]["politician_id"]: it["timestamp"] for it in items} == {PID: _iso(first),
+                                                                                 OTHER_PID: _iso(second)}
+    assert all(_evidence(it) == _evidence(items[0]) for it in items)
 
 
 def test_reproject_resends_only_records_whose_date_changed(conn, ev_settings, tmp_path):
@@ -312,8 +306,8 @@ def test_reproject_resends_only_records_whose_date_changed(conn, ev_settings, tm
     enricher, _ = _enricher(conn, ev_settings, tmp_path, past)
     enricher.run(None, 5)
     assert reproject(conn, None, ev_settings, dry_run=True)["items_changed"] == 0
-    # Records written before this change were timed at assessed_at: simulate one such stored link.
-    lnk = conn.execute("SELECT datapoint_id FROM ev_memory_record WHERE kind = 'evidence_link' LIMIT 1").fetchone()
+    # A record written before a change to how records are built: simulate one stored with other content.
+    lnk = conn.execute("SELECT datapoint_id FROM ev_memory_record WHERE kind = 'claim' LIMIT 1").fetchone()
     conn.execute("UPDATE ev_memory_record SET content_sha256 = 'timed-at-assessed_at' WHERE datapoint_id = %s",
                  (lnk["datapoint_id"],))
     before = len(past.batches())
@@ -340,7 +334,7 @@ def test_reproject_resends_records_whose_ingestion_failed_later(conn, ev_setting
     past = FailingPast()
     enricher, _ = _enricher(conn, ev_settings, tmp_path, past)
     enricher.run(None, 5)
-    lnk = conn.execute("SELECT datapoint_id FROM ev_memory_record WHERE kind = 'evidence_link' LIMIT 1").fetchone()
+    lnk = conn.execute("SELECT datapoint_id FROM ev_memory_record WHERE kind = 'claim' LIMIT 1").fetchone()
     # Sent by an earlier reproject whose ingestion was still processing; past.dev failed it afterwards.
     conn.execute("UPDATE ev_memory_record SET status = 'queued', ingestion_id = 'ing-lost' WHERE datapoint_id = %s",
                  (lnk["datapoint_id"],))
@@ -507,3 +501,154 @@ def test_pending_mark_survives_intake_and_needs_current_mapper(conn, ev_settings
     enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast(), llm=llm)
     assert enricher.run(None, 5)["results"][0]["status"] == "mapped"
     assert llm.calls[0] == "plan"  # no judgements of the current mapper yet: full discovery
+
+
+def test_enrich_without_pastdev_judges_into_neon_and_leaves_the_write_pending(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import claim_next
+
+    _setup(conn)
+    past = FakePast()
+    settings = ev_settings.model_copy(update={"enrich_pastdev": False})
+    enricher, _ = _enricher(conn, settings, tmp_path, past)
+    out = enricher.run(None, 5)
+    assert not out["errors"] and out["results"][0]["pastdev"]["deferred"]
+    assert not past.batches() and not any(p.endswith("/ingest/batch") for _, p, _ in past.calls)
+    assert conn.execute("SELECT count(*) AS n FROM ev_evidence_link").fetchone()["n"] > 0
+    q = conn.execute("SELECT status, skip_reason FROM ev_proposition_queue").fetchone()
+    assert (q["status"], q["skip_reason"]) == ("queued", "pastdev_pending")
+    assert claim_next(conn, None, settings.mapper_version, [], include_pastdev_pending=False) is None
+
+
+class ProcessingPast(FakePast):
+    """past.dev accepting batches but still processing them, until `done`."""
+    done = False
+
+    def handler(self, request):
+        if request.method == "GET" and "/ingest/ing-" in request.url.path:
+            self.calls.append((request.method, request.url.path, None))
+            return httpx.Response(200, json={"status": "completed" if self.done else "processing"})
+        return super().handler(request)
+
+
+def _judged_pending(conn, ev_settings, tmp_path, past):
+    _setup(conn)
+    settings = ev_settings.model_copy(update={"enrich_pastdev": False})
+    enricher, _ = _enricher(conn, settings, tmp_path, past)
+    enricher.run(None, 5)
+    return enricher
+
+
+def test_sync_pastdev_waits_while_pastdev_queue_is_full(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import sync_pastdev
+
+    past = FakePast()
+    enricher = _judged_pending(conn, ev_settings, tmp_path, past)
+    conn.execute("INSERT INTO ev_memory_record (datapoint_id, kind, past_project, status, content_sha256, "
+                 "content_bytes, ingestion_id, memory_timestamp, sent_at) VALUES ('clm-other', 'claim', 'claims-mx', 'queued', 'x', 400000, "
+                 "NULL, now(), now())")
+    settings = ev_settings.model_copy(update={"pastdev_bytes_per_hour": 600_000, "pastdev_max_queue_minutes": 30})
+    out = sync_pastdev(conn, enricher.client, settings)
+    assert out["stopped"] == "pastdev_queue_full" and out["sent"] == 0 and not past.batches()
+    assert conn.execute("SELECT skip_reason FROM ev_proposition_queue").fetchone()["skip_reason"] == "pastdev_pending"
+    conn.execute("UPDATE ev_memory_record SET status = 'completed' WHERE datapoint_id = 'clm-other'")
+    out = sync_pastdev(conn, enricher.client, settings)
+    assert out["sent"] == 1 and out["mapped"] == 1 and len(past.batches()) == 1
+    assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "mapped"
+
+
+def test_sync_pastdev_does_not_resend_records_still_processing(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import sync_pastdev
+
+    past = ProcessingPast()
+    enricher = _judged_pending(conn, ev_settings, tmp_path, past)
+    first = sync_pastdev(conn, enricher.client, ev_settings)
+    assert first["sent"] == 1 and first["mapped"] == 0 and first["backlog_after"]["records"] == 1
+    again = sync_pastdev(conn, enricher.client, ev_settings)
+    assert again["candidates"] == 0 and len(past.batches()) == 1
+    past.done = True
+    last = sync_pastdev(conn, enricher.client, ev_settings)
+    assert last["mapped"] == 1 and last["sent"] == 0 and len(past.batches()) == 1
+    assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "mapped"
+
+
+def test_sync_pastdev_dry_run_sends_nothing(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import sync_pastdev
+
+    past = FakePast()
+    _judged_pending(conn, ev_settings, tmp_path, past)
+    out = sync_pastdev(conn, None, ev_settings, dry_run=True)
+    assert out["propositions"] == 1 and out["sent"] == 0 and not past.batches()
+
+
+def test_reproject_defer_leaves_changed_records_to_sync(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import reproject
+
+    _setup(conn)
+    past = FakePast()
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, past)
+    enricher.run(None, 5)
+    conn.execute("UPDATE ev_memory_record SET content_sha256 = 'old-format'")
+    out = reproject(conn, None, ev_settings, defer=True)
+    assert out["deferred"] == 1 and len(past.batches()) == 1
+    q = conn.execute("SELECT status, skip_reason FROM ev_proposition_queue").fetchone()
+    assert (q["status"], q["skip_reason"]) == ("queued", "pastdev_pending")
+
+
+def test_mapper_upgrade_sends_pending_propositions_back_to_enrich(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import claim_next, sync_pastdev
+
+    past = FakePast()
+    _judged_pending(conn, ev_settings, tmp_path, past)
+    upgraded = ev_settings.model_copy(update={"mapper_version": ev_settings.mapper_version + "-next"})
+    assert sync_pastdev(conn, None, upgraded, dry_run=True)["candidates"] == 0
+    assert claim_next(conn, None, upgraded.mapper_version, [], include_pastdev_pending=False) is not None
+
+
+def test_sync_pastdev_reclaims_a_stale_lease(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import sync_pastdev
+
+    past = FakePast()
+    enricher = _judged_pending(conn, ev_settings, tmp_path, past)
+    conn.execute("UPDATE ev_proposition_queue SET status = 'mapping', updated_at = now() - interval '2 hours'")
+    out = sync_pastdev(conn, enricher.client, ev_settings)
+    assert out["mapped"] == 1 and len(past.batches()) == 1
+
+
+def test_reproject_defer_dry_run_writes_nothing(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import reproject
+
+    _setup(conn)
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
+    enricher.run(None, 5)
+    conn.execute("UPDATE ev_memory_record SET content_sha256 = 'old-format'")
+    out = reproject(conn, None, ev_settings, dry_run=True, defer=True)
+    assert out["changed_propositions"] == 1 and "deferred" not in out
+    assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "mapped"
+
+
+def test_deferred_enrich_without_evidence_is_done(conn, ev_settings, tmp_path):
+    _setup(conn)
+    settings = ev_settings.model_copy(update={"enrich_pastdev": False})
+    enricher, _ = _enricher(conn, settings, tmp_path, FakePast())
+    enricher._discover = lambda prop, claims: ([], [])
+    enricher.run(None, 5)
+    q = conn.execute("SELECT status, skip_reason FROM ev_proposition_queue").fetchone()
+    assert (q["status"], q["skip_reason"]) == ("mapped", None)
+
+
+def test_rejudging_clears_pastdev_pending_before_discovery(conn, ev_settings, tmp_path):
+    past = FakePast()
+    _judged_pending(conn, ev_settings, tmp_path, past)
+    upgraded = ev_settings.model_copy(update={"mapper_version": ev_settings.mapper_version + "-next",
+                                              "enrich_pastdev": False})
+    enricher, _ = _enricher(conn, upgraded, tmp_path, past)
+    seen = []
+
+    def dying_discover(prop, claims):
+        seen.append(conn.execute("SELECT skip_reason FROM ev_proposition_queue").fetchone()["skip_reason"])
+        raise RuntimeError("worker died")
+
+    enricher._discover = dying_discover
+    with pytest.raises(RuntimeError):
+        enricher.enrich_one(conn.execute(PROP_SQL).fetchone())
+    assert seen == [None]

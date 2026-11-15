@@ -157,12 +157,19 @@ def queued(conn, politician_ids: list[str] | None, limit: int | None) -> list[di
                         {"pids": politician_ids or None, "lease": MAPPING_LEASE_MINUTES, "limit": limit}).fetchall()
 
 
-def claim_next(conn, politician_ids: list[str] | None, mapper_version: str, exclude: list[str]) -> dict | None:
+# Judged by the current mapper, only the past.dev write left: sync-pastdev's work, not enrich's.
+JUDGED_EXCLUSION = ("AND NOT (q.skip_reason IS NOT DISTINCT FROM 'pastdev_pending' AND EXISTS (SELECT 1 FROM "
+                    "ev_evidence_link e WHERE e.proposition_id = q.proposition_id AND e.mapper_version = %(mv)s)) ")
+
+
+def claim_next(conn, politician_ids: list[str] | None, mapper_version: str, exclude: list[str],
+               include_pastdev_pending: bool = True) -> dict | None:
     """Atomically take the highest-priority ready proposition (`FOR UPDATE SKIP LOCKED`), so workers can share the queue."""
     row = conn.execute(
         "UPDATE ev_proposition_queue SET status = 'mapping', mapper_version = %(mv)s, updated_at = now() "
         "WHERE proposition_id = (SELECT q.proposition_id FROM ev_proposition_queue q WHERE " + READY +
-        " AND NOT (q.proposition_id = ANY(%(exclude)s)) "
+        " AND NOT (q.proposition_id = ANY(%(exclude)s)) " +
+        ("" if include_pastdev_pending else JUDGED_EXCLUSION) +
         "ORDER BY q.skip_reason IS NOT DISTINCT FROM 'pastdev_pending', q.priority DESC, q.proposition_id "
         "LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING proposition_id",
         {"pids": politician_ids or None, "lease": MAPPING_LEASE_MINUTES, "mv": mapper_version,
@@ -323,6 +330,9 @@ class Enricher:
         judged = prop["mapped_at"] is None and prop["skip_reason"] == PASTDEV_PENDING and self.conn.execute(
             "SELECT 1 FROM ev_evidence_link WHERE proposition_id = %s AND mapper_version = %s LIMIT 1",
             (prop["proposition_id"], self.settings.mapper_version)).fetchone() is not None
+        if not judged and prop["skip_reason"] == PASTDEV_PENDING:  # re-judging: a dead worker must not leave it to sync
+            self.conn.execute("UPDATE ev_proposition_queue SET skip_reason = NULL WHERE proposition_id = %s",
+                              (prop["proposition_id"],))
         try:
             # Judged in an earlier run whose past.dev write did not complete: only project again.
             rows, candidates = ([], []) if judged else self._discover(prop, claims)
@@ -338,10 +348,16 @@ class Enricher:
                 link = self.assess(prop, claims, cand, fetched)
                 key = link["stance"] if link["quote_verified"] or link["stance"] == "irrelevant" else "unverified"
                 stances[key] = stances.get(key, 0) + 1
-            pushed = projection.project(self.conn, self.client, prop, claims, country=self.country,
-                                        mapper_version=self.settings.mapper_version, sleep=self.sleep, now=self.now,
-                                        poll_timeout_s=self.settings.enrich_poll_timeout_s,
-                                        audience_cache=self.audience_cache)
+            if not self.settings.enrich_pastdev:  # left `pastdev_pending` for sync-pastdev, unless there's nothing to send
+                has_links = self.conn.execute(
+                    "SELECT 1 FROM ev_evidence_link WHERE proposition_id = %s AND mapper_version = %s LIMIT 1",
+                    (prop["proposition_id"], self.settings.mapper_version)).fetchone() is not None
+                pushed = {"errors": [], "pending": int(has_links), "credits_sent": 0, "deferred": True}
+            else:
+                pushed = projection.project(self.conn, self.client, prop, claims, country=self.country,
+                                            mapper_version=self.settings.mapper_version, sleep=self.sleep,
+                                            now=self.now, poll_timeout_s=self.settings.enrich_poll_timeout_s,
+                                            audience_cache=self.audience_cache)
             self.spend.add_pastdev(pushed.get("credits_sent", 0))
         except Exception:
             self._set_status(prop, "queued")
@@ -367,7 +383,8 @@ class Enricher:
             if self.max_usd is not None and self.spend.report()["total_usd"] >= self.max_usd:
                 stopped = "max_usd"
                 break
-            prop = claim_next(self.conn, politician_ids, self.settings.mapper_version, seen)
+            prop = claim_next(self.conn, politician_ids, self.settings.mapper_version, seen,
+                              self.settings.enrich_pastdev)
             if prop is None:
                 break
             seen.append(prop["proposition_id"])
@@ -397,7 +414,7 @@ def dry_run(conn, settings, politician_ids: list[str] | None, limit: int | None)
 
 
 def reproject(conn, client, settings, country: str = "MX", *, dry_run: bool = False, poll_timeout_s: float = 0.0,
-              sleep=time.sleep) -> dict:
+              sleep=time.sleep, defer: bool = False) -> dict:
     """Rebuild the past.dev records of every proposition already written and resend the ones whose content changed
     (e.g. after a change to how records are built). No Exa or LLM calls; unchanged items are not resent."""
     past_project = f"claims-{country.lower()}"
@@ -406,7 +423,7 @@ def reproject(conn, client, settings, country: str = "MX", *, dry_run: bool = Fa
                          "AND deleted_at IS NULL) ORDER BY q.proposition_id", (past_project,)).fetchall()
     out = {"propositions": len(props), "changed_propositions": 0, "items_changed": 0, "credits_estimate": 0,
            "credits_sent": 0, "errors": [], "dry_run": dry_run}
-    if not dry_run:  # an ingestion that failed since it was sent leaves its items `failed`, so they count as changed
+    if not dry_run and client is not None:  # an ingestion that failed since it was sent leaves its items `failed`
         projection.refresh_queued(conn, client, past_project, lambda: datetime.now(timezone.utc))
     cache: dict = {}
     for prop in props:
@@ -427,6 +444,11 @@ def reproject(conn, client, settings, country: str = "MX", *, dry_run: bool = Fa
         out["credits_estimate"] += sum(projection.credits_for(it["content"]) for it in changed)
         if dry_run:
             continue
+        if defer:  # left to sync-pastdev, which sends at past.dev's pace
+            conn.execute("UPDATE ev_proposition_queue SET status = 'queued', skip_reason = %s, updated_at = now() "
+                         "WHERE proposition_id = %s AND status <> 'mapping'", (PASTDEV_PENDING, prop["proposition_id"]))
+            out["deferred"] = out.get("deferred", 0) + 1
+            continue
         pushed = projection.project(conn, client, prop, claims, country=country,
                                     mapper_version=settings.mapper_version, poll_timeout_s=poll_timeout_s,
                                     sleep=sleep, audience_cache=cache)
@@ -436,4 +458,85 @@ def reproject(conn, client, settings, country: str = "MX", *, dry_run: bool = Fa
             out["stopped"] = "too many past.dev errors"
             break
     out["usd_estimate"] = round(out["credits_estimate"] * settings.pastdev_usd_per_credit, 4)
+    return out
+
+
+def pastdev_backlog(conn, past_project: str) -> dict:
+    row = conn.execute("SELECT count(*) AS records, coalesce(sum(content_bytes), 0) AS bytes FROM ev_memory_record "
+                       "WHERE past_project = %s AND status = 'queued' AND deleted_at IS NULL", (past_project,)).fetchone()
+    return {"records": row["records"], "bytes": int(row["bytes"])}
+
+
+# Ready (or a stale lease) and judged by the current mapper; propositions judged by an older mapper go back to enrich.
+SYNC_READY = ("(q.status = 'queued' OR (q.status = 'mapping' AND q.updated_at < now() - make_interval(mins => "
+              "%(lease)s))) AND q.skip_reason = 'pastdev_pending' AND EXISTS (SELECT 1 FROM ev_evidence_link e "
+              "WHERE e.proposition_id = q.proposition_id AND e.mapper_version = %(mv)s)")
+
+
+def sync_pastdev(conn, client, settings, country: str = "MX", *, max_usd: float | None = None,
+                 dry_run: bool = False, now=None) -> dict:
+    """Write judged propositions (`pastdev_pending`) to past.dev, highest priority first, only while past.dev's
+    unprocessed queue holds less than `pastdev_max_queue_minutes` of its throughput. No Exa or LLM calls.
+
+    A proposition whose records are still processing is not resent; once they complete it is marked mapped."""
+    now = now or (lambda: datetime.now(timezone.utc))
+    past_project = f"claims-{country.lower()}"
+    if not dry_run:
+        projection.refresh_queued(conn, client, past_project, now)
+    limit_bytes = int(settings.pastdev_bytes_per_hour * settings.pastdev_max_queue_minutes / 60)
+    backlog = pastdev_backlog(conn, past_project)
+    room = limit_bytes - backlog["bytes"]
+    candidates = conn.execute(
+        PROP_SQL + "WHERE " + SYNC_READY + " AND NOT EXISTS (SELECT 1 FROM ev_memory_record m "
+        "WHERE m.proposition_id = q.proposition_id AND m.past_project = %(project)s AND m.status = 'queued' "
+        "AND m.deleted_at IS NULL) ORDER BY q.priority DESC, q.proposition_id",
+        {"lease": MAPPING_LEASE_MINUTES, "mv": settings.mapper_version, "project": past_project}).fetchall()
+    out = {"backlog_before": backlog, "limit_bytes": limit_bytes, "candidates": len(candidates), "propositions": 0,
+           "mapped": 0, "sent": 0, "credits_sent": 0, "errors": [], "dry_run": dry_run, "stopped": None}
+    cache: dict = {}
+    for prop in candidates:
+        if max_usd is not None and out["credits_sent"] * settings.pastdev_usd_per_credit >= max_usd:
+            out["stopped"] = "max_usd"
+            break
+        claims = conn.execute(CLAIMS_SQL, (prop["proposition_id"],)).fetchall()
+        items = projection.build_items(conn, prop, claims, settings.mapper_version) if claims else []
+        size = sum(len(it["content"].encode()) for it in items)
+        if items and size > room:
+            out["stopped"] = "pastdev_queue_full"
+            break
+        if dry_run:
+            room -= size
+            out["propositions"] += 1
+            continue
+        took = conn.execute("UPDATE ev_proposition_queue q SET status = 'mapping', updated_at = now() "
+                            "WHERE q.proposition_id = %(pid)s AND " + SYNC_READY + " RETURNING 1",
+                            {"pid": prop["proposition_id"], "lease": MAPPING_LEASE_MINUTES,
+                             "mv": settings.mapper_version}).fetchone()
+        if took is None:  # taken by an enrich worker meanwhile
+            continue
+        try:
+            pushed = projection.project(conn, client, prop, claims, country=country,
+                                        mapper_version=settings.mapper_version, poll_timeout_s=0.0, now=now,
+                                        audience_cache=cache) if claims else {"errors": [], "pending": 0}
+        except Exception:
+            conn.execute("UPDATE ev_proposition_queue SET status = 'queued', updated_at = now() "
+                         "WHERE proposition_id = %s", (prop["proposition_id"],))
+            raise
+        status = "queued" if pushed["errors"] or pushed["pending"] else "mapped"
+        conn.execute("UPDATE ev_proposition_queue SET status = %s, skip_reason = %s, mapper_version = %s, "
+                     "mapped_at = CASE WHEN %s = 'mapped' THEN %s ELSE mapped_at END, updated_at = now() "
+                     "WHERE proposition_id = %s",
+                     (status, PASTDEV_PENDING if status == "queued" else None, settings.mapper_version, status,
+                      now(), prop["proposition_id"]))
+        out["propositions"] += 1
+        out["mapped"] += status == "mapped"
+        out["sent"] += pushed.get("sent", 0)
+        out["credits_sent"] += pushed.get("credits_sent", 0)
+        room -= sum(len(it["content"].encode()) for it in items) if pushed.get("sent") else 0
+        out["errors"] += [f"{prop['proposition_id']}: {e}" for e in pushed["errors"]]
+        if len(out["errors"]) >= MAX_CONSECUTIVE_FAILURES:
+            out["stopped"] = "too many past.dev errors"
+            break
+    out["usd"] = round(out["credits_sent"] * settings.pastdev_usd_per_credit, 4)
+    out["backlog_after"] = pastdev_backlog(conn, past_project)
     return out

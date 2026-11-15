@@ -60,7 +60,7 @@ def test_records_filter_and_trace(api):
     assert t["searches"] and any(s["urls"] for s in t["searches"])
     reasons = {e["stance"]: e["not_sent_because"] for e in t["evidence"]}
     assert reasons["supports"] is None and reasons["contradicts"] == "quote was not found in the fetched page"
-    assert {x["kind"] for x in t["sent"]} >= {"claim", "document", "evidence_link"}
+    assert {x["kind"] for x in t["sent"]} == {"claim"}  # evidence is folded into the claim record
     assert api.get("/api/pipeline/MX/trace/unknown").status_code == 404
 
 

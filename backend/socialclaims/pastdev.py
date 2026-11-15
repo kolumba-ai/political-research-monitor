@@ -27,7 +27,7 @@ log = structlog.get_logger(__name__)
 PAYLOAD_MARKER = "\nJSON:\n"
 HEADLINE = re.compile(r"^(?P<platform>\w+) post by @(?P<handle>\S+) on (?P<date>\d{4}-\d{2}-\d{2}) mentioning (?P<name>.+?)\.")
 EXPORT_FORMAT = "pastdev-claims/1"
-EVIDENCE_CLAIM_FORMAT = "evidencegraph-claim/1"  # System C claim records (evidencegraph/project.py)
+EVIDENCE_CLAIM_FORMATS = ("evidencegraph-claim/1", "evidencegraph-claim/2")  # System C claim records (evidencegraph/project.py)
 # Data point id prefixes of System C documents and evidence links: not claims, so their content is never fetched.
 EVIDENCE_ONLY_PREFIXES = ("doc-", "lnk-")
 EVIDENCE_SPEAKER = {"speaker": "politician", "quoted": "politician_quoted"}  # relation_to_politician -> speaker
@@ -191,7 +191,7 @@ def _sort_key(row: dict) -> str:
 
 
 def _evidence_claim_posts(src: dict, payload: dict) -> list[tuple[str, dict]]:
-    """A System C claim record (`evidencegraph-claim/1`) as one post-shaped payload per post that stated it, keyed by
+    """A System C claim record (`evidencegraph-claim/1` or `/2`) as one post-shaped payload per post that stated it, keyed by
     post x politician so claims of several propositions from one post merge into one exported post."""
     by_post: dict[str, list[dict]] = {}
     for c in payload.get("claims") or []:
@@ -250,10 +250,10 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int
                        "source": {"platform": m["platform"], "uploader_handle": m["handle"]} if m else {},
                        "claims": [{"claim_index": i, "claim_es": t} for i, t in enumerate(texts)]}
         fmt = str(payload.get("format") or "")
-        if fmt.startswith("evidencegraph-") and fmt != EVIDENCE_CLAIM_FORMAT:
+        if fmt.startswith("evidencegraph-") and fmt not in EVIDENCE_CLAIM_FORMATS:
             skipped["evidence_records"] += 1
             continue
-        entries = (_evidence_claim_posts(src, payload) if fmt == EVIDENCE_CLAIM_FORMAT else
+        entries = (_evidence_claim_posts(src, payload) if fmt in EVIDENCE_CLAIM_FORMATS else
                    [(src.get("dataPointId") or (payload.get("source") or {}).get("oriane_content_id"), payload)])
         for data_point_id, payload in entries:
             pol = payload.get("politician") or {}
