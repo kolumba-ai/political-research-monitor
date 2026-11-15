@@ -1,5 +1,11 @@
-import httpx
+import builtins
+from io import BytesIO
+from pathlib import Path
 
+import httpx
+from pypdf import PdfWriter
+
+from evidencegraph import fetch as fetch_module
 from evidencegraph.fetch import Fetcher, _PageParser, _date_metadata
 from evidencegraph.registry import load_registry
 from polgraph.ids import source_id
@@ -125,3 +131,52 @@ def test_date_origin_precedence(conn, ev_settings):
         "url", "medium")
     assert _date_metadata(_PageParser(), "https://news.example/story", "2019-01-01")[2:] == ("exa", "low")
     assert _date_metadata(_PageParser(), "https://news.example/story", None)[2:] == ("none", "none")
+
+
+def test_pdf_text_page_markers_are_snapshotted_for_open_gov(conn, ev_settings):
+    load_registry(conn)
+    pdf_buffer = BytesIO()
+    writer = PdfWriter()
+    writer.add_blank_page(width=72, height=72)
+    writer.write(pdf_buffer)
+    pdf_bytes = pdf_buffer.getvalue()
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(200, content=pdf_bytes, headers={"content-type": "application/pdf"})
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    result = fetcher.fetch("https://www.gob.mx/report.pdf")
+
+    assert result["fetch_status"] == "fetched"
+    assert result["snapshot_stored"] is True
+    version = conn.execute(
+        "SELECT content_sha256, snapshot_path FROM ev_document_version WHERE document_id=%s",
+        (result["document_id"],),
+    ).fetchone()
+    assert version is not None
+    assert version["content_sha256"] == result["content_sha256"]
+    assert "--- page 1 ---" in Path(version["snapshot_path"]).read_text()
+    client.close()
+
+
+def test_missing_trafilatura_fallback_warns_once(monkeypatch):
+    original_import = builtins.__import__
+    warnings = []
+
+    def import_without_trafilatura(name, *args, **kwargs):
+        if name == "trafilatura":
+            raise ImportError("not installed")
+        return original_import(name, *args, **kwargs)
+
+    monkeypatch.setattr(builtins, "__import__", import_without_trafilatura)
+    monkeypatch.setattr(fetch_module.log, "warning", lambda event: warnings.append(event))
+    monkeypatch.setattr(fetch_module, "_TRAFILATURA_WARNING_EMITTED", False)
+    parser = _PageParser()
+    parser.feed("<html><body>Fallback text.</body></html>")
+
+    assert fetch_module._html_text(b"<html><body>Fallback text.</body></html>", parser) == "Fallback text."
+    fetch_module._html_text(b"<html><body>Fallback text.</body></html>", parser)
+
+    assert warnings == ["fetch.trafilatura_missing"]

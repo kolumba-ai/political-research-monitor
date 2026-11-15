@@ -10,6 +10,7 @@ from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from io import BytesIO
 from pathlib import Path
+from threading import Lock
 from urllib.parse import urljoin, urlsplit
 from urllib.robotparser import RobotFileParser
 
@@ -28,6 +29,8 @@ REDIRECT_CODES = {301, 302, 303, 307, 308}
 BLOCKED_CODES = {401, 402, 403, 451}
 BLOCKED_PAGE = re.compile(r"captcha|verify you are human|sign in to continue|log in to continue|login required",
                           re.IGNORECASE)
+_TRAFILATURA_WARNING_LOCK = Lock()
+_TRAFILATURA_WARNING_EMITTED = False
 
 
 class _PageParser(HTMLParser):
@@ -160,6 +163,11 @@ def _html_text(raw: bytes, parser: _PageParser) -> str:
         import trafilatura
         text = trafilatura.extract(raw, include_comments=False, include_tables=True)
     except ImportError:
+        global _TRAFILATURA_WARNING_EMITTED
+        with _TRAFILATURA_WARNING_LOCK:
+            if not _TRAFILATURA_WARNING_EMITTED:
+                log.warning("fetch.trafilatura_missing")
+                _TRAFILATURA_WARNING_EMITTED = True
         text = None
     if text:
         return text.strip()
