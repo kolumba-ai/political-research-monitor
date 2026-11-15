@@ -73,6 +73,27 @@ def test_robots_rules_are_evaluated_for_each_url_path(conn, ev_settings):
     client.close()
 
 
+def test_recaptcha_script_does_not_block_a_long_article(conn, ev_settings):
+    article = "The report describes policy developments and their expected public impact. " * 30
+    assert len(article) > 1000
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(
+            200,
+            text='<html><head><script src="https://www.google.com/recaptcha/api.js"></script></head>'
+                 f"<body><article>{article}</article></body></html>",
+            headers={"content-type": "text/html"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    result = fetcher.fetch("https://article.example/report")
+
+    assert result["fetch_status"] == "fetched"
+    client.close()
+
+
 def test_canonical_redirect_dates_versions_and_open_gov_snapshot(conn, ev_settings):
     load_registry(conn)
     bodies = [

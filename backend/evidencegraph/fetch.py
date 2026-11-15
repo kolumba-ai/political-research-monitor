@@ -85,7 +85,7 @@ class _PageParser(HTMLParser):
             self.title_parts.append(data)
         if self._in_jsonld:
             self._script_parts.append(data)
-        elif not self._skip_depth:
+        elif not self._skip_depth and not self._in_title:
             self.text_parts.append(data)
 
 
@@ -428,12 +428,6 @@ class Fetcher:
             return self._retry(key, url, str(exc))
         if response_status < 200 or response_status >= 300:
             return self._retry(key, url, f"HTTP {response_status}")
-        if BLOCKED_PAGE.search(raw[:200_000].decode("utf-8", errors="ignore")):
-            self._record_status(key, url, "blocked", "login or CAPTCHA page")
-            self._document_stub(original_id, url, registry_row, "blocked")
-            return {"url": url, "document_id": original_id, "fetch_status": "blocked",
-                    "http_status": response_status, "snapshot_path": None}
-
         is_pdf = content_type == "application/pdf" or urlsplit(current).path.lower().endswith(".pdf")
         is_html = content_type in ("text/html", "application/xhtml+xml") or not content_type
         parser = _PageParser()
@@ -492,6 +486,12 @@ class Fetcher:
                 is_text = False
         except Exception as exc:
             return self._retry(key, url, f"document parsing failed: {exc}")
+
+        if is_html and text is not None and len(text) < 1000 and BLOCKED_PAGE.search(text):
+            self._record_status(key, url, "blocked", "login or CAPTCHA page")
+            self._document_stub(original_id, url, registry_row, "blocked")
+            return {"url": url, "document_id": original_id, "fetch_status": "blocked",
+                    "http_status": response_status, "snapshot_path": None}
 
         data_for_hash = text.encode("utf-8") if is_text else raw
         content_sha = hashlib.sha256(data_for_hash).hexdigest()
