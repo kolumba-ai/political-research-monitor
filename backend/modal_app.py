@@ -36,6 +36,14 @@ def _clamp_workers(requested: int, maximum: int) -> int:
     return min(max(1, int(requested)), max(1, int(maximum)))
 
 
+def _exit_code(results: Iterable[dict]) -> int:
+    for result in results:
+        code = int(result.get("exit_code", 0))
+        if code:
+            return code
+    return 0
+
+
 def _run_cli(module: str, args: str | Iterable[str], *, sqlite_default: bool = False) -> dict:
     if sqlite_default:
         os.environ.setdefault("GRAPH_BACKEND", "sqlite")
@@ -100,32 +108,51 @@ def systemc_fetch_worker(extra_args: str) -> dict:
 
 @app.local_entrypoint()
 def systema_entrypoint(args: str = "build --country MX"):
-    print(systema.remote(args))
+    result = systema.remote(args)
+    print(result)
+    code = _exit_code([result])
+    if code:
+        raise SystemExit(code)
 
 
 @app.local_entrypoint()
 def systemb_entrypoint(args: str = "list --country MX"):
-    print(systemb.remote(args))
+    result = systemb.remote(args)
+    print(result)
+    code = _exit_code([result])
+    if code:
+        raise SystemExit(code)
 
 
 @app.local_entrypoint()
 def systemc_entrypoint(args: str = "queue"):
-    print(systemc.remote(args))
+    result = systemc.remote(args)
+    print(result)
+    code = _exit_code([result])
+    if code:
+        raise SystemExit(code)
 
 
 @app.local_entrypoint()
 def extract(shards: int = 1, args: str = ""):
     count = _clamp_workers(shards, _cap("MODAL_CLAUDE_MAX_CONTAINERS", "systemb_extract_shard"))
-    outputs = systemb_extract_shard.starmap((f"{index}/{count}", args) for index in range(count))
+    outputs = list(systemb_extract_shard.starmap((f"{index}/{count}", args) for index in range(count)))
     for output in outputs:
         print(output)
+    code = _exit_code(outputs)
+    if code:
+        raise SystemExit(code)
 
 
 @app.local_entrypoint()
 def fetch(workers: int = 1, extra_args: str = "--from-queue --limit 20"):
     count = _clamp_workers(workers, _cap("MODAL_FETCH_MAX_CONTAINERS", "systemc_fetch_worker"))
-    for output in systemc_fetch_worker.map([extra_args] * count):
+    outputs = list(systemc_fetch_worker.map([extra_args] * count))
+    for output in outputs:
         print(output)
+    code = _exit_code(outputs)
+    if code:
+        raise SystemExit(code)
 
 
 @app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS], max_containers=1)

@@ -23,6 +23,12 @@ def test_modal_caps_and_worker_clamping():
     assert modal_app._clamp_workers(0, modal_app.CAPS["systemc_fetch_worker"]) == 1
 
 
+def test_exit_code_returns_first_nonzero_result():
+    assert modal_app._exit_code([{"exit_code": 0}, {"exit_code": 7}, {"exit_code": 2}]) == 7
+    assert modal_app._exit_code([{"exit_code": 0}]) == 0
+    assert modal_app._exit_code([]) == 0
+
+
 def test_packages_resolve_repository_root_from_modal_layout():
     assert POLGRAPH_ROOT == SOCIALCLAIMS_ROOT == EVIDENCEGRAPH_ROOT == modal_app.REPO_ROOT
     assert (modal_app.REMOTE_ROOT / "backend" / "polgraph" / "config.py").parents[2] == modal_app.REMOTE_ROOT
