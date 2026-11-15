@@ -26,9 +26,6 @@ log = structlog.get_logger(__name__)
 PAYLOAD_MARKER = "\nJSON:\n"
 HEADLINE = re.compile(r"^(?P<platform>\w+) post by @(?P<handle>\S+) on (?P<date>\d{4}-\d{2}-\d{2}) mentioning (?P<name>.+?)\.")
 EXPORT_FORMAT = "pastdev-claims/1"
-# Extra claim fields written by `push-pastdev` (pastdev_push.py), passed through to the export when present.
-PUSHED_CLAIM_FIELDS = ("relation_to_politician", "speaker_status", "checkworthiness", "topics", "modality",
-                       "grounding", "quote_start_s", "quote_end_s", "proposition_id")
 
 
 class PastDevError(RuntimeError):
@@ -245,12 +242,11 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
         }
         for c in payload.get("claims") or []:
             post["claims"].append({
-                "claim_id": c.get("claim_id") or f"{data_point_id}#{c.get('claim_index', len(post['claims']))}",
+                "claim_id": f"{data_point_id}#{c.get('claim_index', len(post['claims']))}",
                 "claim_index": c.get("claim_index"), "text": c.get("claim_es"), "text_en": c.get("claim_en"),
                 "type": c.get("claim_type"), "speaker": c.get("speaker"),
                 "about_politician": c.get("about_politician"), "checkable": c.get("checkable"),
-                "source_field": c.get("source_field"), "evidence_span": c.get("evidence_span"),
-                **{k: c[k] for k in PUSHED_CLAIM_FIELDS if k in c}})
+                "source_field": c.get("source_field"), "evidence_span": c.get("evidence_span")})
         posts[data_point_id] = post
 
     rows = sorted(posts.values(), key=_sort_key, reverse=True)

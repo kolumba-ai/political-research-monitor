@@ -37,7 +37,38 @@ def build_parser() -> argparse.ArgumentParser:
     fetch_cmd.add_argument("urls", nargs="*")
     fetch_cmd.add_argument("--from-queue", action="store_true")
     fetch_cmd.add_argument("--limit", type=int, default=20)
+    enrich_cmd = commands.add_parser(
+        "enrich", help="Exa search, fetch, summarise and judge evidence for queued claims; write them to past.dev")
+    enrich_cmd.add_argument("ids", nargs="*", help="politician ids (default: every queued proposition)")
+    enrich_cmd.add_argument("--limit", type=_positive_int, default=10, help="propositions to enrich, by priority")
+    enrich_cmd.add_argument("--country", default="MX")
+    enrich_cmd.add_argument("--dry-run", action="store_true", help="list what would run and the cost ceiling; free")
+    enrich_cmd.add_argument("--confirm-spend", action="store_true", help="required: Exa, Anthropic and past.dev bill")
     return parser
+
+
+def _positive_int(value: str) -> int:
+    number = int(value)
+    if number < 1:
+        raise argparse.ArgumentTypeError("must be at least 1")
+    return number
+
+
+def _enricher(conn, settings, country: str):
+    from socialclaims.claims import AnthropicLLM
+    from socialclaims.pastdev import PastDevClient
+
+    from .config import exa_gateway
+    from .enrich import Enricher
+
+    llm = AnthropicLLM(settings.anthropic_api_key, settings.enrich_model, settings.anthropic_base_url,
+                       max_tokens=2000, rate_limiter_database_url=settings.database_url,
+                       requests_per_second=settings.anthropic_requests_per_second)
+    client = PastDevClient(settings.past_dev_api_key, settings.past_dev_base_url,
+                           rate_limiter_database_url=settings.database_url,
+                           requests_per_second=settings.pastdev_requests_per_second)
+    return Enricher(conn, settings, llm=llm, gateway=exa_gateway(settings), fetcher=Fetcher(conn, settings),
+                    client=client, country=country)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -75,6 +106,25 @@ def main(argv: list[str] | None = None) -> int:
                 print(_json(results))
             finally:
                 fetcher.close()
+        elif args.command == "enrich":
+            from .enrich import dry_run
+
+            if args.dry_run:
+                print(_json(dry_run(conn, settings, args.ids or None, args.limit)))
+                return 0
+            if not args.confirm_spend:
+                parser.error("enrich calls Exa, Anthropic and past.dev (billed): run --dry-run first, "
+                             "then pass --confirm-spend")
+            missing = [name for name, value in (("EXA_API_KEY", settings.exa_api_key),
+                                                ("ANTHROPIC_API_KEY", settings.anthropic_api_key),
+                                                ("PAST_DEV_API_KEY", settings.past_dev_api_key)) if not value]
+            if missing:
+                parser.error(f"missing {', '.join(missing)}")
+            enricher = _enricher(conn, settings, args.country)
+            try:
+                print(_json(enricher.run(args.ids or None, args.limit)))
+            finally:
+                enricher.fetcher.close()
     finally:
         conn.close()
     return 0

@@ -3,7 +3,7 @@
 Code: `backend/socialclaims/`. Design: [`System_B_Design_Doc_for_Devin.md`](System_B_Design_Doc_for_Devin.md);
 Oriane API: [`oriane-integration-connect.yaml`](oriane-integration-connect.yaml).
 
-Scope: Mexico, Spanish, internal only, evidence only. No Exa validation yet; claims are written to past.dev by `push-pastdev`.
+Scope: Mexico, Spanish, internal only, evidence only. No Exa validation or past.dev writes yet.
 Oriane is the only social source; System B never creates politician identities.
 
 ## Flow
@@ -73,29 +73,6 @@ per-politician totals). It needs no Postgres or Oriane call. past.dev has no lis
 4,000 characters are cut there, so those are re-read with one recall (1 credit) pinned to the post's exact time.
 Payload person ids are checked against System A and, if missing, resolved by name (e.g. the stored
 `person:MX:clara-brugada-molina` becomes `person:MX:clara-marina-brugada-molina`).
-
-## Claims to past.dev (write path)
-
-`push-pastdev` sends claims from Postgres to the country's past.dev project. It writes one data point per post and
-politician, `sc-<oriane_id>-<person slug>`. The data point holds the claims from that pair's latest successful
-extraction, excluding claims with `grounding = 'failed'`. It is timed at the post's `published_at` and written in the
-`<headline>`, bullet list, `JSON:` payload shape that `pull-pastdev` reads, with Postgres `claim_id`s in the payload.
-Each politician gets an audience `pol-<slug>` (at most 40 characters). It is a rule audience that reaches identities
-whose `politician` trait is that person, or whose `scope` trait is `country`. Each audience also gets a reader identity,
-`reader-pol-<slug>`. An existing audience is reused only when every identity it lists reads that same politician.
-Posts already in past.dev under the earlier pipeline's `oriane:<id>:v<n>` ids are skipped and keep their old version
-(`--include-legacy` sends them anyway). Items go out in
-`POST /ingest/batch` calls of up to 1,000, each with a content-derived `idempotencyKey`. The command then polls
-`GET /ingest/{id}` until each batch is `completed`. Every sent id, ingestion and content hash is stored in
-`memory_record`, because past.dev cannot list them back. A re-run first re-checks ingestions an earlier run left `queued`, then sends only new, changed or failed data points; a changed one
-replaces the earlier revision under the same id. Ingest costs one credit per 350 bytes, so `--dry-run` reports the
-number of data points and the estimated credits, only reading past.dev and writing nothing. A paid run needs `--confirm-spend`, and
-`--max-credits N` refuses a run whose estimate is higher than N.
-
-```bash
-make sc-push ARGS=--dry-run                          # free: data points, claims, estimated credits
-make sc-push ARGS="--confirm-spend --max-credits 30000"
-```
 
 The API serves the export at `GET /api/claims/{ISO2}/summary` and
 `GET /api/claims/{ISO2}/politicians/{person_id}?type=&speaker=&platform=&q=&limit=&offset=`; the 3D explorer

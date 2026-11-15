@@ -24,7 +24,14 @@ class EvidenceSettings(BaseSettings):
     fetch_max_bytes: int = 15_000_000
     snapshot_dir: Path = REPO_ROOT / "var" / "evidencegraph" / "snapshots"
     intake_min_checkworthiness: float = 0.5
-    mapper_version: str = "m0"
+    mapper_version: str = "m1"
+    anthropic_base_url: str = "https://api.anthropic.com"
+    anthropic_requests_per_second: float = 2.0
+    pastdev_requests_per_second: float = 2.0
+    enrich_model: str = "claude-sonnet-5-5"
+    enrich_results_per_query: int = 5
+    enrich_max_documents: int = 8
+    enrich_page_chars: int = 24_000
 
 
 @lru_cache
