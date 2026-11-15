@@ -94,6 +94,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("ids", nargs="+")
     p.add_argument("--country", default="MX")
     p.add_argument("--apply", action="store_true")
+    p = sub.add_parser("segment", help="Phase 2: segments + speaker roles from saved snapshots (no API call)")
+    p.add_argument("ids", nargs="*", help="politicians (default: everyone with captured posts)")
+    p.add_argument("--country", default="MX")
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -178,6 +181,11 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "rematch":
         from .capture import rematch
         _out([rematch(conn, graph, s, _pid(graph, i, args.country), apply=args.apply) for i in args.ids])
+    elif args.cmd == "segment":
+        from .segments import process_politician
+        ids = [_pid(graph, i, args.country) for i in args.ids] or [r["politician_id"] for r in conn.execute(
+            "SELECT DISTINCT politician_id FROM run_post ORDER BY 1").fetchall()]
+        _out([process_politician(conn, graph, s.raw_storage_dir, i) for i in ids])
     elif args.cmd == "replay-raw":
         from pathlib import Path
         from .capture import RawReplayClient
