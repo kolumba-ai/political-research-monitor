@@ -189,14 +189,19 @@ def _prop_id(p: dict, period: tuple[date | None, date | None]) -> str:
 def build_prompt(snap, post_meta: dict, segs: list[dict], taxonomy: dict) -> tuple[str, dict[str, dict]]:
     """Prompt text and the [sN] -> segment map it cites. Comments are never included."""
     refs: dict[str, dict] = {}
-    lines, used, seen = [], 0, set()
+    lines, used, seen, items = [], 0, set(), []
     for s in sorted(segs, key=lambda s: ({"speech": 0, "caption": 1, "onscreen": 2}[s["source"]], s["ordinal"])):
         key = (s["source"], normalize_text(s["text"]))
-        if key in seen:
-            continue
-        seen.add(key)
-        room = MAX_SEGMENT_CHARS - used
-        if room < 200 and len(s["text"]) > room:
+        if key not in seen:
+            seen.add(key)
+            items.append(s)
+    # Keep up to 500 chars of headroom for every later segment, so one long transcript cannot hide the caption.
+    reserve = [0] * len(items)
+    for i in range(len(items) - 2, -1, -1):
+        reserve[i] = reserve[i + 1] + min(len(items[i + 1]["text"]), 500)
+    for i, s in enumerate(items):
+        room = MAX_SEGMENT_CHARS - used - min(reserve[i], MAX_SEGMENT_CHARS // 2)
+        if room < min(len(s["text"]), 200):
             continue
         shown = s["text"][:room]
         used += len(shown)
