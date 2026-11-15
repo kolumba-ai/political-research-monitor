@@ -7,7 +7,8 @@ Records (each `<plain text>\\n\\nJSON:\\n<compact payload>`):
 - document `doc-<source hash>-v<n>`, timed at `published_at` (retrieval time when unknown), project-visible;
 - evidence link `lnk-<link hash>-<person slug>`, timed at `assessed_at`, in the politician's audience.
 
-Only links with a verified quote and a stance other than `irrelevant` are written, and only their documents.
+Only links with a verified quote and a stance other than `irrelevant` are written, and only their documents; a claim
+without any such link is not written at all.
 Quotes follow the storage policy: open licences keep the quote, `copyright` at most 300 characters, `unknown` 200.
 Every id goes to `ev_memory_record`; unchanged items are not resent.
 """
@@ -164,6 +165,8 @@ def build_items(conn, prop: dict, claims: list[dict], mapper_version: str) -> li
         item = document_item(row, row)
         docs.setdefault(item["id"], item)
         links += link_items(prop, row, row, names)
+    if not links:
+        return []
     return claim_items(prop, claims) + list(docs.values()) + links
 
 
@@ -266,6 +269,8 @@ def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, coun
     now = now or (lambda: datetime.now(timezone.utc))
     past_project = f"claims-{country.lower()}"
     items = build_items(conn, prop, claims, mapper_version)
+    if not items:
+        return {"items": 0, "sent": 0, "unchanged": 0, "credits_estimate": 0, "errors": [], "pending": 0}
     refresh_queued(conn, client, past_project, now)
     pids = sorted({it["metadata"]["politician_id"] for it in items if it["metadata"].get("politician_id")})
     recorded = {r["politician_id"]: r["audience"] for r in conn.execute(
