@@ -19,7 +19,7 @@ from typing import Protocol
 import httpx
 from psycopg.types.json import Jsonb
 
-from polgraph.ids import normalize_text
+from polgraph.ids import normalize_text, strip_accents
 
 from .capture import utcnow
 from .identity import merged_ids
@@ -31,6 +31,15 @@ MAX_SEGMENT_CHARS = 12_000
 FUZZY_MIN = 0.9
 NEGATIONS = {"no", "nunca", "jamas", "ni", "tampoco", "ningun", "ninguna", "ninguno", "nada", "nadie", "sin"}
 CLAIM_TYPES = ["factual", "statistic", "policy_position", "commitment", "forecast", "accusation", "opinion"]
+INFO_ISSUES = {"predicate_negation_normalized", "segment_id_corrected"}
+NUMBER_WORDS = {
+    "cero": 0, "ninguno": 0, "ninguna": 0, "ningun": 0,
+    "un": 1, "uno": 1, "una": 1, "dos": 2, "tres": 3, "cuatro": 4, "cinco": 5,
+    "seis": 6, "siete": 7, "ocho": 8, "nueve": 9, "diez": 10, "once": 11,
+    "doce": 12, "trece": 13, "catorce": 14, "quince": 15, "veinte": 20,
+    "treinta": 30, "cuarenta": 40, "cincuenta": 50, "cien": 100, "ciento": 100,
+    "mil": 1000,
+}
 
 SYSTEM_PROMPT = """You extract claims from one Mexican social-media post for an internal, evidence-only research archive.
 A claim is a specific proposition explicitly expressed in the speech, on-screen text or caption segments given.
@@ -170,15 +179,53 @@ def align(quote: str, source: str) -> tuple[str, int | None, int | None, float]:
 
 
 def _number(raw: str) -> str:
-    """'1,250,000' -> '1250000' (thousands), '2,5' -> '2.5' (Spanish decimal comma), '2.5' unchanged."""
+    """Canonicalize common Spanish and English numeric formats."""
     raw = raw.rstrip(".,")
+    if re.fullmatch(r"\d{1,3}(?:\.\d{3})+", raw):
+        return raw.replace(".", "")
     if re.fullmatch(r"\d{1,3}(,\d{3})+(\.\d+)?", raw):
-        return raw.replace(",", "")
-    return raw.replace(",", ".")
+        number = raw.replace(",", "")
+    else:
+        number = raw.replace(",", ".")
+    return re.sub(r"\.0+$", "", number)
 
 
 def _numbers(text: str) -> set[str]:
-    return {_number(n) for n in re.findall(r"\d[\d,.]*", text or "")}
+    raw = text or ""
+    numbers = {_number(n) for n in re.findall(r"\d[\d,.]*", raw)}
+    folded = strip_accents(raw).lower()
+    tokens = [m.group() for m in re.finditer(r"\d[\d,.]*|[a-z]+", folded)]
+    numbers.update(str(NUMBER_WORDS[t]) for t in tokens if t in NUMBER_WORDS)
+
+    def integer(token: str) -> int | None:
+        if token in NUMBER_WORDS:
+            return NUMBER_WORDS[token]
+        canonical = _number(token)
+        return int(canonical) if canonical.isdigit() else None
+
+    for i, token in enumerate(tokens[:-1]):
+        if tokens[i + 1] != "mil":
+            continue
+        leading = integer(token)
+        if leading is None:
+            continue
+        trailing = integer(tokens[i + 2]) if i + 2 < len(tokens) else 0
+        if trailing is None:
+            trailing = 0
+        numbers.add(str(leading * 1000 + trailing))
+    return numbers
+
+
+def _negated(text: str) -> bool:
+    raw = str(text or "")
+    discourse_no = {
+        m.start("no") for m in re.finditer(r"(?P<no>\bno)\s*(?:[,?¿]|$)", raw, flags=re.IGNORECASE)
+    }
+    tokens = {
+        normalize_text(m.group()) for m in re.finditer(r"[^\W\d_]+", raw, flags=re.UNICODE)
+        if m.start() not in discourse_no
+    }
+    return bool(NEGATIONS & tokens)
 
 
 def _date(v) -> date | None:
@@ -350,13 +397,19 @@ class Extractor:
         if extra := sorted(_numbers(c.get("text")) - allowed):
             issues.append(f"paraphrase_numbers_not_in_quote:{','.join(extra)}")
         prop = c.get("proposition") or {}
+        predicate = str(prop.get("predicate") or "")
+        if not bool(prop.get("negated")) and normalize_text(predicate).startswith(("no ", "nunca ")):
+            prop["predicate"] = re.sub(r"^\s*(?:no|nunca)\b[\W_]*", "", predicate, count=1,
+                                       flags=re.IGNORECASE).strip()
+            prop["negated"] = True
+            issues.append("predicate_negation_normalized")
         vals = {n for v in prop.get("values") or [] for n in _numbers(str(v.get("value")))}
         if vals - _numbers(quote):
             issues.append("proposition_values_not_in_quote")
-        neg = lambda t: bool(NEGATIONS & set(normalize_text(t or "").split()))  # noqa: E731
-        if neg(quote) != neg(c.get("text")):
+        quote_negated = _negated(quote)
+        if quote_negated != _negated(c.get("text")):
             issues.append("negation_mismatch")
-        if bool(prop.get("negated")) != neg(quote):
+        if bool(prop.get("negated")) and not quote_negated:
             issues.append("proposition_negation_mismatch")
         topics = [t for t in c.get("topics") or [] if t in self.topic_ids]
         if len(topics) < len(c.get("topics") or []):
@@ -370,7 +423,7 @@ class Extractor:
             issues.append("speaker_relation_without_evidence")
         ctype = c.get("type") if c.get("type") in CLAIM_TYPES else "factual"
         modality = c.get("modality") if c.get("modality") in ("asserted", "questioned", "quoted", "satire") else "asserted"
-        if issues and grounding == "exact":
+        if grounding == "exact" and any(issue.partition(":")[0] not in INFO_ISSUES for issue in issues):
             grounding = "review"
         timed = [s for s in cited if s["start_s"] is not None]
         prop_id = None

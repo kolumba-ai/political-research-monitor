@@ -24,6 +24,20 @@ def claim(quote, refs, text=None, **kw):
     return c
 
 
+def extract_claims(conn, graph, sc_settings, quote, claims_for_ref, extra_segment=None, post_id=88):
+    accounts.approve(conn, PID, "tiktok", "claudiasheinbaum", "tester", ["https://www.gob.mx"], "prf_own")
+    post = speech_post(post_id, quote, profileId="prf_own", profileHandle="claudiasheinbaum")
+    if extra_segment:
+        post["media"][0]["transcriptChunks"].append(
+            {"startSeconds": "6.0", "endSeconds": "9.0", "text": extra_segment}
+        )
+    Capturer(conn, graph, FakeOriane([post]).client(), sc_settings, clock=lambda: FIXED_NOW).capture(PID)
+    process_politician(conn, graph, sc_settings.raw_storage_dir, PID, now=FIXED_NOW)
+    llm = FakeLLM(lambda prompt: claims_for_ref(ref(prompt, "(speech")))
+    out = Extractor(conn, graph, llm).run(PID, 1)
+    return out, conn.execute("SELECT * FROM distilled_claim").fetchall()
+
+
 class FakeLLM:
     model = "fake-claude"
 
@@ -92,6 +106,7 @@ def test_grounding_rules_and_speaker_evidence(conn, graph, segmented):
     subj = by[("1", "el desempleo bajó a 2.5 por ciento (subject)")]
     assert subj["speaker_id"] is None and subj["speaker_status"] == "unknown"
     assert "negation_mismatch" in by[("1", "El desempleo no bajó a 2.5 por ciento")]["grounding_issues"]
+    assert "paraphrase_numbers_not_in_quote:3.5" in by[("1", "El desempleo bajó a 3.5 por ciento")]["grounding_issues"]
     assert by[("1", "la inflación subió a 9 por ciento")]["grounding"] == "failed"
     third = by[("2", "el desempleo bajó a 2.5 por ciento")]
     assert third["relation_to_politician"] == "mentioned" and third["speaker_id"] is None
@@ -145,6 +160,95 @@ def test_decimal_comma_is_not_a_thousands_separator():
     assert _numbers("2,5% y 25% y 1,250,000 y 3.7.") == {"2.5", "25", "1250000", "3.7"}
     a, b = ({**PROP, "values": [{"value": v, "unit": "%"}]} for v in ("2,5", "25"))
     assert _prop_id(a, (None, None)) != _prop_id(b, (None, None))
+
+
+@pytest.mark.parametrize(("text", "expected"), [
+    ("1.700 reservas", "1700"),
+    ("260.000", "260000"),
+    ("6 mil 500 millones", "6500"),
+    ("120 mil personas", "120000"),
+    ("dos puentes", "2"),
+    ("ninguna abstención", "0"),
+    ("10.6 billones", "10.6"),
+    ("2,5%", "2.5"),
+    ("1,250,000", "1250000"),
+])
+def test_spanish_number_canonicalization(text, expected):
+    assert expected in _numbers(text)
+
+
+@pytest.mark.parametrize(("quote", "text"), [
+    ("No, Sheinbaum sale a defender el video", "Sheinbaum sale a defender el video"),
+    ("cuidan a Andy y no a los mexicanos", "cuidan a Andy y no a los mexicanos"),
+])
+def test_discourse_and_contrastive_negation_ground_exactly(conn, graph, sc_settings, quote, text):
+    prop = {**PROP, "predicate": "sale a defender", "negated": False, "values": []}
+    out, rows = extract_claims(conn, graph, sc_settings, quote,
+                               lambda r: [claim(quote, [r], text=text, proposition=prop)])
+
+    assert out["grounding"] == {"exact": 1}
+    assert rows[0]["grounding"] == "exact"
+    assert "negation_mismatch" not in rows[0]["grounding_issues"]
+    assert "proposition_negation_mismatch" not in rows[0]["grounding_issues"]
+
+
+def test_predicate_negation_is_normalized_and_shares_proposition_id(conn, graph, sc_settings):
+    quote = "No sale Sheinbaum a defender a las madres"
+    normalized = {**PROP, "subject": "Sheinbaum", "predicate": "no sale a defender", "negated": False,
+                  "values": []}
+    canonical = {**normalized, "predicate": "sale a defender", "negated": True}
+    out, rows = extract_claims(
+        conn, graph, sc_settings, quote,
+        lambda r: [claim(quote, [r], proposition=normalized), claim(quote, [r], proposition=canonical)],
+    )
+    adjusted = next(row for row in rows if "predicate_negation_normalized" in row["grounding_issues"])
+    assert out["grounding"] == {"exact": 2}
+    assert adjusted["grounding"] == "exact"
+    assert adjusted["grounding_issues"] == ["predicate_negation_normalized"]
+    assert {row["proposition_id"] for row in rows} == {adjusted["proposition_id"]}
+    stored = conn.execute("SELECT predicate, negated FROM proposition").fetchone()
+    assert (stored["predicate"], stored["negated"]) == ("sale a defender", True)
+
+
+def test_negated_proposition_without_quote_negation_needs_review(conn, graph, sc_settings):
+    quote = "Sheinbaum sale a defender a las madres"
+    prop = {**PROP, "predicate": "sale a defender", "negated": True, "values": []}
+    out, rows = extract_claims(conn, graph, sc_settings, quote,
+                               lambda r: [claim(quote, [r], proposition=prop)])
+
+    assert out["grounding"] == {"review": 1}
+    assert rows[0]["grounding"] == "review"
+    assert "proposition_negation_mismatch" in rows[0]["grounding_issues"]
+
+
+def test_corrected_segment_id_is_informational(conn, graph, sc_settings):
+    quote = "Sheinbaum anuncia nuevos apoyos"
+    prop = {**PROP, "predicate": "anuncia nuevos apoyos", "values": []}
+    out, rows = extract_claims(
+        conn, graph, sc_settings, "Texto de otro segmento sin relación",
+        lambda r: [claim(quote, [r], proposition=prop)], extra_segment=quote,
+    )
+
+    assert out["grounding"] == {"exact": 1}
+    assert rows[0]["grounding"] == "exact"
+    assert rows[0]["grounding_issues"] == ["segment_id_corrected"]
+
+
+def test_scaled_value_and_dot_thousands_match_quote_and_paraphrase(conn, graph, sc_settings):
+    quote = "Se destinarán 6 mil 500 millones de pesos"
+    value_prop = {**PROP, "values": [{"value": "6500", "unit": "millones de pesos"}]}
+    out, rows = extract_claims(conn, graph, sc_settings, quote,
+                               lambda r: [claim(quote, [r], proposition=value_prop)])
+    assert out["grounding"] == {"exact": 1}
+    assert "proposition_values_not_in_quote" not in rows[0]["grounding_issues"]
+
+    quote = "Hubo 1.700 reservas"
+    paraphrase = "Hubo 1,700 reservas"
+    prop = {**PROP, "values": []}
+    out, rows = extract_claims(conn, graph, sc_settings, quote,
+                               lambda r: [claim(quote, [r], text=paraphrase, proposition=prop)], post_id=89)
+    assert out["grounding"] == {"exact": 1}
+    assert not any(issue.startswith("paraphrase_numbers_not_in_quote") for issue in rows[0]["grounding_issues"])
 
 
 def test_oversized_speech_does_not_hide_caption(graph):
