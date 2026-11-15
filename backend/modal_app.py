@@ -15,6 +15,7 @@ REMOTE_ROOT = Path("/root/app")
 REMOTE_BACKEND = REMOTE_ROOT / "backend"
 REMOTE_VAR = REMOTE_ROOT / "var"
 IMAGE_PYTHON_VERSION = "3.11"
+TIMEOUT_S = int(os.environ.get("MODAL_TIMEOUT_S", str(6 * 3600)))
 
 # Shared PostgreSQL limiters enforce Exa (8 rps), Anthropic (2 rps), Oriane (1 rps),
 # past.dev (2 rps), and per-host fetch spacing; these caps bound concurrent containers.
@@ -67,31 +68,32 @@ IMAGE = (
 )
 
 
-@app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS], max_containers=1)
+@app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS], max_containers=1,
+              timeout=TIMEOUT_S)
 def systema(args: str) -> dict:
     return _run_cli("polgraph", args, sqlite_default=True)
 
 
 @app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS],
-              max_containers=_cap("MODAL_SYSTEMB_MAX_CONTAINERS", "systemb"))
+              max_containers=_cap("MODAL_SYSTEMB_MAX_CONTAINERS", "systemb"), timeout=TIMEOUT_S)
 def systemb(args: str) -> dict:
     return _run_cli("socialclaims", args)
 
 
 @app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS],
-              max_containers=_cap("MODAL_CLAUDE_MAX_CONTAINERS", "systemb_extract_shard"))
+              max_containers=_cap("MODAL_CLAUDE_MAX_CONTAINERS", "systemb_extract_shard"), timeout=TIMEOUT_S)
 def systemb_extract_shard(shard: str, extra_args: str) -> dict:
     return _run_cli("socialclaims", ["extract-claims", "--shard", shard, *shlex.split(extra_args)])
 
 
 @app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS],
-              max_containers=_cap("MODAL_SYSTEMC_MAX_CONTAINERS", "systemc"))
+              max_containers=_cap("MODAL_SYSTEMC_MAX_CONTAINERS", "systemc"), timeout=TIMEOUT_S)
 def systemc(args: str) -> dict:
     return _run_cli("evidencegraph", args)
 
 
 @app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS],
-              max_containers=_cap("MODAL_FETCH_MAX_CONTAINERS", "systemc_fetch_worker"))
+              max_containers=_cap("MODAL_FETCH_MAX_CONTAINERS", "systemc_fetch_worker"), timeout=TIMEOUT_S)
 def systemc_fetch_worker(extra_args: str) -> dict:
     return _run_cli("evidencegraph", ["fetch", *shlex.split(extra_args)])
 
