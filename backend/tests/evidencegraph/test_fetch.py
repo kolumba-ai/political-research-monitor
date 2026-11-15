@@ -318,7 +318,7 @@ def test_empty_text_documents_have_no_simhash_or_duplicate_cluster(conn, ev_sett
     assert first["fetch_status"] == second["fetch_status"] == "fetched"
     versions = conn.execute(
         "SELECT v.simhash,d.dup_cluster_id FROM ev_document_version v "
-        "JOIN ev_document d USING (document_id) ORDER BY d.url"
+        "JOIN ev_document d USING (document_id) ORDER BY d.document_id"
     ).fetchall()
     assert versions == [
         {"simhash": None, "dup_cluster_id": None},
