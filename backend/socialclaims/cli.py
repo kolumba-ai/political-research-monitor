@@ -146,7 +146,8 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         from .systema import read_person
         snap = read_person(graph, _pid(graph, args.id, args.country))
-        _out(accounts.discover(conn, _client(s), snap, platforms, limit=args.limit))
+        _out(accounts.discover(conn, _client(s), snap, platforms, limit=args.limit,
+                               monthly_ceiling=s.oriane_monthly_credit_ceiling))
     elif args.cmd == "capture":
         cap = Capturer(conn, graph, None if args.dry_run else (_client(s) if args.confirm_spend else None), s)
         if not args.dry_run and not args.confirm_spend:

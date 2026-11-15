@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from psycopg.types.json import Jsonb
 
-from .oriane import OrianeClient, credits_for
+from .oriane import CreditsExhausted, OrianeClient, credits_for
 from .query import name_variants
 from .systema import PersonSnapshot
 
@@ -18,7 +18,12 @@ def profile_search_body(snap: PersonSnapshot, platforms: list[str]) -> dict:
 
 
 def discover(conn, client: OrianeClient, snap: PersonSnapshot, platforms: list[str], limit: int = 10,
-             projection: str = "default") -> list[dict]:
+             projection: str = "default", monthly_ceiling: int | None = None) -> list[dict]:
+    if monthly_ceiling is not None:
+        from .capture import month_credits_used, utcnow
+        limit = min(limit, (monthly_ceiling - month_credits_used(conn, utcnow())) // credits_for(1, projection))
+        if limit < 1:
+            raise CreditsExhausted("monthly Oriane credit ceiling reached")
     body = profile_search_body(snap, platforms)
     resp = client.search_profiles(body, limit=limit, projection=projection)
     rows = resp.results
