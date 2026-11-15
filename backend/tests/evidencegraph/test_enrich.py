@@ -591,3 +591,35 @@ def test_reproject_defer_leaves_changed_records_to_sync(conn, ev_settings, tmp_p
     assert out["deferred"] == 1 and len(past.batches()) == 1
     q = conn.execute("SELECT status, skip_reason FROM ev_proposition_queue").fetchone()
     assert (q["status"], q["skip_reason"]) == ("queued", "pastdev_pending")
+
+
+def test_mapper_upgrade_sends_pending_propositions_back_to_enrich(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import claim_next, sync_pastdev
+
+    past = FakePast()
+    _judged_pending(conn, ev_settings, tmp_path, past)
+    upgraded = ev_settings.model_copy(update={"mapper_version": ev_settings.mapper_version + "-next"})
+    assert sync_pastdev(conn, None, upgraded, dry_run=True)["candidates"] == 0
+    assert claim_next(conn, None, upgraded.mapper_version, [], include_pastdev_pending=False) is not None
+
+
+def test_sync_pastdev_reclaims_a_stale_lease(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import sync_pastdev
+
+    past = FakePast()
+    enricher = _judged_pending(conn, ev_settings, tmp_path, past)
+    conn.execute("UPDATE ev_proposition_queue SET status = 'mapping', updated_at = now() - interval '2 hours'")
+    out = sync_pastdev(conn, enricher.client, ev_settings)
+    assert out["mapped"] == 1 and len(past.batches()) == 1
+
+
+def test_reproject_defer_dry_run_writes_nothing(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import reproject
+
+    _setup(conn)
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
+    enricher.run(None, 5)
+    conn.execute("UPDATE ev_memory_record SET content_sha256 = 'old-format'")
+    out = reproject(conn, None, ev_settings, dry_run=True, defer=True)
+    assert out["changed_propositions"] == 1 and "deferred" not in out
+    assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "mapped"

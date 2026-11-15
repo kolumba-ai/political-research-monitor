@@ -157,6 +157,11 @@ def queued(conn, politician_ids: list[str] | None, limit: int | None) -> list[di
                         {"pids": politician_ids or None, "lease": MAPPING_LEASE_MINUTES, "limit": limit}).fetchall()
 
 
+# Judged by the current mapper, only the past.dev write left: sync-pastdev's work, not enrich's.
+JUDGED_EXCLUSION = ("AND NOT (q.skip_reason IS NOT DISTINCT FROM 'pastdev_pending' AND EXISTS (SELECT 1 FROM "
+                    "ev_evidence_link e WHERE e.proposition_id = q.proposition_id AND e.mapper_version = %(mv)s)) ")
+
+
 def claim_next(conn, politician_ids: list[str] | None, mapper_version: str, exclude: list[str],
                include_pastdev_pending: bool = True) -> dict | None:
     """Atomically take the highest-priority ready proposition (`FOR UPDATE SKIP LOCKED`), so workers can share the queue."""
@@ -164,7 +169,7 @@ def claim_next(conn, politician_ids: list[str] | None, mapper_version: str, excl
         "UPDATE ev_proposition_queue SET status = 'mapping', mapper_version = %(mv)s, updated_at = now() "
         "WHERE proposition_id = (SELECT q.proposition_id FROM ev_proposition_queue q WHERE " + READY +
         " AND NOT (q.proposition_id = ANY(%(exclude)s)) " +
-        ("" if include_pastdev_pending else "AND q.skip_reason IS DISTINCT FROM 'pastdev_pending' ") +
+        ("" if include_pastdev_pending else JUDGED_EXCLUSION) +
         "ORDER BY q.skip_reason IS NOT DISTINCT FROM 'pastdev_pending', q.priority DESC, q.proposition_id "
         "LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING proposition_id",
         {"pids": politician_ids or None, "lease": MAPPING_LEASE_MINUTES, "mv": mapper_version,
@@ -456,6 +461,12 @@ def pastdev_backlog(conn, past_project: str) -> dict:
     return {"records": row["records"], "bytes": int(row["bytes"])}
 
 
+# Ready (or a stale lease) and judged by the current mapper; propositions judged by an older mapper go back to enrich.
+SYNC_READY = ("(q.status = 'queued' OR (q.status = 'mapping' AND q.updated_at < now() - make_interval(mins => "
+              "%(lease)s))) AND q.skip_reason = 'pastdev_pending' AND EXISTS (SELECT 1 FROM ev_evidence_link e "
+              "WHERE e.proposition_id = q.proposition_id AND e.mapper_version = %(mv)s)")
+
+
 def sync_pastdev(conn, client, settings, country: str = "MX", *, max_usd: float | None = None,
                  dry_run: bool = False, now=None) -> dict:
     """Write judged propositions (`pastdev_pending`) to past.dev, highest priority first, only while past.dev's
@@ -470,10 +481,10 @@ def sync_pastdev(conn, client, settings, country: str = "MX", *, max_usd: float 
     backlog = pastdev_backlog(conn, past_project)
     room = limit_bytes - backlog["bytes"]
     candidates = conn.execute(
-        PROP_SQL + "WHERE q.status = 'queued' AND q.skip_reason = %s AND NOT EXISTS (SELECT 1 FROM ev_memory_record m "
-        "WHERE m.proposition_id = q.proposition_id AND m.past_project = %s AND m.status = 'queued' "
+        PROP_SQL + "WHERE " + SYNC_READY + " AND NOT EXISTS (SELECT 1 FROM ev_memory_record m "
+        "WHERE m.proposition_id = q.proposition_id AND m.past_project = %(project)s AND m.status = 'queued' "
         "AND m.deleted_at IS NULL) ORDER BY q.priority DESC, q.proposition_id",
-        (PASTDEV_PENDING, past_project)).fetchall()
+        {"lease": MAPPING_LEASE_MINUTES, "mv": settings.mapper_version, "project": past_project}).fetchall()
     out = {"backlog_before": backlog, "limit_bytes": limit_bytes, "candidates": len(candidates), "propositions": 0,
            "mapped": 0, "sent": 0, "credits_sent": 0, "errors": [], "dry_run": dry_run, "stopped": None}
     cache: dict = {}
@@ -491,9 +502,10 @@ def sync_pastdev(conn, client, settings, country: str = "MX", *, max_usd: float 
             room -= size
             out["propositions"] += 1
             continue
-        took = conn.execute("UPDATE ev_proposition_queue SET status = 'mapping', updated_at = now() "
-                            "WHERE proposition_id = %s AND status = 'queued' RETURNING 1",
-                            (prop["proposition_id"],)).fetchone()
+        took = conn.execute("UPDATE ev_proposition_queue q SET status = 'mapping', updated_at = now() "
+                            "WHERE q.proposition_id = %(pid)s AND " + SYNC_READY + " RETURNING 1",
+                            {"pid": prop["proposition_id"], "lease": MAPPING_LEASE_MINUTES,
+                             "mv": settings.mapper_version}).fetchone()
         if took is None:  # taken by an enrich worker meanwhile
             continue
         try:

@@ -212,7 +212,7 @@ def main(argv: list[str] | None = None) -> int:
             from .enrich import reproject
 
             if args.defer:
-                print(_json(reproject(conn, None, settings, args.country, defer=True)))
+                print(_json(reproject(conn, None, settings, args.country, dry_run=args.dry_run, defer=True)))
                 return 0
             if not args.dry_run and not args.confirm_spend:
                 parser.error("reproject writes to past.dev (billed): run --dry-run first, then pass --confirm-spend")
