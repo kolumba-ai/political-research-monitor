@@ -179,10 +179,10 @@ def align(quote: str, source: str) -> tuple[str, int | None, int | None, float]:
     return "none", None, None, ratio
 
 
-def _number(raw: str) -> str:
+def _number(raw: str, decimal_percent: bool = False) -> str:
     """Canonicalize common Spanish and English numeric formats."""
     raw = raw.rstrip(".,")
-    if re.fullmatch(r"\d{1,3}(?:\.\d{3})+", raw):
+    if not decimal_percent and re.fullmatch(r"\d{1,3}(?:\.\d{3})+", raw):
         return raw.replace(".", "")
     if re.fullmatch(r"\d{1,3}(,\d{3})+(\.\d+)?", raw):
         number = raw.replace(",", "")
@@ -193,7 +193,10 @@ def _number(raw: str) -> str:
 
 def _numbers(text: str) -> set[str]:
     raw = text or ""
-    numbers = {_number(n) for n in re.findall(r"\d[\d,.]*", raw)}
+    numbers = set()
+    for match in re.finditer(r"\d[\d,.]*", raw):
+        decimal_percent = bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[match.end():], flags=re.IGNORECASE))
+        numbers.add(_number(match.group(), decimal_percent=decimal_percent))
     folded = strip_accents(raw).lower()
     tokens = [m.group() for m in re.finditer(r"\d[\d,.]*|[a-z]+", folded)]
     numbers.update(str(NUMBER_WORDS[t]) for t in tokens if t in NUMBER_WORDS)
@@ -257,8 +260,12 @@ def _date(v) -> date | None:
 
 
 def _prop_id(p: dict, period: tuple[date | None, date | None]) -> str:
+    values = sorted(
+        f"{_numbers(str(v.get('value')) + ' ' + str(v.get('unit') or ''))}|{normalize_text(v.get('unit') or '')}"
+        for v in p.get("values") or []
+    )
     key = [normalize_text(p.get("subject") or ""), normalize_text(p.get("predicate") or ""), bool(p.get("negated")),
-           sorted(f"{_numbers(str(v.get('value')))}|{normalize_text(v.get('unit') or '')}" for v in p.get("values") or []),
+           values,
            normalize_text(p.get("place") or ""), [str(d) if d else None for d in period],
            sorted(normalize_text(q) for q in p.get("qualifiers") or [])]
     return hashlib.sha256(json.dumps(key, ensure_ascii=False).encode()).hexdigest()[:24]
@@ -428,7 +435,7 @@ class Extractor:
             issues.append("predicate_negation_normalized")
         if not bool(prop.get("negated")) and _negation_targets_predicate(quote, predicate):
             issues.append("proposition_negation_mismatch")
-        vals = {n for v in prop.get("values") or [] for n in _numbers(str(v.get("value")))}
+        vals = {n for v in prop.get("values") or [] for n in _numbers(f"{v.get('value')} {v.get('unit') or ''}")}
         if vals - _numbers(quote):
             issues.append("proposition_values_not_in_quote")
         quote_negated = _negated(quote)

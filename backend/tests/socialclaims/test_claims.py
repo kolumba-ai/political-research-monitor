@@ -162,6 +162,13 @@ def test_decimal_comma_is_not_a_thousands_separator():
     assert _prop_id(a, (None, None)) != _prop_id(b, (None, None))
 
 
+def test_three_place_percentages_remain_decimals_and_distinct():
+    assert _numbers("1.125%") == {"1.125"}
+    decimal = {**PROP, "values": [{"value": "1.125", "unit": "%"}]}
+    thousands = {**PROP, "values": [{"value": "1125", "unit": "%"}]}
+    assert _prop_id(decimal, (None, None)) != _prop_id(thousands, (None, None))
+
+
 @pytest.mark.parametrize(("text", "expected"), [
     ("1.700 reservas", "1700"),
     ("260.000", "260000"),
@@ -265,6 +272,25 @@ def test_scaled_value_and_dot_thousands_match_quote_and_paraphrase(conn, graph, 
                                lambda r: [claim(quote, [r], text=paraphrase, proposition=prop)], post_id=89)
     assert out["grounding"] == {"exact": 1}
     assert not any(issue.startswith("paraphrase_numbers_not_in_quote") for issue in rows[0]["grounding_issues"])
+
+
+def test_percent_value_unit_matches_quote_and_changed_paraphrase_number_is_flagged(conn, graph, sc_settings):
+    quote = "La inflación subió 1.125%"
+    prop = {**PROP, "values": [{"value": "1.125", "unit": "%"}]}
+    out, rows = extract_claims(conn, graph, sc_settings, quote,
+                               lambda r: [claim(quote, [r], proposition=prop)])
+    assert out["grounding"] == {"exact": 1}
+    assert "proposition_values_not_in_quote" not in rows[0]["grounding_issues"]
+
+    quote = "La inflación subió 1.125%"
+    paraphrase = "La inflación subió 1125%"
+    prop = {**PROP, "values": []}
+    out, rows = extract_claims(
+        conn, graph, sc_settings, quote,
+        lambda r: [claim(quote, [r], text=paraphrase, proposition=prop)], post_id=89,
+    )
+    assert out["grounding"] == {"review": 1}
+    assert any("paraphrase_numbers_not_in_quote:1125" in row["grounding_issues"] for row in rows)
 
 
 def test_oversized_speech_does_not_hide_caption(graph):
