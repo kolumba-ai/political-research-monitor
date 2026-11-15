@@ -1,7 +1,7 @@
 """Read-only routes over System B's social-claims export (`python -m socialclaims pull-pastdev`).
 
 The export is `<CLAIMS_EXPORT_DIR>/<ISO2>/{manifest.json,posts.jsonl,claims.jsonl}`, plus `documents.jsonl` and
-`evidence.jsonl` (System C evidence) and `storylines.json` (`python -m socialclaims storylines`) when present; nothing
+`evidence.jsonl` (System C evidence) and `storylines.json` (`python -m socialclaims storylines` / `topics`) when present; nothing
 here calls past.dev. Claims are context about what was said on social media, not verified facts about the politician.
 An evidence stance is one document's relation to a claim, never a verdict on it.
 """
@@ -107,9 +107,12 @@ def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict |
                 "politicians": politicians, "stats": stats(data["claims"])}
 
     @r.get("/api/claims/{code}/storylines/{politician_id:path}")
-    def storylines(code: str, politician_id: str, storyline: str | None = None, week: str | None = None):
-        """Without `storyline`: the week grid (one row per storyline). With it: that storyline in full, every post,
-        statement and evidence document; `week` (a Monday, YYYY-MM-DD) keeps one week of it."""
+    def storylines(code: str, politician_id: str, storyline: str | None = None, week: str | None = None,
+                   area: str | None = None, evidence: str | None = None, recurring: bool = False):
+        """Without `storyline`: the week grid (topics and the storylines under them), optionally only the storylines
+        of one subject `area`, with `evidence` of one stance ("none" for no evidence) or `recurring` in more than one
+        week. With `storyline`: that storyline in full, every post, statement and evidence document; `week` (a Monday,
+        YYYY-MM-DD) keeps one week of it."""
         data = export(code)
         rows = (data or {}).get("by_politician", {}).get(politician_id, [])
         pol = (data or {}).get("storylines", {}).get(politician_id)
@@ -118,7 +121,9 @@ def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict |
                 "has_evidence": bool(data and data["has_evidence"]),
                 "grouped_at": data["storylines_updated_at"] if data and pol else None}
         if storyline is None:
-            return {**base, **st.matrix(rows, pol, data["evidence"] if data else None)}
+            if evidence not in (None, "none", *st.STANCES):
+                raise HTTPException(422, "evidence must be supports, contradicts, context or none")
+            return {**base, **st.matrix(rows, pol, data["evidence"] if data else None, area, evidence, recurring)}
         found = st.detail(rows, data["posts"] if data else {}, pol, data["evidence"] if data else {}, storyline, week)
         if found is None:
             raise HTTPException(404, f"no storyline {storyline} for {politician_id}")

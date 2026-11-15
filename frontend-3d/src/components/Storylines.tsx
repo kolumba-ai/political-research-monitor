@@ -1,11 +1,12 @@
-// "Storylines by week": how often one specific claim is repeated, week by week, and everything behind it.
-// The grid only counts; the detail section under it keeps every post, its link and account, each statement and
-// each evidence document, so grouping never hides a source.
+// "Storylines by week": how often a topic and each specific claim under it is repeated, week by week, and everything
+// behind it. Rows are topics; a topic expands into its storylines. The grid only counts; the detail section under
+// it keeps every post, its link and account, each statement and each evidence document, so grouping never hides a
+// source.
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ChevronRight, ExternalLink, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ExternalLink, X } from "lucide-react";
 import {
   claimsApi, type ClaimEvidence, type StanceCounts, type StorylineDetail, type StorylineGrid, type StorylinePost,
-  type StorylineRow, type StorylineStatement, type StorylineVersion, type WeekCell,
+  type StorylineRow, type StorylineStatement, type StorylineTopic, type StorylineVersion, type WeekCell,
 } from "../lib/api";
 import { CLAIM_TYPE_COLORS, colorOf, compact, PLATFORM_META, SPEAKER_NAMES, titleCase } from "../lib/claims";
 import { cn, fmtDate } from "../lib/presentation";
@@ -174,14 +175,13 @@ function Detail({ iso2, politicianId, weeks, selected, metric, side, onClearWeek
   useEffect(() => { if (loaded) onLoaded(); }, [loaded, key, onLoaded]);
   if (state?.key === key && state.error) return <p className="text-xs text-bad">This storyline could not be loaded: {state.error}</p>;
   if (!d) return <p className="text-xs text-muted">Loading storyline…</p>;
-  const once = d.storyline_id === "once";
   return <div>
     <div className="flex flex-wrap items-start gap-3">
       <div className="min-w-0 flex-1">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">Storyline</p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">Storyline{d.topic.judged && <> in the topic <span className="text-fg" data-testid="detail-topic">{d.topic.label}</span></>}</p>
         <h3 className="text-lg font-bold leading-tight">{d.label}</h3>
         <p className="mt-1 text-xs text-muted">
-          {plural(d.statements, "statement")} in {plural(d.posts, "post")}{!once && ` · ${plural(d.versions.length, "version")}`}
+          {plural(d.statements, "statement")} in {plural(d.posts, "post")} · {plural(d.versions.length, "version")}
           {d.accounts.length > 0 && ` · ${plural(d.accounts.length, "account")}`}
           {d.documents > 0 && ` · ${plural(d.documents, "evidence document")}`}
         </p>
@@ -189,7 +189,7 @@ function Detail({ iso2, politicianId, weeks, selected, metric, side, onClearWeek
       <Button onClick={() => setShowEvidence((v) => !v)} aria-pressed={showEvidence}>{showEvidence ? "Hide all evidence" : "Show all evidence"}</Button>
     </div>
     <div className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
-      {d.topic && <Badge tone="accent">{titleCase(d.topic)}</Badge>}
+      {d.area && <Badge tone="accent">{titleCase(d.area)}</Badge>}
       {d.week && <Badge tone="warn">Week of {weekLabel(d.week)} only<button aria-label="Show every week" className="ml-0.5 rounded-full hover:bg-warn/20" onClick={onClearWeek}><X className="size-3" /></button></Badge>}
       {side !== 0 && <Badge tone="warn">Said by: {SIDE_NAMES[side].toLowerCase()}</Badge>}
       {Object.entries(d.speakers).map(([k, n]) => <Badge key={k}>{SPEAKER_NAMES[k] ?? titleCase(k)}: {n}</Badge>)}
@@ -204,46 +204,79 @@ function Detail({ iso2, politicianId, weeks, selected, metric, side, onClearWeek
       Resolve with <code>python -m socialclaims storylines-review</code>.
     </p>}
     <ul className="mt-3 space-y-2">
-      {d.versions.map((v, i) => <Version key={v.version_id} v={v} index={i} weeks={weeks} metric={metric} side={side} showEvidence={showEvidence} single={once || d.versions.length === 1} />)}
+      {d.versions.map((v, i) => <Version key={v.version_id} v={v} index={i} weeks={weeks} metric={metric} side={side} showEvidence={showEvidence} single={d.versions.length === 1} />)}
     </ul>
   </div>;
 }
 
-/** Week grid of one politician's storylines, with the full detail of the selected one underneath. */
+function WeekCells({ row, label, weeks, metric, side, max, activeWeek, onPick, hint }: {
+  row: { cells: Record<string, WeekCell>; posts: number }; label: string | null; weeks: string[]; metric: Metric; side: Side; max: number;
+  activeWeek: string | null; onPick: (week: string) => void; hint: string;
+}) {
+  return <>
+    {weeks.map((w) => {
+      const n = count(row.cells[w], metric, side);
+      return <td key={w} className={cn("border-b border-line p-0 text-center", activeWeek === w && "bg-accent/15")}>
+        {n > 0 && <button className="flex h-11 w-full items-center justify-center hover:bg-accent/10" onClick={() => onPick(w)}
+          aria-label={`${label}: ${plural(n, metric === "posts" ? "post" : "statement")} in the week of ${weekLabel(w)}`}
+          title={`${plural(count(row.cells[w], "statements", side), "statement")} in ${plural(count(row.cells[w], "posts", side), "post")}, week of ${weekLabel(w)}. ${hint}`}>
+          <Dot cell={row.cells[w]} metric={metric} side={side} max={max} />
+        </button>}
+      </td>;
+    })}
+    <td className="border-b border-line px-3 text-right font-semibold tabular-nums">{metric === "posts" && side === 0 ? row.posts : rowTotal(row, metric, side)}</td>
+  </>;
+}
+
+/** Week grid of one politician's topics and the storylines under them, with the full detail of the selected storyline underneath. */
 export function StorylinesView({ iso2, politicianId }: { iso2: string; politicianId: string }) {
   const key = `${iso2}|${politicianId}`;
   const [state, setState] = useState<{ key: string; data: StorylineGrid | null; error: string | null } | null>(null);
   const [metric, setMetric] = useState<Metric>("statements");
   const [side, setSide] = useState<Side>(0);
-  const [topic, setTopic] = useState("");
+  const [area, setArea] = useState("");
   const [evidence, setEvidence] = useState("");
   const [recurring, setRecurring] = useState(false);
+  const [open, setOpen] = useState<{ key: string; ids: Set<string> }>({ key, ids: new Set() });
   const [selected, setSelected] = useState<{ key: string; id: string; week: string | null } | null>(null);
   const detailRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const toDetail = useCallback(() => detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), []);
 
+  // The filters that change which storylines a topic holds are applied by the API, so the topic counts stay exact.
   useEffect(() => {
     const ctl = new AbortController();
-    claimsApi.storylines(iso2, politicianId, ctl.signal)
+    claimsApi.storylines(iso2, politicianId, { area, evidence, recurring }, ctl.signal)
       .then((data) => { if (!ctl.signal.aborted) setState({ key, data, error: null }); })
       .catch((e) => { if (!ctl.signal.aborted) setState({ key, data: null, error: String(e.message || e) }); });
     return () => ctl.abort();
-  }, [iso2, politicianId, key]);
+  }, [iso2, politicianId, key, area, evidence, recurring]);
 
   const data = state?.key === key ? state.data : null;
-  const rows = useMemo(() => (data?.storylines ?? []).filter((r: StorylineRow) =>
-    rowTotal(r, metric, side) > 0 && (!topic || r.topic === topic) && (!recurring || (r.storyline_id !== "once" && r.weeks_active > 1))
-    && (!evidence || (evidence === "none" ? !Object.values(r.evidence_counts).some(Boolean) : r.evidence_counts[evidence as keyof StanceCounts] > 0))),
-  [data, metric, side, topic, recurring, evidence]);
-  const max = useMemo(() => Math.max(1, ...rows.flatMap((r) => Object.values(r.cells).map((c) => c[metric][side]))), [rows, metric, side]);
+  const groups = useMemo(() => {
+    const members = new Map<string, StorylineRow[]>();
+    for (const r of data?.storylines ?? []) {
+      if (rowTotal(r, metric, side) > 0) members.set(r.topic_id, [...(members.get(r.topic_id) ?? []), r]);
+    }
+    return (data?.topics ?? []).filter((t: StorylineTopic) => members.has(t.topic_id))
+      .map((t) => ({ topic: t, total: rowTotal(t, metric, side), rows: members.get(t.topic_id)! }))
+      .sort((a, b) => b.total - a.total);
+  }, [data, metric, side]);
+  const max = useMemo(() => Math.max(1, ...groups.flatMap((g) => Object.values(g.topic.cells).map((c) => c[metric][side]))), [groups, metric, side]);
   const current = selected?.key === key ? selected : null;
+  const expanded = open.key === key ? open.ids : new Set<string>();
+  const loaded = !!data;
   // Open on the most recent weeks; older ones are a scroll to the left.
-  useEffect(() => { if (data && gridRef.current) gridRef.current.scrollLeft = gridRef.current.scrollWidth; }, [data]);
+  useEffect(() => { if (loaded && gridRef.current) gridRef.current.scrollLeft = gridRef.current.scrollWidth; }, [loaded, key]);
 
   const select = (id: string, week: string | null) => {
     setSelected({ key, id, week });
     requestAnimationFrame(toDetail);
+  };
+  const toggle = (id: string, show?: boolean) => {
+    const ids = new Set(expanded);
+    if (show ?? !ids.has(id)) ids.add(id); else ids.delete(id);
+    setOpen({ key, ids });
   };
 
   if (state?.key === key && state.error) return <p className="text-xs text-bad">Storylines could not be loaded: {state.error}</p>;
@@ -251,16 +284,21 @@ export function StorylinesView({ iso2, politicianId }: { iso2: string; politicia
   if (!data.totals.statements) return <p className="rounded-lg border border-dashed border-line p-6 text-center text-sm text-muted">No social media claims have been collected for this politician yet.</p>;
   const { totals, grouping, weeks } = data;
   const ungrouped = grouping.units - grouping.placed;
+  const shown = groups.reduce((n, g) => n + g.rows.length, 0);
+  const allOpen = groups.length > 0 && groups.every((g) => expanded.has(g.topic.topic_id));
   return <div data-testid="storylines">
     <p className="text-xs text-muted">
-      {plural(totals.statements, "statement")} from {plural(totals.posts, "post")}, grouped into {plural(totals.storylines, "storyline")} said more than once
-      ({totals.recurring} of them in more than one week). A storyline is one specific claim; its versions differ in figures, period or place.
+      {plural(totals.statements, "statement")} from {plural(totals.posts, "post")}, in {plural(totals.storylines, "storyline")} under {plural(totals.topics, "topic")}.
+      {" "}{totals.repeated} storylines were said more than once ({totals.recurring} of them in more than one week).
+      A topic is the subject several storylines share; a storyline is one specific claim, and its versions differ in figures, period or place.
       {" "}{totals.with_post_link} of {totals.statements} statements link to their original post.
     </p>
-    {(ungrouped > 0 || grouping.needs_review > 0) && <p className="mt-2 rounded-lg border border-warn/40 bg-warn/5 p-2.5 text-xs" data-testid="grouping-note">
+    {(ungrouped > 0 || grouping.needs_review > 0 || grouping.without_topic > 0) && <p className="mt-2 rounded-lg border border-warn/40 bg-warn/5 p-2.5 text-xs" data-testid="grouping-note">
       {ungrouped > 0 && <>{grouping.placed ? `${ungrouped} of ${grouping.units} claims have not been grouped yet` : "These claims have not been grouped into storylines yet"}, so
         each is listed on its own and only identical claims share a row. Run <code>python -m socialclaims storylines</code> to group them. </>}
-      {grouping.needs_review > 0 && <>{plural(grouping.needs_review, "claim")} {grouping.needs_review === 1 ? "is waiting for review and stays" : "are waiting for review and stay"} ungrouped until then.</>}
+      {grouping.needs_review > 0 && <>{plural(grouping.needs_review, "claim")} {grouping.needs_review === 1 ? "is waiting for review and stays" : "are waiting for review and stay"} ungrouped until then. </>}
+      {grouping.without_topic > 0 && <>{plural(grouping.without_topic, "storyline")} {grouping.without_topic === 1 ? "has" : "have"} no topic yet and {grouping.without_topic === 1 ? "is" : "are"} listed
+        under {grouping.without_topic === 1 ? "its" : "their"} subject area instead. Run <code>python -m socialclaims topics</code> to group them.</>}
     </p>}
     <div className="mt-3 flex flex-wrap items-center gap-2">
       <div className="inline-flex overflow-hidden rounded-lg border border-line text-xs" role="group" aria-label="Count by">
@@ -270,63 +308,76 @@ export function StorylinesView({ iso2, politicianId }: { iso2: string; politicia
       <select aria-label="Said by" value={side} onChange={(e) => setSide(Number(e.target.value) as Side)} className={selectCls}>
         {SIDE_NAMES.map((n, i) => <option key={n} value={i}>Said by: {n.toLowerCase()}</option>)}
       </select>
-      {data.topics.length > 0 && <select aria-label="Topic" value={topic} onChange={(e) => setTopic(e.target.value)} className={selectCls}>
-        <option value="">All topics</option>{data.topics.map((t) => <option key={t} value={t}>{titleCase(t)}</option>)}
+      {data.areas.length > 0 && <select aria-label="Subject area" value={area} onChange={(e) => setArea(e.target.value)} className={selectCls}>
+        <option value="">All subject areas</option>{data.areas.map((t) => <option key={t} value={t}>{titleCase(t)}</option>)}
       </select>}
       {data.has_evidence && <select aria-label="Evidence" value={evidence} onChange={(e) => setEvidence(e.target.value)} className={selectCls}>
         <option value="">Any evidence</option><option value="contradicts">Has contradicting evidence</option>
         <option value="supports">Has supporting evidence</option><option value="none">No evidence yet</option>
       </select>}
       <label className="inline-flex items-center gap-1.5 text-xs"><input type="checkbox" checked={recurring} onChange={(e) => setRecurring(e.target.checked)} className="accent-[var(--color-accent)]" />Only storylines seen in more than one week</label>
+      <Button onClick={() => setOpen({ key, ids: allOpen ? new Set() : new Set(groups.map((g) => g.topic.topic_id)) })} disabled={!groups.length}>{allOpen ? "Collapse all topics" : "Expand all topics"}</Button>
       <span className="ml-auto inline-flex items-center gap-3 text-[11px] text-muted">
         <span className="inline-flex items-center gap-1"><span className="size-2.5 rounded-full" style={{ background: SELF_COLOR }} />Mostly the politician</span>
         <span className="inline-flex items-center gap-1"><span className="size-2.5 rounded-full" style={{ background: OTHERS_COLOR }} />Mostly other accounts</span>
       </span>
     </div>
-    <div ref={gridRef} className="mt-3 max-h-[34rem] overflow-auto rounded-xl border border-line">
+    <div ref={gridRef} className="mt-3 max-h-[38rem] overflow-auto rounded-xl border border-line">
       <table className="w-full border-separate border-spacing-0 text-xs" data-testid="storyline-grid">
         <thead>
           <tr>
-            <th scope="col" className="sticky left-0 top-0 z-20 min-w-52 border-b border-line bg-ink-850 px-3 py-2 text-left font-semibold">Storyline <span className="font-normal text-muted">({rows.length})</span></th>
+            <th scope="col" className="sticky left-0 top-0 z-20 min-w-64 border-b border-line bg-ink-850 px-3 py-2 text-left font-semibold">Topic <span className="font-normal text-muted">({groups.length}, with {plural(shown, "storyline")})</span></th>
             {weeks.map((w) => <th key={w} scope="col" className="sticky top-0 z-10 w-12 min-w-12 border-b border-line bg-ink-850 px-1 py-2 text-center font-medium" title={`Week starting ${fmtDate(w)}`}>
               <span className="block text-[10px] text-muted">W{isoWeek(w)}</span>{weekLabel(w)}</th>)}
             <th scope="col" className="sticky top-0 z-10 border-b border-line bg-ink-850 px-3 py-2 text-right font-medium">Total</th>
           </tr>
         </thead>
-        <tbody>
-          {rows.map((r) => {
-            const active = current?.id === r.storyline_id;
-            return <tr key={r.storyline_id} className={cn("group", active && "bg-accent/5")} data-testid="storyline-row">
-              <th scope="row" className={cn("sticky left-0 z-10 border-b border-line p-0 text-left font-normal", active ? "bg-[#eef0fd]" : "bg-white group-hover:bg-ink-850")}>
-                <button className="block w-full px-3 py-2 text-left" onClick={() => select(r.storyline_id, null)} aria-pressed={active && !current?.week}>
-                  <span className={cn("line-clamp-2 text-[13px] font-medium leading-snug", active && "text-accent")}>{r.label}</span>
-                  <span className="mt-0.5 block text-[11px] text-muted">{[
-                    r.storyline_id !== "once" && plural(r.versions, "version"), r.counter_claims > 0 && plural(r.counter_claims, "counter-claim"),
-                    r.accounts > 0 && plural(r.accounts, "account"), r.topic && titleCase(r.topic), !r.judged && "not grouped yet",
-                    r.needs_review > 0 && `${r.needs_review} to review`].filter(Boolean).join(" · ")}</span>
+        {groups.map(({ topic: t, rows }) => {
+          const isOpen = expanded.has(t.topic_id);
+          const holdsCurrent = rows.some((r) => r.storyline_id === current?.id);
+          const said = rows.filter((r) => r.statements > 1).length;
+          return <tbody key={t.topic_id} data-testid="topic-group">
+            <tr className="group" data-testid="topic-row">
+              <th scope="row" className={cn("sticky left-0 z-10 border-b border-line p-0 text-left font-normal", isOpen ? "bg-ink-850" : "bg-white group-hover:bg-ink-850")}>
+                <button className="flex w-full items-start gap-1.5 px-2 py-2 text-left" onClick={() => toggle(t.topic_id)} aria-expanded={isOpen}>
+                  {isOpen ? <ChevronDown className="mt-0.5 size-4 shrink-0 text-muted" /> : <ChevronRight className="mt-0.5 size-4 shrink-0 text-muted" />}
+                  <span className="min-w-0">
+                    <span className={cn("line-clamp-2 text-[13px] font-semibold leading-snug", holdsCurrent && "text-accent")}>{t.label}</span>
+                    <span className="mt-0.5 block text-[11px] text-muted">{[
+                      plural(rows.length, "storyline"), said > 0 && `${said} said more than once`,
+                      t.counter_claims > 0 && plural(t.counter_claims, "counter-claim"), t.accounts > 0 && plural(t.accounts, "account"),
+                      !t.judged && "subject area, no topic yet", t.needs_review > 0 && `${t.needs_review} to review`].filter(Boolean).join(" · ")}</span>
+                  </span>
                 </button>
               </th>
-              {weeks.map((w) => {
-                const n = count(r.cells[w], metric, side);
-                return <td key={w} className={cn("border-b border-line p-0 text-center", current?.id === r.storyline_id && current.week === w && "bg-accent/15")}>
-                  {n > 0 && <button className="flex h-11 w-full items-center justify-center hover:bg-accent/10" onClick={() => select(r.storyline_id, w)}
-                    aria-label={`${r.label}: ${plural(n, metric === "posts" ? "post" : "statement")} in the week of ${weekLabel(w)}`}
-                    title={`${plural(count(r.cells[w], "statements", side), "statement")} in ${plural(count(r.cells[w], "posts", side), "post")}, week of ${weekLabel(w)}`}>
-                    <Dot cell={r.cells[w]} metric={metric} side={side} max={max} />
-                  </button>}
-                </td>;
-              })}
-              <td className="border-b border-line px-3 text-right font-semibold tabular-nums">{metric === "posts" && side === 0 ? r.posts : rowTotal(r, metric, side)}</td>
-            </tr>;
-          })}
-        </tbody>
+              <WeekCells row={t} label={t.label} weeks={weeks} metric={metric} side={side} max={max} activeWeek={null}
+                onPick={() => toggle(t.topic_id, true)} hint={isOpen ? "" : "Click to list the storylines."} />
+            </tr>
+            {isOpen && rows.map((r) => {
+              const active = current?.id === r.storyline_id;
+              return <tr key={r.storyline_id} className={cn("group", active && "bg-accent/5")} data-testid="storyline-row">
+                <th scope="row" className={cn("sticky left-0 z-10 border-b border-line p-0 text-left font-normal", active ? "bg-[#eef0fd]" : "bg-white group-hover:bg-ink-850")}>
+                  <button className="block w-full py-1.5 pl-8 pr-3 text-left" onClick={() => select(r.storyline_id, null)} aria-pressed={active && !current?.week}>
+                    <span className={cn("line-clamp-2 text-xs leading-snug", active && "font-medium text-accent")}>{r.label}</span>
+                    <span className="mt-0.5 block text-[11px] text-muted">{[
+                      plural(r.versions, "version"), r.counter_claims > 0 && plural(r.counter_claims, "counter-claim"),
+                      r.accounts > 0 && plural(r.accounts, "account"), r.area && titleCase(r.area), !r.judged && "not grouped yet",
+                      r.needs_review > 0 && `${r.needs_review} to review`].filter(Boolean).join(" · ")}</span>
+                  </button>
+                </th>
+                <WeekCells row={r} label={r.label} weeks={weeks} metric={metric} side={side} max={max} activeWeek={active ? current.week : null}
+                  onPick={(w) => select(r.storyline_id, w)} hint="Click to see the posts and evidence." />
+              </tr>;
+            })}
+          </tbody>;
+        })}
       </table>
-      {!rows.length && <p className="p-6 text-center text-xs text-muted">No storylines match these filters.</p>}
+      {!groups.length && <p className="p-6 text-center text-xs text-muted">No storylines match these filters.</p>}
     </div>
-    <p className="mt-1.5 text-[11px] text-muted">Circle size is the number of {metric === "posts" ? "posts" : "statements"} that week. Click a storyline or a circle to see every post, statement and evidence document behind it.</p>
+    <p className="mt-1.5 text-[11px] text-muted">Circle size is the number of {metric === "posts" ? "posts" : "statements"} that week. Open a topic to list its storylines; click a storyline or one of its circles to see every post, statement and evidence document behind it.</p>
     <div ref={detailRef} className="mt-5 scroll-mt-4 border-t border-line pt-4" data-testid="storyline-detail">
       {current ? <Detail iso2={iso2} politicianId={politicianId} weeks={weeks} selected={current} metric={metric} side={side} onClearWeek={() => setSelected({ ...current, week: null })} onLoaded={toDetail} />
-        : <p className="rounded-lg border border-dashed border-line p-6 text-center text-sm text-muted">Select a storyline above to see its versions, every post with its link and account, and the evidence documents.</p>}
+        : <p className="rounded-lg border border-dashed border-line p-6 text-center text-sm text-muted">Open a topic and select a storyline to see its versions, every post with its link and account, and the evidence documents.</p>}
     </div>
   </div>;
 }

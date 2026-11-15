@@ -7,6 +7,8 @@ Three levels sit above a post:
 - storyline: the versions of one specific claim, so "homicides down 51%", "down 53%" and a denial are three versions
   of one storyline. A storyline is never a topic: sharing a subject area does not put two claims together.
 
+Storylines are in turn listed under topics (`topics.py`), which only group them for the week grid.
+
 A unit is what gets placed: all statements of one strict proposition (`proposition_id`, see `claims._prop_id`), or a
 single statement where the export has no proposition. Strict propositions are never split or rewritten here.
 
@@ -41,7 +43,6 @@ RELATIONS = ["same_version", "same_storyline_different_version", "counter_claim"
 PROTECTED = ["values", "negation", "place", "period", "qualifiers"]
 SELF_SPEAKERS = {"politician", "politician_quoted"}
 STANCES = ("supports", "contradicts", "context")
-ONCE = "once"  # the row that collects statements made a single time
 STOP = set("""a al algo ante como con contra cual cuando de del desde donde el ella ellos en entre era es esa ese eso esta
 este esto fue ha han hay la las le les lo los mas me mi muy no nos o para pero por que se ser si sin sobre su sus
 tambien te tiene un una uno y ya the of and to in is was are were be been has have had that this for on with as by
@@ -99,6 +100,15 @@ def _hash(*parts: str) -> str:
 
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _free_id(taken: dict, prefix: str, pid: str, unit: str) -> str:
+    """The id a unit opens a storyline or version under. It is derived from the unit, so a unit that is moved out of
+    the storyline it opened, while that storyline lives on, needs the next free one."""
+    n, out = 1, f"{prefix}-{_hash(pid, unit)}"
+    while out in taken:
+        n, out = n + 1, f"{prefix}-{_hash(pid, unit, str(n + 1))}"
+    return out
 
 
 def unit_key(claim: dict) -> str:
@@ -232,12 +242,12 @@ class StorylineStore:
     def _place(pol: dict, pid: str, unit: str, storyline_id: str | None, version_id: str | None, *, label: str,
                version_label: str, topic: str | None, kind: str, decision: dict) -> tuple[str, str]:
         if storyline_id is None:
-            storyline_id = f"sl-{_hash(pid, unit)}"
+            storyline_id = _free_id(pol["storylines"], "sl", pid, unit)
             pol["storylines"][storyline_id] = {"storyline_id": storyline_id, "label": label, "topic": topic,
                                                "created_at": _now(), "versions": {}}
         versions = pol["storylines"][storyline_id]["versions"]
         if version_id is None:
-            version_id = f"sv-{_hash(pid, unit)}"
+            version_id = _free_id(versions, "sv", pid, unit)
             versions[version_id] = {"version_id": version_id, "label": version_label, "kind": kind, "units": []}
         versions[version_id]["units"].append(unit)
         pol["units"][unit] = {"storyline_id": storyline_id, "version_id": version_id,
@@ -488,10 +498,12 @@ def move(store: StorylineStore, pid: str, unit: str, storyline_id: str | None, v
     decision = _human(store, pid, unit, "accepted" if of else "moved", relation=relation, of=of, rule_blocks=blocks,
                       proposed={"storyline_id": storyline_id, "version_id": version_id})
     text = by_key.get(unit) or {}
-    store._place(pol, pid, unit, storyline_id, version_id if version else None,
-                 label=label or old_story.get("label") or (text.get("text_en") or text.get("text") or unit)[:90],
-                 version_label=version_label, topic=old_story.get("topic"),
-                 kind="counter_claim" if relation == "counter_claim" else "claim", decision=decision)
+    placed, _ = store._place(pol, pid, unit, storyline_id, version_id if version else None,
+                             label=label or old_story.get("label") or (text.get("text_en") or text.get("text") or unit)[:90],
+                             version_label=version_label, topic=old_story.get("topic"),
+                             kind="counter_claim" if relation == "counter_claim" else "claim", decision=decision)
+    if not storyline_id and old_story.get("topic_id"):  # a storyline split off by hand stays under the same topic
+        pol["storylines"][placed]["topic_id"] = old_story["topic_id"]
     store.save()
     return decision
 
@@ -564,7 +576,7 @@ def group(claims: list[dict], pol: dict | None) -> dict[str, dict]:
             story = {"storyline_id": sid, "label": c.get("text_en") or c.get("text"), "topic": None}
             version = {"version_id": vid, "label": "", "kind": "claim"}
             at = None
-        s = out.setdefault(story["storyline_id"], {**{k: story.get(k) for k in ("storyline_id", "label", "topic")},
+        s = out.setdefault(story["storyline_id"], {**{k: story.get(k) for k in ("storyline_id", "label", "topic", "topic_id")},
                                                    "judged": at is not None, "versions": {}, "statements": []})
         v = s["versions"].setdefault(version["version_id"], {**{k: version.get(k) for k in ("version_id", "label", "kind")},
                                                             "statements": []})
@@ -578,7 +590,7 @@ def _summary(story: dict, review_units: set[str]) -> dict:
     rows = story["statements"]
     cells = _cells(rows)
     dates = sorted(c["published_at"] for c in rows if c.get("published_at"))
-    return {"storyline_id": story["storyline_id"], "label": story["label"], "topic": story["topic"],
+    return {"storyline_id": story["storyline_id"], "label": story["label"], "area": story["topic"],
             "judged": story["judged"], "statements": len(rows), "posts": len({c.get("data_point_id") for c in rows}),
             "versions": len(story["versions"]), "weeks_active": len(cells),
             "counter_claims": sum(1 for v in story["versions"].values() if v["kind"] == "counter_claim"),
@@ -593,33 +605,67 @@ def _evidence_rows(statements: list[dict], evidence: dict) -> list[dict]:
     return [e for k in keys for e in evidence.get(k, [])]
 
 
-def matrix(claims: list[dict], pol: dict | None, evidence: dict | None = None) -> dict:
-    """The week grid: one row per storyline said more than once, plus one row for everything said once."""
+def topic_of(story: dict, pol: dict | None) -> dict:
+    """A storyline's topic. Until the topic judge has placed it, its taxonomy subject area stands in."""
+    t = ((pol or {}).get("topics") or {}).get(story.get("topic_id") or "")
+    if t:
+        return {"topic_id": t["topic_id"], "label": t["label"], "judged": True}
+    area = story.get("topic")
+    return {"topic_id": f"area:{area}" if area else "none", "judged": False,
+            "label": area.replace("_", " ").capitalize() if area else "Not grouped into a topic yet"}
+
+
+def matrix(claims: list[dict], pol: dict | None, evidence: dict | None = None, area: str | None = None,
+           stance: str | None = None, recurring: bool = False) -> dict:
+    """The week grid: topics, and under each its storylines (those said once included). `area`, `stance`
+    ("supports", "contradicts", "context" or "none") and `recurring` (seen in more than one week) keep only the
+    matching storylines; topic counts follow, totals and weeks do not."""
+    evidence = evidence or {}
     stories = group(claims, pol)
     review_units = {p["unit"] for p in (pol or {}).get("review", {}).values()}
-    counts = {sid: stance_counts(_evidence_rows(s["statements"], evidence or {})) for sid, s in stories.items()}
-    rows = [{**_summary(s, review_units), "evidence_counts": counts[s["storyline_id"]]}
-            for s in stories.values() if len(s["statements"]) > 1]
+    rows = []
+    for s in stories.values():
+        topic = topic_of(s, pol)
+        rows.append({**_summary(s, review_units), "topic_id": topic["topic_id"], "_topic": topic, "_rows": s["statements"],
+                     "evidence_counts": stance_counts(_evidence_rows(s["statements"], evidence))})
     rows.sort(key=lambda r: (-r["statements"], r["first"] or "", r["storyline_id"]))
-    once = [c for s in stories.values() if len(s["statements"]) == 1 for c in s["statements"]]
-    if once:
-        rows.append({**_summary({"storyline_id": ONCE, "label": "Statements made only once", "topic": None,
-                                 "judged": True, "versions": {}, "statements": once}, review_units),
-                     "versions": len(once), "counter_claims": 0,
-                     "evidence_counts": stance_counts(_evidence_rows(once, evidence or {}))})
     weeks = sorted({w for r in rows for w in r["cells"]})
+    totals = {"statements": len(claims), "posts": len({c.get("data_point_id") for c in claims}),
+              "topics": len({r["topic_id"] for r in rows}), "storylines": len(rows),
+              "repeated": sum(1 for r in rows if r["statements"] > 1),
+              "recurring": sum(1 for r in rows if r["weeks_active"] > 1),
+              "with_post_link": sum(1 for c in claims if c.get("url"))}
+    areas = sorted({r["area"] for r in rows if r["area"]})
+    without_topic = sum(1 for r in rows if not r["_topic"]["judged"])
+
+    def keep(r: dict) -> bool:
+        has = r["evidence_counts"]
+        return ((not area or r["area"] == area) and (not recurring or r["weeks_active"] > 1)
+                and (not stance or (not any(has.values()) if stance == "none" else has.get(stance, 0) > 0)))
+    rows = [r for r in rows if keep(r)]
+    by_topic: dict[str, list[dict]] = {}
+    for r in rows:
+        by_topic.setdefault(r["topic_id"], []).append(r)
+    topics = []
+    for members in by_topic.values():
+        said = [c for r in members for c in r["_rows"]]
+        cells = _cells(said)
+        topics.append({**members[0]["_topic"], "storylines": len(members), "statements": len(said),
+                       "repeated": sum(1 for r in members if r["statements"] > 1),
+                       "posts": len({c.get("data_point_id") for c in said}), "weeks_active": len(cells),
+                       "accounts": len({c.get("uploader_handle") for c in said if c.get("uploader_handle")}),
+                       "counter_claims": sum(r["counter_claims"] for r in members),
+                       "needs_review": sum(r["needs_review"] for r in members),
+                       "evidence_counts": stance_counts(_evidence_rows(said, evidence)), "cells": cells})
+    topics.sort(key=lambda t: (-t["statements"], t["label"], t["topic_id"]))
     placed = (pol or {}).get("units", {})
     units = {unit_key(c) for c in claims}
-    return {"weeks": _week_range(weeks[0], weeks[-1]) if weeks else [],
-            "topics": sorted({r["topic"] for r in rows if r["topic"]}),
-            "totals": {"statements": len(claims), "posts": len({c.get("data_point_id") for c in claims}),
-                       "storylines": sum(1 for r in rows if r["storyline_id"] != ONCE),
-                       "recurring": sum(1 for r in rows if r["storyline_id"] != ONCE and r["weeks_active"] > 1),
-                       "with_post_link": sum(1 for c in claims if c.get("url"))},
+    return {"weeks": _week_range(weeks[0], weeks[-1]) if weeks else [], "areas": areas, "totals": totals,
             "grouping": {"units": len(units), "placed": len(units & set(placed)),
-                         "needs_review": len((pol or {}).get("review", {})),
+                         "needs_review": len((pol or {}).get("review", {})), "without_topic": without_topic,
                          "judges": sorted({u.get("judge") for k, u in placed.items() if k in units and u.get("judge")})},
-            "storylines": rows}
+            "topics": topics,
+            "storylines": [{k: v for k, v in r.items() if not k.startswith("_")} for r in rows]}
 
 
 def evidence_index(links: list[dict], documents: list[dict]) -> dict[tuple[str, str], list[dict]]:
@@ -655,16 +701,10 @@ def _statement(c: dict, evidence: dict) -> dict:
 def detail(claims: list[dict], posts: dict[str, dict], pol: dict | None, evidence: dict, storyline_id: str,
            week: str | None = None) -> dict | None:
     """One storyline in full: versions -> posts -> statements -> evidence documents. `week` keeps one week only."""
-    stories = group(claims, pol)
-    if storyline_id == ONCE:
-        versions = [{"version_id": s["storyline_id"], "label": "", "kind": "claim", "statements": s["statements"]}
-                    for s in stories.values() if len(s["statements"]) == 1]
-        story = {"storyline_id": ONCE, "label": "Statements made only once", "topic": None, "judged": True}
-    elif storyline_id in stories:
-        story = stories[storyline_id]
-        versions = list(story["versions"].values())
-    else:
+    story = group(claims, pol).get(storyline_id)
+    if not story:
         return None
+    versions = list(story["versions"].values())
     review = (pol or {}).get("review", {})
     out_versions, all_rows = [], []
     for v in versions:
@@ -696,8 +736,8 @@ def detail(claims: list[dict], posts: dict[str, dict], pol: dict | None, evidenc
     out_versions.sort(key=lambda v: (v["first_seen"] or "", v["version_id"]))
     ev_rows = _evidence_rows(all_rows, evidence)
     units = {c["_unit"] for c in all_rows}
-    return {"storyline_id": story["storyline_id"], "label": story["label"], "topic": story["topic"],
-            "judged": story["judged"], "week": week, "statements": len(all_rows),
+    return {"storyline_id": story["storyline_id"], "label": story["label"], "area": story["topic"],
+            "topic": topic_of(story, pol), "judged": story["judged"], "week": week, "statements": len(all_rows),
             "posts": len({c.get("data_point_id") for c in all_rows}),
             "speakers": dict(Counter(c.get("speaker") or "other" for c in all_rows).most_common()),
             "accounts": sorted({c["uploader_handle"] for c in all_rows if c.get("uploader_handle")}),

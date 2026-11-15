@@ -138,9 +138,19 @@ Each new statement is shortlisted against the politician's existing versions and
 they wait in `storylines-review`, which can `--accept`, `--reject`, `--move` and `--rename`. The run is billed and
 needs `--confirm-spend` (`--dry-run` only counts); `--workers N` judges politicians in parallel.
 
-`GET /api/claims/{ISO2}/storylines/{person_id}` returns the week grid and, with `?storyline=<id>[&week=YYYY-MM-DD]`,
-one storyline in full: versions, every post with its link and account, each statement and its evidence documents.
-The explorer shows it in the politician page's "Storylines by week" tab.
+`topics` then lists each politician's storylines under topics: the concrete subject several storylines share (one
+programme, case, event or policy issue, such as "Passenger train lines"), narrower than the taxonomy subject area and
+broader than one claim. A second judge call per politician reads the storylines that have no topic yet and assigns
+each to an existing topic or a new one; the storylines themselves are not changed. Assignments are appended to
+`storyline_decisions.jsonl`, and `topics --move STORYLINE_ID TOPIC` / `--rename TOPIC_ID LABEL` are the human edits.
+`--regroup` forgets a politician's topics first. This run is billed too (`--confirm-spend`, `--dry-run`,
+`--workers`). Until it has run, the storylines' subject area stands in for the topic.
+
+`GET /api/claims/{ISO2}/storylines/{person_id}` returns the week grid (topics, and the storylines under each) and,
+with `?storyline=<id>[&week=YYYY-MM-DD]`, one storyline in full: versions, every post with its link and account, each
+statement and its evidence documents. `area`, `evidence` and `recurring` keep only the matching storylines.
+The explorer shows it in the politician page's "Storylines by week" tab: topics are the rows, a topic expands into
+its storylines, and a storyline opens its detail below the grid.
 
 ## Social metrics per politician
 

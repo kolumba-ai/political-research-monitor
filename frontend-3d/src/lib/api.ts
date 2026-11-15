@@ -128,7 +128,7 @@ export interface ClaimEvidence {
 /** Per week: [all, said by the politician, said by others]. */
 export interface WeekCell { statements: [number, number, number]; posts: [number, number, number] }
 export interface StorylineRow {
-  storyline_id: string; label: string | null; topic: string | null; judged: boolean; statements: number; posts: number;
+  storyline_id: string; label: string | null; area: string | null; topic_id: string; judged: boolean; statements: number; posts: number;
   versions: number; weeks_active: number; counter_claims: number; needs_review: number; accounts: number;
   first: string | null; last: string | null; cells: Record<string, WeekCell>; evidence_counts: StanceCounts;
 }
@@ -136,10 +136,18 @@ interface StorylineBase {
   country: string; politician_id: string; available: boolean; pulled_at: string | null; has_evidence: boolean;
   grouped_at: string | null;
 }
+/** A topic (`python -m socialclaims topics`): the subject several storylines share. `judged` is false while the
+ * storylines' subject area stands in for a topic the judge has not assigned yet. */
+export interface StorylineTopic {
+  topic_id: string; label: string; judged: boolean; storylines: number; repeated: number; statements: number; posts: number;
+  weeks_active: number; accounts: number; counter_claims: number; needs_review: number;
+  cells: Record<string, WeekCell>; evidence_counts: StanceCounts;
+}
+export interface StorylineFilters { area?: string; evidence?: string; recurring?: boolean }
 export interface StorylineGrid extends StorylineBase {
-  weeks: string[]; topics: string[]; storylines: StorylineRow[];
-  totals: { statements: number; posts: number; storylines: number; recurring: number; with_post_link: number };
-  grouping: { units: number; placed: number; needs_review: number; judges: string[] };
+  weeks: string[]; areas: string[]; topics: StorylineTopic[]; storylines: StorylineRow[];
+  totals: { statements: number; posts: number; topics: number; storylines: number; repeated: number; recurring: number; with_post_link: number };
+  grouping: { units: number; placed: number; needs_review: number; without_topic: number; judges: string[] };
 }
 export interface StorylineStatement {
   claim_id: string; text: string | null; text_en: string | null; evidence_span: string | null; type: string | null;
@@ -161,7 +169,8 @@ export interface StorylineVersion {
   first_seen: string | null; statements: number; posts: number; cells: Record<string, WeekCell>; post_list: StorylinePost[];
 }
 export interface StorylineDetail {
-  storyline_id: string; label: string | null; topic: string | null; judged: boolean; week: string | null;
+  storyline_id: string; label: string | null; area: string | null;
+  topic: { topic_id: string; label: string; judged: boolean }; judged: boolean; week: string | null;
   statements: number; posts: number; speakers: Record<string, number>; accounts: string[];
   cells: Record<string, WeekCell>; evidence_counts: StanceCounts; documents: number;
   pending_review: { decision_id: string; unit: string; relation: string; confidence: number; rationale: string; storyline_label: string | null }[];
@@ -181,8 +190,10 @@ export const claimsApi = {
     const qs = new URLSearchParams(Object.entries(f).filter(([, v]) => v !== undefined && v !== "").map(([k, v]) => [k, String(v)]));
     return get<PoliticianClaims>(`/api/claims/${encodeURIComponent(iso2)}/politicians/${encodeURIComponent(id)}?${qs}`, s);
   },
-  storylines: (iso2: string, id: string, s?: AbortSignal) =>
-    get<StorylineGrid>(`/api/claims/${encodeURIComponent(iso2)}/storylines/${encodeURIComponent(id)}`, s),
+  storylines: (iso2: string, id: string, f: StorylineFilters = {}, s?: AbortSignal) => {
+    const qs = new URLSearchParams(Object.entries(f).filter(([, v]) => v).map(([k, v]) => [k, String(v)]));
+    return get<StorylineGrid>(`/api/claims/${encodeURIComponent(iso2)}/storylines/${encodeURIComponent(id)}?${qs}`, s);
+  },
   storyline: (iso2: string, id: string, storyline: string, week: string | null, s?: AbortSignal) => {
     const qs = new URLSearchParams(week ? { storyline, week } : { storyline });
     return get<StorylineBase & { storyline: StorylineDetail }>(

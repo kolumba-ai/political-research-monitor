@@ -54,6 +54,16 @@ def _storylines(s, args) -> int:
             return 2
         _out({"done": done, "pending": st.review_queue(store, units)})
         return 0
+    if args.cmd == "topics" and (args.move or args.rename):
+        from . import topics as tp
+        try:
+            done = ([tp.set_topic(store, *args.move)] if args.move else []) + (
+                [tp.rename_topic(store, *args.rename)] if args.rename else [])
+        except st.ReviewError as exc:
+            print(str(exc), file=sys.stderr)
+            return 2
+        _out({"done": done})
+        return 0
     graph = _graph(s) if args.ids else None
     ids = [_pid(graph, i, args.country) for i in args.ids] or sorted(units)
     model = s.storyline_model or s.claim_model
@@ -66,22 +76,38 @@ def _storylines(s, args) -> int:
         pass
     llm = _NoModel()
     llm.model = model
+    tokens = 16000 if args.cmd == "topics" else 2000  # one topics answer places up to 150 storylines
     if not args.dry_run:
         if not args.confirm_spend:
-            print("refusing: the storyline judge is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
+            print(f"refusing: the {args.cmd} judge is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
             return 2
         if not key:
             print(("OPENAI_API_KEY" if use_openai else "ANTHROPIC_API_KEY") + " is not set", file=sys.stderr)
             return 2
         if use_openai:
             from evidencegraph.llm import OpenAILLM
-            llm = OpenAILLM(key, model, s.openai_base_url, rate_limiter_database_url=s.rate_limiter_database_url,
+            llm = OpenAILLM(key, model, s.openai_base_url, max_tokens=tokens,
+                            rate_limiter_database_url=s.rate_limiter_database_url,
                             requests_per_second=s.openai_requests_per_second)
         else:
             from .claims import AnthropicLLM
-            llm = AnthropicLLM(key, model, s.anthropic_base_url, max_tokens=2000,
+            llm = AnthropicLLM(key, model, s.anthropic_base_url, max_tokens=tokens,
                                rate_limiter_database_url=s.rate_limiter_database_url,
                                requests_per_second=s.anthropic_requests_per_second)
+    if args.cmd == "topics":
+        from . import topics as tp
+        grouper = tp.TopicEngine(store, llm)
+        ids = [i for i in ids if store.data["politicians"].get(i, {}).get("storylines")]
+        if args.dry_run:
+            _out([{"politician_id": i, "judge": grouper.version, "storylines": len(store.politician(i)["storylines"]),
+                   "pending": len(store.politician(i)["storylines"]) if args.regroup else len(grouper.pending(i))}
+                  for i in ids])
+            return 0
+        if args.regroup:
+            for i in ids:
+                tp.reset(store, i)
+        _out(tp.run_country(grouper, units, ids, args.workers))
+        return 0
     engine = st.StorylineEngine(store, llm, topics, threshold=s.storyline_review_threshold)
     if args.dry_run:
         _out([{"politician_id": i, "judge": engine.version, "units": len(units.get(i, [])),
@@ -293,6 +319,17 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--to", metavar="STORYLINE_ID", help="target storyline for --move (omit to open a new storyline)")
     p.add_argument("--version", metavar="VERSION_ID", help="target version for --move (omit for a new version)")
     p.add_argument("--rename", nargs=2, metavar=("STORYLINE_ID", "LABEL"))
+    p = sub.add_parser("topics", help="group each politician's storylines under topics with the judge model (billed)")
+    p.add_argument("ids", nargs="*", help="politician ids or names (default: every politician with storylines)")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
+    p.add_argument("--dry-run", action="store_true", help="count the storylines still without a topic; no model call")
+    p.add_argument("--confirm-spend", action="store_true")
+    p.add_argument("--workers", type=int, default=4, help="politicians judged in parallel")
+    p.add_argument("--regroup", action="store_true", help="forget the existing topics of these politicians first")
+    p.add_argument("--move", nargs=2, metavar=("STORYLINE_ID", "TOPIC"),
+                   help="put a storyline under a topic (id or label; an unknown label opens a new topic); no model call")
+    p.add_argument("--rename", nargs=2, metavar=("TOPIC_ID", "LABEL"), help="rename a topic; no model call")
     p = sub.add_parser("thumbnails", help="backfill thumbnail URLs from raw payloads and download them (no Oriane API call)")
     p.add_argument("--format", action="append", dest="formats", help="only these post formats (repeatable), e.g. video")
     p.add_argument("--no-download", action="store_true", help="only backfill thumbnail_url")
@@ -346,7 +383,7 @@ def main(argv: list[str] | None = None) -> int:
         _out(import_monitor(args.source, args.country, args.out or s.claims_export_dir, names))
         return 0
 
-    if args.cmd in ("storylines", "storylines-review"):
+    if args.cmd in ("storylines", "storylines-review", "topics"):
         return _storylines(s, args)
 
     conn = connect(s.database_url)
