@@ -513,7 +513,8 @@ class Fetcher:
                 )
             snapshots = {}
             for document_id in targets:
-                can_store = bool(related_registry and related_registry["can_store_full_text"])
+                document_registry = fetched_registry if document_id == resolved_id else registry_row
+                can_store = bool(document_registry and document_registry["can_store_full_text"])
                 snapshot, _ = self._store_version(document_id, text, raw, content_sha, simhash, response_status,
                                                   can_store, is_text)
                 snapshots[document_id] = snapshot

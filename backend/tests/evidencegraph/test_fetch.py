@@ -140,6 +140,7 @@ def test_cross_domain_canonical_is_ignored_and_keeps_fetched_registry(conn, ev_s
     result = fetcher.fetch(url)
 
     assert result["fetch_status"] == "fetched"
+    assert result["snapshot_stored"] is False
     assert conn.execute("SELECT count(*) AS n FROM ev_document WHERE document_id=%s",
                         (source_id("https://www.gob.mx/presidencia"),)).fetchone()["n"] == 0
     assert conn.execute("SELECT count(*) AS n FROM ev_kg_edge WHERE type='SAME_AS'").fetchone()["n"] == 0
