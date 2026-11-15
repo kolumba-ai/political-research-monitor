@@ -3,7 +3,7 @@ import json
 import httpx
 import pytest
 
-from socialclaims import accounts
+from socialclaims import accounts, claims as claims_module
 from socialclaims.capture import Capturer
 from socialclaims.claims import AnthropicLLM, Extractor, _numbers, _prop_id, align, build_prompt
 from socialclaims.segments import process_politician
@@ -133,12 +133,22 @@ def test_idempotent_failures_and_versioning(conn, graph, segmented):
     ex = Extractor(conn, graph, llm)
     first = ex.run(PID, 10)
     assert (first["failed"], first["extracted"]) == (1, 1)
+    responses = conn.execute("SELECT status, response FROM claim_extraction").fetchall()
+    assert next(r for r in responses if r["status"] == "failed")["response"] is None
+    assert next(r for r in responses if r["status"] == "ok")["response"] == {"claims": []}
     retry = ex.run(PID, 10)
     assert (retry["pending"], retry["extracted"]) == (1, 1)
     assert ex.run(PID, 10)["pending"] == 0
     other = FakeLLM(lambda p: [])
     other.model = "fake-claude-2"
     assert Extractor(conn, graph, other).run(PID, 10)["extracted"] == 2
+
+
+def test_extractor_version_tracks_checks_version(monkeypatch):
+    taxonomy = claims_module.load_taxonomy("MX")
+    before = claims_module.extractor_version("fake-model", taxonomy)
+    monkeypatch.setattr(claims_module, "CHECKS_VERSION", "checks-test")
+    assert claims_module.extractor_version("fake-model", taxonomy) != before
 
 
 def test_pending_shards_partition_the_full_pending_list(conn, graph, segmented):

@@ -29,6 +29,7 @@ from .systema import GraphReader, read_person
 TAXONOMY_DIR = Path(__file__).parent / "taxonomy"
 MAX_SEGMENT_CHARS = 12_000
 FUZZY_MIN = 0.9
+CHECKS_VERSION = "checks-2"
 NEGATIONS = {"no", "nunca", "jamas", "ni", "tampoco", "ningun", "ninguna", "ninguno", "nada", "nadie", "sin"}
 CLAIM_TYPES = ["factual", "statistic", "policy_position", "commitment", "forecast", "accusation", "opinion"]
 INFO_ISSUES = {"predicate_negation_normalized", "segment_id_corrected"}
@@ -135,7 +136,8 @@ class AnthropicLLM:
 
 def extractor_version(model: str, taxonomy: dict) -> str:
     tool = _claim_schema([t["id"] for t in taxonomy["topics"]])
-    h = hashlib.sha256((SYSTEM_PROMPT + json.dumps(tool, sort_keys=True) + taxonomy["version"]).encode())
+    h = hashlib.sha256((CHECKS_VERSION + SYSTEM_PROMPT + json.dumps(tool, sort_keys=True) +
+                        taxonomy["version"]).encode())
     return f"{model}:{h.hexdigest()[:12]}"
 
 
@@ -378,12 +380,14 @@ class Extractor:
                 "politician_roles": {k: v["status"] for k, v in roles.items()},
                 "politician_is_probable_speaker": speaker["status"] in ("verified", "probable")}
         record = {"status": "ok", "claims": 0, "grounding": {}}
+        response = {"claims": []}
         if not segs:
             claims, usage = [], {}
         else:
             prompt, refs = build_prompt(snap, meta, segs, self.taxonomy)
             try:
                 result, usage = self.llm.extract(SYSTEM_PROMPT, prompt, self.tool)
+                response = result
                 claims = result.get("claims") or []
             except Exception as exc:  # noqa: BLE001 - recorded, run continues with the next post
                 self._log(row, pid, "failed", 0, {}, f"{type(exc).__name__}: {exc}"[:500], now)
@@ -392,20 +396,21 @@ class Extractor:
             for i, c in enumerate(claims):
                 g = self._store_claim(row, pid, i, c, refs, speaker, now)
                 record["grounding"][g] = record["grounding"].get(g, 0) + 1
-            self._log(row, pid, "ok", len(claims), usage, None, now)
+            self._log(row, pid, "ok", len(claims), usage, None, now, response)
         record.update(claims=len(claims), input_tokens=usage.get("input_tokens"),
                       output_tokens=usage.get("output_tokens"))
         return record
 
-    def _log(self, row, pid, status, n, usage, error, now):
+    def _log(self, row, pid, status, n, usage, error, now, response=None):
         self.conn.execute(
             "INSERT INTO claim_extraction(oriane_id, raw_id, extractor_version, politician_id, model, status, claims, "
-            "input_tokens, output_tokens, error, extracted_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) "
+            "input_tokens, output_tokens, error, response, extracted_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) "
             "ON CONFLICT (oriane_id, raw_id, extractor_version, politician_id) DO UPDATE SET status = EXCLUDED.status, "
             "claims = EXCLUDED.claims, input_tokens = EXCLUDED.input_tokens, output_tokens = EXCLUDED.output_tokens, "
-            "error = EXCLUDED.error, extracted_at = EXCLUDED.extracted_at",
+            "error = EXCLUDED.error, response = EXCLUDED.response, extracted_at = EXCLUDED.extracted_at",
             (row["oriane_id"], row["raw_id"], self.version, pid, self.llm.model, status, n,
-             usage.get("input_tokens"), usage.get("output_tokens"), error, now))
+             usage.get("input_tokens"), usage.get("output_tokens"), error,
+             Jsonb(response) if response is not None else None, now))
 
     def _store_claim(self, row, pid, i, c: dict, refs: dict, speaker: dict, now) -> str:
         issues: list[str] = []
