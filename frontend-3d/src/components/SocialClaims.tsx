@@ -78,20 +78,20 @@ export function ClaimRow({ c }: { c: SocialClaim }) {
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium leading-snug">“{c.text}”</p>
         {c.text_en && <p className="mt-1 text-xs leading-snug text-muted">{c.text_en}</p>}
-        <p className="mt-1.5 text-[11px] text-muted">@{c.uploader_handle} · {fmtDate(c.published_at)} · {compact(c.engagement?.views)} views</p>
+        <p className="mt-1.5 text-[11px] text-muted">{[c.uploader_handle && `@${c.uploader_handle}`, fmtDate(c.published_at), c.engagement?.views != null && `${compact(c.engagement.views)} views`].filter(Boolean).join(" · ")}</p>
       </div>
       <div className="flex shrink-0 flex-col items-end gap-1.5">
         <Badge style={{ background: `${color}1a`, color }}>{titleCase(c.type)}</Badge>
-        <Badge>{SPEAKER_NAMES[c.speaker || ""] ?? titleCase(c.speaker)}</Badge>
+        {c.speaker && <Badge>{SPEAKER_NAMES[c.speaker] ?? titleCase(c.speaker)}</Badge>}
         {c.about_politician === false && <Badge tone="warn">Context</Badge>}
       </div>
       <ChevronRight className={`size-4 shrink-0 self-center text-muted transition-transform ${open ? "rotate-90" : ""}`} />
     </button>
     {open && <div className="space-y-2 border-t border-line px-3 py-2.5 text-xs">
-      {c.evidence_span && <blockquote className="border-l-2 border-accent/50 pl-2 text-muted">“{c.evidence_span}” <span className="text-[10px]">— from the {humanize(c.source_field)}</span></blockquote>}
+      {c.evidence_span && <blockquote className="border-l-2 border-accent/50 pl-2 text-muted">“{c.evidence_span}”{c.source_field && <span className="text-[10px]"> — from the {humanize(c.source_field)}</span>}</blockquote>}
       <div className="flex flex-wrap gap-x-4 gap-y-1 text-muted">
-        <span>{compact(c.engagement?.likes)} likes</span><span>{compact(c.engagement?.comments)} comments</span><span>{compact(c.engagement?.shares)} shares</span>
-        <span>Checkable: {c.checkable === false ? "no" : "yes"}</span>
+        {c.engagement?.likes != null && <><span>{compact(c.engagement.likes)} likes</span><span>{compact(c.engagement.comments)} comments</span><span>{compact(c.engagement.shares)} shares</span></>}
+        {c.checkable != null && <span>Checkable: {c.checkable ? "yes" : "no"}</span>}
         {c.uploader_name && <span>Account: {c.uploader_name}</span>}
       </div>
       {c.url && <a href={c.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-accent hover:underline">Open original post <ExternalLink className="size-3" /></a>}
@@ -181,7 +181,7 @@ export function ClaimsTimeline({ iso2, politicianId }: { iso2: string; politicia
       <p className="text-xs font-semibold">{fmtDate(day)} <span className="font-normal text-muted">· {claims.length} claim{claims.length > 1 ? "s" : ""}</span></p>
       <ul className="mt-2 space-y-1.5">{claims.map((c) => <li key={c.claim_id} className="flex gap-2 text-xs">
         <span className="mt-1.5 size-2 shrink-0 rounded-full" style={{ background: colorOf(CLAIM_TYPE_COLORS, c.type) }} title={titleCase(c.type)} />
-        <span className="min-w-0 flex-1">{c.text} <span className="text-muted">— {PLATFORM_META[c.platform || ""]?.name ?? c.platform} @{c.uploader_handle}</span></span>
+        <span className="min-w-0 flex-1">{c.text} <span className="text-muted">— {PLATFORM_META[c.platform || ""]?.name ?? c.platform}{c.uploader_handle && ` @${c.uploader_handle}`}</span></span>
       </li>)}</ul>
     </li>)}
   </ol>;

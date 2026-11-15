@@ -36,6 +36,7 @@ SOURCES = {
                                published="2026-11-01T10:00:00.000Z", pad="x" * 5000)},
     "s3": {"dp": "oriane:cnt_c:v1", "at": "2026-10-20T10:00:00Z", "current": False,
            "content": _content("cnt_c", [_claim(0, "Viejo")])},
+    "s4": {"dp": "doc-1b8e5d66c769f323-v1", "at": "2026-11-12T10:00:00Z", "content": "DOCUMENT by gob.mx: x"},
 }
 
 
@@ -88,6 +89,7 @@ def test_pull_exports_every_current_claim_with_system_a_ids(graph, tmp_path):
 
     assert manifest["posts"] == 2 and manifest["claims"] == 3 and manifest["partial_posts"] == 0
     assert manifest["skipped"]["not_current"] == 1
+    assert manifest["skipped"]["evidence_records"] == 1 and "/trace/nodes/s4" not in calls  # System C document
     assert manifest["audiences"][0]["politicians"] == ["person:MX:clara-marina-brugada-molina"]
     assert calls.count("/recall") == 1  # only the truncated source needs a recall
     posts = [json.loads(line) for line in (tmp_path / "MX" / "posts.jsonl").read_text().splitlines()]
