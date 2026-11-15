@@ -173,7 +173,8 @@ def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict |
                 "method": METHOD,
                 "totals": {"engagement": engagement_summary(list({x["oriane_id"]: x for x in every_post}.values())),
                            "presentation": m.presentation_summary(every_pair),
-                           "feedback": m.feedback_summary(every_pair)}}
+                           # a video about several politicians has one comment section: pool it once
+                           "feedback": m.feedback_summary(list({x["platform_id"]: x for x in every_pair}.values()))}}
 
     @r.get("/api/metrics/{code}/politicians/{key:path}")
     def politician(code: str, key: str, sort: str = "views", labelled: bool | None = None,

@@ -123,6 +123,8 @@ def test_metrics_api(tmp_path):
     assert (clara["presentation"]["index"], clara["presentation"]["official"]) == (33.3, 1)
     assert clara["feedback"]["index"] == 25.0 and clara["feedback"]["bots"] == 1
     assert other["politician_id"] is None and other["engagement"] is None and not other["in_graph"]
+    assert s["totals"]["presentation"]["total"] == 4 and s["totals"]["engagement"]["posts"] == 2
+    assert s["totals"]["feedback"]["videos"] == 1 and s["totals"]["feedback"]["humans"] == 4
     assert s["sources"]["perception"]["source"] == "LatamPoliticalMonitor" and "politicians" not in s["sources"]["perception"]
 
     d = api.get(f"/api/metrics/MX/politicians/{CLARA}").json()
