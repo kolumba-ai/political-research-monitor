@@ -314,7 +314,11 @@ def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, coun
         summary["sent"] += len(batch)
         summary["credits_sent"] += sum(credits_for(it["content"]) for it in batch)
     for ingestion_id in ingestions:
-        _settle(conn, past_project, ingestion_id, _wait(client, ingestion_id, poll_timeout_s, poll_interval_s, sleep), now)
+        try:
+            _settle(conn, past_project, ingestion_id, _wait(client, ingestion_id, poll_timeout_s, poll_interval_s, sleep),
+                    now)
+        except PastDevError as exc:  # the batch was accepted (and billed); it stays queued and is re-checked later
+            summary["errors"].append(f"poll {ingestion_id}: {str(exc)[:200]}")
     summary["ingestions"] = ingestions
     summary["pending"] = _pending(conn, items, len(todo) - summary["sent"])
     return summary

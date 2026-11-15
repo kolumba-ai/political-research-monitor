@@ -9,6 +9,14 @@ import httpx
 from polgraph.exa_gateway import PgRateLimiter, retry_after_seconds
 
 
+class LLMError(RuntimeError):
+    """A failed call that was still billed; `usage` lets the caller count its tokens."""
+
+    def __init__(self, message: str, usage: dict):
+        super().__init__(message)
+        self.usage = usage
+
+
 class OpenAILLM:
     def __init__(self, api_key: str, model: str, base_url: str = "https://api.openai.com",
                  transport: httpx.BaseTransport | None = None, sleep=time.sleep, max_tokens: int = 2000,
@@ -43,9 +51,12 @@ class OpenAILLM:
                 raise RuntimeError(f"openai {r.status_code}: {r.text[:500]}")
             data = r.json()
             choice = data["choices"][0]
+            u = data.get("usage") or {}
+            usage = {"input_tokens": u.get("prompt_tokens"), "output_tokens": u.get("completion_tokens")}
             if choice.get("finish_reason") == "length":
-                raise RuntimeError("openai output truncated at max_completion_tokens")
-            usage = data.get("usage") or {}
-            return json.loads(choice["message"]["content"]), {
-                "input_tokens": usage.get("prompt_tokens"), "output_tokens": usage.get("completion_tokens")}
+                raise LLMError("openai output truncated at max_completion_tokens", usage)
+            try:
+                return json.loads(choice["message"]["content"]), usage
+            except (TypeError, ValueError) as exc:
+                raise LLMError(f"openai returned invalid JSON: {exc}", usage) from exc
         raise RuntimeError("unreachable")

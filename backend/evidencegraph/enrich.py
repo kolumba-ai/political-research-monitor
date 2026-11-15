@@ -187,6 +187,16 @@ class Enricher:
         self.sleep = sleep
         self.now = now or (lambda: datetime.now(timezone.utc))
 
+    def _extract(self, system: str, prompt: str, tool: dict) -> tuple[dict, dict]:
+        """LLM call whose token usage is added to the run's spend, also when the call fails after being billed."""
+        try:
+            out, usage = self.llm.extract(system, prompt, tool)
+        except Exception as exc:
+            self.spend.add_llm(getattr(exc, "usage", None) or {})
+            raise
+        self.spend.add_llm(usage)
+        return out, usage
+
     # ------------------------------------------------------------------ discovery
     def plan(self, prop: dict, claims: list[dict]) -> tuple[list[dict], dict]:
         prompt = json.dumps({
@@ -196,8 +206,7 @@ class Enricher:
             "stated_at": prop["stated_at"].date().isoformat(), "quotes": [c["quote"] for c in claims[:3]],
             "rows_to_write": self.rows,
         }, ensure_ascii=False)
-        out, usage = self.llm.extract(PLAN_SYSTEM, prompt, {"name": "query_plan", "input_schema": PLAN_SCHEMA})
-        self.spend.add_llm(usage)
+        out, usage = self._extract(PLAN_SYSTEM, prompt, {"name": "query_plan", "input_schema": PLAN_SCHEMA})
         seen, planned = set(), []
         for q in out.get("queries") or []:
             if q["row"] in self.rows and q["row"] not in seen and not q["skip"] and q["query"].strip():
@@ -279,8 +288,7 @@ class Enricher:
                      "published_at": doc["published_at"].date().isoformat() if doc["published_at"] else None,
                      "url": doc["resolved_url"], "text": text},
         }, ensure_ascii=False)
-        out, usage = self.llm.extract(ASSESS_SYSTEM, prompt, {"name": "page_judgement", "input_schema": ASSESS_SCHEMA})
-        self.spend.add_llm(usage)
+        out, usage = self._extract(ASSESS_SYSTEM, prompt, {"name": "page_judgement", "input_schema": ASSESS_SCHEMA})
         quote = (out.get("quote") or "").strip() or None
         verified = quote_in_text(quote, fetched["text"])
         link = {
