@@ -179,3 +179,77 @@ def test_copyright_quote_limit():
 def test_enrich_requires_confirm_spend(monkeypatch):
     with pytest.raises(SystemExit):
         cli_main(["enrich", "--limit", "1"])
+
+
+class IrrelevantLLM(FakeLLM):
+    def extract(self, system, prompt, tool):
+        out, usage = super().extract(system, prompt, tool)
+        return (out if "queries" in out else out | {"stance": "irrelevant", "quote": ""}), usage
+
+
+def test_claim_without_verified_evidence_is_not_written(conn, ev_settings, tmp_path):
+    _setup(conn)
+    past = FakePast()
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, past, llm=IrrelevantLLM())
+    out = enricher.run(None, 5)
+    assert out["results"][0]["status"] == "mapped" and past.batches() == []
+    assert conn.execute("SELECT count(*) AS n FROM ev_memory_record").fetchone()["n"] == 0
+
+
+def test_failed_ingestion_keeps_proposition_queued(conn, ev_settings, tmp_path):
+    _setup(conn)
+
+    class FailingPast(FakePast):
+        def handler(self, request):
+            if request.method == "GET" and "/ingest/" in request.url.path:
+                self.calls.append(("GET", request.url.path, None))
+                return httpx.Response(200, json={"status": "failed", "failure": {"code": "x"}})
+            return super().handler(request)
+
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FailingPast())
+    out = enricher.run(None, 5)
+    assert out["results"][0]["status"] == "queued" and out["propositions"] == 1
+    assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "queued"
+    assert {r["status"] for r in conn.execute("SELECT status FROM ev_memory_record")} == {"failed"}
+
+
+def test_stale_mapping_is_reclaimed(conn, ev_settings, tmp_path):
+    _setup(conn)
+    conn.execute("UPDATE ev_proposition_queue SET status = 'mapping', updated_at = now() - interval '5 minutes'")
+    assert dry_run(conn, ev_settings, None, None)["propositions"] == 0
+    conn.execute("UPDATE ev_proposition_queue SET updated_at = now() - interval '2 hours'")
+    assert dry_run(conn, ev_settings, None, None)["propositions"] == 1
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
+    assert enricher.run(None, None)["results"][0]["status"] == "mapped"
+
+
+def test_only_latest_document_version_is_projected(conn, ev_settings, tmp_path):
+    from evidencegraph.project import build_items
+
+    _setup(conn)
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
+    enricher.run(None, 5)
+    prop = conn.execute("SELECT * FROM ev_proposition_queue q JOIN proposition p USING (proposition_id)").fetchone()
+    claims = conn.execute(__import__("evidencegraph.enrich", fromlist=["CLAIMS_SQL"]).CLAIMS_SQL,
+                          (prop["proposition_id"],)).fetchall()
+    gov = conn.execute("SELECT document_id FROM ev_evidence_link WHERE stance = 'supports'").fetchone()["document_id"]
+    conn.execute("INSERT INTO ev_document_version(document_id, content_sha256, http_status, bytes, retrieved_at) "
+                 "VALUES (%s, 'newer', 200, 1, now() + interval '1 hour')", (gov,))
+    kinds = [it["metadata"]["kind"] for it in build_items(conn, prop, claims, ev_settings.mapper_version)]
+    assert kinds == ["claim", "document", "evidence_link"]
+
+
+def test_pull_reads_system_c_claim_records():
+    from socialclaims.pastdev import _evidence_claim_posts
+
+    payload = {"format": "evidencegraph-claim/1", "politician": {"name": "X", "system_a_person_id": PID},
+               "claims": [{"oriane_id": "o1", "text": "t1", "type": "statistic", "platform": "tiktok",
+                           "url": "https://t/1", "stated_at": "2026-11-01T00:00:00Z", "quote": "q",
+                           "relation_to_politician": "speaker"},
+                          {"oriane_id": "o2", "text": "t2", "type": "factual", "platform": "instagram",
+                           "url": "https://i/2", "stated_at": "2026-11-02T00:00:00Z", "quote": "q2",
+                           "relation_to_politician": "mentioned"}]}
+    posts = _evidence_claim_posts({"dataPointId": "clm-a-x"}, payload)
+    assert [p[0] for p in posts] == ["clm-a-x#o1", "clm-a-x#o2"]
+    assert posts[0][1]["source"]["url"] == "https://t/1" and posts[0][1]["claims"][0]["claim_es"] == "t1"
+    assert posts[1][1]["claims"][0]["about_politician"] is False
