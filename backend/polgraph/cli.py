@@ -164,7 +164,7 @@ def cmd_portraits(a) -> int:
     s, gw, store, _, _ = _components()
     if a.budget:
         s.exa_run_budget_usd = a.budget
-    res = find_portraits(gw, store, a.country, limit=a.limit, force=a.force, ids=a.ids or None)
+    res = find_portraits(gw, store, a.country, limit=a.limit, force=a.force, ids=a.ids or None, workers=a.workers)
     print(json.dumps({**res, "usage": gw.usage_report()["this_run"]}, indent=2, default=str))
     return 0
 
@@ -268,6 +268,8 @@ def main(argv: list[str] | None = None) -> int:
     pt.add_argument("--limit", type=int, help="at most N people this run (executives first, then legislators)")
     pt.add_argument("--force", action="store_true", help="re-check people that already have a result")
     pt.add_argument("--budget", type=float, help="USD ceiling for this run")
+    pt.add_argument("--workers", type=int, default=1,
+                    help="people searched in parallel (Exa calls stay within EXA_REQUESTS_PER_SECOND)")
     pt.add_argument("ids", nargs="*", help="only these person ids")
     pt.set_defaults(fn=cmd_portraits)
 

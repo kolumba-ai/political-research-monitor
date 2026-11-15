@@ -164,6 +164,7 @@ class ExaGateway:
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._db = sqlite3.connect(self.db_path, check_same_thread=False)
         self._db_lock = threading.Lock()
+        self._usage_lock = threading.Lock()  # budget counters are shared by parallel workers
         self._init_db()
         if limiter is not None:
             self.limiter = limiter
@@ -225,17 +226,22 @@ class ExaGateway:
                 "INSERT INTO usage (ts, endpoint, purpose, cost_usd, estimated, cached, ref) VALUES (?,?,?,?,?,?,?)",
                 (utcnow(), endpoint, purpose, actual, int(cost is None and not cached), int(cached), ref),
             )
-        if cached:
-            self.usage.cache_hits += 1
-        else:
-            self.usage.spent += actual
-            self.usage.calls[endpoint] = self.usage.calls.get(endpoint, 0) + 1
+        with self._usage_lock:
+            if cached:
+                self.usage.cache_hits += 1
+            else:
+                self.usage.spent += actual
+                self.usage.calls[endpoint] = self.usage.calls.get(endpoint, 0) + 1
 
     def lifetime_spend(self) -> float:
         with self._db_lock:
             return float(self._db.execute("SELECT COALESCE(SUM(cost_usd),0) FROM usage").fetchone()[0])
 
     def _reserve(self, estimate: float, what: str) -> None:
+        with self._usage_lock:
+            self._reserve_locked(estimate, what)
+
+    def _reserve_locked(self, estimate: float, what: str) -> None:
         run_left = self.settings.exa_run_budget_usd - self.usage.spent - self.usage.reserved
         if self.budget_scope is None:
             budget_left = self.settings.exa_total_budget_usd - self.lifetime_spend() - self.usage.reserved
@@ -268,7 +274,8 @@ class ExaGateway:
             raise ValueError(f"purpose must start with '{self.budget_scope}:'")
 
     def _release(self, estimate: float) -> None:
-        self.usage.reserved = max(0.0, self.usage.reserved - estimate)
+        with self._usage_lock:
+            self.usage.reserved = max(0.0, self.usage.reserved - estimate)
 
     def _call(self, fn: Callable[[], Any], what: str) -> Any:
         attempt = 0

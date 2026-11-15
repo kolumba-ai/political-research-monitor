@@ -47,4 +47,7 @@ def test_find_portraits_stores_result_and_falls_back_to_official(store):
     assert alfredo["image_method"] == "official_page" and alfredo["image_url"].endswith("-300x300.jpg")
     assert store.get_node("person:MX:nobody-known")["image_status"] == "not_found"
     calls = len(gw.calls)
+    assert find_portraits(gw, store, "MX", force=True, workers=4) == {"country": "MX", "checked": 3, "found": 2,
+                                                                      "not_found": 1}
+    calls = len(gw.calls)
     assert find_portraits(gw, store, "MX")["checked"] == 0 and len(gw.calls) == calls  # already checked

@@ -9,6 +9,7 @@ not files: Wikimedia Commons images carry their own licence on the source page.
 from __future__ import annotations
 
 import re
+from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import unquote, urlparse
 
 from .evidence import mentions_name
@@ -69,7 +70,8 @@ def _office(store: GraphStore, pid: str) -> tuple[int, str]:
 
 
 def find_portraits(gw, store: GraphStore, country: str, *, limit: int | None = None, force: bool = False,
-                   ids: list[str] | None = None) -> dict:
+                   ids: list[str] | None = None, workers: int = 1) -> dict:
+    """`workers` people are searched at once; Exa calls still share the gateway's rate limit and budget."""
     country = country.upper()
     people = [p for p in store.nodes_by_label("Person") if p["id"].startswith(f"person:{country}:")]
     if ids:
@@ -79,8 +81,8 @@ def find_portraits(gw, store: GraphStore, country: str, *, limit: int | None = N
     ranked = sorted(((_office(store, p["id"]), p) for p in people), key=lambda x: (x[0][0], x[1].get("name") or ""))
     if limit:
         ranked = ranked[:limit]
-    found = missing = 0
-    for (_, office), p in ranked:
+    def check(item) -> bool:
+        (_, office), p = item
         name = p.get("name") or ""
         hit = None
         for domains, method in ((WIKI_DOMAINS, "wikipedia"), (OFFICIAL_DOMAINS.get(country), "official_page")):
@@ -95,9 +97,14 @@ def find_portraits(gw, store: GraphStore, country: str, *, limit: int | None = N
         props = {"image_status": "found" if hit else "not_found", "image_checked_at": utcnow(), **(hit or {})}
         if hit:
             props["image_retrieved_at"] = props["image_checked_at"]
-            found += 1
-        else:
-            missing += 1
         store.upsert_node(p["id"], "Person", props)
         log.info("portrait", person=p["id"], found=bool(hit), source=(hit or {}).get("image_source_domain"))
-    return {"country": country, "checked": found + missing, "found": found, "not_found": missing}
+        return bool(hit)
+
+    if workers > 1:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            results = list(pool.map(check, ranked))
+    else:
+        results = [check(item) for item in ranked]
+    found = sum(results)
+    return {"country": country, "checked": len(results), "found": found, "not_found": len(results) - found}
