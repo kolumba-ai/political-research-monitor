@@ -37,7 +37,7 @@ class Settings:
     openai_api_key: str | None = None
     openai_base_url: str = "https://api.openai.com"
     llm_model: str = "gpt-6.1-sol"
-    simulator_model: str | None = "gpt-6-luna"
+    simulator_model: str | None = "gpt-6.1-sol"
     embedding_model: str = "text-embedding-3-small"
     embedding_dim: int = 1536
     seed_batch: int = 30
@@ -72,7 +72,7 @@ class Settings:
             openai_api_key=env.get("OPENAI_API_KEY") or None,
             openai_base_url=env.get("OPENAI_BASE_URL") or "https://api.openai.com",
             llm_model=llm_model,
-            simulator_model=env.get("SIMULATOR_MODEL") or "gpt-6-luna",
+            simulator_model=env.get("SIMULATOR_MODEL") or "gpt-6.1-sol",
             embedding_model=env.get("EMBEDDING_MODEL") or "text-embedding-3-small",
             embedding_dim=_read_int(env, "EMBEDDING_DIM", 1536),
             seed_batch=_read_int(env, "SEED_BATCH", 30),

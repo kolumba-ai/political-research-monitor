@@ -678,7 +678,7 @@ def test_make_llm_with_openai_models_does_not_require_anthropic_key():
     settings = Settings.from_env({"OPENAI_API_KEY": "openai-test-key"})
     router = make_llm(settings)
     assert router.complete_client.model == "gpt-6.1-sol"
-    assert router.chat_client.model == "gpt-6-luna"
+    assert router.chat_client.model == "gpt-6.1-sol"
 
 
 def test_gpt_6_luna_usage_uses_its_configured_price():

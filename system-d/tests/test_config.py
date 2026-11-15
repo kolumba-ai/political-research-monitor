@@ -9,7 +9,7 @@ from system_d.stopping import Config
 def test_settings_defaults_and_stopping_config():
     settings = Settings.from_env({})
     assert settings.llm_model == "gpt-6.1-sol"
-    assert settings.simulator_model == "gpt-6-luna"
+    assert settings.simulator_model == "gpt-6.1-sol"
     assert settings.openai_base_url == "https://api.openai.com"
     assert settings.embedding_model == "text-embedding-3-small"
     assert settings.embedding_dim == 1536
@@ -90,7 +90,7 @@ def test_settings_load_env_overrides_and_simulator_model_default():
     assert settings.personas_per_call == 3
 
     default_simulator = Settings.from_env({"LLM_MODEL": "chosen"})
-    assert default_simulator.simulator_model == "gpt-6-luna"
+    assert default_simulator.simulator_model == "gpt-6.1-sol"
     assert Settings.from_env({"SIMULATOR_REASONING_EFFORT": ""}).simulator_reasoning_effort is None
 
 
