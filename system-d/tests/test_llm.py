@@ -102,7 +102,14 @@ def test_anthropic_retries_validation_failure_then_succeeds():
         nonlocal calls
         calls += 1
         value = {"wrong": True} if calls == 1 else {"value": 5}
-        return httpx.Response(200, json=tool_response(value), request=request)
+        return httpx.Response(
+            200,
+            json=tool_response(
+                value,
+                usage={"input_tokens": calls, "output_tokens": calls * 2},
+            ),
+            request=request,
+        )
 
     delays = []
     client = AnthropicLLM(
@@ -111,10 +118,46 @@ def test_anthropic_retries_validation_failure_then_succeeds():
         transport=httpx.MockTransport(handler),
         sleep=delays.append,
     )
-    answer, _ = client.complete_json("system", "user", Answer, max_tokens=20)
+    answer, usage = client.complete_json("system", "user", Answer, max_tokens=20)
     assert answer.value == 5
     assert calls == 2
     assert delays
+    assert (usage.input_tokens, usage.output_tokens) == (3, 6)
+
+
+def test_metered_anthropic_records_usage_when_all_validation_attempts_fail():
+    calls = 0
+
+    def handler(request):
+        nonlocal calls
+        calls += 1
+        return httpx.Response(
+            200,
+            json=tool_response(
+                {"wrong": True},
+                usage={"input_tokens": 5, "output_tokens": 2},
+            ),
+            request=request,
+        )
+
+    settings = configured_settings()
+    client = AnthropicLLM(
+        settings,
+        "claude-sonnet-5-5",
+        transport=httpx.MockTransport(handler),
+        sleep=lambda _: None,
+    )
+    meter = UsageMeter()
+    metered = MeteredLLM(client, meter)
+
+    with pytest.raises(LLMError, match="did not validate after 2 retries") as exc_info:
+        metered.complete_json("system", "user", Answer, max_tokens=20)
+
+    expected_usage = Usage("claude-sonnet-5-5", 15, 6)
+    assert calls == 3
+    assert exc_info.value.usage == expected_usage
+    assert meter.usage.input_tokens == expected_usage.input_tokens
+    assert meter.usage.output_tokens == expected_usage.output_tokens
 
 
 def test_anthropic_retries_missing_tool_block_within_validation_budget():
@@ -223,8 +266,6 @@ def test_anthropic_chat_uses_simulator_model_and_returns_text_and_usage():
     request_data = {}
 
     def handler(request):
-        import json
-
         request_data.update(json.loads(request.read()))
         return httpx.Response(
             200,
@@ -333,7 +374,7 @@ def test_openai_length_finish_retries_with_doubled_token_limit():
 
     assert answer == Answer(value=8)
     assert [request["max_completion_tokens"] for request in requests] == [32, 64]
-    assert (usage.input_tokens, usage.output_tokens) == (7, 14)
+    assert (usage.input_tokens, usage.output_tokens) == (12, 46)
 
 
 def test_openai_invalid_json_is_retried():
@@ -345,7 +386,10 @@ def test_openai_invalid_json_is_retried():
         content = "{invalid" if calls == 1 else '{"value": 5}'
         return httpx.Response(
             200,
-            json=openai_response(content, usage={"prompt_tokens": 3, "completion_tokens": 2}),
+            json=openai_response(
+                content,
+                usage={"prompt_tokens": calls * 3, "completion_tokens": calls * 2},
+            ),
             request=request,
         )
 
@@ -359,7 +403,43 @@ def test_openai_invalid_json_is_retried():
 
     assert answer == Answer(value=5)
     assert calls == 2
-    assert (usage.input_tokens, usage.output_tokens) == (3, 2)
+    assert (usage.input_tokens, usage.output_tokens) == (9, 6)
+
+
+def test_metered_openai_records_usage_when_all_validation_attempts_fail():
+    calls = 0
+
+    def handler(request):
+        nonlocal calls
+        calls += 1
+        return httpx.Response(
+            200,
+            json=openai_response(
+                '{"wrong": true}',
+                usage={"prompt_tokens": 4, "completion_tokens": 2},
+            ),
+            request=request,
+        )
+
+    settings = configured_settings(llm_model="gpt-6.1-sol")
+    client = OpenAILLM(
+        settings,
+        "gpt-6.1-sol",
+        transport=httpx.MockTransport(handler),
+        sleep=lambda _: None,
+    )
+    meter = UsageMeter()
+    metered = MeteredLLM(client, meter)
+
+    with pytest.raises(LLMError, match="did not validate after 2 retries") as exc_info:
+        metered.complete_json("system", "user", Answer, max_tokens=32)
+
+    expected_usage = Usage("gpt-6.1-sol", 12, 6)
+    assert calls == 3
+    assert exc_info.value.usage == expected_usage
+    assert meter.usage.input_tokens == expected_usage.input_tokens
+    assert meter.usage.output_tokens == expected_usage.output_tokens
+    assert meter.cost_usd(settings) == pytest.approx(expected_usage.cost_usd(settings))
 
 
 def test_openai_honors_retry_after_then_succeeds():

@@ -25,6 +25,10 @@ T = TypeVar("T", bound=BaseModel)
 class LLMError(RuntimeError):
     """An LLM request failed or returned invalid structured output."""
 
+    def __init__(self, message: str, usage: Usage | None = None) -> None:
+        super().__init__(message)
+        self.usage = usage
+
 
 @dataclass(frozen=True)
 class Usage:
@@ -104,12 +108,17 @@ class MeteredLLM:
         self.meter = meter
 
     def complete_json(self, system: str, user: str, output_model: type[T], max_tokens: int) -> tuple[T, Usage]:
-        result, usage = self.llm.complete_json(
-            system=system,
-            user=user,
-            output_model=output_model,
-            max_tokens=max_tokens,
-        )
+        try:
+            result, usage = self.llm.complete_json(
+                system=system,
+                user=user,
+                output_model=output_model,
+                max_tokens=max_tokens,
+            )
+        except LLMError as exc:
+            if exc.usage is not None:
+                self.meter.add(exc.usage)
+            raise
         self.meter.add(usage)
         return result, usage
 
@@ -227,10 +236,11 @@ class AnthropicLLM(_HTTPClient):
             "tool_choice": {"type": "tool", "name": tool_name},
         }
         last_error: Exception | None = None
+        total_usage = Usage(self.model, 0, 0)
         for retry_index in range(self.settings.llm_max_retries + 1):
             response = self._post(self.client, "/v1/messages", payload, "anthropic")
             data = response.json()
-            usage = self._usage(data, self.model, "input_tokens", "output_tokens")
+            total_usage += self._usage(data, self.model, "input_tokens", "output_tokens")
             tool_block = next(
                 (
                     block
@@ -243,12 +253,15 @@ class AnthropicLLM(_HTTPClient):
                 last_error = ValueError("response missing the requested tool block")
             else:
                 try:
-                    return output_model.model_validate(tool_block.get("input")), usage
+                    return output_model.model_validate(tool_block.get("input")), total_usage
                 except ValidationError as exc:
                     last_error = exc
             if retry_index < self.settings.llm_max_retries:
                 self.sleep(self._delay(retry_index))
-        raise LLMError(f"anthropic response did not validate after {self.settings.llm_max_retries} retries") from last_error
+        raise LLMError(
+            f"anthropic response did not validate after {self.settings.llm_max_retries} retries",
+            usage=total_usage,
+        ) from last_error
 
     def chat(self, system: str, messages: list[dict[str, str]], max_tokens: int) -> tuple[str, Usage]:
         payload = {
@@ -302,11 +315,12 @@ class OpenAILLM(_HTTPClient):
         }
         current_max_tokens = max_tokens
         last_error: Exception | None = None
+        total_usage = Usage(self.model, 0, 0)
         for retry_index in range(self.settings.llm_max_retries + 1):
             payload["max_completion_tokens"] = current_max_tokens
             response = self._post(self.client, "/v1/chat/completions", payload, "openai")
             data = response.json()
-            usage = self._usage(data, self.model, "prompt_tokens", "completion_tokens")
+            total_usage += self._usage(data, self.model, "prompt_tokens", "completion_tokens")
             choices = data.get("choices") or []
             choice = choices[0] if choices else {}
             if choice.get("finish_reason") == "length":
@@ -319,12 +333,15 @@ class OpenAILLM(_HTTPClient):
                     if not isinstance(content, str):
                         raise ValueError("response did not include JSON content")
                     result = output_model.model_validate(json.loads(content))
-                    return result, usage
+                    return result, total_usage
                 except (json.JSONDecodeError, ValidationError, TypeError, ValueError) as exc:
                     last_error = exc
             if retry_index < self.settings.llm_max_retries:
                 self.sleep(self._delay(retry_index))
-        raise LLMError(f"openai response did not validate after {self.settings.llm_max_retries} retries") from last_error
+        raise LLMError(
+            f"openai response did not validate after {self.settings.llm_max_retries} retries",
+            usage=total_usage,
+        ) from last_error
 
     def chat(self, system: str, messages: list[dict[str, str]], max_tokens: int) -> tuple[str, Usage]:
         payload = {
