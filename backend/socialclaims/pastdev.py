@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -208,7 +209,7 @@ def _evidence_claim_posts(src: dict, payload: dict) -> list[tuple[str, dict]]:
     }) for oid, cs in by_post.items()]
 
 
-def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
+def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int = 1) -> dict:
     """Read all current claim data points and write `<out_dir>/<CC>/{posts,claims}.jsonl` + `manifest.json`."""
     country = country.upper()
     resolve = PoliticianResolver(graph, country)
@@ -226,14 +227,17 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
     skipped = {"not_current": 0, "no_payload": 0, "other_country": 0, "unresolved_politician": 0,
                "evidence_records": 0}
     partial = 0
+    wanted = []
     for src in client.sources():
         if not src.get("current"):
             skipped["not_current"] += 1
-            continue
-        if str(src.get("dataPointId") or "").startswith(EVIDENCE_ONLY_PREFIXES):
+        elif str(src.get("dataPointId") or "").startswith(EVIDENCE_ONLY_PREFIXES):
             skipped["evidence_records"] += 1
-            continue
-        content = client.full_text(src, readers)
+        else:
+            wanted.append(src)
+    with ThreadPoolExecutor(max(1, workers)) as pool:
+        contents = list(pool.map(lambda src: client.full_text(src, readers), wanted))
+    for src, content in zip(wanted, contents):
         payload = parse_payload(content)
         if not payload:
             texts = summary_claims(content)
