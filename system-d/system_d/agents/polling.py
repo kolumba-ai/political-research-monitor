@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unicodedata
 from typing import Any
 
@@ -27,6 +28,7 @@ REFUSAL_PATTERNS = (
     "basta",
     "no participo",
 )
+REFUSAL_PATTERN = re.compile(r"\b(?:" + "|".join(re.escape(pattern) for pattern in REFUSAL_PATTERNS) + r")\b")
 SENTIMENT_SCALE = {1: -1.0, 2: -0.5, 3: 0.0, 4: 0.5, 5: 1.0}
 
 
@@ -36,8 +38,7 @@ def _normalized(text: str) -> str:
 
 
 def _is_refusal(text: str) -> bool:
-    normalized = _normalized(text)
-    return any(pattern in normalized for pattern in REFUSAL_PATTERNS)
+    return REFUSAL_PATTERN.search(_normalized(text)) is not None
 
 
 def run_poll(
