@@ -46,6 +46,8 @@ def build_parser() -> argparse.ArgumentParser:
     enrich_cmd.add_argument("--workers", type=_positive_int, default=1,
                             help="parallel workers sharing the queue (each claims propositions with SKIP LOCKED)")
     enrich_cmd.add_argument("--country", default="MX")
+    enrich_cmd.add_argument("--max-usd", type=float,
+                            help="stop taking new propositions once Exa + Claude + past.dev spend reaches this")
     enrich_cmd.add_argument("--dry-run", action="store_true", help="list what would run and the cost ceiling; free")
     enrich_cmd.add_argument("--confirm-spend", action="store_true", help="required: Exa, Anthropic and past.dev bill")
     return parser
@@ -77,7 +79,10 @@ def _enricher(conn, settings, country: str, gateway):
 def _run_enrich(settings, args) -> dict:
     from .config import exa_gateway
 
+    from .enrich import Spend
+
     gateway = exa_gateway(settings)
+    spend = Spend(settings, gateway)
     workers = args.workers if args.limit is None else min(args.workers, args.limit)
     limits = ([None] * workers if args.limit is None else
               [args.limit // workers + (1 if n < args.limit % workers else 0) for n in range(workers)])
@@ -85,6 +90,7 @@ def _run_enrich(settings, args) -> dict:
     def work(limit: int | None) -> dict:
         conn = connect(settings.database_url)
         enricher = _enricher(conn, settings, args.country, gateway)
+        enricher.spend, enricher.max_usd = spend, args.max_usd
         try:
             return enricher.run(args.ids or None, limit)
         finally:
@@ -98,7 +104,8 @@ def _run_enrich(settings, args) -> dict:
     for r in results:
         statuses[r["status"]] = statuses.get(r["status"], 0) + 1
     return {"propositions": len(results), "by_status": statuses, "errors": [e for o in outs for e in o["errors"]],
-            "exa_usd": round(gateway.usage.spent, 4), "results": results}
+            "stopped": next((o["stopped"] for o in outs if o["stopped"]), None), "spend": spend.report(),
+            "results": results}
 
 
 def main(argv: list[str] | None = None) -> int:

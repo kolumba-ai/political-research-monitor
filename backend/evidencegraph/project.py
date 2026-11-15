@@ -272,7 +272,8 @@ def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, coun
     past_project = f"claims-{country.lower()}"
     items = build_items(conn, prop, claims, mapper_version)
     if not items:
-        return {"items": 0, "sent": 0, "unchanged": 0, "credits_estimate": 0, "errors": [], "pending": 0}
+        return {"items": 0, "sent": 0, "unchanged": 0, "credits_estimate": 0, "credits_sent": 0, "errors": [],
+                "pending": 0}
     refresh_queued(conn, client, past_project, now)
     pids = sorted({it["metadata"]["politician_id"] for it in items if it["metadata"].get("politician_id")})
     recorded = {r["politician_id"]: r["audience"] for r in conn.execute(
@@ -289,7 +290,7 @@ def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, coun
     todo = [it for it in items if not (sent.get(it["id"]) and sent[it["id"]]["status"] != "failed"
                                        and sent[it["id"]]["content_sha256"] == item_sha256(it))]
     summary = {"items": len(items), "sent": 0, "unchanged": len(items) - len(todo),
-               "credits_estimate": sum(credits_for(it["content"]) for it in todo), "errors": []}
+               "credits_estimate": sum(credits_for(it["content"]) for it in todo), "credits_sent": 0, "errors": []}
     if not todo:
         summary["pending"] = _pending(conn, items, 0)
         return summary
@@ -311,6 +312,7 @@ def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, coun
             _record(conn, it, past_project, ingestion_id, "completed" if done else "queued", at, at if done else None)
         ingestions.append(ingestion_id)
         summary["sent"] += len(batch)
+        summary["credits_sent"] += sum(credits_for(it["content"]) for it in batch)
     for ingestion_id in ingestions:
         _settle(conn, past_project, ingestion_id, _wait(client, ingestion_id, poll_timeout_s, poll_interval_s, sleep), now)
     summary["ingestions"] = ingestions

@@ -177,6 +177,9 @@ On Modal: `make modal-systemc ARGS="enrich --limit 10 --confirm-spend"`. The Mod
   350 bytes; a proposition with 8 linked documents writes about 15–20 records).
 - **Confirmation:** a paid run needs `--confirm-spend` and `EXA_API_KEY`, `ANTHROPIC_API_KEY` and `PAST_DEV_API_KEY`.
   `--limit` caps how many propositions are processed (default: the whole queue).
+- **Spend cap:** `--max-usd N` stops workers taking new propositions once the run's spend reaches N. Spend is Exa cost
+  from the gateway, plus Claude token usage at the configured prices, plus past.dev credits sent. Propositions not
+  reached stay `queued` for a later run.
 - **Budget:** Exa spend also stops at the System C monthly budget in the gateway.
 
 ## Configuration
@@ -191,6 +194,9 @@ Settings are read from the repository `.env` by `EvidenceSettings` (`config.py`)
 | `ENRICH_MAX_DOCUMENTS` | 8 | Pages judged per proposition |
 | `ENRICH_RESULTS_PER_QUERY` | 5 | Exa results per search |
 | `ENRICH_PAGE_CHARS` | 24000 | Page text sent to Claude |
+| `ENRICH_ROWS` | all 7 rows | Comma-separated query-plan rows to search |
+| `ENRICH_USD_PER_MTOK_IN` / `_OUT` | 3 / 15 | Claude prices used by `--max-usd` and the dry-run estimate |
+| `PASTDEV_USD_PER_CREDIT` | 0.0003 | past.dev price used by `--max-usd` |
 | `MAPPER_VERSION` | `m1` | Version stamp; changing it re-judges and re-queues mapped propositions |
 | `INTAKE_MIN_CHECKWORTHINESS` | 0.5 | Queue threshold |
 | `EV_EXA_MONTHLY_BUDGET_USD` | 30 | System C Exa budget per month |

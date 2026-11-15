@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import threading
 import time
 from datetime import datetime, timezone
 
@@ -35,11 +36,10 @@ ROWS = {
 }
 STANCES = ["supports", "contradicts", "context", "irrelevant"]
 EXA_SEARCH_USD = 0.007
-# Rough per-call token use for estimates; the price per million tokens is an assumption, check the real rate.
+# Rough per-call token use for estimates.
 PLAN_TOKENS = (1_500, 600)
 ASSESS_OVERHEAD_TOKENS = (1_500, 500)
 CHARS_PER_TOKEN = 3.5
-USD_PER_MTOK = (3.0, 15.0)
 
 PLAN_SCHEMA = {
     "type": "object", "additionalProperties": False, "required": ["queries"],
@@ -55,7 +55,7 @@ ASSESS_SCHEMA = {
                    "confidence": {"type": "number"}, "quote": {"type": "string"}, "rationale": {"type": "string"}},
 }
 PLAN_SYSTEM = """You plan web searches that find evidence for or against a claim made in Mexican political social media.
-Write one search query per row, in Spanish unless the row is `english`:
+Write one search query for each row listed in `rows_to_write` (skip the others), in Spanish unless the row is `english`:
 - neutral: neutral restatement of the claim, as news coverage would phrase it;
 - counter: explicitly the opposite outcome (e.g. "aumentaron" for a claimed decrease);
 - primary: the official record of the act or figure (decree, bulletin, session record);
@@ -74,18 +74,54 @@ ASSESS_SYSTEM = """You judge one web page against one claim. Use only the page t
 - confidence: 0 to 1."""
 
 
-def _usd(tokens_in: float, tokens_out: float) -> float:
-    return tokens_in / 1e6 * USD_PER_MTOK[0] + tokens_out / 1e6 * USD_PER_MTOK[1]
+def rows(settings) -> list[str]:
+    wanted = [r.strip() for r in settings.enrich_rows.split(",") if r.strip()]
+    unknown = sorted(set(wanted) - set(ROWS))
+    if unknown:
+        raise ValueError(f"unknown ENRICH_ROWS: {', '.join(unknown)}")
+    return [r for r in ROWS if r in wanted]
 
 
-def estimate(n_props: int, max_docs: int, page_chars: int) -> dict:
-    searches = n_props * len(ROWS)
-    assess_in = page_chars / CHARS_PER_TOKEN + ASSESS_OVERHEAD_TOKENS[0]
-    llm = n_props * (_usd(*PLAN_TOKENS) + max_docs * _usd(assess_in, ASSESS_OVERHEAD_TOKENS[1]))
+def llm_usd(settings, tokens_in: float, tokens_out: float) -> float:
+    return tokens_in / 1e6 * settings.enrich_usd_per_mtok_in + tokens_out / 1e6 * settings.enrich_usd_per_mtok_out
+
+
+def estimate(settings, n_props: int) -> dict:
+    searches = n_props * len(rows(settings))
+    assess_in = settings.enrich_page_chars / CHARS_PER_TOKEN + ASSESS_OVERHEAD_TOKENS[0]
+    llm = n_props * (llm_usd(settings, *PLAN_TOKENS)
+                     + settings.enrich_max_documents * llm_usd(settings, assess_in, ASSESS_OVERHEAD_TOKENS[1]))
     return {"max_exa_searches": searches, "max_exa_usd": round(searches * EXA_SEARCH_USD, 2),
-            "max_llm_calls": n_props * (1 + max_docs), "max_llm_usd": round(llm, 2),
-            "max_total_usd": round(searches * EXA_SEARCH_USD + llm, 2),
-            "assumed_usd_per_mtok_in_out": list(USD_PER_MTOK)}
+            "max_llm_calls": n_props * (1 + settings.enrich_max_documents), "max_llm_usd": round(llm, 2),
+            "max_total_usd": round(searches * EXA_SEARCH_USD + llm, 2), "model": settings.enrich_model,
+            "rows": rows(settings), "assumed_usd_per_mtok_in_out": [settings.enrich_usd_per_mtok_in,
+                                                                   settings.enrich_usd_per_mtok_out]}
+
+
+class Spend:
+    """Running cost of a run, shared by its workers: Exa (from the gateway), Claude (from returned token usage at the
+    configured prices) and past.dev (credits sent at the configured price)."""
+
+    def __init__(self, settings, gateway):
+        self.settings, self.gateway = settings, gateway
+        self.lock = threading.Lock()
+        self.llm_usd = 0.0
+        self.pastdev_credits = 0
+
+    def add_llm(self, usage: dict) -> None:
+        with self.lock:
+            self.llm_usd += llm_usd(self.settings, usage.get("input_tokens") or 0, usage.get("output_tokens") or 0)
+
+    def add_pastdev(self, credits: int) -> None:
+        with self.lock:
+            self.pastdev_credits += credits
+
+    def report(self) -> dict:
+        with self.lock:
+            exa = self.gateway.usage.spent
+            pastdev = self.pastdev_credits * self.settings.pastdev_usd_per_credit
+            return {"exa_usd": round(exa, 4), "llm_usd": round(self.llm_usd, 4), "pastdev_credits": self.pastdev_credits,
+                    "pastdev_usd": round(pastdev, 4), "total_usd": round(exa + self.llm_usd + pastdev, 4)}
 
 
 CLAIMS_SQL = """
@@ -140,9 +176,12 @@ def quote_in_text(quote: str | None, text: str) -> bool:
 
 class Enricher:
     def __init__(self, conn, settings, *, llm, gateway, fetcher, client, country: str = "MX",
-                 sleep=time.sleep, now=None):
+                 sleep=time.sleep, now=None, spend: Spend | None = None, max_usd: float | None = None):
         self.conn, self.settings, self.llm, self.gateway, self.fetcher, self.client = (
             conn, settings, llm, gateway, fetcher, client)
+        self.spend = spend or Spend(settings, gateway)
+        self.max_usd = max_usd
+        self.rows = rows(settings)
         self.country = country.upper()
         self.sleep = sleep
         self.now = now or (lambda: datetime.now(timezone.utc))
@@ -154,14 +193,16 @@ class Enricher:
             "values": prop["vals"], "place": prop["place"], "period_start": str(prop["period_start"] or ""),
             "period_end": str(prop["period_end"] or ""), "claim_types": prop["claim_types"],
             "stated_at": prop["stated_at"].date().isoformat(), "quotes": [c["quote"] for c in claims[:3]],
+            "rows_to_write": self.rows,
         }, ensure_ascii=False)
         out, usage = self.llm.extract(PLAN_SYSTEM, prompt, {"input_schema": PLAN_SCHEMA})
-        seen, rows = set(), []
+        self.spend.add_llm(usage)
+        seen, planned = set(), []
         for q in out.get("queries") or []:
-            if q["row"] in ROWS and q["row"] not in seen and not q["skip"] and q["query"].strip():
+            if q["row"] in self.rows and q["row"] not in seen and not q["skip"] and q["query"].strip():
                 seen.add(q["row"])
-                rows.append(q)
-        return rows, usage
+                planned.append(q)
+        return planned, usage
 
     def _domains(self, classes: list[str]) -> list[str]:
         return [r["domain"] for r in self.conn.execute(
@@ -238,6 +279,7 @@ class Enricher:
                      "url": doc["resolved_url"], "text": text},
         }, ensure_ascii=False)
         out, usage = self.llm.extract(ASSESS_SYSTEM, prompt, {"input_schema": ASSESS_SCHEMA})
+        self.spend.add_llm(usage)
         quote = (out.get("quote") or "").strip() or None
         verified = quote_in_text(quote, fetched["text"])
         link = {
@@ -276,6 +318,7 @@ class Enricher:
                 stances[key] = stances.get(key, 0) + 1
             pushed = projection.project(self.conn, self.client, prop, claims, country=self.country,
                                         mapper_version=self.settings.mapper_version, sleep=self.sleep, now=self.now)
+            self.spend.add_pastdev(pushed.get("credits_sent", 0))
         except Exception:
             self._set_status(prop, "queued")
             raise
@@ -295,7 +338,11 @@ class Enricher:
 
     def run(self, politician_ids: list[str] | None, limit: int | None) -> dict:
         results, errors, seen = [], [], []
+        stopped = None
         while limit is None or len(seen) < limit:
+            if self.max_usd is not None and self.spend.report()["total_usd"] >= self.max_usd:
+                stopped = "max_usd"
+                break
             prop = claim_next(self.conn, politician_ids, self.settings.mapper_version, seen)
             if prop is None:
                 break
@@ -305,13 +352,13 @@ class Enricher:
             except Exception as exc:  # one proposition's failure must not stop the batch
                 log.error("enrich.failed", proposition_id=prop["proposition_id"], error=str(exc)[:300])
                 errors.append({"proposition_id": prop["proposition_id"], "error": str(exc)[:300]})
-        return {"propositions": len(results), "results": results, "errors": errors,
-                "exa_usd": round(self.gateway.usage.spent, 4)}
+        return {"propositions": len(results), "results": results, "errors": errors, "stopped": stopped,
+                "spend": self.spend.report()}
 
 
 def dry_run(conn, settings, politician_ids: list[str] | None, limit: int | None) -> dict:
     props = queued(conn, politician_ids, limit)
     return {"dry_run": True, "propositions": len(props),
-            **estimate(len(props), settings.enrich_max_documents, settings.enrich_page_chars),
+            **estimate(settings, len(props)),
             "top": [{"proposition_id": p["proposition_id"], "claim": p["canonical_text"],
                      "politicians": p["politician_ids"], "priority": round(p["priority"], 2)} for p in props[:20]]}

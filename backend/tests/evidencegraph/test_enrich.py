@@ -303,3 +303,18 @@ def test_pull_merges_one_post_across_propositions():
     b = _evidence_claim_posts({"dataPointId": "clm-b-x"}, {"politician": {"system_a_person_id": PID},
                                                           "claims": [{"oriane_id": "o1", "claim_id": "c2"}]})
     assert a[0][0] == b[0][0]
+
+
+def test_rows_setting_and_spend_cap(conn, ev_settings, tmp_path):
+    _setup(conn)
+    _claim(conn, "b", "prop-second")
+    run_intake(conn, [PID], mapper_version="m1")
+    settings = ev_settings.model_copy(update={"enrich_rows": "neutral"})
+    assert dry_run(conn, settings, None, None)["max_exa_searches"] == 2
+    exa = FakeExa()
+    enricher, _ = _enricher(conn, settings, tmp_path, FakePast(), exa=exa)
+    enricher.max_usd = 0.001
+    out = enricher.run(None, None)
+    assert out["propositions"] == 1 and out["stopped"] == "max_usd"
+    assert len(exa.calls) == 1 and out["spend"]["exa_usd"] > 0 and out["spend"]["pastdev_credits"] > 0
+    assert conn.execute("SELECT count(*) AS n FROM ev_proposition_queue WHERE status = 'queued'").fetchone()["n"] == 1
