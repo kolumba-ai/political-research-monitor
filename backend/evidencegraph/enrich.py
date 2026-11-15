@@ -106,13 +106,31 @@ ORDER BY d.stated_at, d.claim_id
 """
 
 
-def queued(conn, politician_ids: list[str] | None, limit: int) -> list[dict]:
-    return conn.execute(
-        "SELECT q.*, p.canonical_text, p.subject, p.predicate, p.vals, p.place, p.period_start, p.period_end, "
-        "p.topic_id FROM ev_proposition_queue q JOIN proposition p USING (proposition_id) "
-        "WHERE q.status = 'queued' AND (%s::text[] IS NULL OR q.politician_ids && %s::text[]) "
-        "ORDER BY q.priority DESC, q.proposition_id LIMIT %s",
-        (politician_ids or None, politician_ids or None, limit)).fetchall()
+# A proposition left `mapping` longer than this (worker killed mid-run) is available again.
+MAPPING_LEASE_MINUTES = 60
+READY = ("(q.status = 'queued' OR (q.status = 'mapping' AND q.updated_at < now() - make_interval(mins => %(lease)s))) "
+         "AND (%(pids)s::text[] IS NULL OR q.politician_ids && %(pids)s::text[])")
+PROP_SQL = ("SELECT q.*, p.canonical_text, p.subject, p.predicate, p.vals, p.place, p.period_start, p.period_end, "
+            "p.topic_id FROM ev_proposition_queue q JOIN proposition p USING (proposition_id) ")
+
+
+def queued(conn, politician_ids: list[str] | None, limit: int | None) -> list[dict]:
+    return conn.execute(PROP_SQL + "WHERE " + READY + " ORDER BY q.priority DESC, q.proposition_id LIMIT %(limit)s",
+                        {"pids": politician_ids or None, "lease": MAPPING_LEASE_MINUTES, "limit": limit}).fetchall()
+
+
+def claim_next(conn, politician_ids: list[str] | None, mapper_version: str, exclude: list[str]) -> dict | None:
+    """Atomically take the highest-priority ready proposition (`FOR UPDATE SKIP LOCKED`), so workers can share the queue."""
+    row = conn.execute(
+        "UPDATE ev_proposition_queue SET status = 'mapping', mapper_version = %(mv)s, updated_at = now() "
+        "WHERE proposition_id = (SELECT q.proposition_id FROM ev_proposition_queue q WHERE " + READY +
+        " AND NOT (q.proposition_id = ANY(%(exclude)s)) ORDER BY q.priority DESC, q.proposition_id "
+        "LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING proposition_id",
+        {"pids": politician_ids or None, "lease": MAPPING_LEASE_MINUTES, "mv": mapper_version,
+         "exclude": exclude}).fetchone()
+    if row is None:
+        return None
+    return conn.execute(PROP_SQL + "WHERE q.proposition_id = %s", (row["proposition_id"],)).fetchone()
 
 
 def quote_in_text(quote: str | None, text: str) -> bool:
@@ -243,7 +261,6 @@ class Enricher:
         if not claims:
             self._set_status(prop, "skipped", "no_current_claims")
             return {"proposition_id": prop["proposition_id"], "status": "skipped"}
-        self._set_status(prop, "mapping")
         try:
             rows, _ = self.plan(prop, claims)
             candidates = self.search(prop, rows)
@@ -276,9 +293,13 @@ class Enricher:
             "WHERE proposition_id = %s",
             (status, reason, self.settings.mapper_version, status, self.now(), self.now(), prop["proposition_id"]))
 
-    def run(self, politician_ids: list[str] | None, limit: int) -> dict:
-        results, errors = [], []
-        for prop in queued(self.conn, politician_ids, limit):
+    def run(self, politician_ids: list[str] | None, limit: int | None) -> dict:
+        results, errors, seen = [], [], []
+        while limit is None or len(seen) < limit:
+            prop = claim_next(self.conn, politician_ids, self.settings.mapper_version, seen)
+            if prop is None:
+                break
+            seen.append(prop["proposition_id"])
             try:
                 results.append(self.enrich_one(prop))
             except Exception as exc:  # one proposition's failure must not stop the batch
@@ -288,7 +309,7 @@ class Enricher:
                 "exa_usd": round(self.gateway.usage.spent, 4)}
 
 
-def dry_run(conn, settings, politician_ids: list[str] | None, limit: int) -> dict:
+def dry_run(conn, settings, politician_ids: list[str] | None, limit: int | None) -> dict:
     props = queued(conn, politician_ids, limit)
     return {"dry_run": True, "propositions": len(props),
             **estimate(len(props), settings.enrich_max_documents, settings.enrich_page_chars),
