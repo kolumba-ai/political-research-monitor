@@ -44,9 +44,13 @@ there are none. Rules:
   and the quote is in their speech; otherwise subject (claim is about them), quoted (someone reports their words),
   or mentioned.
 - modality: asserted, questioned, quoted (the uploader reports someone else's words) or satire.
-- topics: ids from the given taxonomy only.
+- topics: 1-3 ids from the given taxonomy only, most specific first. Use gestion_gobierno only when no specific
+  topic fits.
 - referenced_period: the date range the claim is about (ISO dates), or null if none is stated or implied.
-- proposition: the claim's canonical structure; values are the exact numbers with units stated in the quote.
+- proposition: the claim's canonical structure. predicate is worded affirmatively and any negation goes only in
+  negated ("no sale a defender" -> predicate "sale a defender", negated true). values are the numbers stated in the
+  quote, written as digits, with the scale word in unit ("6 mil 500 millones de pesos" -> value "6500", unit
+  "millones de pesos"; "dos puentes" -> value "2", unit "puentes").
 - checkworthiness: 0-1, high when specific, verifiable and of public interest."""
 
 
