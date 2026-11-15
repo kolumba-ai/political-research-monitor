@@ -280,7 +280,7 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("pull-pastdev", help="export the country's claim data points from past.dev (read-only, free)")
     p.add_argument("--country", default="MX")
     p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
-    p.add_argument("--workers", type=int, default=4, help="parallel past.dev reads")
+    p.add_argument("--workers", type=int, default=12, help="parallel past.dev reads")
     p.add_argument("--no-evidence", action="store_true", help="skip evidence links and documents (faster)")
     p.add_argument("--no-post-links", action="store_true",
                    help="do not read post links, accounts and proposition fields from the System B Postgres")
@@ -309,7 +309,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--dry-run", action="store_true", help="count the statements still to place; no model call")
     p.add_argument("--confirm-spend", action="store_true")
     p.add_argument("--max-units", type=_positive_int, help="place at most this many per politician")
-    p.add_argument("--workers", type=int, default=4, help="politicians judged in parallel")
+    p.add_argument("--workers", type=int, default=12, help="politicians judged in parallel")
     p = sub.add_parser("storylines-review", help="list and resolve storyline proposals the judge was unsure about")
     p.add_argument("--country", default="MX")
     p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
@@ -325,7 +325,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
     p.add_argument("--dry-run", action="store_true", help="count the storylines still without a topic; no model call")
     p.add_argument("--confirm-spend", action="store_true")
-    p.add_argument("--workers", type=int, default=4, help="politicians judged in parallel")
+    p.add_argument("--workers", type=int, default=12, help="politicians judged in parallel")
     p.add_argument("--regroup", action="store_true", help="forget the existing topics of these politicians first")
     p.add_argument("--move", nargs=2, metavar=("STORYLINE_ID", "TOPIC"),
                    help="put a storyline under a topic (id or label; an unknown label opens a new topic); no model call")
