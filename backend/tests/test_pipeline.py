@@ -1,4 +1,8 @@
 """End-to-end pipeline behaviour against the fake Exa client."""
+import re
+from datetime import datetime, timezone
+
+import polgraph.pipeline as pipeline_module
 from polgraph.pipeline import Pipeline
 
 
@@ -57,6 +61,25 @@ def test_incremental_refresh_skips_fresh_stages(settings, gateway, store, state,
     state.mark_stage("MX", "national", "stale", {})
     s3 = p.run("MX", mode="research_only", stages=["national"])
     assert "skipped" not in s3["stages"]["national"]
+
+
+def test_back_to_back_runs_get_distinct_run_ids(settings, gateway, store, state, monkeypatch):
+    fixed_now = datetime(2026, 11, 15, 7, 0, 0, tzinfo=timezone.utc)
+
+    class FixedDateTime(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return fixed_now
+
+    monkeypatch.setattr(pipeline_module, "datetime", FixedDateTime)
+    p = _pipe(settings, gateway, store, state)
+
+    first = p.run("MX", mode="research_only", stages=["democracy"])
+    second = p.run("MX", mode="research_only", stages=["democracy"])
+
+    assert first["run_id"] != second["run_id"]
+    assert re.fullmatch(r"run-MX-20261115T070000Z-[0-9a-f]{6}", first["run_id"])
+    assert re.fullmatch(r"run-MX-20261115T070000Z-[0-9a-f]{6}", second["run_id"])
 
 
 def test_human_review_unlocks_production(settings, gateway, store, state):
