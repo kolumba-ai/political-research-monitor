@@ -39,6 +39,11 @@ one line of pandas (`pd.read_json("graph/nodes.jsonl", lines=True)`).
 
 ## Snapshot status
 
-Mexico and Pakistan are researched (government structure and verified officeholders). Pakistan's provincial-assembly
-members were still being added when this snapshot was taken, so `manifest.json` → `pipeline_runs` shows which runs
-were complete. Re-run `make export` to refresh it.
+* **Mexico:** 688 popularly elected officials (President, 500 deputies, 128 senators, 32 governors, 16 borough
+  mayors, 10 municipal presidents) and the full municipal structure (2,459 municipalities + 16 boroughs).
+* **Pakistan:** national and provincial executives; members of the Balochistan, Punjab, Khyber Pakhtunkhwa,
+  Gilgit-Baltistan and Azad Kashmir assemblies (Sindh pending).
+* **All 249 countries:** regime classification.
+
+`research/unresolved_claims.jsonl` lists every claim that was rejected or stored with weaker corroboration.
+Re-run `make export` to refresh.

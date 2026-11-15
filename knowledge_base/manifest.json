@@ -1,39 +1,39 @@
 {
- "exported_at": "2026-11-15T01:18:47+00:00",
+ "exported_at": "2026-11-15T02:16:54+00:00",
  "format_version": 1,
  "counts": {
   "nodes": {
    "Country": 249,
-   "PoliticalOffice": 182,
+   "PoliticalOffice": 2636,
    "DemocracyAssessment": 365,
-   "Source": 859,
+   "Source": 1042,
    "ContactRule": 2,
    "Earth": 1,
    "Continent": 7,
-   "GovernmentLevel": 112,
-   "GovernmentBody": 161,
-   "Person": 313,
-   "Term": 334,
-   "PoliticalParty": 24
+   "GovernmentLevel": 2559,
+   "GovernmentBody": 2608,
+   "Person": 1420,
+   "Term": 1432,
+   "PoliticalParty": 28
   },
   "edges": {
-   "CONTAINS": 362,
-   "HAS_OFFICE": 182,
-   "SUPPORTED_BY": 1988,
+   "CONTAINS": 2809,
+   "HAS_OFFICE": 2636,
+   "SUPPORTED_BY": 6070,
    "HAS_ASSESSMENT": 365,
    "HAS_CONTACT_RULE": 2,
    "HAS_GOVERNMENT_LEVEL": 6,
-   "HAS_BODY": 161,
-   "HAS_TERM": 334,
-   "TERM_HELD_BY": 334,
-   "HOLDS_OFFICE": 333,
-   "MEMBER_OF_PARTY": 241
+   "HAS_BODY": 2608,
+   "HAS_TERM": 1432,
+   "TERM_HELD_BY": 1452,
+   "HOLDS_OFFICE": 1415,
+   "MEMBER_OF_PARTY": 666
   },
-  "officeholdings": 333,
-  "agent_runs": 25,
-  "unresolved_or_weak_claims": 199
+  "officeholdings": 1415,
+  "agent_runs": 37,
+  "unresolved_or_weak_claims": 507
  },
- "exa_lifetime_spend_usd": 13.7518,
+ "exa_lifetime_spend_usd": 21.2944,
  "pipeline_runs": [
   {
    "run_id": "run-MX-20261114T230040Z",
@@ -82,16 +82,64 @@
    "country": "PK",
    "status": "running",
    "finished_at": null
+  },
+  {
+   "run_id": "run-MX-20261115T015812Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T01:58:56+00:00"
+  },
+  {
+   "run_id": "run-MX-20261115T020514Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T02:05:48+00:00"
+  },
+  {
+   "run_id": "run-MX-20261115T020827Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T02:08:59+00:00"
+  },
+  {
+   "run_id": "run-MX-20261115T021005Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T02:10:37+00:00"
+  },
+  {
+   "run_id": "run-MX-20261115T021208Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T02:12:41+00:00"
+  },
+  {
+   "run_id": "run-MX-20261115T021309Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T02:13:42+00:00"
+  },
+  {
+   "run_id": "run-MX-20261115T021417Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T02:14:49+00:00"
+  },
+  {
+   "run_id": "run-MX-20261115T021503Z",
+   "country": "MX",
+   "status": "ok",
+   "finished_at": "2026-11-15T02:15:36+00:00"
   }
  ],
  "files": {
   "graph/edges.jsonl": {
-   "bytes": 1669521,
-   "sha256": "a47984de1fa1776f466786c067c0becd492fd5134434685bba4109cfa5b0cc7b"
+   "bytes": 6435304,
+   "sha256": "929dd928e9b731c580ac7635f3d31b0b4d1b078b66eca649233755b8be545eec"
   },
   "graph/nodes.jsonl": {
-   "bytes": 1396004,
-   "sha256": "a2f43d39264ae6a3157d8c188c46dc7aa5bb771a58b9eb040895f878241423ba"
+   "bytes": 5544947,
+   "sha256": "6acded777634efc8865c5abe9de52f5899ad855839fff7ae40b068c8a0e803e5"
   },
   "research/agent_runs/assembly-pk-azad-jammu-and-kashmir-f217c62a.json": {
    "bytes": 5618,
@@ -108,6 +156,14 @@
   "research/agent_runs/assembly-pk-khyber-pakhtunkhwa-b15d8e72.json": {
    "bytes": 5964,
    "sha256": "62c1c057bfcb37c72449f26b0c891eadf6a0be834e6174612bfdf56d9676ee43"
+  },
+  "research/agent_runs/assembly-pk-punjab-1be41c2a.json": {
+   "bytes": 5762,
+   "sha256": "95105732d411035dad059c2991378a49f6869e4f00bb674e4fa82d1f42e969ef"
+  },
+  "research/agent_runs/assembly-pk-sindh-bc871895.json": {
+   "bytes": 6436,
+   "sha256": "95c70f0a73a99fe0d9b71d882252de804a8f08a015ca3a2d77ffffb7ea93bb36"
   },
   "research/agent_runs/contact-mx-c6f4fab1.json": {
    "bytes": 42857,
@@ -165,9 +221,49 @@
    "bytes": 55823,
    "sha256": "7ad189feafa6a6a23c7c684750386427152e5db609028ae4829c0f61a1ede58b"
   },
+  "research/agent_runs/legislators-pk-khyber-pakhtunkhwa-general-seats-for-constituencies-pk-101-to-pk--816c7589.json": {
+   "bytes": 50115,
+   "sha256": "18e906f94e023ee536979d4321cd8f04273392a72aa0d982166ad03c2d3010a0"
+  },
   "research/agent_runs/legislators-pk-khyber-pakhtunkhwa-general-seats-for-constituencies-pk-51-to-pk-1-45adf67d.json": {
    "bytes": 77018,
    "sha256": "1c5642edc3b2a7fb334413c2be4f4efc35eb72eeb802b23668cb7d3f842c5bf5"
+  },
+  "research/agent_runs/legislators-pk-khyber-pakhtunkhwa-seats-reserved-for-women-for-minorities-non-mu-0f8d7704.json": {
+   "bytes": 26428,
+   "sha256": "80626023542d8481523ad31cab7f6bac4130146f237a6ce9b8c37d569e188952"
+  },
+  "research/agent_runs/legislators-pk-punjab-general-seats-for-constituencies-pp-1-to-pp-50-4ad11e92.json": {
+   "bytes": 36430,
+   "sha256": "a37fe0c64d343bcdd72033cb08a438b9b0b8777d1c0361cff5d08e961d879a05"
+  },
+  "research/agent_runs/legislators-pk-punjab-general-seats-for-constituencies-pp-101-to-pp-150-544abeac.json": {
+   "bytes": 140394,
+   "sha256": "a6f4be010b4c26f7a33d452054be961736fefcf4bc773333d27c30f6259c8ef1"
+  },
+  "research/agent_runs/legislators-pk-punjab-general-seats-for-constituencies-pp-151-to-pp-200-bd2b11b6.json": {
+   "bytes": 43715,
+   "sha256": "497d24c4fe7fe927065f2403aadb48953f38ca51d452b8b997f2585df7c01bc2"
+  },
+  "research/agent_runs/legislators-pk-punjab-general-seats-for-constituencies-pp-201-to-pp-250-dd1cdcec.json": {
+   "bytes": 35977,
+   "sha256": "9fc9c47f3e2d3e1dfb547005ede7880e56f6a8196324aba5e06521de35c76016"
+  },
+  "research/agent_runs/legislators-pk-punjab-general-seats-for-constituencies-pp-251-to-pp-297-27b60628.json": {
+   "bytes": 35130,
+   "sha256": "07ef8bb6474a3b1d9a71844670721f9ff985664027fb9de9f0c5587c57e9191d"
+  },
+  "research/agent_runs/legislators-pk-punjab-general-seats-for-constituencies-pp-51-to-pp-100-5f7d9ab0.json": {
+   "bytes": 35585,
+   "sha256": "e10802ea7e498e9e50022c07ed1542f7ba11299da49b9e95d64ada598d0da421"
+  },
+  "research/agent_runs/legislators-pk-punjab-seats-reserved-for-women-for-minorities-non-muslims-and-an-59ee185c.json": {
+   "bytes": 53965,
+   "sha256": "411b20dbfea6c394f4c48ffd1839c75508819be08a7975e328a0dcbe370d3d8a"
+  },
+  "research/agent_runs/legislators-pk-sindh-general-seats-for-constituencies-ps-1-to-ps-50-01a4ab72.json": {
+   "bytes": 230869,
+   "sha256": "679b6eb2891386076fc763d348174ee15333609f57fd3e5a388123570c1cb2e9"
   },
   "research/agent_runs/local-mx-32924843.json": {
    "bytes": 109454,
@@ -194,32 +290,32 @@
    "sha256": "3f5b96c244294314bf8a057ede2c8c94d8adcd81a9ed81b82548cd791d4b27ee"
   },
   "research/exa_usage_ledger.csv": {
-   "bytes": 291149,
-   "sha256": "a148ad70acfd7a1c50cfdf614c90a73f90898fae23ba24434e75c887198cb61c"
+   "bytes": 446144,
+   "sha256": "a17e9928183393ed94efae161ccdfec96bc6db3936d390a1fcd894a1ed60142e"
   },
   "research/pipeline_runs.json": {
-   "bytes": 24362,
-   "sha256": "a09c1bbbeb90bcdcf1381394ec40ae1d386995fa56f3b2bbd00e6aedae82e20a"
+   "bytes": 62592,
+   "sha256": "a5b50ae97fd83999e9b42ee34f8257945e6048984fb50cca8b7b62d397702f17"
   },
   "research/reviews.json": {
    "bytes": 2,
    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
   "research/stage_runs.json": {
-   "bytes": 3850,
-   "sha256": "d0838fa6c1957d72b54b0bf4e432b7a633623bd3dc599b2b886dae0748b3faa0"
+   "bytes": 4402,
+   "sha256": "b8f9d520dbc5c8594fb009c5c342980befc0f828bcc34094e0e98995b4c7e47e"
   },
   "research/unresolved_claims.jsonl": {
-   "bytes": 200976,
-   "sha256": "d697db087bf00ebb1b38d0fb882ec465aa8aa4add6b877e64591d59685798805"
+   "bytes": 446856,
+   "sha256": "acc6a4e3df8941e90ca7bb494864c3614595c17f241b05f9648dbaf7147217ae"
   },
   "tables/countries.csv": {
    "bytes": 30283,
    "sha256": "40a20faf59fbb588b2e14214f87f0879872767ac2d92220d3a29f6ec5c00fc99"
   },
   "tables/officeholders.csv": {
-   "bytes": 229180,
-   "sha256": "f4dee208d2bd01da92b5c9f1ed9b46941073912b536ae33220ff78ebf0ab1f70"
+   "bytes": 715215,
+   "sha256": "7abbc99209ba9b61323bd3d8711b44476867ca1f6c0633066ebc79a28c02df27"
   }
  },
  "not_included": [

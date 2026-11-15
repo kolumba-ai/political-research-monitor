@@ -24,6 +24,33 @@
  },
  {
   "country": "MX",
+  "stage": "directories",
+  "completed_at": "2026-11-15T02:15:32+00:00",
+  "status": "ok",
+  "summary": {
+   "mx_federal_deputies": {
+    "deputies": 500,
+    "district": 300,
+    "list": 200,
+    "removed_not_on_roster": 0
+   },
+   "mx_senators": {
+    "senators": 128,
+    "relative_majority": 64,
+    "first_minority": 32,
+    "proportional_list": 32,
+    "removed_not_on_roster": 0
+   },
+   "mx_municipalities": {
+    "municipalities": 2459,
+    "customary": 316,
+    "skipped_cdmx": 16,
+    "unmatched_state": 0
+   }
+  }
+ },
+ {
+  "country": "MX",
   "stage": "divisions",
   "completed_at": "2026-11-14T23:15:51+00:00",
   "status": "ok",

@@ -165,3 +165,26 @@ def test_person_display_name_is_cleaned_and_merged(store):
     a = w.person("PK", "Mr. Abdul Majeed Badini")
     b = w.person("PK", "Abdul Majeed Badini")
     assert a == b and store.get_node(a)["name"] == "Abdul Majeed Badini"
+
+
+@pytest.mark.parametrize("a,b,expected", [
+    ("María Teresa Ealy Díaz", "María Teresa Jiménez Esquivel", False),   # compound given name only
+    ("Miguel Ángel Salim Alle", "Miguel Ángel Navarro Quintero", False),
+    ("Víctor Manuel Pérez Díaz", "Víctor Manuel Castro Cosío", False),
+    ("Juan Carlos", "Juan Carlos Valladares Eichelmann", False),          # given names are not surnames
+    ("Maryam Nawaz Sharif", "Maryam Nawaz", True),
+    ("Miguel Ángel Navarro Quintero", "Miguel Ángel Navarro", True),
+])
+def test_same_person_never_matches_on_given_names_alone(a, b, expected):
+    assert same_person(a, b) is expected
+
+
+@pytest.mark.parametrize("a,b,expected", [
+    ("José Antonio Gali López", "José Antonio López Ruíz", False),     # maternal of one = paternal of other
+    ("José Alejandro Aguilar López", "José Antonio López Ruíz", False),
+    ("José Antonio López Ruíz", "José Antonio López Pérez", False),    # same paternal, conflicting maternal
+    ("Miguel Ángel Navarro Quintero", "Miguel Ángel Navarro", True),
+    ("Muhammad Iqbal Khan", "Iqbal Khan", True),
+])
+def test_same_person_surname_structure(a, b, expected):
+    assert same_person(a, b) is expected

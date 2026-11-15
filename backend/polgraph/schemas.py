@@ -27,13 +27,14 @@ class SelectionMethod(str, Enum):
     mixed = "mixed"
     hereditary = "hereditary"
     ex_officio = "ex_officio"
+    customary_election = "customary_election"   # e.g. usos y costumbres community assemblies
     unknown = "unknown"
 
 
 def office_is_elected(method: SelectionMethod | str | None) -> Optional[bool]:
     """Whether the *office* is filled by election. Says nothing about who may run for it."""
     m = SelectionMethod(method) if method else SelectionMethod.unknown
-    if m in (SelectionMethod.direct_election, SelectionMethod.indirect_election):
+    if m in (SelectionMethod.direct_election, SelectionMethod.indirect_election, SelectionMethod.customary_election):
         return True
     if m in (SelectionMethod.appointment, SelectionMethod.hereditary, SelectionMethod.ex_officio):
         return False

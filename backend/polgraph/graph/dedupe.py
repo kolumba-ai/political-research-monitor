@@ -11,23 +11,46 @@ def same_person(a: str, b: str) -> bool:
     return any(_same_tokens(ta, tb) for ta in name_variants(a) for tb in name_variants(b))
 
 
+def _readings(t: list[str]) -> list[tuple[list[str], str, str | None]]:
+    """Possible (given names, paternal surname, maternal surname|None) readings of a given-name-first name.
+    2 words: given + surname. 4+ words: given… + paternal + maternal. 3 words are ambiguous:
+    'Clara Brugada Molina' (given + 2 surnames) or 'Miguel Ángel Navarro' (2 given + surname)."""
+    if len(t) == 2:
+        return [([t[0]], t[1], None)]
+    if len(t) == 3:
+        return [([t[0]], t[1], t[2]), (t[:2], t[2], None)]
+    return [(t[:-2], t[-2], t[-1])]
+
+
+def _given_compatible(a: list[str], b: list[str]) -> bool:
+    short, long_ = (a, b) if len(a) <= len(b) else (b, a)
+    return long_[:len(short)] == short
+
+
 def _same_tokens(ta: list[str], tb: list[str]) -> bool:
-    """Conservative name match: same first given name and at least one shared surname (>=3 chars),
-    or one token set contains the other with >=2 tokens. Handles accents, honorifics, particles
-    and the Spanish double-surname convention ('Claudia Sheinbaum' == 'Claudia Sheinbaum Pardo')."""
+    """Name match on surname STRUCTURE, never on shared given names or crossed surnames.
+
+    Two names match if some reading of each has the same paternal surname, maternal surnames that don't
+    conflict, and given names where one is a prefix of the other. So 'Claudia Sheinbaum' == 'Claudia
+    Sheinbaum Pardo' and 'Clara Brugada Molina' == 'Clara Marina Brugada Molina', but not
+    'María Teresa Ealy Díaz' / 'María Teresa Jiménez Esquivel' (shared given names), 'Juan Pérez López' /
+    'Juan García López' (shared maternal surname), or 'José Antonio Gali López' / 'José Antonio López Ruíz'
+    (one's maternal surname is the other's paternal surname)."""
     if len(ta) < 2 or len(tb) < 2:
         return False
     if ta == tb:
         return True
-    sa, sb = set(ta), set(tb)
-    if (sa <= sb or sb <= sa) and min(len(sa), len(sb)) >= 2 and ta[0] == tb[0]:
-        return True
     if ta[0] != tb[0]:
         return False
-    shared = {t for t in sa & sb if len(t) >= 3} - {ta[0]}
-    # Require the shared surname to be the first surname of at least one of the two names,
-    # so 'Juan Pérez López' and 'Juan García López' (shared maternal surname only) don't merge.
-    return bool(shared) and (ta[1] in shared or tb[1] in shared)
+    for ga, pa, ma in _readings(ta):
+        for gb, pb, mb in _readings(tb):
+            if pa != pb or len(pa) < 3:
+                continue
+            if ma and mb and ma != mb:
+                continue
+            if _given_compatible(ga, gb):
+                return True
+    return False
 
 
 def find_person(store, iso2: str, name: str) -> dict | None:

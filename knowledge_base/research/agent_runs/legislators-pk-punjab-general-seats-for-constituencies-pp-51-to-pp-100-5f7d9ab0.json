@@ -1,0 +1,1408 @@
+{
+ "purpose": "legislators:PK:Punjab:general seats for constituencies PP-51 to PP-100",
+ "query": "List the CURRENT members of the Provincial Assembly of the Punjab (Punjab, Pakistan) holding the general seats for constituencies PP-51 to PP-100, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_e6a32bea4d61493d98fd2b931c7ec612",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T01:36:30+00:00",
+ "cost_dollars": {
+  "total": 0.7723,
+  "agent_compute": 0.5623,
+  "search": 0.21,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Zeeshan Rafique",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/profile/en/22/1806"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-51",
+    "constituency_name": "Sialkot-VIII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Hina Arshad Warraich",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2025-06-12",
+    "by_election": true,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/byname/en/22?byname=H",
+     "https://www.brecorder.com/news/40367491",
+     "https://www.app.com.pk/national/ecp-notifies-hina-arshad-warraichs-victory-in-pp-52-sialkot-by-polls/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-52",
+    "constituency_name": "Sialkot-IX"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Rana Abdul Sattar",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-53",
+    "constituency_name": "Sialkot-X"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ahmad Iqbal Chaudhary",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-04-29",
+    "by_election": true,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/profile/en/22/2039",
+     "https://english.aaj.tv/news/330358861/by-election-ecp-issues-form-47-results-for-22-constituencies"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-54",
+    "constituency_name": "Narowal-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mehmood Ahmad",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Tehreek-e-Labbaik Pakistan",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "TLP",
+    "constituency_code": "PP-55",
+    "constituency_name": "Narowal-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mannan Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-56",
+    "constituency_name": "Narowal-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Khawaja Mohammad Waseem",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-57",
+    "constituency_name": "Narowal-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Bilal Akbar Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-58",
+    "constituency_name": "Narowal-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Nasir Cheema",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-59",
+    "constituency_name": "Gujranwala-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Kaleem Ullah Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-60",
+    "constituency_name": "Gujranwala-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Imran Khalid Butt",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-61",
+    "constituency_name": "Gujranwala-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Nawaz Chohan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-62",
+    "constituency_name": "Gujranwala-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Chaudhry Muhammad Tariq",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Tehreek-e-Insaf",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PTI",
+    "constituency_code": "PP-63",
+    "constituency_name": "Gujranwala-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Umar Farooq Dar",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-64",
+    "constituency_name": "Gujranwala-VI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Hassan Ali",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-65",
+    "constituency_name": "Gujranwala-VII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Qaiser Iqbal",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-66",
+    "constituency_name": "Gujranwala-VIII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Akhtar Ali Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-67",
+    "constituency_name": "Gujranwala-IX"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mian Arqam Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-68",
+    "constituency_name": "Gujranwala-X"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Irfan Bashir",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-69",
+    "constituency_name": "Gujranwala-XI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Tashakul Abbas Warraich",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-70",
+    "constituency_name": "Gujranwala-XII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sohaib Ahmed Malik",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-71",
+    "constituency_name": "Sargodha-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mansoor Azam",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-72",
+    "constituency_name": "Sargodha-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mian Sultan Ali Ranjha",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2025-11-28",
+    "by_election": true,
+    "source_urls": [
+     "https://www.pakistantoday.com.pk/2025/11/28/ecp-notifies-winners-of-by-elections-as-five-pml-n-mnas-sworn-in",
+     "https://www.dunyanews.tv/en/Pakistan/920626-punjab-assemblys-newly-elected-mps-take-oath-amid-opposition-uproar"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-73",
+    "constituency_name": "Sargodha-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ikram Ul Haq",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-74",
+    "constituency_name": "Sargodha-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ali Asif",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/profile/en/22/1868"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-75",
+    "constituency_name": "Sargodha-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Zulfiqar Ali",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-76",
+    "constituency_name": "Sargodha-VI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Safdar Hussain Sahi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-77",
+    "constituency_name": "Sargodha-VII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Rana Munawar Hussain",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-78",
+    "constituency_name": "Sargodha-VIII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Taimur Ali Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-79",
+    "constituency_name": "Sargodha-IX"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sardar Muhammad Asim Sher Maken",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-80",
+    "constituency_name": "Sargodha-X"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Hassan Malik",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-81",
+    "constituency_name": "Khushab-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Asif Malik",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-82",
+    "constituency_name": "Khushab-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ali Hussain Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-83",
+    "constituency_name": "Khushab-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Fateh Khaliq",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-84",
+    "constituency_name": "Khushab-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Iqbal",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-85",
+    "constituency_name": "Mianwali-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Amin Ullah Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-86",
+    "constituency_name": "Mianwali-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ali Haider Noor Niazi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2025-11-28",
+    "by_election": true,
+    "source_urls": [
+     "https://www.pakistantoday.com.pk/2025/11/28/ecp-notifies-winners-of-by-elections-as-five-pml-n-mnas-sworn-in",
+     "https://www.dunyanews.tv/en/Pakistan/920626-punjab-assemblys-newly-elected-mps-take-oath-amid-opposition-uproar"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-87",
+    "constituency_name": "Mianwali-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mumtaz Ahmad",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-88",
+    "constituency_name": "Mianwali-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ameer Muhammad Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-89",
+    "constituency_name": "Bhakkar-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ahmad Nawaz Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-90",
+    "constituency_name": "Bhakkar-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ghazanfar Abbas",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Istehkam-e-Pakistan Party",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "IPP",
+    "constituency_code": "PP-91",
+    "constituency_name": "Bhakkar-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Aamir Inayat Shahani",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-92",
+    "constituency_name": "Bhakkar-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Saeed Akbar Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": true,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all",
+     "https://english.aaj.tv/news/330358861/by-election-ecp-issues-form-47-results-for-22-constituencies"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-93",
+    "constituency_name": "Bhakkar-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Taimoor Ali Lali",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-94",
+    "constituency_name": "Chiniot-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Ilyas",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-95",
+    "constituency_name": "Chiniot-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Zulfiqar Ali Shah",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-96",
+    "constituency_name": "Chiniot-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Saqib Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-97",
+    "constituency_name": "Chiniot-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Azad Ali Tabassum",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2025-11-28",
+    "by_election": true,
+    "source_urls": [
+     "https://www.pakistantoday.com.pk/2025/11/28/ecp-notifies-winners-of-by-elections-as-five-pml-n-mnas-sworn-in",
+     "https://www.dunyanews.tv/en/Pakistan/920626-punjab-assemblys-newly-elected-mps-take-oath-amid-opposition-uproar"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-98",
+    "constituency_name": "Faisalabad-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ahmad Mujtaba Chaudhary",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-99",
+    "constituency_name": "Faisalabad-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Khan Bahadar",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing?limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-100",
+    "constituency_name": "Faisalabad-III"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/profile/en/22/1806",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/byname/en/22?byname=H",
+     "title": null
+    },
+    {
+     "url": "https://www.brecorder.com/news/40367491",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-notifies-hina-arshad-warraichs-victory-in-pp-52-sialkot-by-polls/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/profile/en/22/2039",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/330358861/by-election-ecp-issues-form-47-results-for-22-constituencies",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[15]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[16]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[17]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[18]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[19]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[20]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[21]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[22]",
+   "citations": [
+    {
+     "url": "https://www.pakistantoday.com.pk/2025/11/28/ecp-notifies-winners-of-by-elections-as-five-pml-n-mnas-sworn-in",
+     "title": null
+    },
+    {
+     "url": "https://www.dunyanews.tv/en/Pakistan/920626-punjab-assemblys-newly-elected-mps-take-oath-amid-opposition-uproar",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[23]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[24]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/profile/en/22/1868",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[25]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[26]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[27]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[28]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[29]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[30]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[31]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[32]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[33]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[34]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[35]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[36]",
+   "citations": [
+    {
+     "url": "https://www.pakistantoday.com.pk/2025/11/28/ecp-notifies-winners-of-by-elections-as-five-pml-n-mnas-sworn-in",
+     "title": null
+    },
+    {
+     "url": "https://www.dunyanews.tv/en/Pakistan/920626-punjab-assemblys-newly-elected-mps-take-oath-amid-opposition-uproar",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[37]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[38]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[39]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[40]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[41]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[42]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    },
+    {
+     "url": "https://english.aaj.tv/news/330358861/by-election-ecp-issues-form-47-results-for-22-constituencies",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[43]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[44]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[45]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[46]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[47]",
+   "citations": [
+    {
+     "url": "https://www.pakistantoday.com.pk/2025/11/28/ecp-notifies-winners-of-by-elections-as-five-pml-n-mnas-sworn-in",
+     "title": null
+    },
+    {
+     "url": "https://www.dunyanews.tv/en/Pakistan/920626-punjab-assemblys-newly-elected-mps-take-oath-amid-opposition-uproar",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[48]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[49]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing?limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "50 general-seat members for PP-51–PP-100 as of 2026-11-15. Six members entered through by-elections: PP-52, PP-54, PP-73, PP-87, PP-93 and PP-98. The assembly’s directory still displays former occupants for some seats; subsequent election notifications and oath reports determine those entries."
+}

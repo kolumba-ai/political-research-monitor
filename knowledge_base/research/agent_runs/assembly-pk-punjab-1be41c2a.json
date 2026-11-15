@@ -1,0 +1,209 @@
+{
+ "purpose": "assembly:PK:Punjab",
+ "query": "For the Provincial Assembly of the Punjab (Punjab, Pakistan) give its current composition: total seats, number of general (constituency) seats and how they are filled, the constituency code prefix and the first and last constituency numbers (e.g. PP-1 to PP-297), the number of seats reserved for women, for minorities/non-Muslims and any other reserved category and how reserved seats are filled, the date of the last general election, and the URL of the official page listing current members.",
+ "run_id": "agent_run_b3c666e4a5224c4985c5e846b6c48c98",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T01:31:42+00:00",
+ "cost_dollars": {
+  "total": 0.2459,
+  "agent_compute": 0.2009,
+  "search": 0.045,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "source_urls": [
+   "https://www.pap.gov.pk/public/faqs",
+   "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+   "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+  ],
+  "total_seats": 371,
+  "general_seats": 297,
+  "reserved_other": 0,
+  "reserved_women": 66,
+  "constituency_last": 297,
+  "constituency_first": 1,
+  "constituency_prefix": "PP",
+  "reserved_minorities": 8,
+  "official_members_url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+  "last_general_election": "2024-02-08",
+  "reserved_selection_method": "indirect_election",
+  "general_seat_selection_method": "direct_election"
+ },
+ "grounding": [
+  {
+   "field": "structured.total_seats",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.general_seats",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.general_seat_selection_method",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_prefix",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_first",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.constituency_last",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_women",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_minorities",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_other",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.reserved_selection_method",
+   "citations": [
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.last_general_election",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.official_members_url",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.source_urls",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/public/faqs",
+     "title": null
+    },
+    {
+     "url": "https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf",
+     "title": null
+    },
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "{\"total_seats\":371,\"general_seats\":297,\"general_seat_selection_method\":\"direct_election\",\"constituency_prefix\":\"PP\",\"constituency_first\":1,\"constituency_last\":297,\"reserved_women\":66,\"reserved_minorities\":8,\"reserved_other\":0,\"reserved_selection_method\":\"indirect_election\",\"last_general_election\":\"2024-02-08\",\"official_members_url\":\"https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all\",\"source_urls\":[\"https://www.pap.gov.pk/public/faqs\",\"https://www.na.gov.pk/uploads/documents/67b5658558e94_594.pdf\",\"https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all\"]}"
+}

@@ -79,9 +79,24 @@ class GraphWriter:
                   country=iso2.upper(), aliases=sorted(aliases))
         return pid
 
-    def person(self, iso2: str, full_name: str) -> str:
+    def _holds_other_seat(self, person_id: str, office_node_id: str) -> bool:
+        """True if the person currently holds a seat in a multi-seat office other than this one.
+        Nobody holds two legislative seats at once, so a second seat means a namesake."""
+        for e, o in self.store.edges(person_id, "HOLDS_OFFICE", "out"):
+            if o["id"] != office_node_id and e.get("current") and o.get("single_seat") is False:
+                return True
+        return False
+
+    def person(self, iso2: str, full_name: str, seat_office: str | None = None, seat_key: str | None = None) -> str:
+        """Resolve or create a Person. `seat_office` (for multi-seat offices) prevents merging with a
+        same-named person who already holds a different seat; `seat_key` disambiguates the new id."""
         full_name = clean_display_name(full_name)
         existing = find_person(self.store, iso2, full_name)
+        if existing and seat_office and self._holds_other_seat(existing["id"], seat_office):
+            pid = f"{ids.person_id(iso2, full_name)}-{ids.short_hash(seat_office + '|' + (seat_key or ''), 6)}"
+            self.node(pid, "Person", name=full_name, country=iso2.upper(), aliases=[],
+                      namesake_of=existing["id"])
+            return pid
         if existing:
             aliases = set(existing.get("aliases") or [])
             # Keep the longest form as the display name (usually includes both surnames).
@@ -104,7 +119,9 @@ class GraphWriter:
         filtered out by the caller (they go to the unresolved-claims log, not the graph)."""
         if ver.status == EvidenceStatus.unsupported:
             raise ValueError("unsupported claims are not persisted")
-        pid = self.person(iso2, claim.full_name)
+        seat_key = (extra or {}).get("constituency_code") or claim.full_name
+        pid = self.person(iso2, claim.full_name, seat_office=None if single_seat else office_node_id,
+                          seat_key=seat_key)
         tid = ids.term_id(office_node_id, pid, claim.term_start)
         prov = {**self.provenance(ver.status.value, ver.confidence), **(extra or {})}
         self.node(tid, "Term", name=f"{claim.full_name} — term from {claim.term_start or '?'}",

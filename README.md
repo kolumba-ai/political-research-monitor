@@ -71,6 +71,22 @@ The complete graph and its research provenance are committed in [knowledge_base/
 Load it with `make import-kb`, with no Exa key needed; refresh it with `make export`. See
 [knowledge_base/README.md](knowledge_base/README.md).
 
+## Official directories (opt-in stage)
+
+`--stages directories` ingests complete official rosters fetched with Exa Contents and parsed deterministically.
+The roster page is the evidence (authority tier 1), so there's no Agent cost. For Mexico this covers:
+all 500 federal deputies (300 district + 200 proportional list) and 128 senators (64 majority, 32 first minority,
+32 list), plus every municipality (2,459, plus Mexico City's 16 boroughs) from the INAFED register, each labelled
+party election or *usos y costumbres* (customary assembly). After loading, a roster is **reconciled**:
+anyone no longer on it is set to `current: false`, with history kept.
+
+## Person matching and repair
+
+People are matched on surname structure (given names → paternal → maternal), never on shared given names alone,
+and nobody can hold two legislature seats at once. So namesakes in different assemblies stay separate.
+`python -m polgraph repair-people --country MX` regroups each person's holdings by the names originally claimed
+and splits any wrong merges. It's idempotent.
+
 ## Regime classification (all countries)
 
 `python -m polgraph classify-world` gives every country a `regime_group`: **Democratic**, **Partly democratic**,
@@ -184,9 +200,11 @@ This is a research and compliance assessment, **not legal authorization**. The s
 
 ## Limitations
 
-* National legislators are not yet populated individually (only chamber leadership); provincial legislators are,
-  for Pakistan, via the opt-in `legislators` stage. Municipal coverage is the largest municipalities plus
-  special jurisdictions, not every municipality.
+* Mexico: 688 popularly elected officials are populated (President, all 628 federal legislators, 32 governors,
+  16 borough mayors, 10 municipal presidents). Not yet: ~1,098 state deputies, current presidents of the other
+  ~2,449 municipalities (the official INAFED register lists only expired 2021–2024 terms), ~15,700 trustees and
+  councillors, and elected federal judges. Federal deputies' party affiliation is not on the roster page and is left empty.
+* Pakistan: provincial assemblies are populated except Sindh (paused).
 * The Agent can misclassify *how an office is filled* (e.g. Pakistan's Prime Minister labelled "appointment").
   Verification checks who holds an office, not its selection method.
 * Re-research never deletes offices that a newer run no longer reports.

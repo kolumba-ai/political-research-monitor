@@ -36,7 +36,7 @@ STRUCTURE_STAGES = ["national", "divisions", "local", "special"]
 ALL_STAGES = ELIGIBILITY_STAGES + STRUCTURE_STAGES
 # Opt-in (run with --stages legislators): individual members of first-level legislatures. Expensive —
 # one Agent run per ~50 constituencies — so it is not part of the default build.
-OPTIONAL_STAGES = ["legislators"]
+OPTIONAL_STAGES = ["legislators", "directories"]
 CHUNK = 50
 
 DISCLAIMER = ("Research and compliance assessment only — not legal advice or authorisation. "
@@ -123,7 +123,7 @@ class Pipeline:
         ttl = {"democracy": self.s.ttl_democracy_days, "contact": self.s.ttl_contact_days,
                "national": self.s.ttl_structure_days, "divisions": self.s.ttl_officeholders_days,
                "local": self.s.ttl_officeholders_days, "special": self.s.ttl_officeholders_days,
-               "legislators": self.s.ttl_officeholders_days}[stage]
+               "legislators": self.s.ttl_officeholders_days, "directories": self.s.ttl_officeholders_days}[stage]
         stage_key = stage if stage != "legislators" or not getattr(self, "_divisions", None) \
             else f"legislators:{','.join(sorted(self._divisions))}"
         if not force and self.state.stage_fresh(country.iso2, stage_key, ttl):
@@ -534,6 +534,22 @@ class Pipeline:
             out["members_persisted"] += a_stats["persisted"]
             out["members_unresolved"] += a_stats["unresolved"]
             log.info("legislators.assembly_done", division=u["iso_3166_2"], **a_stats)
+        return out
+
+    # ================================================================== official directories (opt-in)
+    def _stage_directories(self, country: CountryRecord, w: GraphWriter, ttl_hours) -> dict:
+        from .directories import ADAPTERS
+        adapters = ADAPTERS.get(country.iso2, [])
+        if not adapters:
+            raise ValueError(f"no official-directory adapters registered for {country.iso2}")
+        out = {}
+        for fn in adapters:
+            try:
+                out[fn.__name__] = fn(self.gw, self.store, w, country)
+            except (RuntimeError, ValueError) as exc:
+                log.error("directory.failed", adapter=fn.__name__, error=str(exc)[:300])
+                out[fn.__name__] = {"failed": str(exc)[:300]}
+            log.info("directory.done", adapter=fn.__name__, result=out[fn.__name__])
         return out
 
     # ================================================================== reporting

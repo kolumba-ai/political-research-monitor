@@ -1,0 +1,1939 @@
+{
+ "purpose": "legislators:PK:Khyber Pakhtunkhwa:general seats for constituencies PK-101 to PK-115",
+ "query": "List the CURRENT members of the Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa, Pakistan) holding the general seats for constituencies PK-101 to PK-115, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_07bd298cb94246d3a4f6f04211cc2afd",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T01:21:27+00:00",
+ "cost_dollars": {
+  "total": 0.4386,
+  "agent_compute": 0.2676,
+  "search": 0.171,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Adnan Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": "PK-101",
+    "constituency_name": "Bannu-III"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Akram Khan Durrani",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": "PK-102",
+    "constituency_name": "Bannu-IV"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Muhammad Iqbal Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Tehreek-e-Insaaf Parliamentarians (PTIP)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": "PTIP",
+    "constituency_code": "PK-103",
+    "constituency_name": "North Waziristan-I"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Nek Muhammad Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-104",
+    "constituency_name": "North Waziristan-II"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Johar Muhammad",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-105",
+    "constituency_name": "Lakki Marwat-I"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Hisham Inam Ullah Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PK-106",
+    "constituency_name": "Lakki Marwat-II"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Tariq Saeed",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-107",
+    "constituency_name": "Lakki Marwat-III"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Muhammad Usman",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-108",
+    "constituency_name": "Tank"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Asif Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-109",
+    "constituency_name": "South Waziristan Upper"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Ajab Gul",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-110",
+    "constituency_name": "South Waziristan Lower"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Makhdoom Zada Muhammad Aftab Haider",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": "PK-111",
+    "constituency_name": "Dera Ismail Khan-I"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Ahmad Kundi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": "PK-112",
+    "constituency_name": "Dera Ismail Khan-II"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Ali Amin Gandapur",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": null,
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": null,
+    "constituency_code": "PK-113",
+    "constituency_name": "Dera Ismail Khan-III"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Lutf ur Rahman",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": "PK-114",
+    "constituency_name": "Dera Ismail Khan-IV"
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Ehsan Ullah Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "https://www.pakp.gov.pk/members/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": "PK-115",
+    "constituency_name": "Dera Ismail Khan-V"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].party_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].party_acronym",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[0].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[1].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].party_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].party_acronym",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[2].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].party_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].party_acronym",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[3].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[4].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[5].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].party_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].party_acronym",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[6].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[7].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[8].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[9].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[10].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].party_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].party_acronym",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[11].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].party_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].party_acronym",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[12].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[13].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].party_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].party_acronym",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[14].full_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].party_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].party_acronym",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].term_start",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].term_end",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].is_acting",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].source_urls",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].constituency_code",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].constituency_name",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].seat_type",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14].by_election",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  }
+ ],
+ "text": "{\"members\":[{\"full_name\":\"Adnan Khan\",\"party_name\":\"Jamiat Ulema Islam (F)\",\"party_acronym\":\"JUI-F\",\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/adnan-khan-pk-101-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-101\",\"constituency_name\":\"Bannu-III\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Akram Khan Durrani\",\"party_name\":\"Jamiat Ulema Islam (F)\",\"party_acronym\":\"JUI-F\",\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/akram-khan-durrani-pk-90-2018/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-102\",\"constituency_name\":\"Bannu-IV\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Muhammad Iqbal Khan\",\"party_name\":\"Pakistan Tehreek-e-Insaaf Parliamentarians (PTIP)\",\"party_acronym\":\"PTIP\",\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/muhammad-iqbal-khan-pk-111-2018/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-103\",\"constituency_name\":\"North Waziristan-I\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Nek Muhammad Khan\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/nek-muhammad-khan-pk-104-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-104\",\"constituency_name\":\"North Waziristan-II\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Johar Muhammad\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/johar-muhammad-pk-105-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-105\",\"constituency_name\":\"Lakki Marwat-I\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Hisham Inam Ullah Khan\",\"party_name\":\"Pakistan Muslim League (N)\",\"party_acronym\":\"PML-N\",\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/hisham-inam-ullah-khan-pk-92-2018/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-106\",\"constituency_name\":\"Lakki Marwat-II\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Tariq Saeed\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/tariq-saeed-pk-107-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-107\",\"constituency_name\":\"Lakki Marwat-III\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Muhammad Usman\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/muhammad-usman-pk-108-2024-2/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-108\",\"constituency_name\":\"Tank\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Asif Khan\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/asif-khan-pk-109-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-109\",\"constituency_name\":\"South Waziristan Upper\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Ajab Gul\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/ajab-gul-pk-110-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-110\",\"constituency_name\":\"South Waziristan Lower\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Makhdoom Zada Muhammad Aftab Haider\",\"party_name\":\"Jamiat Ulema Islam (F)\",\"party_acronym\":\"JUI-F\",\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/makhdoom-zada-muhammad-aftab-haider-pk-111-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-111\",\"constituency_name\":\"Dera Ismail Khan-I\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Ahmad Kundi\",\"party_name\":\"Pakistan Peoples Party Parliamentarians\",\"party_acronym\":\"PPPP\",\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/ahmad-kundi-pk-96-2018/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-112\",\"constituency_name\":\"Dera Ismail Khan-II\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Ali Amin Gandapur\",\"party_name\":null,\"party_acronym\":null,\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/ali-amin-gandapur-pk-113-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-113\",\"constituency_name\":\"Dera Ismail Khan-III\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Lutf ur Rahman\",\"party_name\":\"Jamiat Ulema Islam (F)\",\"party_acronym\":\"JUI-F\",\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/lutf-ur-rahman-pk-98-2018-13/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-114\",\"constituency_name\":\"Dera Ismail Khan-IV\",\"seat_type\":\"general\",\"by_election\":false},{\"full_name\":\"Ehsan Ullah Khan\",\"party_name\":\"Pakistan Peoples Party Parliamentarians\",\"party_acronym\":\"PPPP\",\"coalition\":null,\"term_start\":\"2024-02-28\",\"term_end\":\"2029\",\"is_acting\":false,\"source_urls\":[\"https://www.pakp.gov.pk/members/ehsan-ullah-khan-pk-115-2024/\",\"https://www.pakp.gov.pk/members/\"],\"constituency_code\":\"PK-115\",\"constituency_name\":\"Dera Ismail Khan-V\",\"seat_type\":\"general\",\"by_election\":false}]}"
+}

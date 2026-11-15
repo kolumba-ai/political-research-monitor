@@ -1,0 +1,1934 @@
+{
+ "purpose": "legislators:PK:Punjab:seats reserved for women, for minorities/non-Muslims and any other reserved category",
+ "query": "List the CURRENT members of the Provincial Assembly of the Punjab (Punjab, Pakistan) holding the seats reserved for women, for minorities/non-Muslims and any other reserved category, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_e937b24be8cb4e43969d32a4d8c71167",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T01:50:59+00:00",
+ "cost_dollars": {
+  "total": 0.9379,
+  "agent_compute": 0.7519,
+  "search": 0.186,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "full_name": "Zakia Khan",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Ishrat Ashraf",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Marriyum Aurangzeb",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Azma Zahid Bokhari",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Hina Parvez Butt",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Salma Saadia Temur",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Rahila Khadim Hussain",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Ayesha Javed",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Sania Ashiq Jabeen",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Salma Butt",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Kanwal Pervez Chaudhry",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Mehwish Sultana",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Nausheen Adnan",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Asma Ehtisham ul Haq",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Kausar Javed",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Uzma Jabeen",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Ambreen Ismail",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Mumtaz Begum",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Sunbal Malik Hussain",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Rukhsana Kausar",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Shazia Rizwan",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Motiya Begum",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Hameeda Mian",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Sonia Ashir",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Uzma Kardar",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Safia Saeed",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Tahia Noon",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Amina Hassan",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Asma Naz Abbasi",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Tahira Mushtaq",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Zaib Un Nisa Awan",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Fatima Begum",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Qudsia Batool",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Riffat Abbasi",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Atiya Iftikhar",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Rushda Lodhi",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Shazia Abid",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Neelam Jabbar Chaudhary",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Nargis Faiz Malik",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Tashfeen Safdar",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-Q",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Salma Saeed",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-Q",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Sarah Ahmad",
+    "seat_type": "women_reserved",
+    "party_name": "Istehkam-e-Pakistan Party",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "IPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Sadia Muzaffar",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Fizzah Mamoona",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Abida Bashir",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Maqsoodan Bibi",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Amra Khan",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Somia Atta Shahani",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Rahat Afza",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Rukhsana Shafiq",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Tahseen Fawad",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Farzana Abbas",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Shagufta Faisal",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Uzma Butt",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Maria Talal",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Sajida Naveed",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Nasreen Riaz",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Afshan Hassan",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Amna Parveen",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Sheher Bano",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Zeba Ghafoor",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Rubina Nazir",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Syeda Sumaira Ahmed",
+    "seat_type": "women_reserved",
+    "party_name": "Istehkam-e-Pakistan Party",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "IPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Syeda Samreen Taj",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-Q",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Kanwal Nauman",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Saima Zahid",
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Falbous Christopher",
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Emmanuel Ather",
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Ramesh Singh Arora",
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Ijaz Masih",
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Shakeela Javed",
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Tariq Masih",
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Waseem Anjam",
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "full_name": "Basro Jee",
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024",
+    "by_election": false,
+    "source_urls": [
+     "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[15]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[16]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[17]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[18]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[19]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[20]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[21]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[22]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[23]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[24]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[25]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[26]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[27]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[28]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[29]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[30]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[31]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[32]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[33]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[34]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[35]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[36]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[37]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[38]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[39]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[40]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[41]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[42]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[43]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[44]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[45]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[46]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[47]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[48]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[49]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[50]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[51]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[52]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[53]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[54]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[55]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[56]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[57]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[58]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[59]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[60]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[61]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[62]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[63]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[64]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[65]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[66]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[67]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[68]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[69]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[70]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[71]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[72]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[73]",
+   "citations": [
+    {
+     "url": "https://pap.gov.pk/members/listing/en/%7BASSEMBLYID%7D?byname=true&limit=all",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-restores-reserved-assembly-seats-after-sc-verdict/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "As of 2026-11-15, the list includes 66 women’s and 8 non-Muslim reserved-seat members. The July 2025 reinstatement of 27 previously suspended seats is reflected in the assembly’s full member directory and the election notification reporting. Reserved seats have no geographic constituency, so constituency fields are null; no other reserved category is identified. Term starts are given as 2024, the assembly term, rather than an unsupported individual oath date."
+}

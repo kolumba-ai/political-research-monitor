@@ -1,0 +1,1003 @@
+{
+ "purpose": "legislators:PK:Khyber Pakhtunkhwa:seats reserved for women, for minorities/non-Muslims and any other reserved category",
+ "query": "List the CURRENT members of the Provincial Assembly of Khyber Pakhtunkhwa (Khyber Pakhtunkhwa, Pakistan) holding the seats reserved for women, for minorities/non-Muslims and any other reserved category, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_6b9b7b18c3b245c19aa7c287aa4ca940",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T01:26:04+00:00",
+ "cost_dollars": {
+  "total": 0.4754,
+  "agent_compute": 0.3464,
+  "search": 0.129,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Rehana Ismail",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/rehana-ismail-wr-17-2018/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Asma Alam",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/asma-alam-wr-02-2024/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Sobia Shahid",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/sobia-shahid-wr-21-2018/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Shehla Bano",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/shehla-bano-wr-04-2024/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Neelofar Babar",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2024-02-28",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/neelofar-babar-wr-05-2024/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Sitara Afreen",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/sitara-afreen-wr-11-2018/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Aiman Jalil Jan",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/aiman-jalil-jan-wr-07-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Madina Gul Afridi",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/madina-gul-afridi-wr-08-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Rabia Shaheen",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/rabia-shaheen-wr-09-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Neelofer Begum",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/neelofar-begum-wr-10-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Naheeda Noor",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/naheeda-noor-wr-11-25/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Arifa Bibi",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/arifa-bibi-wr-12-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Amina Sardar",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/aamna-sardar-wr-14-2013/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Faiza Malik",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/faiza-malik-wr-14-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Afshan Hussain",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/afshan-hussain-wr-15-2025/",
+     "https://www.pakp.gov.pk/members-listing/",
+     "https://www.thenews.com.pk/print/1329799-kp-governor-administers-oath-to-mpas-on-phc-orders"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Shazia Jadoon",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/shazia-jadoon-wr-16-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Jamila Paracha",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/jamila-paracha-wr-17-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Farah Khan",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/farah-khan-wr-18-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Syeda Sonia Hussain",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/syeda-sonia-hussain-wr-19-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Shazia Tehmas Khan",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/shazia-tehmas-khan-wr-12-2008/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Meher Sultana",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/meher-sultana-wr-21-2008/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Ashbar Jan Jadoon",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/ashbar-jan-jadoon-wr-22-2025/",
+     "https://www.pakp.gov.pk/members-listing/",
+     "https://www.thenews.com.pk/print/1329799-kp-governor-administers-oath-to-mpas-on-phc-orders"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Farzana Shereen",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/farzana-shereen-wr-23-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Nadia Sher",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Pakistan Tehreek-e-Insaf Parliamentarians",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/nadia-sher-wr-01-2018-13/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PTI-P",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Khadija Bibi",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Awami National Party",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/khadija-bibi-wr-25-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "ANP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Shahida Waheed",
+    "is_acting": false,
+    "seat_type": "women_reserved",
+    "party_name": "Awami National Party",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/shahida-wr-20-2018/",
+     "https://www.pakp.gov.pk/members-listing/",
+     "https://www.app.com.pk/national/ecp-notifies-success-of-shahida-waheed-gurpal-singh-on-kp-reserve-seats/"
+    ],
+    "party_acronym": "ANP",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Asker Pervaiz",
+    "is_acting": false,
+    "seat_type": "minority_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/askar-pervaiz-mr-01-2013/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Gurpal Singh",
+    "is_acting": false,
+    "seat_type": "minority_reserved",
+    "party_name": "Jamiat Ulema Islam (F)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/gurpal-singh-mr-02-2025/",
+     "https://www.pakp.gov.pk/members-listing/",
+     "https://www.thenews.com.pk/print/1329799-kp-governor-administers-oath-to-mpas-on-phc-orders"
+    ],
+    "party_acronym": "JUI-F",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Suresh Kumar",
+    "is_acting": false,
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Muslim League (N)",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/suresh-kumar-mr-03-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": null,
+    "constituency_name": null
+   },
+   {
+    "term_end": "2029",
+    "coalition": null,
+    "full_name": "Beari Lal",
+    "is_acting": false,
+    "seat_type": "minority_reserved",
+    "party_name": "Pakistan Peoples Party Parliamentarians",
+    "term_start": "2025-07-20",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pakp.gov.pk/members/beari-lal-mr-04-2025/",
+     "https://www.pakp.gov.pk/members-listing/"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": null,
+    "constituency_name": null
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/rehana-ismail-wr-17-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/asma-alam-wr-02-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/sobia-shahid-wr-21-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[3]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/shehla-bano-wr-04-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/neelofar-babar-wr-05-2024/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/sitara-afreen-wr-11-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/aiman-jalil-jan-wr-07-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/madina-gul-afridi-wr-08-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/rabia-shaheen-wr-09-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/neelofar-begum-wr-10-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/naheeda-noor-wr-11-25/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/arifa-bibi-wr-12-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/aamna-sardar-wr-14-2013/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/faiza-malik-wr-14-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/afshan-hussain-wr-15-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.com.pk/print/1329799-kp-governor-administers-oath-to-mpas-on-phc-orders",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[15]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/shazia-jadoon-wr-16-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[16]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/jamila-paracha-wr-17-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[17]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/farah-khan-wr-18-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[18]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/syeda-sonia-hussain-wr-19-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[19]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/shazia-tehmas-khan-wr-12-2008/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[20]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/meher-sultana-wr-21-2008/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[21]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/ashbar-jan-jadoon-wr-22-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.com.pk/print/1329799-kp-governor-administers-oath-to-mpas-on-phc-orders",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[22]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/farzana-shereen-wr-23-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[23]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/nadia-sher-wr-01-2018-13/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[24]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/khadija-bibi-wr-25-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[25]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/shahida-wr-20-2018/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://www.app.com.pk/national/ecp-notifies-success-of-shahida-waheed-gurpal-singh-on-kp-reserve-seats/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[26]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/askar-pervaiz-mr-01-2013/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[27]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/gurpal-singh-mr-02-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    },
+    {
+     "url": "https://www.thenews.com.pk/print/1329799-kp-governor-administers-oath-to-mpas-on-phc-orders",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[28]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/suresh-kumar-mr-03-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[29]",
+   "citations": [
+    {
+     "url": "https://www.pakp.gov.pk/members/beari-lal-mr-04-2025/",
+     "title": null
+    },
+    {
+     "url": "https://www.pakp.gov.pk/members-listing/",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "The Assembly directory lists 26 women-reserved members and four minority-reserved members. Reserved seats have no geographic constituency; their WR/MR identifiers identify the seats. No other reserved category appears in the provincial roster. Term-start dates are recorded oath dates; the 2025 entrants took office after the reserved-seat reallocation, not through constituency by-elections."
+}

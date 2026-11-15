@@ -61,6 +61,13 @@ def cmd_import(a) -> int:
     return 0
 
 
+def cmd_repair_people(a) -> int:
+    from .repair import repair_people
+    _, _, store, _, _ = _components()
+    print(json.dumps(repair_people(store, a.country), indent=2))
+    return 0
+
+
 def cmd_seed(a) -> int:
     _, _, _, _, pipe = _components()
     print(f"seeded {pipe.seed_world()} countries under Earth")
@@ -170,7 +177,7 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop after the eligibility checks unless both pass (by default every country is enriched; "
                         "the checks are recorded as information)")
     b.add_argument("--stages", help="comma list: democracy,contact,national,divisions,local,special,legislators "
-                                    "(legislators is opt-in: individual members of each first-level legislature)")
+                                    "(legislators and directories are opt-in: individual legislature members; official rosters)")
     b.add_argument("--divisions", help="limit the legislators stage to ISO 3166-2 codes, e.g. PK-BA,PK-PB")
     b.add_argument("--force", action="store_true", help="re-run stages even if fresh (re-uses cached Exa responses)")
     b.add_argument("--no-cache", action="store_true", help="re-run stages AND bypass cached Exa responses (costs credits)")
@@ -178,6 +185,10 @@ def main(argv: list[str] | None = None) -> int:
     b.set_defaults(fn=cmd_build)
 
     sub.add_parser("seed", help="seed Earth/continents/countries from ISO 3166 + UN M49").set_defaults(fn=cmd_seed)
+
+    rp = sub.add_parser("repair-people", help="split Person nodes that were merged by name matching in error")
+    rp.add_argument("--country")
+    rp.set_defaults(fn=cmd_repair_people)
 
     ex = sub.add_parser("export", help="export the complete knowledge base to plain files (for the repo)")
     ex.add_argument("--out", default="../knowledge_base")

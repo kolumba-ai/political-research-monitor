@@ -1,0 +1,1378 @@
+{
+ "purpose": "legislators:PK:Punjab:general seats for constituencies PP-201 to PP-250",
+ "query": "List the CURRENT members of the Provincial Assembly of the Punjab (Punjab, Pakistan) holding the general seats for constituencies PP-201 to PP-250, as of 2026-11-15. For each member give full name, constituency code and name (for constituency seats), seat type (general, women_reserved, minority_reserved, other_reserved), party name and acronym, term start, whether the seat was won in a by-election, and source URLs that list this person as a member for this seat. Account for by-elections, deaths, resignations and disqualifications since the general election; omit vacant seats.",
+ "run_id": "agent_run_7e19ece99ab542b7a7d93f0d42dfd6b5",
+ "status": "completed",
+ "stop_reason": "schema_satisfied",
+ "created_at": "2026-11-15T01:44:19+00:00",
+ "cost_dollars": {
+  "total": 0.8148,
+  "agent_compute": 0.5718,
+  "search": 0.243,
+  "emails": 0.0,
+  "phone_numbers": 0.0,
+  "data_sources": null
+ },
+ "structured_output": {
+  "members": [
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Naveed Aslam Khan Lodhi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-201",
+    "constituency_name": "Sahiwal-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Rana Riaz Ahmad",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-202",
+    "constituency_name": "Sahiwal-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Asad Hanif Jutt",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": null,
+    "by_election": true,
+    "source_urls": [
+     "https://www.dawn.com/news/2043037/pml-n-retains-both-gujranwalas-na-77-and-sahiwals-pp-203-unofficial-results-show",
+     "https://arynews.tv/pp-203-sahiwal-by-election-official-result-announced"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-203",
+    "constituency_name": "Sahiwal-VI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Ghulam Sarwar",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-204",
+    "constituency_name": "Sahiwal-VII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Akbar Hayat Haraj",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-205",
+    "constituency_name": "Khanewal-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Usama Fazal",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-206",
+    "constituency_name": "Khanewal-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Amir Hayat Hiraj",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-207",
+    "constituency_name": "Khanewal-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Babar Hussain Abid",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-208",
+    "constituency_name": "Khanewal-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Chaudhry Zia Ur Rehman",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-209",
+    "constituency_name": "Khanewal-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Khalid Javed",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-210",
+    "constituency_name": "Khanewal-VI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Rana Muhammad Saleem",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-211",
+    "constituency_name": "Khanewal-VII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Asghar Hayat Haraj",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-212",
+    "constituency_name": "Khanewal-VIII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Syed Ali Haider Gilani (H.I.)",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": "PP-213",
+    "constituency_name": "Multan-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Nawab Zada Waseem Khan Badozai",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-214",
+    "constituency_name": "Multan-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Moeen Ud Din Riaz",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Tehreek-e-Insaf",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PTI",
+    "constituency_code": "PP-215",
+    "constituency_name": "Multan-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Adnan Dogar",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-216",
+    "constituency_name": "Multan-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Nadeem Qureshi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-217",
+    "constituency_name": "Multan-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Salman",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-218",
+    "constituency_name": "Multan-VI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Malik Wasif Mazhar",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": "PP-219",
+    "constituency_name": "Multan-VII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Iqbal",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": "PP-220",
+    "constituency_name": "Multan-VIII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mian Kamran Muhammad Abdullah",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": "PP-221",
+    "constituency_name": "Multan-IX"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Mr Ayaz Ahmed",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-222",
+    "constituency_name": "Multan-X"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Nazik Kareem",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-223",
+    "constituency_name": "Multan-XI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Malik Lal Muhammad",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-224",
+    "constituency_name": "Multan-XII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Shazia Hayyat",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-225",
+    "constituency_name": "Lodhran-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Razi Ullah Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-226",
+    "constituency_name": "Lodhran-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Zubair Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-227",
+    "constituency_name": "Lodhran-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Izzat Javaid Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-228",
+    "constituency_name": "Lodhran-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Yousaf",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-229",
+    "constituency_name": "Vehari-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Salman Shahid",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-230",
+    "constituency_name": "Vehari-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Khalid Zubair Nisar",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Tehreek-e-Insaf",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PTI",
+    "constituency_code": "PP-231",
+    "constituency_name": "Vehari-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Malik Nosher Khan Anjam Langerial",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-232",
+    "constituency_name": "Vehari-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Saqib Khurshed",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-233",
+    "constituency_name": "Vehari-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Naeem Akhtar Khan",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-234",
+    "constituency_name": "Vehari-VI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "M. Jehanzeb Khan Khichi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-235",
+    "constituency_name": "Vehari-VII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Ali Raza Khan Khakwani",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-236",
+    "constituency_name": "Vehari-VIII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Fida Hussain",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-237",
+    "constituency_name": "Bahawalnagar-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Inam Bari",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": "PP-238",
+    "constituency_name": "Bahawalnagar-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Atif Aurangzeb",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-239",
+    "constituency_name": "Bahawalnagar-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Sohail Khan Zahid",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-240",
+    "constituency_name": "Bahawalnagar-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Ghulam Murtaza",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Zia)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-Z",
+    "constituency_code": "PP-241",
+    "constituency_name": "Bahawalnagar-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Kashif Naveed",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-242",
+    "constituency_name": "Bahawalnagar-VI"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Zahid Akram",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-243",
+    "constituency_name": "Bahawalnagar-VII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Suryia Sultana",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Sunni Ittehad Council",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "SIC",
+    "constituency_code": "PP-244",
+    "constituency_name": "Bahawalnagar-VIII"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Muhammad Kazim Pirzada",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-245",
+    "constituency_name": "Bahawalpur-I"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Farzana Khalil",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Tehreek-e-Insaf",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PTI",
+    "constituency_code": "PP-246",
+    "constituency_name": "Bahawalpur-II"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Khalid Mahmood Jajja",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-247",
+    "constituency_name": "Bahawalpur-III"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Hassan Askari Sheikh",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML",
+    "constituency_code": "PP-248",
+    "constituency_name": "Bahawalpur-IV"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Sahibzada Muhammad Gazain Abbasi",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Muslim League (Nawaz)",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PML-N",
+    "constituency_code": "PP-249",
+    "constituency_name": "Bahawalpur-V"
+   },
+   {
+    "term_end": null,
+    "coalition": null,
+    "full_name": "Syed Amir Ali Shah",
+    "is_acting": false,
+    "seat_type": "general",
+    "party_name": "Pakistan Peoples Party Parliamentarian",
+    "term_start": "2024-02-23",
+    "by_election": false,
+    "source_urls": [
+     "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all"
+    ],
+    "party_acronym": "PPPP",
+    "constituency_code": "PP-250",
+    "constituency_name": "Bahawalpur-VI"
+   }
+  ]
+ },
+ "grounding": [
+  {
+   "field": "structured.members[0]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[1]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[2]",
+   "citations": [
+    {
+     "url": "https://www.dawn.com/news/2043037/pml-n-retains-both-gujranwalas-na-77-and-sahiwals-pp-203-unofficial-results-show",
+     "title": null
+    },
+    {
+     "url": "https://arynews.tv/pp-203-sahiwal-by-election-official-result-announced",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "medium"
+  },
+  {
+   "field": "structured.members[3]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[4]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[5]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[6]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[7]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[8]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[9]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[10]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[11]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[12]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[13]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[14]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[15]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[16]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[17]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[18]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[19]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[20]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[21]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[22]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[23]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[24]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[25]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[26]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[27]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[28]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[29]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[30]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[31]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[32]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[33]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[34]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[35]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[36]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[37]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[38]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[39]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[40]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[41]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[42]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[43]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[44]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[45]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[46]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[47]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[48]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  },
+  {
+   "field": "structured.members[49]",
+   "citations": [
+    {
+     "url": "https://www.pap.gov.pk/members/listing/en/22?byname=true&limit=all",
+     "title": null
+    }
+   ],
+   "score": null,
+   "confidence": "high"
+  }
+ ],
+ "text": "Current general-seat membership for PP-201–PP-250 as of 2026-11-15. PP-203 reflects the November 2026 by-election result rather than the outdated assembly directory entry; its precise term-start date is not confirmed."
+}
