@@ -130,7 +130,8 @@ past.dev in bulk. Each record is plain text followed by `JSON:` and a compact pa
   stored in `ev_memory_record`. Unchanged items are not resent. Ingestions an earlier run left `queued` are
   re-checked (for the same `claims-<cc>` project only), and failed ones are resent.
 
-The old Brugada posts in past.dev (`oriane:<id>:v1`, from an earlier pipeline) are left as they are.
+Deleted ids can't be reused (past.dev refuses them), so the old pipeline's `oriane:<id>:v1` ids, deleted on
+2026-11-15 to start the project clean, are never sent again.
 
 The proposition is then marked `mapped` in the queue. If any step fails, it goes back to `queued` and the batch moves
 on to the next proposition.
