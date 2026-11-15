@@ -67,10 +67,10 @@ export default function Investigate({ iso2, row, section, onSection, graphTarget
         })}
       </nav>
       {summary?.available && <div className="mx-3 mt-3 hidden rounded-xl border border-line bg-white p-3 lg:block">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">Tracked on social media</p>
-        {summary.politicians.map((p) => p.politician_id && <button key={p.politician_id} onClick={() => onOpenPerson(p.politician_id!)} className="mt-2 flex w-full items-center gap-2 text-left text-xs hover:text-accent">
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">Tracked on social media · {summary.politicians.length}</p>
+        <div className="max-h-72 overflow-y-auto pr-1">{summary.politicians.map((p) => p.politician_id && <button key={p.politician_id} onClick={() => onOpenPerson(p.politician_id!)} className="mt-2 flex w-full items-center gap-2 text-left text-xs hover:text-accent">
           <Avatar name={p.name} src={p.image_url} className="size-7 text-[10px]" />
-          <span className="min-w-0 flex-1 truncate">{p.name}</span><span className="text-muted">{p.claims}</span></button>)}
+          <span className="min-w-0 flex-1 truncate">{p.name}</span><span className="text-muted">{p.claims}</span></button>)}</div>
       </div>}
     </aside>
 

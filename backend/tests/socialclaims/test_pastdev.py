@@ -126,3 +126,15 @@ def test_claims_api_summary_and_filters(graph, tmp_path):
     assert api.get(f"/api/claims/MX/politicians/{pid}", params={"q": "HOSPITAL"}).json()["total"] == 1
     assert api.get(f"/api/claims/MX/politicians/{pid}", params={"limit": 0}).status_code == 422
     assert api.get("/api/claims/PK/summary").json()["available"] is False
+
+
+def test_claims_api_reads_captions_with_unicode_line_separators(graph, tmp_path):
+    pull(PastDevClient("past_sk_test", transport=_transport([])), graph, "MX", tmp_path)
+    path = tmp_path / "MX" / "posts.jsonl"
+    posts = [json.loads(line) for line in path.read_text(encoding="utf-8").split("\n") if line.strip()]
+    posts[0]["caption"] = "primera\u2028segunda\x85tercera"
+    path.write_text("".join(json.dumps(p, ensure_ascii=False) + "\n" for p in posts), encoding="utf-8")
+    app = FastAPI()
+    app.include_router(build_router(lambda: tmp_path))
+
+    assert TestClient(app).get("/api/claims/MX/summary").json()["stats"]["posts"] == 2

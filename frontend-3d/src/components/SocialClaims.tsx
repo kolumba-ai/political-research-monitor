@@ -53,8 +53,8 @@ export function Timeline({ days, height = "h-14" }: { days: ClaimStats["by_day"]
   if (!days.length) return null;
   const max = Math.max(...days.map((d) => d.claims));
   return <div>
-    <div className={`flex ${height} items-end gap-[2px]`} role="img" aria-label="Claims per day">
-      {days.map((d) => <span key={d.date} title={`${fmtDate(d.date)}: ${d.claims} claims`} className="min-w-[3px] flex-1 rounded-t-sm bg-accent/75 hover:bg-accent" style={{ height: `${Math.max(8, (100 * d.claims) / max)}%` }} />)}
+    <div className={`flex ${height} items-end gap-px`} role="img" aria-label="Claims per day">
+      {days.map((d) => <span key={d.date} title={`${fmtDate(d.date)}: ${d.claims} claims`} className="min-w-0 flex-1 rounded-t-sm bg-accent/75 hover:bg-accent" style={{ height: `${Math.max(8, (100 * d.claims) / max)}%` }} />)}
     </div>
     <div className="mt-1 flex justify-between text-[10px] text-muted"><span>{fmtDate(days[0].date)}</span><span>{fmtDate(days.at(-1)!.date)}</span></div>
   </div>;
@@ -202,7 +202,7 @@ export function SocialClaimsCard({ iso2, onOpenPerson, compactView = false }: { 
   return <Card data-testid="social-claims-card">
     <CardHeader title="Social media claims" aside={<MessageSquareQuote className="size-4 text-muted" />} />
     <div className="space-y-4 px-4 pb-4 text-sm">
-      <p className="text-xs text-muted">{data.stats.claims} claims from {data.stats.posts} TikTok/Instagram posts, {fmtDate(data.stats.first)} – {fmtDate(data.stats.last)}. Pulled from past.dev {fmtDate(data.pulled_at)}.</p>
+      <p className="text-xs text-muted">{data.stats.claims} claims from {data.stats.posts} TikTok/Instagram posts, {fmtDate(data.stats.first)} – {fmtDate(data.stats.last)}. Pulled from {data.source ?? "past.dev"} {fmtDate(data.pulled_at)}.</p>
       {!compactView && <Donut counts={data.stats.by_type} colors={CLAIM_TYPE_COLORS} centerLabel="claims" />}
       <Timeline days={data.stats.by_day} />
       <ul className="divide-y divide-line rounded-lg border border-line">

@@ -50,7 +50,8 @@ class ClaimsExport:
             return hit[1]
 
         def jsonl(p: Path) -> list[dict]:
-            return [json.loads(line) for line in p.read_text(encoding="utf-8").splitlines() if line.strip()]
+            # split on "\n" only: captions may hold U+2028 and similar, which str.splitlines() treats as line ends
+            return [json.loads(line) for line in p.read_text(encoding="utf-8").split("\n") if line.strip()]
         data = {"manifest": json.loads(files[0].read_text(encoding="utf-8")), "claims": jsonl(files[1]),
                 "posts": {p["data_point_id"]: p for p in jsonl(files[2])}}
         self._cache[country] = (stamp, data)

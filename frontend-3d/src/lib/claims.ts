@@ -1,8 +1,11 @@
 // Presentation helpers for System B social claims (types, platforms, numbers).
 export const CLAIM_TYPE_COLORS: Record<string, string> = {
   statistic: "#4f46e5", event: "#0d9488", policy: "#7c3aed", promise: "#d97706", accusation: "#dc2626", other: "#94a3b8",
+  factual: "#0d9488", policy_position: "#7c3aed", commitment: "#d97706", opinion: "#0ea5e9", forecast: "#db2777",
 };
-export const SPEAKER_COLORS: Record<string, string> = { politician: "#4f46e5", uploader: "#0ea5e9", quoted: "#a855f7" };
+export const SPEAKER_COLORS: Record<string, string> = {
+  politician: "#4f46e5", uploader: "#0ea5e9", quoted: "#a855f7", other: "#0ea5e9", unknown: "#94a3b8",
+};
 export const PLATFORM_META: Record<string, { name: string; color: string; short: string }> = {
   tiktok: { name: "TikTok", color: "#111827", short: "TT" },
   instagram: { name: "Instagram", color: "#c13584", short: "IG" },
@@ -10,6 +13,7 @@ export const PLATFORM_META: Record<string, { name: string; color: string; short:
 };
 export const SPEAKER_NAMES: Record<string, string> = {
   politician: "Politician speaking", uploader: "Account owner", quoted: "Quoted third party",
+  other: "Another identified speaker", unknown: "Speaker not identified",
 };
 
 export const colorOf = (map: Record<string, string>, key: string | null | undefined) => (key && map[key]) || "#94a3b8";
