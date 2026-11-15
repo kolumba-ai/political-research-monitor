@@ -159,8 +159,16 @@ def align(quote: str, source: str) -> tuple[str, int | None, int | None, float]:
     return "none", None, None, ratio
 
 
+def _number(raw: str) -> str:
+    """'1,250,000' -> '1250000' (thousands), '2,5' -> '2.5' (Spanish decimal comma), '2.5' unchanged."""
+    raw = raw.rstrip(".,")
+    if re.fullmatch(r"\d{1,3}(,\d{3})+(\.\d+)?", raw):
+        return raw.replace(",", "")
+    return raw.replace(",", ".")
+
+
 def _numbers(text: str) -> set[str]:
-    return {n.replace(",", "").rstrip(".") for n in re.findall(r"\d[\d,.]*", text or "")}
+    return {_number(n) for n in re.findall(r"\d[\d,.]*", text or "")}
 
 
 def _date(v) -> date | None:

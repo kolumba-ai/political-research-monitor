@@ -3,7 +3,7 @@ import pytest
 
 from socialclaims import accounts
 from socialclaims.capture import Capturer
-from socialclaims.claims import AnthropicLLM, Extractor, align
+from socialclaims.claims import AnthropicLLM, Extractor, _numbers, _prop_id, align
 from socialclaims.segments import process_politician
 
 from .conftest import FIXED_NOW, FakeOriane, make_result
@@ -137,3 +137,9 @@ def test_anthropic_client_uses_forced_tool_call():
     result, usage = llm.extract("sys", "prompt", {"name": "record_claims", "input_schema": {}})
     assert result == {"claims": []} and usage["input_tokens"] == 5 and seen["key"] == "k"
     assert b'"tool_choice":{"type":"tool","name":"record_claims"}' in seen["body"].replace(b" ", b"")
+
+
+def test_decimal_comma_is_not_a_thousands_separator():
+    assert _numbers("2,5% y 25% y 1,250,000 y 3.7.") == {"2.5", "25", "1250000", "3.7"}
+    a, b = ({**PROP, "values": [{"value": v, "unit": "%"}]} for v in ("2,5", "25"))
+    assert _prop_id(a, (None, None)) != _prop_id(b, (None, None))
