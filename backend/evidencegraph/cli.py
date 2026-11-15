@@ -50,6 +50,11 @@ def build_parser() -> argparse.ArgumentParser:
                             help="stop taking new propositions once Exa + Claude + past.dev spend reaches this")
     enrich_cmd.add_argument("--dry-run", action="store_true", help="list what would run and the cost ceiling; free")
     enrich_cmd.add_argument("--confirm-spend", action="store_true", help="required: Exa, Anthropic and past.dev bill")
+    reproject_cmd = commands.add_parser(
+        "reproject", help="resend past.dev records whose content changed (no Exa or LLM calls)")
+    reproject_cmd.add_argument("--country", default="MX")
+    reproject_cmd.add_argument("--dry-run", action="store_true", help="count changed records and credits; free")
+    reproject_cmd.add_argument("--confirm-spend", action="store_true", help="required: past.dev bills per record")
     return parser
 
 
@@ -166,6 +171,19 @@ def main(argv: list[str] | None = None) -> int:
             if missing:
                 parser.error(f"missing {', '.join(missing)}")
             print(_json(_run_enrich(settings, args)))
+        elif args.command == "reproject":
+            from socialclaims.pastdev import PastDevClient
+
+            from .enrich import reproject
+
+            if not args.dry_run and not args.confirm_spend:
+                parser.error("reproject writes to past.dev (billed): run --dry-run first, then pass --confirm-spend")
+            if not args.dry_run and not settings.past_dev_api_key:
+                parser.error("missing PAST_DEV_API_KEY")
+            client = None if args.dry_run else PastDevClient(
+                settings.past_dev_api_key, settings.past_dev_base_url, rate_limiter_database_url=settings.database_url,
+                requests_per_second=settings.pastdev_requests_per_second)
+            print(_json(reproject(conn, client, settings, args.country, dry_run=args.dry_run)))
     finally:
         conn.close()
     return 0

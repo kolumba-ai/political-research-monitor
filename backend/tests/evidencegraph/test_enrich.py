@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, timezone
 from types import SimpleNamespace
 
 import httpx
@@ -8,6 +9,7 @@ from evidencegraph.cli import main as cli_main
 from evidencegraph.enrich import Enricher, dry_run, quote_in_text
 from evidencegraph.fetch import Fetcher
 from evidencegraph.intake import run_intake
+from evidencegraph.project import _iso
 from evidencegraph.registry import load_registry
 from polgraph.config import Settings as PolgraphSettings
 from polgraph.exa_gateway import ExaGateway
@@ -237,6 +239,120 @@ def test_only_latest_document_version_is_projected(conn, ev_settings, tmp_path):
                  "VALUES (%s, 'newer', 200, 1, now() + interval '1 hour')", (gov,))
     kinds = [it["metadata"]["kind"] for it in build_items(conn, prop, claims, ev_settings.mapper_version)]
     assert kinds == ["claim", "document", "evidence_link"]
+
+
+def test_links_are_timed_like_their_claim(conn, ev_settings, tmp_path):
+    from evidencegraph.project import build_items
+
+    _setup(conn)
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
+    enricher.run(None, 5)
+    prop = conn.execute("SELECT * FROM ev_proposition_queue q JOIN proposition p USING (proposition_id)").fetchone()
+    claims = conn.execute(__import__("evidencegraph.enrich", fromlist=["CLAIMS_SQL"]).CLAIMS_SQL,
+                          (prop["proposition_id"],)).fetchall()
+    items = build_items(conn, prop, claims, ev_settings.mapper_version)
+    claim_ts = {it["metadata"]["politician_id"]: it["timestamp"] for it in items if it["metadata"]["kind"] == "claim"}
+    links = [it for it in items if it["metadata"]["kind"] == "evidence_link"]
+    assert links and all(it["timestamp"] == claim_ts[it["metadata"]["politician_id"]] for it in links)
+    payload = json.loads(links[0]["content"].split("JSON:\n", 1)[1])
+    assessed = conn.execute("SELECT assessed_at FROM ev_evidence_link WHERE link_id = %s",
+                            (payload["link_id"],)).fetchone()["assessed_at"]
+    assert payload["assessed_at"] == _iso(assessed)
+
+
+def _items(conn, ev_settings):
+    from evidencegraph.enrich import CLAIMS_SQL
+    from evidencegraph.project import build_items
+
+    prop = conn.execute("SELECT * FROM ev_proposition_queue q JOIN proposition p USING (proposition_id)").fetchone()
+    claims = conn.execute(CLAIMS_SQL, (prop["proposition_id"],)).fetchall()
+    return build_items(conn, prop, claims, ev_settings.mapper_version)
+
+
+def test_old_claim_links_fall_inside_the_claim_date_window(conn, ev_settings, tmp_path):
+    _setup(conn)
+    stated = datetime(2026, 9, 8, 22, 28, tzinfo=timezone.utc)
+    conn.execute("UPDATE distilled_claim SET stated_at = %s", (stated,))
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
+    enricher.run(None, 5)
+    links = [it for it in _items(conn, ev_settings) if it["metadata"]["kind"] == "evidence_link"]
+    window = (datetime(2026, 9, 1, tzinfo=timezone.utc), datetime(2026, 9, 30, 23, 59, tzinfo=timezone.utc))
+    assert links and all(window[0] <= datetime.fromisoformat(it["timestamp"].replace("Z", "+00:00")) <= window[1]
+                         for it in links)
+    assessed = conn.execute("SELECT min(assessed_at) AS a FROM ev_evidence_link").fetchone()["a"]
+    assert assessed > window[1]
+
+
+def test_shared_claim_links_take_each_politicians_own_date(conn, ev_settings, tmp_path):
+    from test_intake import OTHER_PID
+
+    load_registry(conn)
+    _base_run(conn)
+    _claim(conn, "a", "prop-homicidios")
+    _claim(conn, "b", "prop-homicidios", pid=OTHER_PID)
+    first, second = datetime(2026, 8, 1, tzinfo=timezone.utc), datetime(2026, 10, 1, tzinfo=timezone.utc)
+    conn.execute("UPDATE distilled_claim SET stated_at = %s WHERE politician_id = %s", (first, PID))
+    conn.execute("UPDATE distilled_claim SET stated_at = %s WHERE politician_id = %s", (second, OTHER_PID))
+    run_intake(conn, [PID, OTHER_PID], mapper_version="m1")
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
+    enricher.run(None, 5)
+    items = _items(conn, ev_settings)
+    links = {}
+    for it in items:
+        if it["metadata"]["kind"] == "evidence_link":
+            links.setdefault(it["metadata"]["politician_id"], set()).add(it["timestamp"])
+    assert links == {PID: {_iso(first)}, OTHER_PID: {_iso(second)}}
+
+
+def test_reproject_resends_only_records_whose_date_changed(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import reproject
+
+    _setup(conn)
+    past = FakePast()
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, past)
+    enricher.run(None, 5)
+    assert reproject(conn, None, ev_settings, dry_run=True)["items_changed"] == 0
+    # Records written before this change were timed at assessed_at: simulate one such stored link.
+    lnk = conn.execute("SELECT datapoint_id FROM ev_memory_record WHERE kind = 'evidence_link' LIMIT 1").fetchone()
+    conn.execute("UPDATE ev_memory_record SET content_sha256 = 'timed-at-assessed_at' WHERE datapoint_id = %s",
+                 (lnk["datapoint_id"],))
+    before = len(past.batches())
+    plan = reproject(conn, None, ev_settings, dry_run=True)
+    assert plan["items_changed"] == 1 and plan["credits_estimate"] >= 1 and len(past.batches()) == before
+    out = reproject(conn, enricher.client, ev_settings)
+    assert not out["errors"] and out["credits_sent"] == plan["credits_estimate"]
+    assert [it["id"] for it in past.batches()[-1]["items"]] == [lnk["datapoint_id"]]
+    assert reproject(conn, None, ev_settings, dry_run=True)["items_changed"] == 0
+    assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "mapped"
+
+
+def test_reproject_resends_records_whose_ingestion_failed_later(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import reproject
+
+    class FailingPast(FakePast):
+        def handler(self, request):
+            if request.method == "GET" and request.url.path.endswith("/ingest/ing-lost"):
+                self.calls.append((request.method, request.url.path, None))
+                return httpx.Response(200, json={"status": "failed", "failure": {"reason": "x"}})
+            return super().handler(request)
+
+    _setup(conn)
+    past = FailingPast()
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, past)
+    enricher.run(None, 5)
+    lnk = conn.execute("SELECT datapoint_id FROM ev_memory_record WHERE kind = 'evidence_link' LIMIT 1").fetchone()
+    # Sent by an earlier reproject whose ingestion was still processing; past.dev failed it afterwards.
+    conn.execute("UPDATE ev_memory_record SET status = 'queued', ingestion_id = 'ing-lost' WHERE datapoint_id = %s",
+                 (lnk["datapoint_id"],))
+    out = reproject(conn, enricher.client, ev_settings)
+    assert out["items_changed"] == 1 and not out["errors"]
+    assert [it["id"] for it in past.batches()[-1]["items"]] == [lnk["datapoint_id"]]
+
+
+def test_reproject_cli_requires_confirm_spend(capsys):
+    with pytest.raises(SystemExit):
+        cli_main(["reproject"])
+    assert "confirm-spend" in capsys.readouterr().err
 
 
 def test_pull_reads_system_c_claim_records():
