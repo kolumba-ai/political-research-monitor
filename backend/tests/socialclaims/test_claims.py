@@ -243,6 +243,11 @@ def test_compound_number_components_are_consumed():
     assert _numbers("6 mil 500 millones") == {"6500"}
 
 
+def test_punctuation_breaks_number_compounds():
+    assert _numbers("2 mil; 500 fueron") == {"2000", "500"}
+    assert _numbers("6 mil 500 millones") == {"6500"}
+
+
 def test_digit_only_numbers_keep_mixed_format_compounds():
     text = "dos mil 500 pesos"
     assert _numbers(text) == {"2500"}

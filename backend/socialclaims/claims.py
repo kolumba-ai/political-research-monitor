@@ -212,10 +212,13 @@ def _number_values(text: str, decimal_percent: bool = False) -> Iterator[tuple[s
     i = 0
     while i < len(tokens):
         token = word(tokens[i])
-        if i + 1 < len(tokens) and word(tokens[i + 1]) == "mil":
+        if i + 1 < len(tokens) and word(tokens[i + 1]) == "mil" \
+                and raw[tokens[i].end():tokens[i + 1].start()].isspace():
             leading = integer(tokens[i])
             if leading is not None:
-                trailing = integer(tokens[i + 2]) if i + 2 < len(tokens) else None
+                has_trailing = i + 2 < len(tokens) \
+                    and raw[tokens[i + 1].end():tokens[i + 2].start()].isspace()
+                trailing = integer(tokens[i + 2]) if has_trailing else None
                 total = leading * 1000 + (trailing or 0)
                 consumed = tokens[i:i + (3 if trailing is not None else 2)]
                 has_digit = any(re.match(r"\d", word(token)) for token in consumed)
