@@ -70,13 +70,15 @@ def test_grounding_rules_and_speaker_evidence(conn, graph, segmented):
         own = "tercer trimestre" in prompt
         if own:
             return [claim("el desempleo bajó a 2.5 por ciento", [r]),
+                    claim("el desempleo bajó a 2.5 por ciento", [r], relation_to_politician="subject",
+                          text="el desempleo bajó a 2.5 por ciento (subject)"),
                     claim("el desempleo bajó a 2.5 por ciento", [r], text="El desempleo bajó a 3.5 por ciento"),
                     claim("el desempleo bajó a 2.5 por ciento", [r], text="El desempleo no bajó a 2.5 por ciento"),
                     claim("la inflación subió a 9 por ciento", [r])]
         return [claim("el desempleo bajó a 2.5 por ciento", [r], relation_to_politician="speaker")]
     llm = FakeLLM(script)
     out = Extractor(conn, graph, llm).run(PID, 10)
-    assert (out["extracted"], out["claims"]) == (2, 5)
+    assert (out["extracted"], out["claims"]) == (2, 6)
     assert all("COMENTARIO SECRETO" not in p for p in llm.prompts)
     rows = conn.execute("SELECT * FROM distilled_claim ORDER BY oriane_id, claim_id").fetchall()
     by = {(r["oriane_id"][-1], r["text"]): r for r in rows}
@@ -85,6 +87,8 @@ def test_grounding_rules_and_speaker_evidence(conn, graph, segmented):
     assert good["relation_to_politician"] == "speaker" and (good["quote_start_s"], good["quote_end_s"]) == (1.0, 5.0)
     assert str(good["referenced_period_start"]) == "2026-07-01"
     assert by[("1", "El desempleo bajó a 3.5 por ciento")]["grounding"] == "review"
+    subj = by[("1", "el desempleo bajó a 2.5 por ciento (subject)")]
+    assert subj["speaker_id"] is None and subj["speaker_status"] == "unknown"
     assert "negation_mismatch" in by[("1", "El desempleo no bajó a 2.5 por ciento")]["grounding_issues"]
     assert by[("1", "la inflación subió a 9 por ciento")]["grounding"] == "failed"
     third = by[("2", "el desempleo bajó a 2.5 por ciento")]

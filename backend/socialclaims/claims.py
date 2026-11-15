@@ -367,8 +367,9 @@ class Extractor:
             "extracted_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) "
             "ON CONFLICT (claim_id) DO NOTHING",
             (claim_id, row["oriane_id"], row["raw_id"], pid, [s["segment_id"] for s in cited], prop_id, quote,
-             start, end, c.get("text") or "", c.get("text_en"), pid if has_speaker else None, speaker["status"],
-             Jsonb(speaker["evidence"]), relation, ctype, topics, Jsonb(c.get("entities") or {}),
+             start, end, c.get("text") or "", c.get("text_en"), pid if relation == "speaker" else None,
+             speaker["status"] if relation == "speaker" else "unknown",
+             Jsonb(speaker["evidence"] if relation == "speaker" else []), relation, ctype, topics, Jsonb(c.get("entities") or {}),
              max(0.0, min(1.0, float(c.get("checkworthiness") or 0))), modality, grounding, Jsonb(issues), stated,
              min((s["start_s"] for s in timed), default=None),
              max((s["end_s"] for s in timed if s["end_s"] is not None), default=None),
