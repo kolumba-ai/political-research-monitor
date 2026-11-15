@@ -3,7 +3,7 @@ import pytest
 
 from socialclaims import accounts
 from socialclaims.capture import Capturer
-from socialclaims.claims import AnthropicLLM, Extractor, _numbers, _prop_id, align
+from socialclaims.claims import AnthropicLLM, Extractor, _numbers, _prop_id, align, build_prompt
 from socialclaims.segments import process_politician
 
 from .conftest import FIXED_NOW, FakeOriane, make_result
@@ -143,3 +143,11 @@ def test_decimal_comma_is_not_a_thousands_separator():
     assert _numbers("2,5% y 25% y 1,250,000 y 3.7.") == {"2.5", "25", "1250000", "3.7"}
     a, b = ({**PROP, "values": [{"value": v, "unit": "%"}]} for v in ("2,5", "25"))
     assert _prop_id(a, (None, None)) != _prop_id(b, (None, None))
+
+
+def test_oversized_speech_does_not_hide_caption(graph):
+    from socialclaims.systema import read_person
+    segs = [{"source": "speech", "ordinal": 0, "text": "palabra " * 3000, "start_s": 0.0, "end_s": 9.0},
+            {"source": "caption", "ordinal": 1, "text": "El desempleo bajó a 2.5%", "start_s": None, "end_s": None}]
+    prompt, refs = build_prompt(read_person(graph, PID), {}, segs, {"topics": []})
+    assert "El desempleo bajó a 2.5%" in prompt and set(refs) == {"s0", "s1"}

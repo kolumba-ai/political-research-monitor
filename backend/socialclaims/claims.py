@@ -195,13 +195,15 @@ def build_prompt(snap, post_meta: dict, segs: list[dict], taxonomy: dict) -> tup
         if key in seen:
             continue
         seen.add(key)
-        if used + len(s["text"]) > MAX_SEGMENT_CHARS:
-            break
-        used += len(s["text"])
+        room = MAX_SEGMENT_CHARS - used
+        if room < 200 and len(s["text"]) > room:
+            continue
+        shown = s["text"][:room]
+        used += len(shown)
         ref = f"s{s['ordinal']}"
         refs[ref] = s
         t = f" {s['start_s']:.1f}-{s['end_s']:.1f}s" if s["start_s"] is not None and s["end_s"] is not None else ""
-        lines.append(f"[{ref}] ({s['source']}{t}) {s['text']}")
+        lines.append(f"[{ref}] ({s['source']}{t}) {shown}")
     profile = {"politician": snap.name, "aliases": snap.aliases[:10],
                "offices": [o.name for o in snap.current_offices], "parties": [p.get("acronym") or p.get("name") for p in snap.parties]}
     topics = "\n".join(f"- {t['id']}: {t['es']}" for t in taxonomy["topics"])
