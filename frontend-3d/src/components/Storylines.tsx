@@ -260,7 +260,7 @@ export function StorylinesView({ iso2, politicianId }: { iso2: string; politicia
     {(ungrouped > 0 || grouping.needs_review > 0) && <p className="mt-2 rounded-lg border border-warn/40 bg-warn/5 p-2.5 text-xs" data-testid="grouping-note">
       {ungrouped > 0 && <>{grouping.placed ? `${ungrouped} of ${grouping.units} claims have not been grouped yet` : "These claims have not been grouped into storylines yet"}, so
         each is listed on its own and only identical claims share a row. Run <code>python -m socialclaims storylines</code> to group them. </>}
-      {grouping.needs_review > 0 && <>{plural(grouping.needs_review, "claim")} {grouping.needs_review === 1 ? "is" : "are"} waiting for review and stay ungrouped until then.</>}
+      {grouping.needs_review > 0 && <>{plural(grouping.needs_review, "claim")} {grouping.needs_review === 1 ? "is waiting for review and stays" : "are waiting for review and stay"} ungrouped until then.</>}
     </p>}
     <div className="mt-3 flex flex-wrap items-center gap-2">
       <div className="inline-flex overflow-hidden rounded-lg border border-line text-xs" role="group" aria-label="Count by">

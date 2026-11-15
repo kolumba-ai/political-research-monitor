@@ -203,12 +203,13 @@ class StorylineStore:
     def __init__(self, country_dir: Path):
         self.dir = Path(country_dir)
         self.path, self.log_path = self.dir / "storylines.json", self.dir / "storyline_decisions.jsonl"
-        self.lock = threading.Lock()
+        self.lock = threading.RLock()  # politicians are judged on parallel threads; saving serialises all of them
         self.data = json.loads(self.path.read_text(encoding="utf-8")) if self.path.exists() else {
             "format": FORMAT, "politicians": {}}
 
     def politician(self, pid: str) -> dict:
-        return self.data["politicians"].setdefault(pid, {"storylines": {}, "units": {}, "review": {}})
+        with self.lock:
+            return self.data["politicians"].setdefault(pid, {"storylines": {}, "units": {}, "review": {}})
 
     def save(self) -> None:
         with self.lock:
@@ -387,15 +388,16 @@ class StorylineEngine:
             "proposed": {"storyline_id": story["storyline_id"] if story else None,
                          "version_id": version["version_id"] if version else None}})
         kind = "counter_claim" if relation == "counter_claim" else "claim"
-        if review or story is None:
-            self.store._place(pol, pid, unit["key"], None, None, label=label, version_label=version_label,
-                              topic=verdict.get("topic"), kind="claim", decision=decision)
-            if review:
-                pol["review"][decision["decision_id"]] = _proposal(decision)
-        else:
-            self.store._place(pol, pid, unit["key"], story["storyline_id"], version["version_id"] if version else None,
-                              label=label, version_label=version_label, topic=verdict.get("topic"), kind=kind,
-                              decision=decision)
+        with self.store.lock:
+            if review or story is None:
+                self.store._place(pol, pid, unit["key"], None, None, label=label, version_label=version_label,
+                                  topic=verdict.get("topic"), kind="claim", decision=decision)
+                if review:
+                    pol["review"][decision["decision_id"]] = _proposal(decision)
+            else:
+                self.store._place(pol, pid, unit["key"], story["storyline_id"],
+                                  version["version_id"] if version else None, label=label,
+                                  version_label=version_label, topic=verdict.get("topic"), kind=kind, decision=decision)
         return decision
 
 

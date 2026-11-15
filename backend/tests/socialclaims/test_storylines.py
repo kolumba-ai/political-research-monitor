@@ -95,6 +95,26 @@ def test_judge_places_units_and_hard_rules_override_it(tmp_path):
     assert again["usage"] == {} and json.loads((tmp_path / "storylines.json").read_text())["politicians"] == before
 
 
+class EveryUnitItsOwnStoryline:
+    model = "scripted"
+
+    def extract(self, system, prompt, tool):
+        return {"relation": "unrelated", "storyline_id": "", "version_id": "", "differs_on": [], "confidence": 0.9,
+                "rationale": "r", "storyline_label": "label", "version_label": "v", "topic": "otro"}, {}
+
+
+def test_politicians_judged_in_parallel_all_land_in_one_file(tmp_path):
+    pids = [f"person:MX:p{i}" for i in range(12)]
+    claims = [{**_claim(f"c{i}-{n}", f"p{i}-{n}", f"Afirmación {n} del político {i}", "2026-09-01T10:00:00Z", "post:a"),
+               "politician_id": pid} for i, pid in enumerate(pids) for n in range(60)]
+    units = st.build_units(claims)
+    results = st.run_country(st.StorylineEngine(st.StorylineStore(tmp_path), EveryUnitItsOwnStoryline(), TOPICS),
+                             units, workers=12)
+    saved = json.loads((tmp_path / "storylines.json").read_text())["politicians"]
+    assert sorted(r["politician_id"] for r in results) == sorted(pids) and all(r["pending"] == 0 for r in results)
+    assert {pid: len(saved[pid]["units"]) for pid in pids} == {pid: 60 for pid in pids}
+
+
 def test_review_accept_reject_move_rename(tmp_path):
     store, units, _, _ = _run(tmp_path)
     pol = store.politician(PID)
