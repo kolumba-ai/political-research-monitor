@@ -130,6 +130,8 @@ def test_merged_identity_keeps_accounts_and_terms(conn, graph):
     identity.add_redirect(conn, old, new, "merge", "tester")
     terms = identity.load_terms(conn, new)
     assert terms.handles == {"instagram": ["claudia_shein"]} and terms.hashtags == ["Sheinbaum"]
+    accounts.reject(conn, new, "instagram", "claudia_shein", "reviewer", "wrong account")
+    assert identity.load_terms(conn, new).handles == {}
 
 
 def test_accounts_need_human_approval_and_change_query(conn, graph):

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from psycopg.types.json import Jsonb
 
+from .identity import merged_ids, resolve_redirect
 from .oriane import CreditsExhausted, OrianeClient, credits_for
 from .query import name_variants
 from .systema import PersonSnapshot
@@ -69,7 +70,9 @@ def approve(conn, politician_id: str, platform: str, handle: str, approved_by: s
 
 
 def reject(conn, politician_id: str, platform: str, handle: str, reviewer: str, note: str = "") -> None:
+    """Rejects the handle under the identity and every identity merged into it."""
+    ids = merged_ids(conn, resolve_redirect(conn, politician_id))
     with conn.transaction():
         conn.execute("UPDATE politician_account SET status = 'rejected', approved_by = %s, notes = %s "
-                     "WHERE politician_id = %s AND platform = %s AND handle = %s",
-                     (reviewer, note, politician_id, platform, handle.lstrip("@").lower()))
+                     "WHERE politician_id = ANY(%s) AND platform = %s AND handle = %s",
+                     (reviewer, note, ids, platform, handle.lstrip("@").lower()))
