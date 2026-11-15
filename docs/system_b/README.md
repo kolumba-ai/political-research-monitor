@@ -105,5 +105,14 @@ After a name-variant fix or an `add-term exclude_variant`, re-check stored name-
 cd backend && ../.venv/bin/python -m socialclaims rematch person:MX:maria-lourdes-paz-reyes --apply
 ```
 
+Thumbnails: capture stores Oriane's `thumbnailMediaUrl`/`thumbnailMediaId` on `post`. For posts captured before
+that, `thumbnails` backfills them from the saved raw payloads, then downloads the images to `THUMBNAIL_DIR`
+(default `var/socialclaims/thumbnails/<platform>/<platform_id>.webp`) and records `post.thumbnail_path`. It makes no
+Oriane API call (images come from Oriane's public static CDN) and skips files already on disk:
+
+```bash
+cd backend && ../.venv/bin/python -m socialclaims thumbnails --format video   # --no-download: URLs only
+```
+
 Coverage caveat for every output: only Oriane-indexed content, roughly the last 3 months, up to a week of
 indexing lag, creators with 5,000+ followers. "No match" is not evidence that nothing was said.

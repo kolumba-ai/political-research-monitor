@@ -55,6 +55,7 @@ class SocialSettings(BaseSettings):
     # --- Raw storage / retention (configurable until provider agreements settle) --
     raw_storage_dir: Path = REPO_ROOT / "var" / "socialclaims" / "raw"
     store_raw_payloads: bool = True
+    thumbnail_dir: Path = REPO_ROOT / "var" / "socialclaims" / "thumbnails"
     # Days to keep raw payloads; 0 = keep until a retention policy is set.
     raw_retention_days: int = 0
     # Fields dropped before anything is stored (data minimisation); recorded per raw row.

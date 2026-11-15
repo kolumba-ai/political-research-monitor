@@ -137,6 +137,11 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("pull-pastdev", help="export the country's claim data points from past.dev (read-only, free)")
     p.add_argument("--country", default="MX")
     p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
+    p = sub.add_parser("thumbnails", help="backfill thumbnail URLs from raw payloads and download them (no Oriane API call)")
+    p.add_argument("--format", action="append", dest="formats", help="only these post formats (repeatable), e.g. video")
+    p.add_argument("--no-download", action="store_true", help="only backfill thumbnail_url")
+    p.add_argument("--redownload", action="store_true")
+    p.add_argument("--out", default=None, help="directory for images (default THUMBNAIL_DIR)")
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -169,6 +174,14 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.cmd == "purge-expired":
         _out({"purged": purge_expired(conn, s)})
+        return 0
+    if args.cmd == "thumbnails":
+        from . import thumbnails
+        out = {"backfill": thumbnails.backfill(conn, s.raw_storage_dir)}
+        if not args.no_download:
+            out["download"] = thumbnails.download(conn, args.out or s.thumbnail_dir, formats=args.formats,
+                                                  redownload=args.redownload)
+        _out(out)
         return 0
     if args.cmd == "redirect":
         identity.add_redirect(conn, args.old_id, args.new_id, args.reason, args.by)
