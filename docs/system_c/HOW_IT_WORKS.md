@@ -133,8 +133,10 @@ past.dev in bulk. Each record is plain text followed by `JSON:` and a compact pa
 Deleted ids can't be reused (past.dev refuses them), so the old pipeline's `oriane:<id>:v1` ids, deleted on
 2026-11-15 to start the project clean, are never sent again.
 
-The proposition is then marked `mapped` in the queue. If any step fails, it goes back to `queued` and the batch moves
-on to the next proposition.
+The proposition is then marked `mapped` in the queue. If any step fails, or its past.dev write is rejected, fails or
+hasn't completed, it goes back to `queued` and the run moves on to the next proposition. Workers take propositions
+one at a time with `FOR UPDATE SKIP LOCKED`, so `--workers N` (or several processes or Modal containers) can share the
+queue. A proposition left `mapping` for more than an hour by a stopped worker becomes available again.
 
 ## Tables
 
@@ -159,7 +161,7 @@ Run from `backend/` (or prefix `make`, see the targets in parentheses):
 ../.venv/bin/python -m evidencegraph intake                              # free: refresh the queue from System B
 ../.venv/bin/python -m evidencegraph queue --status queued --limit 20    # inspect the queue
 ../.venv/bin/python -m evidencegraph enrich --dry-run --limit 10         # free: next propositions and cost ceiling
-../.venv/bin/python -m evidencegraph enrich --limit 10 --confirm-spend   # (make ev-enrich ARGS=...) billed
+../.venv/bin/python -m evidencegraph enrich --workers 8 --confirm-spend  # (make ev-enrich ARGS=...) billed, whole queue
 ../.venv/bin/python -m evidencegraph fetch https://www.inegi.org.mx/     # fetch one URL (no Exa)
 ```
 
@@ -174,7 +176,7 @@ On Modal: `make modal-systemc ARGS="enrich --limit 10 --confirm-spend"`. The Mod
   roughly $0.32 at an assumed $3 / $15 per million input / output tokens, plus past.dev ingest credits (1 credit per
   350 bytes; a proposition with 8 linked documents writes about 15–20 records).
 - **Confirmation:** a paid run needs `--confirm-spend` and `EXA_API_KEY`, `ANTHROPIC_API_KEY` and `PAST_DEV_API_KEY`.
-  `--limit` caps how many propositions are processed.
+  `--limit` caps how many propositions are processed (default: the whole queue).
 - **Budget:** Exa spend also stops at the System C monthly budget in the gateway.
 
 ## Configuration

@@ -56,7 +56,7 @@ Claims reach past.dev only through this step; nothing copies Postgres to past.de
 ```sh
 ../.venv/bin/python -m evidencegraph intake                              # free: refresh the queue from System B
 ../.venv/bin/python -m evidencegraph enrich --dry-run --limit 10         # free: what would run, cost ceiling
-../.venv/bin/python -m evidencegraph enrich --limit 10 --confirm-spend   # Exa + Anthropic + past.dev (billed)
+../.venv/bin/python -m evidencegraph enrich --workers 8 --confirm-spend  # whole queue; Exa + Anthropic + past.dev (billed)
 ```
 
 ## Deferred beyond M0

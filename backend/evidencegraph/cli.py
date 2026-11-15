@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 
 from .config import get_settings
@@ -40,7 +42,10 @@ def build_parser() -> argparse.ArgumentParser:
     enrich_cmd = commands.add_parser(
         "enrich", help="Exa search, fetch, summarise and judge evidence for queued claims; write them to past.dev")
     enrich_cmd.add_argument("ids", nargs="*", help="politician ids (default: every queued proposition)")
-    enrich_cmd.add_argument("--limit", type=_positive_int, default=10, help="propositions to enrich, by priority")
+    enrich_cmd.add_argument("--limit", type=_positive_int,
+                            help="propositions to enrich, by priority (default: the whole queue)")
+    enrich_cmd.add_argument("--workers", type=_positive_int, default=1,
+                            help="parallel workers sharing the queue (each claims propositions with SKIP LOCKED)")
     enrich_cmd.add_argument("--country", default="MX")
     enrich_cmd.add_argument("--dry-run", action="store_true", help="list what would run and the cost ceiling; free")
     enrich_cmd.add_argument("--confirm-spend", action="store_true", help="required: Exa, Anthropic and past.dev bill")
@@ -54,11 +59,10 @@ def _positive_int(value: str) -> int:
     return number
 
 
-def _enricher(conn, settings, country: str):
+def _enricher(conn, settings, country: str, gateway):
     from socialclaims.claims import AnthropicLLM
     from socialclaims.pastdev import PastDevClient
 
-    from .config import exa_gateway
     from .enrich import Enricher
 
     llm = AnthropicLLM(settings.anthropic_api_key, settings.enrich_model, settings.anthropic_base_url,
@@ -67,8 +71,33 @@ def _enricher(conn, settings, country: str):
     client = PastDevClient(settings.past_dev_api_key, settings.past_dev_base_url,
                            rate_limiter_database_url=settings.database_url,
                            requests_per_second=settings.pastdev_requests_per_second)
-    return Enricher(conn, settings, llm=llm, gateway=exa_gateway(settings), fetcher=Fetcher(conn, settings),
+    return Enricher(conn, settings, llm=llm, gateway=gateway, fetcher=Fetcher(conn, settings),
                     client=client, country=country)
+
+
+def _run_enrich(settings, args) -> dict:
+    from .config import exa_gateway
+
+    gateway = exa_gateway(settings)
+    per_worker = None if args.limit is None else math.ceil(args.limit / args.workers)
+
+    def work(_n: int) -> dict:
+        conn = connect(settings.database_url)
+        enricher = _enricher(conn, settings, args.country, gateway)
+        try:
+            return enricher.run(args.ids or None, per_worker)
+        finally:
+            enricher.fetcher.close()
+            conn.close()
+
+    with ThreadPoolExecutor(args.workers) as pool:
+        outs = list(pool.map(work, range(args.workers)))
+    results = [r for o in outs for r in o["results"]]
+    statuses: dict[str, int] = {}
+    for r in results:
+        statuses[r["status"]] = statuses.get(r["status"], 0) + 1
+    return {"propositions": len(results), "by_status": statuses, "errors": [e for o in outs for e in o["errors"]],
+            "exa_usd": round(gateway.usage.spent, 4), "results": results}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -120,11 +149,7 @@ def main(argv: list[str] | None = None) -> int:
                                                 ("PAST_DEV_API_KEY", settings.past_dev_api_key)) if not value]
             if missing:
                 parser.error(f"missing {', '.join(missing)}")
-            enricher = _enricher(conn, settings, args.country)
-            try:
-                print(_json(enricher.run(args.ids or None, args.limit)))
-            finally:
-                enricher.fetcher.close()
+            print(_json(_run_enrich(settings, args)))
     finally:
         conn.close()
     return 0
