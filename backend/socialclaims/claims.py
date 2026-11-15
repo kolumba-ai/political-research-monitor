@@ -52,7 +52,7 @@ there are none. Rules:
 
 def _claim_schema(topic_ids: list[str]) -> dict:
     s, arr = {"type": "string"}, lambda t: {"type": "array", "items": t}
-    value = {"type": "object", "properties": {"value": s, "unit": s}, "required": ["value"]}
+    value = {"type": "object", "properties": {"value": s, "unit": s}, "required": ["value"], "additionalProperties": False}
     claim = {"type": "object", "properties": {
         "segment_ids": arr(s), "quote": s, "text": s, "text_en": s,
         "type": {"type": "string", "enum": CLAIM_TYPES},
@@ -60,17 +60,19 @@ def _claim_schema(topic_ids: list[str]) -> dict:
         "relation_to_politician": {"type": "string", "enum": ["speaker", "subject", "quoted", "mentioned"]},
         "topics": arr({"type": "string", "enum": topic_ids}),
         "entities": {"type": "object", "properties": {"people": arr(s), "organizations": arr(s), "places": arr(s),
-                                                      "numbers": arr(value)}},
+                                                      "numbers": arr(value)}, "additionalProperties": False},
         "checkworthiness": {"type": "number"},
-        "referenced_period": {"type": ["object", "null"], "properties": {"start": s, "end": s}},
+        "referenced_period": {"type": ["object", "null"], "properties": {"start": s, "end": s},
+                              "additionalProperties": False},
         "proposition": {"type": "object", "properties": {
             "subject": s, "predicate": s, "negated": {"type": "boolean"}, "values": arr(value),
             "place": {"type": ["string", "null"]}, "qualifiers": arr(s)},
-            "required": ["subject", "predicate", "negated"]}},
+            "required": ["subject", "predicate", "negated"], "additionalProperties": False}},
         "required": ["segment_ids", "quote", "text", "type", "modality", "relation_to_politician", "topics",
-                     "checkworthiness", "proposition"]}
+                     "checkworthiness", "proposition"], "additionalProperties": False}
     return {"name": "record_claims", "description": "Record every claim in the post (possibly none).",
-            "input_schema": {"type": "object", "properties": {"claims": arr(claim)}, "required": ["claims"]}}
+            "input_schema": {"type": "object", "properties": {"claims": arr(claim)}, "required": ["claims"],
+                             "additionalProperties": False}}
 
 
 def load_taxonomy(country_code: str) -> dict:
@@ -81,7 +83,7 @@ class LLM(Protocol):
     model: str
 
     def extract(self, system: str, prompt: str, tool: dict) -> tuple[dict, dict]:
-        """Returns (tool input, usage)."""
+        """Returns (schema-conforming output, usage)."""
 
 
 class AnthropicLLM:
@@ -92,9 +94,10 @@ class AnthropicLLM:
                                  headers={"x-api-key": api_key, "anthropic-version": "2023-06-01"})
 
     def extract(self, system: str, prompt: str, tool: dict) -> tuple[dict, dict]:
-        body = {"model": self.model, "max_tokens": self.max_tokens, "system": system, "temperature": 0,
-                "messages": [{"role": "user", "content": prompt}], "tools": [tool],
-                "tool_choice": {"type": "tool", "name": tool["name"]}}
+        # Current models reject forced tool_choice and temperature; structured outputs enforce the schema instead.
+        body = {"model": self.model, "max_tokens": self.max_tokens, "system": system,
+                "messages": [{"role": "user", "content": prompt}],
+                "output_config": {"format": {"type": "json_schema", "schema": tool["input_schema"]}}}
         for attempt in range(4):
             try:
                 r = self.http.post("/v1/messages", json=body)
@@ -106,10 +109,13 @@ class AnthropicLLM:
             if r.status_code in (429, 500, 502, 503, 529) and attempt < 3:
                 self.sleep(2 ** attempt * 5)
                 continue
-            r.raise_for_status()
+            if r.status_code != 200:
+                raise RuntimeError(f"anthropic {r.status_code}: {r.text[:500]}")
             data = r.json()
-            block = next(b for b in data["content"] if b["type"] == "tool_use")
-            return block["input"], data.get("usage", {})
+            if data.get("stop_reason") == "max_tokens":
+                raise RuntimeError("anthropic output truncated at max_tokens")
+            text = "".join(b.get("text", "") for b in data["content"] if b["type"] == "text")
+            return json.loads(text), data.get("usage", {})
         raise RuntimeError("unreachable")
 
 

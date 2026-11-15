@@ -1,3 +1,4 @@
+import json
 import httpx
 import pytest
 
@@ -124,19 +125,19 @@ def test_idempotent_failures_and_versioning(conn, graph, segmented):
     assert Extractor(conn, graph, other).run(PID, 10)["extracted"] == 2
 
 
-def test_anthropic_client_uses_forced_tool_call():
+def test_anthropic_client_uses_structured_output():
     seen = {}
 
     def handler(request):
         seen["body"] = request.read()
         seen["key"] = request.headers["x-api-key"]
-        return httpx.Response(200, json={"content": [{"type": "tool_use", "name": "record_claims",
-                                                      "input": {"claims": []}}],
-                                         "usage": {"input_tokens": 5, "output_tokens": 1}})
+        return httpx.Response(200, json={"content": [{"type": "text", "text": '{"claims": []}'}],
+                                         "stop_reason": "end_turn", "usage": {"input_tokens": 5, "output_tokens": 1}})
     llm = AnthropicLLM("k", "m", transport=httpx.MockTransport(handler))
     result, usage = llm.extract("sys", "prompt", {"name": "record_claims", "input_schema": {}})
     assert result == {"claims": []} and usage["input_tokens"] == 5 and seen["key"] == "k"
-    assert b'"tool_choice":{"type":"tool","name":"record_claims"}' in seen["body"].replace(b" ", b"")
+    body = json.loads(seen["body"])
+    assert body["output_config"]["format"] == {"type": "json_schema", "schema": {}} and "temperature" not in body
 
 
 def test_decimal_comma_is_not_a_thousands_separator():
