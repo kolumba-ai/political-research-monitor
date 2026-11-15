@@ -102,17 +102,19 @@ def claim_items(prop: dict, claims: list[dict]) -> list[dict]:
 
 
 def document_item(doc: dict, link: dict) -> dict:
+    # The first summary written for this page version, so the shared document record doesn't change per claim.
+    summary = doc.get("document_summary") or link["summary"]
     when = doc["published_at"] or doc["retrieved_at"]
     publisher = doc["publisher"] or doc["publisher_domain"]
     text = (f"DOCUMENT by {publisher} ({doc['source_class'] or 'unregistered'}, tier {doc['authority_tier']}) "
             f"published {_iso(doc['published_at'])[:10] if doc['published_at'] else 'on an unknown date'}: "
-            f"{doc['title'] or doc['resolved_url']}. {doc['resolved_url']}\n{link['summary']}")
+            f"{doc['title'] or doc['resolved_url']}. {doc['resolved_url']}\n{summary}")
     payload = {"format": PAYLOAD_FORMAT["document"], "document_id": doc["document_id"], "url": doc["resolved_url"],
                "publisher": publisher, "source_class": doc["source_class"], "authority_tier": doc["authority_tier"],
                "licence_class": doc["licence_class"], "title": doc["title"], "published_at": _iso(doc["published_at"]),
                "date_confidence": doc["date_confidence"], "retrieved_at": _iso(doc["retrieved_at"]),
                "date_is_retrieval": doc["published_at"] is None, "content_sha256": doc["content_sha256"],
-               "summary": link["summary"]}
+               "summary": summary}
     return {"id": f"doc-{doc['document_id'].split(':', 1)[-1]}-v{doc['version']}",
             "label": f"document {publisher}: {doc['title'] or doc['resolved_url']}"[:200],
             "content": _content(text, payload), "timestamp": _iso(when),
@@ -146,6 +148,8 @@ def link_items(prop: dict, link: dict, doc: dict, names: dict[str, str]) -> list
 LINKS_SQL = """
 SELECT l.*, d.resolved_url, d.publisher_domain, d.source_class, d.authority_tier, d.licence_class, d.title,
        d.published_at, d.date_confidence, r.publisher, v.retrieved_at,
+       (SELECT e.summary FROM ev_evidence_link e WHERE e.document_id = l.document_id
+        AND e.content_sha256 = l.content_sha256 ORDER BY e.assessed_at, e.link_id LIMIT 1) AS document_summary,
        (SELECT count(*) FROM ev_document_version v2 WHERE v2.document_id = l.document_id
         AND v2.retrieved_at <= v.retrieved_at) AS version
 FROM ev_evidence_link l

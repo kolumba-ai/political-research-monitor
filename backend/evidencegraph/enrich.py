@@ -329,6 +329,8 @@ class Enricher:
             fetched_n = 0
             for cand in candidates:
                 fetched = self.fetcher.fetch(cand["url"], cand.get("published_date"), include_text=True)
+                if fetched.get("text"):
+                    fetched["text"] = fetched["text"].replace("\x00", "")
                 if fetched.get("fetch_status") != "fetched" or not (fetched.get("text") or "").strip():
                     continue
                 fetched_n += 1
