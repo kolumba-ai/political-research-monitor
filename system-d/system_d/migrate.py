@@ -18,8 +18,8 @@ def apply_migration(conn: psycopg.Connection, schema_path: Path = SCHEMA_PATH) -
     sql_bytes = schema_path.read_bytes()
     checksum = hashlib.sha256(sql_bytes).hexdigest()
     sql = sql_bytes.decode("utf-8")
-    conn.execute("SELECT pg_advisory_lock(%s)", (ADVISORY_LOCK_ID,))
-    try:
+    with conn.transaction():
+        conn.execute("SELECT pg_advisory_xact_lock(%s)", (ADVISORY_LOCK_ID,))
         conn.execute(
             """
             CREATE TABLE IF NOT EXISTS system_d_schema_migrations (
@@ -29,7 +29,6 @@ def apply_migration(conn: psycopg.Connection, schema_path: Path = SCHEMA_PATH) -
             )
             """
         )
-        conn.commit()
         existing = conn.execute(
             "SELECT sha256 FROM system_d_schema_migrations WHERE filename = %s",
             (MIGRATION_FILENAME,),
@@ -42,16 +41,12 @@ def apply_migration(conn: psycopg.Connection, schema_path: Path = SCHEMA_PATH) -
                     f"recorded {recorded_checksum}, current {checksum}"
                 )
             return False
-        with conn.transaction():
-            conn.execute(sql)
-            conn.execute(
-                "INSERT INTO system_d_schema_migrations (filename, sha256) VALUES (%s, %s)",
-                (MIGRATION_FILENAME, checksum),
-            )
+        conn.execute(sql)
+        conn.execute(
+            "INSERT INTO system_d_schema_migrations (filename, sha256) VALUES (%s, %s)",
+            (MIGRATION_FILENAME, checksum),
+        )
         return True
-    finally:
-        conn.execute("SELECT pg_advisory_unlock(%s)", (ADVISORY_LOCK_ID,))
-        conn.commit()
 
 
 def main() -> None:
