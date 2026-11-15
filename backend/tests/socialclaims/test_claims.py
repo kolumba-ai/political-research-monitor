@@ -9,7 +9,7 @@ import pytest
 
 from socialclaims import accounts, claims as claims_module
 from socialclaims.capture import Capturer
-from socialclaims.claims import AnthropicLLM, Extractor, _numbers, _prop_id, align, build_prompt
+from socialclaims.claims import AnthropicLLM, Extractor, OpenAILLM, _numbers, _prop_id, align, build_prompt
 from socialclaims.segments import process_politician
 
 from .conftest import FIXED_NOW, FakeOriane, make_result
@@ -205,6 +205,28 @@ def test_pending_shards_partition_the_full_pending_list(conn, graph, segmented):
     assert shard_0 | shard_1 == full
 
 
+def test_pending_can_skip_ok_extractions_from_any_version(conn, graph, segmented):
+    old_llm = FakeLLM(lambda prompt: [])
+    old_llm.model = "old-model"
+    old = Extractor(conn, graph, old_llm)
+    previously_pending = old.pending(PID)[0]
+    old.run(PID, 1)
+    stored = conn.execute(
+        "SELECT status FROM claim_extraction WHERE oriane_id = %s AND extractor_version = %s",
+        (previously_pending["oriane_id"], old.version),
+    ).fetchone()
+    assert stored["status"] == "ok"
+
+    new_llm = FakeLLM(lambda prompt: [])
+    new_llm.model = "new-model"
+    current = Extractor(conn, graph, new_llm, skip_any_version=False)
+    fill_gaps = Extractor(conn, graph, new_llm, skip_any_version=True)
+
+    assert current.version != old.version
+    assert previously_pending["oriane_id"] in {row["oriane_id"] for row in current.pending(PID)}
+    assert previously_pending["oriane_id"] not in {row["oriane_id"] for row in fill_gaps.pending(PID)}
+
+
 def test_anthropic_client_uses_structured_output():
     seen = {}
 
@@ -218,6 +240,73 @@ def test_anthropic_client_uses_structured_output():
     assert result == {"claims": []} and usage["input_tokens"] == 5 and seen["key"] == "k"
     body = json.loads(seen["body"])
     assert body["output_config"]["format"] == {"type": "json_schema", "schema": {}} and "temperature" not in body
+
+
+def test_openai_client_parses_json_and_sends_strict_schema_request():
+    seen = {}
+    tool = {"name": "record_claims", "input_schema": {"type": "object", "properties": {"claims": {"type": "array"}}}}
+
+    def handler(request):
+        seen["authorization"] = request.headers["authorization"]
+        seen["body"] = json.loads(request.read())
+        return httpx.Response(200, json={
+            "choices": [{"message": {"content": '{"claims": []}'}, "finish_reason": "stop"}],
+            "usage": {"prompt_tokens": 23, "completion_tokens": 7},
+        })
+
+    llm = OpenAILLM("test-key", "gpt-6.1-sol", transport=httpx.MockTransport(handler), max_tokens=1234)
+    result, usage = llm.extract("system", "prompt", tool)
+
+    assert result == {"claims": []}
+    assert usage == {"input_tokens": 23, "output_tokens": 7}
+    assert seen["authorization"] == "Bearer test-key"
+    assert seen["body"]["max_completion_tokens"] == 1234
+    assert seen["body"]["response_format"] == {
+        "type": "json_schema",
+        "json_schema": {"name": tool["name"], "schema": tool["input_schema"], "strict": False},
+    }
+
+
+def test_openai_client_retries_429_using_retry_after():
+    responses = [
+        httpx.Response(429, headers={"Retry-After": "1.5"}),
+        httpx.Response(200, json={
+            "choices": [{"message": {"content": '{"claims": []}'}, "finish_reason": "stop"}],
+            "usage": {"prompt_tokens": 1, "completion_tokens": 2},
+        }),
+    ]
+    delays = []
+
+    def handler(request):
+        return responses.pop(0)
+
+    llm = OpenAILLM("test-key", "gpt-6.1-sol", transport=httpx.MockTransport(handler), sleep=delays.append)
+
+    assert llm.extract("system", "prompt", {"name": "record_claims", "input_schema": {}})[0] == {"claims": []}
+    assert delays == [1.5]
+
+
+def test_openai_client_raises_on_bad_request():
+    llm = OpenAILLM(
+        "test-key", "gpt-6.1-sol",
+        transport=httpx.MockTransport(lambda request: httpx.Response(400, text="invalid request")),
+    )
+
+    with pytest.raises(RuntimeError, match=r"^openai 400"):
+        llm.extract("system", "prompt", {"name": "record_claims", "input_schema": {}})
+
+
+def test_openai_client_raises_when_output_is_truncated():
+    llm = OpenAILLM(
+        "test-key", "gpt-6.1-sol",
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, json={
+            "choices": [{"message": {"content": ""}, "finish_reason": "length"}],
+            "usage": {"prompt_tokens": 1, "completion_tokens": 2},
+        })),
+    )
+
+    with pytest.raises(RuntimeError, match="openai output truncated at max_completion_tokens"):
+        llm.extract("system", "prompt", {"name": "record_claims", "input_schema": {}})
 
 
 def test_decimal_comma_is_not_a_thousands_separator():

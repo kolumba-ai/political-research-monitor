@@ -19,7 +19,7 @@ def test_extract_claims_max_tokens_is_validated_and_passed(monkeypatch):
             llm_limiter_options.append(limiter_options)
 
     class FakeExtractor:
-        def __init__(self, conn, graph, llm, country):
+        def __init__(self, conn, graph, llm, country, skip_any_version=False):
             pass
 
         def run(self, politician_id, max_posts, shard):
@@ -39,6 +39,41 @@ def test_extract_claims_max_tokens_is_validated_and_passed(monkeypatch):
         "rate_limiter_database_url": "postgresql://limiter",
         "requests_per_second": 1.25,
     }]
+
+
+def test_openai_model_without_api_key_returns_two(monkeypatch, capsys):
+    settings = SocialSettings(
+        _env_file=None,
+        database_url="postgresql://unused",
+        claim_model="gpt-6.1-sol",
+        openai_api_key=None,
+    )
+    monkeypatch.setattr(cli, "get_settings", lambda: settings)
+    monkeypatch.setattr(cli, "connect", lambda database_url: object())
+    monkeypatch.setattr(cli, "_graph", lambda settings: object())
+
+    result = cli.main(["extract-claims", "person:MX:test", "--confirm-spend"])
+
+    assert result == 2
+    assert "OPENAI_API_KEY is not set" in capsys.readouterr().err
+
+
+def test_unrecognized_o_model_prefix_uses_anthropic_key(monkeypatch, capsys):
+    settings = SocialSettings(
+        _env_file=None,
+        database_url="postgresql://unused",
+        claim_model="other-model",
+        openai_api_key=None,
+        anthropic_api_key=None,
+    )
+    monkeypatch.setattr(cli, "get_settings", lambda: settings)
+    monkeypatch.setattr(cli, "connect", lambda database_url: object())
+    monkeypatch.setattr(cli, "_graph", lambda settings: object())
+
+    result = cli.main(["extract-claims", "person:MX:test", "--confirm-spend"])
+
+    assert result == 2
+    assert "ANTHROPIC_API_KEY is not set" in capsys.readouterr().err
 
 
 def test_oriane_client_receives_shared_limiter_settings():
