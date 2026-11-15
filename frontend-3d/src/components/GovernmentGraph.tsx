@@ -137,8 +137,8 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
     commit({ levels: [], openPath: [] });
     fetchChildren(root).then((result) => {
       if (request.current !== ticket) return;
-      commit({ levels: [{ parent: null, children: [{ node: result.node, edge: {} }], page: 0 },
-        ...(result.children.length ? [{ parent: root, children: result.children, page: 0 }] : [])], openPath: [root] });
+      // Start collapsed at the country; selecting it expands the first level.
+      commit({ levels: [{ parent: null, children: [{ node: result.node, edge: {} }], page: 0 }], openPath: [] });
       setBusy(false);
     }).catch((e: unknown) => {
       if (request.current !== ticket) return;
