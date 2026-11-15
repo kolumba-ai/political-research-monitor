@@ -29,7 +29,7 @@ from .systema import GraphReader, read_person
 TAXONOMY_DIR = Path(__file__).parent / "taxonomy"
 MAX_SEGMENT_CHARS = 12_000
 FUZZY_MIN = 0.9
-CHECKS_VERSION = "checks-3"
+CHECKS_VERSION = "checks-4"
 NEGATIONS = {"no", "nunca", "jamas", "ni", "tampoco", "ningun", "ninguna", "ninguno", "nada", "nadie", "sin"}
 CLAIM_TYPES = ["factual", "statistic", "policy_position", "commitment", "forecast", "accusation", "opinion"]
 INFO_ISSUES = {"predicate_negation_normalized", "segment_id_corrected"}
@@ -226,7 +226,7 @@ def _number_values(text: str, decimal_percent: bool = False) -> Iterator[tuple[s
                 i += 3 if trailing is not None else 2
                 continue
         if token in NUMBER_WORDS:
-            if token in {"cien", "ciento"} and i > 0 and word(tokens[i - 1]) == "por":
+            if token == "ciento" and i > 0 and word(tokens[i - 1]) == "por":
                 i += 1
                 continue
             yield str(NUMBER_WORDS[token]), False
@@ -245,7 +245,10 @@ def _numbers(text: str, include_words: bool = True, decimal_percent: bool = Fals
 def _value_numbers(value: dict) -> list[str]:
     unit = str(value.get("unit") or "").strip()
     decimal_percent = unit == "%" or normalize_text(unit) == "por ciento"
-    return sorted(_numbers(str(value.get("value")), decimal_percent=decimal_percent))
+    numbers = _numbers(str(value.get("value")), decimal_percent=decimal_percent)
+    if normalize_text(unit).split()[:1] == ["mil"]:  # value 2, unit "mil pesos" -> 2000
+        numbers = {str(int(float(n) * 1000)) if re.fullmatch(r"\d+(\.\d+)?", n) else n for n in numbers}
+    return sorted(numbers)
 
 
 def _negated(text: str) -> bool:

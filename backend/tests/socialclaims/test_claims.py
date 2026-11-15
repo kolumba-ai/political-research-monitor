@@ -445,3 +445,13 @@ def test_truncation_marker_does_not_eat_a_short_caption(graph):
                 {"source": "caption", "ordinal": 1, "text": "Bajó 2%", "start_s": None, "end_s": None}]
         prompt, refs = build_prompt(read_person(graph, PID), {}, segs, {"topics": []})
         assert "Bajó 2%" in prompt and "s1" in refs
+
+
+def test_value_scale_in_unit_and_literal_cien():
+    from socialclaims.claims import _numbers, _value_numbers
+    assert _value_numbers({"value": "2", "unit": "mil pesos"}) == ["2000"]
+    assert _value_numbers({"value": "2.5", "unit": "mil pesos"}) == ["2500"]
+    assert _value_numbers({"value": "2", "unit": "millones de pesos"}) == ["2"]
+    assert _numbers("Se vendió por cien pesos") == {"100"}
+    assert _numbers("cien por ciento") == {"100"}
+    assert _numbers("5 por ciento") == {"5"}
