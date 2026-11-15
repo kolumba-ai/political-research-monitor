@@ -184,6 +184,11 @@ def test_spanish_number_canonicalization(text, expected):
     assert expected in _numbers(text)
 
 
+def test_compound_number_components_are_consumed():
+    assert _numbers("dos mil puentes") == {"2000"}
+    assert _numbers("6 mil 500 millones") == {"6500"}
+
+
 @pytest.mark.parametrize(("quote", "text"), [
     ("No, Sheinbaum sale a defender el video", "Sheinbaum sale a defender el video"),
     ("cuidan a Andy y no a los mexicanos", "cuidan a Andy y no a los mexicanos"),
@@ -291,6 +296,18 @@ def test_percent_value_unit_matches_quote_and_changed_paraphrase_number_is_flagg
     )
     assert out["grounding"] == {"review": 1}
     assert any("paraphrase_numbers_not_in_quote:1125" in row["grounding_issues"] for row in rows)
+
+
+def test_compound_total_rejects_component_value_and_paraphrase(conn, graph, sc_settings):
+    quote = "Se construyeron dos mil puentes"
+    paraphrase = "Se construyeron dos puentes"
+    prop = {**PROP, "values": [{"value": "2", "unit": "puentes"}]}
+    out, rows = extract_claims(
+        conn, graph, sc_settings, quote,
+        lambda r: [claim(quote, [r], text=paraphrase, proposition=prop)],
+    )
+    assert out["grounding"] == {"review": 1}
+    assert "proposition_values_not_in_quote" in rows[0]["grounding_issues"]
 
 
 def test_oversized_speech_does_not_hide_caption(graph):

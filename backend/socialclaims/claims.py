@@ -193,30 +193,38 @@ def _number(raw: str, decimal_percent: bool = False) -> str:
 
 def _numbers(text: str) -> set[str]:
     raw = text or ""
-    numbers = set()
-    for match in re.finditer(r"\d[\d,.]*", raw):
-        decimal_percent = bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[match.end():], flags=re.IGNORECASE))
-        numbers.add(_number(match.group(), decimal_percent=decimal_percent))
-    folded = strip_accents(raw).lower()
-    tokens = [m.group() for m in re.finditer(r"\d[\d,.]*|[a-z]+", folded)]
-    numbers.update(str(NUMBER_WORDS[t]) for t in tokens if t in NUMBER_WORDS)
+    tokens = list(re.finditer(r"\d[\d,.]*|[^\W\d_]+", raw, flags=re.UNICODE))
 
-    def integer(token: str) -> int | None:
+    def word(match: re.Match) -> str:
+        return strip_accents(match.group()).lower()
+
+    def integer(match: re.Match) -> int | None:
+        token = word(match)
         if token in NUMBER_WORDS:
             return NUMBER_WORDS[token]
-        canonical = _number(token)
+        decimal_percent = bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[match.end():], flags=re.IGNORECASE))
+        canonical = _number(token, decimal_percent=decimal_percent)
         return int(canonical) if canonical.isdigit() else None
 
-    for i, token in enumerate(tokens[:-1]):
-        if tokens[i + 1] != "mil":
-            continue
-        leading = integer(token)
-        if leading is None:
-            continue
-        trailing = integer(tokens[i + 2]) if i + 2 < len(tokens) else 0
-        if trailing is None:
-            trailing = 0
-        numbers.add(str(leading * 1000 + trailing))
+    numbers = set()
+    i = 0
+    while i < len(tokens):
+        token = word(tokens[i])
+        if i + 1 < len(tokens) and word(tokens[i + 1]) == "mil":
+            leading = integer(tokens[i])
+            if leading is not None:
+                trailing = integer(tokens[i + 2]) if i + 2 < len(tokens) else None
+                total = leading * 1000 + (trailing or 0)
+                numbers.add(str(total))
+                i += 3 if trailing is not None else 2
+                continue
+        if token in NUMBER_WORDS:
+            numbers.add(str(NUMBER_WORDS[token]))
+        elif re.match(r"\d", token):
+            decimal_percent = bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[tokens[i].end():],
+                                            flags=re.IGNORECASE))
+            numbers.add(_number(token, decimal_percent=decimal_percent))
+        i += 1
     return numbers
 
 
