@@ -26,6 +26,7 @@ log = structlog.get_logger(__name__)
 PAYLOAD_MARKER = "\nJSON:\n"
 HEADLINE = re.compile(r"^(?P<platform>\w+) post by @(?P<handle>\S+) on (?P<date>\d{4}-\d{2}-\d{2}) mentioning (?P<name>.+?)\.")
 EXPORT_FORMAT = "pastdev-claims/1"
+EVIDENCE_CLAIM_FORMAT = "evidencegraph-claim/1"  # System C claim records (evidencegraph/project.py)
 
 
 class PastDevError(RuntimeError):
@@ -54,6 +55,9 @@ class PastDevClient:
 
     def post(self, path: str, body: dict) -> dict:
         return self._request("POST", path, json={k: v for k, v in body.items() if v is not None})
+
+    def put(self, path: str, body: dict) -> dict:
+        return self._request("PUT", path, json=body)
 
     def _request(self, method: str, path: str, **kwargs) -> dict:
         for attempt in range(self.max_retries + 1):
@@ -182,6 +186,24 @@ def _sort_key(row: dict) -> str:
     return row.get("published_at") or ""
 
 
+def _evidence_claim_posts(src: dict, payload: dict) -> list[tuple[str, dict]]:
+    """A System C claim record (`evidencegraph-claim/1`) as one post-shaped payload per post that stated it, keyed by
+    post x politician so claims of several propositions from one post merge into one exported post."""
+    by_post: dict[str, list[dict]] = {}
+    for c in payload.get("claims") or []:
+        by_post.setdefault(c.get("oriane_id") or "", []).append(c)
+    person = (payload.get("politician") or {}).get("system_a_person_id") or ""
+    return [(f"post:{oid}:{person}", {
+        "politician": payload.get("politician") or {},
+        "source": {"oriane_content_id": oid or None, "platform": cs[0].get("platform"), "url": cs[0].get("url"),
+                   "published_at": cs[0].get("stated_at")},
+        "claims": [{"claim_index": i, "claim_id": c.get("claim_id"), "claim_es": c.get("text"), "claim_en": c.get("text_en"),
+                    "claim_type": c.get("type"), "evidence_span": c.get("quote"),
+                    "about_politician": c.get("relation_to_politician") in ("speaker", "subject")}
+                   for i, c in enumerate(cs)],
+    }) for oid, cs in by_post.items()]
+
+
 def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
     """Read all current claim data points and write `<out_dir>/<CC>/{posts,claims}.jsonl` + `manifest.json`."""
     country = country.upper()
@@ -197,7 +219,8 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
 
     readers = sorted(audience_of) or ["pastdev-claims-reader"]
     posts: dict[str, dict] = {}
-    skipped = {"not_current": 0, "no_payload": 0, "other_country": 0, "unresolved_politician": 0}
+    skipped = {"not_current": 0, "no_payload": 0, "other_country": 0, "unresolved_politician": 0,
+               "evidence_records": 0}
     partial = 0
     for src in client.sources():
         if not src.get("current"):
@@ -215,36 +238,45 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
             payload = {"politician": {"name": m["name"]} if m else {}, "partial": True,
                        "source": {"platform": m["platform"], "uploader_handle": m["handle"]} if m else {},
                        "claims": [{"claim_index": i, "claim_es": t} for i, t in enumerate(texts)]}
-        pol = payload.get("politician") or {}
-        if (pol.get("country") or country).upper() != country:
-            skipped["other_country"] += 1
+        fmt = str(payload.get("format") or "")
+        if fmt.startswith("evidencegraph-") and fmt != EVIDENCE_CLAIM_FORMAT:
+            skipped["evidence_records"] += 1
             continue
-        politician_id = resolve(pol)
-        if not politician_id:
-            skipped["unresolved_politician"] += 1
-        s = payload.get("source") or {}
-        ts = payload.get("timestamps") or {}
-        data_point_id = src.get("dataPointId") or s.get("oriane_content_id")
-        post = {
-            "data_point_id": data_point_id, "trace_source_id": src["id"], "politician_id": politician_id,
-            "politician_name": pol.get("name"), "payload_person_id": pol.get("system_a_person_id"),
-            "country": country, "oriane_content_id": s.get("oriane_content_id"), "platform": s.get("platform"),
-            "platform_id": s.get("platform_id"), "url": post_url(s), "format": s.get("format"),
-            "uploader_handle": s.get("uploader_handle"), "uploader_name": s.get("uploader_name"),
-            "caption": s.get("caption"), "transcript_excerpt": s.get("transcript_excerpt"),
-            "published_at": s.get("published_at") or ts.get("published_at") or src.get("occurredAt"),
-            "engagement": payload.get("engagement_snapshot") or {},
-            "claims_extracted_at": ts.get("claims_extracted_at"), "ingested_at": src.get("createdAt"),
-            "partial": bool(payload.get("partial")), "claims": [],
-        }
-        for c in payload.get("claims") or []:
-            post["claims"].append({
-                "claim_id": f"{data_point_id}#{c.get('claim_index', len(post['claims']))}",
-                "claim_index": c.get("claim_index"), "text": c.get("claim_es"), "text_en": c.get("claim_en"),
-                "type": c.get("claim_type"), "speaker": c.get("speaker"),
-                "about_politician": c.get("about_politician"), "checkable": c.get("checkable"),
-                "source_field": c.get("source_field"), "evidence_span": c.get("evidence_span")})
-        posts[data_point_id] = post
+        entries = (_evidence_claim_posts(src, payload) if fmt == EVIDENCE_CLAIM_FORMAT else
+                   [(src.get("dataPointId") or (payload.get("source") or {}).get("oriane_content_id"), payload)])
+        for data_point_id, payload in entries:
+            pol = payload.get("politician") or {}
+            if (pol.get("country") or country).upper() != country:
+                skipped["other_country"] += 1
+                continue
+            politician_id = resolve(pol)
+            if not politician_id:
+                skipped["unresolved_politician"] += 1
+            s = payload.get("source") or {}
+            ts = payload.get("timestamps") or {}
+            post = {
+                "data_point_id": data_point_id, "trace_source_id": src["id"], "politician_id": politician_id,
+                "politician_name": pol.get("name"), "payload_person_id": pol.get("system_a_person_id"),
+                "country": country, "oriane_content_id": s.get("oriane_content_id"), "platform": s.get("platform"),
+                "platform_id": s.get("platform_id"), "url": s.get("url") or post_url(s), "format": s.get("format"),
+                "uploader_handle": s.get("uploader_handle"), "uploader_name": s.get("uploader_name"),
+                "caption": s.get("caption"), "transcript_excerpt": s.get("transcript_excerpt"),
+                "published_at": s.get("published_at") or ts.get("published_at") or src.get("occurredAt"),
+                "engagement": payload.get("engagement_snapshot") or {},
+                "claims_extracted_at": ts.get("claims_extracted_at"), "ingested_at": src.get("createdAt"),
+                "partial": bool(payload.get("partial")), "claims": [],
+            }
+            for c in payload.get("claims") or []:
+                post["claims"].append({
+                    "claim_id": c.get("claim_id") or f"{data_point_id}#{c.get('claim_index', len(post['claims']))}",
+                    "claim_index": c.get("claim_index"), "text": c.get("claim_es"), "text_en": c.get("claim_en"),
+                    "type": c.get("claim_type"), "speaker": c.get("speaker"),
+                    "about_politician": c.get("about_politician"), "checkable": c.get("checkable"),
+                    "source_field": c.get("source_field"), "evidence_span": c.get("evidence_span")})
+            if data_point_id in posts:  # the same post stated several System C propositions
+                posts[data_point_id]["claims"] += post["claims"]
+            else:
+                posts[data_point_id] = post
 
     rows = sorted(posts.values(), key=_sort_key, reverse=True)
     claims = []

@@ -5,7 +5,7 @@ RUN := cd backend && "$(PY)" -m polgraph
 EXPLORER = cd frontend-3d && PATH="$(NODE_BIN):$$PATH" npm
 MODAL := $(CURDIR)/.venv/bin/modal
 
-.PHONY: portraits sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run modal-deploy modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
+.PHONY: portraits sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run ev-enrich modal-deploy modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -104,6 +104,10 @@ ev-test:
 
 ev-dry-run:
 	$(EV) intake --dry-run person:MX:claudia-sheinbaum-pardo person:MX:clara-marina-brugada-molina
+
+# Enrich queued claims with Exa evidence and write them to past.dev (billed). Free plan first: ARGS="--dry-run"
+ev-enrich:
+	$(EV) enrich $(ARGS)
 
 modal-deploy:
 	"$(MODAL)" deploy backend/modal_app.py

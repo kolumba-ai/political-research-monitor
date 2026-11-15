@@ -365,6 +365,8 @@ class Fetcher:
             (document_id, content_sha),
         ).fetchone()
         if exists:
+            self.conn.execute("UPDATE ev_document_version SET last_seen_at=now() WHERE document_id=%s "
+                              "AND content_sha256=%s", (document_id, content_sha))
             return exists["snapshot_path"], False
         snapshot_path = None
         if can_store and is_text:
@@ -378,14 +380,15 @@ class Fetcher:
         retrieved_at = datetime.now(timezone.utc)
         cluster = self._dup_cluster(document_id, simhash, [document_id]) if simhash is not None else None
         self.conn.execute(
-            "INSERT INTO ev_document_version(document_id,content_sha256,snapshot_path,http_status,bytes,simhash,retrieved_at) "
-            "VALUES (%s,%s,%s,%s,%s,%s::bit(64),%s)",
-            (document_id, content_sha, snapshot_path, status, len(raw), simhash, retrieved_at),
+            "INSERT INTO ev_document_version(document_id,content_sha256,snapshot_path,http_status,bytes,simhash,retrieved_at,"
+            "last_seen_at) VALUES (%s,%s,%s,%s,%s,%s::bit(64),%s,%s)",
+            (document_id, content_sha, snapshot_path, status, len(raw), simhash, retrieved_at, retrieved_at),
         )
         self.conn.execute("UPDATE ev_document SET dup_cluster_id=%s WHERE document_id=%s", (cluster, document_id))
         return snapshot_path, True
 
-    def fetch(self, url: str, exa_published_date: str | None = None) -> dict:
+    def fetch(self, url: str, exa_published_date: str | None = None, include_text: bool = False) -> dict:
+        """`include_text` returns the extracted text in memory, whatever the licence; only storage is licence-gated."""
         key = self.enqueue(url)
         original_id = source_id(url)
         registry_row = lookup(self.conn, url)
@@ -554,7 +557,7 @@ class Fetcher:
         return {"url": url, "document_id": original_id, "resolved_document_id": resolved_id,
                 "fetch_status": "fetched", "http_status": response_status, "date_origin": metadata["date_origin"],
                 "snapshot_path": snapshots.get(original_id), "snapshot_stored": bool(snapshots.get(original_id)),
-                "content_sha256": content_sha}
+                "content_sha256": content_sha, **({"text": text} if include_text and is_text else {})}
 
     def fetch_queue(self, limit: int = 20) -> list[dict]:
         results = []
