@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 
@@ -79,19 +78,21 @@ def _run_enrich(settings, args) -> dict:
     from .config import exa_gateway
 
     gateway = exa_gateway(settings)
-    per_worker = None if args.limit is None else math.ceil(args.limit / args.workers)
+    workers = args.workers if args.limit is None else min(args.workers, args.limit)
+    limits = ([None] * workers if args.limit is None else
+              [args.limit // workers + (1 if n < args.limit % workers else 0) for n in range(workers)])
 
-    def work(_n: int) -> dict:
+    def work(limit: int | None) -> dict:
         conn = connect(settings.database_url)
         enricher = _enricher(conn, settings, args.country, gateway)
         try:
-            return enricher.run(args.ids or None, per_worker)
+            return enricher.run(args.ids or None, limit)
         finally:
             enricher.fetcher.close()
             conn.close()
 
-    with ThreadPoolExecutor(args.workers) as pool:
-        outs = list(pool.map(work, range(args.workers)))
+    with ThreadPoolExecutor(workers) as pool:
+        outs = list(pool.map(work, limits))
     results = [r for o in outs for r in o["results"]]
     statuses: dict[str, int] = {}
     for r in results:
