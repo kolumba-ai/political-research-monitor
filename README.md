@@ -14,6 +14,40 @@ The new [Political World Explorer](frontend-3d/README.md) runs at
 Cytoscape/ELK government graph, all connected to the existing API. The original graph remains at `/`.
 Country image discovery and the Discover/Refresh UI are pending; portraits use neutral placeholders.
 
+## Principles
+
+Five principles guide product decisions.
+
+1. **Evidence before intuition.** Every recommendation to a politician rests on an academic finding and on
+   data from the local context, and shows both.
+2. **Context rules.** A finding proven in another country is not applied in Mexico until it has been tested
+   here.
+3. **Honesty about uncertainty.** We show trends with their margin of error, and we never present
+   social-media mentions as voting intention.
+4. **Public, aggregate data only.** We measure the public conversation; we do not profile or target
+   individual voters.
+5. **AI does the work, experts decide.** AI reads and classifies at scale; political scientists decide which
+   knowledge goes in and validate how it is measured.
+
+Source: the team's product document, translated from the Spanish original below.
+
+<details>
+<summary>Original (español)</summary>
+
+**Principios.** Cinco principios guían las decisiones de producto.
+
+1. **Evidencia antes que intuición.** Cada recomendación al político se apoya en un hallazgo académico y en
+   datos del contexto, y muestra ambos.
+2. **El contexto manda.** Un hallazgo probado en otro país no se aplica en México hasta que se prueba aquí.
+3. **Honestidad sobre la incertidumbre.** Mostramos tendencias con su margen de error y nunca presentamos
+   menciones en redes como intención de voto.
+4. **Solo datos públicos y agregados.** Medimos la conversación pública; no perfilamos ni segmentamos
+   votantes individuales.
+5. **La IA trabaja, el experto decide.** La IA lee y clasifica a escala; los politólogos deciden qué
+   conocimiento entra y validan cómo se mide.
+
+</details>
+
 ## Scientific basis: why we start with politicians, social media and the media
 
 This project collects **evidence**, not verdicts. The final judgement on what the public believes, and how
@@ -39,8 +73,37 @@ that put claims about politics into public circulation come **last**:
 Source: CEVIPOF barometer, wave 17, p. 40. On the same page, 49% say they have *no trust at all* in social
 networks and 42% none at all in political parties.
 
-The pattern holds in Mexico, where our first pilots run, but not identically. INEGI's ENCOAP 2025 (published
-16 April 2026)[^encoap] finds **political parties** to be the least-trusted social and political actor it
+### Across OECD countries
+
+The OECD tracks the same pattern internationally. In its words, "democracies require citizen trust in
+government to function effectively"[^oecd-topic]. Its *Survey on Drivers of Trust in Public Institutions*
+(the OECD Trust Survey) is run in each country on a representative adult sample, using the same 0–10
+question, where 6–10 counts as "high or moderately high" trust.
+
+| Finding | Figure | Edition |
+| --- | --- | --- |
+| Trust in the national government, average across countries | 40% high or moderately high, 43% low or none | 2026 results: 33 OECD countries, including Mexico, plus 5 accession candidates; fieldwork autumn 2025[^oecd2026] |
+| People who feel they have a say in what government does | 31%, while 68% believe voting influences what government does | 2026 results[^oecd2026] |
+| Trust gap between people who feel they have a say and those who do not | 47 percentage points | 2026 results[^oecd2026] |
+| Trust in **political parties** | 24%, below parliament (37%) and the national government (39%) | 2024 results: 30 countries, fieldwork late 2023[^oecd2024] |
+| Trust in the **news media** | 39% | 2024 results[^oecd2024] |
+| People who find government statistics trustworthy and verifiable | About a third | 2024 results[^oecd2024] |
+| People who believe their government uses the best available evidence in decisions | 41% | 2024 results[^oecd2024] |
+
+Three things follow for this project:
+
+* **Parties and media are low-trust across the OECD, not only in France.** The 2024 edition's country notes
+  for France, for example, list political parties (18%), news media (33%) and parliament (33%) as the least
+  trusted institutions there[^oecd2024].
+* **Official figures are not trusted by default either.** Only about a third of people find government
+  statistics trustworthy and verifiable, so System C does not treat a government source as settling a claim
+  on its own. It records which source said what, and whether independent sources agree.
+* **People do not feel heard.** With only 31% feeling they have a say, polls that ask people what they
+  believe are part of the answer, not a formality. This is the reason step 4 below exists.
+
+The pattern holds in Mexico, where our first pilots run, but not identically. INEGI's ENCOAP is Mexico's
+adaptation of the OECD Trust Survey[^encoap2023], so its figures are comparable with the table above.
+ENCOAP 2025 (published 16 April 2026)[^encoap] finds **political parties** to be the least-trusted social and political actor it
 measures: 33.7% have high or moderately high trust, compared with 75.9% for the armed forces. **The media
 do better in Mexico** (51.9% in ENCOAP). Trust in *news* specifically is low, though: 36% in the Reuters
 Institute Digital News Report 2025[^dnr]. We therefore do not assume that the media are equally distrusted
@@ -61,6 +124,30 @@ These are the channels the public trusts least, and so the ones where the gap be
 what is supported by evidence is most worth measuring. Social media also matters because false statements
 there have been shown to spread farther and faster than true ones[^vosoughi].
 
+### The perception gap: what people think others believe
+
+More in Common's *Perception Gap* study[^pgap] shows why the loudest public claims are a poor guide to
+what people actually think, and gives us a method for measuring the difference. With YouGov, it surveyed
+2,100 Americans in the week after the 2018 midterm elections, asking each respondent two things: what they
+believe, and what share of the other party they think holds each view. The **perception gap** is the
+difference between that estimate and the share who actually hold the view.
+
+What it found, and why it matters here:
+
+| Finding (United States, 2018) | What it means for this project |
+| --- | --- |
+| Democrats and Republicans thought 55% of their opponents held extreme views; the real figure was about 30%. | Public perception of "the other side" can be roughly double reality. Collective claims can create that distortion, so we measure the claims, not just the reality. |
+| People who follow the news "most of the time" were almost three times less accurate than those who follow it "only now and then". | Media volume is not a proxy for understanding. We record how often a claim is repeated *separately* from whether the evidence supports it. |
+| Only 26% post about politics on social media, and their average gap was 29 points against 18 for those who don't post. | Social media over-represents the people with the most distorted views. Mentions are not public opinion (principle 3), and we never treat them as a sample of the electorate. |
+| The most partisan groups had the widest gaps; the politically disengaged were about three times more accurate. | The voices that produce the most claims are the least representative. Polls must reach the people who stay out of the conversation. |
+| People with wider gaps were more likely to describe opponents as "hateful", "ignorant" or "bigoted". | The gap is not harmless: distorted perceptions go with hostility, which is why measuring it is worth doing. |
+
+We borrow the **method**, not the conclusions. The study is American and from 2018; under principle 2 none
+of its findings is assumed to hold in Mexico until tested here. In our polls (step 4 below), we will ask
+respondents both what they believe about a claim and what they think *others* believe, so that three things
+can be compared for every claim: what is said (Systems B and C), what the evidence supports (System C), and
+what people believe, as well as what they think others believe (polls).
+
 ### From claims to evidence to polls
 
 | Step | Question | Where |
@@ -68,7 +155,7 @@ there have been shown to spread farther and faster than true ones[^vosoughi].
 | 1. Who | Who holds which office, with sources? | System A (knowledge graph) |
 | 2. What is claimed | Which checkable claims are made about each politician, when, and by whom? | System B (social claims) |
 | 3. What the evidence says | Which documents (news, official statistics, government, academic, think-tank and fact-check sources) support, contradict or fail to address each claim, as known at each point in time? | System C (evidence graph) |
-| 4. What the public believes | Do people believe the claims? Does belief follow the evidence, the source, or the volume of coverage? | **Polls and other survey methods (to be designed)** |
+| 4. What the public believes | Do people believe the claims? Does belief follow the evidence, the source, or the volume of coverage? How far is what people think others believe from what those others actually believe (the perception gap)? | **Polls and other survey methods (to be designed)** |
 
 Step 4 follows an established line of research. Agenda-setting studies compare how much the media cover
 each issue with what people tell pollsters is most important, and find strong correlations[^agenda].
@@ -96,6 +183,21 @@ evidence or the repetition.
     *Science*, 359(6380), 1146–1151. <https://doi.org/10.1126/science.aap9559>
 [^agenda]: McCombs, M. E. and Shaw, D. L. (1972). The agenda-setting function of mass media. *Public Opinion
     Quarterly*, 36(2), 176–187. <https://doi.org/10.1086/267990>
+[^pgap]: Yudkin, D., Hawkins, S. and Dixon, T. (2019). *The Perception Gap: How False Impressions are Pulling
+    Americans Apart*. More in Common, June 2019. <https://perceptiongap.us/>; full report:
+    <https://moreincommon.com/media/0fmblxb3/the-perception-gap.pdf>
+[^oecd-topic]: OECD, *Trust in government* (topic page).
+    <https://www.oecd.org/en/topics/sub-issues/trust-in-government.html>
+[^oecd2026]: OECD (2026), *OECD Survey on Drivers of Trust in Public Institutions 2026 Results: Navigating
+    Rising Expectations and New Horizons*, OECD Publishing, Paris, 29 June 2026.
+    <https://doi.org/10.1787/9eb63fec-en>. Figures from the OECD press release of the same date:
+    <https://www.oecd.org/en/about/news/press-releases/2026/06/trust-steadies-but-people-still-do-not-feel-heard-oecd-trust-survey.html>
+[^oecd2024]: OECD (2024), *OECD Survey on Drivers of Trust in Public Institutions – 2024 Results: Building
+    Trust in a Complex Policy Environment*, OECD Publishing, Paris. <https://doi.org/10.1787/9a20554b-en>.
+    Figures from the OECD summary *Building Trust in Action: Countries' Experiences* (April 2025) and the 2024
+    country note for France.
+[^encoap2023]: INEGI, *National Survey of Trust in Public Administration (ENCOAP) 2023*, programme page.
+    <https://en.www.inegi.org.mx/programas/encoap/2023>
 
 > **Building or extending a country?** Follow [AGENTS.md](AGENTS.md) first: derive the structure from the
 > country's constitution, get it reviewed, and only then fetch politicians.
@@ -337,3 +439,64 @@ This is a research and compliance assessment, **not legal authorization**. The s
 
 Registry data: [lukes/ISO-3166-Countries-with-Regional-Codes](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
 (ISO 3166-1 + UN M49) and `pycountry` (ISO 3166-2).
+
+## Appendix A: Frequently asked questions
+
+**How is this different from a social-listening tool?**
+Those tools count mentions and measure whether they are positive or negative, for brands. We apply
+political-science categories, such as image attributes, rejection, issue ownership and authenticity, and
+turn them into recommendations.
+
+**Is it really "real time"?**
+The application is: we read the campaign conversation daily. The research is not, because an academic
+article takes months or years to be published. We use the most recent academic work available.
+
+**Does social media predict the vote?**
+No. Mentions are not voting intention. That is why we calibrate against polls and show trends with their
+margin of error.
+
+**Why don't we do the scraping ourselves?**
+It violates the platforms' terms and puts the client at risk. We use sources with access agreements.
+
+**What happens if an academic finding does not hold in Mexico?**
+We record it. That record is exactly the accumulated learning that forms our advantage.
+
+**Why isn't hiring political scientists enough?**
+Because political scientists already lead political analysis at many consultancies. What is new is the
+system that brings their knowledge to the real context continuously and learns from every application.
+
+**What does the product not do?**
+It does not profile individual voters, does not design messages targeted at groups of voters, and does not
+publish anything on the politician's behalf.
+
+Source: the team's product document (Appendix A), translated from the Spanish original below.
+
+<details>
+<summary>Original (español)</summary>
+
+**Apéndice A: preguntas frecuentes**
+
+**¿En qué se diferencia de una herramienta de escucha social?** Esas herramientas cuentan menciones y miden
+si son positivas o negativas, para marcas. Nosotros aplicamos categorías de ciencia política, como atributos
+de imagen, rechazo, dueño del tema o autenticidad, y las convertimos en recomendaciones.
+
+**¿De verdad es "en tiempo real"?** La aplicación sí: leemos la conversación de la campaña a diario. La
+investigación no, porque un artículo tarda meses o años en publicarse. Usamos lo más reciente de la academia.
+
+**¿Las redes predicen el voto?** No. Las menciones no son intención de voto. Por eso calibramos con encuestas
+y mostramos tendencias con margen de error.
+
+**¿Por qué no hacemos el scraping nosotros?** Viola los términos de las plataformas y pone en riesgo al
+cliente. Usamos fuentes con acuerdos de acceso.
+
+**¿Qué pasa si un hallazgo académico no se cumple en México?** Lo registramos. Ese registro es justo el
+aprendizaje acumulado que forma nuestra ventaja.
+
+**¿Por qué no basta con contratar politólogos?** Porque los politólogos ya dirigen el análisis político en
+muchas consultoras. Lo nuevo es el sistema que lleva su conocimiento al contexto real de forma continua y
+aprende de cada aplicación.
+
+**¿Qué no hace el producto?** No perfila votantes individuales, no diseña mensajes dirigidos a grupos de
+votantes y no publica nada en nombre del político.
+
+</details>
