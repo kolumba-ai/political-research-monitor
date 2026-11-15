@@ -262,8 +262,11 @@ class Enricher:
         except Exception:
             self._set_status(prop, "queued")
             raise
-        self._set_status(prop, "mapped")
-        return {"proposition_id": prop["proposition_id"], "status": "mapped", "queries": len(rows),
+        # A rejected batch, a failed ingestion or one still processing leaves the proposition queued so a later run
+        # re-projects it (unchanged items are not resent).
+        status = "queued" if pushed["errors"] or pushed["pending"] else "mapped"
+        self._set_status(prop, status)
+        return {"proposition_id": prop["proposition_id"], "status": status, "queries": len(rows),
                 "candidates": len(candidates), "fetched": fetched_n, "stances": stances, "pastdev": pushed}
 
     def _set_status(self, prop: dict, status: str, reason: str | None = None) -> None:
