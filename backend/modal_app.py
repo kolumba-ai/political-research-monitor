@@ -16,6 +16,7 @@ REMOTE_BACKEND = REMOTE_ROOT / "backend"
 REMOTE_VAR = REMOTE_ROOT / "var"
 IMAGE_PYTHON_VERSION = "3.11"
 TIMEOUT_S = int(os.environ.get("MODAL_TIMEOUT_S", str(6 * 3600)))
+API_SCALEDOWN_WINDOW_S = 60
 
 # Shared PostgreSQL limiters enforce Exa (8 rps), Anthropic (2 rps), Oriane (1 rps),
 # past.dev (2 rps), and per-host fetch spacing; these caps bound concurrent containers.
@@ -155,7 +156,8 @@ def fetch(workers: int = 1, extra_args: str = "--from-queue --limit 20"):
         raise SystemExit(code)
 
 
-@app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS], max_containers=1)
+@app.function(image=IMAGE, volumes={str(REMOTE_VAR): VAR_VOLUME}, secrets=[SECRETS], max_containers=1,
+              scaledown_window=API_SCALEDOWN_WINDOW_S)
 @modal.asgi_app()
 def api():
     os.environ.setdefault("GRAPH_BACKEND", "sqlite")

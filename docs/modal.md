@@ -46,7 +46,7 @@ The extraction CLI shard syntax is zero-based `I/N` (`0 <= I < N`); the entrypoi
 .venv/bin/modal run backend/modal_app.py::fetch --workers 4 --extra-args "--from-queue --limit 20"
 ```
 
-Workers claim queue rows using PostgreSQL `FOR UPDATE SKIP LOCKED`, so concurrent fetch containers do not fetch the same queued URL. Per-host spacing is still enforced by the shared PostgreSQL rate limiter. The optional single-container API can be deployed with the app; it reads System A's SQLite graph from the shared volume.
+Workers claim queue rows using PostgreSQL `FOR UPDATE SKIP LOCKED`, so concurrent fetch containers do not fetch the same queued URL. Per-host spacing is still enforced by the shared PostgreSQL rate limiter. The optional single-container API can be deployed with the app; it reads System A's SQLite graph from the shared volume. The API serves the graph snapshot available when its container starts; stop and redeploy the app to force it to refresh after graph updates. Idle API containers scale down after 60 seconds.
 
 ## Concurrency defaults
 
