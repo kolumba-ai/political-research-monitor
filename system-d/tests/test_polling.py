@@ -2,7 +2,7 @@ import pytest
 from psycopg.rows import dict_row
 
 import system_d.agents.polling as polling_module
-from system_d.agents.polling import poll_task, run_poll
+from system_d.agents.polling import _is_refusal, poll_task, run_poll
 from system_d.channels.simulator import SimulatorChannel
 from system_d.config import Settings
 from system_d.llm import Usage
@@ -85,6 +85,18 @@ def test_polling_stops_after_accent_insensitive_refusal():
     assert channel.closed
     assert not result.completed
     assert len(llm.calls) == 1
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("bastante de acuerdo", False),
+        ("¡Basta!", True),
+        ("no quiero contestar", True),
+    ],
+)
+def test_refusal_detection_matches_whole_phrases(text, expected):
+    assert _is_refusal(text) is expected
 
 
 @pytest.mark.parametrize(
@@ -213,8 +225,8 @@ def test_poll_task_uses_one_configured_connection_and_closes_it(monkeypatch, fai
     configured = []
     poll_calls = []
 
-    def connect(database_url, *, row_factory):
-        connect_calls.append((database_url, row_factory))
+    def connect(database_url, *, row_factory, autocommit):
+        connect_calls.append((database_url, row_factory, autocommit))
         return conn
 
     def configure(connection):
@@ -238,7 +250,7 @@ def test_poll_task_uses_one_configured_connection_and_closes_it(monkeypatch, fai
     else:
         assert poll_task(task, settings, llm=WorkerLLM()) == {"ok": True}
 
-    assert connect_calls == [("test-database-url", dict_row)]
+    assert connect_calls == [("test-database-url", dict_row, True)]
     assert configured == [conn]
     assert poll_calls == [conn]
     assert conn.closed
