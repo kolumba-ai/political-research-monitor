@@ -318,7 +318,9 @@ class Enricher:
             self._set_status(prop, "skipped", "no_current_claims")
             return {"proposition_id": prop["proposition_id"], "status": "skipped"}
         # Set only after every page was judged and the write was attempted; any earlier failure clears it.
-        judged = prop["mapped_at"] is None and prop["skip_reason"] == PASTDEV_PENDING
+        judged = prop["mapped_at"] is None and prop["skip_reason"] == PASTDEV_PENDING and self.conn.execute(
+            "SELECT 1 FROM ev_evidence_link WHERE proposition_id = %s AND mapper_version = %s LIMIT 1",
+            (prop["proposition_id"], self.settings.mapper_version)).fetchone() is not None
         try:
             # Judged in an earlier run whose past.dev write did not complete: only project again.
             rows, candidates = ([], []) if judged else self._discover(prop, claims)
