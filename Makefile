@@ -1,17 +1,19 @@
 PY := $(CURDIR)/.venv/bin/python
 NEO4J_HOME := $(CURDIR)/.local/neo4j-community-5.26.0
-RUN := cd backend && $(PY) -m polgraph
+NODE_BIN ?= $(CURDIR)/.local/node-v24.22.2-linux-x64/bin
+RUN := cd backend && "$(PY)" -m polgraph
+EXPLORER = cd frontend-3d && PATH="$(NODE_BIN):$$PATH" npm
 
-.PHONY: sc-migrate sc-list sc-sync sc-dry-run sc-test export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico mexico-production refresh-mexico report path serve test
+.PHONY: sc-migrate sc-list sc-sync sc-dry-run sc-test export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 neo4j-start:
-	$(NEO4J_HOME)/bin/neo4j start
+	"$(NEO4J_HOME)/bin/neo4j" start
 
 neo4j-stop:
-	$(NEO4J_HOME)/bin/neo4j stop
+	"$(NEO4J_HOME)/bin/neo4j" stop
 
 seed:
 	$(RUN) seed
@@ -36,8 +38,18 @@ path:
 serve:
 	$(RUN) serve
 
+explorer-build:
+	$(EXPLORER) run build
+
+explorer-dev:
+	$(EXPLORER) run dev -- --host 127.0.0.1
+
+explorer-check:
+	$(EXPLORER) run lint
+	$(EXPLORER) run build
+
 test:
-	cd backend && $(PY) -m pytest -q
+	cd backend && "$(PY)" -m pytest -q
 
 pakistan:
 	$(RUN) build --country PK
@@ -55,7 +67,7 @@ import-kb:
 	$(RUN) import --from ../knowledge_base
 
 # --- System B (social claims, Phase 0/1) ---------------------------------------------------------------
-SC := cd backend && $(PY) -m socialclaims
+SC := cd backend && "$(PY)" -m socialclaims
 
 sc-migrate:
 	$(SC) migrate
@@ -71,4 +83,4 @@ sc-dry-run:
 	$(SC) capture --dry-run "Claudia Sheinbaum" "Clara Brugada" "Pablo Lemus"
 
 sc-test:
-	cd backend && $(PY) -m pytest -q tests/socialclaims
+	cd backend && "$(PY)" -m pytest -q tests/socialclaims

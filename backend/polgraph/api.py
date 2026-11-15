@@ -75,10 +75,15 @@ def create_app() -> FastAPI:
                                                        "confidence", "start", "end", "constituency_code",
                                                        "seat_type")},
                         "node": node_summary(n, store)})
+        # Constitutional order for government tiers (federal level first), then seat numbers, then names.
+        tier_rank = {"national": 0, "state": 1, "state_unit": 2, "municipal": 3, "special_local": 3}
+
         def _order(c):
             code = c["edge"].get("constituency_code") or ""
             num = int(code.rsplit("-", 1)[-1]) if code.rsplit("-", 1)[-1].isdigit() else 10 ** 6
-            return (c["node"]["label"], num, c["node"]["name"] or "")
+            tier = tier_rank.get(store.get_node(c["node"]["id"]).get("tier"), 9) \
+                if c["node"]["label"] == "GovernmentLevel" and c["node"]["id"].count(":") <= 2 else 9
+            return (c["node"]["label"], tier, num, c["node"]["name"] or "")
         out.sort(key=_order)
         return {"node": node_summary(node, store), "children": out, "gated": gated,
                 "gate_message": ("Country has not passed the eligibility gates; enable research-only mode to view "
@@ -107,6 +112,9 @@ def create_app() -> FastAPI:
                                 for e, p in store.edges(node_id, "HOLDS_OFFICE", "in")]
         path = [{"id": p["id"], "label": p["label"], "name": p.get("name")} for p in store.path_from_root(node_id)]
         return {"node": node, "sources": sources, "path": path, **extra}
+
+    from .world_api import build_router
+    app.include_router(build_router(_store, _state))
 
     @app.get("/api/search")
     def search(q: str, limit: int = 25):
@@ -140,6 +148,11 @@ def create_app() -> FastAPI:
         eid = st.add_event(match["monitor_id"], payload)
         log.info("webhook.accepted", monitor=match["monitor_id"], event=eid)
         return JSONResponse({"ok": True, "event": eid})
+
+    explorer = REPO_ROOT / "frontend-3d" / "dist"
+    if explorer.exists():
+        # Built 3D explorer (npm run build) served at /explorer; `npm run dev` proxies /api in development.
+        app.mount("/explorer", StaticFiles(directory=explorer, html=True), name="explorer")
 
     if FRONTEND.exists():
         app.mount("/static", StaticFiles(directory=FRONTEND), name="static")

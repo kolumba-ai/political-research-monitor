@@ -9,6 +9,10 @@ graph. Every persisted claim links to the sources that support it.
 Researched so far: **Mexico** and **Pakistan** (government structure and verified officeholders; for Pakistan also
 individual provincial-assembly members via the opt-in `legislators` stage), plus a **regime classification for all 249 countries**.
 
+The new [Political World Explorer](frontend-3d/README.md) runs at
+**http://127.0.0.1:8000/explorer/**: an interactive 3D globe, country information and a native
+Cytoscape/ELK government graph, all connected to the existing API. The original graph remains at `/`.
+Country image discovery and the Discover/Refresh UI are pending; portraits use neutral placeholders.
 
 > **Building or extending a country?** Follow [AGENTS.md](AGENTS.md) first: derive the structure from the
 > country's constitution, get it reviewed, and only then fetch politicians.
@@ -136,8 +140,10 @@ HOLDS_OFFICE, CONTESTS_OFFICE, MEMBER_OF_PARTY, SUPPORTED_BY, HAS_TERM, TERM_HEL
 
 ## Setup
 
-Requirements: Python 3.11+, Java 17+ (for Neo4j), an Exa API key. No Node.js needed (the UI loads React,
-htm and Cytoscape from CDNs).
+Requirements: Python 3.11+, Java 17+ (for Neo4j), and Node.js/npm to build the new explorer.
+Node v24.22.2 is installed locally in `.local/node-v24.22.2-linux-x64/`; the Make targets use it.
+The original UI loads React, htm and Cytoscape from CDNs and needs no Node build.
+An Exa API key is required for new research; viewing an existing graph does not spend Exa credits.
 
 ```bash
 make install                      # venv + requirements
@@ -151,6 +157,24 @@ make neo4j-start
 
 Prefer zero setup? Set `GRAPH_BACKEND=sqlite`; the embedded store has the same upsert semantics.
 
+### Run the 3D explorer
+
+From the repository root, with the backend dependencies and `.env` already configured:
+
+```bash
+export PATH="$PWD/.local/node-v24.22.2-linux-x64/bin:$PATH"
+npm --prefix frontend-3d ci
+make explorer-build
+make neo4j-start                  # for GRAPH_BACKEND=neo4j; skip for SQLite or an already running server
+# make import-kb                  # only if you need to load the saved snapshot into an empty graph
+make serve
+```
+
+Open **http://127.0.0.1:8000/explorer/**. Build before starting the server so FastAPI mounts `/explorer`.
+For development, keep `make serve` running and run `make explorer-dev` in another terminal; Vite serves
+**http://127.0.0.1:5173/** and proxies `/api` to the backend. `make explorer-check` runs lint and a typed
+production build. See [frontend-3d/README.md](frontend-3d/README.md) for architecture and browser checks.
+
 ## Commands
 
 ```bash
@@ -162,6 +186,9 @@ make refresh-mexico    # re-research everything, bypassing caches (costs credits
 make report            # coverage, unresolved claims, Exa usage
 make path              # Earth → … → Claudia Sheinbaum Pardo, with sources and snippets
 make serve             # UI + API on http://127.0.0.1:8000
+make explorer-build    # typed production build served at /explorer/ after starting the API
+make explorer-dev      # frontend dev server on http://127.0.0.1:5173/; API must also be running
+make explorer-check    # lint + typed production build
 make test              # unit + end-to-end tests (fake Exa client; never used in production)
 ```
 
