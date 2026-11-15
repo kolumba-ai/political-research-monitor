@@ -167,3 +167,13 @@ def test_discover_only_proposes(conn, graph):
     assert row == {"status": "proposed", "oriane_profile_id": "prf_a"}
     assert identity.load_terms(conn, snap.politician_id).handles == {}
     assert conn.execute("SELECT credits FROM oriane_usage").fetchone()["credits"] == 3
+
+
+def test_name_variants_keep_particles_with_the_surname():
+    from socialclaims.query import name_variants
+    v = name_variants("Adrián Emilio de la Garza Santos")
+    assert "Adrián de la Garza" in v and "Emilio de la Garza" in v
+    assert not any(x.split()[0] in {"de", "la", "del"} for x in v)
+    v = name_variants("María de Lourdes Paz Reyes")
+    assert "Lourdes Paz" in v and "de Paz" not in v
+    assert "Rojo de la Vega" in name_variants("Alessandra Rojo de la Vega Piccolo")
