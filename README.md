@@ -189,6 +189,7 @@ make serve             # UI + API on http://127.0.0.1:8000
 make explorer-build    # typed production build served at /explorer/ after starting the API
 make explorer-dev      # frontend dev server on http://127.0.0.1:5173/; API must also be running
 make explorer-check    # lint + typed production build
+make sc-pull           # export System B's social claims from past.dev for /api/claims and the explorer
 make test              # unit + end-to-end tests (fake Exa client; never used in production)
 ```
 

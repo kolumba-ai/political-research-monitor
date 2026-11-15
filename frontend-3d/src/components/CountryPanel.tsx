@@ -4,6 +4,7 @@ import { api, type Assessment, type CountryDetail, type CountryRow, type SourceR
 import { flagOf, type CountryFeature } from "../lib/geo";
 import { Badge, Button, Card, CardHeader, ExtLink, RegimeDot, Skeleton } from "./ui";
 import { fmtDate } from "../lib/presentation";
+import { SocialClaimsCard } from "./SocialClaims";
 
 const INDEX_NAMES: Record<string, { name: string; publisher: string; url: string }> = {
   eiu: { name: "Democracy Index", publisher: "Economist Intelligence Unit", url: "https://www.eiu.com/n/campaigns/democracy-index-2025/" },
@@ -52,8 +53,9 @@ function SourceList({ sources }: { sources: SourceRef[] }) {
   );
 }
 
-export default function CountryPanel({ iso2, row, feature, onExplore, exploring }: {
+export default function CountryPanel({ iso2, row, feature, onExplore, exploring, onOpenPerson }: {
   iso2: string | null; row?: CountryRow; feature?: CountryFeature; onExplore: () => void; exploring: boolean;
+  onOpenPerson?: (id: string) => void;
 }) {
   const [request, setRequest] = useState<{
     key: string | null; data: CountryDetail | null; error: string | null;
@@ -252,6 +254,8 @@ export default function CountryPanel({ iso2, row, feature, onExplore, exploring 
               </div>
             </Card>
           )}
+
+          <SocialClaimsCard iso2={iso2} onOpenPerson={onOpenPerson} />
 
           {/* Completeness */}
           {stats && (

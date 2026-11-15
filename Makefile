@@ -4,7 +4,7 @@ NODE_BIN ?= $(CURDIR)/.local/node-v24.22.2-linux-x64/bin
 RUN := cd backend && "$(PY)" -m polgraph
 EXPLORER = cd frontend-3d && PATH="$(NODE_BIN):$$PATH" npm
 
-.PHONY: sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
+.PHONY: sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -81,6 +81,10 @@ sc-sync:
 # Builds the Oriane requests for the three pilots without calling Oriane.
 sc-dry-run:
 	$(SC) capture --dry-run "Claudia Sheinbaum" "Clara Brugada" "Pablo Lemus"
+
+# Export past.dev claim data points to var/socialclaims/claims/MX (read-only; used by /api/claims and the explorer).
+sc-pull:
+	$(SC) pull-pastdev --country MX
 
 sc-test:
 	cd backend && "$(PY)" -m pytest -q tests/socialclaims

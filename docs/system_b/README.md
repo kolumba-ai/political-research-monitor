@@ -63,9 +63,25 @@ Oriane is the only social source; System B never creates politician identities.
 `proposed`. Only `approve-account --by <reviewer> --source <independent URL>` marks an account `verified`,
 which adds the `own` / `coauthored` / `tagged` branches and creates a new query version.
 
+## Claims from past.dev (read path)
+
+`pull-pastdev` exports every claim data point in the country's past.dev project (`PAST_DEV_API_KEY`) to
+`CLAIMS_EXPORT_DIR/<ISO2>/` (default `var/socialclaims/claims/`, git-ignored): `posts.jsonl` (one row per post,
+with caption, engagement and its claims), `claims.jsonl` (one row per claim) and `manifest.json` (counts, audiences,
+per-politician totals). It needs no Postgres or Oriane call. past.dev has no list route, so it walks
+`GET /trace/roots` (one source node per data point) and reads each text from `GET /trace/nodes/{id}`; texts over
+4,000 characters are cut there, so those are re-read with one recall (1 credit) pinned to the post's exact time.
+Payload person ids are checked against System A and, if missing, resolved by name (e.g. the stored
+`person:MX:clara-brugada-molina` becomes `person:MX:clara-marina-brugada-molina`).
+
+The API serves the export at `GET /api/claims/{ISO2}/summary` and
+`GET /api/claims/{ISO2}/politicians/{person_id}?type=&speaker=&platform=&q=&limit=&offset=`; the 3D explorer
+shows it in the country panel and the person inspector. Re-run `make sc-pull` to refresh; the API reloads on change.
+
 ## Commands
 
 ```bash
+make sc-pull                       # export past.dev claims for MX (read-only) for /api/claims and the explorer
 make sc-migrate                    # create the Postgres schema (DATABASE_URL)
 make sc-list                       # MX persons from knowledge_base with tracking status
 make sc-sync                       # write politician_ref versions
