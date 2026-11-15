@@ -88,7 +88,7 @@ def claim_items(prop: dict, claims: list[dict]) -> list[dict]:
             "format": PAYLOAD_FORMAT["claim"], "proposition_id": prop["proposition_id"],
             "canonical_text": prop["canonical_text"], "politician": {"name": name, "system_a_person_id": pid},
             "claims": [{"claim_id": c["claim_id"], "text": c["text"], "text_en": c["text_en"], "type": c["type"],
-                        "quote": c["quote"], "relation_to_politician": c["relation_to_politician"],
+                        "quote": c["quote"], "relation_to_politician": c["relation_to_politician"], "platform": c["platform"],
                         "oriane_id": c["oriane_id"], "url": c["url"], "stated_at": _iso(c["stated_at"])}
                        for c in own],
         }
