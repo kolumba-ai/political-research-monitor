@@ -3,6 +3,7 @@ import { ChevronRight, ExternalLink, MessageSquareQuote, Search } from "lucide-r
 import { claimsApi, type ClaimStats, type ClaimsSummary, type PoliticianClaims, type SocialClaim } from "../lib/api";
 import { CLAIM_TYPE_COLORS, colorOf, compact, humanize, PLATFORM_META, pct, SPEAKER_NAMES, titleCase } from "../lib/claims";
 import { fmtDate } from "../lib/presentation";
+import { EvidenceCard, StanceChips } from "./Storylines";
 import { Badge, Button, Card, CardHeader } from "./ui";
 
 const PAGE = 15;
@@ -84,6 +85,7 @@ export function ClaimRow({ c }: { c: SocialClaim }) {
         <Badge style={{ background: `${color}1a`, color }}>{titleCase(c.type)}</Badge>
         {c.speaker && <Badge>{SPEAKER_NAMES[c.speaker] ?? titleCase(c.speaker)}</Badge>}
         {c.about_politician === false && <Badge tone="warn">Context</Badge>}
+        <StanceChips counts={c.evidence_counts} className="justify-end" />
       </div>
       <ChevronRight className={`size-4 shrink-0 self-center text-muted transition-transform ${open ? "rotate-90" : ""}`} />
     </button>
@@ -95,6 +97,10 @@ export function ClaimRow({ c }: { c: SocialClaim }) {
         {c.uploader_name && <span>Account: {c.uploader_name}</span>}
       </div>
       {c.url && <a href={c.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-accent hover:underline">Open original post <ExternalLink className="size-3" /></a>}
+      {!!c.evidence?.length && <div>
+        <p className="font-medium">Evidence documents ({c.evidence.length})</p>
+        <ul className="mt-1.5 space-y-1.5">{c.evidence.map((e) => <EvidenceCard key={e.link_id} e={e} />)}</ul>
+      </div>}
     </div>}
   </li>;
 }

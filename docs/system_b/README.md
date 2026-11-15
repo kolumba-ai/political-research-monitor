@@ -118,3 +118,26 @@ cd backend && ../.venv/bin/python -m socialclaims thumbnails --format video   # 
 
 Coverage caveat for every output: only Oriane-indexed content, roughly the last 3 months, up to a week of
 indexing lag, creators with 5,000+ followers. "No match" is not evidence that nothing was said.
+The pull also writes `evidence.jsonl` and `documents.jsonl` (the System C evidence links and the documents they
+cite, joined to claims by `proposition_id`; skip with `--no-evidence`) and, when `DATABASE_URL` is set, fills the
+post link, account and format that past.dev leaves out from the Postgres `post` table, read-only (skip with
+`--no-post-links`). `--workers N` reads past.dev texts in parallel.
+
+## Storylines (claims by week)
+
+`storylines` groups each politician's statements above the strict proposition level, into `storylines.json` next
+to the export, with every decision appended to `storyline_decisions.jsonl`:
+
+* **Version:** the same claim reworded. Different figures, negation, place or period can never be one version;
+  this is enforced in code whatever the judge answers.
+* **Storyline:** one specific claim with its versions, updates and counter-claims. A shared topic is not enough.
+
+Each new statement is shortlisted against the politician's existing versions and judged by a model
+(`STORYLINE_MODEL`, default `CLAIM_MODEL`): `same_version`, `same_storyline_different_version`, `counter_claim` or
+`unrelated`, with a confidence and a reason. Answers under `STORYLINE_REVIEW_THRESHOLD` (0.75) are not applied;
+they wait in `storylines-review`, which can `--accept`, `--reject`, `--move` and `--rename`. The run is billed and
+needs `--confirm-spend` (`--dry-run` only counts); `--workers N` judges politicians in parallel.
+
+`GET /api/claims/{ISO2}/storylines/{person_id}` returns the week grid and, with `?storyline=<id>[&week=YYYY-MM-DD]`,
+one storyline in full: versions, every post with its link and account, each statement and its evidence documents.
+The explorer shows it in the politician page's "Storylines by week" tab.

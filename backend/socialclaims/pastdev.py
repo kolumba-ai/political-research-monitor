@@ -1,9 +1,14 @@
-"""past.dev claim memory reader: pulls every claim data point of a country project into local JSONL.
+"""past.dev claim memory reader: pulls every claim, document and evidence-link data point of a country project into
+local JSONL.
 
 past.dev has no route that lists data points, so the reader walks the project's trace roots (one `source` node
 per data point, see `GET /api/v1/trace/roots`) and reads each source's full text from `GET /api/v1/trace/nodes/{id}`.
 Each data point written by the claim pipeline is `<summary>\\n\\nJSON:\\n<payload>`; only the payload is parsed.
 The key is sent only in the Authorization header and never logged.
+
+past.dev records carry a post's link and account only where System B stored a URL (TikTok). `PostgresLookup` reads
+the missing platform id and handle from the System B `post` table (read-only), together with each proposition's
+structured fields, which the storyline hard rules compare.
 """
 from __future__ import annotations
 
@@ -27,9 +32,17 @@ log = structlog.get_logger(__name__)
 PAYLOAD_MARKER = "\nJSON:\n"
 HEADLINE = re.compile(r"^(?P<platform>\w+) post by @(?P<handle>\S+) on (?P<date>\d{4}-\d{2}-\d{2}) mentioning (?P<name>.+?)\.")
 EXPORT_FORMAT = "pastdev-claims/1"
-EVIDENCE_CLAIM_FORMAT = "evidencegraph-claim/1"  # System C claim records (evidencegraph/project.py)
-# Data point id prefixes of System C documents and evidence links: not claims, so their content is never fetched.
+EVIDENCE_CLAIM_FORMAT = "evidencegraph-claim/1"  # System C records (evidencegraph/project.py)
+EVIDENCE_DOCUMENT_FORMAT = "evidencegraph-document/1"
+EVIDENCE_LINK_FORMAT = "evidencegraph-link/1"
+# Data point id prefixes of System C documents and evidence links; skipped unread when `evidence=False`.
 EVIDENCE_ONLY_PREFIXES = ("doc-", "lnk-")
+DOCUMENT_FIELDS = ("document_id", "url", "publisher", "source_class", "authority_tier", "licence_class", "title",
+                   "published_at", "date_confidence", "retrieved_at", "date_is_retrieval", "content_sha256", "summary")
+LINK_FIELDS = ("link_id", "proposition_id", "document_id", "document_datapoint", "stance", "confidence", "quote",
+               "rationale", "source_class", "authority_tier", "assessed_at", "mapper_version")
+PROPOSITION_FIELDS = ("subject", "predicate", "negated", "vals", "place", "period_start", "period_end", "qualifiers",
+                      "topic_id")
 EVIDENCE_SPEAKER = {"speaker": "politician", "quoted": "politician_quoted"}  # relation_to_politician -> speaker
 
 
@@ -161,6 +174,59 @@ def post_url(source: dict) -> str | None:
     return None
 
 
+class PostgresLookup:
+    """Read-only lookups in the System B database for what past.dev records leave out."""
+
+    def __init__(self, url: str, connect=None):
+        self.url, self._connect = url, connect
+
+    def _conn(self):
+        if self._connect:
+            return self._connect(self.url)
+        import psycopg
+        from psycopg.rows import dict_row
+        conn = psycopg.connect(self.url, row_factory=dict_row, connect_timeout=20,
+                               options="-c default_transaction_read_only=on")
+        conn.read_only = True  # also holds behind a connection pooler, which may drop startup options
+        return conn
+
+    def _rows(self, sql: str, ids: list[str], key: str) -> dict[str, dict]:
+        out: dict[str, dict] = {}
+        if not ids:
+            return out
+        with self._conn() as conn:
+            for i in range(0, len(ids), 5000):
+                for row in conn.execute(sql, (ids[i:i + 5000],)).fetchall():
+                    out[row[key]] = dict(row)
+        return out
+
+    def posts(self, oriane_ids: list[str]) -> dict[str, dict]:
+        return self._rows("SELECT oriane_id, platform, platform_id, url, profile_handle, format FROM post "
+                          "WHERE oriane_id = ANY(%s)", oriane_ids, "oriane_id")
+
+    def propositions(self, proposition_ids: list[str]) -> dict[str, dict]:
+        return self._rows("SELECT proposition_id, subject, predicate, negated, vals, place, period_start, period_end, "
+                          "qualifiers, topic_id FROM proposition WHERE proposition_id = ANY(%s)",
+                          proposition_ids, "proposition_id")
+
+
+def fill_post_links(posts: list[dict], known: dict[str, dict]) -> int:
+    """Complete each post's platform id, account and link from System B's `post` rows; returns how many gained a link."""
+    filled = 0
+    for p in posts:
+        row = known.get(p.get("oriane_content_id") or "")
+        if not row:
+            continue
+        had = bool(p.get("url"))
+        p["platform"] = p.get("platform") or row.get("platform")
+        p["platform_id"] = p.get("platform_id") or row.get("platform_id")
+        p["uploader_handle"] = p.get("uploader_handle") or row.get("profile_handle")
+        p["format"] = p.get("format") or row.get("format")
+        p["url"] = p.get("url") or row.get("url") or post_url(p)
+        filled += bool(p["url"]) and not had
+    return filled
+
+
 @dataclass
 class PoliticianResolver:
     """Maps a payload's politician to a System A `Person` id; never invents one."""
@@ -203,14 +269,22 @@ def _evidence_claim_posts(src: dict, payload: dict) -> list[tuple[str, dict]]:
                    "published_at": cs[0].get("stated_at")},
         "claims": [{"claim_index": i, "claim_id": c.get("claim_id"), "claim_es": c.get("text"), "claim_en": c.get("text_en"),
                     "claim_type": c.get("type"), "evidence_span": c.get("quote"),
+                    "proposition_id": payload.get("proposition_id"), "canonical_text": payload.get("canonical_text"),
+                    "relation_to_politician": c.get("relation_to_politician"),
                     "speaker": EVIDENCE_SPEAKER.get(c.get("relation_to_politician")),
                     "about_politician": c.get("relation_to_politician") in ("speaker", "quoted", "subject")}
                    for i, c in enumerate(cs)],
     }) for oid, cs in by_post.items()]
 
 
-def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int = 1) -> dict:
-    """Read all current claim data points and write `<out_dir>/<CC>/{posts,claims}.jsonl` + `manifest.json`."""
+def _jsonable(value):
+    return value.isoformat() if hasattr(value, "isoformat") else value
+
+
+def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int = 1, evidence: bool = True,
+         lookup: PostgresLookup | None = None) -> dict:
+    """Read all current data points and write `<out_dir>/<CC>/{posts,claims,documents,evidence,propositions}.jsonl`
+    + `manifest.json`. `evidence=False` leaves System C documents and evidence links unread (a faster pull)."""
     country = country.upper()
     resolve = PoliticianResolver(graph, country)
     audience_of = {}
@@ -226,12 +300,14 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int
     posts: dict[str, dict] = {}
     skipped = {"not_current": 0, "no_payload": 0, "other_country": 0, "unresolved_politician": 0,
                "evidence_records": 0}
+    documents: dict[str, dict] = {}
+    links: dict[str, dict] = {}
     partial = 0
     wanted = []
     for src in client.sources():
         if not src.get("current"):
             skipped["not_current"] += 1
-        elif str(src.get("dataPointId") or "").startswith(EVIDENCE_ONLY_PREFIXES):
+        elif not evidence and str(src.get("dataPointId") or "").startswith(EVIDENCE_ONLY_PREFIXES):
             skipped["evidence_records"] += 1
         else:
             wanted.append(src)
@@ -250,6 +326,15 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int
                        "source": {"platform": m["platform"], "uploader_handle": m["handle"]} if m else {},
                        "claims": [{"claim_index": i, "claim_es": t} for i, t in enumerate(texts)]}
         fmt = str(payload.get("format") or "")
+        if evidence and fmt == EVIDENCE_DOCUMENT_FORMAT:
+            documents[src["dataPointId"]] = {"document_datapoint": src["dataPointId"],
+                                             **{k: payload.get(k) for k in DOCUMENT_FIELDS}}
+            continue
+        if evidence and fmt == EVIDENCE_LINK_FORMAT:
+            pol = payload.get("politician") or {}
+            links[src["dataPointId"]] = {"data_point_id": src["dataPointId"], "politician_id": resolve(pol),
+                                         "politician_name": pol.get("name"), **{k: payload.get(k) for k in LINK_FIELDS}}
+            continue
         if fmt.startswith("evidencegraph-") and fmt != EVIDENCE_CLAIM_FORMAT:
             skipped["evidence_records"] += 1
             continue
@@ -283,23 +368,46 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int
                     "claim_index": c.get("claim_index"), "text": c.get("claim_es"), "text_en": c.get("claim_en"),
                     "type": c.get("claim_type"), "speaker": c.get("speaker"),
                     "about_politician": c.get("about_politician"), "checkable": c.get("checkable"),
-                    "source_field": c.get("source_field"), "evidence_span": c.get("evidence_span")})
+                    "source_field": c.get("source_field"), "evidence_span": c.get("evidence_span"),
+                    "proposition_id": c.get("proposition_id"), "canonical_text": c.get("canonical_text"),
+                    "relation_to_politician": c.get("relation_to_politician")})
             if data_point_id in posts:  # the same post stated several System C propositions
                 posts[data_point_id]["claims"] += post["claims"]
             else:
                 posts[data_point_id] = post
 
     rows = sorted(posts.values(), key=_sort_key, reverse=True)
+    post_links = {"source": None, "filled": 0}
+    propositions: list[dict] = []
+    if lookup is not None:
+        try:
+            known = lookup.posts(sorted({p["oriane_content_id"] for p in rows if p.get("oriane_content_id")}))
+            post_links = {"source": "System B Postgres", "filled": fill_post_links(rows, known)}
+            prop_ids = sorted({c["proposition_id"] for p in rows for c in p["claims"] if c.get("proposition_id")})
+            propositions = [{"proposition_id": pid, **{k: _jsonable(row.get(k)) for k in PROPOSITION_FIELDS}}
+                            for pid, row in sorted(lookup.propositions(prop_ids).items())]
+        except Exception as exc:  # the export is still valid without the lookup; say so instead of failing the pull
+            post_links = {"source": None, "filled": 0, "error": f"{type(exc).__name__}: {str(exc)[:200]}"}
+            log.warning("pastdev.post_lookup_failed", error=post_links["error"])
+    post_links["without_link"] = sum(1 for p in rows if not p.get("url"))
     claims = []
     for p in rows:
-        base = {k: p[k] for k in ("data_point_id", "politician_id", "politician_name", "platform", "url",
-                                  "uploader_handle", "uploader_name", "published_at")}
+        base = {k: p[k] for k in ("data_point_id", "politician_id", "politician_name", "platform", "platform_id",
+                                  "oriane_content_id", "url", "uploader_handle", "uploader_name", "published_at")}
         for c in p["claims"]:
             claims.append({**c, **base, "views": (p["engagement"] or {}).get("views")})
+    used = {l["document_datapoint"] for l in links.values()}
+    evidence_rows = sorted(links.values(), key=lambda l: (l.get("proposition_id") or "", l["data_point_id"]))
+    document_rows = sorted(documents.values(), key=lambda d: d["document_datapoint"])
 
     target = Path(out_dir) / country
     target.mkdir(parents=True, exist_ok=True)
-    for name, items in (("posts.jsonl", rows), ("claims.jsonl", claims)):
+    files = [("posts.jsonl", rows), ("claims.jsonl", claims)]
+    if evidence:
+        files += [("documents.jsonl", document_rows), ("evidence.jsonl", evidence_rows)]
+    if propositions:
+        files.append(("propositions.jsonl", propositions))
+    for name, items in files:
         tmp = target / f".{name}.tmp"
         tmp.write_text("".join(json.dumps(i, ensure_ascii=False, sort_keys=True) + "\n" for i in items),
                        encoding="utf-8")
@@ -317,7 +425,12 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path, workers: int
             agg["last"] = max(filter(None, [agg["last"], d]))
     manifest = {"format": EXPORT_FORMAT, "country": country, "pulled_at": datetime.now(timezone.utc).isoformat(),
                 "source": "past.dev", "posts": len(rows), "claims": len(claims), "partial_posts": partial,
-                "skipped": skipped,
+                "skipped": skipped, "post_links": post_links,
+                "evidence": {"pulled": evidence, "links": len(evidence_rows), "documents": len(document_rows),
+                             "links_without_document": sum(1 for l in evidence_rows
+                                                           if l["document_datapoint"] not in documents),
+                             "documents_unused": len(set(documents) - used)},
+                "propositions": len(propositions),
                 "audiences": audiences, "politicians": sorted(by_pol.values(), key=lambda a: -a["claims"])}
     (target / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     log.info("pastdev.pulled", country=country, posts=len(rows), claims=len(claims), skipped=skipped)

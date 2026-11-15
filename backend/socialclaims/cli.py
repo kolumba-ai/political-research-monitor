@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from pathlib import Path
 
 from .config import get_settings
 from .db import connect, migrate
@@ -30,6 +31,64 @@ def _client(s):
         rate_limiter_database_url=s.rate_limiter_database_url,
         requests_per_second=s.oriane_requests_per_second,
     )
+
+
+def _storylines(s, args) -> int:
+    from . import storylines as st
+    target = Path(args.out or s.claims_export_dir) / args.country.upper()
+    if not (target / "claims.jsonl").exists():
+        print(f"no claims export in {target}; run pull-pastdev first", file=sys.stderr)
+        return 2
+    props = {p["proposition_id"]: p for p in st.read_jsonl(target / "propositions.jsonl")}
+    units = st.build_units(st.read_jsonl(target / "claims.jsonl"), props)
+    store = st.StorylineStore(target)
+    if args.cmd == "storylines-review":
+        try:
+            done = [st.accept(store, d, units) for d in args.accept] + [st.reject(store, d) for d in args.reject]
+            if args.move:
+                done.append(st.move(store, args.move[0], args.move[1], args.to, args.version, units))
+            if args.rename:
+                done.append(st.rename(store, *args.rename))
+        except st.ReviewError as exc:
+            print(str(exc), file=sys.stderr)
+            return 2
+        _out({"done": done, "pending": st.review_queue(store, units)})
+        return 0
+    graph = _graph(s) if args.ids else None
+    ids = [_pid(graph, i, args.country) for i in args.ids] or sorted(units)
+    model = s.storyline_model or s.claim_model
+    topics = [t["id"] for t in json.loads(
+        (Path(__file__).parent / "taxonomy" / f"{args.country.upper()}.json").read_text(encoding="utf-8"))["topics"]]
+    use_openai = model.startswith(("gpt-", "o1", "o3", "o4"))
+    key = s.openai_api_key if use_openai else s.anthropic_api_key
+
+    class _NoModel:
+        pass
+    llm = _NoModel()
+    llm.model = model
+    if not args.dry_run:
+        if not args.confirm_spend:
+            print("refusing: the storyline judge is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
+            return 2
+        if not key:
+            print(("OPENAI_API_KEY" if use_openai else "ANTHROPIC_API_KEY") + " is not set", file=sys.stderr)
+            return 2
+        if use_openai:
+            from evidencegraph.llm import OpenAILLM
+            llm = OpenAILLM(key, model, s.openai_base_url, rate_limiter_database_url=s.rate_limiter_database_url,
+                            requests_per_second=s.openai_requests_per_second)
+        else:
+            from .claims import AnthropicLLM
+            llm = AnthropicLLM(key, model, s.anthropic_base_url, max_tokens=2000,
+                               rate_limiter_database_url=s.rate_limiter_database_url,
+                               requests_per_second=s.anthropic_requests_per_second)
+    engine = st.StorylineEngine(store, llm, topics, threshold=s.storyline_review_threshold)
+    if args.dry_run:
+        _out([{"politician_id": i, "judge": engine.version, "units": len(units.get(i, [])),
+               "pending": len(engine.pending(i, units.get(i, [])))} for i in ids])
+        return 0
+    _out(st.run_country(engine, units, ids, args.max_units, args.workers))
+    return 0
 
 
 def _parse_shard(value: str) -> tuple[int, int]:
@@ -142,6 +201,26 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--country", default="MX")
     p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
     p.add_argument("--workers", type=int, default=4, help="parallel past.dev reads")
+    p.add_argument("--no-evidence", action="store_true", help="skip evidence links and documents (faster)")
+    p.add_argument("--no-post-links", action="store_true",
+                   help="do not read post links, accounts and proposition fields from the System B Postgres")
+    p = sub.add_parser("storylines", help="group the exported claims into storylines with the judge model (billed)")
+    p.add_argument("ids", nargs="*", help="politician ids or names (default: every politician in the export)")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
+    p.add_argument("--dry-run", action="store_true", help="count the statements still to place; no model call")
+    p.add_argument("--confirm-spend", action="store_true")
+    p.add_argument("--max-units", type=_positive_int, help="place at most this many per politician")
+    p.add_argument("--workers", type=int, default=4, help="politicians judged in parallel")
+    p = sub.add_parser("storylines-review", help="list and resolve storyline proposals the judge was unsure about")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--out", help="export directory (default: CLAIMS_EXPORT_DIR)")
+    p.add_argument("--accept", nargs="+", default=[], metavar="DECISION_ID")
+    p.add_argument("--reject", nargs="+", default=[], metavar="DECISION_ID")
+    p.add_argument("--move", nargs=2, metavar=("POLITICIAN_ID", "UNIT"), help="move one unit; with --to, else detach")
+    p.add_argument("--to", metavar="STORYLINE_ID", help="target storyline for --move (omit to open a new storyline)")
+    p.add_argument("--version", metavar="VERSION_ID", help="target version for --move (omit for a new version)")
+    p.add_argument("--rename", nargs=2, metavar=("STORYLINE_ID", "LABEL"))
     p = sub.add_parser("thumbnails", help="backfill thumbnail URLs from raw payloads and download them (no Oriane API call)")
     p.add_argument("--format", action="append", dest="formats", help="only these post formats (repeatable), e.g. video")
     p.add_argument("--no-download", action="store_true", help="only backfill thumbnail_url")
@@ -161,14 +240,19 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.cmd == "pull-pastdev":
-        from .pastdev import PastDevClient, pull
+        from .pastdev import PastDevClient, PostgresLookup, pull
         client = PastDevClient(
             s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s, max_retries=8,  # parallel reads get 429s
             rate_limiter_database_url=s.rate_limiter_database_url,
             requests_per_second=s.pastdev_requests_per_second,
         )
-        _out(pull(client, _graph(s), args.country, args.out or s.claims_export_dir, args.workers))
+        url = None if args.no_post_links else (s.pipeline_database_url or s.database_url)
+        _out(pull(client, _graph(s), args.country, args.out or s.claims_export_dir, args.workers,
+                  evidence=not args.no_evidence, lookup=PostgresLookup(url) if url else None))
         return 0
+
+    if args.cmd in ("storylines", "storylines-review"):
+        return _storylines(s, args)
 
     conn = connect(s.database_url)
     if args.cmd == "migrate":

@@ -13,6 +13,7 @@ from .config import ORIANE_CREDITS_PER_ROW, SocialSettings
 from .identity import current_ref, load_terms, merged_ids, relevance_context, sync_ref
 from .oriane import (CreditsExhausted, InvalidQuery, OffsetPastEnd, OrianeClient, OrianeError, OrianeResponse,
                      credits_for)
+from .pastdev import post_url
 from .query import BRANCHES, canonical_json, request_body
 from .relevance import _texts, bucket, score
 from .systema import GraphReader, read_person
@@ -69,9 +70,8 @@ def _minimize(result: dict, excluded: list[str]) -> dict:
 
 
 def _post_url(r: dict) -> str | None:
-    if r.get("platform") == "tiktok" and r.get("profileHandle") and r.get("platformId"):
-        return f"https://www.tiktok.com/@{r['profileHandle']}/video/{r['platformId']}"
-    return None
+    return post_url({"platform": r.get("platform"), "platform_id": r.get("platformId"),
+                     "uploader_handle": r.get("profileHandle")})
 
 
 class Capturer:

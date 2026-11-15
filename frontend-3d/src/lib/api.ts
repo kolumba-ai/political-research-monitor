@@ -107,6 +107,65 @@ export interface SocialClaim {
   evidence_span: string | null; platform: string | null; url: string | null; uploader_handle: string | null;
   uploader_name: string | null; published_at: string | null; format: string | null;
   engagement: { views?: number; likes?: number; comments?: number; shares?: number; captured_at?: string };
+  evidence?: ClaimEvidence[]; evidence_counts?: StanceCounts;
+}
+
+// System C evidence: one document's relation to a claim. A stance is never a verdict on the claim.
+export type Stance = "supports" | "contradicts" | "context";
+export type StanceCounts = Record<Stance, number>;
+export interface EvidenceDocument {
+  document_datapoint: string; url: string | null; publisher: string | null; title: string | null;
+  source_class: string | null; authority_tier: number | null; published_at: string | null; retrieved_at: string | null;
+  date_is_retrieval?: boolean | null; summary: string | null;
+}
+export interface ClaimEvidence {
+  link_id: string; stance: Stance; confidence: number | null; quote: string | null; rationale: string | null;
+  assessed_at: string | null; mapper_version: string | null; authority_tier: number | null; source_class: string | null;
+  document: EvidenceDocument | null;
+}
+
+// Storylines (`python -m socialclaims storylines`): statements grouped into one specific claim and its versions.
+/** Per week: [all, said by the politician, said by others]. */
+export interface WeekCell { statements: [number, number, number]; posts: [number, number, number] }
+export interface StorylineRow {
+  storyline_id: string; label: string | null; topic: string | null; judged: boolean; statements: number; posts: number;
+  versions: number; weeks_active: number; counter_claims: number; needs_review: number; accounts: number;
+  first: string | null; last: string | null; cells: Record<string, WeekCell>; evidence_counts: StanceCounts;
+}
+interface StorylineBase {
+  country: string; politician_id: string; available: boolean; pulled_at: string | null; has_evidence: boolean;
+  grouped_at: string | null;
+}
+export interface StorylineGrid extends StorylineBase {
+  weeks: string[]; topics: string[]; storylines: StorylineRow[];
+  totals: { statements: number; posts: number; storylines: number; recurring: number; with_post_link: number };
+  grouping: { units: number; placed: number; needs_review: number; judges: string[] };
+}
+export interface StorylineStatement {
+  claim_id: string; text: string | null; text_en: string | null; evidence_span: string | null; type: string | null;
+  speaker: string | null; relation_to_politician: string | null; about_politician: boolean | null;
+  proposition_id: string | null; canonical_text: string | null; published_at: string | null; week: string | null;
+  unit: string;
+  placement: { relation: string | null; confidence: number | null; rationale: string | null; judge: string | null;
+    status: string | null; rule_blocks: string[] | null; decision_id: string | null } | null;
+  evidence: ClaimEvidence[]; evidence_counts: StanceCounts;
+}
+export interface StorylinePost {
+  data_point_id: string; published_at: string | null; platform: string | null; url: string | null;
+  uploader_handle: string | null; uploader_name: string | null; platform_id: string | null;
+  oriane_content_id: string | null; format: string | null; caption: string | null;
+  engagement: SocialClaim["engagement"]; statements: StorylineStatement[];
+}
+export interface StorylineVersion {
+  version_id: string; label: string | null; kind: "claim" | "counter_claim"; text: string | null; text_en: string | null;
+  first_seen: string | null; statements: number; posts: number; cells: Record<string, WeekCell>; post_list: StorylinePost[];
+}
+export interface StorylineDetail {
+  storyline_id: string; label: string | null; topic: string | null; judged: boolean; week: string | null;
+  statements: number; posts: number; speakers: Record<string, number>; accounts: string[];
+  cells: Record<string, WeekCell>; evidence_counts: StanceCounts; documents: number;
+  pending_review: { decision_id: string; unit: string; relation: string; confidence: number; rationale: string; storyline_label: string | null }[];
+  versions: StorylineVersion[];
 }
 
 export interface PoliticianClaims {
@@ -121,6 +180,13 @@ export const claimsApi = {
   politician: (iso2: string, id: string, f: ClaimFilters = {}, s?: AbortSignal) => {
     const qs = new URLSearchParams(Object.entries(f).filter(([, v]) => v !== undefined && v !== "").map(([k, v]) => [k, String(v)]));
     return get<PoliticianClaims>(`/api/claims/${encodeURIComponent(iso2)}/politicians/${encodeURIComponent(id)}?${qs}`, s);
+  },
+  storylines: (iso2: string, id: string, s?: AbortSignal) =>
+    get<StorylineGrid>(`/api/claims/${encodeURIComponent(iso2)}/storylines/${encodeURIComponent(id)}`, s),
+  storyline: (iso2: string, id: string, storyline: string, week: string | null, s?: AbortSignal) => {
+    const qs = new URLSearchParams(week ? { storyline, week } : { storyline });
+    return get<StorylineBase & { storyline: StorylineDetail }>(
+      `/api/claims/${encodeURIComponent(iso2)}/storylines/${encodeURIComponent(id)}?${qs}`, s);
   },
 };
 

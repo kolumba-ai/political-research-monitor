@@ -24,6 +24,8 @@ class SocialSettings(BaseSettings):
 
     # --- Postgres (System B source of truth) ------------------------------------
     database_url: str = "postgresql://ubuntu:ubuntu@localhost:5432/socialclaims"
+    # The same database as the explorer's Pipeline page reads; `pull-pastdev` prefers it for read-only lookups.
+    pipeline_database_url: str | None = None
     rate_limiter_database_url: str | None = None
     anthropic_requests_per_second: float = 2.0
     oriane_requests_per_second: float = 1.0
@@ -40,6 +42,10 @@ class SocialSettings(BaseSettings):
     # Skip posts already extracted ok under any extractor version (fill gaps with a different model).
     claim_skip_any_version: bool = False
     claim_max_posts_per_run: int = 200
+    # Storyline judge (`storylines`): the model that relates a statement to existing storylines (default: CLAIM_MODEL),
+    # and the confidence below which its answer waits for human review instead of being applied.
+    storyline_model: str | None = None
+    storyline_review_threshold: float = 0.75
     oriane_base_url: str = "https://connect.oriane.xyz"
     oriane_timeout_s: float = 60.0
     oriane_max_retries: int = 4
