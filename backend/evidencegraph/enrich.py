@@ -162,7 +162,8 @@ def claim_next(conn, politician_ids: list[str] | None, mapper_version: str, excl
     row = conn.execute(
         "UPDATE ev_proposition_queue SET status = 'mapping', mapper_version = %(mv)s, updated_at = now() "
         "WHERE proposition_id = (SELECT q.proposition_id FROM ev_proposition_queue q WHERE " + READY +
-        " AND NOT (q.proposition_id = ANY(%(exclude)s)) ORDER BY q.priority DESC, q.proposition_id "
+        " AND NOT (q.proposition_id = ANY(%(exclude)s)) "
+        "ORDER BY q.skip_reason IS NOT DISTINCT FROM 'pastdev_pending', q.priority DESC, q.proposition_id "
         "LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING proposition_id",
         {"pids": politician_ids or None, "lease": MAPPING_LEASE_MINUTES, "mv": mapper_version,
          "exclude": exclude}).fetchone()
