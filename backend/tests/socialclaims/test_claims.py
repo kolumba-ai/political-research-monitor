@@ -156,7 +156,9 @@ def test_extractor_version_tracks_checks_version():
 
 
 def test_regrade_reuses_stored_response_without_llm_call(monkeypatch, conn, graph, segmented):
-    fake = FakeLLM(lambda prompt: [claim("el desempleo bajó a 2.5 por ciento", [ref(prompt, "(speech"))])
+    fake = FakeLLM(
+        lambda prompt: [claim("el desempleo bajó a 2.5 por ciento", [ref(prompt, "(speech")])]
+    )
     monkeypatch.setattr(claims_module, "CHECKS_VERSION", "checks-2")
     old = Extractor(conn, graph, fake)
     original = old.run(PID, 1)
