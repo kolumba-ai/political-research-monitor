@@ -4,6 +4,7 @@ from polgraph.portraits import find_portraits, pick_portrait, portrait_url
 WIKI = "https://es.wikipedia.org/wiki/Clara_Brugada"
 PHOTO = ("https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Clara_Brugada_Molina_%28cropped%29.jpg/"
          "250px-Clara_Brugada_Molina_%28cropped%29.jpg?utm_source=es.wikipedia.org")
+LEAD = "Clara Marina Brugada Molina es una política y economista mexicana."
 ARMS = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Coat_of_arms_of_Mexico_City.svg/40px-x.png"
 
 
@@ -11,14 +12,27 @@ def test_pick_portrait_requires_named_page_and_surname_file():
     results = [
         {"url": "https://es.wikipedia.org/wiki/Jefe_de_Gobierno", "title": "Jefe de Gobierno de Ciudad de México",
          "image_links": [PHOTO]},  # page is not about her
-        {"url": WIKI, "title": "Clara Brugada", "image_links": [ARMS, PHOTO]},
+        {"url": WIKI, "title": "Clara Brugada", "text": LEAD, "image_links": [ARMS, PHOTO]},
     ]
     hit = pick_portrait("Clara Marina Brugada Molina", results)
     assert hit["image_source_url"] == WIKI and hit["image_source_domain"] == "es.wikipedia.org"
     assert hit["image_url"] == ("https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/"
                                 "Clara_Brugada_Molina_%28cropped%29.jpg/330px-Clara_Brugada_Molina_%28cropped%29.jpg")
-    assert pick_portrait("Clara Marina Brugada Molina", [{"url": WIKI, "title": "Clara Brugada",
+    assert pick_portrait("Clara Marina Brugada Molina", [{"url": WIKI, "title": "Clara Brugada", "text": LEAD,
                                                           "image_links": [ARMS]}]) is None
+    # Same given name and one shared surname is another person; so is a namesake outside politics.
+    other = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Laura_Rojas_Hern%C3%A1ndez_4.jpg/250px-x.jpg"
+    assert pick_portrait("Laura Hernández García", [{"url": "https://es.wikipedia.org/wiki/Laura_Rojas",
+                                                     "title": "Laura Rojas Hernández", "text": "es una política",
+                                                     "image_links": [other]}]) is None
+    assert pick_portrait("Clara Marina Brugada Molina", [{"url": WIKI, "title": "Clara Brugada (futbolista)",
+                                                          "text": "es una futbolista", "image_links": [PHOTO]}]) is None
+    assert pick_portrait("Clara Marina Brugada Molina", [{"url": WIKI, "title": "Clara Brugada", "text": "cantante",
+                                                          "image_links": [PHOTO]}]) is None
+    roster = [{"url": "https://www.senado.gob.mx/66/senadores", "title": "Senadores",
+               "image_links": ["https://senado.gob.mx/66/images/1558-diaz_delgado_blanca_judith-2024.jpg"]}]
+    assert pick_portrait("Blanca Judith Díaz Delgado", roster, official=True)["image_url"].endswith("-2024.jpg")
+    assert pick_portrait("Blanca Judith Díaz Delgado", roster) is None
     assert portrait_url("https://example.gob.mx/a.jpg?x=1") == "https://example.gob.mx/a.jpg?x=1"
 
 
@@ -35,7 +49,7 @@ def test_find_portraits_stores_result_and_falls_back_to_official(store):
     store.upsert_node("person:MX:clara-marina-brugada-molina", "Person", {"name": "Clara Marina Brugada Molina"})
     store.upsert_node("person:MX:alfredo-ramirez-bedolla", "Person", {"name": "Alfredo Ramírez Bedolla"})
     store.upsert_node("person:MX:nobody-known", "Person", {"name": "Nadie Conocido"})
-    gw = _GW({"es.wikipedia.org": [{"url": WIKI, "title": "Clara Brugada", "image_links": [PHOTO]}],
+    gw = _GW({"es.wikipedia.org": [{"url": WIKI, "title": "Clara Brugada", "text": LEAD, "image_links": [PHOTO]}],
               "gob.mx": [{"url": "https://michoacan.gob.mx/alfredo-ramirez-bedolla/", "title": "Alfredo Ramírez Bedolla",
                           "image_links": ["https://michoacan.gob.mx/logo.svg",
                                           "https://michoacan.gob.mx/uploads/alfredo-ramirez-bedolla-300x300.jpg"]}]})
