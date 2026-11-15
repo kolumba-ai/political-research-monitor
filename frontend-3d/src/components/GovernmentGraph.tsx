@@ -219,7 +219,8 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
         seen.add(node.id);
         const title = node.name || node.id;
         const expanded = tree.levels[depth + 1];
-        const childCount = expanded?.parent === node.id ? expanded.children.length : node.child_count;
+        const loaded = cache.current.get(`${node.id}:${includeSingle}:${includeFormer}`);
+        const childCount = expanded?.parent === node.id ? expanded.children.length : loaded ? loaded.children.length : node.child_count;
         const count = childCount ? ` · ${childCount}` : "";
         const seat = edge.constituency_code ? `${edge.constituency_code} · ` : "";
         elements.push({ group: "nodes", classes: tree.openPath[depth] === node.id ? "open" : "", data: {
@@ -255,6 +256,8 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
       fit();
       if (box.current) box.current.dataset.layoutReady = "true";
     });
+    // Filters only change which cached child lists apply to the counts; the tree reload re-renders anyway.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tree, fit]);
 
   useEffect(() => {
