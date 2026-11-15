@@ -29,7 +29,7 @@ class SimulatorChannel:
         settings: Settings,
         rng_seed: str | int,
         conversation_key: str,
-        token_budget: int = 512,
+        token_budget: int = 1024,
         hash_fn: Callable[[bytes], bytes] = hashlib.sha256,
     ) -> None:
         self.llm = llm

@@ -49,6 +49,8 @@ class Settings:
     llm_max_retries: int = 6
     llm_backoff_base_s: float = 1.0
     llm_backoff_max_s: float = 60.0
+    llm_timeout_s: float = 180.0
+    simulator_reasoning_effort: str | None = "low"
     aggregate_similarity: float = 0.90
     max_usd: float = 5.0
     personas_per_call: int = 8
@@ -82,6 +84,8 @@ class Settings:
             llm_max_retries=_read_int(env, "LLM_MAX_RETRIES", 6),
             llm_backoff_base_s=_read_float(env, "LLM_BACKOFF_BASE_S", 1.0),
             llm_backoff_max_s=_read_float(env, "LLM_BACKOFF_MAX_S", 60.0),
+            llm_timeout_s=_read_float(env, "LLM_TIMEOUT_S", 180.0),
+            simulator_reasoning_effort=env.get("SIMULATOR_REASONING_EFFORT", "low") or None,
             aggregate_similarity=_read_float(env, "AGGREGATE_SIMILARITY", 0.90),
             max_usd=_read_float(env, "MAX_USD", 5.0),
             personas_per_call=_read_int(env, "PERSONAS_PER_CALL", 8),

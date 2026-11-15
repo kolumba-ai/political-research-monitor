@@ -216,7 +216,7 @@ class AnthropicLLM(_HTTPClient):
                 "anthropic-version": "2023-06-01",
             },
             transport=transport,
-            timeout=60.0,
+            timeout=settings.llm_timeout_s,
         )
 
     def complete_json(self, system: str, user: str, output_model: type[T], max_tokens: int) -> tuple[T, Usage]:
@@ -294,7 +294,7 @@ class OpenAILLM(_HTTPClient):
             base_url=settings.openai_base_url,
             headers={"Authorization": f"Bearer {settings.openai_api_key}"},
             transport=transport,
-            timeout=60.0,
+            timeout=settings.llm_timeout_s,
         )
 
     def complete_json(self, system: str, user: str, output_model: type[T], max_tokens: int) -> tuple[T, Usage]:
@@ -347,14 +347,33 @@ class OpenAILLM(_HTTPClient):
             "max_completion_tokens": max_tokens,
             "messages": [{"role": "system", "content": system}, *messages],
         }
-        response = self._post(self.client, "/v1/chat/completions", payload, "openai")
-        data = response.json()
-        choices = data.get("choices") or []
-        message = choices[0].get("message") if choices else None
-        content = message.get("content") if message else None
-        if not isinstance(content, str):
-            raise LLMError("openai response did not include message content")
-        return content, self._usage(data, self.model, "prompt_tokens", "completion_tokens")
+        if self.settings.simulator_reasoning_effort:
+            payload["reasoning_effort"] = self.settings.simulator_reasoning_effort
+        current_max_tokens = max_tokens
+        total_usage = Usage(self.model, 0, 0)
+        last_error: Exception | None = None
+        for retry_index in range(self.settings.llm_max_retries + 1):
+            payload["max_completion_tokens"] = current_max_tokens
+            response = self._post(self.client, "/v1/chat/completions", payload, "openai")
+            data = response.json()
+            total_usage += self._usage(data, self.model, "prompt_tokens", "completion_tokens")
+            choices = data.get("choices") or []
+            choice = choices[0] if choices else {}
+            message = choice.get("message") or {}
+            content = message.get("content")
+            if choice.get("finish_reason") == "length":
+                last_error = ValueError("response was truncated at the token limit")
+            elif not isinstance(content, str) or not content.strip():
+                last_error = ValueError("response did not include message content")
+            else:
+                return content, total_usage
+            current_max_tokens = min(current_max_tokens * 2, 4_000)
+            if retry_index < self.settings.llm_max_retries:
+                self.sleep(self._delay(retry_index))
+        raise LLMError(
+            f"openai chat did not return a complete response after {self.settings.llm_max_retries} retries",
+            usage=total_usage,
+        ) from last_error
 
 
 class OpenAIEmbedder(_HTTPClient):
@@ -371,7 +390,7 @@ class OpenAIEmbedder(_HTTPClient):
             base_url=settings.openai_base_url,
             headers={"Authorization": f"Bearer {settings.openai_api_key}"},
             transport=transport,
-            timeout=60.0,
+            timeout=settings.llm_timeout_s,
         )
 
     def embed(self, texts: list[str]) -> tuple[list[list[float]], Usage]:

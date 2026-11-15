@@ -15,7 +15,7 @@ The Modal image uses Python 3.11 independently of the local development interpre
 
 ## Configure
 
-Copy `.env.example` to `.env` and set `DATABASE_URL` and `OPENAI_API_KEY`. `LLM_MODEL` defaults to `gpt-6.1-sol` for structured calls and `SIMULATOR_MODEL` defaults to `gpt-6-luna` for respondent chat; both can be overridden. `ANTHROPIC_API_KEY` is optional and is required only when either configured model uses Anthropic. `OPENAI_BASE_URL` defaults to `https://api.openai.com`. The remaining values are optional tunables; defaults live in `system_d/config.py`. Export the values into the shell before running the local modules:
+Copy `.env.example` to `.env` and set `DATABASE_URL` and `OPENAI_API_KEY`. `LLM_MODEL` defaults to `gpt-6.1-sol` for structured calls and `SIMULATOR_MODEL` defaults to `gpt-6-luna` for respondent chat; both can be overridden. `ANTHROPIC_API_KEY` is optional and is required only when either configured model uses Anthropic. `OPENAI_BASE_URL` defaults to `https://api.openai.com`. `LLM_TIMEOUT_S` defaults to 180 seconds. `SIMULATOR_REASONING_EFFORT` defaults to `low`; set it to an empty string to omit the OpenAI chat field. The remaining values are optional tunables; defaults live in `system_d/config.py`. Export the values into the shell before running the local modules:
 
 ```bash
 cp .env.example .env

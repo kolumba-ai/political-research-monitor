@@ -35,6 +35,7 @@ def test_simulator_records_opening_and_maps_agent_respondent_roles():
     assert llm.calls == []
     assert channel.send(conversation_id, "First question") == "reply-1"
     assert channel.send(conversation_id, "Second question") == "reply-2"
+    assert llm.calls[0][2] == 1024
     messages = llm.calls[1][1]
     assert messages == [
         {"role": "user", "content": "Opening message"},

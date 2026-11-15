@@ -53,6 +53,14 @@ def openai_response(content, *, finish_reason="stop", usage=None):
     }
 
 
+def openai_chat_response(content, *, finish_reason="stop", usage=None):
+    return {
+        "model": "gpt-6-luna",
+        "choices": [{"finish_reason": finish_reason, "message": {"content": content}}],
+        "usage": usage or {"prompt_tokens": 12, "completion_tokens": 4},
+    }
+
+
 def test_anthropic_forces_a_tool_and_parses_validated_input():
     requests = []
 
@@ -519,9 +527,117 @@ def test_openai_chat_sends_system_first_and_returns_text_and_usage():
         {"role": "assistant", "content": "Prior reply"},
     ]
     assert request_data["max_completion_tokens"] == 100
+    assert request_data["reasoning_effort"] == "low"
     assert text == "Respondent reply"
     assert usage.model == "gpt-6-luna"
     assert (usage.input_tokens, usage.output_tokens) == (10, 6)
+
+
+def test_openai_chat_retries_length_and_sums_usage():
+    requests = []
+    responses = [
+        openai_chat_response(
+            "partial",
+            finish_reason="length",
+            usage={"prompt_tokens": 3, "completion_tokens": 1024},
+        ),
+        openai_chat_response(
+            "complete reply",
+            usage={"prompt_tokens": 5, "completion_tokens": 7},
+        ),
+    ]
+
+    def handler(request):
+        requests.append(json.loads(request.read()))
+        return httpx.Response(200, json=responses[len(requests) - 1], request=request)
+
+    client = OpenAILLM(
+        configured_settings(llm_max_retries=2),
+        "gpt-6-luna",
+        transport=httpx.MockTransport(handler),
+        sleep=lambda _: None,
+    )
+    text, usage = client.chat("simulator", [], max_tokens=1024)
+
+    assert text == "complete reply"
+    assert [request["max_completion_tokens"] for request in requests] == [1024, 2048]
+    assert (usage.input_tokens, usage.output_tokens) == (8, 1031)
+
+
+def test_openai_chat_retries_empty_content():
+    requests = []
+    responses = [
+        openai_chat_response("  ", usage={"prompt_tokens": 2, "completion_tokens": 1}),
+        openai_chat_response("valid", usage={"prompt_tokens": 4, "completion_tokens": 3}),
+    ]
+
+    def handler(request):
+        requests.append(json.loads(request.read()))
+        return httpx.Response(200, json=responses[len(requests) - 1], request=request)
+
+    client = OpenAILLM(
+        configured_settings(),
+        "gpt-6-luna",
+        transport=httpx.MockTransport(handler),
+        sleep=lambda _: None,
+    )
+    text, usage = client.chat("simulator", [], max_tokens=100)
+
+    assert text == "valid"
+    assert len(requests) == 2
+    assert [request["max_completion_tokens"] for request in requests] == [100, 200]
+    assert (usage.input_tokens, usage.output_tokens) == (6, 4)
+
+
+def test_openai_chat_all_failures_raise_with_summed_usage():
+    requests = []
+    responses = [
+        openai_chat_response("partial", finish_reason="length", usage={"prompt_tokens": 2, "completion_tokens": 8}),
+        openai_chat_response(" ", usage={"prompt_tokens": 3, "completion_tokens": 1}),
+    ]
+
+    def handler(request):
+        requests.append(json.loads(request.read()))
+        return httpx.Response(200, json=responses[len(requests) - 1], request=request)
+
+    client = OpenAILLM(
+        configured_settings(llm_max_retries=1),
+        "gpt-6-luna",
+        transport=httpx.MockTransport(handler),
+        sleep=lambda _: None,
+    )
+    with pytest.raises(LLMError, match="openai chat did not return") as exc_info:
+        client.chat("simulator", [], max_tokens=3_000)
+
+    assert [request["max_completion_tokens"] for request in requests] == [3_000, 4_000]
+    assert exc_info.value.usage == Usage("gpt-6-luna", 5, 9)
+
+
+def test_openai_chat_omits_reasoning_effort_when_disabled():
+    request_data = {}
+
+    def handler(request):
+        request_data.update(json.loads(request.read()))
+        return httpx.Response(200, json=openai_chat_response("reply"), request=request)
+
+    client = OpenAILLM(
+        configured_settings(simulator_reasoning_effort=None),
+        "gpt-6-luna",
+        transport=httpx.MockTransport(handler),
+        sleep=lambda _: None,
+    )
+    client.chat("simulator", [], max_tokens=100)
+    assert "reasoning_effort" not in request_data
+
+
+def test_llm_clients_use_configured_timeout():
+    settings = configured_settings(llm_timeout_s=42.5)
+    anthropic = AnthropicLLM(settings, "claude-sonnet-5-5", transport=httpx.MockTransport(lambda request: None))
+    openai = OpenAILLM(settings, "gpt-6.1-sol", transport=httpx.MockTransport(lambda request: None))
+    embedder = OpenAIEmbedder(settings, transport=httpx.MockTransport(lambda request: None))
+    assert anthropic.client.timeout.read == 42.5
+    assert openai.client.timeout.read == 42.5
+    assert embedder.client.timeout.read == 42.5
 
 
 def test_make_llm_routes_structured_calls_and_chat_to_their_models(monkeypatch):

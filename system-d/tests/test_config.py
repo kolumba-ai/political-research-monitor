@@ -22,6 +22,8 @@ def test_settings_defaults_and_stopping_config():
     assert settings.llm_max_retries == 6
     assert settings.llm_backoff_base_s == 1.0
     assert settings.llm_backoff_max_s == 60
+    assert settings.llm_timeout_s == 180
+    assert settings.simulator_reasoning_effort == "low"
     assert settings.aggregate_similarity == 0.9
     assert settings.max_usd == 5
     assert settings.personas_per_call == 8
@@ -58,6 +60,8 @@ def test_settings_load_env_overrides_and_simulator_model_default():
             "LLM_MAX_RETRIES": "2",
             "LLM_BACKOFF_BASE_S": "0.25",
             "LLM_BACKOFF_MAX_S": "4",
+            "LLM_TIMEOUT_S": "42.5",
+            "SIMULATOR_REASONING_EFFORT": "medium",
             "AGGREGATE_SIMILARITY": "0.95",
             "MAX_USD": "2.5",
             "PERSONAS_PER_CALL": "3",
@@ -79,12 +83,15 @@ def test_settings_load_env_overrides_and_simulator_model_default():
     assert settings.llm_max_retries == 2
     assert settings.llm_backoff_base_s == 0.25
     assert settings.llm_backoff_max_s == 4
+    assert settings.llm_timeout_s == 42.5
+    assert settings.simulator_reasoning_effort == "medium"
     assert settings.aggregate_similarity == 0.95
     assert settings.max_usd == 2.5
     assert settings.personas_per_call == 3
 
     default_simulator = Settings.from_env({"LLM_MODEL": "chosen"})
     assert default_simulator.simulator_model == "gpt-6-luna"
+    assert Settings.from_env({"SIMULATOR_REASONING_EFFORT": ""}).simulator_reasoning_effort is None
 
 
 @pytest.mark.parametrize(
