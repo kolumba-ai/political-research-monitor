@@ -209,7 +209,9 @@ def build_prompt(snap, post_meta: dict, segs: list[dict], taxonomy: dict) -> tup
         room = MAX_SEGMENT_CHARS - used - min(reserve[i], MAX_SEGMENT_CHARS // 2)
         if room < min(len(s["text"]), 200):
             continue
-        shown = s["text"][:room]
+        shown = s["text"]
+        if len(shown) > room:
+            shown = shown[:room].rsplit(None, 1)[0] + " [...]"  # cut at a word boundary so no figure is split
         used += len(shown)
         ref = f"s{s['ordinal']}"
         refs[ref] = s

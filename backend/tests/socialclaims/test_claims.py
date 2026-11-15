@@ -1,3 +1,4 @@
+import re
 import json
 import httpx
 import pytest
@@ -152,3 +153,6 @@ def test_oversized_speech_does_not_hide_caption(graph):
             {"source": "caption", "ordinal": 1, "text": "El desempleo bajó a 2.5%", "start_s": None, "end_s": None}]
     prompt, refs = build_prompt(read_person(graph, PID), {}, segs, {"topics": []})
     assert "El desempleo bajó a 2.5%" in prompt and set(refs) == {"s0", "s1"}
+    segs[0]["text"] = "1234567 " * 2000
+    prompt, _ = build_prompt(read_person(graph, PID), {}, segs, {"topics": []})
+    assert "1234567 [...]" in prompt and not re.search(r"\b(?!1234567\b)\d+ \[\.\.\.\]", prompt)
