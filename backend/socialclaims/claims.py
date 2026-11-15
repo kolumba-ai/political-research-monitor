@@ -12,6 +12,7 @@ import re
 import time
 from dataclasses import dataclass
 from datetime import date, datetime
+from decimal import Decimal
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Iterator, Protocol
@@ -29,7 +30,7 @@ from .systema import GraphReader, read_person
 TAXONOMY_DIR = Path(__file__).parent / "taxonomy"
 MAX_SEGMENT_CHARS = 12_000
 FUZZY_MIN = 0.9
-CHECKS_VERSION = "checks-4"
+CHECKS_VERSION = "checks-5"
 NEGATIONS = {"no", "nunca", "jamas", "ni", "tampoco", "ningun", "ninguna", "ninguno", "nada", "nadie", "sin"}
 CLAIM_TYPES = ["factual", "statistic", "policy_position", "commitment", "forecast", "accusation", "opinion"]
 INFO_ISSUES = {"predicate_negation_normalized", "segment_id_corrected"}
@@ -193,6 +194,10 @@ def _number(raw: str, decimal_percent: bool = False) -> str:
     return re.sub(r"\.0+$", "", number)
 
 
+def _fmt_decimal(d: Decimal) -> str:
+    return format(d.normalize(), "f")
+
+
 def _number_values(text: str, decimal_percent: bool = False) -> Iterator[tuple[str, bool]]:
     raw = text or ""
     tokens = list(re.finditer(r"\d[\d,.]*|[^\W\d_]+", raw, flags=re.UNICODE))
@@ -203,11 +208,11 @@ def _number_values(text: str, decimal_percent: bool = False) -> Iterator[tuple[s
     def integer(match: re.Match) -> int | None:
         token = word(match)
         if token in NUMBER_WORDS:
-            return NUMBER_WORDS[token]
+            return Decimal(NUMBER_WORDS[token])
         is_percent = decimal_percent or bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[match.end():],
                                                       flags=re.IGNORECASE))
         canonical = _number(token, decimal_percent=is_percent)
-        return int(canonical) if canonical.isdigit() else None
+        return Decimal(canonical) if re.fullmatch(r"\d+(\.\d+)?", canonical) else None
 
     i = 0
     while i < len(tokens):
@@ -218,8 +223,10 @@ def _number_values(text: str, decimal_percent: bool = False) -> Iterator[tuple[s
             if leading is not None:
                 has_trailing = i + 2 < len(tokens) \
                     and raw[tokens[i + 1].end():tokens[i + 2].start()].isspace()
-                trailing = integer(tokens[i + 2]) if has_trailing else None
-                total = leading * 1000 + (trailing or 0)
+                trailing = integer(tokens[i + 2]) if has_trailing and leading == leading.to_integral() else None
+                if trailing is not None and trailing != trailing.to_integral():
+                    trailing = None
+                total = _fmt_decimal(leading * 1000 + (trailing or 0))
                 consumed = tokens[i:i + (3 if trailing is not None else 2)]
                 has_digit = any(re.match(r"\d", word(token)) for token in consumed)
                 yield str(total), has_digit
@@ -247,7 +254,7 @@ def _value_numbers(value: dict) -> list[str]:
     decimal_percent = unit == "%" or normalize_text(unit) == "por ciento"
     numbers = _numbers(str(value.get("value")), decimal_percent=decimal_percent)
     if normalize_text(unit).split()[:1] == ["mil"]:  # value 2, unit "mil pesos" -> 2000
-        numbers = {str(int(float(n) * 1000)) if re.fullmatch(r"\d+(\.\d+)?", n) else n for n in numbers}
+        numbers = {_fmt_decimal(Decimal(n) * 1000) if re.fullmatch(r"\d+(\.\d+)?", n) else n for n in numbers}
     return sorted(numbers)
 
 

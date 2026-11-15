@@ -455,3 +455,12 @@ def test_value_scale_in_unit_and_literal_cien():
     assert _numbers("Se vendió por cien pesos") == {"100"}
     assert _numbers("cien por ciento") == {"100"}
     assert _numbers("5 por ciento") == {"5"}
+
+
+def test_decimal_thousands_keep_precision():
+    from socialclaims.claims import _numbers, _value_numbers
+    assert _value_numbers({"value": "2.01", "unit": "mil pesos"}) == ["2010"]
+    assert _value_numbers({"value": "16.4901", "unit": "mil pesos"}) != _value_numbers({"value": "16.4902", "unit": "mil pesos"})
+    assert _numbers("2.5 mil pesos") == {"2500"}
+    assert _numbers("6 mil 500 millones") == {"6500"}
+    assert _numbers("120 mil personas") == {"120000"}
