@@ -142,6 +142,7 @@ ORDER BY d.stated_at, d.claim_id
 """
 
 
+MAX_CONSECUTIVE_FAILURES = 5
 # A proposition left `mapping` longer than this (worker killed mid-run) is available again.
 MAPPING_LEASE_MINUTES = 60
 READY = ("(q.status = 'queued' OR (q.status = 'mapping' AND q.updated_at < now() - make_interval(mins => %(lease)s))) "
@@ -338,7 +339,7 @@ class Enricher:
 
     def run(self, politician_ids: list[str] | None, limit: int | None) -> dict:
         results, errors, seen = [], [], []
-        stopped = None
+        stopped, failures = None, 0
         while limit is None or len(seen) < limit:
             if self.max_usd is not None and self.spend.report()["total_usd"] >= self.max_usd:
                 stopped = "max_usd"
@@ -349,9 +350,14 @@ class Enricher:
             seen.append(prop["proposition_id"])
             try:
                 results.append(self.enrich_one(prop))
+                failures = 0
             except Exception as exc:  # one proposition's failure must not stop the batch
                 log.error("enrich.failed", proposition_id=prop["proposition_id"], error=str(exc)[:300])
                 errors.append({"proposition_id": prop["proposition_id"], "error": str(exc)[:300]})
+                failures += 1
+                if failures >= MAX_CONSECUTIVE_FAILURES:  # account-level problem (credits, keys, budget): stop
+                    stopped = "consecutive_failures"
+                    break
         return {"propositions": len(results), "results": results, "errors": errors, "stopped": stopped,
                 "spend": self.spend.report()}
 

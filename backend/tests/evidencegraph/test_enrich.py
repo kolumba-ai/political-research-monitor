@@ -318,3 +318,21 @@ def test_rows_setting_and_spend_cap(conn, ev_settings, tmp_path):
     assert out["propositions"] == 1 and out["stopped"] == "max_usd"
     assert len(exa.calls) == 1 and out["spend"]["exa_usd"] > 0 and out["spend"]["pastdev_credits"] > 0
     assert conn.execute("SELECT count(*) AS n FROM ev_proposition_queue WHERE status = 'queued'").fetchone()["n"] == 1
+
+
+def test_run_stops_after_consecutive_failures(conn, ev_settings, tmp_path):
+    from evidencegraph import enrich as enrich_module
+
+    _setup(conn)
+    for n in range(6):
+        _claim(conn, f"f{n}", f"prop-f{n}")
+    run_intake(conn, [PID], mapper_version="m1")
+
+    class BrokeLLM(FakeLLM):
+        def extract(self, system, prompt, tool):
+            raise RuntimeError("anthropic 400: credit balance is too low")
+
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast(), llm=BrokeLLM())
+    out = enricher.run(None, None)
+    assert out["stopped"] == "consecutive_failures" and len(out["errors"]) == enrich_module.MAX_CONSECUTIVE_FAILURES
+    assert conn.execute("SELECT count(*) AS n FROM ev_proposition_queue WHERE status = 'queued'").fetchone()["n"] == 7
