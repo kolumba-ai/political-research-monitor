@@ -330,6 +330,9 @@ class Enricher:
         judged = prop["mapped_at"] is None and prop["skip_reason"] == PASTDEV_PENDING and self.conn.execute(
             "SELECT 1 FROM ev_evidence_link WHERE proposition_id = %s AND mapper_version = %s LIMIT 1",
             (prop["proposition_id"], self.settings.mapper_version)).fetchone() is not None
+        if not judged and prop["skip_reason"] == PASTDEV_PENDING:  # re-judging: a dead worker must not leave it to sync
+            self.conn.execute("UPDATE ev_proposition_queue SET skip_reason = NULL WHERE proposition_id = %s",
+                              (prop["proposition_id"],))
         try:
             # Judged in an earlier run whose past.dev write did not complete: only project again.
             rows, candidates = ([], []) if judged else self._discover(prop, claims)
@@ -345,8 +348,11 @@ class Enricher:
                 link = self.assess(prop, claims, cand, fetched)
                 key = link["stance"] if link["quote_verified"] or link["stance"] == "irrelevant" else "unverified"
                 stances[key] = stances.get(key, 0) + 1
-            if not self.settings.enrich_pastdev:  # left `pastdev_pending` for sync-pastdev
-                pushed = {"errors": [], "pending": 1, "credits_sent": 0, "deferred": True}
+            if not self.settings.enrich_pastdev:  # left `pastdev_pending` for sync-pastdev, unless there's nothing to send
+                has_links = self.conn.execute(
+                    "SELECT 1 FROM ev_evidence_link WHERE proposition_id = %s AND mapper_version = %s LIMIT 1",
+                    (prop["proposition_id"], self.settings.mapper_version)).fetchone() is not None
+                pushed = {"errors": [], "pending": int(has_links), "credits_sent": 0, "deferred": True}
             else:
                 pushed = projection.project(self.conn, self.client, prop, claims, country=self.country,
                                             mapper_version=self.settings.mapper_version, sleep=self.sleep,

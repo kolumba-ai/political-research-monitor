@@ -6,7 +6,7 @@ import httpx
 import pytest
 
 from evidencegraph.cli import main as cli_main
-from evidencegraph.enrich import Enricher, dry_run, quote_in_text
+from evidencegraph.enrich import PROP_SQL, Enricher, dry_run, quote_in_text
 from evidencegraph.fetch import Fetcher
 from evidencegraph.intake import run_intake
 from evidencegraph.project import _iso
@@ -623,3 +623,31 @@ def test_reproject_defer_dry_run_writes_nothing(conn, ev_settings, tmp_path):
     out = reproject(conn, None, ev_settings, dry_run=True, defer=True)
     assert out["changed_propositions"] == 1 and "deferred" not in out
     assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "mapped"
+
+
+def test_deferred_enrich_without_evidence_is_done(conn, ev_settings, tmp_path):
+    _setup(conn)
+    settings = ev_settings.model_copy(update={"enrich_pastdev": False})
+    enricher, _ = _enricher(conn, settings, tmp_path, FakePast())
+    enricher._discover = lambda prop, claims: ([], [])
+    enricher.run(None, 5)
+    q = conn.execute("SELECT status, skip_reason FROM ev_proposition_queue").fetchone()
+    assert (q["status"], q["skip_reason"]) == ("mapped", None)
+
+
+def test_rejudging_clears_pastdev_pending_before_discovery(conn, ev_settings, tmp_path):
+    past = FakePast()
+    _judged_pending(conn, ev_settings, tmp_path, past)
+    upgraded = ev_settings.model_copy(update={"mapper_version": ev_settings.mapper_version + "-next",
+                                              "enrich_pastdev": False})
+    enricher, _ = _enricher(conn, upgraded, tmp_path, past)
+    seen = []
+
+    def dying_discover(prop, claims):
+        seen.append(conn.execute("SELECT skip_reason FROM ev_proposition_queue").fetchone()["skip_reason"])
+        raise RuntimeError("worker died")
+
+    enricher._discover = dying_discover
+    with pytest.raises(RuntimeError):
+        enricher.enrich_one(conn.execute(PROP_SQL).fetchone())
+    assert seen == [None]
