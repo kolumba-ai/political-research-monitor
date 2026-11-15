@@ -184,6 +184,7 @@ class Enricher:
         self.spend = spend or Spend(settings, gateway)
         self.max_usd = max_usd
         self.rows = rows(settings)
+        self.audience_cache: dict[str, dict] = {}  # politician -> audience plan, so past.dev is listed once per worker
         self.country = country.upper()
         self.sleep = sleep
         self.now = now or (lambda: datetime.now(timezone.utc))
@@ -336,7 +337,8 @@ class Enricher:
                 stances[key] = stances.get(key, 0) + 1
             pushed = projection.project(self.conn, self.client, prop, claims, country=self.country,
                                         mapper_version=self.settings.mapper_version, sleep=self.sleep, now=self.now,
-                                        poll_timeout_s=self.settings.enrich_poll_timeout_s)
+                                        poll_timeout_s=self.settings.enrich_poll_timeout_s,
+                                        audience_cache=self.audience_cache)
             self.spend.add_pastdev(pushed.get("credits_sent", 0))
         except Exception:
             self._set_status(prop, "queued")

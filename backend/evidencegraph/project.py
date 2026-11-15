@@ -230,11 +230,13 @@ def _settle(conn, project: str, ingestion_id: str, st: dict, now) -> None:
                       json.dumps(st.get("failure")) if st.get("failure") else None, project, ingestion_id))
 
 
-def refresh_queued(conn, client: PastDevClient, project: str, now) -> int:
-    """Re-check this project's ingestions an earlier run left `queued`, so failed items are resent."""
+def refresh_queued(conn, client: PastDevClient, project: str, now, datapoint_ids: list[str] | None = None) -> int:
+    """Re-check ingestions an earlier run left `queued` (only those of `datapoint_ids` when given), so failed items
+    are resent."""
     ids = [r["ingestion_id"] for r in conn.execute(
         "SELECT DISTINCT ingestion_id FROM ev_memory_record WHERE status = 'queued' AND ingestion_id IS NOT NULL "
-        "AND past_project = %s", (project,))]
+        "AND past_project = %s AND (%s::text[] IS NULL OR datapoint_id = ANY(%s))",
+        (project, datapoint_ids, datapoint_ids))]
     for ingestion_id in ids:
         _settle(conn, project, ingestion_id, client.get(f"/ingest/{ingestion_id}"), now)
     return len(ids)
@@ -266,7 +268,8 @@ def _record(conn, it: dict, project: str, ingestion_id: str | None, status: str,
 
 
 def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, country: str, mapper_version: str,
-            poll_timeout_s: float = 300.0, poll_interval_s: float = 2.0, sleep=time.sleep, now=None) -> dict:
+            poll_timeout_s: float = 300.0, poll_interval_s: float = 2.0, sleep=time.sleep, now=None,
+            audience_cache: dict | None = None) -> dict:
     """Send one enriched proposition's claim, documents and links; returns what was sent."""
     now = now or (lambda: datetime.now(timezone.utc))
     past_project = f"claims-{country.lower()}"
@@ -274,12 +277,16 @@ def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, coun
     if not items:
         return {"items": 0, "sent": 0, "unchanged": 0, "credits_estimate": 0, "credits_sent": 0, "errors": [],
                 "pending": 0}
-    refresh_queued(conn, client, past_project, now)
+    refresh_queued(conn, client, past_project, now, [it["id"] for it in items])
     pids = sorted({it["metadata"]["politician_id"] for it in items if it["metadata"].get("politician_id")})
     recorded = {r["politician_id"]: r["audience"] for r in conn.execute(
         "SELECT DISTINCT politician_id, audience FROM ev_memory_record WHERE past_project = %s "
         "AND politician_id = ANY(%s) AND audience IS NOT NULL", (past_project, pids))}
-    plan = resolve_audiences(client, pids, recorded)
+    cache = audience_cache if audience_cache is not None else {}
+    missing = [pid for pid in pids if pid not in cache]
+    if missing:
+        cache.update(resolve_audiences(client, missing, recorded))
+    plan = {pid: cache[pid] for pid in pids}
     for it in items:
         pid = it["metadata"].get("politician_id")
         if pid:
