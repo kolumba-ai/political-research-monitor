@@ -47,6 +47,7 @@ class _PageParser(HTMLParser):
         self._in_jsonld = False
         self._skip_depth = 0
         self._script_parts: list[str] = []
+        self.has_password_input = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -55,6 +56,8 @@ class _PageParser(HTMLParser):
             self.language = attrs.get("lang")
         elif tag == "title":
             self._in_title = True
+        elif tag == "input" and (attrs.get("type") or "").lower() == "password":
+            self.has_password_input = True
         elif tag in {"script", "style", "noscript"}:
             if tag == "script" and attrs.get("type", "").lower() == "application/ld+json":
                 self._in_jsonld = True
@@ -494,11 +497,13 @@ class Fetcher:
         except Exception as exc:
             return self._retry(key, url, f"document parsing failed: {exc}")
 
-        if is_html and text is not None and len(text) < 1000 and BLOCKED_PAGE.search(text):
-            self._record_status(key, url, "blocked", "login or CAPTCHA page")
-            self._document_stub(original_id, url, registry_row, "blocked")
-            return {"url": url, "document_id": original_id, "fetch_status": "blocked",
-                    "http_status": response_status, "snapshot_path": None}
+        if is_html and text is not None and len(text) < 1000:
+            barrier_text = f"{metadata.get('title') or ''}\n{text}"
+            if BLOCKED_PAGE.search(barrier_text) or parser.has_password_input:
+                self._record_status(key, url, "blocked", "login or CAPTCHA page")
+                self._document_stub(original_id, url, registry_row, "blocked")
+                return {"url": url, "document_id": original_id, "fetch_status": "blocked",
+                        "http_status": response_status, "snapshot_path": None}
 
         data_for_hash = text.encode("utf-8") if is_text else raw
         content_sha = hashlib.sha256(data_for_hash).hexdigest()

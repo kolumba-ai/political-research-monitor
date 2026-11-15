@@ -94,6 +94,23 @@ def test_recaptcha_script_does_not_block_a_long_article(conn, ev_settings):
     client.close()
 
 
+def test_short_login_barriers_in_title_and_password_input_are_blocked(conn, ev_settings):
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        if request.url.path == "/title":
+            body = "<html><head><title>Sign in to continue</title></head><body>Checking your session.</body></html>"
+        else:
+            body = "<html><body><form><input type='password'></form><p>Enter account details.</p></body></html>"
+        return httpx.Response(200, text=body, headers={"content-type": "text/html"})
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+
+    assert fetcher.fetch("https://barrier.example/title")["fetch_status"] == "blocked"
+    assert fetcher.fetch("https://barrier.example/password")["fetch_status"] == "blocked"
+    client.close()
+
+
 def test_canonical_redirect_dates_versions_and_open_gov_snapshot(conn, ev_settings):
     load_registry(conn)
     bodies = [
