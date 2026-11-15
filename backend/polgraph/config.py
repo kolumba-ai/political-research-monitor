@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     # --- Exa ---------------------------------------------------------------
     exa_api_key: str | None = None
     exa_requests_per_second: float = 4.0
+    exa_limiter_database_url: str | None = None
+    exa_shared_requests_per_second: float = 8.0
     exa_max_retries: int = 5
     # Hard ceiling for a single pipeline invocation (USD). Calls that would exceed it are refused.
     exa_run_budget_usd: float = 15.0

@@ -10,6 +10,7 @@ Exa is treated as retrieval/evidence discovery only — nothing here decides wha
 from __future__ import annotations
 
 import json
+import hashlib
 import re
 import sqlite3
 import threading
@@ -18,6 +19,8 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Callable
+
+import psycopg
 
 from .config import Settings
 from .ids import canonical_url, short_hash, utcnow
@@ -71,6 +74,7 @@ def _norm_result(r: Any) -> dict:
         "title": g("title"),
         "published_date": g("published_date") or g("publishedDate"),
         "author": g("author"),
+        "score": g("score"),
         "text": g("text"),
         "highlights": g("highlights") or [],
     }
@@ -102,6 +106,36 @@ class _RateLimiter:
             time.sleep(delay)
 
 
+class PgRateLimiter:
+    def __init__(self, database_url: str, key: str, rps: float, clock: Callable[[], float] = time.time,
+                 sleep: Callable[[float], None] = time.sleep):
+        self.database_url = database_url
+        self.key = hashlib.sha256(key.encode()).hexdigest()[:16]
+        self.min_interval = 1.0 / max(rps, 0.1)
+        self.clock = clock
+        self.sleep = sleep
+
+    def wait(self) -> None:
+        with psycopg.connect(self.database_url) as conn:
+            with conn.transaction():
+                conn.execute(
+                    "CREATE TABLE IF NOT EXISTS exa_rate_limit "
+                    "(key TEXT PRIMARY KEY, next_at DOUBLE PRECISION NOT NULL)"
+                )
+                conn.execute(
+                    "INSERT INTO exa_rate_limit(key, next_at) VALUES (%s, 0) ON CONFLICT (key) DO NOTHING",
+                    (self.key,),
+                )
+                row = conn.execute("SELECT next_at FROM exa_rate_limit WHERE key = %s FOR UPDATE",
+                                   (self.key,)).fetchone()
+                slot = max(self.clock(), row[0])
+                conn.execute("UPDATE exa_rate_limit SET next_at = %s WHERE key = %s",
+                             (slot + self.min_interval, self.key))
+        delay = slot - self.clock()
+        if delay > 0:
+            self.sleep(delay)
+
+
 @dataclass
 class RunUsage:
     """Spend for the current pipeline invocation."""
@@ -113,16 +147,29 @@ class RunUsage:
 
 class ExaGateway:
     def __init__(self, settings: Settings, client: Any | None = None, db_path: Path | None = None,
-                 sleep: Callable[[float], None] = time.sleep):
+                 sleep: Callable[[float], None] = time.sleep, limiter: Any | None = None,
+                 budget_scope: str | None = None, monthly_budget_usd: float | None = None):
         self.settings = settings
         self._client = client
         self._sleep = sleep
+        self.budget_scope = budget_scope
+        self.monthly_budget_usd = monthly_budget_usd
+        if budget_scope is not None and monthly_budget_usd is None:
+            raise ValueError("monthly_budget_usd is required when budget_scope is set")
         self.db_path = db_path or settings.data_dir / "exa_cache.sqlite3"
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._db = sqlite3.connect(self.db_path, check_same_thread=False)
         self._db_lock = threading.Lock()
         self._init_db()
-        self.limiter = _RateLimiter(settings.exa_requests_per_second)
+        if limiter is not None:
+            self.limiter = limiter
+        elif getattr(settings, "exa_limiter_database_url", None):
+            self.limiter = PgRateLimiter(
+                settings.exa_limiter_database_url, settings.exa_api_key or "",
+                getattr(settings, "exa_shared_requests_per_second", 8.0),
+            )
+        else:
+            self.limiter = _RateLimiter(settings.exa_requests_per_second)
         self.usage = RunUsage()
 
     # ------------------------------------------------------------------ infra
@@ -186,13 +233,31 @@ class ExaGateway:
 
     def _reserve(self, estimate: float, what: str) -> None:
         run_left = self.settings.exa_run_budget_usd - self.usage.spent - self.usage.reserved
-        life_left = self.settings.exa_total_budget_usd - self.lifetime_spend() - self.usage.reserved
-        if estimate > run_left or estimate > life_left:
+        if self.budget_scope is None:
+            budget_left = self.settings.exa_total_budget_usd - self.lifetime_spend() - self.usage.reserved
+            budget_name = "lifetime"
+        else:
+            now = datetime.now(timezone.utc)
+            month_start = datetime(now.year, now.month, 1, tzinfo=timezone.utc).isoformat()
+            prefix = f"{self.budget_scope}:"
+            with self._db_lock:
+                spent = self._db.execute(
+                    "SELECT COALESCE(SUM(cost_usd), 0) FROM usage "
+                    "WHERE ts >= ? AND substr(purpose, 1, ?) = ?",
+                    (month_start, len(prefix), prefix),
+                ).fetchone()[0]
+            budget_left = self.monthly_budget_usd - spent - self.usage.reserved
+            budget_name = "monthly"
+        if estimate > run_left or estimate > budget_left:
             raise BudgetExceeded(
                 f"{what}: estimated ${estimate:.3f} exceeds remaining budget "
-                f"(run ${run_left:.3f}, lifetime ${life_left:.3f})"
+                f"(run ${run_left:.3f}, {budget_name} ${budget_left:.3f})"
             )
         self.usage.reserved += estimate
+
+    def _validate_purpose(self, purpose: str) -> None:
+        if self.budget_scope is not None and not purpose.startswith(f"{self.budget_scope}:"):
+            raise ValueError(f"purpose must start with '{self.budget_scope}:'")
 
     def _release(self, estimate: float) -> None:
         self.usage.reserved = max(0.0, self.usage.reserved - estimate)
@@ -215,41 +280,74 @@ class ExaGateway:
 
     # ------------------------------------------------------------------ search
     def search(self, query: str, *, purpose: str, num_results: int = 8, include_domains: list[str] | None = None,
-               exclude_domains: list[str] | None = None, text_chars: int | None = 6000, highlights: bool = True,
-               start_published_date: str | None = None, search_type: str = "auto",
+               exclude_domains: list[str] | None = None, text_chars: int | None = 6000,
+               highlights: bool | dict = True, start_published_date: str | None = None,
+               end_published_date: str | None = None, category: str | None = None,
+               user_location: str | None = None, store_text: bool = True, search_type: str = "auto",
                ttl_hours: float | None = None) -> list[dict]:
+        return self.search_meta(
+            query, purpose=purpose, num_results=num_results, include_domains=include_domains,
+            exclude_domains=exclude_domains, text_chars=text_chars, highlights=highlights,
+            start_published_date=start_published_date, end_published_date=end_published_date,
+            category=category, user_location=user_location, store_text=store_text,
+            search_type=search_type, ttl_hours=ttl_hours,
+        )["results"]
+
+    def search_meta(self, query: str, *, purpose: str, num_results: int = 8,
+                    include_domains: list[str] | None = None, exclude_domains: list[str] | None = None,
+                    text_chars: int | None = 6000, highlights: bool | dict = True,
+                    start_published_date: str | None = None, end_published_date: str | None = None,
+                    category: str | None = None, user_location: str | None = None, store_text: bool = True,
+                    search_type: str = "auto", ttl_hours: float | None = None) -> dict:
+        self._validate_purpose(purpose)
+        started = time.monotonic()
         contents: dict[str, Any] = {}
         if text_chars:
             contents["text"] = {"max_characters": text_chars}
         if highlights:
-            contents["highlights"] = True
+            contents["highlights"] = highlights
         req = {"query": query, "num_results": num_results, "include_domains": include_domains,
                "exclude_domains": exclude_domains, "contents": contents or None,
                "start_published_date": start_published_date, "type": search_type}
+        for name, value in (("end_published_date", end_published_date), ("category", category),
+                            ("user_location", user_location)):
+            if value is not None:
+                req[name] = value
+        if not store_text:
+            req["store_text"] = False
         key = "search:" + short_hash(json.dumps(req, sort_keys=True), 24)
-        cached = self._cache_get(key, ttl_hours)
+        cached = None if not store_text and contents else self._cache_get(key, ttl_hours)
         if cached is not None:
             self._record("search", purpose, None, 0, cached=True, ref=key)
-            return cached["results"]
-        est = EST_SEARCH + (EST_CONTENTS_PER_URL * num_results if text_chars else 0)
+            return {"results": cached["results"], "request_id": cached.get("request_id"), "cost_usd": 0.0,
+                    "latency_ms": round((time.monotonic() - started) * 1000), "cached": True}
+        est = EST_SEARCH + (EST_CONTENTS_PER_URL * num_results if contents else 0)
         self._reserve(est, f"search[{purpose}]")
         try:
-            kwargs = {k: v for k, v in req.items() if v is not None and k != "query"}
+            kwargs = {k: v for k, v in req.items() if v is not None and k not in ("query", "store_text")}
             resp = self._call(lambda: self.client.search(query, **kwargs), f"search[{purpose}]")
         finally:
             self._release(est)
         results = [_norm_result(r) for r in getattr(resp, "results", []) or []]
         payload = {"results": results, "request_id": getattr(resp, "request_id", None)}
-        self._cache_put(key, "search", req, payload)
-        self._record("search", purpose, _cost_total(resp), est, cached=False, ref=payload["request_id"] or key)
+        stored_results = results if store_text else [
+            {name: result[name] for name in ("url", "title", "published_date", "author", "score")}
+            for result in results
+        ]
+        self._cache_put(key, "search", req, {"results": stored_results, "request_id": payload["request_id"]})
+        cost = _cost_total(resp)
+        self._record("search", purpose, cost, est, cached=False, ref=payload["request_id"] or key)
         log.info("exa.search", purpose=purpose, query=query[:120], results=len(results),
-                 domains=include_domains, cost=_cost_total(resp))
-        return results
+                 domains=include_domains, cost=cost)
+        return {"results": results, "request_id": payload["request_id"],
+                "cost_usd": cost if cost is not None else est,
+                "latency_ms": round((time.monotonic() - started) * 1000), "cached": False}
 
     # ---------------------------------------------------------------- contents
     def contents(self, urls: list[str], *, purpose: str, text_chars: int = 40000,
                  ttl_hours: float | None = None) -> dict[str, dict]:
         """Fetch page text for URLs. Returns {canonical_url: result}; failed URLs are absent."""
+        self._validate_purpose(purpose)
         out: dict[str, dict] = {}
         todo: list[str] = []
         for u in dict.fromkeys(canonical_url(u) for u in urls if u):
@@ -295,6 +393,7 @@ class ExaGateway:
                   ttl_hours: float | None = None, effort: str | None = None,
                   max_cost_usd: float | None = None) -> dict:
         """Run (or resume) an Exa Agent run with a strict output schema. Returns the run as JSON."""
+        self._validate_purpose(purpose)
         effort = effort or self.settings.exa_agent_effort
         max_cost = max_cost_usd or self.settings.exa_agent_max_cost_usd
         req = {"query": query, "system_prompt": system_prompt, "output_schema": output_schema, "effort": effort}
