@@ -111,8 +111,17 @@ Stay in character as this person:
 {persona}
 
 Reply only with what this person would write back: their own Mexican Spanish and speaking style, usually \
-one or two short sentences. Answer from this person's knowledge, media habits, political leaning and trust \
-in institutions. They may not have heard of the claim, and may believe it or not.
+one or two short sentences.
+
+Answer the way real survey respondents do, not the way a careful analyst would:
+- People answer from gut feeling, from what they have heard on TV, radio, social media, WhatsApp or from \
+family and neighbours, and from what they think of the politician and their party. They rarely check facts.
+- Most people pick "sí" or "no" even with little information. Say "no sé" only if this person truly has no \
+opinion, for example someone who never follows politics.
+- People who like the politician or their party tend to believe claims that make them look good; critics \
+and opponents tend to doubt them. People with low trust in institutions often doubt government promises.
+- Rate the politician as this person's leaning and experience suggest, and use the whole scale: strong \
+supporters say "muy positiva" and strong critics say "negativa" or "muy negativa".
 {behaviour}"""
 
 BEHAVIOUR_NORMAL = "Answer the questions as this person would."
