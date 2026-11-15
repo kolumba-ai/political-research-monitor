@@ -41,16 +41,27 @@ def add_redirect(conn, old_id: str, new_id: str, reason: str, created_by: str) -
                      (old_id, Jsonb({"new_id": new_id, "reason": reason})))
 
 
+def merged_ids(conn, politician_id: str) -> list[str]:
+    """`politician_id` plus every old id that redirects to it, directly or transitively."""
+    ids, frontier = [politician_id], [politician_id]
+    while frontier:
+        rows = conn.execute("SELECT old_id FROM person_id_redirect WHERE new_id = ANY(%s)", (frontier,)).fetchall()
+        frontier = [r["old_id"] for r in rows if r["old_id"] not in ids]
+        ids += frontier
+    return ids
+
+
 def load_terms(conn, politician_id: str) -> QueryTerms:
     terms = QueryTerms()
-    for r in conn.execute("SELECT platform, handle, oriane_profile_id FROM politician_account "
-                          "WHERE politician_id = %s AND status = 'verified' ORDER BY platform, handle",
-                          (politician_id,)).fetchall():
+    ids = merged_ids(conn, politician_id)
+    for r in conn.execute("SELECT DISTINCT platform, handle, oriane_profile_id FROM politician_account "
+                          "WHERE politician_id = ANY(%s) AND status = 'verified' ORDER BY platform, handle",
+                          (ids,)).fetchall():
         terms.handles.setdefault(r["platform"], []).append(r["handle"])
         if r["oriane_profile_id"]:
             terms.profile_ids.append(r["oriane_profile_id"])
-    for r in conn.execute("SELECT kind, value FROM query_term WHERE politician_id = %s ORDER BY kind, value",
-                          (politician_id,)).fetchall():
+    for r in conn.execute("SELECT DISTINCT kind, value FROM query_term WHERE politician_id = ANY(%s) "
+                          "ORDER BY kind, value", (ids,)).fetchall():
         {"variant": terms.extra_variants, "hashtag": terms.hashtags,
          "exclude_variant": terms.excluded_variants}[r["kind"]].append(r["value"])
     return terms

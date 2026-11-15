@@ -10,7 +10,7 @@ from pathlib import Path
 from psycopg.types.json import Jsonb
 
 from .config import ORIANE_CREDITS_PER_ROW, SocialSettings
-from .identity import current_ref, load_terms, relevance_context, sync_ref
+from .identity import current_ref, load_terms, merged_ids, relevance_context, sync_ref
 from .oriane import (CreditsExhausted, InvalidQuery, OffsetPastEnd, OrianeClient, OrianeError, OrianeResponse,
                      credits_for)
 from .query import BRANCHES, canonical_json, request_body
@@ -60,7 +60,8 @@ def captured_ids(conn, politician_id: str) -> list[str]:
     """Posts already captured for this politician, newest first (newest are the likeliest to be re-returned)."""
     return [r["oriane_id"] for r in conn.execute(
         "SELECT p.oriane_id FROM post p WHERE EXISTS (SELECT 1 FROM run_post rp WHERE rp.oriane_id = p.oriane_id "
-        "AND rp.politician_id = %s) ORDER BY p.published_at DESC, p.oriane_id", (politician_id,)).fetchall()]
+        "AND rp.politician_id = ANY(%s)) ORDER BY p.published_at DESC, p.oriane_id",
+        (merged_ids(conn, politician_id),)).fetchall()]
 
 
 def _minimize(result: dict, excluded: list[str]) -> dict:
