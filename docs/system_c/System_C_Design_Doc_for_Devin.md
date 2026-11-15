@@ -56,7 +56,7 @@ The repo already holds System A (`backend/polgraph`) and System B Phases 0–3 (
 - Bypass paywalls, logins, CAPTCHAs or `robots.txt`.
 - Create politician identities. People and places come from System A IDs.
 
-**Blocking open questions:** see "Open questions" at the end. The first three (past.dev management key, the Exa gateway changes, legal sign-off on the storage policy) block production; the pilot path works without them.
+**Blocking open questions:** see "Open questions" at the end. The first three (past.dev management key, the Exa gateway changes, legal sign-off on the storage policy) were resolved on 2026-11-14.
 
 ---
 
@@ -435,7 +435,7 @@ IDs are immutable and versioned (`-v2` for a corrected extraction), never overwr
 | `unknown` | No | Metadata only | 1 quote ≤ 200 characters |
 | Exa output | Never persisted | Never | — |
 
-Facts are not copyrightable; our normalized assertions are our own expression. Short quotation for analysis and attribution relies on Mexico's quotation exception (LFDA art. 148) and equivalent doctrines, which **needs legal sign-off before production** (open question). Takedown requests remove the document and its derived records within 72 hours.
+Facts are not copyrightable; our normalized assertions are our own expression. Short quotation for analysis and attribution relies on Mexico's quotation exception (LFDA art. 148) and equivalent doctrines, which was signed off by Mauricio on 2026-11-14 (open question 3). Takedown requests remove the document and its derived records within 72 hours.
 
 ## Data model
 
@@ -519,9 +519,9 @@ Pilot baseline to beat (10 claims, top-3 results per class, judged on highlights
 
 ## Open questions
 
-1. **past.dev management key** to create `claims-mx` (and later country projects). Until then everything goes to the project the current key belongs to, as in the System B pilot. *Blocking for production.*
-2. **Exa gateway changes** (shared cross-process limiter, text-free cache, new search parameters, per-system monthly budgets): System A's `exa_gateway.py` is shared code, so its owner should approve them. *Blocking for M1.* The same review should decide whether System A's own 7-day cache of Exa page text complies with Exa's terms.
-3. **Legal sign-off** on the storage policy (quotes, assertions, past.dev summaries of copyrighted documents) and on fetching publisher pages. *Blocking for production.*
+1. **past.dev management key** to create `claims-mx` (and later country projects). *Resolved 2026-11-14:* `PAST_DEV_MANAGEMENT_KEY` issued; `claims-mx` is created when the M4 projection writer is built.
+2. **Exa gateway changes** (shared cross-process limiter, text-free cache, new search parameters, per-system monthly budgets): System A's `exa_gateway.py` is shared code, so its owner should approve them. *Resolved 2026-11-14:* approved by Mauricio and shipped in M0 (PR #7). The same review should decide whether System A's own 7-day cache of Exa page text complies with Exa's terms.
+3. **Legal sign-off** on the storage policy (quotes, assertions, past.dev summaries of copyrighted documents) and on fetching publisher pages. *Resolved 2026-11-14:* signed off by Mauricio. Full text is stored only for `open_gov`/`open_access` sources; copyrighted sources keep summaries, short quotes and assertions only.
 4. **Commitment deadlines.** System B stores a commitment's deadline only as `referenced_period_end`; confirm that is reliable enough to schedule the check, or add a `deadline` field to System B's claim schema.
 5. **Exa agreement**: written permission to store highlights or page text would simplify fetching; until then, publisher fetch only.
 6. **Archive snapshots**: Internet Archive is free but incomplete; is a paid archive (or Exa `snapshotAsOf`) worth it for the as-known view?

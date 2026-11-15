@@ -39,4 +39,4 @@ only for registry rows whose licence allows full-text storage.
 - Claim/assertion extraction, mapping, stance assessment, and past.dev projection are not implemented.
 - Archive snapshots are deferred. The M0 `snapshot_as_of` and `archive_origin` columns are placeholders only.
 - The shared request limiter enforces rate, but has no claim-versus-standing priority scheduler yet.
-- Registry seeds are pending human review (`reviewed_at` remains null); legal and rights review is still required.
+- Registry seeds are pending human review (`reviewed_at` remains null). The storage policy and publisher fetching were signed off by Mauricio on 2026-11-14 (design doc open question 3).
