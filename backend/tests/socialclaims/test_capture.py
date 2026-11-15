@@ -161,7 +161,9 @@ def test_verified_handle_adds_own_branch(conn, graph, sc_settings):
     accounts.approve(conn, PID, "tiktok", "claudiashein", "reviewer", ["https://www.gob.mx/presidencia"])
     plan = cap(conn, graph, sc_settings, None).plan(PID)
     names = [q["name"] for q in plan["body"]["queries"][0]["queries"]]
-    assert names[:3] == ["own", "coauthored", "tagged"]
+    assert names[:3] == ["own:tiktok", "coauthored:tiktok", "tagged:tiktok"]
+    own = plan["body"]["queries"][0]["queries"][0]
+    assert own["operator"] == "and" and own["filters"]["platform"] == {"includes": ["tiktok"]}
 
 
 def test_relevance_scoring():
@@ -217,3 +219,59 @@ def test_spend_survives_processing_failure_and_replay_bills_once(conn, graph, sc
     with pytest.raises(ValueError):
         Capturer(conn, graph, rc, sc_settings, clock=lambda: rc.captured_at).capture(
             PID, date_from="2026-01-01", date_to=w["before"], max_posts=rc.max_posts)
+
+
+def test_discover_respects_monthly_ceiling(conn, graph, sc_settings):
+    from socialclaims.oriane import CreditsExhausted
+    from socialclaims.systema import read_person
+    from socialclaims.capture import record_usage
+    record_usage(conn, None, "/rest/contents/search", "capture", "full", 200, "req_x", 1, 9_999, FIXED_NOW.now(FIXED_NOW.tzinfo))
+    fake = FakeOriane([])
+    with pytest.raises(CreditsExhausted):
+        accounts.discover(conn, fake.client(), read_person(graph, PID), ["tiktok"], monthly_ceiling=10_000)
+    assert fake.calls == []
+
+
+def test_failed_run_keeps_progress_and_purge_covers_its_pages(conn, graph, sc_settings, monkeypatch):
+    import socialclaims.capture as capmod
+    sc_settings.raw_retention_days = 1
+    real_score, calls = capmod.score, {"n": 0}
+
+    def flaky(*a, **k):
+        calls["n"] += 1
+        if calls["n"] > 3:
+            raise TypeError("bad field shape")
+        return real_score(*a, **k)
+    monkeypatch.setattr(capmod, "score", flaky)
+    monkeypatch.setattr(sc_settings, "oriane_page_size", 3)
+    fake = FakeOriane([make_result(i) for i in range(6)])
+    with pytest.raises(TypeError):
+        cap(conn, graph, sc_settings, fake).capture(PID)
+    run = conn.execute("SELECT * FROM run").fetchone()
+    assert run["status"] == "error" and run["rows_returned"] == 3 and len(run["request_ids"]) == 2
+    assert run["credits_used"] == credits_for(6, sc_settings.oriane_projection)
+    run_dir = Path(sc_settings.raw_storage_dir) / run["run_id"]
+    assert len(list(run_dir.glob("page-*.json"))) == 2
+
+    monkeypatch.undo()
+    rc_excl = capmod.RawReplayClient(run_dir).exclude_ids
+    assert rc_excl == []
+    purge_expired(conn, sc_settings, now=FIXED_NOW + timedelta(days=2))
+    assert [f.name for f in run_dir.glob("page-*.json")] == []
+
+
+def test_replay_reuses_stored_excludes(conn, graph, sc_settings, monkeypatch):
+    import socialclaims.capture as capmod
+    fake = FakeOriane([make_result(i) for i in range(4)])
+    cap(conn, graph, sc_settings, fake).capture(PID, max_posts=2)
+    monkeypatch.setattr(capmod, "score", lambda *a, **k: (_ for _ in ()).throw(TypeError("boom")))
+    with pytest.raises(TypeError):
+        cap(conn, graph, sc_settings, fake, now=FIXED_NOW + timedelta(hours=1)).capture(PID, max_posts=2)
+    monkeypatch.undo()
+    failed = conn.execute("SELECT run_id FROM run WHERE status = 'error'").fetchone()["run_id"]
+    rc = capmod.RawReplayClient(Path(sc_settings.raw_storage_dir) / failed)
+    assert len(rc.exclude_ids) == 2
+    w = rc.body["filters"]["publishedAt"]
+    out = Capturer(conn, graph, rc, sc_settings, clock=lambda: rc.captured_at).capture(
+        PID, date_from=w["after"], date_to=w["before"], max_posts=rc.max_posts, exclude_ids=rc.exclude_ids)
+    assert out["rows"] == 2 and conn.execute("SELECT count(*) AS n FROM post").fetchone()["n"] == 4

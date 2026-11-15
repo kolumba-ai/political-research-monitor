@@ -23,7 +23,7 @@ def discover(conn, client: OrianeClient, snap: PersonSnapshot, platforms: list[s
         from .capture import month_credits_used, utcnow
         limit = min(limit, (monthly_ceiling - month_credits_used(conn, utcnow())) // credits_for(1, projection))
         if limit < 1:
-            raise CreditsExhausted("monthly Oriane credit ceiling reached")
+            raise CreditsExhausted(402, "local monthly Oriane credit ceiling reached (no call made)")
     body = profile_search_body(snap, platforms)
     resp = client.search_profiles(body, limit=limit, projection=projection)
     rows = resp.results

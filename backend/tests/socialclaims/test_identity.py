@@ -71,8 +71,10 @@ def test_query_branches_and_stable_hash(graph):
     terms = QueryTerms(handles={"tiktok": ["@ClaraBrugada"]}, profile_ids=["prf_x"], hashtags=["ClaraBrugada"],
                        extra_variants=["Brugada"])
     q2 = build_query(s, terms, list(reversed(PLATFORMS)))
-    assert [b["name"] for b in q2["branches"]] == ["own", "coauthored", "tagged", "spoken", "written", "onscreen", "hashtag"]
-    assert q2["branches"][0]["filters"] == {"profileId": {"includes": ["prf_x"]},
+    assert [b["name"] for b in q2["branches"]] == ["own", "own:tiktok", "coauthored:tiktok", "tagged:tiktok",
+                                                   "spoken", "written", "onscreen", "hashtag"]
+    assert q2["branches"][0]["filters"] == {"profileId": {"includes": ["prf_x"]}}
+    assert q2["branches"][1]["filters"] == {"platform": {"includes": ["tiktok"]},
                                             "profileHandle": {"exactMatch": {"values": ["clarabrugada"]}}}
     assert q2["branches"][-1]["filters"]["hashtags"]["exactMatch"]["values"] == ["#clarabrugada"]
     assert query_id(q2) == query_id(json.loads(json.dumps(q2)))
@@ -117,6 +119,17 @@ def test_redirects(conn, graph):
     assert r["politician_id"] == "person:MX:claudia-sheinbaum-pardo" and r["status"] == "created"
     with pytest.raises(ValueError):
         identity.add_redirect(conn, "person:MX:claudia-sheinbaum-pardo", "person:MX:claudia-sheinbaum", "x", "t")
+    assert identity.resolve_redirect(conn, "person:MX:claudia-sheinbaum") == "person:MX:claudia-sheinbaum-pardo"
+    assert identity.resolve_redirect(conn, "person:MX:claudia-sheinbaum-pardo") == "person:MX:claudia-sheinbaum-pardo"
+
+
+def test_merged_identity_keeps_accounts_and_terms(conn, graph):
+    old, new = "person:MX:claudia-sheinbaum", "person:MX:claudia-sheinbaum-pardo"
+    accounts.approve(conn, old, "instagram", "claudia_shein", "reviewer", ["https://example.org/src"])
+    identity.add_term(conn, old, "hashtag", "Sheinbaum", "reviewer")
+    identity.add_redirect(conn, old, new, "merge", "tester")
+    terms = identity.load_terms(conn, new)
+    assert terms.handles == {"instagram": ["claudia_shein"]} and terms.hashtags == ["Sheinbaum"]
 
 
 def test_accounts_need_human_approval_and_change_query(conn, graph):
