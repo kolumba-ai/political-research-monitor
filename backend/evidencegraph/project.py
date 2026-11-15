@@ -291,7 +291,7 @@ def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, coun
     summary = {"items": len(items), "sent": 0, "unchanged": len(items) - len(todo),
                "credits_estimate": sum(credits_for(it["content"]) for it in todo), "errors": []}
     if not todo:
-        summary["pending"] = 0
+        summary["pending"] = _pending(conn, items, 0)
         return summary
     names = {c["politician_id"]: c["politician_name"] for c in claims if c["politician_name"]}
     summary["audiences_created"] = create_audiences(client, plan, names, country)
@@ -314,7 +314,12 @@ def project(conn, client: PastDevClient, prop: dict, claims: list[dict], *, coun
     for ingestion_id in ingestions:
         _settle(conn, past_project, ingestion_id, _wait(client, ingestion_id, poll_timeout_s, poll_interval_s, sleep), now)
     summary["ingestions"] = ingestions
-    summary["pending"] = conn.execute(
-        "SELECT count(*) AS n FROM ev_memory_record WHERE datapoint_id = ANY(%s) AND status <> 'completed'",
-        ([it["id"] for it in todo],)).fetchone()["n"] + len(todo) - summary["sent"]
+    summary["pending"] = _pending(conn, items, len(todo) - summary["sent"])
     return summary
+
+
+def _pending(conn, items: list[dict], unsent: int) -> int:
+    """Items not yet completed in past.dev: recorded as queued/failed, or never sent."""
+    return conn.execute(
+        "SELECT count(*) AS n FROM ev_memory_record WHERE datapoint_id = ANY(%s) AND status <> 'completed'",
+        ([it["id"] for it in items],)).fetchone()["n"] + unsent
