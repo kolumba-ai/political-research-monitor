@@ -379,3 +379,14 @@ def test_partially_judged_proposition_is_fully_rediscovered(conn, ev_settings, t
     llm.calls.clear()
     assert enricher.run(None, 5)["results"][0]["status"] == "mapped"
     assert llm.calls[0] == "plan" and len(llm.calls) >= 2
+
+
+def test_pending_mark_survives_intake_and_needs_current_mapper(conn, ev_settings, tmp_path):
+    _setup(conn)
+    conn.execute("UPDATE ev_proposition_queue SET skip_reason = 'pastdev_pending'")
+    run_intake(conn, [PID], mapper_version="m1")
+    assert conn.execute("SELECT skip_reason FROM ev_proposition_queue").fetchone()["skip_reason"] == "pastdev_pending"
+    llm = FakeLLM()
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast(), llm=llm)
+    assert enricher.run(None, 5)["results"][0]["status"] == "mapped"
+    assert llm.calls[0] == "plan"  # no judgements of the current mapper yet: full discovery

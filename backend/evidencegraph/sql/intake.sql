@@ -94,7 +94,11 @@ ON CONFLICT (proposition_id) DO UPDATE SET
              AND EXCLUDED.latest_claim_at <= q.mapped_at THEN 'mapped'
         ELSE 'queued' END,
     skip_reason = CASE WHEN q.status <> 'mapping' AND EXCLUDED.status = 'skipped'
-                       THEN EXCLUDED.skip_reason ELSE NULL END,
+                       THEN EXCLUDED.skip_reason
+                       -- keep enrich's "judged, only the past.dev write is left" mark while the claims are unchanged
+                       WHEN q.status = 'queued' AND EXCLUDED.status = 'queued' AND q.skip_reason = 'pastdev_pending'
+                            AND EXCLUDED.latest_claim_at <= q.latest_claim_at
+                       THEN q.skip_reason ELSE NULL END,
     queued_at = CASE WHEN q.status <> 'queued' AND q.status <> 'mapping' AND EXCLUDED.status = 'queued'
                       AND NOT (q.status = 'mapped' AND q.mapper_version = %(mapper_version)s
                                AND EXCLUDED.latest_claim_at <= q.mapped_at)
