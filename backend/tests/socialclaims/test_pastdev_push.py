@@ -170,6 +170,14 @@ def test_unfinished_ingestion_is_rechecked_and_resent_when_failed(conn, graph, s
     assert out["queued_rechecked"] == 1 and out["sent"] == 1 and len(past.batches) == 2
 
 
+def test_other_projects_queued_ingestions_are_not_rechecked(conn, graph, sc_settings):
+    _claims(conn, graph, sc_settings)
+    push(conn, FakePast(ingest_status="processing").client(), "MX", poll_timeout_s=0, sleep=lambda s: None)
+    past = FakePast()
+    assert push(conn, past.client(), "PK", sleep=lambda s: None)["queued_rechecked"] == 0
+    assert not [p for _, p in past.calls if p.startswith("/ingest/")]
+
+
 def test_filtered_push_does_not_report_other_politicians_stale(conn, graph, sc_settings):
     _claims(conn, graph, sc_settings)
     push(conn, FakePast().client(), "MX", sleep=lambda s: None)

@@ -219,10 +219,11 @@ def legacy_posts(client: PastDevClient, graph, country: str) -> set[tuple[str, s
     return out
 
 
-def refresh_queued(conn, client: PastDevClient, now) -> int:
-    """Re-check ingestions an earlier run left `queued` (poll timed out) so failed ones are resent."""
+def refresh_queued(conn, client: PastDevClient, project: str, now) -> int:
+    """Re-check this project's ingestions an earlier run left `queued` (poll timed out) so failed ones are resent."""
     ids = [r["ingestion_id"] for r in conn.execute(
-        "SELECT DISTINCT ingestion_id FROM memory_record WHERE status = 'queued' AND ingestion_id IS NOT NULL")]
+        "SELECT DISTINCT ingestion_id FROM memory_record WHERE status = 'queued' AND ingestion_id IS NOT NULL "
+        "AND past_project = %s", (project,))]
     for ingestion_id in ids:
         st = client.get(f"/ingest/{ingestion_id}")
         _settle(conn, ingestion_id, {"status": st.get("status"), "failure": st.get("failure")}, now)
@@ -252,7 +253,7 @@ def push(conn, client: PastDevClient | None, country: str, *, graph=None, politi
             and (it["metadata"]["oriane_id"], None) not in legacy]
     skipped_legacy, items = len(items) - len(kept), kept
 
-    refreshed = refresh_queued(conn, client, now) if client is not None and not dry_run else 0
+    refreshed = refresh_queued(conn, client, project, now) if client is not None and not dry_run else 0
     sent = {r["datapoint_id"]: r for r in conn.execute(
         "SELECT datapoint_id, politician_id, content_sha256, status, audience FROM memory_record "
         "WHERE past_project = %s AND (%s::text[] IS NULL OR politician_id = ANY(%s))",
