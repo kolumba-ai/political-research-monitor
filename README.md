@@ -305,6 +305,7 @@ Each claim is polled in batches: 30 respondents first, then 20 at a time. A clai
 | `capped` | 400 completed calls reached → flagged inconclusive, question rewritten |
 
 A claim never stops before every population stratum has at least 5 completed responses. The details are in [`docs/DESIGN.md` §4](docs/DESIGN.md#4-stopping-rule).
+The full stopping criteria, including the extra attempt cap and the run-level spend cap, are in [`system-d/README.md`](system-d/README.md#stopping-criteria).
 
 ### Build milestones
 

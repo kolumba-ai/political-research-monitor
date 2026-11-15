@@ -47,6 +47,35 @@ modal run modal_app.py::run_simulation --sim-run sim-run-1 --claims all
 
 `--claims` accepts `all`, a positive count for the first N claims, or comma-separated aggregate claim IDs. The simulator is the only implemented channel; WhatsApp and Vapi are phase-two stubs.
 
+## Stopping criteria
+
+Each aggregated claim is polled in batches within a `sim_run`. After every batch the controller calls `decide()` in `system_d/stopping.py` (DESIGN.md §4). `decide()` applies these checks in order, and the first one that matches sets the claim's status in `claim_sampling_state`:
+
+| # | Check | Result |
+|---|---|---|
+| 1 | `n_completed ≥ MAX_CALLS` (400), or attempts including refusals and incomplete calls `≥ 2 × MAX_CALLS` (800) | `capped`: stop, flag the claim inconclusive, and queue a rewritten `question_sets` version for the next run |
+| 2 | No responses yet | `polling`: seed batch of `SEED_BATCH` (30), split across strata in proportion to their share |
+| 3 | Any stratum with share > 0 has fewer than `MIN_PER_STRATUM` (5) completed responses | `polling`: the claim can't stop yet |
+| 4 | The claim has social sentiment, and it falls outside the polled sentiment's 95% CI | `decisive`: stop |
+| 5 | The half-width of the 95% Wilson CI on `p_believe` is `≤ TARGET_HALF_WIDTH` (0.07, i.e. ±7 points) | `converged`: stop |
+| 6 | Otherwise | `polling`: next batch of `NEXT_BATCH` (20), one slot at a time to the stratum furthest below its quota `max(MIN_PER_STRATUM, share × n)` |
+
+`converged`, `decisive` and `capped` are terminal: a resumed run skips claims that already have one of these statuses. `decisive` is checked before `converged`, so when both hold the claim is recorded as `decisive`.
+
+Definitions:
+- **Completed response:** the respondent answered both the belief question and the sentiment question, and did not refuse.
+- **`p_believe`:** the post-stratified share answering "sí". "No sé" counts as not believing. Each response is weighted by stratum share ÷ the stratum's share of the sample. The Wilson interval uses the Kish effective sample size of those weights.
+- **Polled sentiment:** the 5-point answer mapped to −1, −0.5, 0, 0.5, 1. It is post-stratified the same way, with a 95% t-interval.
+- **Social sentiment:** the mean scored sentiment (−1..1) of the comments on the claim's source posts. Without it, `decisive` can't fire.
+
+A run can also stop early. Claims that are still running then stay `polling` and can be resumed with the same `--sim-run`. This happens when:
+- the next round's estimated cost would take total LLM spend over `MAX_USD` ($5); total spend covers preparation, personas and rewrites, and polls;
+- no respondents are available;
+- every poll task in a round fails;
+- a round saves no new responses.
+
+`SEED_BATCH`, `NEXT_BATCH`, `TARGET_HALF_WIDTH`, `MAX_CALLS`, `MIN_PER_STRATUM` and `MAX_USD` can be overridden through environment variables; their defaults are in `system_d/config.py`.
+
 ## Tests
 
 Database integration tests use only a dedicated local PostgreSQL 14 database with pgvector. Create `system_d_test` locally and set `SYSTEM_D_TEST_DATABASE_URL` to its localhost connection URL; never point this variable at Neon or another hosted database.
