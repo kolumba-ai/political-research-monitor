@@ -32,7 +32,7 @@ def get_pool(settings: Settings) -> ConnectionPool:
         conninfo=settings.database_url,
         min_size=1,
         max_size=max(1, min(settings.fleet_concurrency, 10)),
-        kwargs={"row_factory": dict_row},
+        kwargs={"row_factory": dict_row, "autocommit": True},
         configure=configure_connection,
         open=True,
     )

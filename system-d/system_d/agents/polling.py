@@ -114,7 +114,7 @@ def poll_task(
             return _poll_task_with_store(task, settings, store, client)
         if not settings.database_url:
             raise ValueError("DATABASE_URL is required")
-        conn = psycopg.connect(settings.database_url, row_factory=dict_row)
+        conn = psycopg.connect(settings.database_url, row_factory=dict_row, autocommit=True)
         configure_connection(conn)
         return _poll_task_with_store(task, settings, Store(conn), client)
     finally:

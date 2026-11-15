@@ -8,8 +8,10 @@ from urllib.parse import urlsplit
 
 import psycopg
 import pytest
+from psycopg.rows import dict_row
 
 from system_d.agents.aggregator import aggregate_pending
+from system_d.agents.polling import poll_task
 from system_d.agents.question_designer import ensure_question_set
 from system_d.agents.social_scorer import score_unscored
 from system_d.config import Settings
@@ -21,6 +23,7 @@ from system_d.models import (
     CommentScore,
     CommentScores,
     PollResult,
+    PollScore,
     QuestionScript,
     TranscriptMessage,
 )
@@ -148,6 +151,92 @@ class DatabaseFakeEmbedder:
     def embed(self, texts):
         vector = [1.0] + [0.0] * 1535
         return [vector[:] for _ in texts], Usage("text-embedding-3-small", len(texts), 0)
+
+
+def test_store_respondent_is_visible_from_another_connection_before_close(local_test_database_url):
+    with psycopg.connect(local_test_database_url) as conn:
+        apply_migration(conn)
+    settings = replace(Settings(), database_url=local_test_database_url)
+    pool = get_pool(settings)
+    try:
+        with pool.connection() as conn:
+            store = Store(conn)
+            seed_data(store)
+            stratum_id = str(store.list_strata()[0]["id"])
+            respondent = store.add_respondent(
+                stratum_id,
+                {"name": "Autocommit visibility", "sim_run": f"visibility-{uuid.uuid4()}"},
+            )
+            with psycopg.connect(local_test_database_url, row_factory=dict_row) as observer:
+                visible = observer.execute(
+                    "SELECT id FROM respondents WHERE id = %s",
+                    (respondent.id,),
+                ).fetchone()
+            assert visible is not None
+    finally:
+        pool.close()
+
+
+class PollTaskFakeLLM(DatabaseFakeLLM):
+    def complete_json(self, **kwargs):
+        if kwargs["output_model"] is PollScore:
+            return PollScore(
+                believes_claim="yes",
+                sentiment_choice=4,
+                refused=False,
+                completed=True,
+            ), Usage("gpt-6.1-sol", 1, 1)
+        return super().complete_json(**kwargs)
+
+    def chat(self, system, messages, max_tokens):
+        return "Sí, estoy de acuerdo.", Usage("gpt-6-luna", 1, 1)
+
+
+def test_poll_task_response_is_visible_from_a_fresh_connection(local_test_database_url):
+    with psycopg.connect(local_test_database_url) as conn:
+        apply_migration(conn)
+    settings = replace(Settings(), database_url=local_test_database_url)
+    pool = get_pool(settings)
+    try:
+        with pool.connection() as conn:
+            store = Store(conn)
+            seed_data(store)
+            llm = DatabaseFakeLLM()
+            score_unscored(store, llm)
+            aggregate_pending(store, llm, DatabaseFakeEmbedder(), settings)
+            aggregate_id = str(store.get_testable_aggregated_claims()[0]["id"])
+            question_set = ensure_question_set(store, llm, aggregate_id)
+            stratum_id = str(store.list_strata()[0]["id"])
+            respondent = store.add_respondent(
+                stratum_id,
+                {"name": "Poll task visibility", "sim_run": f"poll-task-{uuid.uuid4()}"},
+            )
+    finally:
+        pool.close()
+
+    sim_run = f"poll-task-{uuid.uuid4()}"
+    task = {
+        "aggregated_claim_id": aggregate_id,
+        "question_set_id": str(question_set["id"]),
+        "respondent_id": respondent.id,
+        "sim_run": sim_run,
+        "batch_no": 1,
+    }
+    result = poll_task(task, settings, llm=PollTaskFakeLLM())
+    assert result["ok"] is True
+    with psycopg.connect(local_test_database_url, row_factory=dict_row) as observer:
+        response = observer.execute(
+            """
+            SELECT completed, believes_claim, sentiment
+            FROM poll_responses
+            WHERE aggregated_claim_id = %s AND respondent_id = %s AND sim_run = %s
+            """,
+            (aggregate_id, respondent.id, sim_run),
+        ).fetchone()
+    assert response is not None
+    assert response["completed"] is True
+    assert response["believes_claim"] is True
+    assert response["sentiment"] == 0.5
 
 
 def test_store_agent_round_trip_uses_local_postgres_and_pgvector(local_test_database_url):
