@@ -10,7 +10,7 @@ from dataclasses import dataclass, field
 
 from ..config import Settings
 from ..llm import LLM, Usage, UsageMeter
-from ..models import Respondent
+from ..models import Persona, Respondent
 from ..prompts import BEHAVIOUR_NORMAL, BEHAVIOURS_DIFFICULT, RESPONDENT_SIMULATOR_SYSTEM
 
 
@@ -28,12 +28,14 @@ class SimulatorChannel:
         llm: LLM,
         settings: Settings,
         rng_seed: str | int,
+        conversation_key: str,
         token_budget: int = 512,
         hash_fn: Callable[[bytes], bytes] = hashlib.sha256,
     ) -> None:
         self.llm = llm
         self.settings = settings
         self.rng_seed = str(rng_seed)
+        self.conversation_key = conversation_key
         self.token_budget = token_budget
         self.hash_fn = hash_fn
         self._conversations: dict[str, _Conversation] = {}
@@ -42,9 +44,7 @@ class SimulatorChannel:
         self.chosen_behaviour: str | None = None
 
     def _choose_behaviour(self, respondent: Respondent) -> str:
-        sim_run = str(respondent.persona.get("sim_run", ""))
-        aggregated_claim_id = str(respondent.persona.get("aggregated_claim_id", self.rng_seed))
-        source = f"{self.rng_seed}|{respondent.id}|{aggregated_claim_id}|{sim_run}".encode()
+        source = f"{self.rng_seed}|{respondent.id}|{self.conversation_key}".encode()
         digest = self.hash_fn(source).digest()
         sample = int.from_bytes(digest[:8], "big") / 2**64
         if sample >= 0.12:
@@ -72,7 +72,11 @@ class SimulatorChannel:
             {"role": "user" if item["role"] == "agent" else "assistant", "content": item["content"]}
             for item in conversation.history
         ]
-        persona = json.dumps(conversation.respondent.persona, ensure_ascii=False)
+        persona_fields = conversation.respondent.persona
+        persona = json.dumps(
+            {name: persona_fields[name] for name in Persona.model_fields if name in persona_fields},
+            ensure_ascii=False,
+        )
         system = RESPONDENT_SIMULATOR_SYSTEM.format(persona=persona, behaviour=conversation.behaviour)
         reply, usage = self.llm.chat(system, messages, max_tokens=self.token_budget)
         conversation.usage.add(usage)

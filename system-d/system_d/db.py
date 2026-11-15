@@ -17,7 +17,7 @@ from .models import Respondent
 from .stopping import Response
 
 
-def _configure_connection(conn: Connection) -> None:
+def configure_connection(conn: Connection) -> None:
     register_vector(conn)
 
 
@@ -33,7 +33,7 @@ def get_pool(settings: Settings) -> ConnectionPool:
         min_size=1,
         max_size=max(1, min(settings.fleet_concurrency, 10)),
         kwargs={"row_factory": dict_row},
-        configure=_configure_connection,
+        configure=configure_connection,
         open=True,
     )
 

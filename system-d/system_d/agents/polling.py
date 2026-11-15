@@ -6,10 +6,13 @@ import json
 import unicodedata
 from typing import Any
 
+import psycopg
+from psycopg.rows import dict_row
+
 from ..channels.base import Channel
 from ..channels.simulator import SimulatorChannel
 from ..config import Settings
-from ..db import Store, get_pool
+from ..db import Store, configure_connection
 from ..llm import LLM, AnthropicLLM, Usage, UsageMeter
 from ..models import PollResult, PollScore, QuestionScript, Respondent, TranscriptMessage
 from ..prompts import POLL_SCORER_SYSTEM, POLL_SCORER_USER
@@ -104,21 +107,19 @@ def poll_task(
     store: Store | None = None,
     llm: LLM | None = None,
 ) -> dict[str, Any]:
-    pool = None
-    if store is None:
-        pool = get_pool(settings)
-        connection_context = pool.connection()
-    else:
-        connection_context = None
-    client = llm or AnthropicLLM(settings)
+    conn = None
     try:
-        if connection_context is None:
+        client = llm or AnthropicLLM(settings)
+        if store is not None:
             return _poll_task_with_store(task, settings, store, client)
-        with connection_context as conn:
-            return _poll_task_with_store(task, settings, Store(conn), client)
+        if not settings.database_url:
+            raise ValueError("DATABASE_URL is required")
+        conn = psycopg.connect(settings.database_url, row_factory=dict_row)
+        configure_connection(conn)
+        return _poll_task_with_store(task, settings, Store(conn), client)
     finally:
-        if pool is not None:
-            pool.close()
+        if conn is not None:
+            conn.close()
 
 
 def _poll_task_with_store(task: dict[str, Any], settings: Settings, store: Store, llm: LLM) -> dict[str, Any]:
@@ -130,11 +131,11 @@ def _poll_task_with_store(task: dict[str, Any], settings: Settings, store: Store
     if question_set is None or respondent is None:
         raise ValueError("poll task references an unknown question set or respondent")
     script = QuestionScript.model_validate(question_set["script"])
-    respondent.persona["aggregated_claim_id"] = task["aggregated_claim_id"]
     channel = SimulatorChannel(
         llm,
         settings,
         rng_seed=task["sim_run"],
+        conversation_key=f"{task['sim_run']}|{task['aggregated_claim_id']}",
     )
     result, usage = run_poll(
         channel,

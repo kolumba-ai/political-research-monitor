@@ -5,7 +5,15 @@ import pytest
 from pydantic import BaseModel
 
 from system_d.config import Settings
-from system_d.llm import AnthropicLLM, LLMError, OpenAIEmbedder, Usage, UsageMeter
+from system_d.llm import (
+    AnthropicLLM,
+    LLMError,
+    MeteredEmbedder,
+    MeteredLLM,
+    OpenAIEmbedder,
+    Usage,
+    UsageMeter,
+)
 
 
 class Answer(BaseModel):
@@ -53,6 +61,22 @@ def test_anthropic_forces_a_tool_and_parses_validated_input():
     assert request_body["max_tokens"] == 256
     assert requests[0].headers["x-api-key"] == "anthropic-test-key"
     assert requests[0].headers["anthropic-version"] == "2023-06-01"
+
+
+def test_anthropic_usage_prices_the_requested_model_not_a_dated_response_id():
+    def handler(request):
+        response = tool_response(
+            {"value": 7},
+            usage={"input_tokens": 1_000_000, "output_tokens": 1_000_000},
+        )
+        response["model"] = "claude-sonnet-5-5-20261101"
+        return httpx.Response(200, json=response, request=request)
+
+    settings = configured_settings()
+    client = AnthropicLLM(settings, transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    _, usage = client.complete_json("system", "user", Answer, max_tokens=256)
+    assert usage.model == settings.llm_model
+    assert usage.cost_usd(settings) == pytest.approx(12.0)
 
 
 def test_anthropic_retries_validation_failure_then_succeeds():
@@ -237,3 +261,35 @@ def test_usage_addition_cost_meter_and_unknown_model_warning(caplog):
     assert unknown.cost_usd(settings) == 0
     assert unknown.cost_usd(settings) == 0
     assert sum("No token pricing configured" in record.message for record in caplog.records) == 1
+
+
+def test_metered_llm_and_embedder_forward_calls_and_accumulate_usage():
+    expected_llm_usage = Usage("claude-sonnet-5-5", 10, 3)
+    expected_embed_usage = Usage("text-embedding-3-small", 7, 0)
+
+    class FakeLLM:
+        def complete_json(self, system, user, output_model, max_tokens):
+            return output_model(value=4), expected_llm_usage
+
+        def chat(self, system, messages, max_tokens):
+            return "reply", expected_llm_usage
+
+    class FakeEmbedder:
+        def embed(self, texts):
+            return [[1.0, 0.0] for _ in texts], expected_embed_usage
+
+    meter = UsageMeter()
+    llm = MeteredLLM(FakeLLM(), meter)
+    embedder = MeteredEmbedder(FakeEmbedder(), meter)
+    result, complete_usage = llm.complete_json("system", "user", Answer, 20)
+    reply, chat_usage = llm.chat("system", [{"role": "user", "content": "hello"}], 20)
+    vectors, embed_usage = embedder.embed(["one", "two"])
+
+    assert result == Answer(value=4)
+    assert reply == "reply"
+    assert vectors == [[1.0, 0.0], [1.0, 0.0]]
+    assert complete_usage == expected_llm_usage
+    assert chat_usage == expected_llm_usage
+    assert embed_usage == expected_embed_usage
+    assert meter.usage.input_tokens == 27
+    assert meter.usage.output_tokens == 6

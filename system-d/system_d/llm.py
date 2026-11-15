@@ -97,6 +97,38 @@ class Embedder(Protocol):
     def embed(self, texts: list[str]) -> tuple[list[list[float]], Usage]: ...
 
 
+class MeteredLLM:
+    def __init__(self, llm: LLM, meter: UsageMeter) -> None:
+        self.llm = llm
+        self.meter = meter
+
+    def complete_json(self, system: str, user: str, output_model: type[T], max_tokens: int) -> tuple[T, Usage]:
+        result, usage = self.llm.complete_json(
+            system=system,
+            user=user,
+            output_model=output_model,
+            max_tokens=max_tokens,
+        )
+        self.meter.add(usage)
+        return result, usage
+
+    def chat(self, system: str, messages: list[dict[str, str]], max_tokens: int) -> tuple[str, Usage]:
+        result, usage = self.llm.chat(system=system, messages=messages, max_tokens=max_tokens)
+        self.meter.add(usage)
+        return result, usage
+
+
+class MeteredEmbedder:
+    def __init__(self, embedder: Embedder, meter: UsageMeter) -> None:
+        self.embedder = embedder
+        self.meter = meter
+
+    def embed(self, texts: list[str]) -> tuple[list[list[float]], Usage]:
+        result, usage = self.embedder.embed(texts)
+        self.meter.add(usage)
+        return result, usage
+
+
 def _retry_after_seconds(value: str | None) -> float | None:
     if value is None:
         return None
@@ -149,7 +181,7 @@ class _HTTPClient:
     def _usage(data: dict[str, Any], model: str, input_key: str, output_key: str) -> Usage:
         usage = data.get("usage") or {}
         return Usage(
-            model=data.get("model") or model,
+            model=model,
             input_tokens=int(usage.get(input_key) or 0),
             output_tokens=int(usage.get(output_key) or 0),
         )

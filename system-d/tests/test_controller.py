@@ -4,6 +4,7 @@ import pytest
 
 from system_d.config import Settings
 from system_d.controller import parse_claim_selection, run_simulation
+from system_d.llm import Usage
 from system_d.models import Respondent
 from system_d.stopping import Response
 
@@ -76,6 +77,10 @@ class FakeLLM:
     pass
 
 
+def empty_usage():
+    return Usage("mixed", 0, 0)
+
+
 def make_sampler(store, respondents_per_stratum=None):
     counter = 0
     respondents_per_stratum = respondents_per_stratum or {}
@@ -128,6 +133,10 @@ def test_controller_runs_polling_rounds_until_every_claim_is_terminal():
     )
     events = []
 
+    def prepare():
+        events.append("prepared")
+        return Usage("claude-sonnet-5-5", 10_000, 10_000)
+
     def poll_batch(tasks):
         events.append(len(tasks))
         results = []
@@ -142,7 +151,7 @@ def test_controller_runs_polling_rounds_until_every_claim_is_terminal():
         None,
         settings,
         poll_batch,
-        prepare_fn=lambda: events.append("prepared"),
+        prepare_fn=prepare,
         log=events.append,
         sample_fn=make_sampler(store),
         llm=FakeLLM(),
@@ -152,9 +161,15 @@ def test_controller_runs_polling_rounds_until_every_claim_is_terminal():
     assert len(summaries) == 1
     assert summaries[0].status == "converged"
     assert summaries[0].n == 10
-    assert summaries[0].total_spend_usd == pytest.approx(0.01)
-    assert summaries[0].input_tokens == 100
-    assert summaries[0].output_tokens == 40
+    assert summaries[0].prepare_spend_usd == pytest.approx(0.12)
+    assert summaries[0].persona_rewrite_spend_usd == 0
+    assert summaries[0].poll_spend_usd == pytest.approx(0.01)
+    assert summaries[0].total_spend_usd == pytest.approx(0.13)
+    assert summaries[0].input_tokens == 10_100
+    assert summaries[0].output_tokens == 10_040
+    assert any(
+        isinstance(message, str) and "prepare=$0.1200" in message and "polls=$0.0100" in message for message in events
+    )
 
 
 def test_controller_obeys_spend_cap_and_leaves_claim_polling():
@@ -168,7 +183,7 @@ def test_controller_obeys_spend_cap_and_leaves_claim_polling():
         None,
         settings,
         poll_batch_fn=lambda tasks: dispatched.extend(tasks) or [],
-        prepare_fn=lambda: None,
+        prepare_fn=empty_usage,
         log=logs.append,
         sample_fn=make_sampler(store),
         llm=FakeLLM(),
@@ -199,7 +214,7 @@ def test_controller_resume_skips_terminal_claims():
         None,
         Settings(),
         poll_batch_fn=lambda tasks: calls.append("poll") or [],
-        prepare_fn=lambda: calls.append("prepare"),
+        prepare_fn=lambda: (calls.append("prepare"), empty_usage())[1],
         log=lambda _: None,
         sample_fn=lambda *args: calls.append("sample") or [],
         llm=FakeLLM(),
@@ -226,7 +241,7 @@ def test_capped_claim_queues_rewrite_and_is_not_repolled():
         None,
         settings,
         poll_batch,
-        prepare_fn=lambda: None,
+        prepare_fn=empty_usage,
         log=lambda _: None,
         sample_fn=make_sampler(store),
         rewrite_fn=lambda store_arg, llm, claim_id: rewrites.append(claim_id),
@@ -246,7 +261,7 @@ def test_failed_poll_tasks_are_not_counted_as_attempts():
         None,
         settings,
         poll_batch_fn=lambda tasks: [RuntimeError("failed") for _ in tasks],
-        prepare_fn=lambda: None,
+        prepare_fn=empty_usage,
         log=lambda _: None,
         sample_fn=make_sampler(store),
         llm=FakeLLM(),
@@ -254,3 +269,41 @@ def test_failed_poll_tasks_are_not_counted_as_attempts():
     assert summaries[0].status == "polling"
     assert summaries[0].n == 0
     assert store.responses["claim-1"] == []
+
+
+def test_persona_generation_cost_alone_stops_poll_dispatch():
+    store = FakeStore()
+    settings = replace(Settings(), seed_batch=10, min_per_stratum=2, max_usd=1.0)
+    dispatched = []
+    logs = []
+
+    class ExpensiveLLM:
+        def chat(self, system, messages, max_tokens):
+            return "persona generated", Usage("claude-sonnet-5-5", 1_000_000, 0)
+
+    base_sampler = make_sampler(store)
+
+    def expensive_sampler(store_arg, llm, sim_run, claim_id, allocation, config):
+        llm.chat("system", [], 1)
+        return base_sampler(store_arg, llm, sim_run, claim_id, allocation, config)
+
+    summaries = run_simulation(
+        store,
+        "run-1",
+        None,
+        settings,
+        poll_batch_fn=lambda tasks: dispatched.extend(tasks) or [],
+        prepare_fn=empty_usage,
+        log=logs.append,
+        sample_fn=expensive_sampler,
+        llm=ExpensiveLLM(),
+    )
+
+    assert dispatched == []
+    assert summaries[0].status == "polling"
+    assert summaries[0].prepare_spend_usd == 0
+    assert summaries[0].persona_rewrite_spend_usd == pytest.approx(2.0)
+    assert summaries[0].poll_spend_usd == 0
+    assert summaries[0].total_spend_usd == pytest.approx(2.0)
+    assert summaries[0].input_tokens == 1_000_000
+    assert any("personas+rewrites=$2.0000" in message for message in logs)

@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import os
+from dataclasses import asdict
 from pathlib import Path
 
 import modal
 
 from system_d.config import Settings
+from system_d.llm import Usage
 
 SYSTEM_D_DIR = Path(__file__).resolve().parent
 app = modal.App("system-d")
@@ -21,15 +23,16 @@ image = (
 )
 
 
-def _prepare_system_d(settings: Settings) -> None:
+def _prepare_system_d(settings: Settings) -> Usage:
     from system_d.agents.aggregator import aggregate_pending
     from system_d.agents.question_designer import ensure_question_set
     from system_d.agents.social_scorer import score_unscored
     from system_d.db import Store, get_pool
-    from system_d.llm import AnthropicLLM, OpenAIEmbedder
+    from system_d.llm import AnthropicLLM, MeteredEmbedder, MeteredLLM, OpenAIEmbedder, UsageMeter
 
-    llm = AnthropicLLM(settings)
-    embedder = OpenAIEmbedder(settings)
+    usage_meter = UsageMeter()
+    llm = MeteredLLM(AnthropicLLM(settings), usage_meter)
+    embedder = MeteredEmbedder(OpenAIEmbedder(settings), usage_meter)
     pool = get_pool(settings)
     try:
         with pool.connection() as conn:
@@ -40,6 +43,7 @@ def _prepare_system_d(settings: Settings) -> None:
                 ensure_question_set(store, llm, str(claim["id"]))
     finally:
         pool.close()
+    return usage_meter.usage
 
 
 @app.function(
@@ -55,7 +59,7 @@ def poll_one(task: dict):
 
 @app.function(image=image, secrets=[database_secret, llm_secret])
 def prepare():
-    _prepare_system_d(Settings.from_env())
+    return _prepare_system_d(Settings.from_env())
 
 
 @app.function(
@@ -71,7 +75,7 @@ def controller(sim_run: str, claims: str = "all"):
     pool = get_pool(settings)
     try:
         with pool.connection() as conn:
-            return run_simulation(
+            summaries = run_simulation(
                 store=Store(conn),
                 sim_run=sim_run,
                 claim_ids=claims,
@@ -80,6 +84,7 @@ def controller(sim_run: str, claims: str = "all"):
                 prepare_fn=lambda: _prepare_system_d(settings),
                 log=print,
             )
+            return [asdict(summary) for summary in summaries]
     finally:
         pool.close()
 
@@ -101,21 +106,49 @@ def seed_remote():
 @app.local_entrypoint()
 def run_simulation(sim_run: str, claims: str = "all"):
     summaries = controller.remote(sim_run, claims)
-    print(f"{'CLAIM':36} {'STATUS':10} {'N':>5} {'BELIEVE':>9} {'SENTIMENT':>11} {'SOCIAL':>9} {'GAP':>8}")
+    print(
+        f"{'CLAIM':60} {'STATUS':10} {'N':>5} "
+        f"{'P_BELIEVE [CI_LOW, CI_HIGH]':31} {'SENTIMENT [LO, HI]':25} {'SOCIAL':>9} {'GAP':>8}"
+    )
     for row in summaries:
-        believe = "—" if row.p_believe is None else f"{row.p_believe:.3f}"
-        sentiment = "—" if row.sentiment_mean is None else f"{row.sentiment_mean:.3f}"
-        social = "—" if row.social_sentiment is None else f"{row.social_sentiment:.3f}"
-        gap = "—" if row.gap is None else f"{row.gap:.3f}"
+        canonical_text = str(row["canonical_text"])
+        if len(canonical_text) > 60:
+            canonical_text = f"{canonical_text[:57]}..."
+        belief = _format_range(row["p_believe"], row["ci_low"], row["ci_high"])
+        sentiment = _format_range(row["sentiment_mean"], row["sentiment_ci_low"], row["sentiment_ci_high"])
+        social = _format_number(row["social_sentiment"])
+        gap = _format_number(row["gap"])
         print(
-            f"{row.aggregated_claim_id[:36]:36} {row.status:10} {row.n:5d} "
-            f"{believe:>9} {sentiment:>11} {social:>9} {gap:>8}"
+            f"{canonical_text:60.60} {row['status']:10} {row['n']:5d} {belief:>31} {sentiment:>25} {social:>9} {gap:>8}"
         )
     if summaries:
-        print(
-            f"Total spend: ${summaries[0].total_spend_usd:.4f}; "
-            f"tokens: {summaries[0].input_tokens} in / {summaries[0].output_tokens} out"
-        )
+        totals = summaries[0]
+    else:
+        totals = {
+            "total_spend_usd": 0.0,
+            "prepare_spend_usd": 0.0,
+            "persona_rewrite_spend_usd": 0.0,
+            "poll_spend_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+        }
+    print(
+        f"Total spend: ${totals['total_spend_usd']:.4f} "
+        f"(prepare=${totals['prepare_spend_usd']:.4f}, "
+        f"personas+rewrites=${totals['persona_rewrite_spend_usd']:.4f}, "
+        f"polls=${totals['poll_spend_usd']:.4f}); "
+        f"tokens: {totals['input_tokens']} in / {totals['output_tokens']} out"
+    )
+
+
+def _format_number(value):
+    return "—" if value is None else f"{value:.3f}"
+
+
+def _format_range(value, low, high):
+    if value is None:
+        return "—"
+    return f"{_format_number(value)} [{_format_number(low)}, {_format_number(high)}]"
 
 
 @app.local_entrypoint()
