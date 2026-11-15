@@ -25,7 +25,11 @@ def _pid(graph, value: str, country: str | None) -> str:
 
 def _client(s):
     from .oriane import OrianeClient
-    return OrianeClient(s.oriane_api_key, s.oriane_base_url, s.oriane_timeout_s, s.oriane_max_retries)
+    return OrianeClient(
+        s.oriane_api_key, s.oriane_base_url, s.oriane_timeout_s, s.oriane_max_retries,
+        rate_limiter_database_url=s.rate_limiter_database_url,
+        requests_per_second=s.oriane_requests_per_second,
+    )
 
 
 def _parse_shard(value: str) -> tuple[int, int]:
@@ -152,7 +156,11 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "pull-pastdev":
         from .pastdev import PastDevClient, pull
-        client = PastDevClient(s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s)
+        client = PastDevClient(
+            s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s,
+            rate_limiter_database_url=s.rate_limiter_database_url,
+            requests_per_second=s.pastdev_requests_per_second,
+        )
         _out(pull(client, _graph(s), args.country, args.out or s.claims_export_dir))
         return 0
 
@@ -242,7 +250,8 @@ def main(argv: list[str] | None = None) -> int:
             print("ANTHROPIC_API_KEY is not set", file=sys.stderr)
             return 2
         llm = AnthropicLLM(s.anthropic_api_key or "", s.claim_model, s.anthropic_base_url,
-                           max_tokens=args.max_tokens)
+                           max_tokens=args.max_tokens, rate_limiter_database_url=s.rate_limiter_database_url,
+                           requests_per_second=s.anthropic_requests_per_second)
         ex = Extractor(conn, graph, llm, args.country)
         cap = min(args.max_posts or s.claim_max_posts_per_run, s.claim_max_posts_per_run)
         results = []

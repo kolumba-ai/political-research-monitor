@@ -20,6 +20,7 @@ from typing import Iterator, Protocol
 import httpx
 from psycopg.types.json import Jsonb
 
+from polgraph.exa_gateway import PgRateLimiter, retry_after_seconds
 from polgraph.ids import normalize_text, strip_accents
 
 from .capture import utcnow
@@ -104,8 +105,13 @@ class LLM(Protocol):
 
 class AnthropicLLM:
     def __init__(self, api_key: str, model: str, base_url: str = "https://api.anthropic.com",
-                 transport: httpx.BaseTransport | None = None, sleep=time.sleep, max_tokens: int = 8000):
+                 transport: httpx.BaseTransport | None = None, sleep=time.sleep, max_tokens: int = 8000,
+                 rate_limiter_database_url: str | None = None, requests_per_second: float = 2.0, limiter=None):
         self.model, self.max_tokens, self.sleep = model, max_tokens, sleep
+        self.limiter = limiter if limiter is not None else (
+            PgRateLimiter(rate_limiter_database_url, f"anthropic:{api_key}", requests_per_second)
+            if rate_limiter_database_url else None
+        )
         self.http = httpx.Client(base_url=base_url, timeout=180, transport=transport,
                                  headers={"x-api-key": api_key, "anthropic-version": "2023-06-01"})
 
@@ -116,6 +122,8 @@ class AnthropicLLM:
                 "output_config": {"format": {"type": "json_schema", "schema": tool["input_schema"]}}}
         for attempt in range(4):
             try:
+                if self.limiter is not None:
+                    self.limiter.wait()
                 r = self.http.post("/v1/messages", json=body)
             except httpx.TransportError:
                 if attempt == 3:
@@ -123,7 +131,8 @@ class AnthropicLLM:
                 self.sleep(2 ** attempt)
                 continue
             if r.status_code in (429, 500, 502, 503, 529) and attempt < 3:
-                self.sleep(2 ** attempt * 5)
+                delay = retry_after_seconds(r.headers) if r.status_code in (429, 503) else None
+                self.sleep(2 ** attempt * 5 if delay is None else delay)
                 continue
             if r.status_code != 200:
                 raise RuntimeError(f"anthropic {r.status_code}: {r.text[:500]}")

@@ -18,6 +18,7 @@ from typing import Iterator
 import httpx
 import structlog
 
+from polgraph.exa_gateway import PgRateLimiter, retry_after_seconds
 from polgraph.ids import normalize_text
 
 log = structlog.get_logger(__name__)
@@ -35,10 +36,16 @@ class PastDevError(RuntimeError):
 
 class PastDevClient:
     def __init__(self, api_key: str | None, base_url: str = "https://api.past.dev/api/v1", timeout_s: float = 30.0,
-                 max_retries: int = 4, transport: httpx.BaseTransport | None = None):
+                 max_retries: int = 4, transport: httpx.BaseTransport | None = None, sleep=time.sleep,
+                 rate_limiter_database_url: str | None = None, requests_per_second: float = 2.0, limiter=None):
         if not api_key:
             raise PastDevError(0, "PAST_DEV_API_KEY is not set")
         self.max_retries = max_retries
+        self.sleep = sleep
+        self.limiter = limiter if limiter is not None else (
+            PgRateLimiter(rate_limiter_database_url, f"pastdev:{api_key}", requests_per_second)
+            if rate_limiter_database_url else None
+        )
         self.http = httpx.Client(base_url=base_url.rstrip("/"), timeout=timeout_s, transport=transport,
                                  headers={"Authorization": f"Bearer {api_key}", "Accept": "application/json"})
 
@@ -51,6 +58,8 @@ class PastDevClient:
     def _request(self, method: str, path: str, **kwargs) -> dict:
         for attempt in range(self.max_retries + 1):
             try:
+                if self.limiter is not None:
+                    self.limiter.wait()
                 r = self.http.request(method, path, **kwargs)
             except httpx.TransportError as exc:
                 if attempt == self.max_retries:
@@ -60,7 +69,10 @@ class PastDevClient:
                     return r.json()
                 if r.status_code != 429 and r.status_code < 500 or attempt == self.max_retries:
                     raise PastDevError(r.status_code, r.text[:300])
-            time.sleep(min(2 ** attempt, 20))
+                delay = retry_after_seconds(r.headers) if r.status_code in (429, 503) else None
+                self.sleep(min(2 ** attempt, 20) if delay is None else delay)
+                continue
+            self.sleep(min(2 ** attempt, 20))
         raise AssertionError("unreachable")
 
     def audiences(self) -> list[dict]:

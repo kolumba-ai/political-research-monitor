@@ -24,6 +24,10 @@ class SocialSettings(BaseSettings):
 
     # --- Postgres (System B source of truth) ------------------------------------
     database_url: str = "postgresql://ubuntu:ubuntu@localhost:5432/socialclaims"
+    rate_limiter_database_url: str | None = None
+    anthropic_requests_per_second: float = 2.0
+    oriane_requests_per_second: float = 1.0
+    pastdev_requests_per_second: float = 2.0
 
     # --- Oriane ----------------------------------------------------------------
     oriane_api_key: str | None = None

@@ -7,12 +7,16 @@ from socialclaims.config import SocialSettings
 
 def test_extract_claims_max_tokens_is_validated_and_passed(monkeypatch):
     settings = SocialSettings(_env_file=None, database_url="postgresql://unused",
-                              anthropic_api_key="test-key", claim_model="fake-model")
+                              anthropic_api_key="test-key", claim_model="fake-model",
+                              rate_limiter_database_url="postgresql://limiter",
+                              anthropic_requests_per_second=1.25)
     llm_max_tokens = []
+    llm_limiter_options = []
 
     class FakeLLM:
-        def __init__(self, api_key, model, base_url, max_tokens=8000):
+        def __init__(self, api_key, model, base_url, max_tokens=8000, **limiter_options):
             llm_max_tokens.append(max_tokens)
+            llm_limiter_options.append(limiter_options)
 
     class FakeExtractor:
         def __init__(self, conn, graph, llm, country):
@@ -31,3 +35,23 @@ def test_extract_claims_max_tokens_is_validated_and_passed(monkeypatch):
         cli.main(["extract-claims", "person:MX:test", "--max-tokens", "0"])
     assert cli.main(["extract-claims", "person:MX:test", "--confirm-spend", "--max-tokens", "16000"]) == 0
     assert llm_max_tokens == [16000]
+    assert llm_limiter_options == [{
+        "rate_limiter_database_url": "postgresql://limiter",
+        "requests_per_second": 1.25,
+    }]
+
+
+def test_oriane_client_receives_shared_limiter_settings():
+    settings = SocialSettings(
+        _env_file=None,
+        oriane_api_key="oriane-key",
+        rate_limiter_database_url="postgresql://limiter",
+        oriane_requests_per_second=0.5,
+    )
+
+    client = cli._client(settings)
+
+    assert client.limiter.database_url == "postgresql://limiter"
+    assert client.limiter.key != "oriane:oriane-key"
+    assert client.limiter.min_interval == pytest.approx(2.0)
+    client._http.close()

@@ -1,6 +1,8 @@
 import builtins
+from concurrent.futures import ThreadPoolExecutor
 from io import BytesIO
 from pathlib import Path
+from threading import Barrier
 
 import httpx
 from pypdf import PdfWriter
@@ -9,6 +11,9 @@ from evidencegraph import fetch as fetch_module
 from evidencegraph.fetch import Fetcher, _PageParser, _date_metadata
 from evidencegraph.registry import load_registry
 from polgraph.ids import source_id
+from socialclaims.db import connect
+
+TEST_DATABASE_URL = "postgresql://ubuntu:ubuntu@localhost:5432/socialclaims_test"
 
 
 class NoWait:
@@ -536,3 +541,47 @@ def test_missing_trafilatura_fallback_warns_once(monkeypatch):
     fetch_module._html_text(b"<html><body>Fallback text.</body></html>", parser)
 
     assert warnings == ["fetch.trafilatura_missing"]
+
+
+def test_fetch_queue_claims_are_safe_across_concurrent_workers(conn, ev_settings):
+    barrier = Barrier(2, timeout=15)
+    requested = []
+    urls = ["https://queue-one.example/article", "https://queue-two.example/article"]
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        requested.append(str(request.url))
+        barrier.wait()
+        return httpx.Response(
+            200,
+            text="<html><body>Public article text.</body></html>",
+            headers={"content-type": "text/html"},
+        )
+
+    enqueue_client = httpx.Client(transport=httpx.MockTransport(lambda _: httpx.Response(404)))
+    enqueue_fetcher = Fetcher(conn, ev_settings, client=enqueue_client, limiter_factory=lambda _host, _rps: NoWait())
+    for url in urls:
+        enqueue_fetcher.enqueue(url)
+    enqueue_client.close()
+
+    def run_worker():
+        connection = connect(TEST_DATABASE_URL)
+        client = httpx.Client(transport=httpx.MockTransport(handler), follow_redirects=False)
+        fetcher = Fetcher(connection, ev_settings, client=client, limiter_factory=lambda _host, _rps: NoWait())
+        try:
+            return fetcher.fetch_queue(limit=1)
+        finally:
+            fetcher.close()
+            client.close()
+            connection.close()
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures = [pool.submit(run_worker) for _ in range(2)]
+        results = [future.result(timeout=30) for future in futures]
+
+    fetched = [result for worker_results in results for result in worker_results]
+    assert len(fetched) == 2
+    assert {result["fetch_status"] for result in fetched} == {"fetched"}
+    assert sorted(requested) == sorted(urls)
+    assert conn.execute("SELECT count(*) AS n FROM ev_fetch_queue WHERE status='fetched'").fetchone()["n"] == 2

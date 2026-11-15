@@ -163,3 +163,33 @@ def test_pg_rate_limiters_share_slots_on_socialclaims_test():
                 conn.execute("DELETE FROM exa_rate_limit WHERE key = %s", (key_hash,))
         except psycopg.OperationalError:
             pass
+
+
+def test_exa_honors_capped_retry_after(settings):
+    sleeps = []
+
+    class RetryableError(ValueError):
+        response = SimpleNamespace(headers={"Retry-After": "180"})
+
+        def __init__(self):
+            super().__init__("Request failed with status code 503")
+
+    class Client:
+        attempts = 0
+
+        def search(self, *args, **kwargs):
+            self.attempts += 1
+            if self.attempts == 1:
+                raise RetryableError()
+            return SimpleNamespace(results=[], cost_dollars=SimpleNamespace(total=0.001), request_id="retry-ok")
+
+    class NoWait:
+        def wait(self):
+            return None
+
+    gateway = ExaGateway(settings, client=Client(), sleep=sleeps.append, limiter=NoWait())
+
+    result = gateway.search("retry after", purpose="test", text_chars=None, highlights=False)
+
+    assert result == []
+    assert sleeps == [120.0]

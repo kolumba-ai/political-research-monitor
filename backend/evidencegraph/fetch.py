@@ -557,8 +557,14 @@ class Fetcher:
                 "content_sha256": content_sha}
 
     def fetch_queue(self, limit: int = 20) -> list[dict]:
-        rows = self.conn.execute(
-            "SELECT url,url_hash FROM ev_fetch_queue WHERE status='queued' AND next_attempt_at <= now() "
-            "ORDER BY priority DESC,enqueued_at LIMIT %s", (limit,)
-        ).fetchall()
-        return [self.fetch(row["url"]) for row in rows]
+        results = []
+        for _ in range(limit):
+            with self.conn.transaction():
+                row = self.conn.execute(
+                    "SELECT url FROM ev_fetch_queue WHERE status='queued' AND next_attempt_at <= now() "
+                    "ORDER BY priority DESC,enqueued_at LIMIT 1 FOR UPDATE SKIP LOCKED"
+                ).fetchone()
+                if row is None:
+                    break
+                results.append(self.fetch(row["url"]))
+        return results
