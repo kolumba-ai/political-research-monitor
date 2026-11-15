@@ -301,6 +301,32 @@ def test_exa_date_fallback_uses_latest_dated_discovery_row(conn, ev_settings):
     client.close()
 
 
+def test_empty_text_documents_have_no_simhash_or_duplicate_cluster(conn, ev_settings):
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(
+            200,
+            content=b"record,value\n1,alpha\n",
+            headers={"content-type": "text/csv"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    first = fetcher.fetch("https://files.example/first.csv")
+    second = fetcher.fetch("https://files.example/second.csv")
+
+    assert first["fetch_status"] == second["fetch_status"] == "fetched"
+    versions = conn.execute(
+        "SELECT v.simhash,d.dup_cluster_id FROM ev_document_version v "
+        "JOIN ev_document d USING (document_id) ORDER BY d.url"
+    ).fetchall()
+    assert versions == [
+        {"simhash": None, "dup_cluster_id": None},
+        {"simhash": None, "dup_cluster_id": None},
+    ]
+    client.close()
+
+
 def test_pdf_text_page_markers_are_snapshotted_for_open_gov(conn, ev_settings):
     load_registry(conn)
     pdf_buffer = BytesIO()

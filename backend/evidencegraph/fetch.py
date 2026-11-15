@@ -337,7 +337,7 @@ class Fetcher:
         return (match["dup_cluster_id"] or match["document_id"]) if match else document_id
 
     def _store_version(self, document_id: str, text: str | None, raw: bytes, content_sha: str,
-                       simhash: str, status: int, can_store: bool, is_text: bool) -> tuple[str | None, bool]:
+                       simhash: str | None, status: int, can_store: bool, is_text: bool) -> tuple[str | None, bool]:
         exists = self.conn.execute(
             "SELECT snapshot_path FROM ev_document_version WHERE document_id=%s AND content_sha256=%s",
             (document_id, content_sha),
@@ -354,7 +354,7 @@ class Fetcher:
                 compressed.write(raw)
             snapshot_path = str(text_path)
         retrieved_at = datetime.now(timezone.utc)
-        cluster = self._dup_cluster(document_id, simhash, [document_id])
+        cluster = self._dup_cluster(document_id, simhash, [document_id]) if simhash is not None else None
         self.conn.execute(
             "INSERT INTO ev_document_version(document_id,content_sha256,snapshot_path,http_status,bytes,simhash,retrieved_at) "
             "VALUES (%s,%s,%s,%s,%s,%s::bit(64),%s)",
@@ -496,7 +496,7 @@ class Fetcher:
 
         data_for_hash = text.encode("utf-8") if is_text else raw
         content_sha = hashlib.sha256(data_for_hash).hexdigest()
-        simhash = _simhash(text or "")
+        simhash = _simhash(text) if text and text.strip() else None
         resolved_id = source_id(resolved_url)
         targets = [original_id] + ([resolved_id] if resolved_id != original_id else [])
         fetched_registry = lookup(self.conn, current)
