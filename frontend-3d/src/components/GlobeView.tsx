@@ -86,14 +86,14 @@ export default function GlobeView({ features, countries, selected, onSelect, low
     const f = obj as CountryFeature;
     const row = f.__iso2 ? countries.get(f.__iso2) : undefined;
     if (!row) {
-      return `<div style="font:12px Inter,sans-serif;background:#0a1224ee;border:1px solid #1f2d50;border-radius:8px;padding:6px 8px;color:#e6ebf5">
-        <b>${escapeHtml(f.properties.NAME)}</b><br/><span style="color:#93a0bd">Not in the ISO 3166 registry</span></div>`;
+      return `<div style="font:12px Inter,sans-serif;background:#ffffffee;border:1px solid #dfe4ee;border-radius:8px;padding:6px 8px;color:#111827;box-shadow:0 4px 14px rgba(15,23,42,.12)">
+        <b>${escapeHtml(f.properties.NAME)}</b><br/><span style="color:#5b6475">Not in the ISO 3166 registry</span></div>`;
     }
     const color = REGIME_COLORS[row.regime_group];
-    return `<div style="font:12px Inter,sans-serif;background:#0a1224ee;border:1px solid #1f2d50;border-radius:8px;padding:6px 8px;color:#e6ebf5;min-width:150px">
+    return `<div style="font:12px Inter,sans-serif;background:#ffffffee;border:1px solid #dfe4ee;border-radius:8px;padding:6px 8px;color:#111827;min-width:150px;box-shadow:0 4px 14px rgba(15,23,42,.12)">
       <b>${escapeHtml(row.name)}</b><br/>
       <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:5px"></span>${escapeHtml(row.regime_group)}${row.regime_class && row.regime_class !== row.regime_group ? ` · ${escapeHtml(row.regime_class)}` : ""}<br/>
-      <span style="color:#93a0bd">${row.has_structure ? "Government structure available" : "Government structure not researched"}</span></div>`;
+      <span style="color:#5b6475">${row.has_structure ? "Government structure available" : "Government structure not researched"}</span></div>`;
   }, [countries]);
 
   return (
@@ -103,21 +103,20 @@ export default function GlobeView({ features, countries, selected, onSelect, low
         width={size.w}
         height={size.h}
         backgroundColor="rgba(0,0,0,0)"
-        backgroundImageUrl={`${import.meta.env.BASE_URL}img/night-sky.png`}
         globeImageUrl={`${import.meta.env.BASE_URL}img/earth-blue-marble.jpg`}
         bumpImageUrl={`${import.meta.env.BASE_URL}img/earth-topology.png`}
         showAtmosphere
-        atmosphereColor="#6e8bff"
+        atmosphereColor="#9db4ff"
         atmosphereAltitude={0.16}
         polygonsData={features}
         polygonAltitude={(o) => ((o as CountryFeature).__iso2 === selected ? 0.035 : o === hover ? 0.018 : 0.006)}
         polygonCapColor={(o) => {
           const f = o as CountryFeature;
-          if (f.__iso2 === selected) return "rgba(110,139,255,0.85)";
+          if (f.__iso2 === selected) return "rgba(53,87,230,0.85)";
           return rgba(REGIME_COLORS[groupOf(f)], o === hover ? 0.75 : 0.42);
         }}
-        polygonSideColor={() => "rgba(10,18,36,0.55)"}
-        polygonStrokeColor={(o) => ((o as CountryFeature).__iso2 === selected ? "#c7d2ff" : "rgba(200,210,240,0.35)")}
+        polygonSideColor={() => "rgba(255,255,255,0.35)"}
+        polygonStrokeColor={(o) => ((o as CountryFeature).__iso2 === selected ? "#1e3a8a" : "rgba(255,255,255,0.55)")}
         polygonLabel={label}
         onPolygonHover={(o) => setHover((o as CountryFeature) || null)}
         onPolygonClick={(o) => {

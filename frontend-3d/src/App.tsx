@@ -4,6 +4,7 @@ import { ArrowLeft, Globe2, Network, Feather, LoaderCircle } from "lucide-react"
 import { api, LEGACY_UI, type CountryRow, type Overview } from "./lib/api";
 import { flagOf, hasWebGL, loadCountries, type CountryFeature } from "./lib/geo";
 import CountryPanel from "./components/CountryPanel";
+import FlatMap from "./components/FlatMap";
 import SearchBox, { type EntitySearchHit } from "./components/SearchBox";
 import { Badge, Button, Card, RegimeDot } from "./components/ui";
 import { cn } from "./lib/presentation";
@@ -103,7 +104,7 @@ export default function App() {
   const mapFallback = !webgl || geoError;
 
   return (
-    <div className="flex h-full flex-col bg-[radial-gradient(ellipse_at_top_left,#12204a_0%,#060b18_55%)]">
+    <div className="flex h-full flex-col bg-white">
       <header className="flex shrink-0 flex-wrap items-center gap-3 border-b border-line px-4 py-2.5">
         <button className="flex items-center gap-2 text-fg" aria-label="Return to Earth" onClick={() => {
           const u = new URL(location.href); u.search = ""; history.pushState(null, "", u);
@@ -135,7 +136,10 @@ export default function App() {
       <main className={cn("grid min-h-0 flex-1 grid-cols-1 overflow-y-auto lg:overflow-hidden lg:grid-cols-[40fr_25fr_35fr]",
         exploring && "lg:grid-cols-[20fr_27fr_53fr]")}>
         <section className={cn("relative min-h-[50svh] border-b border-line lg:min-h-0 lg:border-r lg:border-b-0", exploring && "hidden lg:block")} aria-label="Globe">
-          {loading && rows.length === 0 ? <Loading text="Loading countries…" /> : mapFallback ? (
+          {loading && rows.length === 0 ? <Loading text="Loading countries…" /> : !webgl && !geoError && features.length > 0 ? (
+            <FlatMap features={features} countries={byIso} selected={selected} onSelect={chooseCountry}
+              reason="3D view needs WebGL 2, which this browser isn't providing (enable graphics acceleration to see the globe)." />
+          ) : mapFallback ? (
             <div className="h-full max-h-[55svh] overflow-y-auto p-4 lg:max-h-none">
               <p className="mb-3 text-sm text-muted">{geoError ? "Globe boundaries could not be loaded." : "3D view is unavailable on this device."} Search above or choose a country:</p>
               <ul className="grid grid-cols-2 gap-2 text-sm">

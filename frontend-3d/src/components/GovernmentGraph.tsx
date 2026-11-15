@@ -187,13 +187,13 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
     if (!box.current) return;
     const graph = cytoscape({ container: box.current, minZoom: 0.08, maxZoom: 2.2, autoungrabify: true,
       wheelSensitivity: 0.18, layout: { name: "preset" }, style: [
-        { selector: "node", style: { shape: "round-rectangle", width: 178, height: 64, "background-color": "#111d36",
-          "border-color": "data(color)", "border-width": 1.5, color: "#e6ebf5", label: "data(display)",
+        { selector: "node", style: { shape: "round-rectangle", width: 178, height: 64, "background-color": "#ffffff",
+          "border-color": "data(color)", "border-width": 1.5, color: "#111827", label: "data(display)",
           "font-size": 11, "font-family": "system-ui, sans-serif", "text-wrap": "wrap", "text-max-width": "158px",
           "text-valign": "center", "text-halign": "center", "text-overflow-wrap": "whitespace" } },
-        { selector: "node.open", style: { "background-color": "#1b2a4d", "border-width": 2.5 } },
-        { selector: "node:selected", style: { "border-color": "#a7bdff", "border-width": 3 } },
-        { selector: "edge", style: { width: 1.2, "line-color": "#425373", "target-arrow-color": "#425373",
+        { selector: "node.open", style: { "background-color": "#eef2ff", "border-width": 2.5 } },
+        { selector: "node:selected", style: { "border-color": "#3557e6", "border-width": 3 } },
+        { selector: "edge", style: { width: 1.2, "line-color": "#b6bfd1", "target-arrow-color": "#b6bfd1",
           "target-arrow-shape": "triangle", "arrow-scale": 0.65, "curve-style": "taxi", "taxi-direction": "rightward", "taxi-turn": "50%" } },
         { selector: "edge.former", style: { "line-style": "dashed" } },
       ] });
@@ -296,7 +296,7 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
         {siblings.map(({ node, edge }) => <option key={node.id} value={node.id}>{edge.constituency_code ? `${edge.constituency_code} · ` : ""}{node.name || node.id}</option>)}
       </select>
     </label>}
-    <div className="relative min-h-[300px] flex-1 bg-[radial-gradient(ellipse_at_center,#101c35_0%,#080f20_100%)]">
+    <div className="relative min-h-[300px] flex-1 bg-[#f7f9fc]">
       {/* Cytoscape injects an unlayered position:relative rule, which outranks Tailwind's CSS layers.
           Inline sizing keeps its canvas anchored to this flex panel instead of collapsing to height zero. */}
       <div ref={box} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} role="img" aria-label={`Interactive government graph of ${countryName}. Use the record list below to navigate by keyboard.`} />

@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
-/* Research-dashboard palette: dark navy surfaces, restrained blue/violet accents. */
+/* Research-dashboard palette, light: white surfaces, dark text, restrained blue/violet accents.
+   ink-950 is the page background; higher ink numbers are progressively darker greys. */
 @theme {
-  --color-ink-950: #060b18;
-  --color-ink-900: #0a1224;
-  --color-ink-850: #0e1830;
-  --color-ink-800: #121e3a;
-  --color-ink-700: #1b2a4d;
-  --color-ink-600: #2a3b63;
-  --color-line: #1f2d50;
-  --color-fg: #e6ebf5;
-  --color-muted: #93a0bd;
-  --color-accent: #6e8bff;
-  --color-violet: #a78bfa;
-  --color-ok: #4ade80;
-  --color-warn: #fbbf24;
-  --color-bad: #f87171;
+  --color-ink-950: #ffffff;
+  --color-ink-900: #ffffff;
+  --color-ink-850: #f5f7fb;
+  --color-ink-800: #f0f3f8;
+  --color-ink-700: #e6eaf2;
+  --color-ink-600: #c9d1e0;
+  --color-line: #e2e6ee;
+  --color-fg: #111827;
+  --color-muted: #5b6475;
+  --color-accent: #3557e6;
+  --color-violet: #7c3aed;
+  --color-ok: #15803d;
+  --color-warn: #b45309;
+  --color-bad: #b91c1c;
   --color-democratic: #5b8cff;
   --color-partly: #b18cff;
   --color-authoritarian: #e07a5f;
