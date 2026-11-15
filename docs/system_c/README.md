@@ -1,6 +1,6 @@
 # System C — Evidence Knowledge Graph
 
-Design: [`System_C_Design_Doc_for_Devin.md`](System_C_Design_Doc_for_Devin.md). Read its implementation brief first.
+How it works today: [`HOW_IT_WORKS.md`](HOW_IT_WORKS.md). Design: [`System_C_Design_Doc_for_Devin.md`](System_C_Design_Doc_for_Devin.md). Read its implementation brief first.
 
 System C finds documents online (news, official statistics, government, legislative and court records, think tanks,
 universities, fact-checkers, polls) through Exa and registered feeds, builds a timestamped evidence knowledge graph
