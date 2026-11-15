@@ -20,6 +20,14 @@ const fmtTime = (iso: string | null | undefined) => {
 };
 const num = (n: number | null | undefined) => (n ?? 0).toLocaleString();
 
+const intakeNote = (q: PipelineTrace["queue"]) => {
+  if (!q) return "never entered the evidence queue";
+  if (q.status === "skipped") return `skipped: ${humanize(q.skip_reason)}`;
+  if (q.status === "mapped") return "accepted; evidence check finished";
+  if (q.status === "mapping") return "accepted; evidence check running";
+  return q.skip_reason === "pastdev_pending" ? "accepted; evidence judged, queued again to finish the past.dev write" : "accepted; waiting for evidence search";
+};
+
 function Stat({ label, value, hint, tone }: { label: string; value: ReactNode; hint?: string; tone?: "ok" | "bad" }) {
   return <div className="rounded-lg border border-line p-3" title={hint}>
     <p className="text-[11px] text-muted">{label}</p>
@@ -80,7 +88,7 @@ function Trace({ iso2, rec }: { iso2: string; rec: PipelineRecord }) {
         </div>)}
         {t.claims.length > 5 && <p className="text-muted">and {t.claims.length - 5} more</p>}
       </Step>
-      <Step n={2} title="Evidence intake" note={t.queue ? `${humanize(t.queue.status)}${t.queue.status === "skipped" && t.queue.skip_reason ? `: ${humanize(t.queue.skip_reason)}` : ""}` : "never entered the evidence queue"}>
+      <Step n={2} title="Evidence intake" note={intakeNote(t.queue)}>
         {t.queue && <p className="text-muted">Queued {fmtTime(t.queue.queued_at)} · priority {t.queue.priority?.toFixed(1) ?? "—"} · reach {compact(t.queue.reach)} views · check-worthiness {t.queue.max_checkworthiness ?? "—"} · last update {fmtTime(t.queue.updated_at)}</p>}
       </Step>
       <Step n={3} title="Evidence search" note={`${t.searches.length} searches, ${t.searches.reduce((a, s) => a + s.urls.length, 0)} pages found`}>
@@ -267,6 +275,7 @@ export default function Pipeline({ iso2 }: { iso2: string }) {
           {!!s.hourly.length && <p className="flex justify-between text-[10px] text-muted"><span>{fmtTime(s.hourly[0].hour)}</span><span>{fmtTime(s.hourly.at(-1)!.hour)}</span></p>}
           <Table head={["Step", "Last recorded"]} rows={[["Capture from Oriane", fmtTime(s.last.capture)], ["Claim extraction", fmtTime(s.last.extraction)], ["Evidence search", fmtTime(s.last.search)],
             ["Evidence judgement", fmtTime(s.last.judgement)], ["Sent to past.dev", fmtTime(s.last.sent)], ["Confirmed by past.dev", fmtTime(s.last.confirmed)]]} />
+          <p className="text-[11px] text-muted">Hourly totals count every write: claims extracted include re-runs of the same post, and records sent include documents and evidence links.</p>
           <p className="text-[11px] text-muted">Spend recorded so far: ${s.spend.exa_usd.toFixed(2)} on {num(s.spend.exa_requests)} Exa searches · {num(s.spend.oriane_credits)} Oriane credits · {(s.spend.pastdev_bytes / 1e6).toFixed(1)} MB sent to past.dev.</p>
         </div>
       </Card>
