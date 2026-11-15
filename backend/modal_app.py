@@ -14,6 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 REMOTE_ROOT = Path("/root/app")
 REMOTE_BACKEND = REMOTE_ROOT / "backend"
 REMOTE_VAR = REMOTE_ROOT / "var"
+IMAGE_PYTHON_VERSION = "3.11"
 
 # Shared PostgreSQL limiters enforce Exa (8 rps), Anthropic (2 rps), Oriane (1 rps),
 # past.dev (2 rps), and per-host fetch spacing; these caps bound concurrent containers.
@@ -58,7 +59,7 @@ app = modal.App("political-research-monitor")
 VAR_VOLUME = modal.Volume.from_name("prm-var", create_if_missing=True)
 SECRETS = modal.Secret.from_name("prm-secrets")
 IMAGE = (
-    modal.Image.debian_slim(python_version="3.10")
+    modal.Image.debian_slim(python_version=IMAGE_PYTHON_VERSION)
     .pip_install_from_requirements(str(REPO_ROOT / "requirements.txt"))
     .add_local_dir(str(REPO_ROOT / "backend"), remote_path=str(REMOTE_BACKEND), copy=True)
     .add_local_dir(str(REPO_ROOT / "knowledge_base"), remote_path=str(REMOTE_ROOT / "knowledge_base"), copy=True)

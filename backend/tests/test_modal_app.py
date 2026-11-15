@@ -9,6 +9,7 @@ from socialclaims.config import REPO_ROOT as SOCIALCLAIMS_ROOT
 
 
 def test_modal_caps_and_worker_clamping():
+    assert modal_app.IMAGE_PYTHON_VERSION == "3.11"
     assert modal_app.CAPS == {
         "systema": 1,
         "systemb": 1,

@@ -28,7 +28,7 @@ Systems A (`polgraph`), B (`socialclaims`), and C (`evidencegraph`) can run on M
    .venv/bin/pip install -r requirements-modal.txt
    ```
 
-The app image uses Python 3.10, matching the project virtual environment, and installs `requirements.txt`. It includes `backend/`, `knowledge_base/`, and `structures/` under `/root/app`; all three Python packages therefore resolve `REPO_ROOT` to `/root/app`. Persistent SQLite data, Exa cache, raw Oriane snapshots, EvidenceGraph snapshots, and exports live under the `prm-var` volume mounted at `/root/app/var`.
+The app image uses Python 3.11 (the current Modal image builder requires 3.11 or later) and installs `requirements.txt`. The local Modal client remains pinned below 1.7 for the project’s Python 3.10 virtual environment. The image includes `backend/`, `knowledge_base/`, and `structures/` under `/root/app`; all three Python packages therefore resolve `REPO_ROOT` to `/root/app`. Persistent SQLite data, Exa cache, raw Oriane snapshots, EvidenceGraph snapshots, and exports live under the `prm-var` volume mounted at `/root/app/var`.
 
 ## Commands
 
