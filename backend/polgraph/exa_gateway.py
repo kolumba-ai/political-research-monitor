@@ -109,9 +109,11 @@ class _RateLimiter:
 class PgRateLimiter:
     def __init__(self, database_url: str, key: str, rps: float, clock: Callable[[], float] = time.time,
                  sleep: Callable[[float], None] = time.sleep):
+        if rps <= 0:
+            raise ValueError("rps must be positive")
         self.database_url = database_url
         self.key = hashlib.sha256(key.encode()).hexdigest()[:16]
-        self.min_interval = 1.0 / max(rps, 0.1)
+        self.min_interval = 1.0 / rps
         self.clock = clock
         self.sleep = sleep
 
@@ -239,12 +241,16 @@ class ExaGateway:
         else:
             now = datetime.now(timezone.utc)
             month_start = datetime(now.year, now.month, 1, tzinfo=timezone.utc).isoformat()
+            if now.month == 12:
+                next_month = datetime(now.year + 1, 1, 1, tzinfo=timezone.utc)
+            else:
+                next_month = datetime(now.year, now.month + 1, 1, tzinfo=timezone.utc)
             prefix = f"{self.budget_scope}:"
             with self._db_lock:
                 spent = self._db.execute(
                     "SELECT COALESCE(SUM(cost_usd), 0) FROM usage "
-                    "WHERE ts >= ? AND substr(purpose, 1, ?) = ?",
-                    (month_start, len(prefix), prefix),
+                    "WHERE ts >= ? AND ts < ? AND substr(purpose, 1, ?) = ?",
+                    (month_start, next_month.isoformat(), len(prefix), prefix),
                 ).fetchone()[0]
             budget_left = self.monthly_budget_usd - spent - self.usage.reserved
             budget_name = "monthly"
@@ -321,7 +327,7 @@ class ExaGateway:
             self._record("search", purpose, None, 0, cached=True, ref=key)
             return {"results": cached["results"], "request_id": cached.get("request_id"), "cost_usd": 0.0,
                     "latency_ms": round((time.monotonic() - started) * 1000), "cached": True}
-        est = EST_SEARCH + (EST_CONTENTS_PER_URL * num_results if contents else 0)
+        est = EST_SEARCH + (EST_CONTENTS_PER_URL * num_results if text_chars else 0)
         self._reserve(est, f"search[{purpose}]")
         try:
             kwargs = {k: v for k, v in req.items() if v is not None and k not in ("query", "store_text")}

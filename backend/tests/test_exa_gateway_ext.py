@@ -123,7 +123,7 @@ def test_scoped_monthly_budget_counts_only_matching_current_month_usage(settings
     )
     gateway._db.commit()
 
-    result = gateway.search("budget test", purpose="ev:claim", num_results=1, text_chars=None, highlights=False)
+    result = gateway.search_meta("budget test", purpose="ev:claim", num_results=1, text_chars=None, highlights=False)
 
     assert result["request_id"] == "req-test"
     with pytest.raises(BudgetExceeded):
