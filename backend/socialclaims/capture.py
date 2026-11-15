@@ -329,4 +329,15 @@ def purge_expired(conn, settings: SocialSettings, now: datetime | None = None) -
             (Path(settings.raw_storage_dir) / f).unlink(missing_ok=True)
         conn.execute("UPDATE raw_data SET purged_at = %s, payload_path = NULL WHERE raw_id = ANY(%s)",
                      (now, [r["raw_id"] for r in rows]))
+    if settings.raw_retention_days > 0:
+        # Pages written by a failed run may have no raw_data row carrying a retention deadline.
+        cutoff = now - timedelta(days=settings.raw_retention_days)
+        for run in conn.execute("SELECT run_id FROM run WHERE status = 'error' AND started_at < %s",
+                                (cutoff,)).fetchall():
+            kept = {r["p"].split("#")[0] for r in conn.execute(
+                "SELECT payload_path AS p FROM raw_data WHERE run_id = %s AND payload_path IS NOT NULL",
+                (run["run_id"],)).fetchall()}
+            for f in (Path(settings.raw_storage_dir) / run["run_id"]).glob("page-*.json"):
+                if f"{run['run_id']}/{f.name}" not in kept:
+                    f.unlink()
     return len(rows)
