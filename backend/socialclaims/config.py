@@ -1,0 +1,62 @@
+"""System B runtime configuration, loaded from environment variables / `.env` (shared with System A)."""
+from __future__ import annotations
+
+from functools import lru_cache
+from pathlib import Path
+from typing import Literal
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+# Oriane bills per row returned, by projection.
+ORIANE_CREDITS_PER_ROW = {"basic": 2, "default": 3, "full": 4}
+
+
+class SocialSettings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=str(REPO_ROOT / ".env"), env_file_encoding="utf-8", extra="ignore")
+
+    # --- System A (read-only) -------------------------------------------------
+    # `knowledge_base`: read the exported JSONL snapshot; `graph`: read System A's live store (GRAPH_BACKEND).
+    system_a_source: Literal["knowledge_base", "graph"] = "knowledge_base"
+    system_a_kb_dir: Path = REPO_ROOT / "knowledge_base"
+
+    # --- Postgres (System B source of truth) ------------------------------------
+    database_url: str = "postgresql://ubuntu:ubuntu@localhost:5432/socialclaims"
+
+    # --- Oriane ----------------------------------------------------------------
+    oriane_api_key: str | None = None
+    oriane_base_url: str = "https://connect.oriane.xyz"
+    oriane_timeout_s: float = 60.0
+    oriane_max_retries: int = 4
+    oriane_projection: Literal["basic", "default", "full"] = "full"
+    oriane_page_size: int = 100
+    # Hard monthly credit ceiling across all runs; calls whose worst case would exceed it are refused.
+    oriane_monthly_credit_ceiling: int = 28_000
+    # Per-run credit ceiling (worst case checked before every page).
+    oriane_run_credit_ceiling: int = 4_000
+    oriane_max_filter_values: int = 500
+    max_posts_per_politician: int = 1_000
+    default_window_days: int = 90
+    platforms: str = "tiktok,instagram"
+
+    # --- Raw storage / retention (configurable until provider agreements settle) --
+    raw_storage_dir: Path = REPO_ROOT / "var" / "socialclaims" / "raw"
+    store_raw_payloads: bool = True
+    # Days to keep raw payloads; 0 = keep until a retention policy is set.
+    raw_retention_days: int = 0
+    # Fields dropped before anything is stored (data minimisation); recorded per raw row.
+    excluded_fields: str = "profileEmails"
+
+    # --- Relevance ---------------------------------------------------------------
+    relevance_keep_threshold: float = 0.5
+    relevance_review_threshold: float = 0.3
+
+    @staticmethod
+    def csv(value: str) -> list[str]:
+        return [v.strip() for v in value.split(",") if v.strip()]
+
+
+@lru_cache
+def get_settings() -> SocialSettings:
+    return SocialSettings()
