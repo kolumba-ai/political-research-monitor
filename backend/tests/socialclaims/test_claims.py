@@ -112,6 +112,8 @@ def test_idempotent_failures_and_versioning(conn, graph, segmented):
     ex = Extractor(conn, graph, llm)
     first = ex.run(PID, 10)
     assert (first["failed"], first["extracted"]) == (1, 1)
+    retry = ex.run(PID, 10)
+    assert (retry["pending"], retry["extracted"]) == (1, 1)
     assert ex.run(PID, 10)["pending"] == 0
     other = FakeLLM(lambda p: [])
     other.model = "fake-claude-2"

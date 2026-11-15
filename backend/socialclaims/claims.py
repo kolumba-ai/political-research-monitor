@@ -225,7 +225,7 @@ class Extractor:
             "JOIN post_processing pp ON pp.oriane_id = p.oriane_id AND pp.raw_id = p.latest_raw_id "
             "AND pp.processor_version = %s "
             "LEFT JOIN claim_extraction ce ON ce.oriane_id = pp.oriane_id AND ce.raw_id = pp.raw_id "
-            "AND ce.extractor_version = %s AND ce.politician_id = %s "
+            "AND ce.extractor_version = %s AND ce.politician_id = %s AND ce.status = 'ok' "
             "WHERE rp.politician_id = ANY(%s) AND rp.relevance <> 'low' AND ce.oriane_id IS NULL "
             "AND pp.canonical_oriane_id = pp.oriane_id ORDER BY p.published_at DESC, pp.oriane_id",
             (SEGMENTS_VERSION, self.version, politician_id, merged_ids(self.conn, politician_id))).fetchall()
