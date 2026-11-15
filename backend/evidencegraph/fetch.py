@@ -202,7 +202,7 @@ class Fetcher:
         self.limiter_factory = limiter_factory or (
             lambda host, rps: PgRateLimiter(settings.database_url, f"fetch:{host}", rps)
         )
-        self._robots: dict[str, tuple[bool, float | None]] = {}
+        self._robots: dict[str, tuple[RobotFileParser | None, bool, float | None]] = {}
         self._limiters: dict[str, object] = {}
 
     def close(self):
@@ -231,26 +231,29 @@ class Fetcher:
     def _robots_allowed(self, url: str) -> tuple[bool, float | None]:
         parts = urlsplit(url)
         host_key = parts.netloc.lower()
-        if host_key in self._robots:
-            return self._robots[host_key]
-        robots_url = f"{parts.scheme or 'https'}://{parts.netloc}/robots.txt"
-        try:
-            response = self.client.get(robots_url, headers={"User-Agent": self.settings.fetch_user_agent},
-                                       timeout=self.settings.fetch_timeout_s)
-            if 400 <= response.status_code < 500:
-                result = (True, None)
-            elif response.status_code >= 500 or not response.is_success:
-                result = (False, None)
-            else:
-                parser = RobotFileParser()
-                parser.set_url(robots_url)
-                parser.parse(response.text.splitlines())
-                result = (parser.can_fetch(self.settings.fetch_user_agent, url),
-                          parser.crawl_delay(self.settings.fetch_user_agent))
-        except httpx.HTTPError:
-            result = (False, None)
-        self._robots[host_key] = result
-        return result
+        cached = self._robots.get(host_key)
+        if cached is None:
+            robots_url = f"{parts.scheme or 'https'}://{parts.netloc}/robots.txt"
+            parser = None
+            allow_all = False
+            delay = None
+            try:
+                response = self.client.get(robots_url, headers={"User-Agent": self.settings.fetch_user_agent},
+                                           timeout=self.settings.fetch_timeout_s)
+                if 400 <= response.status_code < 500:
+                    allow_all = True
+                elif response.is_success:
+                    parser = RobotFileParser()
+                    parser.set_url(robots_url)
+                    parser.parse(response.text.splitlines())
+                    delay = parser.crawl_delay(self.settings.fetch_user_agent)
+            except httpx.HTTPError:
+                pass
+            cached = (parser, allow_all, delay)
+            self._robots[host_key] = cached
+        parser, allow_all, delay = cached
+        allowed = parser.can_fetch(self.settings.fetch_user_agent, url) if parser else allow_all
+        return allowed, delay
 
     def _wait_domain(self, url: str, registry_row: dict | None, robots_delay: float | None):
         host = (urlsplit(url).hostname or "").lower()

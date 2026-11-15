@@ -43,6 +43,36 @@ def test_robots_disallow_and_http_blocked(conn, ev_settings):
     client.close()
 
 
+def test_robots_rules_are_evaluated_for_each_url_path(conn, ev_settings):
+    requested_pages = []
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(200, text="User-agent: *\nDisallow: /blocked")
+        requested_pages.append(str(request.url))
+        return httpx.Response(
+            200,
+            text="<html><body>A normal article body.</body></html>",
+            headers={"content-type": "text/html"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    allowed_first = fetcher.fetch("https://allowed-first.example/allowed")
+    blocked_after = fetcher.fetch("https://allowed-first.example/blocked")
+    blocked_first = fetcher.fetch("https://blocked-first.example/blocked")
+    allowed_after = fetcher.fetch("https://blocked-first.example/allowed")
+
+    assert allowed_first["fetch_status"] == "fetched"
+    assert blocked_after["fetch_status"] == "robots_disallowed"
+    assert blocked_first["fetch_status"] == "robots_disallowed"
+    assert allowed_after["fetch_status"] == "fetched"
+    assert requested_pages == [
+        "https://allowed-first.example/allowed",
+        "https://blocked-first.example/allowed",
+    ]
+    client.close()
+
+
 def test_canonical_redirect_dates_versions_and_open_gov_snapshot(conn, ev_settings):
     load_registry(conn)
     bodies = [
