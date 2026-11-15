@@ -349,7 +349,10 @@ class Enricher:
                 break
             seen.append(prop["proposition_id"])
             try:
-                results.append(self.enrich_one(prop))
+                result = self.enrich_one(prop)
+                results.append(result)
+                if (result.get("pastdev") or {}).get("errors"):  # past.dev refused the write: count as a failure
+                    raise RuntimeError(f"past.dev write failed: {result['pastdev']['errors'][0]}")
                 failures = 0
             except Exception as exc:  # one proposition's failure must not stop the batch
                 log.error("enrich.failed", proposition_id=prop["proposition_id"], error=str(exc)[:300])
