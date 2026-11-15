@@ -275,6 +275,7 @@ System D pulls claims made by or about politicians from social media and scores 
 
 ```bash
 # 1. Install
+cd system-d
 pip install -e .            # or: uv sync
 
 # 2. Configure
@@ -283,7 +284,7 @@ modal secret create neon-db DATABASE_URL=...
 modal secret create llm-api ANTHROPIC_API_KEY=...
 
 # 3. Database
-psql "$DATABASE_URL" -f db/schema.sql
+python -m system_d.migrate
 python -m system_d.seed     # politicians, claims, population strata
 
 # 4. Run a simulation
@@ -307,10 +308,10 @@ A claim never stops before every population stratum has at least 5 completed res
 
 ### Build milestones
 
-- [ ] M1 Schema + seed data
-- [ ] M2 Stopping logic + unit tests
-- [ ] M3 Claim extraction, social sentiment, aggregation
-- [ ] M4 Simulated polling loop on Modal
+- [x] M1 Schema + seed data
+- [x] M2 Stopping logic + unit tests
+- [x] M3 Claim extraction, social sentiment, aggregation
+- [x] M4 Simulated polling loop on Modal
 - [ ] M5 Dashboard
 - [ ] M6 Real Vapi / WhatsApp channels (stretch)
 

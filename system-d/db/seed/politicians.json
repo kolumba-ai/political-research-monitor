@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Claudia Sheinbaum Pardo",
+    "party": "Morena",
+    "region": "Nacional",
+    "context": {
+      "office": "Presidenta de México",
+      "seed": "hand-curated demo seed"
+    }
+  },
+  {
+    "name": "Clara Brugada Molina",
+    "party": "Morena",
+    "region": "Ciudad de México",
+    "context": {
+      "office": "Jefa de Gobierno",
+      "seed": "hand-curated demo seed"
+    }
+  },
+  {
+    "name": "Samuel García Sepúlveda",
+    "party": "Movimiento Ciudadano",
+    "region": "Nuevo León",
+    "context": {
+      "office": "Gobernador",
+      "seed": "hand-curated demo seed"
+    }
+  }
+]
