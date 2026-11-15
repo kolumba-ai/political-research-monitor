@@ -182,7 +182,9 @@ def process_politician(conn, graph: GraphReader, raw_dir: Path | str, politician
             for role in roles:
                 conn.execute(
                     "INSERT INTO post_person_role(oriane_id, raw_id, processor_version, person_id, role, status, "
-                    "evidence, assigned_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",
+                    "evidence, assigned_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT (oriane_id, raw_id, processor_version, "
+                    "person_id, role) DO UPDATE SET status = EXCLUDED.status, evidence = EXCLUDED.evidence, "
+                    "assigned_at = EXCLUDED.assigned_at",
                     (r["oriane_id"], r["raw_id"], PROCESSOR_VERSION, politician_id, role["role"], role["status"],
                      Jsonb(role["evidence"]), now))
                 out["roles"][f"{role['role']}:{role['status']}"] = out["roles"].get(f"{role['role']}:{role['status']}", 0) + 1
