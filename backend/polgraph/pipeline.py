@@ -9,6 +9,7 @@ function per country/stage). Stages are skipped when fresh unless `force=True` (
 """
 from __future__ import annotations
 
+import secrets
 from dataclasses import asdict
 from datetime import datetime, timezone
 from typing import Callable
@@ -80,7 +81,8 @@ class Pipeline:
         if mode not in ("production", "research_only"):
             raise ValueError("mode must be production|research_only")
         country = get_country(iso2)
-        run_id = f"run-{country.iso2}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
+        run_id = (f"run-{country.iso2}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}-"
+                  f"{secrets.token_hex(3)}")
         stages = stages or ALL_STAGES
         self.state.start_run(run_id, country.iso2, mode)
         w = GraphWriter(self.store, mode, run_id)
