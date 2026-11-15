@@ -253,3 +253,53 @@ def test_pull_reads_system_c_claim_records():
     assert [p[0] for p in posts] == [f"post:o1:{PID}", f"post:o2:{PID}"]
     assert posts[0][1]["source"]["url"] == "https://t/1" and posts[0][1]["claims"][0]["claim_es"] == "t1"
     assert posts[1][1]["claims"][0]["about_politician"] is False
+
+
+def test_unchanged_items_still_processing_keep_proposition_queued(conn, ev_settings, tmp_path):
+    _setup(conn)
+
+    class SlowPast(FakePast):
+        def handler(self, request):
+            if request.method == "GET" and "/ingest/" in request.url.path:
+                self.calls.append(("GET", request.url.path, None))
+                return httpx.Response(200, json={"status": "processing"})
+            return super().handler(request)
+
+    past = SlowPast()
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, past)
+    import evidencegraph.project as projection
+    real = projection.project
+    projection.project = lambda *a, **k: real(*a, **{**k, "poll_timeout_s": 0})
+    try:
+        assert enricher.run(None, 5)["results"][0]["status"] == "queued"
+        out = enricher.run(None, 5)
+    finally:
+        projection.project = real
+    assert out["results"][0]["status"] == "queued" and len(past.batches()) == 1
+
+
+def test_reverted_page_version_is_current_again(conn, ev_settings, tmp_path):
+    from evidencegraph.project import LINKS_SQL
+
+    _setup(conn)
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast())
+    enricher.run(None, 5)
+    link = conn.execute("SELECT * FROM ev_evidence_link WHERE stance = 'supports'").fetchone()
+    conn.execute("INSERT INTO ev_document_version(document_id, content_sha256, http_status, bytes, retrieved_at, "
+                 "last_seen_at) VALUES (%s, 'other', 200, 1, now() + interval '1 hour', now() + interval '1 hour')",
+                 (link["document_id"],))
+    rows = lambda: [r["document_id"] for r in conn.execute(LINKS_SQL, (link["proposition_id"], link["mapper_version"]))]
+    assert link["document_id"] not in rows()
+    conn.execute("UPDATE ev_document_version SET last_seen_at = now() + interval '2 hours' "
+                 "WHERE document_id = %s AND content_sha256 = %s", (link["document_id"], link["content_sha256"]))
+    assert link["document_id"] in rows()
+
+
+def test_pull_merges_one_post_across_propositions():
+    from socialclaims.pastdev import _evidence_claim_posts
+
+    a = _evidence_claim_posts({"dataPointId": "clm-a-x"}, {"politician": {"system_a_person_id": PID},
+                                                          "claims": [{"oriane_id": "o1", "claim_id": "c1"}]})
+    b = _evidence_claim_posts({"dataPointId": "clm-b-x"}, {"politician": {"system_a_person_id": PID},
+                                                          "claims": [{"oriane_id": "o1", "claim_id": "c2"}]})
+    assert a[0][0] == b[0][0]
