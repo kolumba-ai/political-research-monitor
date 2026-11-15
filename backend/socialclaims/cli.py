@@ -97,6 +97,12 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("segment", help="Phase 2: segments + speaker roles from saved snapshots (no API call)")
     p.add_argument("ids", nargs="*", help="politicians (default: everyone with captured posts)")
     p.add_argument("--country", default="MX")
+    p = sub.add_parser("extract-claims", help="Phase 3: LLM claim extraction from segments (paid unless --dry-run)")
+    p.add_argument("ids", nargs="+")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--max-posts", type=int, help="per politician (default: CLAIM_MAX_POSTS_PER_RUN)")
+    p.add_argument("--dry-run", action="store_true", help="print pending counts and the first prompt; no LLM call")
+    p.add_argument("--confirm-spend", action="store_true")
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -186,6 +192,27 @@ def main(argv: list[str] | None = None) -> int:
         ids = [_pid(graph, i, args.country) for i in args.ids] or [r["politician_id"] for r in conn.execute(
             "SELECT DISTINCT politician_id FROM run_post ORDER BY 1").fetchall()]
         _out([process_politician(conn, graph, s.raw_storage_dir, i) for i in ids])
+    elif args.cmd == "extract-claims":
+        from .claims import AnthropicLLM, Extractor, build_prompt
+        if not args.dry_run and not args.confirm_spend:
+            print("refusing: LLM extraction is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
+            return 2
+        if not args.dry_run and not s.anthropic_api_key:
+            print("ANTHROPIC_API_KEY is not set", file=sys.stderr)
+            return 2
+        llm = AnthropicLLM(s.anthropic_api_key or "", s.claim_model, s.anthropic_base_url)
+        ex = Extractor(conn, graph, llm, args.country)
+        cap = min(args.max_posts or s.claim_max_posts_per_run, s.claim_max_posts_per_run)
+        results = []
+        for i in args.ids:
+            pid = _pid(graph, i, args.country)
+            if args.dry_run:
+                todo = ex.pending(pid)
+                results.append({"politician_id": pid, "extractor_version": ex.version, "pending": len(todo),
+                                "would_extract": min(len(todo), cap)})
+            else:
+                results.append(ex.run(pid, cap))
+        _out(results)
     elif args.cmd == "replay-raw":
         from pathlib import Path
         from .capture import RawReplayClient

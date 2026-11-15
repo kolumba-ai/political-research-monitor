@@ -26,6 +26,10 @@ class SocialSettings(BaseSettings):
 
     # --- Oriane ----------------------------------------------------------------
     oriane_api_key: str | None = None
+    anthropic_api_key: str | None = None
+    anthropic_base_url: str = "https://api.anthropic.com"
+    claim_model: str = "claude-sonnet-4-5"
+    claim_max_posts_per_run: int = 200
     oriane_base_url: str = "https://connect.oriane.xyz"
     oriane_timeout_s: float = 60.0
     oriane_max_retries: int = 4

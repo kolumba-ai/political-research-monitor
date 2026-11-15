@@ -1,0 +1,32 @@
+{
+  "country": "country:MX",
+  "version": "mx-draft-1",
+  "status": "draft: pending review by Mauricio",
+  "topics": [
+    {"id": "seguridad", "es": "Seguridad pública y crimen organizado", "en": "Public security and organized crime"},
+    {"id": "desaparecidos_ddhh", "es": "Desaparecidos y derechos humanos", "en": "Disappearances and human rights"},
+    {"id": "justicia", "es": "Justicia y Poder Judicial", "en": "Justice and the judiciary"},
+    {"id": "corrupcion", "es": "Corrupción y transparencia", "en": "Corruption and transparency"},
+    {"id": "economia", "es": "Economía y crecimiento", "en": "Economy and growth"},
+    {"id": "empleo_salarios", "es": "Empleo y salarios", "en": "Employment and wages"},
+    {"id": "precios_inflacion", "es": "Precios e inflación", "en": "Prices and inflation"},
+    {"id": "finanzas_publicas", "es": "Presupuesto, deuda e impuestos", "en": "Budget, debt and taxes"},
+    {"id": "programas_sociales", "es": "Programas sociales y pensiones", "en": "Social programs and pensions"},
+    {"id": "salud", "es": "Salud", "en": "Health"},
+    {"id": "educacion", "es": "Educación", "en": "Education"},
+    {"id": "energia", "es": "Energía (Pemex, CFE, combustibles)", "en": "Energy (Pemex, CFE, fuel)"},
+    {"id": "infraestructura_transporte", "es": "Infraestructura y transporte", "en": "Infrastructure and transport"},
+    {"id": "vivienda_servicios", "es": "Vivienda y servicios urbanos", "en": "Housing and urban services"},
+    {"id": "agua_medio_ambiente", "es": "Agua y medio ambiente", "en": "Water and environment"},
+    {"id": "campo", "es": "Campo y agricultura", "en": "Agriculture"},
+    {"id": "migracion", "es": "Migración", "en": "Migration"},
+    {"id": "relacion_eeuu_comercio", "es": "Relación con EE.UU., aranceles y T-MEC", "en": "US relations, tariffs and USMCA"},
+    {"id": "politica_exterior", "es": "Otra política exterior", "en": "Other foreign policy"},
+    {"id": "elecciones_partidos", "es": "Elecciones, INE y partidos", "en": "Elections, INE and parties"},
+    {"id": "reformas_legislativas", "es": "Reformas y actividad legislativa", "en": "Reforms and legislative activity"},
+    {"id": "gestion_gobierno", "es": "Gestión y obra de gobierno", "en": "Government performance and public works"},
+    {"id": "genero", "es": "Género y violencia contra las mujeres", "en": "Gender and violence against women"},
+    {"id": "medios_libertad_expresion", "es": "Medios y libertad de expresión", "en": "Media and free expression"},
+    {"id": "otro", "es": "Otro", "en": "Other"}
+  ]
+}
