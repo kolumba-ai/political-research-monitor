@@ -11,7 +11,7 @@ import { cn } from "./lib/presentation";
 
 const GlobeView = lazy(() => import("./components/GlobeView"));
 const prefersReducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
-const SECTIONS: Section[] = ["structure", "overview", "politicians", "claims", "politician"];
+const SECTIONS: Section[] = ["structure", "overview", "politicians", "claims", "pipeline", "politician"];
 
 interface View { country: string | null; investigating: boolean; section: Section; node?: string }
 

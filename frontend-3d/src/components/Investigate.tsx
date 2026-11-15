@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { ChevronRight, LayoutDashboard, LoaderCircle, MessageSquareQuote, Network, Users } from "lucide-react";
+import { ChevronRight, LayoutDashboard, LoaderCircle, MessageSquareQuote, Network, Users, Workflow } from "lucide-react";
 import { claimsApi, type ClaimsSummary, type CountryRow } from "../lib/api";
 import { flagOf } from "../lib/geo";
 import Avatar from "./Avatar";
@@ -10,13 +10,15 @@ import { SocialClaimsCard, Timeline } from "./SocialClaims";
 import { Card } from "./ui";
 
 const GovernmentGraph = lazy(() => import("./GovernmentGraph"));
+const Pipeline = lazy(() => import("./Pipeline"));
 
-export type Section = "structure" | "overview" | "politicians" | "claims" | "politician";
+export type Section = "structure" | "overview" | "politicians" | "claims" | "pipeline" | "politician";
 const NAV: { id: Section; label: string; icon: typeof Network }[] = [
   { id: "structure", label: "Government structure", icon: Network },
   { id: "overview", label: "Country overview", icon: LayoutDashboard },
   { id: "politicians", label: "Politicians", icon: Users },
   { id: "claims", label: "Claims & analysis", icon: MessageSquareQuote },
+  { id: "pipeline", label: "Pipeline", icon: Workflow },
 ];
 
 function useClaimsSummary(iso2: string) {
@@ -108,6 +110,10 @@ export default function Investigate({ iso2, row, section, onSection, graphTarget
       {section === "claims" && <div className="mx-auto w-full max-w-3xl">
         <PageHeader crumbs={[...crumbs, "Claims & analysis"]} title="Claims & analysis" subtitle="Social media claims collected for this country's politicians." />
         <div className="p-4 lg:px-6"><SocialClaimsCard iso2={iso2} onOpenPerson={onOpenPerson} /></div>
+      </div>}
+      {section === "pipeline" && <div className="mx-auto w-full max-w-6xl">
+        <PageHeader crumbs={[...crumbs, "Pipeline"]} title="Pipeline" subtitle="How social media claims travel from capture, through claim extraction and evidence checking, into past.dev." />
+        <Suspense fallback={<Loading text="Loading the pipeline…" />}><Pipeline iso2={iso2} /></Suspense>
       </div>}
       {section === "politician" && personId && <PoliticianPage key={personId} iso2={iso2} personId={personId} onViewInGraph={viewInGraph}
         onNavigate={(id) => id.startsWith("person:") ? onOpenPerson(id) : /^country:/.test(id) ? onSection("overview") : viewInGraph(id)} />}

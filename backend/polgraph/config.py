@@ -16,6 +16,9 @@ class Settings(BaseSettings):
         env_file=str(REPO_ROOT / ".env"), env_file_encoding="utf-8", extra="ignore"
     )
 
+    # Read-only Postgres of Systems B and C for the explorer's Pipeline page (optional).
+    pipeline_database_url: str | None = None
+
     # --- Exa ---------------------------------------------------------------
     exa_api_key: str | None = None
     exa_requests_per_second: float = 4.0
