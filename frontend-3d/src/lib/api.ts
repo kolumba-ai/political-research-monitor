@@ -270,6 +270,7 @@ export interface MetricsSources {
   engagement?: { source: string; exported_at: string; posts: number; politicians: number; first: string | null; last: string | null } | null;
   perception?: { source: string; imported_at: string; generated_at: string | null; range: { after: string; before: string } | null;
     platform: string; pairs: number; videos: number; videos_with_feedback: number; unmatched: string[] } | null;
+  labels?: { source: string; exported_at: string; pairs: number; politicians: number; models: string[]; labelled_at: string | null } | null;
 }
 export interface MetricsMethod { presentation: string; feedback: string; threshold: number; min_human_comments: number; limits: string }
 export interface MetricsSummary {

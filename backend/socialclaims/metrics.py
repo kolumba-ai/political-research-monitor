@@ -6,6 +6,8 @@ Two export files sit next to the claims export, `<CLAIMS_EXPORT_DIR>/<ISO2>/`:
   System B Postgres (read-only, no API call).
 * `metrics_perception.jsonl`: one row per politician and video with its presentation label and comment-stance counts,
   imported from a LatamPoliticalMonitor checkout. Commenters' handles and texts are not copied, only counts.
+* `metrics_labels.jsonl`: the same labels for System B's own posts, written by `label-perception` to Postgres and
+  exported with the engagement. Where both label a video for a politician, the imported (sample-reviewed) one is shown.
 
 Presentation index: mean of +1 / 0 / -1 over politician-video pairs, times 100.
 Feedback index: (for - against) / human comments, times 100; likely bots are counted apart.
@@ -19,6 +21,7 @@ from pathlib import Path
 from .pastdev import post_url
 
 POSTS_FILE, PERCEPTION_FILE, MANIFEST_FILE = "metrics_posts.jsonl", "metrics_perception.jsonl", "metrics_manifest.json"
+LABELS_FILE = "metrics_labels.jsonl"
 THRESHOLD = 20      # |index| at or above this reads as positive / negative
 MIN_HUMAN = 3       # human comments a single video needs before its feedback gets a label
 CAPTION_CHARS = 400
@@ -119,6 +122,59 @@ def export_engagement(conn, country: str, out_dir: Path | str) -> dict:
             "first": min(dates, default=None), "last": max(dates, default=None),
             "captured_at": max((r["captured_at"] for r in rows if r["captured_at"]), default=None)}
     _update_manifest(target, "engagement", info)
+    return info
+
+
+LABELS_SQL = """
+WITH x AS (
+    SELECT DISTINCT ON (oriane_id, politician_id) * FROM post_presentation WHERE politician_id LIKE %(pfx)s
+    ORDER BY oriane_id, politician_id, labelled_at DESC
+), fb AS (
+    SELECT oriane_id, politician_id, labeller_version, count(*) AS analyzed,
+           count(*) FILTER (WHERE stance = 'for' AND author_kind <> 'bot') AS n_for,
+           count(*) FILTER (WHERE stance = 'against' AND author_kind <> 'bot') AS n_against,
+           count(*) FILTER (WHERE stance = 'neutral' AND author_kind <> 'bot') AS n_neutral,
+           count(*) FILTER (WHERE stance = 'for' AND author_kind = 'bot') AS bot_for,
+           count(*) FILTER (WHERE stance = 'against' AND author_kind = 'bot') AS bot_against,
+           count(*) FILTER (WHERE stance = 'neutral' AND author_kind = 'bot') AS bot_neutral
+    FROM comment_stance GROUP BY 1, 2, 3
+)
+SELECT x.politician_id, x.oriane_id, x.relevant, x.presentation, x.reason, x.model, x.labelled_at,
+       p.platform, p.platform_id,
+       EXISTS (SELECT 1 FROM post_person_role r WHERE r.oriane_id = x.oriane_id AND r.person_id = x.politician_id
+               AND r.role = 'account_owner' AND r.status = 'verified') AS own_account,
+       fb.analyzed, fb.n_for, fb.n_against, fb.n_neutral, fb.bot_for, fb.bot_against, fb.bot_neutral
+FROM x JOIN post p ON p.oriane_id = x.oriane_id
+LEFT JOIN fb ON fb.oriane_id = x.oriane_id AND fb.politician_id = x.politician_id
+            AND fb.labeller_version = x.labeller_version
+ORDER BY x.politician_id, x.oriane_id
+"""
+
+
+def export_labels(conn, country: str, out_dir: Path | str) -> dict:
+    """Write `label-perception`'s labels per politician and post; empty before migration 007 or the first run."""
+    country = country.upper()
+    rows = []
+    if conn.execute("SELECT to_regclass('post_presentation') AS t").fetchone()["t"] is not None:
+        for r in conn.execute(LABELS_SQL, {"pfx": f"person:{country}:%"}).fetchall():
+            feedback = None
+            if r["analyzed"]:
+                feedback = {"for": r["n_for"], "against": r["n_against"], "neutral": r["n_neutral"],
+                            "bot_for": r["bot_for"], "bot_against": r["bot_against"],
+                            "bot_neutral": r["bot_neutral"], "analyzed": r["analyzed"]}
+            rows.append({"monitor_slug": None, "politician_id": r["politician_id"], "oriane_id": r["oriane_id"],
+                         "platform": r["platform"], "platform_id": r["platform_id"] or r["oriane_id"],
+                         "relevant": r["relevant"], "presentation": r["presentation"],
+                         "presentation_reason": r["reason"], "own_account": bool(r["own_account"]),
+                         "feedback": feedback, "model": r["model"], "labelled_at": _iso(r["labelled_at"])})
+    target = Path(out_dir) / country
+    target.mkdir(parents=True, exist_ok=True)
+    _write_jsonl(target / LABELS_FILE, rows)
+    info = {"source": "System B labelling", "exported_at": _now(), "pairs": len(rows),
+            "politicians": len({r["politician_id"] for r in rows}),
+            "not_relevant": sum(1 for r in rows if not r["relevant"]), "models": sorted({r["model"] for r in rows}),
+            "labelled_at": max((r["labelled_at"] for r in rows), default=None)}
+    _update_manifest(target, "labels", info)
     return info
 
 

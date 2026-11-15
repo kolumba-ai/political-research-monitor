@@ -111,6 +111,7 @@ function SourcesNote({ s, method }: { s: MetricsSources; method: MetricsMethod }
     {s.engagement && <>Engagement: {num(s.engagement.posts)} posts captured with Oriane, published {fmtDate(s.engagement.first)} – {fmtDate(s.engagement.last)}, counts as of {fmtDate(s.engagement.exported_at)}. </>}
     {s.perception && <>Indices: {num(s.perception.videos)} {PLATFORM_META[s.perception.platform]?.name ?? s.perception.platform} videos labelled in {s.perception.source}
       {s.perception.range && <>, published {fmtDate(s.perception.range.after)} – {fmtDate(s.perception.range.before)}</>}. </>}
+    {s.labels && <>{num(s.labels.pairs)} more posts for {num(s.labels.politicians)} politicians were labelled by our own pipeline ({s.labels.models.join(", ")}), using only repeated comment text to flag likely bots. </>}
     {method.limits}
   </p>;
 }

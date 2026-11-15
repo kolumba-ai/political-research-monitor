@@ -45,6 +45,11 @@ class SocialSettings(BaseSettings):
     # Storyline judge (`storylines`): the model that relates a statement to existing storylines (default: CLAIM_MODEL),
     # and the confidence below which its answer waits for human review instead of being applied.
     storyline_model: str | None = None
+    # Perception labels (`label-perception`): the model (default: CLAIM_MODEL) and the prices its dry-run estimate
+    # assumes; check them against the real rates of the model and plan.
+    perception_model: str | None = None
+    perception_usd_per_mtok_in: float = 3.0
+    perception_usd_per_mtok_out: float = 15.0
     storyline_review_threshold: float = 0.75
     oriane_base_url: str = "https://connect.oriane.xyz"
     oriane_timeout_s: float = 60.0

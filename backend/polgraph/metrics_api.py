@@ -62,7 +62,7 @@ class MetricsExport:
 
     def load(self, country: str) -> dict | None:
         d = self.root / country.upper()
-        files = [d / m.MANIFEST_FILE, d / m.POSTS_FILE, d / m.PERCEPTION_FILE]
+        files = [d / m.MANIFEST_FILE, d / m.POSTS_FILE, d / m.PERCEPTION_FILE, d / m.LABELS_FILE]
         if not files[0].exists():
             return None
         stamp = tuple(f.stat().st_mtime_ns if f.exists() else 0 for f in files)
@@ -70,6 +70,10 @@ class MetricsExport:
         if hit and hit[0] == stamp:
             return hit[1]
         posts, perception = m.read_jsonl(files[1]), m.read_jsonl(files[2])
+        # The pipeline's own labels fill in wherever no imported label covers the politician and video.
+        imported = {(r.get("politician_id"), r["platform"], r["platform_id"]) for r in perception}
+        perception += [r for r in m.read_jsonl(files[3]) if r.get("relevant") is not False
+                       and (r["politician_id"], r["platform"], r["platform_id"]) not in imported]
         people: dict[str, dict] = {}
 
         def person(key: str, pid: str | None, name: str | None) -> dict:
@@ -80,7 +84,7 @@ class MetricsExport:
             person(r["politician_id"], r["politician_id"], r.get("politician_name"))["posts"].append(r)
         for r in perception:
             key = r.get("politician_id") or f"monitor:{r['monitor_slug']}"
-            person(key, r.get("politician_id"), r.get("politician_name"))["perception"].append(r)
+            person(key, r.get("politician_id"), r.get("politician_name") or r.get("politician_id"))["perception"].append(r)
         data = {"manifest": json.loads(files[0].read_text(encoding="utf-8")), "people": people,
                 "by_post": {(r["politician_id"], r["oriane_id"]): r for r in posts},
                 "by_video": {(r.get("politician_id"), r["platform"], r["platform_id"]): r
@@ -152,7 +156,8 @@ def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict |
     def sources(data: dict) -> dict:
         man = data["manifest"]
         perception = {k: v for k, v in (man.get("perception") or {}).items() if k != "politicians"}
-        return {"engagement": man.get("engagement"), "perception": perception or None}
+        return {"engagement": man.get("engagement"), "perception": perception or None,
+                "labels": man.get("labels") if (man.get("labels") or {}).get("pairs") else None}
 
     @r.get("/api/metrics/{code}/summary")
     def summary(code: str):
@@ -163,7 +168,7 @@ def build_router(get_dir: Callable[[], Path], get_person: Callable[[str], dict |
         cards = []
         for p in data["people"].values():
             c = card(p)
-            slug = p["perception"][0]["monitor_slug"] if p["perception"] else None
+            slug = next((x["monitor_slug"] for x in p["perception"] if x.get("monitor_slug")), None)
             c["role"] = (roles.get(slug) or {}).get("role")
             cards.append(c)
         cards.sort(key=lambda c: -((c["engagement"] or {}).get("views") or 0))

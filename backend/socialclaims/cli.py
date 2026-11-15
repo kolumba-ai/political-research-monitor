@@ -91,6 +91,60 @@ def _storylines(s, args) -> int:
     return 0
 
 
+def _label_perception(s, args) -> int:
+    from . import perception as pc
+    model = s.perception_model or s.claim_model
+    use_openai = model.startswith(("gpt-", "o1", "o3", "o4"))
+    key = s.openai_api_key if use_openai else s.anthropic_api_key
+
+    class _NoModel:
+        pass
+    llm = _NoModel()
+    llm.model = model
+    if args.dry_run:
+        from .pastdev import PostgresLookup
+        conn = PostgresLookup(s.pipeline_database_url or s.database_url)._conn()
+    else:
+        if not args.confirm_spend:
+            print("refusing: perception labelling is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
+            return 2
+        if not key:
+            print(("OPENAI_API_KEY" if use_openai else "ANTHROPIC_API_KEY") + " is not set", file=sys.stderr)
+            return 2
+        if use_openai:
+            from evidencegraph.llm import OpenAILLM
+            llm = OpenAILLM(key, model, s.openai_base_url, rate_limiter_database_url=s.rate_limiter_database_url,
+                            requests_per_second=s.openai_requests_per_second)
+        else:
+            from .claims import AnthropicLLM
+            llm = AnthropicLLM(key, model, s.anthropic_base_url, max_tokens=2000,
+                               rate_limiter_database_url=s.rate_limiter_database_url,
+                               requests_per_second=s.anthropic_requests_per_second)
+        conn = connect(s.database_url)
+        migrate(conn)
+    with conn:
+        labeller = pc.Labeller(conn, llm)
+        people = pc.tracked_politicians(conn, args.country)
+        if args.ids:
+            graph = _graph(s) if any(not i.startswith("person:") for i in args.ids) else None
+            wanted = {_pid(graph, i, args.country) for i in args.ids}
+            people = [p for p in people if p["politician_id"] in wanted]
+        if args.dry_run:
+            rows = [labeller.estimate(p["politician_id"], p["name"] or p["politician_id"], args.max_posts) for p in people]
+            tin, tout = sum(r["input_tokens"] for r in rows), sum(r["output_tokens"] for r in rows)
+            usd = tin / 1e6 * s.perception_usd_per_mtok_in + tout / 1e6 * s.perception_usd_per_mtok_out
+            _out({"labeller_version": labeller.version, "politicians": len(rows),
+                  "posts_pending": sum(r["pending"] for r in rows), "would_label": sum(r["would_label"] for r in rows),
+                  "comments": sum(r["comments"] for r in rows), "input_tokens": tin, "output_tokens": tout,
+                  "usd_estimate": round(usd, 2),
+                  "assumed_usd_per_mtok_in_out": [s.perception_usd_per_mtok_in, s.perception_usd_per_mtok_out],
+                  "per_politician": rows})
+            return 0
+        _out([labeller.run(p["politician_id"], p["name"] or p["politician_id"], args.max_posts, args.workers)
+              for p in people])
+    return 0
+
+
 def _parse_shard(value: str) -> tuple[int, int]:
     parts = value.split("/")
     if len(parts) != 2:
@@ -204,6 +258,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-evidence", action="store_true", help="skip evidence links and documents (faster)")
     p.add_argument("--no-post-links", action="store_true",
                    help="do not read post links, accounts and proposition fields from the System B Postgres")
+    p = sub.add_parser("label-perception", help="label how posts present a politician and how their top comments "
+                                                "respond (billed unless --dry-run)")
+    p.add_argument("ids", nargs="*", help="politician ids or names (default: every politician with captured posts)")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--dry-run", action="store_true", help="count pending posts and estimate tokens and cost; "
+                                                          "read-only, no model call")
+    p.add_argument("--confirm-spend", action="store_true")
+    p.add_argument("--max-posts", type=_positive_int, help="label at most this many posts per politician")
+    p.add_argument("--workers", type=_positive_int, default=4, help="model calls in parallel")
     p = sub.add_parser("metrics-export", help="export per-politician post engagement from the System B Postgres "
                                               "(read-only, free)")
     p.add_argument("--country", default="MX")
@@ -260,11 +323,16 @@ def main(argv: list[str] | None = None) -> int:
                   evidence=not args.no_evidence, lookup=PostgresLookup(url) if url else None))
         return 0
 
+    if args.cmd == "label-perception":
+        return _label_perception(s, args)
+
     if args.cmd == "metrics-export":
-        from .metrics import export_engagement
+        from .metrics import export_engagement, export_labels
         from .pastdev import PostgresLookup
         with PostgresLookup(s.pipeline_database_url or s.database_url)._conn() as conn:
-            _out(export_engagement(conn, args.country, args.out or s.claims_export_dir))
+            out = args.out or s.claims_export_dir
+            _out({"engagement": export_engagement(conn, args.country, out),
+                  "labels": export_labels(conn, args.country, out)})
         return 0
 
     if args.cmd == "metrics-import":

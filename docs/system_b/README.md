@@ -157,6 +157,13 @@ Two files next to the claims export feed the explorer's Metrics page and the Met
 * **Feedback index**: (for - against) / human comments, -100 to +100. Likely bots are counted apart and a single
   video needs 3 human comments for its own label.
 
+`label-perception` produces the same labels for System B's own posts: one model call per politician and post reads
+the caption, transcript, on-screen text and stored top comments, and writes `post_presentation` and `comment_stance`
+(migration 007). It is billed; `--dry-run` is read-only and prints pending posts, tokens and an estimated cost at
+`PERCEPTION_USD_PER_MTOK_IN` / `_OUT`. System B keeps no commenter handles, so a comment is a likely bot only when the
+same text (12 characters or more) sits under 3 or more posts. `metrics-export` writes these labels to
+`metrics_labels.jsonl`; where an imported label exists for the same politician and video, the imported one is shown.
+
 The import maps the monitor's politicians to System A ids (a reviewed crosswalk in `socialclaims/metrics.py`, then an
 exact full-name match); the rest are listed without a profile link. Commenters' handles and texts are never copied,
 only counts. `GET /api/metrics/{ISO2}/summary` and `/api/metrics/{ISO2}/politicians/{person_id}` serve the result, and
