@@ -3,7 +3,7 @@
 Code: `backend/socialclaims/`. Design: [`System_B_Design_Doc_for_Devin.md`](System_B_Design_Doc_for_Devin.md);
 Oriane API: [`oriane-integration-connect.yaml`](oriane-integration-connect.yaml).
 
-Scope: Mexico, Spanish, internal only, evidence only. No Exa validation, claim extraction or past.dev writes yet.
+Scope: Mexico, Spanish, internal only, evidence only. No Exa validation or past.dev writes yet.
 Oriane is the only social source; System B never creates politician identities.
 
 ## Flow
@@ -74,8 +74,14 @@ cd backend && ../.venv/bin/python -m socialclaims query "Clara Brugada"
 cd backend && ../.venv/bin/python -m socialclaims capture "Clara Brugada" --max-posts 100 --confirm-spend
 # only the politician's own-account posts (useful when mentions crowd them out of the newest-first window)
 cd backend && ../.venv/bin/python -m socialclaims capture "Claudia Sheinbaum" --branches own --max-posts 200 --confirm-spend
+cd backend && ../.venv/bin/python -m socialclaims extract-claims "Claudia Sheinbaum" --shard 0/2 --dry-run
+cd backend && ../.venv/bin/python -m socialclaims regrade-claims "Claudia Sheinbaum" --from-checks checks-2
 make sc-test
 ```
+
+`extract-claims --shard I/N` partitions posts for parallel workers; `extract-claims --max-tokens N` sets the
+Anthropic output-token limit (default 8000); `regrade-claims --from-checks` rechecks stored responses without
+another LLM call.
 
 After a name-variant fix or an `add-term exclude_variant`, re-check stored name-only matches (no API call; dry run without `--apply`). Posts whose saved text holds none of the current variants move to relevance `low`; nothing is deleted:
 
