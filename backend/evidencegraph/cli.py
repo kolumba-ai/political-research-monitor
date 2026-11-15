@@ -66,9 +66,16 @@ def _enricher(conn, settings, country: str, gateway):
 
     from .enrich import Enricher
 
-    llm = AnthropicLLM(settings.anthropic_api_key, settings.enrich_model, settings.anthropic_base_url,
-                       max_tokens=2000, rate_limiter_database_url=settings.database_url,
-                       requests_per_second=settings.anthropic_requests_per_second)
+    if settings.enrich_provider == "openai":
+        from .llm import OpenAILLM
+
+        llm = OpenAILLM(settings.openai_api_key, settings.enrich_model, settings.openai_base_url,
+                        rate_limiter_database_url=settings.database_url,
+                        requests_per_second=settings.openai_requests_per_second)
+    else:
+        llm = AnthropicLLM(settings.anthropic_api_key, settings.enrich_model, settings.anthropic_base_url,
+                           max_tokens=2000, rate_limiter_database_url=settings.database_url,
+                           requests_per_second=settings.anthropic_requests_per_second)
     client = PastDevClient(settings.past_dev_api_key, settings.past_dev_base_url,
                            rate_limiter_database_url=settings.database_url,
                            requests_per_second=settings.pastdev_requests_per_second)
@@ -152,8 +159,9 @@ def main(argv: list[str] | None = None) -> int:
             if not args.confirm_spend:
                 parser.error("enrich calls Exa, Anthropic and past.dev (billed): run --dry-run first, "
                              "then pass --confirm-spend")
-            missing = [name for name, value in (("EXA_API_KEY", settings.exa_api_key),
-                                                ("ANTHROPIC_API_KEY", settings.anthropic_api_key),
+            llm_key = (("OPENAI_API_KEY", settings.openai_api_key) if settings.enrich_provider == "openai"
+                       else ("ANTHROPIC_API_KEY", settings.anthropic_api_key))
+            missing = [name for name, value in (("EXA_API_KEY", settings.exa_api_key), llm_key,
                                                 ("PAST_DEV_API_KEY", settings.past_dev_api_key)) if not value]
             if missing:
                 parser.error(f"missing {', '.join(missing)}")

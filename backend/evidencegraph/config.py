@@ -28,7 +28,11 @@ class EvidenceSettings(BaseSettings):
     anthropic_base_url: str = "https://api.anthropic.com"
     anthropic_requests_per_second: float = 2.0
     pastdev_requests_per_second: float = 2.0
+    enrich_provider: str = "anthropic"  # or "openai"
     enrich_model: str = "claude-sonnet-5-5"
+    openai_api_key: str | None = None
+    openai_base_url: str = "https://api.openai.com"
+    openai_requests_per_second: float = 5.0
     enrich_results_per_query: int = 5
     enrich_max_documents: int = 8
     enrich_page_chars: int = 24_000

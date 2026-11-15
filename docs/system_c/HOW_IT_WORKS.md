@@ -190,7 +190,8 @@ Settings are read from the repository `.env` by `EvidenceSettings` (`config.py`)
 | --- | --- | --- |
 | `DATABASE_URL` | local `socialclaims` | Shared Postgres |
 | `EXA_API_KEY`, `ANTHROPIC_API_KEY`, `PAST_DEV_API_KEY` | — | API keys |
-| `ENRICH_MODEL` | `claude-sonnet-5-5` | Model for query plans and judgements |
+| `ENRICH_PROVIDER` | `anthropic` | `anthropic` or `openai` (`OPENAI_API_KEY`) |
+| `ENRICH_MODEL` | `claude-sonnet-5-5` | Model for query plans and judgements (e.g. `gpt-4.1-mini` with `openai`) |
 | `ENRICH_MAX_DOCUMENTS` | 8 | Pages judged per proposition |
 | `ENRICH_RESULTS_PER_QUERY` | 5 | Exa results per search |
 | `ENRICH_PAGE_CHARS` | 24000 | Page text sent to Claude |

@@ -196,7 +196,7 @@ class Enricher:
             "stated_at": prop["stated_at"].date().isoformat(), "quotes": [c["quote"] for c in claims[:3]],
             "rows_to_write": self.rows,
         }, ensure_ascii=False)
-        out, usage = self.llm.extract(PLAN_SYSTEM, prompt, {"input_schema": PLAN_SCHEMA})
+        out, usage = self.llm.extract(PLAN_SYSTEM, prompt, {"name": "query_plan", "input_schema": PLAN_SCHEMA})
         self.spend.add_llm(usage)
         seen, planned = set(), []
         for q in out.get("queries") or []:
@@ -279,7 +279,7 @@ class Enricher:
                      "published_at": doc["published_at"].date().isoformat() if doc["published_at"] else None,
                      "url": doc["resolved_url"], "text": text},
         }, ensure_ascii=False)
-        out, usage = self.llm.extract(ASSESS_SYSTEM, prompt, {"input_schema": ASSESS_SCHEMA})
+        out, usage = self.llm.extract(ASSESS_SYSTEM, prompt, {"name": "page_judgement", "input_schema": ASSESS_SCHEMA})
         self.spend.add_llm(usage)
         quote = (out.get("quote") or "").strip() or None
         verified = quote_in_text(quote, fetched["text"])
