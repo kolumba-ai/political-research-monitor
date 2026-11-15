@@ -4,6 +4,7 @@ import psycopg
 import pytest
 
 from evidencegraph.db import migrate as migrate_evidencegraph
+from evidencegraph.config import EvidenceSettings
 from socialclaims.db import connect, migrate as migrate_socialclaims
 
 TEST_DATABASE_URL = "postgresql://ubuntu:ubuntu@localhost:5432/socialclaims_test"
@@ -24,3 +25,9 @@ def conn():
     migrate_evidencegraph(connection)
     yield connection
     connection.close()
+
+
+@pytest.fixture
+def ev_settings(tmp_path):
+    return EvidenceSettings(_env_file=None, database_url=TEST_DATABASE_URL, snapshot_dir=tmp_path / "snapshots",
+                            fetch_min_interval_s=0.0)
