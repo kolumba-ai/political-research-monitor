@@ -118,6 +118,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--confirm-spend", action="store_true")
     p.add_argument("--shard", type=_parse_shard, default=(0, 1),
                    help="I/N: only posts whose id hashes to share I of N (parallel workers)")
+    p = sub.add_parser("regrade-claims", help="re-check stored claim responses without an LLM call")
+    p.add_argument("ids", nargs="+")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--from-checks", required=True)
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -229,6 +233,18 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 results.append(ex.run(pid, cap, shard))
         _out(results)
+    elif args.cmd == "regrade-claims":
+        from .claims import Extractor
+
+        class NoCallLLM:
+            def __init__(self, model):
+                self.model = model
+
+            def extract(self, system, prompt, tool):
+                raise RuntimeError("regrade-claims must not call the LLM")
+
+        ex = Extractor(conn, graph, NoCallLLM(s.claim_model), args.country)
+        _out([ex.regrade(_pid(graph, i, args.country), args.from_checks) for i in args.ids])
     elif args.cmd == "replay-raw":
         from pathlib import Path
         from .capture import RawReplayClient

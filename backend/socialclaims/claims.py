@@ -134,9 +134,9 @@ class AnthropicLLM:
         raise RuntimeError("unreachable")
 
 
-def extractor_version(model: str, taxonomy: dict) -> str:
+def extractor_version(model: str, taxonomy: dict, checks_version: str = CHECKS_VERSION) -> str:
     tool = _claim_schema([t["id"] for t in taxonomy["topics"]])
-    h = hashlib.sha256((CHECKS_VERSION + SYSTEM_PROMPT + json.dumps(tool, sort_keys=True) +
+    h = hashlib.sha256((checks_version + SYSTEM_PROMPT + json.dumps(tool, sort_keys=True) +
                         taxonomy["version"]).encode())
     return f"{model}:{h.hexdigest()[:12]}"
 
@@ -341,7 +341,7 @@ class Extractor:
     def __post_init__(self):
         self.taxonomy = load_taxonomy(self.country_code)
         self.topic_ids = {t["id"] for t in self.taxonomy["topics"]}
-        self.version = extractor_version(self.llm.model, self.taxonomy)
+        self.version = extractor_version(self.llm.model, self.taxonomy, CHECKS_VERSION)
         self.tool = _claim_schema(sorted(self.topic_ids))
 
     def pending(self, politician_id: str, shard: tuple[int, int] = (0, 1)) -> list[dict]:
@@ -379,7 +379,43 @@ class Extractor:
                 out["grounding"][g] = out["grounding"].get(g, 0) + n
         return out
 
-    def extract_post(self, snap, row: dict) -> dict:
+    def regrade(self, politician_id: str, from_checks: str) -> dict:
+        old_version = extractor_version(self.llm.model, self.taxonomy, from_checks)
+        if old_version == self.version:
+            raise ValueError("from_checks matches the current checks version")
+        snap = read_person(self.graph, politician_id)
+        if snap is None:
+            raise LookupError(f"{politician_id} not in System A")
+        rows = self.conn.execute(
+            "SELECT DISTINCT pp.oriane_id, pp.raw_id, pp.canonical_oriane_id, p.published_at, p.platform, "
+            "pp.uploader_handle, pp.low_information, previous.response FROM run_post rp "
+            "JOIN post p ON p.oriane_id = rp.oriane_id "
+            "JOIN post_processing pp ON pp.oriane_id = p.oriane_id AND pp.raw_id = p.latest_raw_id "
+            "AND pp.processor_version = %s "
+            "JOIN claim_extraction previous ON previous.oriane_id = pp.oriane_id AND previous.raw_id = pp.raw_id "
+            "AND previous.extractor_version = %s AND previous.politician_id = %s AND previous.status = 'ok' "
+            "AND previous.response IS NOT NULL "
+            "LEFT JOIN claim_extraction current_extraction ON current_extraction.oriane_id = pp.oriane_id "
+            "AND current_extraction.raw_id = pp.raw_id AND current_extraction.extractor_version = %s "
+            "AND current_extraction.politician_id = %s AND current_extraction.status = 'ok' "
+            "WHERE rp.politician_id = ANY(%s) AND rp.relevance <> 'low' "
+            "AND current_extraction.oriane_id IS NULL "
+            "AND pp.canonical_oriane_id = pp.oriane_id ORDER BY p.published_at DESC, pp.oriane_id",
+            (SEGMENTS_VERSION, old_version, politician_id, self.version, politician_id,
+             merged_ids(self.conn, politician_id))).fetchall()
+        result = {"regraded": 0, "claims": 0, "grounding": {}}
+        for row in rows:
+            response = row.pop("response")
+            extracted = self.extract_post(snap, row, response=response, usage={})
+            if extracted["status"] != "ok":
+                continue
+            result["regraded"] += 1
+            result["claims"] += extracted["claims"]
+            for grounding, count in extracted.get("grounding", {}).items():
+                result["grounding"][grounding] = result["grounding"].get(grounding, 0) + count
+        return result
+
+    def extract_post(self, snap, row: dict, response=None, usage=None) -> dict:
         now = self.clock()
         pid = snap.politician_id
         segs = self.conn.execute(
@@ -395,18 +431,25 @@ class Extractor:
                 "politician_roles": {k: v["status"] for k, v in roles.items()},
                 "politician_is_probable_speaker": speaker["status"] in ("verified", "probable")}
         record = {"status": "ok", "claims": 0, "grounding": {}}
-        response = {"claims": []}
+        refs = {}
         if not segs:
-            claims, usage = [], {}
+            usage = usage or {}
+            if response is None:
+                claims = []
+                response = {"claims": []}
+            else:
+                claims = response.get("claims") or []
         else:
             prompt, refs = build_prompt(snap, meta, segs, self.taxonomy)
-            try:
-                result, usage = self.llm.extract(SYSTEM_PROMPT, prompt, self.tool)
-                response = result
-                claims = result.get("claims") or []
-            except Exception as exc:  # noqa: BLE001 - recorded, run continues with the next post
-                self._log(row, pid, "failed", 0, {}, f"{type(exc).__name__}: {exc}"[:500], now)
-                return {"status": "failed", "claims": 0}
+            if response is None:
+                try:
+                    response, usage = self.llm.extract(SYSTEM_PROMPT, prompt, self.tool)
+                except Exception as exc:  # noqa: BLE001 - recorded, run continues with the next post
+                    self._log(row, pid, "failed", 0, {}, f"{type(exc).__name__}: {exc}"[:500], now)
+                    return {"status": "failed", "claims": 0}
+            else:
+                usage = usage or {}
+            claims = response.get("claims") or []
         with self.conn.transaction():
             for i, c in enumerate(claims):
                 g = self._store_claim(row, pid, i, c, refs, speaker, now)

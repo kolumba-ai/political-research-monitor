@@ -148,11 +148,49 @@ def test_idempotent_failures_and_versioning(conn, graph, segmented):
     assert Extractor(conn, graph, other).run(PID, 10)["extracted"] == 2
 
 
-def test_extractor_version_tracks_checks_version(monkeypatch):
+def test_extractor_version_tracks_checks_version():
     taxonomy = claims_module.load_taxonomy("MX")
-    before = claims_module.extractor_version("fake-model", taxonomy)
-    monkeypatch.setattr(claims_module, "CHECKS_VERSION", "checks-test")
-    assert claims_module.extractor_version("fake-model", taxonomy) != before
+    checks_2 = claims_module.extractor_version("fake-model", taxonomy, "checks-2")
+    checks_3 = claims_module.extractor_version("fake-model", taxonomy, "checks-3")
+    assert checks_2 != checks_3
+
+
+def test_regrade_reuses_stored_response_without_llm_call(monkeypatch, conn, graph, segmented):
+    fake = FakeLLM(lambda prompt: [claim("el desempleo bajó a 2.5 por ciento", [ref(prompt, "(speech"))])
+    monkeypatch.setattr(claims_module, "CHECKS_VERSION", "checks-2")
+    old = Extractor(conn, graph, fake)
+    original = old.run(PID, 1)
+    old_version = old.version
+    assert original["claims"] == 1
+    assert len(fake.prompts) == 1
+    old_row = conn.execute("SELECT * FROM claim_extraction WHERE extractor_version = %s",
+                           (old_version,)).fetchone()
+
+    monkeypatch.setattr(claims_module, "CHECKS_VERSION", "checks-3")
+
+    class NoCallLLM:
+        model = "fake-claude"
+
+        def extract(self, system, prompt, tool):
+            raise AssertionError("regrade unexpectedly called the LLM")
+
+    current = Extractor(conn, graph, NoCallLLM())
+    regraded = current.regrade(PID, "checks-2")
+    current_row = conn.execute("SELECT * FROM claim_extraction WHERE extractor_version = %s",
+                               (current.version,)).fetchone()
+
+    assert regraded == {"regraded": 1, "claims": original["claims"], "grounding": original["grounding"]}
+    assert len(fake.prompts) == 1
+    assert current_row["status"] == "ok"
+    assert current_row["claims"] == old_row["claims"]
+    assert current_row["response"] == old_row["response"]
+    assert current_row["input_tokens"] is None
+    assert current_row["output_tokens"] is None
+    assert current_row["error"] is None
+    assert conn.execute("SELECT count(*) AS n FROM distilled_claim WHERE extractor_version = %s",
+                        (current.version,)).fetchone()["n"] == original["claims"]
+    with pytest.raises(ValueError, match="matches the current checks version"):
+        current.regrade(PID, "checks-3")
 
 
 def test_pending_shards_partition_the_full_pending_list(conn, graph, segmented):
