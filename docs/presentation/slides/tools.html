@@ -1,0 +1,20 @@
+<section id="tools">
+<div class="head">
+<p class="eyebrow">5 · The tools</p>
+<h2>What each tool does in the pipeline</h2>
+</div>
+<div class="tools">
+<div class="tool res"><p class="tool-cat">Research</p><h3>Exa</h3><p class="small">Finds and re-fetches the pages behind every fact; monitors flag changes.</p></div>
+<div class="tool res"><p class="tool-cat">Social</p><h3>Oriane</h3><p class="small">Captures posts on TikTok, Instagram, YouTube, X and Facebook.</p></div>
+<div class="tool res"><p class="tool-cat">Reasoning</p><h3>Claude</h3><p class="small">Plans searches, extracts claims, judges stance, writes poll questions.</p></div>
+<div class="tool res"><p class="tool-cat">Memory</p><h3>past.dev</h3><p class="small">Keeps each politician’s claims and evidence for agents to recall.</p></div>
+<div class="tool"><p class="tool-cat">Data</p><h3>Neo4j</h3><p class="small">The graph of countries, offices and officeholders.</p></div>
+<div class="tool"><p class="tool-cat">Data</p><h3>Neon</h3><p class="small">Postgres and pgvector: claims, respondents, sampling state.</p></div>
+<div class="tool run"><p class="tool-cat">Compute</p><h3>Modal</h3><p class="small">Runs every agent; the polling fleet fans out in parallel.</p></div>
+<div class="tool run"><p class="tool-cat">Channels</p><h3>Vapi, WhatsApp</h3><p class="small">Voice and chat polling of real respondents, phase 2.</p></div>
+<div class="tool run"><p class="tool-cat">Build</p><h3>Claude Code</h3><p class="small">Research, design documents, pilots and the test plan.</p></div>
+<div class="tool run"><p class="tool-cat">Build</p><h3>Devin</h3><p class="small">Builds each system from its design document.</p></div>
+</div>
+<div class="footer"><p class="src">Blue: finding and judging · grey: storing · orange: running and building</p><p class="pn"></p></div>
+<aside>Exa does the research: it finds pages and re-fetches them so every fact is checked against the text. Oriane captures social posts. Claude reasons over them. past.dev is the memory layer for evidence. Neo4j and Neon store the graph and the polling data. Modal runs the agents. Vapi and WhatsApp will carry real polls. Claude Code wrote the research and designs, and Devin builds from them.</aside>
+</section>

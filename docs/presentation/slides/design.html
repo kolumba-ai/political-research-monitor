@@ -1,0 +1,18 @@
+<section id="design">
+<div class="head">
+<p class="eyebrow">4 · Design</p>
+<h2>Four systems, each with one job</h2>
+</div>
+<div class="pipe">
+<div class="sys"><p class="sys-tag">System A</p><h3>Knowledge graph</h3><p class="small">Countries, government bodies, offices and verified officeholders.</p><p class="store">Neo4j</p><p class="pill">Built: Mexico, Pakistan</p></div>
+<div class="arrow-gap"><x-shape kind="arrow-right"></x-shape></div>
+<div class="sys"><p class="sys-tag">System B</p><h3>Social claims</h3><p class="small">Posts by and about each politician, scored for relevance.</p><p class="store">Postgres</p><p class="pill">Built: phases 0–1</p></div>
+<div class="arrow-gap"><x-shape kind="arrow-right"></x-shape></div>
+<div class="sys"><p class="sys-tag">System C</p><h3>Evidence graph</h3><p class="small">Documents mapped to claims as supporting, contradicting or context.</p><p class="store">Postgres + past.dev</p><p class="pill">Built: M0–M1</p></div>
+<div class="arrow-gap"><x-shape kind="arrow-right"></x-shape></div>
+<div class="sys"><p class="sys-tag">System D</p><h3>Polling</h3><p class="small">Polled versus social sentiment for each claim, with a stopping rule.</p><p class="store">Neon + Modal</p><p class="pill plan">Designed, tests planned</p></div>
+</div>
+<p class="note">Each system trusts only the one before it: B never creates a politician, C never keeps a quote it can’t find on the page, and D never stops before every population group has 5 answers.</p>
+<div class="footer"><p class="src">Design documents for Systems B, C and D are in the repository, written for Devin to build from</p><p class="pn"></p></div>
+<aside>The design is four systems in a chain. A is the knowledge graph of who holds which office, built for Mexico and Pakistan. B captures social posts by and about each politician. C finds evidence and maps it to each claim. D polls a sample about each claim and compares polled sentiment with social sentiment. A, B and C are built to the stages shown; D is fully designed with a test plan and ready to build.</aside>
+</section>

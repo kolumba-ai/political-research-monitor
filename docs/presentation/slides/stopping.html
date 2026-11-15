@@ -1,0 +1,25 @@
+<section id="stopping" class="alt">
+<div class="head">
+<p class="eyebrow">4 · Design · System D</p>
+<h2>Each claim is polled only until its sample is valid</h2>
+</div>
+<div class="stop-cols">
+<div class="stop-left">
+<p class="small">30 respondents first, then batches of 20. No claim stops before every population group has 5 answers.</p>
+<table class="stop-table">
+<tr><th style="width:28%">Status</th><th style="width:72%">Polling stops when</th></tr>
+<tr><td class="st">Converged</td><td>The share who believe the claim is known to within ±7 points (95% confidence)</td></tr>
+<tr><td class="st">Decisive</td><td>Polled sentiment clearly differs from social-media sentiment</td></tr>
+<tr><td class="st">Capped</td><td>400 completed answers: inconclusive, the question is rewritten</td></tr>
+</table>
+</div>
+<div class="stop-right">
+<h3>What simulation found</h3>
+<p class="big">11–19%</p>
+<p class="small">of claims with no real gap would be reported as decisive, because the check repeats after every batch.</p>
+<p class="small">Fix: test at 99% confidence, which brings it to 3–5%. A small gap is then caught 64% of the time instead of 85%.</p>
+</div>
+</div>
+<div class="footer"><p class="src">Source: Monte Carlo simulation of the stopping rule, 20,000 runs per scenario (System D test plan)</p><p class="pn"></p></div>
+<aside>System D polls in batches and stops each claim as soon as the answer is statistically valid, which keeps cost down. We simulated the rule before building it. Because the decisive check runs after every batch, it would report a gap that isn’t there 11 to 19 percent of the time, not 5. Testing that one check at 99 percent confidence fixes it, at the cost of missing some small gaps. The test plan has five more fixes like this.</aside>
+</section>
