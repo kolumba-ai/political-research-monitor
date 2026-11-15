@@ -144,6 +144,52 @@ class AnthropicLLM:
         raise RuntimeError("unreachable")
 
 
+class OpenAILLM(AnthropicLLM):
+    def __init__(self, api_key: str, model: str, base_url: str = "https://api.openai.com",
+                 transport: httpx.BaseTransport | None = None, sleep=time.sleep, max_tokens: int = 8000,
+                 rate_limiter_database_url: str | None = None, requests_per_second: float = 5.0, limiter=None):
+        self.model, self.max_tokens, self.sleep = model, max_tokens, sleep
+        self.limiter = limiter if limiter is not None else (
+            PgRateLimiter(rate_limiter_database_url, f"openai:{api_key}", requests_per_second)
+            if rate_limiter_database_url else None
+        )
+        self.http = httpx.Client(base_url=base_url, timeout=300, transport=transport,
+                                 headers={"Authorization": f"Bearer {api_key}"})
+
+    def extract(self, system: str, prompt: str, tool: dict) -> tuple[dict, dict]:
+        body = {"model": self.model, "max_completion_tokens": self.max_tokens,
+                "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}],
+                "response_format": {"type": "json_schema", "json_schema": {
+                    "name": tool["name"], "schema": tool["input_schema"], "strict": False}}}
+        for attempt in range(4):
+            try:
+                if self.limiter is not None:
+                    self.limiter.wait()
+                r = self.http.post("/v1/chat/completions", json=body)
+            except httpx.TransportError:
+                if attempt == 3:
+                    raise
+                self.sleep(2 ** attempt)
+                continue
+            if r.status_code in (429, 500, 502, 503) and attempt < 3:
+                delay = retry_after_seconds(r.headers) if r.status_code in (429, 503) else None
+                self.sleep(2 ** attempt * 5 if delay is None else delay)
+                continue
+            if r.status_code != 200:
+                raise RuntimeError(f"openai {r.status_code}: {r.text[:500]}")
+            data = r.json()
+            choice = data["choices"][0]
+            if choice.get("finish_reason") == "length":
+                raise RuntimeError("openai output truncated at max_completion_tokens")
+            u = data.get("usage", {})
+            output = json.loads(choice["message"]["content"])
+            if not isinstance(output, dict) or not isinstance(output.get("claims"), list):
+                raise RuntimeError("openai response missing claims list")
+            return output, {
+                "input_tokens": u.get("prompt_tokens"), "output_tokens": u.get("completion_tokens")}
+        raise RuntimeError("unreachable")
+
+
 def extractor_version(model: str, taxonomy: dict, checks_version: str = CHECKS_VERSION) -> str:
     tool = _claim_schema([t["id"] for t in taxonomy["topics"]])
     h = hashlib.sha256((checks_version + SYSTEM_PROMPT + json.dumps(tool, sort_keys=True) +
@@ -356,6 +402,7 @@ class Extractor:
     llm: LLM
     country_code: str = "MX"
     clock: object = utcnow
+    skip_any_version: bool = False
 
     def __post_init__(self):
         self.taxonomy = load_taxonomy(self.country_code)
@@ -374,10 +421,10 @@ class Extractor:
             "JOIN post_processing pp ON pp.oriane_id = p.oriane_id AND pp.raw_id = p.latest_raw_id "
             "AND pp.processor_version = %s "
             "LEFT JOIN claim_extraction ce ON ce.oriane_id = pp.oriane_id AND ce.raw_id = pp.raw_id "
-            "AND ce.extractor_version = %s AND ce.politician_id = %s AND ce.status = 'ok' "
+            "AND (ce.extractor_version = %s OR %s) AND ce.politician_id = %s AND ce.status = 'ok' "
             "WHERE rp.politician_id = ANY(%s) AND rp.relevance <> 'low' AND ce.oriane_id IS NULL "
             "AND pp.canonical_oriane_id = pp.oriane_id ORDER BY p.published_at DESC, pp.oriane_id",
-            (SEGMENTS_VERSION, self.version, politician_id, merged_ids(self.conn, politician_id))).fetchall()
+            (SEGMENTS_VERSION, self.version, self.skip_any_version, politician_id, merged_ids(self.conn, politician_id))).fetchall()
         return [row for row in rows
                 if int(hashlib.sha256(row["oriane_id"].encode()).hexdigest(), 16) % count == index]
 

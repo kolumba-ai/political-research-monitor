@@ -254,18 +254,25 @@ def main(argv: list[str] | None = None) -> int:
             "SELECT DISTINCT politician_id FROM run_post ORDER BY 1").fetchall()]
         _out([process_politician(conn, graph, s.raw_storage_dir, i) for i in ids])
     elif args.cmd == "extract-claims":
-        from .claims import AnthropicLLM, Extractor, build_prompt
+        from .claims import AnthropicLLM, Extractor, OpenAILLM, build_prompt
         shard = args.shard
         if not args.dry_run and not args.confirm_spend:
             print("refusing: LLM extraction is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
             return 2
-        if not args.dry_run and not s.anthropic_api_key:
-            print("ANTHROPIC_API_KEY is not set", file=sys.stderr)
+        use_openai = s.claim_model.startswith(("gpt-", "o1", "o3", "o4"))
+        key = s.openai_api_key if use_openai else s.anthropic_api_key
+        if not args.dry_run and not key:
+            print(("OPENAI_API_KEY" if use_openai else "ANTHROPIC_API_KEY") + " is not set", file=sys.stderr)
             return 2
-        llm = AnthropicLLM(s.anthropic_api_key or "", s.claim_model, s.anthropic_base_url,
-                           max_tokens=args.max_tokens, rate_limiter_database_url=s.rate_limiter_database_url,
-                           requests_per_second=s.anthropic_requests_per_second)
-        ex = Extractor(conn, graph, llm, args.country)
+        if use_openai:
+            llm = OpenAILLM(key or "", s.claim_model, s.openai_base_url, max_tokens=args.max_tokens,
+                            rate_limiter_database_url=s.rate_limiter_database_url,
+                            requests_per_second=s.openai_requests_per_second)
+        else:
+            llm = AnthropicLLM(key or "", s.claim_model, s.anthropic_base_url,
+                               max_tokens=args.max_tokens, rate_limiter_database_url=s.rate_limiter_database_url,
+                               requests_per_second=s.anthropic_requests_per_second)
+        ex = Extractor(conn, graph, llm, args.country, skip_any_version=s.claim_skip_any_version)
         cap = min(args.max_posts or s.claim_max_posts_per_run, s.claim_max_posts_per_run)
         results = []
         for i in args.ids:

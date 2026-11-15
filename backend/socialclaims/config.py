@@ -34,6 +34,11 @@ class SocialSettings(BaseSettings):
     anthropic_api_key: str | None = None
     anthropic_base_url: str = "https://api.anthropic.com"
     claim_model: str = "claude-sonnet-5-5"
+    openai_api_key: str | None = None
+    openai_base_url: str = "https://api.openai.com"
+    openai_requests_per_second: float = 5.0
+    # Skip posts already extracted ok under any extractor version (fill gaps with a different model).
+    claim_skip_any_version: bool = False
     claim_max_posts_per_run: int = 200
     oriane_base_url: str = "https://connect.oriane.xyz"
     oriane_timeout_s: float = 60.0
