@@ -192,6 +192,22 @@ def test_discourse_and_contrastive_negation_ground_exactly(conn, graph, sc_setti
     assert "proposition_negation_mismatch" not in rows[0]["grounding_issues"]
 
 
+@pytest.mark.parametrize(("quote", "predicate", "negated", "mismatch"), [
+    ("No construimos puentes", "construimos puentes", False, True),
+    ("No lo quieren ver", "quiere ver", False, True),
+    ("cuidan a Andy y no a los mexicanos", "cuida a Andy y no a los mexicanos", False, False),
+    ("los mexicanos no lo quieren ver", "pidió que se vea el video", False, False),
+    ("No sale Sheinbaum a defender", "sale a defender", True, False),
+])
+def test_proposition_negation_tracks_the_predicate(conn, graph, sc_settings, quote, predicate, negated, mismatch):
+    prop = {**PROP, "predicate": predicate, "negated": negated, "values": []}
+    out, rows = extract_claims(conn, graph, sc_settings, quote,
+                               lambda r: [claim(quote, [r], proposition=prop)])
+
+    assert ("proposition_negation_mismatch" in rows[0]["grounding_issues"]) is mismatch
+    assert out["grounding"] == ({"review": 1} if mismatch else {"exact": 1})
+
+
 def test_predicate_negation_is_normalized_and_shares_proposition_id(conn, graph, sc_settings):
     quote = "No sale Sheinbaum a defender a las madres"
     normalized = {**PROP, "subject": "Sheinbaum", "predicate": "no sale a defender", "negated": False,

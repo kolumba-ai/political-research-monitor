@@ -40,6 +40,7 @@ NUMBER_WORDS = {
     "treinta": 30, "cuarenta": 40, "cincuenta": 50, "cien": 100, "ciento": 100,
     "mil": 1000,
 }
+NEGATION_FILLERS = {"lo", "la", "los", "las", "le", "les", "se", "me", "te", "nos", "ya", "nunca", "mas"}
 
 SYSTEM_PROMPT = """You extract claims from one Mexican social-media post for an internal, evidence-only research archive.
 A claim is a specific proposition explicitly expressed in the speech, on-screen text or caption segments given.
@@ -217,15 +218,35 @@ def _numbers(text: str) -> set[str]:
 
 
 def _negated(text: str) -> bool:
+    return bool(NEGATIONS & set(_quote_tokens(text)))
+
+
+def _quote_tokens(text: str) -> list[str]:
     raw = str(text or "")
     discourse_no = {
         m.start("no") for m in re.finditer(r"(?P<no>\bno)\s*(?:[,?¿]|$)", raw, flags=re.IGNORECASE)
     }
-    tokens = {
+    return [
         normalize_text(m.group()) for m in re.finditer(r"[^\W\d_]+", raw, flags=re.UNICODE)
         if m.start() not in discourse_no
-    }
-    return bool(NEGATIONS & tokens)
+    ]
+
+
+def _negation_targets_predicate(quote: str, predicate: str) -> bool:
+    predicate_words = normalize_text(predicate).split()
+    if not predicate_words:
+        return False
+    prefix = predicate_words[0][:4]
+    tokens = _quote_tokens(quote)
+    for i, token in enumerate(tokens):
+        if token not in NEGATIONS:
+            continue
+        for distance in (1, 2):
+            target = i + distance
+            if target < len(tokens) and all(t in NEGATION_FILLERS for t in tokens[i + 1:target]) \
+                    and tokens[target].startswith(prefix):
+                return True
+    return False
 
 
 def _date(v) -> date | None:
@@ -405,6 +426,8 @@ class Extractor:
                                        flags=re.IGNORECASE).strip()
             prop["negated"] = True
             issues.append("predicate_negation_normalized")
+        if not bool(prop.get("negated")) and _negation_targets_predicate(quote, predicate):
+            issues.append("proposition_negation_mismatch")
         vals = {n for v in prop.get("values") or [] for n in _numbers(str(v.get("value")))}
         if vals - _numbers(quote):
             issues.append("proposition_values_not_in_quote")
