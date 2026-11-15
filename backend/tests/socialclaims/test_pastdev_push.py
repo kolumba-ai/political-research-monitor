@@ -21,8 +21,9 @@ def _claims(conn, graph, sc_settings):
 
 
 class FakePast:
-    def __init__(self, identities=None, audiences=None):
+    def __init__(self, identities=None, audiences=None, sources=None, ingest_status="completed"):
         self.calls, self.batches = [], []
+        self.sources, self.ingest_status = sources or [], ingest_status
         self.identities = identities or []
         self.audiences = audiences or [{"slug": "project", "kind": "default", "identities": None}]
 
@@ -50,8 +51,11 @@ class FakePast:
             return httpx.Response(202, json={"ingestionId": f"ing-{n}", "status": "queued", "unchanged": False,
                                              "items": [{"ordinal": i, "status": "queued", "unchanged": False}
                                                        for i in range(len(body["items"]))]})
+        if req.method == "GET" and path == "/trace/roots":
+            return httpx.Response(200, json={"sources": {"entries": self.sources, "hasMore": False}})
         if req.method == "GET" and path.startswith("/ingest/"):
-            return httpx.Response(200, json={"status": "completed", "failure": None})
+            failure = {"message": "boom"} if self.ingest_status == "failed" else None
+            return httpx.Response(200, json={"status": self.ingest_status, "failure": failure})
         return httpx.Response(404, json={"error": path})
 
 
@@ -120,6 +124,57 @@ def test_max_credits_refuses_before_sending(conn, graph, sc_settings):
     out = push(conn, past.client(), "MX", max_credits=1, sleep=lambda s: None)
     assert out["estimated_credits"] > 1 and "exceeds" in out["error"]
     assert past.batches == [] and conn.execute("SELECT count(*) AS n FROM memory_record").fetchone()["n"] == 0
+
+
+def test_shared_audience_is_not_reused(conn, graph, sc_settings):
+    _claims(conn, graph, sc_settings)
+    past = FakePast(identities=[{"identity": "reader-pol-claudia", "traits": {"politician": PID}},
+                                {"identity": "someone-else", "traits": {"politician": "person:MX:otro"}}],
+                    audiences=[{"slug": "shared", "kind": "fixed", "identities": ["reader-pol-claudia", "someone-else"]}])
+    push(conn, past.client(), "MX", sleep=lambda s: None)
+    assert past.batches[0]["items"][0]["audience"] == "pol-claudia-sheinbaum-pardo"
+
+
+def _legacy(oriane_id, name):
+    return {"id": "n1", "kind": "source", "dataPointId": f"oriane:{oriane_id}:v1", "current": True,
+            "headline": f"tiktok post by @x on 2026-11-11 mentioning {name}. 1 claim(s):"}
+
+
+def test_posts_already_written_by_earlier_pipeline_are_skipped(conn, graph, sc_settings):
+    rows = _claims(conn, graph, sc_settings)
+    for name in ("Claudia Sheinbaum Pardo", "Nadie Conocido"):
+        past = FakePast(sources=[_legacy(rows[0]["oriane_id"], name)])
+        out = push(conn, past.client(), "MX", graph=graph, sleep=lambda s: None)
+        assert out["skipped_legacy"] == 1 and out["to_send"] == 0 and past.batches == []
+    past = FakePast(sources=[_legacy(rows[0]["oriane_id"], "Claudia Sheinbaum Pardo")])
+    assert push(conn, past.client(), "MX", graph=graph, skip_legacy=False, sleep=lambda s: None)["sent"] == 1
+
+
+def test_dry_run_with_client_only_reads(conn, graph, sc_settings):
+    _claims(conn, graph, sc_settings)
+    past = FakePast()
+    out = push(conn, past.client(), "MX", graph=graph, dry_run=True)
+    assert out["to_send"] == 1 and out["audiences_to_create"] == ["pol-claudia-sheinbaum-pardo"]
+    assert all(m == "GET" for m, _ in past.calls)
+    assert conn.execute("SELECT count(*) AS n FROM memory_record").fetchone()["n"] == 0
+
+
+def test_unfinished_ingestion_is_rechecked_and_resent_when_failed(conn, graph, sc_settings):
+    _claims(conn, graph, sc_settings)
+    past = FakePast(ingest_status="processing")
+    push(conn, past.client(), "MX", poll_timeout_s=0, sleep=lambda s: None)
+    assert conn.execute("SELECT status FROM memory_record").fetchone()["status"] == "queued"
+    assert push(conn, past.client(), "MX", poll_timeout_s=0, sleep=lambda s: None)["to_send"] == 0
+    past.ingest_status = "failed"
+    out = push(conn, past.client(), "MX", sleep=lambda s: None)
+    assert out["queued_rechecked"] == 1 and out["sent"] == 1 and len(past.batches) == 2
+
+
+def test_filtered_push_does_not_report_other_politicians_stale(conn, graph, sc_settings):
+    _claims(conn, graph, sc_settings)
+    push(conn, FakePast().client(), "MX", sleep=lambda s: None)
+    out = push(conn, None, "MX", politician_ids=["person:MX:otro"], dry_run=True)
+    assert out["stale_records"] == []
 
 
 def test_audience_slug_fits_limit():

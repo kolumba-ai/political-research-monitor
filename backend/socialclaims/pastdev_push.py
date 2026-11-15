@@ -4,20 +4,22 @@ One data point per post x politician, `sc-<oriane_id>-<person slug>`, timed at t
 the politician's audience (`pol-<slug>`, a rule over the reader identity's `politician` trait). The text uses the same
 `<headline>\\n- claims\\n\\nJSON:\\n<payload>` shape that `pull-pastdev` reads. Claims come from the latest successful
 extraction of each post x politician; `grounding = 'failed'` claims are never sent. Every sent id is recorded in
-`memory_record`, and unchanged data points are skipped, so re-runs only send new or changed claims.
+`memory_record`, and unchanged data points are skipped, so re-runs only send new or changed claims. Posts already in
+past.dev under the earlier pipeline's `oriane:<id>:v<n>` ids are left out (their old version is kept).
 """
 from __future__ import annotations
 
 import hashlib
 import json
 import math
+import re
 import time
 from datetime import datetime, timezone
 from urllib.parse import quote
 
 import structlog
 
-from .pastdev import PastDevClient, PastDevError, post_url
+from .pastdev import HEADLINE, PastDevClient, PastDevError, PoliticianResolver, post_url
 
 log = structlog.get_logger(__name__)
 
@@ -26,6 +28,7 @@ CREDIT_BYTES = 350
 MAX_BATCH_ITEMS = 1000
 MAX_BATCH_BYTES = 8 * 1024 * 1024
 CAPTION_CHARS = 1000
+LEGACY_ID = re.compile(r"^oriane:([^:]+):v\d+$")
 
 CLAIMS_SQL = """
 WITH latest AS (
@@ -157,27 +160,34 @@ def _batches(items: list[dict]) -> list[list[dict]]:
     return out
 
 
-def ensure_audiences(client: PastDevClient, items: list[dict], country: str) -> dict[str, str]:
-    """Map each politician to its audience slug, reusing an existing audience that reaches a reader identity whose
-    `politician` trait names them, and creating the reader identity and rule audience otherwise."""
+def resolve_audiences(client: PastDevClient | None, items: list[dict], recorded: dict[str, str]) -> dict[str, dict]:
+    """Per politician: the audience to use and whether it must be created (read-only).
+
+    An existing audience is reused only when every identity it lists is a reader of that same politician, so claims
+    never reach readers of someone else. Otherwise the audience is `audience_slug(pid)`."""
+    pids = sorted({i["metadata"]["politician_id"] for i in items})
+    if client is None:
+        return {pid: {"slug": recorded.get(pid) or audience_slug(pid), "create": False} for pid in pids}
     reader_of = {i["identity"]: (i.get("traits") or {}).get("politician") for i in client.identities()}
     existing = client.audiences()
-    reuse = {}
+    reuse: dict[str, str] = {}
     for a in existing:
-        for ident in a.get("identities") or []:
-            if reader_of.get(ident):
-                reuse.setdefault(reader_of[ident], a["slug"])
+        members = a.get("identities") or []
+        owners = {reader_of.get(ident) for ident in members}
+        if members and len(owners) == 1 and None not in owners:
+            reuse.setdefault(owners.pop(), a["slug"])
     slugs = {a["slug"] for a in existing}
-    mapping: dict[str, str] = {}
+    return {pid: {"slug": reuse[pid], "create": False} if pid in reuse
+            else {"slug": audience_slug(pid), "create": audience_slug(pid) not in slugs} for pid in pids}
+
+
+def create_audiences(client: PastDevClient, plan: dict[str, dict], items: list[dict], country: str) -> list[str]:
+    """Create the reader identity and rule audience for every politician `resolve_audiences` marked `create`."""
     created = []
-    for pid in sorted({i["metadata"]["politician_id"] for i in items}):
-        if pid in reuse:
-            mapping[pid] = reuse[pid]
+    for pid, aud in plan.items():
+        if not aud["create"]:
             continue
-        slug = audience_slug(pid)
-        mapping[pid] = slug
-        if slug in slugs:
-            continue
+        slug = aud["slug"]
         reader = f"reader-{slug}"
         client.put(f"/identities/{quote(reader, safe='')}",
                    {"traits": {"role": "politician-reader", "country": country, "politician": pid}})
@@ -187,49 +197,97 @@ def ensure_audiences(client: PastDevClient, items: list[dict], country: str) -> 
             "rule": {"match": "any", "conditions": [
                 {"trait": "politician", "operator": "is", "values": [pid]},
                 {"trait": "scope", "operator": "is", "values": ["country"]}]}})
-        slugs.add(slug)
+        aud["create"] = False
         created.append(slug)
     if created:
         log.info("pastdev.audiences_created", slugs=created)
-    return mapping
+    return created
 
 
-def push(conn, client: PastDevClient | None, country: str, *, politician_ids: list[str] | None = None,
+def legacy_posts(client: PastDevClient, graph, country: str) -> set[tuple[str, str | None]]:
+    """(oriane_id, politician_id) of current data points written by the earlier pipeline (`oriane:<id>:v<n>`).
+
+    The politician comes from the source headline; when it can't be resolved the post is kept out for everyone."""
+    resolve = PoliticianResolver(graph, country) if graph is not None else None
+    out = set()
+    for src in client.sources():
+        m = LEGACY_ID.match(src.get("dataPointId") or "")
+        if not src.get("current") or not m:
+            continue
+        h = HEADLINE.match(src.get("headline") or "")
+        out.add((m[1], resolve({"name": h["name"]}) if h and resolve else None))
+    return out
+
+
+def refresh_queued(conn, client: PastDevClient, now) -> int:
+    """Re-check ingestions an earlier run left `queued` (poll timed out) so failed ones are resent."""
+    ids = [r["ingestion_id"] for r in conn.execute(
+        "SELECT DISTINCT ingestion_id FROM memory_record WHERE status = 'queued' AND ingestion_id IS NOT NULL")]
+    for ingestion_id in ids:
+        st = client.get(f"/ingest/{ingestion_id}")
+        _settle(conn, ingestion_id, {"status": st.get("status"), "failure": st.get("failure")}, now)
+    return len(ids)
+
+
+def _settle(conn, ingestion_id: str, st: dict, now) -> None:
+    if st["status"] in ("completed", "failed"):
+        conn.execute("UPDATE memory_record SET status = %s, completed_at = %s, error = %s "
+                     "WHERE ingestion_id = %s AND status = 'queued'",
+                     (st["status"], now() if st["status"] == "completed" else None,
+                      json.dumps(st.get("failure")) if st.get("failure") else None, ingestion_id))
+
+
+def push(conn, client: PastDevClient | None, country: str, *, graph=None, politician_ids: list[str] | None = None,
          extractor_version: str | None = None, dry_run: bool = False, max_credits: int | None = None,
-         poll_timeout_s: float = 900.0, poll_interval_s: float = 2.0, sleep=time.sleep, now=None) -> dict:
+         skip_legacy: bool = True, poll_timeout_s: float = 900.0, poll_interval_s: float = 2.0, sleep=time.sleep,
+         now=None) -> dict:
+    """With `dry_run`, past.dev is only read (when a client is given) and nothing is written anywhere."""
     country = country.upper()
     now = now or (lambda: datetime.now(timezone.utc))
     project = f"claims-{country.lower()}"
     items = collect(conn, country, politician_ids, extractor_version)
+
+    legacy = legacy_posts(client, graph, country) if client is not None and skip_legacy else set()
+    kept = [it for it in items if (it["metadata"]["oriane_id"], it["metadata"]["politician_id"]) not in legacy
+            and (it["metadata"]["oriane_id"], None) not in legacy]
+    skipped_legacy, items = len(items) - len(kept), kept
+
+    refreshed = refresh_queued(conn, client, now) if client is not None and not dry_run else 0
     sent = {r["datapoint_id"]: r for r in conn.execute(
-        "SELECT datapoint_id, content_sha256, status, audience FROM memory_record").fetchall()}
+        "SELECT datapoint_id, politician_id, content_sha256, status, audience FROM memory_record "
+        "WHERE past_project = %s AND (%s::text[] IS NULL OR politician_id = ANY(%s))",
+        (project, politician_ids or None, politician_ids or None)).fetchall()}
+    recorded = {r["politician_id"]: r["audience"] for r in sent.values()}
+    plan = resolve_audiences(client, items, recorded)
+    for it in items:
+        it["audience"] = plan[it["metadata"]["politician_id"]]["slug"]
 
     def unchanged(it: dict) -> bool:
         rec = sent.get(it["id"])
         return bool(rec and rec["status"] != "failed" and rec["content_sha256"] == item_sha256(it))
 
-    if client is not None and not dry_run:
-        mapping = ensure_audiences(client, items, country)
-        for it in items:
-            it["audience"] = mapping[it["metadata"]["politician_id"]]
     todo = [it for it in items if not unchanged(it)]
-    current_ids = {it["id"] for it in items}
     summary = {
         "country": country, "project": project, "data_points": len(items),
         "claims": sum(len(it["metadata"]["claim_ids"]) for it in items),
         "politicians": len({it["metadata"]["politician_id"] for it in items}),
-        "already_sent": len(items) - len(todo), "to_send": len(todo),
+        "skipped_legacy": skipped_legacy, "already_sent": len(items) - len(todo), "to_send": len(todo),
         "to_send_claims": sum(len(it["metadata"]["claim_ids"]) for it in todo),
         "bytes": sum(len(it["content"].encode()) for it in todo),
         "estimated_credits": sum(credits_for(it["content"]) for it in todo),
-        "stale_records": sorted(set(sent) - current_ids)[:50],
+        "audiences_to_create": sorted(a["slug"] for a in plan.values() if a["create"]),
+        "queued_rechecked": refreshed,
+        "stale_records": sorted(set(sent) - {it["id"] for it in items})[:50],
         "dry_run": dry_run,
     }
+    if client is None and not dry_run:
+        raise ValueError("a past.dev client is required unless dry_run")
     if dry_run or not todo:
         return summary
     if max_credits is not None and summary["estimated_credits"] > max_credits:
         summary["error"] = f"estimated {summary['estimated_credits']} credits exceeds --max-credits {max_credits}"
         return summary
+    create_audiences(client, plan, items, country)
 
     ingestions, errors, sent_count = [], [], 0
     for batch in _batches(todo):
@@ -252,12 +310,7 @@ def push(conn, client: PastDevClient | None, country: str, *, politician_ids: li
     statuses = {}
     for ingestion_id in ingestions:
         statuses[ingestion_id] = _wait(client, ingestion_id, poll_timeout_s, poll_interval_s, sleep)
-        st = statuses[ingestion_id]
-        if st["status"] in ("completed", "failed"):
-            conn.execute("UPDATE memory_record SET status = %s, completed_at = %s, error = %s "
-                         "WHERE ingestion_id = %s AND status = 'queued'",
-                         (st["status"], now() if st["status"] == "completed" else None,
-                          json.dumps(st.get("failure")) if st.get("failure") else None, ingestion_id))
+        _settle(conn, ingestion_id, statuses[ingestion_id], now)
     summary.update({"batches": len(ingestions), "sent": sent_count, "ingestions": statuses, "errors": errors})
     return summary
 

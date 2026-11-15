@@ -145,7 +145,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("ids", nargs="*", help="politician ids or names (default: every politician with claims)")
     p.add_argument("--country", default="MX")
     p.add_argument("--extractor-version", help="only claims of this version (default: latest extraction per post)")
-    p.add_argument("--dry-run", action="store_true", help="count data points and estimate credits; no past.dev call")
+    p.add_argument("--dry-run", action="store_true",
+                   help="count data points and estimate credits; past.dev is only read (if a key is set)")
+    p.add_argument("--include-legacy", action="store_true",
+                   help="also send posts already in past.dev under the earlier pipeline's oriane:<id>:v<n> ids")
     p.add_argument("--confirm-spend", action="store_true")
     p.add_argument("--max-credits", type=_positive_int, help="refuse when the estimate exceeds this many credits")
     p = sub.add_parser("thumbnails", help="backfill thumbnail URLs from raw payloads and download them (no Oriane API call)")
@@ -184,13 +187,14 @@ def main(argv: list[str] | None = None) -> int:
             print("refusing: past.dev ingest is billed; pass --confirm-spend (or --dry-run)", file=sys.stderr)
             return 2
         ids = [_pid(_graph(s), i, args.country) for i in args.ids] or None
-        client = None if args.dry_run else PastDevClient(
+        client = None if args.dry_run and not s.past_dev_api_key else PastDevClient(
             s.past_dev_api_key, s.past_dev_base_url, s.past_dev_timeout_s,
             rate_limiter_database_url=s.rate_limiter_database_url,
             requests_per_second=s.pastdev_requests_per_second,
         )
-        out = push(conn, client, args.country, politician_ids=ids, extractor_version=args.extractor_version,
-                   dry_run=args.dry_run, max_credits=args.max_credits)
+        out = push(conn, client, args.country, graph=_graph(s), politician_ids=ids,
+                   extractor_version=args.extractor_version, dry_run=args.dry_run, max_credits=args.max_credits,
+                   skip_legacy=not args.include_legacy)
         _out(out)
         return 1 if out.get("error") or out.get("errors") else 0
     if args.cmd == "migrate":

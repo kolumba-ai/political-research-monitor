@@ -82,12 +82,14 @@ extraction, excluding claims with `grounding = 'failed'`. It is timed at the pos
 `<headline>`, bullet list, `JSON:` payload shape that `pull-pastdev` reads, with Postgres `claim_id`s in the payload.
 Each politician gets an audience `pol-<slug>` (at most 40 characters). It is a rule audience that reaches identities
 whose `politician` trait is that person, or whose `scope` trait is `country`. Each audience also gets a reader identity,
-`reader-pol-<slug>`. An existing audience that already reaches a reader for the politician is reused. Items go out in
+`reader-pol-<slug>`. An existing audience is reused only when every identity it lists reads that same politician.
+Posts already in past.dev under the earlier pipeline's `oriane:<id>:v<n>` ids are skipped and keep their old version
+(`--include-legacy` sends them anyway). Items go out in
 `POST /ingest/batch` calls of up to 1,000, each with a content-derived `idempotencyKey`. The command then polls
 `GET /ingest/{id}` until each batch is `completed`. Every sent id, ingestion and content hash is stored in
-`memory_record`, because past.dev cannot list them back. A re-run sends only new or changed data points; a changed one
+`memory_record`, because past.dev cannot list them back. A re-run first re-checks ingestions an earlier run left `queued`, then sends only new, changed or failed data points; a changed one
 replaces the earlier revision under the same id. Ingest costs one credit per 350 bytes, so `--dry-run` reports the
-number of data points and the estimated credits without calling past.dev. A paid run needs `--confirm-spend`, and
+number of data points and the estimated credits, only reading past.dev and writing nothing. A paid run needs `--confirm-spend`, and
 `--max-credits N` refuses a run whose estimate is higher than N.
 
 ```bash
