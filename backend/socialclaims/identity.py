@@ -31,14 +31,14 @@ def resolve_redirect(conn, politician_id: str) -> str:
 
 def add_redirect(conn, old_id: str, new_id: str, reason: str, created_by: str) -> None:
     """Record a System A identity merge. Existing rows keep `old_id`; readers follow the redirect."""
+    if old_id == new_id or resolve_redirect(conn, new_id) == old_id:
+        raise ValueError("redirect would create a cycle")
     with conn.transaction():
         conn.execute("INSERT INTO person_id_redirect(old_id, new_id, reason, created_by) VALUES (%s,%s,%s,%s) "
                      "ON CONFLICT (old_id) DO UPDATE SET new_id = EXCLUDED.new_id, reason = EXCLUDED.reason, "
                      "created_by = EXCLUDED.created_by, created_at = now()", (old_id, new_id, reason, created_by))
         conn.execute("INSERT INTO reconciliation_job(politician_id, kind, diff) VALUES (%s, 'id_redirected', %s)",
                      (old_id, Jsonb({"new_id": new_id, "reason": reason})))
-    if resolve_redirect(conn, new_id) == old_id:
-        raise ValueError("redirect would create a cycle")
 
 
 def load_terms(conn, politician_id: str) -> QueryTerms:
