@@ -28,7 +28,7 @@ Do not commit `.env`. Hosted Modal execution uses the existing `neon-db` and `ll
 
 ## Migrate and seed
 
-The migration uses an advisory lock and a schema checksum, so it is safe to run repeatedly:
+The migration applies `db/schema.sql` and then each `db/migrations/NNN_*.sql` once, under an advisory lock with a checksum per file, so it is safe to run repeatedly:
 
 ```bash
 .venv/bin/python -m system_d.migrate
@@ -36,6 +36,28 @@ The migration uses an advisory lock and a schema checksum, so it is safe to run 
 ```
 
 The seed contains illustrative, unverified Spanish claims and comments. Social reaction sentiment and stance start unset and are scored by the social-scorer agent.
+
+## Link storylines (real claims)
+
+`db/migrations/002_storylines.sql` adds nullable `politicians.person_id`, `aggregated_claims.storyline_id`/`storyline_label` and `claims.source_claim_id`, so System D can poll the explorer's storylines instead of the demo seed. Load the top storylines per politician from a socialclaims export:
+
+```bash
+SOURCE_DATABASE_URL=<System B database, read-only> .venv/bin/python -m system_d.link_storylines \
+  --export-dir ../var/socialclaims/claims/MX \
+  --politicians person:MX:claudia-sheinbaum-pardo,person:MX:clara-marina-brugada-molina --top 10
+```
+
+Each storyline becomes one aggregated claim (its claim versions' statements, counter-claims excluded), with up to `--max-comments` real post comments from System B's `segment` table as social reactions. `--dry-run` prints the selection without writing. The last line printed is a `--claims` list for `modal_app.py::run_simulation`. Re-running is idempotent.
+
+To revert, `--remove` deletes every storyline-linked row and its poll results, leaving the demo seed untouched; then drop the columns if needed:
+
+```sql
+drop index politicians_person_id_key, aggregated_claims_storyline_id_key, claims_source_claim_id_key;
+alter table politicians drop column person_id;
+alter table aggregated_claims drop column storyline_id, drop column storyline_label;
+alter table claims drop column source_claim_id;
+delete from system_d_schema_migrations where filename = '002_storylines.sql';
+```
 
 ## Run a simulation
 
