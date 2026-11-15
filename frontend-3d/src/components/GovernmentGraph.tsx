@@ -3,7 +3,6 @@ import cytoscape, { type Core, type ElementDefinition } from "cytoscape";
 import ELK from "elkjs/lib/elk.bundled.js";
 import { ChevronLeft, ChevronRight, Focus, LoaderCircle, Minus, Network, Plus, RotateCcw, UserRound } from "lucide-react";
 import { Badge, Button, ExtLink } from "./ui";
-import { PoliticianSocialClaims } from "./SocialClaims";
 import { fmtDate } from "../lib/presentation";
 import { detailUrl, graphGet, kindName, NODE_COLORS, valueText, visibleChildren,
   type GraphChild, type GraphChildren, type GraphDetail } from "../lib/graph";
@@ -14,6 +13,7 @@ interface Props {
   lowMotion: boolean;
   initialNode?: string;
   onNodeChange?: (id: string) => void;
+  onOpenPerson?: (id: string) => void;
 }
 interface Level { parent: string | null; children: GraphChild[]; page: number }
 interface TreeState { levels: Level[]; openPath: string[] }
@@ -23,7 +23,7 @@ const summaryFields = ["article", "constitutional_basis", "constitutional_articl
   "selection_method", "is_elected", "seats", "seat_count", "seat_types", "term_years", "term_start", "term_end",
   "description", "notes", "status"];
 
-export default function GovernmentGraph({ iso2, countryName, initialNode, onNodeChange }: Props) {
+export default function GovernmentGraph({ iso2, countryName, initialNode, onNodeChange, onOpenPerson }: Props) {
   const root = `country:${iso2}`;
   const box = useRef<HTMLDivElement>(null);
   const cy = useRef<Core | null>(null);
@@ -189,13 +189,13 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
     const graph = cytoscape({ container: box.current, minZoom: 0.08, maxZoom: 2.2, autoungrabify: true,
       wheelSensitivity: 0.18, layout: { name: "preset" }, style: [
         { selector: "node", style: { shape: "round-rectangle", width: 178, height: 64, "background-color": "#ffffff",
-          "border-color": "data(color)", "border-width": 1.5, color: "#111827", label: "data(display)",
+          "border-color": "data(color)", "border-width": 1.5, "underlay-color": "#0f172a", "underlay-opacity": 0.04, "underlay-padding": 4, "underlay-shape": "round-rectangle", color: "#111827", label: "data(display)",
           "font-size": 11, "font-family": "system-ui, sans-serif", "text-wrap": "wrap", "text-max-width": "158px",
           "text-valign": "center", "text-halign": "center", "text-overflow-wrap": "whitespace" } },
         { selector: "node.open", style: { "background-color": "#eef2ff", "border-width": 2.5 } },
-        { selector: "node:selected", style: { "border-color": "#3557e6", "border-width": 3 } },
+        { selector: "node:selected", style: { "border-color": "#4f46e5", "border-width": 3, "underlay-color": "#4f46e5", "underlay-opacity": 0.18, "underlay-padding": 6 } },
         { selector: "edge", style: { width: 1.2, "line-color": "#b6bfd1", "target-arrow-color": "#b6bfd1",
-          "target-arrow-shape": "triangle", "arrow-scale": 0.65, "curve-style": "taxi", "taxi-direction": "rightward", "taxi-turn": "50%" } },
+          "target-arrow-shape": "triangle", "arrow-scale": 0.65, "curve-style": "taxi", "taxi-direction": "downward", "taxi-turn": "50%" } },
         { selector: "edge.former", style: { "line-style": "dashed" } },
       ] });
     cy.current = graph;
@@ -235,8 +235,8 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
       box.current.dataset.layoutReady = "false";
     }
     if (!elements.length) return;
-    void elk.layout({ id: "graph", layoutOptions: { "elk.algorithm": "layered", "elk.direction": "RIGHT",
-      "elk.spacing.nodeNode": "20", "elk.layered.spacing.nodeNodeBetweenLayers": "70",
+    void elk.layout({ id: "graph", layoutOptions: { "elk.algorithm": "layered", "elk.direction": "DOWN",
+      "elk.spacing.nodeNode": "26", "elk.layered.spacing.nodeNodeBetweenLayers": "56",
       "elk.layered.considerModelOrder.strategy": "NODES_AND_EDGES" },
       children: graph.nodes().map((n) => ({ id: n.id(), width: 178, height: 64 })),
       edges: graph.edges().map((e) => ({ id: e.id(), sources: [e.source().id()], targets: [e.target().id()] })),
@@ -291,6 +291,8 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
       <label className="flex items-center gap-1.5"><input type="checkbox" checked={includeSingle} onChange={(e) => setIncludeSingle(e.target.checked)} />Include single-source claims</label>
       <label className="flex items-center gap-1.5"><input type="checkbox" checked={includeFormer} onChange={(e) => setIncludeFormer(e.target.checked)} />Include former holders</label>
     </div>
+    <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
+    <div className="flex min-h-[420px] min-w-0 flex-1 flex-col">
     {siblings.length > 1 && <label className="flex items-center gap-2 border-b border-line px-3 py-2 text-[11px] text-muted">
       <span className="shrink-0">Browse this level</span>
       <select aria-label="Browse records at the selected level" value={selected} className="min-w-0 flex-1 rounded-md border border-line bg-ink-900 px-2 py-1 text-xs text-fg focus-visible:outline-2 focus-visible:outline-accent" onChange={(event) => void open(event.target.value, selectedLevel)}>
@@ -311,7 +313,8 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
       <span>Records {currentLevel.page * PAGE_SIZE + 1}–{Math.min((currentLevel.page + 1) * PAGE_SIZE, currentLevel.children.length)} of {currentLevel.children.length}</span>
       <Button aria-label="Next records" disabled={currentLevel.page + 1 >= pageCount} onClick={() => changePage(currentLevel.page + 1)}><ChevronRight className="size-3.5" /></Button>
     </div>}
-    <div className="max-h-[43vh] min-h-[100px] overflow-y-auto border-t border-line bg-ink-900/85 p-4" aria-label="Selected record details" aria-live="polite">
+    </div>
+    <aside className="max-h-[50vh] min-h-[100px] overflow-y-auto border-t border-line bg-white p-4 lg:max-h-none lg:w-[340px] lg:shrink-0 lg:border-t-0 lg:border-l" aria-label="Selected record details" aria-live="polite">
       {detailError ? <div className="text-xs text-bad">{detailError}<Button className="ml-2" onClick={() => setDetailVersion((v) => v + 1)}>Retry details</Button></div> : !detail ?
         <p className="text-xs text-muted">Loading record details…</p> : <>
         <nav aria-label="Government hierarchy" className="mb-2 flex flex-wrap items-center gap-x-1 text-[10px] text-muted">
@@ -331,7 +334,8 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
         </div>)}
         {!!detail.parties?.length && <p className="mt-3 text-xs"><span className="text-muted">Party: </span>{detail.parties.map((p) => p.party.name).join(", ")}</p>}
         {detail.node.label === "Person" && jurisdiction && <p className="mt-2 text-xs"><span className="text-muted">Jurisdiction: </span>{jurisdiction.name}</p>}
-        {detail.node.label === "Person" && <PoliticianSocialClaims iso2={iso2} politicianId={detail.node.id} />}
+        {detail.node.label === "Person" && onOpenPerson && <button onClick={() => onOpenPerson(detail.node.id)} className="mt-3 flex w-full items-center gap-2 rounded-lg bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent/90">
+          <UserRound className="size-4" />Open politician profile & claims<ChevronRight className="ml-auto size-4" /></button>}
         <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-xs">
           {summaryFields.filter((key) => detail.node[key] !== undefined && detail.node[key] !== null && detail.node[key] !== "").map((key) => <div key={key} className="contents"><dt className="text-muted">{valueText(key)}</dt><dd className="min-w-0 break-words">{valueText(detail.node[key])}</dd></div>)}
         </dl>
@@ -354,6 +358,7 @@ export default function GovernmentGraph({ iso2, countryName, initialNode, onNode
           </div>) : <p className="mt-2 text-xs text-muted">No source links are stored for this record.</p>}
         </details>
       </>}
+    </aside>
     </div>
   </div>;
 }

@@ -100,7 +100,7 @@ def create_app() -> FastAPI:
         if node["label"] == "Person":
             extra["offices"] = [{"edge": e, "office": {"id": o["id"], "name": o.get("name")}}
                                 for e, o in store.edges(node_id, "HOLDS_OFFICE", "out")]
-            extra["parties"] = [{"edge": e, "party": {"id": p["id"], "name": p.get("name")}}
+            extra["parties"] = [{"edge": e, "party": {"id": p["id"], "name": p.get("name"), "acronym": p.get("acronym")}}
                                 for e, p in store.edges(node_id, "MEMBER_OF_PARTY", "out")]
             terms = [t for _, t in store.edges(node_id, "TERM_HELD_BY", "in")]
             extra["terms"] = [{**t, "sources": store.sources_for(t["id"])} for t in terms]
