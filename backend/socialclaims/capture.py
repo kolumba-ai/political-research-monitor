@@ -185,12 +185,17 @@ class Capturer:
             with self.conn.transaction():
                 record_usage(self.conn, run_id, "/rest/contents/search", self.usage_purpose, projection, resp.status,
                              resp.request_id, len(results), credits_for(len(results), projection), now)
+                credits += credits_for(len(results), projection)
+                self.conn.execute("UPDATE run SET request_ids = %s, credits_used = %s WHERE run_id = %s",
+                                  (request_ids, credits, run_id))
             with self.conn.transaction():
                 page = self._store_page(run_id, pid, ref, resp, params, body, now, excluded_fields, ctx, branch_counts)
-            manifest["pages"].append(page)
-            rows += len(results)
-            credits += credits_for(len(results), projection)
-            offset += len(results)
+                manifest["pages"].append(page)
+                rows += len(results)
+                offset += len(results)
+                self.conn.execute("UPDATE run SET rows_returned = %s, next_offset = %s, total_count = %s, "
+                                  "branch_counts = %s, manifest = %s WHERE run_id = %s",
+                                  (rows, offset, total, Jsonb(branch_counts), Jsonb(manifest), run_id))
             if not results or len(results) < limit or (total is not None and offset >= total):
                 break
 
