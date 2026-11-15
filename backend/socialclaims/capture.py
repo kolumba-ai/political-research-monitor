@@ -85,7 +85,8 @@ class Capturer:
         return self.s.csv(self.s.platforms)
 
     def plan(self, politician_id: str, *, date_from: str | None = None, date_to: str | None = None,
-             max_posts: int | None = None, allow_review: bool = False) -> dict:
+             max_posts: int | None = None, allow_review: bool = False,
+             exclude_ids: list[str] | None = None) -> dict:
         """Sync the identity snapshot and build the exact request, without calling Oriane."""
         sync = sync_ref(self.conn, self.graph, politician_id, self.platforms)
         pid = sync["politician_id"]
@@ -98,7 +99,7 @@ class Capturer:
         today = self.clock().date()
         d_to = date_to or today.isoformat()
         d_from = date_from or (date.fromisoformat(d_to) - timedelta(days=self.s.default_window_days)).isoformat()
-        excl = captured_ids(self.conn, pid)
+        excl = captured_ids(self.conn, pid) if exclude_ids is None else list(exclude_ids)
         body, n_excl = request_body(ref["query_json"], d_from, d_to, excl, self.s.oriane_max_filter_values)
         cap = max_posts or self.s.max_posts_per_politician
         per = ORIANE_CREDITS_PER_ROW[self.s.oriane_projection]
@@ -299,6 +300,7 @@ class RawReplayClient:
         self.rows = sum(len((e["response"].get("data") or {}).get("results") or []) for e in self.pages.values())
         # Reproduces the original per-page limits when passed as max_posts.
         self.max_posts = sum(e["request"]["params"]["limit"] for e in self.pages.values())
+        self.exclude_ids = ((self.body.get("filters") or {}).get("id") or {}).get("excludes") or []
 
     def search_contents(self, body, *, offset, limit, projection, sort) -> OrianeResponse:
         env = self.pages.get(offset)

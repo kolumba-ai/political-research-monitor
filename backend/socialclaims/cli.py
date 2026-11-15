@@ -173,5 +173,6 @@ def main(argv: list[str] | None = None) -> int:
         cap = Capturer(conn, graph, rc, s, clock=lambda: rc.captured_at)
         cap.usage_purpose = "capture-replay"
         _out(cap.capture(_pid(graph, args.id, args.country), date_from=window["after"], date_to=window["before"],
-                         max_posts=rc.max_posts, allow_review=args.allow_review))
+                         max_posts=rc.max_posts, allow_review=args.allow_review,
+                         exclude_ids=rc.exclude_ids))
     return 0
