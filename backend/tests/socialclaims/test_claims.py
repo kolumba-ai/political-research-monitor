@@ -1,5 +1,9 @@
 import re
 import json
+import os
+import subprocess
+import sys
+from pathlib import Path
 import httpx
 import pytest
 
@@ -180,6 +184,36 @@ def test_decimal_comma_is_not_a_thousands_separator():
     assert _numbers("2,5% y 25% y 1,250,000 y 3.7.") == {"2.5", "25", "1250000", "3.7"}
     a, b = ({**PROP, "values": [{"value": v, "unit": "%"}]} for v in ("2,5", "25"))
     assert _prop_id(a, (None, None)) != _prop_id(b, (None, None))
+
+
+def test_por_ciento_does_not_add_a_hundred():
+    assert _numbers("5 por ciento") == {"5"}
+
+
+def test_value_percent_unit_matches_percent_quote(conn, graph, sc_settings):
+    quote = "El índice subió 5%"
+    prop = {**PROP, "values": [{"value": "5", "unit": "por ciento"}]}
+    out, rows = extract_claims(conn, graph, sc_settings, quote,
+                               lambda r: [claim(quote, [r], proposition=prop)])
+
+    assert out["grounding"] == {"exact": 1}
+    assert "proposition_values_not_in_quote" not in rows[0]["grounding_issues"]
+
+
+def test_prop_id_is_stable_across_hash_seeds():
+    script = (
+        "from socialclaims.claims import _prop_id; "
+        "p={'subject':'a','predicate':'b','negated':False,"
+        "'values':[{'value':'2 3','unit':'unidades'}],'place':None,'qualifiers':[]}; "
+        "print(_prop_id(p,(None,None)))"
+    )
+    backend = Path(__file__).resolve().parents[2]
+    ids = []
+    for seed in ("1", "2"):
+        env = os.environ.copy()
+        env["PYTHONHASHSEED"] = seed
+        ids.append(subprocess.check_output([sys.executable, "-c", script], cwd=backend, env=env, text=True).strip())
+    assert ids[0] == ids[1]
 
 
 def test_three_place_percentages_remain_decimals_and_distinct():

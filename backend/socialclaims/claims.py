@@ -193,7 +193,7 @@ def _number(raw: str, decimal_percent: bool = False) -> str:
     return re.sub(r"\.0+$", "", number)
 
 
-def _numbers(text: str, include_words: bool = True) -> set[str]:
+def _numbers(text: str, include_words: bool = True, decimal_percent: bool = False) -> set[str]:
     raw = text or ""
     tokens = list(re.finditer(r"\d[\d,.]*|[^\W\d_]+", raw, flags=re.UNICODE))
 
@@ -204,8 +204,9 @@ def _numbers(text: str, include_words: bool = True) -> set[str]:
         token = word(match)
         if token in NUMBER_WORDS:
             return NUMBER_WORDS[token] if include_words else None
-        decimal_percent = bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[match.end():], flags=re.IGNORECASE))
-        canonical = _number(token, decimal_percent=decimal_percent)
+        is_percent = decimal_percent or bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[match.end():],
+                                                      flags=re.IGNORECASE))
+        canonical = _number(token, decimal_percent=is_percent)
         return int(canonical) if canonical.isdigit() else None
 
     numbers = set()
@@ -224,13 +225,22 @@ def _numbers(text: str, include_words: bool = True) -> set[str]:
                 i += 3 if trailing is not None else 2
                 continue
         if token in NUMBER_WORDS and include_words:
+            if token in {"cien", "ciento"} and i > 0 and word(tokens[i - 1]) == "por":
+                i += 1
+                continue
             numbers.add(str(NUMBER_WORDS[token]))
         elif re.match(r"\d", token):
-            decimal_percent = bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[tokens[i].end():],
-                                            flags=re.IGNORECASE))
-            numbers.add(_number(token, decimal_percent=decimal_percent))
+            is_percent = decimal_percent or bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[tokens[i].end():],
+                                                          flags=re.IGNORECASE))
+            numbers.add(_number(token, decimal_percent=is_percent))
         i += 1
     return numbers
+
+
+def _value_numbers(value: dict) -> list[str]:
+    unit = str(value.get("unit") or "").strip()
+    decimal_percent = unit == "%" or normalize_text(unit) == "por ciento"
+    return sorted(_numbers(str(value.get("value")), decimal_percent=decimal_percent))
 
 
 def _negated(text: str) -> bool:
@@ -273,10 +283,7 @@ def _date(v) -> date | None:
 
 
 def _prop_id(p: dict, period: tuple[date | None, date | None]) -> str:
-    values = sorted(
-        f"{_numbers(str(v.get('value')) + ' ' + str(v.get('unit') or ''))}|{normalize_text(v.get('unit') or '')}"
-        for v in p.get("values") or []
-    )
+    values = sorted((_value_numbers(v), normalize_text(v.get("unit") or "")) for v in p.get("values") or [])
     key = [normalize_text(p.get("subject") or ""), normalize_text(p.get("predicate") or ""), bool(p.get("negated")),
            values,
            normalize_text(p.get("place") or ""), [str(d) if d else None for d in period],
@@ -455,7 +462,7 @@ class Extractor:
             issues.append("predicate_negation_normalized")
         if not bool(prop.get("negated")) and _negation_targets_predicate(quote, predicate):
             issues.append("proposition_negation_mismatch")
-        vals = {n for v in prop.get("values") or [] for n in _numbers(f"{v.get('value')} {v.get('unit') or ''}")}
+        vals = {n for v in prop.get("values") or [] for n in _value_numbers(v)}
         if vals - _numbers(quote):
             issues.append("proposition_values_not_in_quote")
         quote_negated = _negated(quote)
