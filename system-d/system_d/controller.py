@@ -209,13 +209,14 @@ def run_simulation(
             before_counts[claim_id] = len(responses)
             social_sentiment = store.get_social_sentiment(claim_id)
             decision = decide(responses, strata, social_sentiment, settings.stopping_config())
+            if decision.status == "capped":
+                queue_rewrite(claim_id)
             store.upsert_sampling_state(claim_id, sim_run, decision.stats, decision.status)
             latest_decisions[claim_id] = decision
             states[claim_id] = None
             if decision.status in TERMINAL_STATUSES:
                 terminal_ids.append(claim_id)
                 if decision.status == "capped":
-                    queue_rewrite(claim_id)
                     _write_log(log, f"claim {claim_id} capped; queued a question rewrite for the next run")
                 continue
             batch_no = store.max_batch_no(claim_id, sim_run) + 1

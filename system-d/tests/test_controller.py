@@ -252,6 +252,34 @@ def test_capped_claim_queues_rewrite_and_is_not_repolled():
     assert summaries[0].status == "capped"
 
 
+def test_failed_capped_rewrite_does_not_persist_terminal_state():
+    store = FakeStore(strata=(("stratum-a", 1.0),))
+    settings = replace(Settings(), seed_batch=1, max_calls=1, min_per_stratum=0, max_usd=1)
+
+    def poll_batch(tasks):
+        store.record_response(tasks[0])
+        return [{"ok": True, "usage_usd": 0.001, "completed": True}]
+
+    def fail_rewrite(*args):
+        raise RuntimeError("rewrite failed")
+
+    with pytest.raises(RuntimeError, match="rewrite failed"):
+        run_simulation(
+            store,
+            "run-1",
+            None,
+            settings,
+            poll_batch,
+            prepare_fn=empty_usage,
+            log=lambda _: None,
+            sample_fn=make_sampler(store),
+            rewrite_fn=fail_rewrite,
+            llm=FakeLLM(),
+        )
+
+    assert store.states[("claim-1", "run-1")]["status"] == "polling"
+
+
 def test_failed_poll_tasks_are_not_counted_as_attempts():
     store = FakeStore()
     settings = replace(Settings(), seed_batch=2, max_calls=20, max_usd=1)
