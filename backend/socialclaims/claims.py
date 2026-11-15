@@ -211,7 +211,7 @@ def build_prompt(snap, post_meta: dict, segs: list[dict], taxonomy: dict) -> tup
             continue
         shown = s["text"]
         if len(shown) > room:
-            shown = shown[:room].rsplit(None, 1)[0] + " [...]"  # cut at a word boundary so no figure is split
+            shown = (shown[:room - 6].rsplit(None, 1) or [""])[0] + " [...]"  # cut at a word boundary so no figure is split
         used += len(shown)
         ref = f"s{s['ordinal']}"
         refs[ref] = s

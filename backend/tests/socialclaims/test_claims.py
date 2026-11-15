@@ -156,3 +156,12 @@ def test_oversized_speech_does_not_hide_caption(graph):
     segs[0]["text"] = "1234567 " * 2000
     prompt, _ = build_prompt(read_person(graph, PID), {}, segs, {"topics": []})
     assert "1234567 [...]" in prompt and not re.search(r"\b(?!1234567\b)\d+ \[\.\.\.\]", prompt)
+
+
+def test_truncation_marker_does_not_eat_a_short_caption(graph):
+    from socialclaims.systema import read_person
+    for n in range(1, 9):
+        segs = [{"source": "speech", "ordinal": 0, "text": "ab " * 5000 + "x" * n, "start_s": 0.0, "end_s": 9.0},
+                {"source": "caption", "ordinal": 1, "text": "Bajó 2%", "start_s": None, "end_s": None}]
+        prompt, refs = build_prompt(read_person(graph, PID), {}, segs, {"topics": []})
+        assert "Bajó 2%" in prompt and "s1" in refs
