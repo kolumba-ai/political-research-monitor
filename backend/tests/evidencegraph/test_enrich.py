@@ -336,3 +336,24 @@ def test_run_stops_after_consecutive_failures(conn, ev_settings, tmp_path):
     out = enricher.run(None, None)
     assert out["stopped"] == "consecutive_failures" and len(out["errors"]) == enrich_module.MAX_CONSECUTIVE_FAILURES
     assert conn.execute("SELECT count(*) AS n FROM ev_proposition_queue WHERE status = 'queued'").fetchone()["n"] == 7
+
+
+def test_unfinished_write_is_retried_without_new_search(conn, ev_settings, tmp_path):
+    _setup(conn)
+
+    class SlowThenDone(FakePast):
+        slow = True
+
+        def handler(self, request):
+            if request.method == "GET" and "/ingest/" in request.url.path and self.slow:
+                self.calls.append(("GET", request.url.path, None))
+                return httpx.Response(200, json={"status": "processing"})
+            return super().handler(request)
+
+    past, llm, exa = SlowThenDone(), FakeLLM(), FakeExa()
+    settings = ev_settings.model_copy(update={"enrich_poll_timeout_s": 0})
+    enricher, _ = _enricher(conn, settings, tmp_path, past, exa=exa, llm=llm)
+    assert enricher.run(None, 5)["results"][0]["status"] == "queued"
+    past.slow, llm.calls, exa.calls = False, [], []
+    out = enricher.run(None, 5)
+    assert out["results"][0]["status"] == "mapped" and llm.calls == [] and exa.calls == []

@@ -36,6 +36,9 @@ class EvidenceSettings(BaseSettings):
     enrich_results_per_query: int = 5
     enrich_max_documents: int = 8
     enrich_page_chars: int = 24_000
+    # How long to wait for past.dev to finish a batch; unfinished propositions stay queued and a later run only
+    # re-projects them (their judgements are reused, no new search).
+    enrich_poll_timeout_s: float = 20.0
     # Query-plan rows to search (comma-separated subset of neutral,counter,primary,indicator,fact_check,expert,english).
     enrich_rows: str = "neutral,counter,primary,indicator,fact_check,expert,english"
     # Prices used for the spend cap and estimates; check them against the real rates of the model and plan.

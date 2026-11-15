@@ -214,6 +214,10 @@ class Enricher:
                 planned.append(q)
         return planned, usage
 
+    def _discover(self, prop: dict, claims: list[dict]) -> tuple[list[dict], list[dict]]:
+        rows, _ = self.plan(prop, claims)
+        return rows, self.search(prop, rows)
+
     def _domains(self, classes: list[str]) -> list[str]:
         return [r["domain"] for r in self.conn.execute(
             "SELECT domain FROM ev_source_registry WHERE list = 'allow' AND source_class = ANY(%s) ORDER BY domain",
@@ -312,9 +316,12 @@ class Enricher:
         if not claims:
             self._set_status(prop, "skipped", "no_current_claims")
             return {"proposition_id": prop["proposition_id"], "status": "skipped"}
+        judged = prop["mapped_at"] is None and self.conn.execute(
+            "SELECT 1 FROM ev_evidence_link WHERE proposition_id = %s AND mapper_version = %s LIMIT 1",
+            (prop["proposition_id"], self.settings.mapper_version)).fetchone() is not None
         try:
-            rows, _ = self.plan(prop, claims)
-            candidates = self.search(prop, rows)
+            # Judged in an earlier run whose past.dev write did not complete: only project again.
+            rows, candidates = ([], []) if judged else self._discover(prop, claims)
             stances: dict[str, int] = {}
             fetched_n = 0
             for cand in candidates:
@@ -326,7 +333,8 @@ class Enricher:
                 key = link["stance"] if link["quote_verified"] or link["stance"] == "irrelevant" else "unverified"
                 stances[key] = stances.get(key, 0) + 1
             pushed = projection.project(self.conn, self.client, prop, claims, country=self.country,
-                                        mapper_version=self.settings.mapper_version, sleep=self.sleep, now=self.now)
+                                        mapper_version=self.settings.mapper_version, sleep=self.sleep, now=self.now,
+                                        poll_timeout_s=self.settings.enrich_poll_timeout_s)
             self.spend.add_pastdev(pushed.get("credits_sent", 0))
         except Exception:
             self._set_status(prop, "queued")
