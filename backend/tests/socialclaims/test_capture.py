@@ -290,3 +290,18 @@ def test_capture_branch_subset(conn, graph, sc_settings):
     assert run["query_id"] == identity.current_ref(conn, PID)["query_id"]
     with pytest.raises(NotTrackable):
         c.plan(PID, branches=["hashtag"])
+
+
+def test_rematch_moves_name_only_posts_without_a_current_variant_to_low(conn, graph, sc_settings):
+    results = [make_result(0), make_result(1, caption="un mensaje de paz", media=[]),
+               make_result(2, matched=("tagged",), caption="sin nombre", media=[])]
+    cap(conn, graph, sc_settings, FakeOriane(results)).capture(PID)
+    from socialclaims.capture import rematch
+    dry = rematch(conn, graph, sc_settings, PID)
+    assert (dry["checked"], dry["excluded"]) == (2, 1)
+    assert conn.execute("SELECT count(*) AS n FROM run_post WHERE relevance = 'low'").fetchone()["n"] == 0
+    rematch(conn, graph, sc_settings, PID, apply=True)
+    low = conn.execute("SELECT oriane_id, relevance_basis FROM run_post WHERE relevance = 'low'").fetchall()
+    assert [r["oriane_id"] for r in low] == [results[1]["id"]]
+    assert low[0]["relevance_basis"]["rematch"]["ref_version"] == identity.current_ref(conn, PID)["version"]
+    assert rematch(conn, graph, sc_settings, PID)["excluded"] == 0

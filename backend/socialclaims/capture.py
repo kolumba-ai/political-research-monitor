@@ -14,7 +14,7 @@ from .identity import current_ref, load_terms, merged_ids, relevance_context, sy
 from .oriane import (CreditsExhausted, InvalidQuery, OffsetPastEnd, OrianeClient, OrianeError, OrianeResponse,
                      credits_for)
 from .query import BRANCHES, canonical_json, request_body
-from .relevance import bucket, score
+from .relevance import _texts, bucket, score
 from .systema import GraphReader, read_person
 
 SORT = "publishedAt:desc"
@@ -348,3 +348,48 @@ def purge_expired(conn, settings: SocialSettings, now: datetime | None = None) -
                 if f"{run['run_id']}/{f.name}" not in kept:
                     f.unlink()
     return len(rows)
+
+
+NAME_BRANCHES = {"spoken", "written", "onscreen"}
+
+
+def rematch(conn, graph: GraphReader, s: SocialSettings, politician_id: str, *, apply: bool = False) -> dict:
+    """Re-checks name-only matches against the current name variants (after a variant fix or an exclusion).
+    Posts whose saved text holds none of them are moved to `low`; nothing is deleted. Dry run unless `apply`."""
+    ref = current_ref(conn, politician_id)
+    snap = read_person(graph, politician_id)
+    if not ref or not snap:
+        raise NotTrackable(f"{politician_id} has no politician_ref; run sync-refs first")
+    names = relevance_context(snap, load_terms(conn, politician_id))["full_names"]
+    rows = conn.execute(
+        "SELECT rp.run_id, rp.oriane_id, rp.matched_queries, rp.relevance_basis, d.payload_path FROM run_post rp "
+        "JOIN raw_data d ON d.raw_id = rp.raw_id WHERE rp.politician_id = ANY(%s) AND rp.relevance <> 'low'",
+        (merged_ids(conn, politician_id),)).fetchall()
+    pages: dict[str, dict] = {}
+    out = {"politician_id": politician_id, "ref_version": ref["version"], "checked": 0, "excluded": 0,
+           "unverifiable": 0, "applied": apply, "examples": []}
+    for r in rows:
+        if not set(r["matched_queries"]) <= NAME_BRANCHES:
+            continue
+        out["checked"] += 1
+        if not r["payload_path"]:
+            out["unverifiable"] += 1
+            continue
+        file, pointer = r["payload_path"].split("#")
+        if file not in pages:
+            pages[file] = json.loads((Path(s.raw_storage_dir) / file).read_text())
+        post = pages[file]
+        for key in pointer.strip("/").split("/"):
+            post = post[int(key)] if isinstance(post, list) else post[key]
+        text = f" {_texts(post)} "
+        if any(f" {n} " in text for n in names):
+            continue
+        out["excluded"] += 1
+        if len(out["examples"]) < 3:
+            out["examples"].append(text.strip()[:100])
+        if apply:
+            basis = {**r["relevance_basis"], "rematch": {"ref_version": ref["version"],
+                                                          "reason": "no current name variant in saved text"}}
+            conn.execute("UPDATE run_post SET relevance = 'low', relevance_basis = %s WHERE run_id = %s AND oriane_id = %s",
+                         (Jsonb(basis), r["run_id"], r["oriane_id"]))
+    return out

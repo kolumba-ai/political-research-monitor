@@ -80,7 +80,8 @@ def relevance_context(snap: PersonSnapshot, terms: QueryTerms) -> dict:
     for o in snap.current_offices:
         entities += [o.title_local or "", *(o.keywords or [])]
     return {
-        "full_names": sorted({normalize_text(v) for v in name_variants(snap.name, snap.aliases, terms.extra_variants)
+        "full_names": sorted({normalize_text(v) for v in name_variants(snap.name, snap.aliases, terms.extra_variants,
+                                                                      terms.excluded_variants)
                               if len(v.split()) >= 2}),
         "entities": sorted({normalize_text(e) for e in entities if e and len(e) >= 3}),
         "languages": COUNTRY_LANGUAGES.get(snap.country_code, []),

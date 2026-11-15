@@ -90,6 +90,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("id")
     p.add_argument("--country", default="MX")
     p.add_argument("--allow-review", action="store_true")
+    p = sub.add_parser("rematch", help="move name-only matches lacking a current name variant to 'low' (no API call)")
+    p.add_argument("ids", nargs="+")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--apply", action="store_true")
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -171,6 +175,9 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 results.append(cap.capture(pid, **kw))
         _out(results)
+    elif args.cmd == "rematch":
+        from .capture import rematch
+        _out([rematch(conn, graph, s, _pid(graph, i, args.country), apply=args.apply) for i in args.ids])
     elif args.cmd == "replay-raw":
         from pathlib import Path
         from .capture import RawReplayClient
