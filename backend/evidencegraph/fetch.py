@@ -19,7 +19,7 @@ import structlog
 
 from polgraph.evidence import authority_tier
 from polgraph.exa_gateway import PgRateLimiter
-from polgraph.ids import canonical_url, short_hash, source_id
+from polgraph.ids import canonical_url, registrable_domain, short_hash, source_id
 
 from .config import EvidenceSettings
 from .registry import lookup
@@ -448,7 +448,13 @@ class Fetcher:
                 title = parser.meta.get("og:title") or "".join(parser.title_parts).strip()
                 author = parser.meta.get("author") or json_author
                 published, modified, origin, confidence = _date_metadata(parser, current, exa_published_date)
-                resolved_url = urljoin(current, parser.canonical) if parser.canonical else current
+                resolved_url = current
+                if parser.canonical:
+                    canonical_candidate = urljoin(current, parser.canonical)
+                    if registrable_domain(canonical_candidate) == registrable_domain(current):
+                        resolved_url = canonical_candidate
+                    else:
+                        log.warning("fetch.canonical_ignored", url=current, canonical=canonical_candidate)
                 metadata = {
                     "title": title or None, "authors": [author] if author else [],
                     "language": parser.language,
@@ -476,11 +482,12 @@ class Fetcher:
         simhash = _simhash(text or "")
         resolved_id = source_id(resolved_url)
         targets = [original_id] + ([resolved_id] if resolved_id != original_id else [])
-        related_registry = lookup(self.conn, resolved_url) or registry_row
+        fetched_registry = lookup(self.conn, current)
         with self.conn.transaction():
             for document_id in targets:
+                document_registry = fetched_registry if document_id == resolved_id else registry_row
                 self._document(document_id, url if document_id == original_id else resolved_url,
-                               resolved_url, related_registry, metadata, "fetched", published, modified)
+                               resolved_url, document_registry, metadata, "fetched", published, modified)
             if resolved_id != original_id:
                 edge_id = "same-as:" + short_hash("|".join(sorted((original_id, resolved_id))), 24)
                 self.conn.execute(

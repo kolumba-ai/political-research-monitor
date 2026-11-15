@@ -87,6 +87,38 @@ def test_canonical_redirect_dates_versions_and_open_gov_snapshot(conn, ev_settin
     client.close()
 
 
+def test_cross_domain_canonical_is_ignored_and_keeps_fetched_registry(conn, ev_settings):
+    load_registry(conn)
+    conn.execute(
+        "INSERT INTO ev_source_registry(domain,source_class,publisher,authority_tier,licence_class,"
+        "can_store_full_text,added_by,added_at) VALUES "
+        "('news.example','news','Example News',2,'copyright',false,'test',now())"
+    )
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(
+            200,
+            text='<html><head><link rel="canonical" href="https://www.gob.mx/presidencia"></head>'
+                 '<body>News article with a reported development.</body></html>',
+            headers={"content-type": "text/html"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    url = "https://news.example/article"
+    result = fetcher.fetch(url)
+
+    assert result["fetch_status"] == "fetched"
+    assert conn.execute("SELECT count(*) AS n FROM ev_document WHERE document_id=%s",
+                        (source_id("https://www.gob.mx/presidencia"),)).fetchone()["n"] == 0
+    assert conn.execute("SELECT count(*) AS n FROM ev_kg_edge WHERE type='SAME_AS'").fetchone()["n"] == 0
+    document = conn.execute("SELECT source_class,licence_class,can_store_full_text FROM ev_document "
+                            "WHERE document_id=%s", (source_id(url),)).fetchone()
+    assert document == {"source_class": "news", "licence_class": "copyright", "can_store_full_text": False}
+    client.close()
+
+
 def test_copyright_pages_are_not_snapshotted_and_duplicates_cluster(conn, ev_settings):
     load_registry(conn)
 
