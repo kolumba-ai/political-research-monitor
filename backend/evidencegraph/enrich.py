@@ -143,6 +143,7 @@ ORDER BY d.stated_at, d.claim_id
 
 
 MAX_CONSECUTIVE_FAILURES = 5
+PASTDEV_PENDING = "pastdev_pending"  # queue skip_reason: judged, only the past.dev write is left
 # A proposition left `mapping` longer than this (worker killed mid-run) is available again.
 MAPPING_LEASE_MINUTES = 60
 READY = ("(q.status = 'queued' OR (q.status = 'mapping' AND q.updated_at < now() - make_interval(mins => %(lease)s))) "
@@ -316,9 +317,8 @@ class Enricher:
         if not claims:
             self._set_status(prop, "skipped", "no_current_claims")
             return {"proposition_id": prop["proposition_id"], "status": "skipped"}
-        judged = prop["mapped_at"] is None and self.conn.execute(
-            "SELECT 1 FROM ev_evidence_link WHERE proposition_id = %s AND mapper_version = %s LIMIT 1",
-            (prop["proposition_id"], self.settings.mapper_version)).fetchone() is not None
+        # Set only after every page was judged and the write was attempted; any earlier failure clears it.
+        judged = prop["mapped_at"] is None and prop["skip_reason"] == PASTDEV_PENDING
         try:
             # Judged in an earlier run whose past.dev write did not complete: only project again.
             rows, candidates = ([], []) if judged else self._discover(prop, claims)
@@ -342,7 +342,7 @@ class Enricher:
         # A rejected batch, a failed ingestion or one still processing leaves the proposition queued so a later run
         # re-projects it (unchanged items are not resent).
         status = "queued" if pushed["errors"] or pushed["pending"] else "mapped"
-        self._set_status(prop, status)
+        self._set_status(prop, status, PASTDEV_PENDING if status == "queued" else None)
         return {"proposition_id": prop["proposition_id"], "status": status, "queries": len(rows),
                 "candidates": len(candidates), "fetched": fetched_n, "stances": stances, "pastdev": pushed}
 

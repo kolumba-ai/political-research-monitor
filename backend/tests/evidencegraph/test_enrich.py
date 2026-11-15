@@ -357,3 +357,25 @@ def test_unfinished_write_is_retried_without_new_search(conn, ev_settings, tmp_p
     past.slow, llm.calls, exa.calls = False, [], []
     out = enricher.run(None, 5)
     assert out["results"][0]["status"] == "mapped" and llm.calls == [] and exa.calls == []
+
+
+def test_partially_judged_proposition_is_fully_rediscovered(conn, ev_settings, tmp_path):
+    _setup(conn)
+
+    class FailSecondPage(FakeLLM):
+        pages = 0
+
+        def extract(self, system, prompt, tool):
+            if "queries" not in tool["input_schema"]["properties"]:
+                self.pages += 1
+                if self.pages == 2:
+                    raise RuntimeError("boom")
+            return super().extract(system, prompt, tool)
+
+    llm = FailSecondPage()
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, FakePast(), llm=llm)
+    assert enricher.run(None, 5)["errors"]
+    assert conn.execute("SELECT skip_reason FROM ev_proposition_queue").fetchone()["skip_reason"] is None
+    llm.calls.clear()
+    assert enricher.run(None, 5)["results"][0]["status"] == "mapped"
+    assert llm.calls[0] == "plan" and len(llm.calls) >= 2
