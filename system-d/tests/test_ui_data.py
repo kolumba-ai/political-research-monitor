@@ -56,3 +56,13 @@ def test_database_url_prefers_env_then_file(monkeypatch, tmp_path):
     monkeypatch.delenv("DATABASE_URL_FILE")
     with pytest.raises(RuntimeError):
         data.database_url()
+
+
+def test_claim_scope_and_title_use_storyline_link():
+    linked = {"storyline_id": "sl-1", "storyline_label": "Salud Casa por Casa", "canonical_text": "18 millones"}
+    demo = {"storyline_id": None, "storyline_label": None, "canonical_text": "Demo claim"}
+    assert [data.in_scope(c, "Real storylines") for c in (linked, demo)] == [True, False]
+    assert [data.in_scope(c, "Demo seed") for c in (linked, demo)] == [False, True]
+    assert [data.in_scope(c, "All") for c in (linked, demo)] == [True, True]
+    assert data.claim_title(linked) == "Salud Casa por Casa"
+    assert data.claim_title(demo) == "Demo claim"
