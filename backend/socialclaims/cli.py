@@ -103,6 +103,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--max-posts", type=int, help="per politician (default: CLAIM_MAX_POSTS_PER_RUN)")
     p.add_argument("--dry-run", action="store_true", help="print pending counts and the first prompt; no LLM call")
     p.add_argument("--confirm-spend", action="store_true")
+    p.add_argument("--shard", default="0/1", help="I/N: only posts whose id hashes to share I of N (parallel workers)")
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -211,7 +212,8 @@ def main(argv: list[str] | None = None) -> int:
                 results.append({"politician_id": pid, "extractor_version": ex.version, "pending": len(todo),
                                 "would_extract": min(len(todo), cap)})
             else:
-                results.append(ex.run(pid, cap))
+                i_, n_ = (int(x) for x in args.shard.split("/"))
+                results.append(ex.run(pid, cap, (i_, n_)))
         _out(results)
     elif args.cmd == "replay-raw":
         from pathlib import Path

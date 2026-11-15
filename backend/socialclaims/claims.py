@@ -304,11 +304,12 @@ class Extractor:
             "AND pp.canonical_oriane_id = pp.oriane_id ORDER BY p.published_at DESC, pp.oriane_id",
             (SEGMENTS_VERSION, self.version, politician_id, merged_ids(self.conn, politician_id))).fetchall()
 
-    def run(self, politician_id: str, max_posts: int) -> dict:
+    def run(self, politician_id: str, max_posts: int, shard: tuple[int, int] = (0, 1)) -> dict:
         snap = read_person(self.graph, politician_id)
         if snap is None:
             raise LookupError(f"{politician_id} not in System A")
-        todo = self.pending(politician_id)
+        todo = [r for r in self.pending(politician_id)
+                if int(hashlib.sha256(r["oriane_id"].encode()).hexdigest(), 16) % shard[1] == shard[0]]
         out = {"politician_id": politician_id, "extractor_version": self.version, "pending": len(todo),
                "extracted": 0, "failed": 0, "claims": 0, "grounding": {}, "input_tokens": 0, "output_tokens": 0}
         for row in todo[:max_posts]:
@@ -394,7 +395,8 @@ class Extractor:
         stated = row["published_at"]
         allowed = _numbers(quote) | {str(d.year) for d in (p_start, p_end) if d} | {str(stated.year)} | \
             {str(x) for d in (p_start, p_end) if d for x in (d.month, d.day)}
-        if extra := sorted(_numbers(c.get("text")) - allowed):
+        digits = {_number(n) for n in re.findall(r"\d[\d,.]*", c.get("text") or "")}  # number words in text may paraphrase "esta"
+        if extra := sorted(digits - allowed):
             issues.append(f"paraphrase_numbers_not_in_quote:{','.join(extra)}")
         prop = c.get("proposition") or {}
         predicate = str(prop.get("predicate") or "")
