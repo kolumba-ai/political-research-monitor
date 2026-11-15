@@ -187,15 +187,17 @@ def _sort_key(row: dict) -> str:
 
 
 def _evidence_claim_posts(src: dict, payload: dict) -> list[tuple[str, dict]]:
-    """A System C claim record (`evidencegraph-claim/1`) as one post-shaped payload per post that stated it."""
+    """A System C claim record (`evidencegraph-claim/1`) as one post-shaped payload per post that stated it, keyed by
+    post x politician so claims of several propositions from one post merge into one exported post."""
     by_post: dict[str, list[dict]] = {}
     for c in payload.get("claims") or []:
         by_post.setdefault(c.get("oriane_id") or "", []).append(c)
-    return [(f"{src.get('dataPointId')}#{oid}", {
+    person = (payload.get("politician") or {}).get("system_a_person_id") or ""
+    return [(f"post:{oid}:{person}", {
         "politician": payload.get("politician") or {},
         "source": {"oriane_content_id": oid or None, "platform": cs[0].get("platform"), "url": cs[0].get("url"),
                    "published_at": cs[0].get("stated_at")},
-        "claims": [{"claim_index": i, "claim_es": c.get("text"), "claim_en": c.get("text_en"),
+        "claims": [{"claim_index": i, "claim_id": c.get("claim_id"), "claim_es": c.get("text"), "claim_en": c.get("text_en"),
                     "claim_type": c.get("type"), "evidence_span": c.get("quote"),
                     "about_politician": c.get("relation_to_politician") in ("speaker", "subject")}
                    for i, c in enumerate(cs)],
@@ -266,12 +268,15 @@ def pull(client: PastDevClient, graph, country: str, out_dir: Path) -> dict:
             }
             for c in payload.get("claims") or []:
                 post["claims"].append({
-                    "claim_id": f"{data_point_id}#{c.get('claim_index', len(post['claims']))}",
+                    "claim_id": c.get("claim_id") or f"{data_point_id}#{c.get('claim_index', len(post['claims']))}",
                     "claim_index": c.get("claim_index"), "text": c.get("claim_es"), "text_en": c.get("claim_en"),
                     "type": c.get("claim_type"), "speaker": c.get("speaker"),
                     "about_politician": c.get("about_politician"), "checkable": c.get("checkable"),
                     "source_field": c.get("source_field"), "evidence_span": c.get("evidence_span")})
-            posts[data_point_id] = post
+            if data_point_id in posts:  # the same post stated several System C propositions
+                posts[data_point_id]["claims"] += post["claims"]
+            else:
+                posts[data_point_id] = post
 
     rows = sorted(posts.values(), key=_sort_key, reverse=True)
     claims = []
