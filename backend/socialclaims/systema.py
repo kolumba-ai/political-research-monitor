@@ -225,7 +225,7 @@ def read_person(g: GraphReader, politician_id: str, country_code: str | None = N
     errors, warnings = validate_bundle(bundle, f"country:{iso2}", politician_id)
     snap = _snapshot(JsonlGraph.from_bundle(bundle), politician_id)
     if snap:
-        snap.bundle_sha256, snap.input_errors, snap.input_warnings = bundle.get("sha256"), errors, warnings
+        snap.bundle_sha256, snap.input_errors, snap.input_warnings = bundle_sha256(bundle), errors, warnings
         snap.bundle = bundle
     return snap
 

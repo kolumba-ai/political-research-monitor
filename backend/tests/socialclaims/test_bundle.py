@@ -46,7 +46,9 @@ def test_tampered_bundle_is_rejected(graph, tmp_path):
     b = json.loads(path.read_text())
     next(n for n in b["nodes"] if n["id"] == PID)["name"] = "Someone Else"
     path.write_text(json.dumps(b))
-    assert "bundle sha256 does not match its content" in read_person(BundleDir(tmp_path / "bundles"), PID).input_errors
+    snap = read_person(BundleDir(tmp_path / "bundles"), PID)
+    assert "bundle sha256 does not match its content" in snap.input_errors
+    assert snap.bundle_sha256 != b["sha256"]
 
 
 def test_exported_bundles_feed_system_b(graph, conn, tmp_path):
