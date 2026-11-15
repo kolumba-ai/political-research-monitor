@@ -153,6 +153,8 @@ JOIN ev_document d ON d.document_id = l.document_id
 JOIN ev_document_version v ON v.document_id = l.document_id AND v.content_sha256 = l.content_sha256
 LEFT JOIN ev_source_registry r ON r.domain = d.publisher_domain
 WHERE l.proposition_id = %s AND l.mapper_version = %s AND l.quote_verified AND l.stance <> 'irrelevant'
+  AND l.content_sha256 = (SELECT v3.content_sha256 FROM ev_document_version v3 WHERE v3.document_id = l.document_id
+                          ORDER BY v3.retrieved_at DESC LIMIT 1)
 ORDER BY l.assessed_at, l.link_id
 """
 
