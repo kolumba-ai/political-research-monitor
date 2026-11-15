@@ -111,21 +111,30 @@ Claude again.
 Claims reach past.dev **only** through this step, after their evidence has been judged. Nothing copies Postgres to
 past.dev in bulk. Each record is plain text followed by `JSON:` and a compact payload.
 
-| Record | ID | Timestamp | Audience | Text |
-| --- | --- | --- | --- | --- |
-| Claim | `clm-<proposition hash>-<person slug>` | first `stated_at` | `pol-<slug>` | `CLAIM by or about {name} ({date}): {canonical text}` plus up to 5 quotes with post links |
-| Document | `doc-<source hash>-v<n>` | `published_at` (retrieval time if unknown, flagged) | none: visible project-wide | `DOCUMENT by {publisher} ({class}, tier {t}) published {date}: {title}. {url}` plus the summary |
-| Evidence link | `lnk-<link hash>-<person slug>` | same as its claim: the politician's first `stated_at` | `pol-<slug>` | `EVIDENCE: {publisher} ({date}) SUPPORTS/CONTRADICTS/CONTEXT the claim …` plus reason, quote and source |
+Each enriched claim is **one record per politician** (`evidencegraph-claim/2`), with its evidence folded in:
 
-- **Link dates:** a link carries its claim's date, not the date it was judged, so a date-filtered recall
-  (`occurredFrom`/`occurredTo`) returns a claim together with its evidence. The judging time stays in the
-  payload as `assessed_at`. For a claim shared by several politicians, each politician's link takes that
-  politician's own date.
-- **Resending after a format change:** `evidencegraph reproject --dry-run` rebuilds every record already written
-  and counts the ones whose content changed; `--confirm-spend` resends only those (past.dev credits, no Exa or
-  LLM calls).
-- **What gets sent:** only links with a verified quote and a stance other than `irrelevant`, plus their documents.
-  A claim mentioning several politicians gets one claim record and one link record per politician.
+| ID | Timestamp | Audience | Text |
+| --- | --- | --- | --- |
+| `clm-<proposition hash>-<person slug>` | the politician's first `stated_at` | `pol-<slug>` | `CLAIM by or about {name} ({date}): {canonical text}`, up to 5 quotes with post links, then `EVIDENCE:` with one line per source: `SUPPORTS/CONTRADICTS/CONTEXT: {publisher} ({date}, {class}, tier {t}) {title}. Reason … Quote … Summary … Source {url}` |
+
+The payload holds the System B claims (quote, text, type, post URL, `stated_at`) and an `evidence` list (URL,
+publisher, title, `published_at`, source class, authority tier, licence, stance, confidence, quote, summary,
+rationale, `assessed_at`). Records written before this format (separate `doc-…` and `lnk-…` records) are
+replaced by resending the claim (`reproject --defer`, then `sync-pastdev`).
+
+- **Dates:** the record carries the claim's date, so a date-filtered recall (`occurredFrom`/`occurredTo`) returns
+  a claim together with its evidence. The judging time stays in each evidence entry as `assessed_at`.
+- **What gets sent:** only evidence with a verified quote and a stance other than `irrelevant`. A claim without any
+  is not written. A claim mentioning several politicians gets one record per politician.
+- **Keeping past.dev current (`sync-pastdev`):** past.dev indexes slowly (roughly 600 KB, about 400 small records,
+  an hour). Run `enrich` with `ENRICH_PASTDEV=false` so it only judges into Neon and leaves each proposition
+  `pastdev_pending`; `sync-pastdev --watch 60 --confirm-spend` then sends pending propositions, highest priority
+  first, only while past.dev's unprocessed queue is under `PASTDEV_MAX_QUEUE_MINUTES` (default 30) of
+  `PASTDEV_BYTES_PER_HOUR`. Whatever is sent is searchable within about that time; the rest waits in Neon. A
+  proposition whose record is still processing is not resent; once it completes it is marked mapped.
+- **Resending after a format change:** `evidencegraph reproject --dry-run` counts records whose content changed;
+  `--defer` marks their propositions `pastdev_pending` for `sync-pastdev` (free); `--confirm-spend` resends them at
+  once (past.dev credits, no Exa or LLM calls).
 - **Quotes:** they follow the storage policy. Open licences keep the full quote; `copyright` allows at most 300
   characters, `unknown` at most 200, and `licensed` none.
 - **Audiences:** each politician has a rule audience `pol-<slug>` (at most 40 characters). It reaches identities whose
@@ -172,6 +181,9 @@ Run from `backend/` (or prefix `make`, see the targets in parentheses):
 ../.venv/bin/python -m evidencegraph fetch https://www.inegi.org.mx/     # fetch one URL (no Exa)
 ../.venv/bin/python -m evidencegraph reproject --dry-run                 # free: past.dev records whose content changed
 ../.venv/bin/python -m evidencegraph reproject --confirm-spend           # resend only those (past.dev credits only)
+../.venv/bin/python -m evidencegraph reproject --defer                   # free: leave those to sync-pastdev
+../.venv/bin/python -m evidencegraph sync-pastdev --dry-run              # free: past.dev backlog and what fits now
+../.venv/bin/python -m evidencegraph sync-pastdev --watch 60 --confirm-spend  # send at past.dev's pace (credits only)
 ```
 
 On Modal: `make modal-systemc ARGS="enrich --limit 10 --confirm-spend"`. The Modal secret `prm-secrets` supplies
@@ -207,6 +219,9 @@ Settings are read from the repository `.env` by `EvidenceSettings` (`config.py`)
 | `ENRICH_ROWS` | all 7 rows | Comma-separated query-plan rows to search |
 | `ENRICH_USD_PER_MTOK_IN` / `_OUT` | 3 / 15 | Claude prices used by `--max-usd` and the dry-run estimate |
 | `PASTDEV_USD_PER_CREDIT` | 0.0003 | past.dev price used by `--max-usd` |
+| `ENRICH_PASTDEV` | true | `false`: `enrich` judges into Neon only and leaves past.dev to `sync-pastdev` |
+| `PASTDEV_MAX_QUEUE_MINUTES` | 30 | `sync-pastdev` keeps past.dev's unprocessed queue under this much work |
+| `PASTDEV_BYTES_PER_HOUR` | 600000 | past.dev indexing throughput assumed by `sync-pastdev` |
 | `MAPPER_VERSION` | `m1` | Version stamp; changing it re-judges and re-queues mapped propositions |
 | `INTAKE_MIN_CHECKWORTHINESS` | 0.5 | Queue threshold |
 | `EV_EXA_MONTHLY_BUDGET_USD` | 30 | System C Exa budget per month |

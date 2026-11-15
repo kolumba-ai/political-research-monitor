@@ -33,8 +33,7 @@ CREDIT_BYTES = 350
 MAX_BATCH_ITEMS = 1000
 MAX_BATCH_BYTES = 8 * 1024 * 1024
 QUOTE_LIMIT = {"open_gov": None, "open_access": None, "copyright": 300, "unknown": 200}
-PAYLOAD_FORMAT = {"claim": "evidencegraph-claim/1", "document": "evidencegraph-document/1",
-                  "evidence_link": "evidencegraph-link/1"}
+PAYLOAD_FORMAT = {"claim": "evidencegraph-claim/2"}
 
 
 def person_slug(politician_id: str) -> str:
@@ -76,7 +75,29 @@ def allowed_quote(quote_text: str | None, licence: str) -> str | None:
     return quote_text if limit is None or len(quote_text) <= limit else None
 
 
-def claim_items(prop: dict, claims: list[dict]) -> list[dict]:
+def evidence_entry(link: dict) -> dict:
+    publisher = link["publisher"] or link["publisher_domain"]
+    return {"link_id": link["link_id"], "document_id": link["document_id"], "url": link["resolved_url"],
+            "publisher": publisher, "title": link["title"], "published_at": _iso(link["published_at"]),
+            "date_is_retrieval": link["published_at"] is None, "retrieved_at": _iso(link["retrieved_at"]),
+            "source_class": link["source_class"], "authority_tier": link["authority_tier"],
+            "licence_class": link["licence_class"], "content_sha256": link["content_sha256"],
+            "stance": link["stance"], "confidence": round(link["confidence"], 3),
+            "quote": allowed_quote(link["quote"], link["licence_class"]), "summary": link["summary"],
+            "rationale": link["rationale"], "assessed_at": _iso(link["assessed_at"]),
+            "mapper_version": link["mapper_version"]}
+
+
+def _evidence_line(e: dict) -> str:
+    return (f"- {e['stance'].upper()}: {e['publisher']} ({e['published_at'][:10] if e['published_at'] else 'undated'}, "
+            f"{e['source_class'] or 'unregistered'}, tier {e['authority_tier']}) {e['title'] or e['url']}. "
+            f"Reason: {e['rationale']}" + (f" Quote: \"{e['quote']}\"" if e["quote"] else "") +
+            f" Summary: {e['summary']} Source: {e['url']}")
+
+
+def claim_items(prop: dict, claims: list[dict], links: list[dict]) -> list[dict]:
+    """One record per politician: the claim with all its evidence folded in."""
+    evidence = [evidence_entry(lk) for lk in links]
     items = []
     for pid in sorted({c["politician_id"] for c in claims}):
         own = [c for c in claims if c["politician_id"] == pid]
@@ -85,6 +106,7 @@ def claim_items(prop: dict, claims: list[dict]) -> list[dict]:
         lines = [f"CLAIM by or about {name} ({_iso(stated)[:10]}): {prop['canonical_text']}"]
         lines += [f"- \"{c['quote']}\" ({c['platform'] or 'post'} {c['url'] or c['oriane_id']}, {_iso(c['stated_at'])[:10]})"
                   for c in own[:5]]
+        lines += ["EVIDENCE:"] + [_evidence_line(e) for e in evidence]
         payload = {
             "format": PAYLOAD_FORMAT["claim"], "proposition_id": prop["proposition_id"],
             "canonical_text": prop["canonical_text"], "politician": {"name": name, "system_a_person_id": pid},
@@ -92,6 +114,7 @@ def claim_items(prop: dict, claims: list[dict]) -> list[dict]:
                         "quote": c["quote"], "relation_to_politician": c["relation_to_politician"], "platform": c["platform"],
                         "oriane_id": c["oriane_id"], "url": c["url"], "stated_at": _iso(c["stated_at"])}
                        for c in own],
+            "evidence": evidence,
         }
         items.append({
             "id": f"clm-{short_hash(prop['proposition_id'], 16)}-{person_slug(pid)}",
@@ -102,26 +125,6 @@ def claim_items(prop: dict, claims: list[dict]) -> list[dict]:
     return items
 
 
-def document_item(doc: dict, link: dict) -> dict:
-    # The first summary written for this page version, so the shared document record doesn't change per claim.
-    summary = doc.get("document_summary") or link["summary"]
-    when = doc["published_at"] or doc["retrieved_at"]
-    publisher = doc["publisher"] or doc["publisher_domain"]
-    text = (f"DOCUMENT by {publisher} ({doc['source_class'] or 'unregistered'}, tier {doc['authority_tier']}) "
-            f"published {_iso(doc['published_at'])[:10] if doc['published_at'] else 'on an unknown date'}: "
-            f"{doc['title'] or doc['resolved_url']}. {doc['resolved_url']}\n{summary}")
-    payload = {"format": PAYLOAD_FORMAT["document"], "document_id": doc["document_id"], "url": doc["resolved_url"],
-               "publisher": publisher, "source_class": doc["source_class"], "authority_tier": doc["authority_tier"],
-               "licence_class": doc["licence_class"], "title": doc["title"], "published_at": _iso(doc["published_at"]),
-               "date_confidence": doc["date_confidence"], "retrieved_at": _iso(doc["retrieved_at"]),
-               "date_is_retrieval": doc["published_at"] is None, "content_sha256": doc["content_sha256"],
-               "summary": summary}
-    return {"id": f"doc-{doc['document_id'].split(':', 1)[-1]}-v{doc['version']}",
-            "label": f"document {publisher}: {doc['title'] or doc['resolved_url']}"[:200],
-            "content": _content(text, payload), "timestamp": _iso(when),
-            "metadata": {"kind": "document", "document_id": doc["document_id"]}}
-
-
 def first_stated(claims: list[dict]) -> dict[str, object]:
     stated: dict[str, object] = {}
     for c in claims:
@@ -130,38 +133,9 @@ def first_stated(claims: list[dict]) -> dict[str, object]:
     return stated
 
 
-def link_items(prop: dict, link: dict, doc: dict, names: dict[str, str], stated: dict[str, object]) -> list[dict]:
-    publisher = doc["publisher"] or doc["publisher_domain"]
-    q = allowed_quote(link["quote"], doc["licence_class"])
-    items = []
-    for pid in prop["politician_ids"]:
-        name = names.get(pid) or person_slug(pid)
-        text = (f"EVIDENCE: {publisher} ({_iso(doc['published_at'])[:10] if doc['published_at'] else 'undated'}) "
-                f"{link['stance'].upper()} the claim by or about {name}: \"{prop['canonical_text']}\". "
-                f"Reason: {link['rationale']}" + (f" Quote: \"{q}\"" if q else "") + f" Source: {doc['resolved_url']}")
-        payload = {"format": PAYLOAD_FORMAT["evidence_link"], "link_id": link["link_id"],
-                   "proposition_id": prop["proposition_id"], "document_id": doc["document_id"],
-                   "document_datapoint": f"doc-{doc['document_id'].split(':', 1)[-1]}-v{doc['version']}",
-                   "stance": link["stance"], "confidence": round(link["confidence"], 3), "quote": q,
-                   "rationale": link["rationale"], "source_class": doc["source_class"],
-                   "authority_tier": doc["authority_tier"], "assessed_at": _iso(link["assessed_at"]),
-                   "mapper_version": link["mapper_version"], "politician": {"name": name, "system_a_person_id": pid}}
-        items.append({"id": f"lnk-{short_hash(link['link_id'], 16)}-{person_slug(pid)}",
-                      "label": f"evidence {link['stance']} {prop['proposition_id']} about {name}"[:200],
-                      "content": _content(text, payload),
-                      "timestamp": _iso(stated.get(pid) or prop.get("stated_at") or link["assessed_at"]),
-                      "metadata": {"kind": "evidence_link", "proposition_id": prop["proposition_id"],
-                                   "document_id": doc["document_id"], "politician_id": pid}})
-    return items
-
-
 LINKS_SQL = """
 SELECT l.*, d.resolved_url, d.publisher_domain, d.source_class, d.authority_tier, d.licence_class, d.title,
-       d.published_at, d.date_confidence, r.publisher, v.retrieved_at,
-       (SELECT e.summary FROM ev_evidence_link e WHERE e.document_id = l.document_id
-        AND e.content_sha256 = l.content_sha256 ORDER BY e.assessed_at, e.link_id LIMIT 1) AS document_summary,
-       (SELECT count(*) FROM ev_document_version v2 WHERE v2.document_id = l.document_id
-        AND v2.retrieved_at <= v.retrieved_at) AS version
+       d.published_at, d.date_confidence, r.publisher, v.retrieved_at
 FROM ev_evidence_link l
 JOIN ev_document d ON d.document_id = l.document_id
 JOIN ev_document_version v ON v.document_id = l.document_id AND v.content_sha256 = l.content_sha256
@@ -174,17 +148,8 @@ ORDER BY l.assessed_at, l.link_id
 
 
 def build_items(conn, prop: dict, claims: list[dict], mapper_version: str) -> list[dict]:
-    names = {c["politician_id"]: c["politician_name"] for c in claims if c["politician_name"]}
-    stated = first_stated(claims)
-    docs: dict[str, dict] = {}
-    links: list[dict] = []
-    for row in conn.execute(LINKS_SQL, (prop["proposition_id"], mapper_version)).fetchall():
-        item = document_item(row, row)
-        docs.setdefault(item["id"], item)
-        links += link_items(prop, row, row, names, stated)
-    if not links:
-        return []
-    return claim_items(prop, claims) + list(docs.values()) + links
+    links = conn.execute(LINKS_SQL, (prop["proposition_id"], mapper_version)).fetchall()
+    return claim_items(prop, claims, links) if links else []
 
 
 def resolve_audiences(client: PastDevClient | None, pids: list[str], recorded: dict[str, str]) -> dict[str, dict]:
