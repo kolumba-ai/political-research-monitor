@@ -406,6 +406,8 @@ def reproject(conn, client, settings, country: str = "MX", *, dry_run: bool = Fa
                          "AND deleted_at IS NULL) ORDER BY q.proposition_id", (past_project,)).fetchall()
     out = {"propositions": len(props), "changed_propositions": 0, "items_changed": 0, "credits_estimate": 0,
            "credits_sent": 0, "errors": [], "dry_run": dry_run}
+    if not dry_run:  # an ingestion that failed since it was sent leaves its items `failed`, so they count as changed
+        projection.refresh_queued(conn, client, past_project, lambda: datetime.now(timezone.utc))
     cache: dict = {}
     for prop in props:
         claims = conn.execute(CLAIMS_SQL, (prop["proposition_id"],)).fetchall()

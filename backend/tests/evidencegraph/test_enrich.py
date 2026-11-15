@@ -326,6 +326,29 @@ def test_reproject_resends_only_records_whose_date_changed(conn, ev_settings, tm
     assert conn.execute("SELECT status FROM ev_proposition_queue").fetchone()["status"] == "mapped"
 
 
+def test_reproject_resends_records_whose_ingestion_failed_later(conn, ev_settings, tmp_path):
+    from evidencegraph.enrich import reproject
+
+    class FailingPast(FakePast):
+        def handler(self, request):
+            if request.method == "GET" and request.url.path.endswith("/ingest/ing-lost"):
+                self.calls.append((request.method, request.url.path, None))
+                return httpx.Response(200, json={"status": "failed", "failure": {"reason": "x"}})
+            return super().handler(request)
+
+    _setup(conn)
+    past = FailingPast()
+    enricher, _ = _enricher(conn, ev_settings, tmp_path, past)
+    enricher.run(None, 5)
+    lnk = conn.execute("SELECT datapoint_id FROM ev_memory_record WHERE kind = 'evidence_link' LIMIT 1").fetchone()
+    # Sent by an earlier reproject whose ingestion was still processing; past.dev failed it afterwards.
+    conn.execute("UPDATE ev_memory_record SET status = 'queued', ingestion_id = 'ing-lost' WHERE datapoint_id = %s",
+                 (lnk["datapoint_id"],))
+    out = reproject(conn, enricher.client, ev_settings)
+    assert out["items_changed"] == 1 and not out["errors"]
+    assert [it["id"] for it in past.batches()[-1]["items"]] == [lnk["datapoint_id"]]
+
+
 def test_reproject_cli_requires_confirm_spend(capsys):
     with pytest.raises(SystemExit):
         cli_main(["reproject"])
