@@ -419,7 +419,8 @@ export function StorylinesView({ iso2, politicianId }: { iso2: string; politicia
                     <span className="mt-0.5 block text-[11px] text-muted">{[
                       plural(rows.length, "storyline"), said > 0 && `${said} said more than once`,
                       t.counter_claims > 0 && plural(t.counter_claims, "counter-claim"), t.accounts > 0 && plural(t.accounts, "account"),
-                      !t.judged && "subject area, no topic yet", t.needs_review > 0 && `${t.needs_review} to review`].filter(Boolean).join(" · ")}</span>
+                      !t.judged && "subject area, no topic yet", t.needs_review > 0 && `${t.needs_review} to review`,
+                      rows.some((r) => r.opinion) && `${rows.filter((r) => r.opinion).length} with simulated opinion`].filter(Boolean).join(" · ")}</span>
                   </span>
                 </button>
               </th>

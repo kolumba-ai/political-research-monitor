@@ -5,7 +5,7 @@ RUN := cd backend && "$(PY)" -m polgraph
 EXPLORER = cd frontend-3d && PATH="$(NODE_BIN):$$PATH" npm
 MODAL := $(CURDIR)/.venv/bin/modal
 
-.PHONY: portraits sc-pull sc-metrics sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run ev-enrich modal-deploy modal-explorer modal-explorer-data modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
+.PHONY: portraits sc-pull sc-metrics sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run ev-enrich modal-deploy modal-explorer modal-explorer-data sd-opinion modal-systema modal-systemb modal-systemc modal-extract export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -121,6 +121,11 @@ modal-explorer: explorer-build
 	"$(MODAL)" deploy backend/modal_explorer.py
 
 # Publish the current graph (as SQLite) and the claims exports to the explorer's volume, then redeploy to load them.
+# System D's simulated polling of linked storylines, next to storylines.json (published by modal-explorer-data).
+# Needs DATABASE_URL pointing at the System D database (Neon system-d-dev / system_d), read only.
+sd-opinion:
+	cd system-d && .venv/bin/python -m system_d.export_opinion --out ../var/socialclaims/claims/MX/opinion.json
+
 modal-explorer-data:
 	rm -rf var/explorer-publish && mkdir -p var/explorer-publish
 	$(RUN) export --out ../var/explorer-publish/kb
