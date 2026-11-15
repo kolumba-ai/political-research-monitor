@@ -203,19 +203,15 @@ def _number_values(text: str, decimal_percent: bool = False) -> Iterator[tuple[s
     def integer(match: re.Match) -> int | None:
         token = word(match)
         if token in NUMBER_WORDS:
-            return NUMBER_WORDS[token] if include_words else None
+            return NUMBER_WORDS[token]
         is_percent = decimal_percent or bool(re.match(r"\s*(?:%|por\s+ciento\b)", raw[match.end():],
                                                       flags=re.IGNORECASE))
         canonical = _number(token, decimal_percent=is_percent)
         return int(canonical) if canonical.isdigit() else None
 
-    numbers = set()
     i = 0
     while i < len(tokens):
         token = word(tokens[i])
-        if not include_words and not re.match(r"\d", token):
-            i += 1
-            continue
         if i + 1 < len(tokens) and word(tokens[i + 1]) == "mil":
             leading = integer(tokens[i])
             if leading is not None:
