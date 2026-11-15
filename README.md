@@ -255,3 +255,71 @@ This is a research and compliance assessment, **not legal authorization**. The s
 
 Registry data: [lukes/ISO-3166-Countries-with-Regional-Codes](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
 (ISO 3166-1 + UN M49) and `pycountry` (ISO 3166-2).
+
+## System D
+
+System D tests whether social media reflects what people actually believe about political claims.
+
+System D pulls claims made by or about politicians from social media and scores the social sentiment around each one. It then polls a sampled population about the same claims through AI agents, which are simulated personas for now and will later use WhatsApp and Vapi voice calls. Each claim keeps polling only until its sample is statistically valid.
+
+**Full design:** [`docs/DESIGN.md`](docs/DESIGN.md). Start there.
+
+### Stack
+
+- **Modal** — runs every agent; the polling fleet fans out with `.map()`
+- **Neon Postgres + pgvector** — claims, sentiment, respondents, transcripts, sampling state
+- **LLM API** — claim extraction, question design, personas, sentiment scoring
+- **Vapi / WhatsApp** — real polling channels (phase 2)
+
+### Quick start
+
+```bash
+# 1. Install
+cd system-d
+pip install -e .            # or: uv sync
+
+# 2. Configure
+cp .env.example .env        # DATABASE_URL (Neon pooled), ANTHROPIC_API_KEY / OPENAI_API_KEY
+modal secret create neon-db DATABASE_URL=...
+modal secret create llm-api ANTHROPIC_API_KEY=...
+
+# 3. Database
+python -m system_d.migrate
+python -m system_d.seed     # politicians, claims, population strata
+
+# 4. Run a simulation
+modal run modal_app.py::run_simulation --sim-run sim-run-1 --claims all
+
+# 5. Tests
+pytest
+```
+
+### How it decides when to stop
+
+Each claim is polled in batches: 30 respondents first, then 20 at a time. A claim stops when one of these happens:
+
+| Status | Condition |
+|---|---|
+| `converged` | 95% CI on share-who-believe is within ±7 pts |
+| `decisive` | polled sentiment CI excludes the social-media sentiment |
+| `capped` | 400 completed calls reached → flagged inconclusive, question rewritten |
+
+A claim never stops before every population stratum has at least 5 completed responses. The details are in [`docs/DESIGN.md` §4](docs/DESIGN.md#4-stopping-rule).
+The full stopping criteria, including the extra attempt cap and the run-level spend cap, are in [`system-d/README.md`](system-d/README.md#stopping-criteria).
+
+### Build milestones
+
+- [x] M1 Schema + seed data
+- [x] M2 Stopping logic + unit tests
+- [x] M3 Claim extraction, social sentiment, aggregation
+- [x] M4 Simulated polling loop on Modal
+- [ ] M5 Dashboard
+- [ ] M6 Real Vapi / WhatsApp channels (stretch)
+
+### Guardrails
+
+- All simulated data is tagged `is_simulated` / `sim_run`, and the dashboard labels it as simulated.
+- Real calls require a consent line, honour opt-outs and keep to calling hours. Phone numbers never appear in logs or the UI.
+- No secrets in the repo.
+
+Built at the Research AI Hackathon, San Francisco, November 2026.
