@@ -42,13 +42,24 @@ if st.sidebar.button("Refresh"):
     st.cache_data.clear()
 st.sidebar.caption("Data refreshes every 15 seconds. Read-only connection to Neon.")
 
-claims = load(data.CLAIMS_SQL, (sim_run,))
+scope = st.sidebar.radio("Claims", data.CLAIM_SCOPES)
+st.sidebar.caption(
+    "Real storylines are linked to the explorer's `storylines.json` (storyline_id) and System B's claims; "
+    "demo seed claims are hand-written and unverified."
+)
+
+claims = [c for c in load(data.CLAIMS_SQL, (sim_run,)) if data.in_scope(c, scope)]
+if not claims:
+    st.info(f"No {scope.lower()} in {sim_run}.")
+    st.stop()
 rows = []
 for c in claims:
     rows.append(
         {
             "Politician": c["politician"],
+            "Storyline": c["storyline_label"] or "— (demo)",
             "Claim": c["canonical_text"],
+            "Statements": c["claim_count"],
             "Status": data.status_label(c["status"]),
             "n": c["n_completed"],
             "p_believe (95% CI)": data.fmt_share_ci(c["p_believe"], c["ci_low"], c["ci_high"]),
@@ -83,7 +94,7 @@ st.caption(
 
 chart_rows = []
 for i, c in enumerate(claims, start=1):
-    label = f"{i}. {c['politician'].split()[0]}: {c['canonical_text'][:60]}…"
+    label = f"{i}. {c['politician'].split()[0]}: {data.claim_title(c)[:60]}…"
     if c["sentiment_mean"] is not None:
         chart_rows.append(
             {
@@ -118,9 +129,14 @@ if chart_rows:
 st.subheader("Claim detail")
 if not claims:
     st.stop()
-claim_options = {c["claim_id"]: f"{c['politician']}: {c['canonical_text']}" for c in claims}
+claim_options = {c["claim_id"]: f"{c['politician']}: {data.claim_title(c)}" for c in claims}
 claim_id = st.selectbox("Claim", list(claim_options), format_func=claim_options.get)
 claim = next(c for c in claims if c["claim_id"] == claim_id)
+if claim["storyline_id"]:
+    st.markdown(f"**Storyline:** {claim['storyline_label']}  \n`{claim['storyline_id']}` · `{claim['person_id']}`")
+    st.markdown(f"**Polled claim:** {claim['canonical_text']}")
+else:
+    st.caption("Demo seed claim: hand-written, not linked to a storyline.")
 
 detail = st.columns(4)
 detail[0].metric("Status", data.status_label(claim["status"]))
@@ -128,7 +144,9 @@ detail[1].metric("n completed", claim["n_completed"])
 detail[2].metric("p_believe", data.fmt_share_ci(claim["p_believe"], claim["ci_low"], claim["ci_high"]))
 detail[3].metric("Polled − social", data.fmt_signed(data.gap(claim["sentiment_mean"], claim["social_sentiment"])))
 
-tab_strata, tab_transcripts, tab_social = st.tabs(["By stratum", "Transcripts", "Social comments"])
+tab_strata, tab_transcripts, tab_sources, tab_social = st.tabs(
+    ["By stratum", "Transcripts", "Source statements", "Social comments"]
+)
 
 with tab_strata:
     strata = load(data.STRATA_SQL, (claim_id, sim_run))
@@ -175,9 +193,38 @@ with tab_transcripts:
                 with st.chat_message(role):
                     st.write(message.get("text", ""))
 
+with tab_sources:
+    sources = load(data.SOURCES_SQL, (claim_id,))
+    st.caption(
+        f"{len(sources)} statements merged into this claim; respondents were asked about the polled claim above."
+    )
+    st.dataframe(
+        pd.DataFrame(
+            [
+                {
+                    "Statement": s["claim_text"],
+                    "Platform": s["source_platform"],
+                    "Source": s["source_url"],
+                    "System B claim": s["source_claim_id"] or "— (demo)",
+                }
+                for s in sources
+            ]
+        ),
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Statement": st.column_config.TextColumn(width="large"),
+            "Source": st.column_config.LinkColumn(),
+        },
+    )
+
 with tab_social:
     comments = load(data.SOCIAL_SQL, (claim_id,))
-    st.caption("Hand-curated demo comments from the seed, scored by the social sentiment agent.")
+    st.caption(
+        "Real comments on the source posts (System B), scored by the social sentiment agent."
+        if claim["storyline_id"]
+        else "Hand-curated demo comments from the seed, scored by the social sentiment agent."
+    )
     st.dataframe(
         pd.DataFrame(
             [

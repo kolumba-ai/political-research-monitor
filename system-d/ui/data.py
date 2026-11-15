@@ -27,7 +27,8 @@ ORDER BY max(updated_at) DESC
 """
 
 CLAIMS_SQL = """
-SELECT s.aggregated_claim_id::text AS claim_id, p.name AS politician, p.party, a.canonical_text, a.claim_count,
+SELECT s.aggregated_claim_id::text AS claim_id, p.name AS politician, p.party, p.person_id, a.canonical_text,
+       a.claim_count, a.storyline_id, a.storyline_label,
        s.status, s.n_completed, s.p_believe, s.ci_low, s.ci_high, s.sentiment_mean, s.sentiment_ci_low,
        s.sentiment_ci_high, s.social_sentiment, s.updated_at
 FROM claim_sampling_state s
@@ -61,6 +62,13 @@ ORDER BY pr.created_at
 LIMIT %s
 """
 
+SOURCES_SQL = """
+SELECT c.source_claim_id, c.claim_text, c.source_platform, c.source_url
+FROM claims c
+WHERE c.aggregated_claim_id = %s
+ORDER BY c.created_at
+"""
+
 SOCIAL_SQL = """
 SELECT sr.platform, sr.comment_text, sr.sentiment, sr.stance
 FROM social_reactions sr
@@ -68,6 +76,22 @@ JOIN claims c ON c.id = sr.claim_id
 WHERE c.aggregated_claim_id = %s
 ORDER BY sr.created_at
 """
+
+
+CLAIM_SCOPES = ("Real storylines", "Demo seed", "All")
+
+
+def in_scope(claim: dict[str, Any], scope: str) -> bool:
+    if scope == "Real storylines":
+        return claim.get("storyline_id") is not None
+    if scope == "Demo seed":
+        return claim.get("storyline_id") is None
+    return True
+
+
+def claim_title(claim: dict[str, Any]) -> str:
+    """Storyline label for linked claims, the canonical text for demo claims."""
+    return claim.get("storyline_label") or claim["canonical_text"]
 
 
 def database_url() -> str:
