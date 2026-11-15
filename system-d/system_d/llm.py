@@ -275,9 +275,7 @@ class AnthropicLLM(_HTTPClient):
         text = "\n".join(
             block["text"] for block in data.get("content", []) if block.get("type") == "text" and "text" in block
         )
-        return text, self._usage(
-            data, self.model, "input_tokens", "output_tokens"
-        )
+        return text, self._usage(data, self.model, "input_tokens", "output_tokens")
 
 
 class OpenAILLM(_HTTPClient):
@@ -331,7 +329,7 @@ class OpenAILLM(_HTTPClient):
                 content = message.get("content")
                 try:
                     if not isinstance(content, str):
-                        raise ValueError("response did not include JSON content")
+                        raise TypeError("response did not include JSON content")
                     result = output_model.model_validate(json.loads(content))
                     return result, total_usage
                 except (json.JSONDecodeError, ValidationError, TypeError, ValueError) as exc:
