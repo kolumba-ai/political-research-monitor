@@ -33,6 +33,10 @@ def test_pick_portrait_requires_named_page_and_surname_file():
                "image_links": ["https://senado.gob.mx/66/images/1558-diaz_delgado_blanca_judith-2024.jpg"]}]
     assert pick_portrait("Blanca Judith Díaz Delgado", roster, official=True)["image_url"].endswith("-2024.jpg")
     assert pick_portrait("Blanca Judith Díaz Delgado", roster) is None
+    relative = [{"url": "https://www.senado.gob.mx/66/senadores", "title": "Senadores",
+                 "image_links": ["/66/images/1558-diaz_delgado_blanca_judith-2024.jpg"]}]
+    assert pick_portrait("Blanca Judith Díaz Delgado", relative, official=True)["image_url"] == \
+        "https://www.senado.gob.mx/66/images/1558-diaz_delgado_blanca_judith-2024.jpg"
     assert portrait_url("https://example.gob.mx/a.jpg?x=1") == "https://example.gob.mx/a.jpg?x=1"
 
 

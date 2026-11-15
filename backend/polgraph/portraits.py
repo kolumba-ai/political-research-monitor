@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 from concurrent.futures import ThreadPoolExecutor
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urljoin, urlparse
 
 from .graph.store import GraphStore
 from .ids import name_tokens, normalize_text, utcnow
@@ -78,7 +78,8 @@ def pick_portrait(name: str, results: list[dict], *, official: bool = False) -> 
         page_ok = page_names_person(name, r.get("title") or "") and (
             official or bool(POLITICAL.search(normalize_text(r.get("text") or ""))))
         for img in [*(r.get("image_links") or []), *([r["image"]] if r.get("image") else [])]:
-            if NOT_PORTRAIT.search(unquote(img)):
+            img = urljoin(r.get("url") or "", img)  # pages may list relative or protocol-relative image paths
+            if not img.startswith(("http://", "https://")) or NOT_PORTRAIT.search(unquote(img)):
                 continue
             if (page_ok and file_names_person(name, img)) or (official and file_names_person(name, img, full=True)):
                 return {"image_url": portrait_url(img), "image_source_url": r.get("url"),
