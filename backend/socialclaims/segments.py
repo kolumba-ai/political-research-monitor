@@ -66,9 +66,9 @@ def build_segments(post: dict) -> list[dict]:
         for f in frames:
             t = _num(f.get("timestampSeconds"))
             texts = {(r.get("text") or "").strip() for r in f.get("onScreenTextRegions") or []} - {""}
-            for gone in set(runs) - texts:
+            for gone in sorted(set(runs) - texts):
                 segs.append(runs.pop(gone))
-            for txt in texts:
+            for txt in sorted(texts):
                 if txt in runs:
                     runs[txt]["end_s"] = t
                 else:
@@ -177,10 +177,12 @@ def process_politician(conn, graph: GraphReader, raw_dir: Path | str, politician
                 out["segments"] += len(segs)
             else:
                 out["skipped"] += 1
+            conn.execute("DELETE FROM post_person_role WHERE oriane_id = %s AND raw_id = %s AND processor_version = %s "
+                         "AND person_id = %s", (r["oriane_id"], r["raw_id"], PROCESSOR_VERSION, politician_id))
             for role in roles:
                 conn.execute(
                     "INSERT INTO post_person_role(oriane_id, raw_id, processor_version, person_id, role, status, "
-                    "evidence, assigned_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING",
+                    "evidence, assigned_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",
                     (r["oriane_id"], r["raw_id"], PROCESSOR_VERSION, politician_id, role["role"], role["status"],
                      Jsonb(role["evidence"]), now))
                 out["roles"][f"{role['role']}:{role['status']}"] = out["roles"].get(f"{role['role']}:{role['status']}", 0) + 1
@@ -207,8 +209,8 @@ def _store_post(conn, r: dict, post: dict, segs: list[dict], now: datetime) -> N
     if audio and has_speech and post.get("audioType") == "original":
         hit = conn.execute(
             "SELECT pp.canonical_oriane_id FROM post_processing pp JOIN post p ON p.oriane_id = pp.canonical_oriane_id "
-            "WHERE pp.audio_platform_id = %s AND pp.processor_version = %s ORDER BY p.published_at LIMIT 1",
-            (audio, PROCESSOR_VERSION)).fetchone()
+            "WHERE pp.audio_platform_id = %s AND pp.processor_version = %s AND p.platform = %s "
+            "ORDER BY p.published_at LIMIT 1", (audio, PROCESSOR_VERSION, post.get("platform"))).fetchone()
         if hit:
             canonical = hit["canonical_oriane_id"]
     counts: dict[str, int] = {}
