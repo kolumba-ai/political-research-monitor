@@ -4,7 +4,7 @@ NODE_BIN ?= $(CURDIR)/.local/node-v24.22.2-linux-x64/bin
 RUN := cd backend && "$(PY)" -m polgraph
 EXPLORER = cd frontend-3d && PATH="$(NODE_BIN):$$PATH" npm
 
-.PHONY: sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
+.PHONY: sc-pull sc-migrate sc-list sc-sync sc-dry-run sc-test ev-migrate ev-test ev-dry-run export export-bundles import-kb classify install neo4j-start neo4j-stop seed mexico pakistan mexico-production refresh-mexico report path serve test explorer-build explorer-dev explorer-check
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -88,3 +88,15 @@ sc-pull:
 
 sc-test:
 	cd backend && "$(PY)" -m pytest -q tests/socialclaims
+
+# --- System C (Evidence Knowledge Graph, M0) ----------------------------------------------------------
+EV := cd backend && "$(PY)" -m evidencegraph
+
+ev-migrate:
+	$(EV) migrate
+
+ev-test:
+	cd backend && "$(PY)" -m pytest -q tests/evidencegraph
+
+ev-dry-run:
+	$(EV) intake --dry-run person:MX:claudia-sheinbaum-pardo person:MX:clara-marina-brugada-molina
