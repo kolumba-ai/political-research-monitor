@@ -501,7 +501,7 @@ class Extractor:
         digits = _numbers(c.get("text") or "", include_words=False)
         if extra := sorted(digits - allowed):
             issues.append(f"paraphrase_numbers_not_in_quote:{','.join(extra)}")
-        prop = c.get("proposition") or {}
+        prop = dict(c.get("proposition") or {})  # keep the stored LLM response unmodified
         predicate = str(prop.get("predicate") or "")
         if not bool(prop.get("negated")) and normalize_text(predicate).startswith(("no ", "nunca ")):
             prop["predicate"] = re.sub(r"^\s*(?:no|nunca)\b[\W_]*", "", predicate, count=1,
