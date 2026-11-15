@@ -226,6 +226,50 @@ def test_canonical_to_blocked_path_is_rejected(conn, ev_settings):
     client.close()
 
 
+def test_cross_domain_redirect_uses_effective_final_domain_rights(conn, ev_settings):
+    load_registry(conn)
+    conn.execute(
+        "INSERT INTO ev_source_registry(domain,source_class,publisher,authority_tier,licence_class,"
+        "can_store_full_text,added_by,added_at) VALUES "
+        "('news.example','news','Example News',2,'copyright',false,'test',now())"
+    )
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        if request.url.host == "www.gob.mx":
+            return httpx.Response(301, headers={"location": "https://news.example/article"})
+        return httpx.Response(
+            200,
+            text="<html><body>News article with a reported development.</body></html>",
+            headers={"content-type": "text/html"},
+        )
+
+    fetcher, client = _fetcher(conn, ev_settings, handler)
+    original_url = "https://www.gob.mx/presidencia"
+    result = fetcher.fetch(original_url)
+    document_ids = [source_id(original_url), source_id("https://news.example/article")]
+
+    assert result["fetch_status"] == "fetched"
+    assert result["snapshot_stored"] is False
+    documents = conn.execute(
+        "SELECT licence_class,can_store_full_text FROM ev_document WHERE document_id=ANY(%s::text[]) "
+        "ORDER BY document_id", (document_ids,)
+    ).fetchall()
+    assert documents == [
+        {"licence_class": "copyright", "can_store_full_text": False},
+        {"licence_class": "copyright", "can_store_full_text": False},
+    ]
+    versions = conn.execute(
+        "SELECT snapshot_path FROM ev_document_version WHERE document_id=ANY(%s::text[])",
+        (document_ids,),
+    ).fetchall()
+    assert len(versions) == 2
+    assert all(version["snapshot_path"] is None for version in versions)
+    assert list(ev_settings.snapshot_dir.rglob("*.txt")) == []
+    client.close()
+
+
 def test_copyright_pages_are_not_snapshotted_and_duplicates_cluster(conn, ev_settings):
     load_registry(conn)
 

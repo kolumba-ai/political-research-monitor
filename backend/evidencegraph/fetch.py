@@ -506,11 +506,16 @@ class Fetcher:
         resolved_id = source_id(resolved_url)
         targets = [original_id] + ([resolved_id] if resolved_id != original_id else [])
         fetched_registry = lookup(self.conn, current)
+        effective_registry = dict(fetched_registry) if fetched_registry else None
+        if effective_registry:
+            effective_registry["can_store_full_text"] = bool(
+                registry_row and registry_row["can_store_full_text"]
+                and fetched_registry["can_store_full_text"]
+            )
         with self.conn.transaction():
             for document_id in targets:
-                document_registry = fetched_registry if document_id == resolved_id else registry_row
                 self._document(document_id, url if document_id == original_id else resolved_url,
-                               resolved_url, document_registry, metadata, "fetched", published, modified)
+                               resolved_url, effective_registry, metadata, "fetched", published, modified)
             if resolved_id != original_id:
                 edge_id = "same-as:" + short_hash("|".join(sorted((original_id, resolved_id))), 24)
                 self.conn.execute(
@@ -520,8 +525,7 @@ class Fetcher:
                 )
             snapshots = {}
             for document_id in targets:
-                document_registry = fetched_registry if document_id == resolved_id else registry_row
-                can_store = bool(document_registry and document_registry["can_store_full_text"])
+                can_store = bool(effective_registry and effective_registry["can_store_full_text"])
                 snapshot, _ = self._store_version(document_id, text, raw, content_sha, simhash, response_status,
                                                   can_store, is_text)
                 snapshots[document_id] = snapshot
