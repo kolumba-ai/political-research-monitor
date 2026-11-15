@@ -11,7 +11,8 @@ from psycopg.types.json import Jsonb
 
 from .config import ORIANE_CREDITS_PER_ROW, SocialSettings
 from .identity import current_ref, load_terms, relevance_context, sync_ref
-from .oriane import CreditsExhausted, InvalidQuery, OffsetPastEnd, OrianeClient, OrianeError, credits_for
+from .oriane import (CreditsExhausted, InvalidQuery, OffsetPastEnd, OrianeClient, OrianeError, OrianeResponse,
+                     credits_for)
 from .query import BRANCHES, canonical_json, request_body
 from .relevance import bucket, score
 from .systema import GraphReader, read_person
@@ -46,6 +47,10 @@ def month_credits_used(conn, now: datetime) -> int:
 
 
 def record_usage(conn, run_id, endpoint, purpose, projection, status, request_id, rows, credits, now) -> None:
+    """A request_id is billed once: replaying a stored response records it again with 0 credits."""
+    if request_id and credits and conn.execute("SELECT 1 FROM oriane_usage WHERE request_id = %s AND credits > 0",
+                                               (request_id,)).fetchone():
+        credits = 0
     conn.execute("INSERT INTO oriane_usage(run_id, endpoint, purpose, projection, http_status, request_id, rows, "
                  "credits, called_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                  (run_id, endpoint, purpose, projection, status, request_id, rows, credits, now))
@@ -71,6 +76,8 @@ def _post_url(r: dict) -> str | None:
 class Capturer:
     def __init__(self, conn, graph: GraphReader, client: OrianeClient | None, settings: SocialSettings, clock=utcnow):
         self.conn, self.graph, self.client, self.s, self.clock = conn, graph, client, settings, clock
+        self.usage_purpose = "capture"
+        self._run_id: str | None = None
 
     @property
     def platforms(self) -> list[str]:
@@ -103,6 +110,18 @@ class Capturer:
 
     # ------------------------------------------------------------------------------------------------------------
     def capture(self, politician_id: str, **kw) -> dict:
+        self._run_id = None
+        try:
+            return self._capture(politician_id, **kw)
+        except Exception as exc:
+            if self._run_id:
+                with self.conn.transaction():
+                    self.conn.execute("UPDATE run SET status = 'error', error = %s, finished_at = %s "
+                                      "WHERE run_id = %s AND finished_at IS NULL",
+                                      (f"{type(exc).__name__}: {exc}", self.clock(), self._run_id))
+            raise
+
+    def _capture(self, politician_id: str, **kw) -> dict:
         if self.client is None:
             raise RuntimeError("an Oriane client is required to capture")
         p = self.plan(politician_id, **kw)
@@ -123,6 +142,7 @@ class Capturer:
                 (run_id, pid, ref["person_updated_at"], ref["version"], ref["graph_run"], ref["pipeline_mode"],
                  ref["query_id"], Jsonb(ref["query_json"]), p["date_from"], p["date_to"], self.platforms, projection,
                  p["max_posts"], p["excluded_ids"], Jsonb(manifest), started))
+        self._run_id = run_id
 
         offset, rows, credits, status, error, partial = 0, 0, 0, "ok", None, False
         request_ids: list[str] = []
@@ -143,7 +163,7 @@ class Capturer:
                 resp = self.client.search_contents(body, offset=offset, limit=limit, projection=projection, sort=SORT)
             except (CreditsExhausted, OffsetPastEnd, InvalidQuery, OrianeError) as exc:
                 with self.conn.transaction():
-                    record_usage(self.conn, run_id, "/rest/contents/search", "capture", projection, exc.status,
+                    record_usage(self.conn, run_id, "/rest/contents/search", self.usage_purpose, projection, exc.status,
                                  exc.request_id, 0, 0, now)
                 if exc.request_id:
                     request_ids.append(exc.request_id)
@@ -159,9 +179,11 @@ class Capturer:
                 aggregations = (resp.body.get("data") or {}).get("aggregations")
             total = resp.pagination.get("totalCount", total)
             partial = partial or resp.partial
+            # Spend is committed before processing so a later failure cannot lose billed rows.
             with self.conn.transaction():
-                record_usage(self.conn, run_id, "/rest/contents/search", "capture", projection, resp.status,
+                record_usage(self.conn, run_id, "/rest/contents/search", self.usage_purpose, projection, resp.status,
                              resp.request_id, len(results), credits_for(len(results), projection), now)
+            with self.conn.transaction():
                 page = self._store_page(run_id, pid, ref, resp, params, body, now, excluded_fields, ctx, branch_counts)
             manifest["pages"].append(page)
             rows += len(results)
@@ -257,6 +279,35 @@ class Capturer:
         return {"offset": params["offset"], "limit": params["limit"], "status": resp.status,
                 "request_id": resp.request_id, "rows": len(results), "skipped_missing_published_at": skipped,
                 "path": rel_path if self.s.store_raw_payloads else None, "sha256": page_sha}
+
+
+class RawReplayClient:
+    """Serves the pages a failed capture already saved, so billed rows are ingested without calling Oriane again.
+    Refuses if the rebuilt request differs from the stored one."""
+
+    def __init__(self, run_dir: Path):
+        self.pages = {}
+        for f in sorted(Path(run_dir).glob("page-*.json")):
+            env = json.loads(f.read_text())
+            self.pages[env["request"]["params"]["offset"]] = env
+        if not self.pages:
+            raise ValueError(f"no stored pages in {run_dir}")
+        first = self.pages[min(self.pages)]
+        self.body = first["request"]["body"]
+        self.captured_at = datetime.fromisoformat(first["captured_at"])
+        self.rows = sum(len((e["response"].get("data") or {}).get("results") or []) for e in self.pages.values())
+        # Reproduces the original per-page limits when passed as max_posts.
+        self.max_posts = sum(e["request"]["params"]["limit"] for e in self.pages.values())
+
+    def search_contents(self, body, *, offset, limit, projection, sort) -> OrianeResponse:
+        env = self.pages.get(offset)
+        if env is None:
+            raise ValueError(f"no stored page at offset {offset}")
+        params = env["request"]["params"]
+        if canonical_json(body) != canonical_json(env["request"]["body"]) or \
+                (limit, projection, sort) != (params["limit"], params["projection"], params["sort"]):
+            raise ValueError("rebuilt request differs from the stored page; refusing to replay")
+        return OrianeResponse(env["status"], env["response"], (env["response"].get("metadata") or {}).get("requestId"))
 
 
 def purge_expired(conn, settings: SocialSettings, now: datetime | None = None) -> int:

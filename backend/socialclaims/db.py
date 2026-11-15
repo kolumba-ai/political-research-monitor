@@ -10,7 +10,7 @@ MIGRATIONS = Path(__file__).parent / "migrations"
 
 
 def connect(url: str) -> psycopg.Connection:
-    return psycopg.connect(url, row_factory=dict_row, autocommit=False)
+    return psycopg.connect(url, row_factory=dict_row, autocommit=True)
 
 
 def migrate(conn: psycopg.Connection) -> list[str]:

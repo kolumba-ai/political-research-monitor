@@ -116,7 +116,8 @@ def make_result(i: int, matched=("written",), platform="tiktok", published="2026
          "updatedAt": "2026-11-12T00:00:00Z", "matchedQueries": list(matched), "viewsCount": 1000 + i, "likesCount": 10,
          "sharesCount": 1, "commentsCount": 2, "interactionsCount": 13, "engagementRatePerViews": 1.3,
          "locationCountryCode": "MX", "locationCountryConfidence": 0.9, "profileEmails": ["x@example.com"],
-         "media": [{"type": "video", "transcript": "hola", "transcriptLanguage": "es"}]}
+         "media": [{"type": "video", "transcript": "hola", "transcriptLanguage": "es",
+                    "onScreenText": ["texto en pantalla"], "frames": [{"onScreenTextRegions": []}]}]}
     r.update(kw)
     return r
 

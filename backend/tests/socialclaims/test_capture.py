@@ -182,3 +182,38 @@ def test_purge_expired(conn, graph, sc_settings):
     assert purge_expired(conn, sc_settings, FIXED_NOW + timedelta(days=10)) == 0 and f.exists()
     assert purge_expired(conn, sc_settings, FIXED_NOW + timedelta(days=31)) == 1 and not f.exists()
     assert conn.execute("SELECT payload_sha256 FROM raw_data").fetchone()["payload_sha256"]
+
+
+def test_relevance_reads_list_text_fields():
+    post = make_result(1, caption=None, media=[{"type": "image", "transcript": None,
+                                                 "onScreenText": ["Claudia Sheinbaum Pardo", "Morena"]}])
+    value, basis = score(post, ["onscreen"], {"full_names": ["claudia sheinbaum pardo"], "entities": ["morena"]})
+    assert basis["full_name_hit"] and value > 0.45
+
+
+def test_spend_survives_processing_failure_and_replay_bills_once(conn, graph, sc_settings, monkeypatch):
+    import socialclaims.capture as capmod
+    from socialclaims.capture import RawReplayClient, month_credits_used
+    fake = FakeOriane([make_result(i) for i in range(5)])
+
+    def boom(*a, **k):
+        raise TypeError("bad field shape")
+    monkeypatch.setattr(capmod, "score", boom)
+    with pytest.raises(TypeError):
+        cap(conn, graph, sc_settings, fake).capture(PID)
+    billed = credits_for(5, sc_settings.oriane_projection)
+    assert month_credits_used(conn, FIXED_NOW) == billed
+    run = conn.execute("SELECT run_id, status FROM run").fetchone()
+    assert run["status"] == "error" and conn.execute("SELECT count(*) AS n FROM post").fetchone()["n"] == 0
+
+    monkeypatch.undo()
+    rc = RawReplayClient(Path(sc_settings.raw_storage_dir) / run["run_id"])
+    w = rc.body["filters"]["publishedAt"]
+    replayer = Capturer(conn, graph, rc, sc_settings, clock=lambda: rc.captured_at)
+    out = replayer.capture(PID, date_from=w["after"], date_to=w["before"], max_posts=rc.max_posts)
+    assert out["status"] == "ok" and out["rows"] == 5 and len(fake.calls) == 1
+    assert conn.execute("SELECT count(*) AS n FROM post").fetchone()["n"] == 5
+    assert month_credits_used(conn, FIXED_NOW) == billed
+    with pytest.raises(ValueError):
+        Capturer(conn, graph, rc, sc_settings, clock=lambda: rc.captured_at).capture(
+            PID, date_from="2026-01-01", date_to=w["before"], max_posts=rc.max_posts)

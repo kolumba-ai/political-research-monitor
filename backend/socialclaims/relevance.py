@@ -15,10 +15,21 @@ BRANCH_WEIGHTS = {
 }
 
 
+def _flat(v) -> list[str]:
+    """Oriane text fields arrive as a string, a list of strings (e.g. `onScreenText`) or null."""
+    if not v:
+        return []
+    if isinstance(v, str):
+        return [v]
+    if isinstance(v, list):
+        return [x for item in v for x in _flat(item)]
+    return []
+
+
 def _texts(post: dict) -> str:
-    parts = [post.get("caption") or "", post.get("title") or ""]
+    parts = _flat(post.get("caption")) + _flat(post.get("title"))
     for m in post.get("media") or []:
-        parts += [m.get("caption") or "", m.get("transcript") or "", m.get("onScreenText") or ""]
+        parts += _flat(m.get("caption")) + _flat(m.get("transcript")) + _flat(m.get("onScreenText"))
     return normalize_text(" ".join(parts))
 
 

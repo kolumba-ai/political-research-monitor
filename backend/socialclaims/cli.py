@@ -84,6 +84,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--allow-review", action="store_true", help="also capture single_source officeholders")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--confirm-spend", action="store_true")
+    p = sub.add_parser("replay-raw", help="ingest pages saved by a failed capture, without calling Oriane")
+    p.add_argument("run_dir")
+    p.add_argument("id")
+    p.add_argument("--country", default="MX")
+    p.add_argument("--allow-review", action="store_true")
     sub.add_parser("usage", help="Oriane credits used this month vs ceiling")
     sub.add_parser("purge-expired", help="delete raw payloads past retention")
     args = ap.parse_args(argv)
@@ -159,4 +164,13 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 results.append(cap.capture(pid, **kw))
         _out(results)
+    elif args.cmd == "replay-raw":
+        from pathlib import Path
+        from .capture import RawReplayClient
+        rc = RawReplayClient(Path(args.run_dir))
+        window = rc.body["filters"]["publishedAt"]
+        cap = Capturer(conn, graph, rc, s, clock=lambda: rc.captured_at)
+        cap.usage_purpose = "capture-replay"
+        _out(cap.capture(_pid(graph, args.id, args.country), date_from=window["after"], date_to=window["before"],
+                         max_posts=rc.max_posts, allow_review=args.allow_review))
     return 0
