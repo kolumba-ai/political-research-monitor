@@ -41,6 +41,16 @@ def _parse_shard(value: str) -> tuple[int, int]:
     return index, count
 
 
+def _positive_int(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be a positive integer") from exc
+    if parsed < 1:
+        raise argparse.ArgumentTypeError("must be a positive integer")
+    return parsed
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="socialclaims")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -114,6 +124,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("ids", nargs="+")
     p.add_argument("--country", default="MX")
     p.add_argument("--max-posts", type=int, help="per politician (default: CLAIM_MAX_POSTS_PER_RUN)")
+    p.add_argument("--max-tokens", type=_positive_int, default=8000,
+                   help="maximum Anthropic output tokens (default: 8000)")
     p.add_argument("--dry-run", action="store_true", help="print pending counts and the first prompt; no LLM call")
     p.add_argument("--confirm-spend", action="store_true")
     p.add_argument("--shard", type=_parse_shard, default=(0, 1),
@@ -220,7 +232,8 @@ def main(argv: list[str] | None = None) -> int:
         if not args.dry_run and not s.anthropic_api_key:
             print("ANTHROPIC_API_KEY is not set", file=sys.stderr)
             return 2
-        llm = AnthropicLLM(s.anthropic_api_key or "", s.claim_model, s.anthropic_base_url)
+        llm = AnthropicLLM(s.anthropic_api_key or "", s.claim_model, s.anthropic_base_url,
+                           max_tokens=args.max_tokens)
         ex = Extractor(conn, graph, llm, args.country)
         cap = min(args.max_posts or s.claim_max_posts_per_run, s.claim_max_posts_per_run)
         results = []

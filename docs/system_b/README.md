@@ -66,8 +66,9 @@ cd backend && ../.venv/bin/python -m socialclaims regrade-claims "Claudia Sheinb
 make sc-test
 ```
 
-`extract-claims --shard I/N` partitions posts for parallel workers; `regrade-claims --from-checks` rechecks
-stored responses without another LLM call.
+`extract-claims --shard I/N` partitions posts for parallel workers; `extract-claims --max-tokens N` sets the
+Anthropic output-token limit (default 8000); `regrade-claims --from-checks` rechecks stored responses without
+another LLM call.
 
 After a name-variant fix or an `add-term exclude_variant`, re-check stored name-only matches (no API call; dry run without `--apply`). Posts whose saved text holds none of the current variants move to relevance `low`; nothing is deleted:
 
