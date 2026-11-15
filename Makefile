@@ -2,7 +2,7 @@ PY := $(CURDIR)/.venv/bin/python
 NEO4J_HOME := $(CURDIR)/.local/neo4j-community-5.26.0
 RUN := cd backend && $(PY) -m polgraph
 
-.PHONY: export import-kb classify install neo4j-start neo4j-stop seed mexico mexico-production refresh-mexico report path serve test
+.PHONY: sc-migrate sc-list sc-sync sc-dry-run sc-test export import-kb classify install neo4j-start neo4j-stop seed mexico mexico-production refresh-mexico report path serve test
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -50,3 +50,22 @@ export:
 
 import-kb:
 	$(RUN) import --from ../knowledge_base
+
+# --- System B (social claims, Phase 0/1) ---------------------------------------------------------------
+SC := cd backend && $(PY) -m socialclaims
+
+sc-migrate:
+	$(SC) migrate
+
+sc-list:
+	$(SC) list --country MX
+
+sc-sync:
+	$(SC) sync-refs --country MX
+
+# Builds the Oriane requests for the three pilots without calling Oriane.
+sc-dry-run:
+	$(SC) capture --dry-run "Claudia Sheinbaum" "Clara Brugada" "Pablo Lemus"
+
+sc-test:
+	cd backend && $(PY) -m pytest -q tests/socialclaims

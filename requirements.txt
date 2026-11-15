@@ -8,3 +8,4 @@ pycountry>=24.6
 structlog>=24.1
 pytest>=8.0
 httpx>=0.27
+psycopg[binary]>=3.1
