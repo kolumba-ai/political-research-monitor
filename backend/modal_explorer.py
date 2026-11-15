@@ -40,7 +40,6 @@ def explorer():
     os.environ["GRAPH_BACKEND"] = "sqlite"
     sys.path.insert(0, str(REMOTE_BACKEND))
     from fastapi.responses import RedirectResponse
-
     from polgraph.api import app as api_app
 
     api_app.add_api_route("/", lambda: RedirectResponse("/explorer/"), include_in_schema=False)
